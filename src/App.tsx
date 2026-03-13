@@ -37,15 +37,6 @@ const zoneByStatus: Record<AgentStatus, OfficeZoneId> = {
   syncing: 'briefing-board',
 }
 
-const workCycle: AgentStatus[] = [
-  'planning',
-  'researching',
-  'building',
-  'verifying',
-  'syncing',
-  'idle',
-]
-
 const taskLineByStatus: Record<AgentStatus, string> = {
   idle: '다음 작업을 기다리며 라운지에서 대기 중',
   planning: '우선순위와 범위를 정리하는 중',
@@ -57,6 +48,95 @@ const taskLineByStatus: Record<AgentStatus, string> = {
 }
 
 type ViewTab = 'office' | 'chronicle' | 'agents'
+type WorkDirective = {
+  agentId: OfficeAgent['id']
+  status: Exclude<AgentStatus, 'idle' | 'blocked'>
+  note: string
+}
+
+const loungeNoteByAgentId: Record<OfficeAgent['id'], string> = {
+  orchestrator: 'Orchestrator: 현재 진행 중인 작업이 없어 라운지에서 전체 흐름을 정리 중',
+  analyst: 'Analyst: 자료 요청이 없어 라운지에서 지표를 훑으며 쉬는 중',
+  designer: 'Designer: 새 화면 요청 전까지 라운지에서 무드보드를 정리 중',
+  executor: 'Executor: 구현 요청이 없어 라운지에서 쉬며 다음 작업을 기다리는 중',
+  'test-engineer': 'Test Engineer: 검증할 빌드가 없어 라운지에서 테스트 메모를 정리 중',
+  'release-ops': 'ReleaseOps: 배포할 변경이 없어 라운지에서 릴리즈 노트를 정리 중',
+}
+
+const workScenarios: WorkDirective[][] = [
+  [
+    {
+      agentId: 'orchestrator',
+      status: 'planning',
+      note: 'Orchestrator: 오늘 처리할 작업 범위와 우선순위를 잠그는 중',
+    },
+    {
+      agentId: 'analyst',
+      status: 'researching',
+      note: 'Analyst: 현재 작업 후보의 리스크와 선행 조건을 점검 중',
+    },
+    {
+      agentId: 'designer',
+      status: 'planning',
+      note: 'Designer: 구현 전 필요한 화면 흐름과 톤을 정리 중',
+    },
+  ],
+  [
+    {
+      agentId: 'executor',
+      status: 'building',
+      note: 'Executor: 확정된 요구를 바탕으로 실제 화면과 기능을 구현 중',
+    },
+    {
+      agentId: 'designer',
+      status: 'planning',
+      note: 'Designer: 구현 단계에서 필요한 UI 디테일을 보강 중',
+    },
+  ],
+  [
+    {
+      agentId: 'executor',
+      status: 'building',
+      note: 'Executor: 마무리 수정과 연결 작업을 이어가는 중',
+    },
+    {
+      agentId: 'test-engineer',
+      status: 'verifying',
+      note: 'Test Engineer: 방금 나온 결과를 기준으로 회귀와 동작을 검증 중',
+    },
+    {
+      agentId: 'release-ops',
+      status: 'syncing',
+      note: 'ReleaseOps: 변경 사항을 문서와 배포 흐름에 반영하는 중',
+    },
+  ],
+]
+
+function sendAgentToLounge(agent: OfficeAgent, note?: string): OfficeAgent {
+  return updateAgent(agent, 'idle', note ?? loungeNoteByAgentId[agent.id])
+}
+
+function applyWorkScenario(
+  agents: OfficeAgent[],
+  scenarioIndex: number,
+  currentTask: string,
+): OfficeAgent[] {
+  const directives = workScenarios[scenarioIndex] ?? []
+  const directiveByAgentId = new Map(directives.map((directive) => [directive.agentId, directive]))
+
+  return agents.map((agent) => {
+    if (agent.status === 'blocked') {
+      return agent
+    }
+
+    const directive = directiveByAgentId.get(agent.id)
+    if (!directive) {
+      return sendAgentToLounge(agent)
+    }
+
+    return updateAgent(agent, directive.status, `${directive.note} · ${currentTask}`)
+  })
+}
 
 function updateAgent(agent: OfficeAgent, status: AgentStatus, note?: string): OfficeAgent {
   const energyDelta: Record<AgentStatus, number> = {
@@ -80,11 +160,15 @@ function updateAgent(agent: OfficeAgent, status: AgentStatus, note?: string): Of
 }
 
 function App() {
-  const [officeAgents, setOfficeAgents] = useState<OfficeAgent[]>(initialAgents)
+  const [officeAgents, setOfficeAgents] = useState<OfficeAgent[]>(() =>
+    initialAgents.map((agent) => sendAgentToLounge(agent)),
+  )
   const [selectedAgentId, setSelectedAgentId] = useState<string>(
     initialAgents[0]?.id ?? '',
   )
   const [pulseCount, setPulseCount] = useState(0)
+  const [activeTaskIndex, setActiveTaskIndex] = useState(0)
+  const [activeScenarioIndex, setActiveScenarioIndex] = useState<number | null>(null)
   const [activeTab, setActiveTab] = useState<ViewTab>('office')
 
   const {
@@ -103,6 +187,10 @@ function App() {
   const selectedAgent = useMemo(
     () => officeAgents.find((agent) => agent.id === selectedAgentId) ?? officeAgents[0],
     [officeAgents, selectedAgentId],
+  )
+  const activeWorkers = useMemo(
+    () => officeAgents.filter((agent) => agent.status !== 'idle' && agent.status !== 'blocked').length,
+    [officeAgents],
   )
 
   const liveReadinessChecks = useMemo(
@@ -150,25 +238,48 @@ function App() {
       : 'Bridge pending'
 
   const runWorkPulse = () => {
-    setPulseCount((count) => count + 1)
-    setOfficeAgents((current) =>
-      current.map((agent, index) => {
-        const status = workCycle[(index + pulseCount + 1) % workCycle.length]
-        return updateAgent(agent, status)
-      }),
-    )
+    const nextPulse = pulseCount + 1
+    const currentTask = upcomingTasks[activeTaskIndex] ?? '현재 진행 중인 작업 없음'
+
+    if (activeScenarioIndex !== null && activeScenarioIndex >= workScenarios.length - 1) {
+      setPulseCount(nextPulse)
+      setActiveScenarioIndex(null)
+      setActiveTaskIndex((current) => (current + 1) % upcomingTasks.length)
+      setOfficeAgents((current) =>
+        current.map((agent) =>
+          sendAgentToLounge(agent, `${agent.name}: ${currentTask} 단계를 마치고 라운지에서 쉬는 중`),
+        ),
+      )
+      return
+    }
+
+    const nextScenarioIndex = activeScenarioIndex === null ? 0 : activeScenarioIndex + 1
+
+    setPulseCount(nextPulse)
+    setActiveScenarioIndex(nextScenarioIndex)
+    setOfficeAgents((current) => applyWorkScenario(current, nextScenarioIndex, currentTask))
   }
 
   const sendAllIdle = () => {
-    setOfficeAgents((current) =>
-      current.map((agent) =>
-        updateAgent(agent, 'idle', `${agent.name}: 대기 상태로 복귀`),
-      ),
-    )
+    setPulseCount(0)
+    setActiveTaskIndex(0)
+    setActiveScenarioIndex(null)
+    setOfficeAgents((current) => current.map((agent) => sendAgentToLounge(agent)))
   }
 
   const blockSelectedAgent = () => {
     if (!selectedAgent) {
+      return
+    }
+
+    if (activeScenarioIndex === null) {
+      setOfficeAgents((current) =>
+        current.map((agent) =>
+          agent.id === selectedAgent.id
+            ? sendAgentToLounge(agent, `${agent.name}: 아직 처리 중인 작업이 없어 라운지에서 대기 중`)
+            : agent,
+        ),
+      )
       return
     }
 
@@ -231,6 +342,7 @@ function App() {
               <div className="office-project-chip">
                 <span>현재 프로젝트</span>
                 <strong>{currentProject.phase}</strong>
+                <small>{activeWorkers > 0 ? `${activeWorkers}명 작업 중` : '현재 진행 중인 작업 없음'}</small>
               </div>
             </div>
 
@@ -252,6 +364,7 @@ function App() {
                   type="button"
                   className="scene-button scene-button--warn"
                   onClick={blockSelectedAgent}
+                  disabled={activeScenarioIndex === null}
                 >
                   선택 에이전트 막힘 재현
                 </button>

@@ -125,6 +125,15 @@ const zoneAnchorById: Record<OfficeZoneId, { left: number; top: number; area: st
   'briefing-board': { left: 81, top: 76, area: 'syncing' },
 }
 
+const loungeSlotOffsets = [
+  { left: 4, top: 18, behavior: 'rest' },
+  { left: 56, top: 16, behavior: 'roam', variant: 'a' },
+  { left: 112, top: 26, behavior: 'rest' },
+  { left: 164, top: 18, behavior: 'roam', variant: 'b' },
+  { left: 32, top: 74, behavior: 'roam', variant: 'c' },
+  { left: 118, top: 78, behavior: 'rest' },
+] as const
+
 export function OfficeMap({
   agents,
   selectedAgentId,
@@ -177,21 +186,35 @@ export function OfficeMap({
 
               <div className="office-area__agents">
                 {zoneAgents.length > 0 ? (
-                  zoneAgents.map((agent, index) => (
-                    <div
-                      key={agent.id}
-                      className="office-area__agent-slot"
-                      style={{
-                        transform: `translate(${(index % 2) * 42}px, ${Math.floor(index / 2) * 46}px)`,
-                      }}
-                    >
-                      <AgentSprite
-                        agent={agent}
-                        selected={agent.id === selectedAgentId}
-                        onClick={() => onSelectAgent(agent.id)}
-                      />
-                    </div>
-                  ))
+                  zoneAgents.map((agent, index) => {
+                    const loungeSlot = loungeSlotOffsets[index % loungeSlotOffsets.length]
+                    const isLoungeAgent = zone.id === 'lounge' && agent.status === 'idle'
+                    const isRoaming = isLoungeAgent && loungeSlot.behavior === 'roam'
+                    const left = isLoungeAgent ? loungeSlot.left : (index % 2) * 42
+                    const top = isLoungeAgent ? loungeSlot.top : Math.floor(index / 2) * 46
+
+                    return (
+                      <div
+                        key={agent.id}
+                        className={`office-area__agent-slot ${
+                          isRoaming
+                            ? `office-area__agent-slot--lounge office-area__agent-slot--roam-${loungeSlot.variant}`
+                            : ''
+                        }`}
+                        style={{
+                          left: `${left}px`,
+                          top: `${top}px`,
+                        }}
+                      >
+                        <AgentSprite
+                          agent={agent}
+                          selected={agent.id === selectedAgentId}
+                          running={isRoaming || agent.status === 'building' || agent.status === 'syncing'}
+                          onClick={() => onSelectAgent(agent.id)}
+                        />
+                      </div>
+                    )
+                  })
                 ) : (
                   <div className="office-area__empty">empty</div>
                 )}

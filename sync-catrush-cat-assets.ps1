@@ -1,6 +1,7 @@
 $ErrorActionPreference = 'Stop'
 
-$sourceRoot = 'C:\CatRush\Assets\Resources\Sprites\Cats'
+$catRushSourceRoot = 'C:\CatRush\Assets\Resources\Sprites\Cats'
+$runningCatSourceRoot = 'C:\Unity\CatRace\Assets\@Sprites\Cat\7. RunningCat'
 $targetRoot = Join-Path $PSScriptRoot 'public\catrush-cats'
 
 $indexByCharacterKey = @{
@@ -13,17 +14,21 @@ $indexByCharacterKey = @{
 }
 
 $assetByStatus = @{
-  idle = @{ Folder = 'SleepingCat'; FileName = { param($index) "$index`_Sleep.png" } }
-  planning = @{ Folder = 'WinkCat'; FileName = { param($index) "$index`_Wink.png" } }
-  researching = @{ Folder = 'WinkCat'; FileName = { param($index) "$index`_Wink.png" } }
-  building = @{ Folder = 'MoveCat'; FileName = { param($index) "$index.png" } }
-  verifying = @{ Folder = 'Cat'; FileName = { param($index) "$index.png" } }
-  blocked = @{ Folder = 'Cat'; FileName = { param($index) "$index.png" } }
-  syncing = @{ Folder = 'MoveCat'; FileName = { param($index) "$index.png" } }
+  idle = @{ Folder = 'SleepingCat'; SourceRoot = Join-Path $catRushSourceRoot 'SleepingCat'; FileName = { param($index) "$index`_Sleep.png" } }
+  planning = @{ Folder = 'WinkCat'; SourceRoot = Join-Path $catRushSourceRoot 'WinkCat'; FileName = { param($index) "$index`_Wink.png" } }
+  researching = @{ Folder = 'WinkCat'; SourceRoot = Join-Path $catRushSourceRoot 'WinkCat'; FileName = { param($index) "$index`_Wink.png" } }
+  building = @{ Folder = 'RunningCat'; SourceRoot = $runningCatSourceRoot; FileName = { param($index) "$index.png" } }
+  verifying = @{ Folder = 'Cat'; SourceRoot = Join-Path $catRushSourceRoot 'Cat'; FileName = { param($index) "$index.png" } }
+  blocked = @{ Folder = 'Cat'; SourceRoot = Join-Path $catRushSourceRoot 'Cat'; FileName = { param($index) "$index.png" } }
+  syncing = @{ Folder = 'RunningCat'; SourceRoot = $runningCatSourceRoot; FileName = { param($index) "$index.png" } }
 }
 
-if (-not (Test-Path $sourceRoot)) {
-  throw "Source folder not found: $sourceRoot"
+if (-not (Test-Path $catRushSourceRoot)) {
+  throw "CatRush source folder not found: $catRushSourceRoot"
+}
+
+if (-not (Test-Path $runningCatSourceRoot)) {
+  throw "RunningCat source folder not found: $runningCatSourceRoot"
 }
 
 New-Item -ItemType Directory -Path $targetRoot -Force | Out-Null
@@ -36,7 +41,7 @@ foreach ($status in $assetByStatus.Keys) {
   foreach ($characterKey in $indexByCharacterKey.Keys) {
     $index = $indexByCharacterKey[$characterKey]
     $fileName = & $statusConfig.FileName $index
-    $sourceFile = Join-Path (Join-Path $sourceRoot $statusConfig.Folder) $fileName
+    $sourceFile = Join-Path $statusConfig.SourceRoot $fileName
     $targetFile = Join-Path $targetStatusFolder $fileName
 
     if (-not (Test-Path $sourceFile)) {

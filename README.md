@@ -100,22 +100,22 @@ powershell -ExecutionPolicy Bypass -File .\watch-agent-office.ps1
 
 ## CatRush 고양이 이미지 동기화
 
-`C:\CatRush\Assets\Resources\Sprites\Cats` 폴더의 고양이 스프라이트를 웹 프로젝트에 반영하려면 아래 스크립트를 먼저 실행합니다.
+`C:\CatRush\Assets\Resources\Sprites\Cats`와 `C:\Unity\CatRace\Assets\@Sprites\Cat\7. RunningCat`의 고양이 스프라이트를 웹 프로젝트에 반영하려면 아래 스크립트를 먼저 실행합니다.
 
 ```powershell
 cd C:\Users\LIMMM\unity-webgl-wrapper
 powershell -ExecutionPolicy Bypass -File .\sync-catrush-cat-assets.ps1
 ```
 
-이 스크립트는 상태별 폴더에서 중복되지 않는 인덱스 `01`, `04`, `07`, `10`, `13`, `16`을 골라 `public\catrush-cats`로 복사합니다.
+이 스크립트는 상태별 폴더에서 중복되지 않는 인덱스 `01`, `04`, `07`, `10`, `13`, `16`을 골라 `public\catrush-cats`로 복사합니다. `building`, `syncing`, 라운지 배회 중인 에이전트는 `RunningCat`을 사용합니다.
 
 - `idle` → `SleepingCat`
 - `planning` → `WinkCat`
 - `researching` → `WinkCat`
-- `building` → `MoveCat`
+- `building` → `RunningCat`
 - `verifying` → `Cat`
 - `blocked` → `Cat`
-- `syncing` → `MoveCat`
+- `syncing` → `RunningCat`
 
 동기화 후에는 다시 `push-to-agent-office.ps1`를 실행하거나, 위의 `publish-agent-office.ps1`를 사용하면 됩니다.
 
