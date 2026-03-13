@@ -40,7 +40,7 @@ foreach ($status in $assetByStatus.Keys) {
     $targetFile = Join-Path $targetStatusFolder $fileName
 
     if (-not (Test-Path $sourceFile)) {
-      throw "Missing sprite for $characterKey / $status: $sourceFile"
+      throw "Missing sprite for ${characterKey} / ${status}: $sourceFile"
     }
 
     Copy-Item $sourceFile $targetFile -Force
