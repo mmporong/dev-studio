@@ -73,41 +73,23 @@ powershell -ExecutionPolicy Bypass -File .\push-to-agent-office.ps1
 
 ### 2. 필요한 GitHub 설정
 
-소스 저장소에서 `.github/workflows/deploy-pages.yml`을 사용하려면 아래 설정을 사용할 수 있습니다.
+현재 `mmporong/agent-office`는 **소스 저장소이면서 동시에 GitHub Pages 배포 저장소**입니다.
 
-- Repository variable: `PAGES_REPOSITORY`
-  - 값 예시: `your-account/your-pages-repo`
-  - 현재 기본값은 `mmporong/agent-office`
-- Optional repository variable: `PAGES_BASE_PATH`
-  - 값 예시: `/`
-  - 프로젝트 사이트면 `/repo-name/`
-  - 현재 기본값은 `/agent-office/`
-- Optional repository variable: `PAGES_TARGET_FOLDER`
-  - 값 예시: `agent-office`
-  - 별도 Pages 저장소를 루트로 쓸 때는 비워 둔다
-  - 현재 기본값은 비어 있음
-- Repository secret: `PAGES_PUBLISH_TOKEN`
-  - 별도 Pages 저장소에 push 권한이 있는 PAT
+이제는 **별도 PAT 시크릿이 필요 없습니다.**
 
-워크플로는 소스 저장소에서 build를 수행한 뒤, 결과물 `dist/`를 별도 Pages 저장소의 `main` 브랜치에 배포합니다.
+필요한 것은 GitHub 저장소 설정 한 가지입니다.
 
-즉, **지금 상태에서는 `PAGES_PUBLISH_TOKEN`만 준비되면 수동 실행 기준으로 바로 배포 시도**가 가능합니다. 다른 값은 워크플로 기본값으로 이미 들어 있습니다.
+- `Settings > Pages`
+- `Build and deployment`
+- `Source`를 **GitHub Actions**로 설정
 
-추가로 `workflow_dispatch` 수동 실행 시에는 Actions 화면에서 아래 값을 직접 넣어 덮어쓸 수 있습니다.
+그 후 `main`에 push 하거나 `Actions > Deploy GitHub Pages > Run workflow`를 누르면 됩니다.
 
-- `pages_repository`
-- `pages_base_path`
-- `pages_target_folder`
+워크플로는 내부적으로 `npm ci` → `npm run build` → `dist/` 업로드 → GitHub Pages 배포 순서로 실행됩니다.
 
-`PAGES_BASE_PATH`는 사용자/조직 루트 Pages에서는 생략 가능하지만, **프로젝트 Pages 저장소라면 반드시 설정**하는 것이 안전합니다.
+이 저장소는 프로젝트 Pages 저장소이므로, build base 경로는 이미 `/agent-office/`로 고정해 두었습니다.
 
-이 프로젝트는 아래 조합을 기본 배포값으로 잡아 두었습니다.
-
-- `PAGES_REPOSITORY = mmporong/agent-office`
-- `PAGES_TARGET_FOLDER = ''`
-- `PAGES_BASE_PATH = /agent-office/`
-
-이렇게 하면 최종 주소는 `https://mmporong.github.io/agent-office/` 형태가 됩니다.
+배포가 끝나면 최종 주소는 `https://mmporong.github.io/agent-office/` 입니다.
 
 ### 2-1. `public/unity/config.json` 경로 작성 규칙
 
