@@ -16,7 +16,7 @@ import {
   launchBlockers,
   milestones,
   readinessChecks,
-} from './data/catMergeCafe'
+} from './data/meowbeat'
 import {
   chroniclePhases,
   cliAgentGroups,
@@ -417,7 +417,7 @@ function App() {
 
               <section className="briefing-card">
                 <div className="briefing-card__header">
-                  <h2>Cat Merge Cafe 진행</h2>
+                  <h2>MeowBeat 진행</h2>
                   <span className="runtime-badge">{rewardGrantedCount} rewards</span>
                 </div>
                 <div className="milestone-grid">
