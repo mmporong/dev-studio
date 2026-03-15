@@ -1,4 +1,4 @@
-import { createContext, useContext, useMemo, useState, type ReactNode } from 'react'
+import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react'
 import {
   agents as initialAgents,
   upcomingTasks,
@@ -6,6 +6,7 @@ import {
 import {
   readinessChecks,
 } from '../data/meowbeat'
+import { useAgentSync, type SyncMode } from '../hooks/useAgentSync'
 import { useUnityBridge } from '../hooks/useUnityBridge'
 import { usePersistentJournal } from '../hooks/usePersistentJournal'
 import type { AgentStatus, OfficeAgent, OfficeZoneId } from '../types/office'
@@ -105,6 +106,12 @@ interface OfficeContextValue {
   runWorkPulse: () => void
   sendAllIdle: () => void
   blockSelectedAgent: () => void
+  // Sync
+  syncMode: SyncMode
+  setSyncMode: (mode: SyncMode) => void
+  lastSyncTime: string | null
+  syncError: string | null
+  forceSync: () => void
   // Unity bridge
   config: ReturnType<typeof useUnityBridge>['config']
   configAttached: boolean
@@ -137,6 +144,19 @@ export function OfficeProvider({ children }: { children: ReactNode }) {
 
   const bridge = useUnityBridge()
   const journal = usePersistentJournal()
+  const sync = useAgentSync()
+
+  // auto 모드: status.json 데이터로 에이전트 상태 덮어쓰기
+  useEffect(() => {
+    if (sync.syncMode !== 'auto' || !sync.externalState) return
+    setOfficeAgents((current) =>
+      current.map((agent) => {
+        const ext = sync.externalState?.agents[agent.id]
+        if (!ext) return agent
+        return updateAgent(agent, ext.status, `${agent.name}: ${ext.task}`)
+      }),
+    )
+  }, [sync.syncMode, sync.externalState])
 
   const selectedAgent = useMemo(
     () => officeAgents.find((a) => a.id === selectedAgentId) ?? officeAgents[0],
@@ -213,6 +233,9 @@ export function OfficeProvider({ children }: { children: ReactNode }) {
     officeAgents, selectedAgent, selectedAgentId, setSelectedAgentId,
     pulseCount, activeScenarioIndex, activeWorkers,
     runWorkPulse, sendAllIdle, blockSelectedAgent,
+    syncMode: sync.syncMode, setSyncMode: sync.setSyncMode,
+    lastSyncTime: sync.lastSyncTime, syncError: sync.syncError,
+    forceSync: sync.forceSync,
     config: bridge.config, configAttached: bridge.configAttached, configError: bridge.configError,
     emitUnityEvent: bridge.emitUnityEvent, logEntries: bridge.logEntries,
     reloadConfig: bridge.reloadConfig, rewardGrantedCount: bridge.rewardGrantedCount,

@@ -23,6 +23,11 @@ export function OfficePage() {
     runWorkPulse,
     sendAllIdle,
     blockSelectedAgent,
+    syncMode,
+    setSyncMode,
+    lastSyncTime,
+    syncError,
+    forceSync,
     phaseLabel,
     riskLabel,
   } = useOffice()
@@ -58,20 +63,44 @@ export function OfficePage() {
             />
 
             <div className="office__toolbar">
-              <button type="button" className="office__btn" onClick={runWorkPulse}>
-                업무 라운드 진행
-              </button>
-              <button type="button" className="office__btn" onClick={sendAllIdle}>
-                전원 대기 전환
-              </button>
-              <button
-                type="button"
-                className="office__btn office__btn--warn"
-                onClick={blockSelectedAgent}
-                disabled={activeScenarioIndex === null}
-              >
-                선택 에이전트 막힘 재현
-              </button>
+              <div className="office__sync-controls">
+                <button
+                  type="button"
+                  className={`office__btn office__btn--toggle ${syncMode === 'auto' ? 'office__btn--active' : ''}`}
+                  onClick={() => setSyncMode(syncMode === 'auto' ? 'manual' : 'auto')}
+                >
+                  {syncMode === 'auto' ? '자동 동기화' : '수동 모드'}
+                </button>
+                {syncMode === 'auto' && (
+                  <button type="button" className="office__btn office__btn--small" onClick={() => void forceSync()}>
+                    새로고침
+                  </button>
+                )}
+                {lastSyncTime && (
+                  <span className="office__sync-time">마지막 동기화: {lastSyncTime}</span>
+                )}
+                {syncError && (
+                  <span className="office__sync-error">{syncError}</span>
+                )}
+              </div>
+              {syncMode === 'manual' && (
+                <>
+                  <button type="button" className="office__btn" onClick={runWorkPulse}>
+                    업무 라운드 진행
+                  </button>
+                  <button type="button" className="office__btn" onClick={sendAllIdle}>
+                    전원 대기 전환
+                  </button>
+                  <button
+                    type="button"
+                    className="office__btn office__btn--warn"
+                    onClick={blockSelectedAgent}
+                    disabled={activeScenarioIndex === null}
+                  >
+                    선택 에이전트 막힘 재현
+                  </button>
+                </>
+              )}
             </div>
           </div>
 

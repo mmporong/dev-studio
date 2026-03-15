@@ -107,6 +107,39 @@
     font-size: 13px;
   }
 
+  .office__btn--toggle {
+    border-color: #3182f6;
+  }
+
+  .office__btn--active {
+    background: #3182f6;
+    color: #fff;
+    border-color: #3182f6;
+  }
+
+  .office__btn--active:hover:not(:disabled) {
+    background: #1b64da;
+  }
+
+  .office__sync-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-basis: 100%;
+  }
+
+  .office__sync-time {
+    font-size: 13px;
+    color: #8b95a1;
+    margin-left: auto;
+  }
+
+  .office__sync-error {
+    font-size: 13px;
+    color: var(--color-status-blocked);
+    margin-left: auto;
+  }
+
   /* 하단 패널 */
   .office__footer-panels {
     display: grid;
