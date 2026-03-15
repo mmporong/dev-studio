@@ -16,7 +16,7 @@
 
   .chronicle__eyebrow {
     font-family: var(--font-mono);
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--color-accent-primary);
@@ -30,9 +30,9 @@
     align-items: start;
     gap: var(--space-md);
     padding: var(--space-lg);
-    border: 2px solid var(--color-border);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
-    background: var(--color-bg-surface);
+    background: #ffffff;
     box-shadow: var(--shadow-card);
   }
 
@@ -45,9 +45,9 @@
 
   .chronicle__select {
     padding: var(--space-xs) var(--space-sm);
-    border: 2px solid var(--color-border);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-sm);
-    background: var(--color-bg-elevated);
+    background: var(--color-bg-surface);
     color: var(--color-text-primary);
     font-family: var(--font-mono);
     font-size: 0.82rem;
@@ -59,25 +59,28 @@
   }
 
   .chronicle__tag {
-    padding: var(--space-xs) var(--space-sm);
-    border: 2px solid var(--color-border);
-    border-radius: var(--radius-sm);
-    font-size: 0.78rem;
+    padding: var(--space-xs) var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    font-size: 0.82rem;
     font-family: var(--font-mono);
     color: var(--color-text-secondary);
-    background: var(--color-bg-elevated);
-    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    background: var(--color-bg-surface);
+    transition: all 0.2s ease;
 
     &:hover {
+      color: var(--color-accent-primary);
       border-color: var(--color-accent-primary);
+      background: var(--color-bg-recessed);
     }
-
   }
 
   .chronicle__tag--active {
     background: var(--color-accent-primary);
-    color: var(--color-bg-base);
+    color: #ffffff;
     border-color: var(--color-accent-primary);
+    font-weight: 700;
+    transform: scale(1.02);
   }
 
   /* 페이즈 카드 */
@@ -94,10 +97,11 @@
 
   .chronicle__phase-card {
     padding: var(--space-lg);
-    border: 2px solid var(--color-border);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
-    background: var(--color-bg-surface);
+    background: #ffffff;
     box-shadow: var(--shadow-card);
+    overflow-wrap: break-word;
 
     & > p {
       color: var(--color-text-secondary);
@@ -109,8 +113,8 @@
     margin-top: var(--space-md);
     padding: var(--space-md);
     border-radius: var(--radius-sm);
-    border: 2px solid var(--color-border-subtle);
-    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    background: var(--color-bg-surface);
 
     & strong {
       display: block;
@@ -150,9 +154,9 @@
   }
 
   .chronicle__entry {
-    border: 2px solid var(--color-border);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
-    background: var(--color-bg-surface);
+    background: #ffffff;
     box-shadow: var(--shadow-card);
     overflow: hidden;
   }
@@ -165,8 +169,13 @@
     width: 100%;
     padding: var(--space-md) var(--space-lg);
     text-align: left;
-    background: var(--color-bg-elevated);
-    border-bottom: 2px solid var(--color-border-subtle);
+    background: var(--color-bg-surface);
+    border-bottom: 1px solid var(--color-border);
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: var(--color-bg-recessed);
+    }
 
     & h2 {
       margin-top: var(--space-xs);
@@ -177,18 +186,37 @@
       font-weight: 400;
       font-size: 0.9rem;
       margin-top: var(--space-xs);
+      overflow-wrap: break-word;
     }
+  }
+
+  .chronicle__entry-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    flex-shrink: 0;
   }
 
   .chronicle__badge {
     flex-shrink: 0;
     padding: var(--space-xs) var(--space-sm);
-    border: 2px solid var(--color-border);
-    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
     background: var(--color-bg-recessed);
     font-size: 0.78rem;
     font-family: var(--font-mono);
     color: var(--color-text-secondary);
+  }
+
+  .chronicle__expand-icon {
+    display: inline-block;
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    transition: transform 0.3s ease;
+  }
+
+  .chronicle__expand-icon--open {
+    transform: rotate(180deg);
   }
 
   .chronicle__entry-body {
@@ -216,8 +244,9 @@
     & li {
       padding: var(--space-sm) var(--space-md);
       border-radius: var(--radius-sm);
-      border: 2px solid var(--color-border-subtle);
-      background: var(--color-bg-elevated);
+      border: 1px solid var(--color-border);
+      background: var(--color-bg-surface);
+      overflow-wrap: break-word;
 
       & p {
         color: var(--color-text-secondary);
@@ -231,14 +260,14 @@
   .chronicle__sidebar {
     align-self: start;
     position: sticky;
-    top: var(--space-lg);
+    top: calc(var(--space-lg) + 60px);
   }
 
   .chronicle__sidebar-panel {
     padding: var(--space-lg);
-    border: 2px solid var(--color-border);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
-    background: var(--color-bg-surface);
+    background: #ffffff;
     box-shadow: var(--shadow-card);
 
     & > h2 {

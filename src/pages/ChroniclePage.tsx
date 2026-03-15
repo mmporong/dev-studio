@@ -33,7 +33,7 @@ export function ChroniclePage() {
         {/* 헤더 + 필터 */}
         <section className="chronicle__header">
           <div>
-            <p className="chronicle__eyebrow">chronicle research</p>
+            <p className="chronicle__eyebrow">개발 연대기</p>
             <h1>계획 수립과 진행 흐름</h1>
           </div>
           <div className="chronicle__filters">
@@ -106,11 +106,16 @@ export function ChroniclePage() {
                 aria-expanded={expandedId === entry.id}
               >
                 <div>
-                  <p className="chronicle__eyebrow">daily research log</p>
+                  <p className="chronicle__eyebrow">일일 리서치 로그</p>
                   <h2>{entry.date}</h2>
                   <h3>{entry.researchTitle}</h3>
                 </div>
-                <span className="chronicle__badge">{entry.meetingItems.length} meeting notes</span>
+                <div className="chronicle__entry-actions">
+                  <span className="chronicle__badge">{entry.meetingItems.length}개 회의 노트</span>
+                  <span className={`chronicle__expand-icon ${expandedId === entry.id ? 'chronicle__expand-icon--open' : ''}`}>
+                    ▼
+                  </span>
+                </div>
               </button>
 
               {expandedId === entry.id && (

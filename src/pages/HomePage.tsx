@@ -2,16 +2,13 @@ import { useNavigate } from 'react-router-dom'
 import { currentProject } from '../data/agents'
 import { projectSummary, shellStages } from '../data/meowbeat'
 import { useOffice } from '../contexts/OfficeContext'
-import { OfficeMap } from '../components/office/OfficeMap'
 import { useScrollReveal } from '../hooks/useScrollReveal'
+import { withBasePath } from '../utils/publicPath'
 import './HomePage.css'
-
-const assetBaseUrl =
-  'https://raw.githubusercontent.com/ringhyacinth/Star-Office-UI/f29c107e9728a72f2635f10b4e8203b29b37221d/frontend'
 
 export function HomePage() {
   const navigate = useNavigate()
-  const { journalEntries, officeAgents, selectedAgentId, setSelectedAgentId } = useOffice()
+  const { journalEntries, officeAgents } = useOffice()
   const containerRef = useScrollReveal()
   const recentEntries = journalEntries.slice(0, 3)
 
@@ -36,8 +33,8 @@ export function HomePage() {
         </div>
         <div className="home__intro-mascot">
           <img
-            src={`${assetBaseUrl}/guest_anim_1.webp`}
-            alt="Star Office cat mascot"
+            src={withBasePath('catrush-cats/Cat/01.png')}
+            alt="고양이 마스코트"
             className="home__cat-sprite"
           />
         </div>
@@ -47,7 +44,7 @@ export function HomePage() {
       <section className="home__project scroll-reveal">
         <div className="home__project-header">
           <div>
-            <p className="home__eyebrow">current project</p>
+            <p className="home__eyebrow">현재 프로젝트</p>
             <h2>{projectSummary.name}</h2>
             <p className="home__project-tagline">{projectSummary.tagline}</p>
           </div>
@@ -90,10 +87,10 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Agent Office 미니맵 */}
-      <section className="home__minimap scroll-reveal">
-        <div className="home__minimap-header">
-          <h2>Agent Office</h2>
+      {/* 에이전트 상태 요약 */}
+      <section className="home__agent-summary scroll-reveal">
+        <div className="home__agent-summary-header">
+          <h2>에이전트 오피스</h2>
           <button
             type="button"
             className="home__minimap-link"
@@ -102,12 +99,30 @@ export function HomePage() {
             오피스 들여다보기 →
           </button>
         </div>
-        <div className="home__minimap-viewport">
-          <OfficeMap
-            agents={officeAgents}
-            selectedAgentId={selectedAgentId}
-            onSelectAgent={setSelectedAgentId}
-          />
+        <div className="home__agent-grid">
+          {officeAgents.map((agent) => (
+            <article key={agent.id} className="home__agent-card">
+              <img
+                src={withBasePath(`catrush-cats/Cat/${
+                  { ember: '01', leaf: '04', bloom: '07', spark: '10', wave: '13', moon: '16', coral: '19' }[agent.characterKey] ?? '01'
+                }.png`)}
+                alt={agent.name}
+                className="home__agent-avatar"
+              />
+              <div className="home__agent-info">
+                <strong>{agent.name}</strong>
+                <span className={`home__agent-status home__agent-status--${agent.status}`}>
+                  {agent.status === 'idle' ? '대기' :
+                   agent.status === 'building' ? '작업 중' :
+                   agent.status === 'planning' ? '계획 중' :
+                   agent.status === 'researching' ? '조사 중' :
+                   agent.status === 'verifying' ? '검증 중' :
+                   agent.status === 'blocked' ? '막힘' :
+                   agent.status === 'syncing' ? '동기화' : agent.status}
+                </span>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
     </div>

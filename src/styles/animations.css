@@ -63,11 +63,29 @@
 
   /* 카드 hover 공통 */
   .card-hover {
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 
     &:hover {
       transform: translateY(-2px);
       border-color: var(--color-accent-primary);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
     }
+  }
+
+  /* 필터 버튼 트랜지션 */
+  @keyframes filter-pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.04); }
+    100% { transform: scale(1); }
+  }
+
+  /* 펼침/접힘 아이콘 회전 */
+  .expand-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  .expand-icon--open {
+    transform: rotate(180deg);
   }
 }

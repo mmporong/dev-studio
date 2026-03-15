@@ -9,9 +9,6 @@ interface AgentSpriteProps {
   onClick: () => void
 }
 
-const assetBaseUrl =
-  'https://raw.githubusercontent.com/ringhyacinth/Star-Office-UI/f29c107e9728a72f2635f10b4e8203b29b37221d/frontend'
-
 const characterSigilByKey: Record<OfficeAgent['characterKey'], string> = {
   ember: 'FLR',
   leaf: 'MSS',
@@ -32,8 +29,6 @@ const characterTitleByKey: Record<OfficeAgent['characterKey'], string> = {
   coral: 'ink weaver',
 }
 
-const clawCatSpriteUrl = `${assetBaseUrl}/guest_anim_1.webp`
-
 const spriteIndexByCharacterKey: Record<OfficeAgent['characterKey'], string> = {
   ember: '01',
   leaf: '04',
@@ -41,7 +36,7 @@ const spriteIndexByCharacterKey: Record<OfficeAgent['characterKey'], string> = {
   spark: '10',
   wave: '13',
   moon: '16',
-  coral: '02',
+  coral: '19',
 }
 
 type SpriteAsset = { folder: string; fileName: (index: string) => string }
@@ -76,7 +71,7 @@ export function AgentSprite({ agent, selected, running = false, onClick }: Agent
       ...(fallbackAsset
         ? [withBasePath(`catrush-cats/${fallbackAsset.folder}/${fallbackAsset.fileName(spriteIndex)}`)]
         : []),
-      clawCatSpriteUrl,
+      withBasePath(`catrush-cats/Cat/${spriteIndex}.png`),
     ]
   }, [agent.characterKey, agent.status, running])
 

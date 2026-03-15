@@ -16,6 +16,14 @@ const kicks = [
   { name: '냥카페', desc: '고양이 카페 경영 — 가구 배치, 손님, 수익 시스템' },
 ]
 
+const techStack = [
+  { label: 'Unity C#', icon: 'U' },
+  { label: 'React + TypeScript', icon: 'R' },
+  { label: 'Python', icon: 'P' },
+  { label: 'AI Pipeline (Suno)', icon: 'A' },
+  { label: 'WebGL Wrapper', icon: 'W' },
+]
+
 export function ProjectsPage() {
   const containerRef = useScrollReveal()
 
@@ -38,11 +46,12 @@ export function ProjectsPage() {
       <section className="projects__stack scroll-reveal">
         <h2>기술 스택</h2>
         <div className="projects__stack-list">
-          {['Unity C#', 'React + TypeScript', 'Python (beat_extractor)', 'AI Pipeline (Suno)', 'WebGL Wrapper'].map(
-            (tech) => (
-              <span key={tech} className="projects__stack-item">{tech}</span>
-            ),
-          )}
+          {techStack.map((tech) => (
+            <span key={tech.label} className="projects__stack-item">
+              <span className="projects__stack-icon">{tech.icon}</span>
+              {tech.label}
+            </span>
+          ))}
         </div>
       </section>
 
@@ -97,18 +106,6 @@ export function ProjectsPage() {
               <h3>{kick.name}</h3>
               <p>{kick.desc}</p>
             </article>
-          ))}
-        </div>
-      </section>
-
-      {/* 갤러리 */}
-      <section className="projects__gallery scroll-reveal">
-        <h2>갤러리</h2>
-        <div className="projects__gallery-grid">
-          {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="projects__gallery-slot">
-              <span>screenshot {i}</span>
-            </div>
           ))}
         </div>
       </section>

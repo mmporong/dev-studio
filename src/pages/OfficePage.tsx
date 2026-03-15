@@ -23,14 +23,6 @@ export function OfficePage() {
     runWorkPulse,
     sendAllIdle,
     blockSelectedAgent,
-    config,
-    emitUnityEvent,
-    logEntries,
-    reloadConfig,
-    rewardGrantedCount,
-    runtimeReady,
-    sendWrapperCommand,
-    liveReadinessChecks,
     phaseLabel,
     riskLabel,
   } = useOffice()
@@ -48,8 +40,8 @@ export function OfficePage() {
         <section className="office__map-panel">
           <div className="office__map-header">
             <div>
-              <p className="office__eyebrow">Star Office aligned layout</p>
-              <h1>스타 오피스형 픽셀 사무실</h1>
+              <p className="office__eyebrow">스타 오피스 레이아웃</p>
+              <h1>픽셀 사무실</h1>
             </div>
             <div className="office__project-chip">
               <span>현재 프로젝트</span>
@@ -80,31 +72,6 @@ export function OfficePage() {
               >
                 선택 에이전트 막힘 재현
               </button>
-              <button
-                type="button"
-                className="office__btn"
-                onClick={() =>
-                  emitUnityEvent('unity:runtime-ready', {
-                    buildVersion: config?.buildVersion ?? 'mock-build',
-                    saveVersion: 'v1',
-                  })
-                }
-              >
-                runtime-ready 시뮬레이션
-              </button>
-              <button
-                type="button"
-                className="office__btn"
-                onClick={() =>
-                  emitUnityEvent('unity:reward-consumed', {
-                    placement: 'office-preview',
-                    granted: true,
-                    transactionId: `office-${rewardGrantedCount + 1}`,
-                  })
-                }
-              >
-                reward callback
-              </button>
             </div>
           </div>
 
@@ -112,9 +79,6 @@ export function OfficePage() {
             <section className="office__briefing">
               <div className="office__briefing-header">
                 <h2>브리핑 보드</h2>
-                <span className={`office__runtime-badge ${runtimeReady ? 'office__runtime-badge--ready' : ''}`}>
-                  {runtimeReady ? 'runtime ready' : 'runtime waiting'}
-                </span>
               </div>
               <div className="office__contract-grid">
                 {bridgeContracts.slice(0, 4).map((contract) => (
@@ -130,7 +94,6 @@ export function OfficePage() {
             <section className="office__briefing">
               <div className="office__briefing-header">
                 <h2>MeowBeat 진행</h2>
-                <span className="office__runtime-badge">{rewardGrantedCount} rewards</span>
               </div>
               <div className="office__milestone-grid">
                 {milestones.map((milestone) => (
@@ -176,7 +139,7 @@ export function OfficePage() {
             <div className="office__panel-header">
               <div>
                 <p className="office__eyebrow">다음 작업</p>
-                <h2>Task Ticker</h2>
+                <h2>작업 목록</h2>
               </div>
             </div>
             <TaskTicker items={upcomingTasks} />
@@ -185,73 +148,7 @@ export function OfficePage() {
           <section className="office__panel">
             <div className="office__panel-header">
               <div>
-                <p className="office__eyebrow">Wrapper / Build</p>
-                <h2>로컬 실행 상태</h2>
-              </div>
-              <button
-                type="button"
-                className="office__btn office__btn--small"
-                onClick={() => void reloadConfig()}
-              >
-                config reload
-              </button>
-            </div>
-            <dl className="office__config-grid">
-              <div><dt>product</dt><dd>{config?.productName ?? 'missing'}</dd></div>
-              <div><dt>platform</dt><dd>{config?.platform ?? 'missing'}</dd></div>
-              <div><dt>canvas</dt><dd>{config?.canvasId ?? 'missing'}</dd></div>
-              <div><dt>loader</dt><dd>{config?.loaderUrl || 'not set'}</dd></div>
-            </dl>
-            <ul className="office__status-list">
-              {liveReadinessChecks.map((item) => (
-                <li key={item.title} className="office__status-item">
-                  <span className={`office__status-dot office__status-dot--${item.status}`} />
-                  <div>
-                    <strong>{item.title}</strong>
-                    <p>{item.detail}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section className="office__panel">
-            <div className="office__panel-header">
-              <div>
-                <p className="office__eyebrow">Recent office log</p>
-                <h2>브리지 로그</h2>
-              </div>
-              <button
-                type="button"
-                className="office__btn office__btn--small"
-                onClick={() =>
-                  sendWrapperCommand('wrapper:request-save', {
-                    reason: 'office-manual',
-                    slot: 'autosave',
-                  })
-                }
-              >
-                save ping
-              </button>
-            </div>
-            <ul className="office__log-list">
-              {logEntries.map((entry) => (
-                <li key={entry.id} className="office__log-item">
-                  <div className="office__log-meta">
-                    <strong>{entry.name}</strong>
-                    <span>{entry.direction}</span>
-                    <time>{entry.timestamp}</time>
-                  </div>
-                  <p>{entry.detail}</p>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section className="office__panel">
-            <div className="office__panel-header">
-              <div>
-                <p className="office__eyebrow">Cat roster</p>
+                <p className="office__eyebrow">고양이 목록</p>
                 <h2>수집 미리보기</h2>
               </div>
             </div>
@@ -269,7 +166,7 @@ export function OfficePage() {
           <section className="office__panel">
             <div className="office__panel-header">
               <div>
-                <p className="office__eyebrow">Release blockers</p>
+                <p className="office__eyebrow">출시 전 확인사항</p>
                 <h2>주의 포인트</h2>
               </div>
             </div>

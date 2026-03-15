@@ -9,7 +9,7 @@
 
   .projects__eyebrow {
     font-family: var(--font-mono);
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--color-accent-primary);
@@ -23,9 +23,9 @@
     align-items: start;
     gap: var(--space-xl);
     padding: var(--space-2xl) var(--space-xl);
-    border: 2px solid var(--color-border);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
-    background: var(--color-bg-surface);
+    background: #ffffff;
     box-shadow: var(--shadow-card);
   }
 
@@ -59,13 +59,36 @@
   }
 
   .projects__stack-item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
     padding: var(--space-sm) var(--space-md);
-    border: 2px solid var(--color-border);
-    border-radius: var(--radius-md);
-    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: #ffffff;
     font-family: var(--font-mono);
     font-size: 0.85rem;
     color: var(--color-text-secondary);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      border-color: var(--color-accent-primary);
+      box-shadow: var(--shadow-card-sm);
+    }
+  }
+
+  .projects__stack-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--color-accent-primary);
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 800;
+    flex-shrink: 0;
   }
 
   /* 2-column grid */
@@ -90,10 +113,11 @@
 
   .projects__milestone-card {
     padding: var(--space-lg);
-    border: 2px solid var(--color-border);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
-    background: var(--color-bg-surface);
+    background: #ffffff;
     box-shadow: var(--shadow-card);
+    overflow-wrap: break-word;
 
     & p {
       color: var(--color-text-secondary);
@@ -114,10 +138,10 @@
     width: 32px;
     height: 32px;
     flex-shrink: 0;
-    border-radius: var(--radius-sm);
-    border: 2px solid var(--color-border);
-    background: var(--color-bg-recessed);
-    color: var(--color-accent-primary);
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+    background: var(--color-accent-primary);
+    color: #ffffff;
     font-weight: 800;
     font-family: var(--font-mono);
   }
@@ -131,11 +155,11 @@
     & li {
       padding: var(--space-xs) var(--space-sm);
       border: 1px solid var(--color-border);
-      border-radius: var(--radius-sm);
+      border-radius: 999px;
       font-family: var(--font-mono);
       font-size: 0.78rem;
       color: var(--color-accent-secondary);
-      background: var(--color-bg-elevated);
+      background: var(--color-bg-surface);
     }
   }
 
@@ -149,10 +173,11 @@
     display: flex;
     gap: var(--space-md);
     padding: var(--space-md);
-    border: 2px solid var(--color-border);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
-    background: var(--color-bg-surface);
-    transition: border-color 0.2s ease;
+    background: #ffffff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    overflow-wrap: break-word;
 
     & strong {
       display: block;
@@ -164,11 +189,11 @@
       font-size: 0.88rem;
       line-height: 1.5;
     }
-
   }
 
   .projects__roadmap-item--active {
     border-color: var(--color-accent-pop);
+    box-shadow: 0 0 0 1px var(--color-accent-pop);
   }
 
   .projects__roadmap-index {
@@ -178,8 +203,8 @@
     width: 28px;
     height: 28px;
     flex-shrink: 0;
-    border-radius: var(--radius-sm);
-    border: 2px solid var(--color-border);
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
     background: var(--color-bg-recessed);
     color: var(--color-accent-primary);
     font-weight: 800;
@@ -201,9 +226,9 @@
 
   .projects__kick-card {
     padding: var(--space-lg);
-    border: 2px solid var(--color-border);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
-    background: var(--color-bg-surface);
+    background: #ffffff;
     box-shadow: var(--shadow-card);
 
     & p {
@@ -212,32 +237,6 @@
       font-size: 0.9rem;
       line-height: 1.5;
     }
-  }
-
-  /* 갤러리 */
-  .projects__gallery {
-    & > h2 {
-      margin-bottom: var(--space-md);
-    }
-  }
-
-  .projects__gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: var(--space-md);
-  }
-
-  .projects__gallery-slot {
-    aspect-ratio: 16 / 9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px dashed var(--color-border);
-    border-radius: var(--radius-md);
-    background: var(--color-bg-elevated);
-    color: var(--color-text-muted);
-    font-family: var(--font-mono);
-    font-size: 0.82rem;
   }
 
   /* 이벤트 시스템 */
@@ -255,10 +254,11 @@
 
   .projects__event-card {
     padding: var(--space-lg);
-    border: 2px solid var(--color-border);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
-    background: var(--color-bg-surface);
+    background: #ffffff;
     box-shadow: var(--shadow-card);
+    overflow-wrap: break-word;
 
     & h3 { margin-top: var(--space-sm); }
 
@@ -270,6 +270,8 @@
       background: var(--color-bg-recessed);
       font-size: 0.78rem;
       color: var(--color-accent-pop);
+      overflow-wrap: break-word;
+      word-break: break-all;
     }
 
     & p {
@@ -282,11 +284,11 @@
   .projects__event-dir {
     display: inline-block;
     padding: var(--space-xs) var(--space-sm);
-    border-radius: var(--radius-sm);
+    border-radius: 999px;
     font-size: 0.72rem;
     font-family: var(--font-mono);
     border: 1px solid var(--color-border);
-    background: var(--color-bg-elevated);
+    background: var(--color-bg-surface);
     color: var(--color-text-muted);
   }
 
@@ -305,9 +307,9 @@
 
   .projects__collection-card {
     padding: var(--space-lg);
-    border: 2px solid var(--color-border);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
-    background: var(--color-bg-surface);
+    background: #ffffff;
     box-shadow: var(--shadow-card);
 
     & strong {
@@ -325,9 +327,9 @@
   .projects__collection-tier {
     display: inline-block;
     padding: 2px var(--space-sm);
-    border-radius: var(--radius-sm);
+    border-radius: 999px;
     border: 1px solid var(--color-border);
-    background: var(--color-bg-elevated);
+    background: var(--color-bg-surface);
     font-family: var(--font-mono);
     font-size: 0.72rem;
     color: var(--color-accent-primary);
