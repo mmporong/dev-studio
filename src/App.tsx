@@ -56,11 +56,12 @@ type WorkDirective = {
 
 const loungeNoteByAgentId: Record<OfficeAgent['id'], string> = {
   orchestrator: 'Orchestrator: 현재 진행 중인 작업이 없어 라운지에서 전체 흐름을 정리 중',
-  analyst: 'Analyst: 자료 요청이 없어 라운지에서 지표를 훑으며 쉬는 중',
-  designer: 'Designer: 새 화면 요청 전까지 라운지에서 무드보드를 정리 중',
-  executor: 'Executor: 구현 요청이 없어 라운지에서 쉬며 다음 작업을 기다리는 중',
-  'test-engineer': 'Test Engineer: 검증할 빌드가 없어 라운지에서 테스트 메모를 정리 중',
-  'release-ops': 'ReleaseOps: 배포할 변경이 없어 라운지에서 릴리즈 노트를 정리 중',
+  'game-designer': 'Game Designer: 기획 요청이 없어 라운지에서 이코노미 밸런스를 검토 중',
+  developer: 'Developer: 구현 요청이 없어 라운지에서 쉬며 다음 작업을 기다리는 중',
+  'qa-tester': 'QA Tester: 검증할 빌드가 없어 라운지에서 테스트 메모를 정리 중',
+  'content-writer': 'Content Writer: 콘텐츠 요청 전까지 라운지에서 초안을 다듬는 중',
+  devops: 'DevOps: 배포할 변경이 없어 라운지에서 릴리즈 노트를 정리 중',
+  'art-director': 'Art Director: 새 화면 요청 전까지 라운지에서 무드보드를 정리 중',
 }
 
 const workScenarios: WorkDirective[][] = [
@@ -71,43 +72,48 @@ const workScenarios: WorkDirective[][] = [
       note: 'Orchestrator: 오늘 처리할 작업 범위와 우선순위를 잠그는 중',
     },
     {
-      agentId: 'analyst',
+      agentId: 'game-designer',
       status: 'researching',
-      note: 'Analyst: 현재 작업 후보의 리스크와 선행 조건을 점검 중',
+      note: 'Game Designer: 현재 작업 후보의 이코노미와 선행 조건을 점검 중',
     },
     {
-      agentId: 'designer',
+      agentId: 'art-director',
       status: 'planning',
-      note: 'Designer: 구현 전 필요한 화면 흐름과 톤을 정리 중',
+      note: 'Art Director: 구현 전 필요한 화면 흐름과 톤을 정리 중',
     },
   ],
   [
     {
-      agentId: 'executor',
+      agentId: 'developer',
       status: 'building',
-      note: 'Executor: 확정된 요구를 바탕으로 실제 화면과 기능을 구현 중',
+      note: 'Developer: 확정된 요구를 바탕으로 실제 시스템과 기능을 구현 중',
     },
     {
-      agentId: 'designer',
+      agentId: 'art-director',
       status: 'planning',
-      note: 'Designer: 구현 단계에서 필요한 UI 디테일을 보강 중',
+      note: 'Art Director: 구현 단계에서 필요한 스프라이트 스펙을 보강 중',
+    },
+    {
+      agentId: 'content-writer',
+      status: 'researching',
+      note: 'Content Writer: 개발 진행 상황을 데브로그 초안으로 정리 중',
     },
   ],
   [
     {
-      agentId: 'executor',
+      agentId: 'developer',
       status: 'building',
-      note: 'Executor: 마무리 수정과 연결 작업을 이어가는 중',
+      note: 'Developer: 마무리 수정과 연결 작업을 이어가는 중',
     },
     {
-      agentId: 'test-engineer',
+      agentId: 'qa-tester',
       status: 'verifying',
-      note: 'Test Engineer: 방금 나온 결과를 기준으로 회귀와 동작을 검증 중',
+      note: 'QA Tester: 방금 나온 결과를 기준으로 회귀와 동작을 검증 중',
     },
     {
-      agentId: 'release-ops',
+      agentId: 'devops',
       status: 'syncing',
-      note: 'ReleaseOps: 변경 사항을 문서와 배포 흐름에 반영하는 중',
+      note: 'DevOps: 변경 사항을 문서와 배포 흐름에 반영하는 중',
     },
   ],
 ]

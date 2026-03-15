@@ -26,7 +26,7 @@ export interface OfficeAgent {
   lastUpdate: string
   priority: 'low' | 'medium' | 'high'
   energy: number
-  characterKey: 'ember' | 'leaf' | 'wave' | 'spark' | 'moon' | 'bloom'
+  characterKey: 'ember' | 'leaf' | 'wave' | 'spark' | 'moon' | 'bloom' | 'coral'
 }
 
 export interface OfficeZone {

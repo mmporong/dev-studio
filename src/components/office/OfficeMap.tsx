@@ -132,6 +132,7 @@ const loungeSlotOffsets = [
   { left: 164, top: 18, behavior: 'roam', variant: 'b' },
   { left: 32, top: 74, behavior: 'roam', variant: 'c' },
   { left: 118, top: 78, behavior: 'rest' },
+  { left: 80, top: 50, behavior: 'roam', variant: 'a' },
 ] as const
 
 export function OfficeMap({

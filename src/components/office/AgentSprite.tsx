@@ -19,6 +19,7 @@ const characterSigilByKey: Record<OfficeAgent['characterKey'], string> = {
   spark: 'VLT',
   moon: 'NXT',
   bloom: 'LUX',
+  coral: 'INK',
 }
 
 const characterTitleByKey: Record<OfficeAgent['characterKey'], string> = {
@@ -28,6 +29,7 @@ const characterTitleByKey: Record<OfficeAgent['characterKey'], string> = {
   spark: 'volt builder',
   moon: 'night runner',
   bloom: 'lumen stylist',
+  coral: 'ink weaver',
 }
 
 const clawCatSpriteUrl = `${assetBaseUrl}/guest_anim_1.webp`
@@ -39,6 +41,7 @@ const spriteIndexByCharacterKey: Record<OfficeAgent['characterKey'], string> = {
   spark: '10',
   wave: '13',
   moon: '16',
+  coral: '02',
 }
 
 type SpriteAsset = { folder: string; fileName: (index: string) => string }
