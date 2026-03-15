@@ -6,6 +6,7 @@ const navItems = [
   { to: '/chronicle', label: 'Chronicle' },
   { to: '/office', label: 'Office' },
   { to: '/projects', label: 'Projects' },
+  { to: '/architecture', label: 'Architecture' },
 ] as const
 
 export function NavBar() {
