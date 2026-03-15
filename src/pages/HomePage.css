@@ -97,93 +97,6 @@
     text-decoration: underline;
   }
 
-  /* 오피스맵 — 풀와이드, 잘림 없음 */
-  .home__office-map-wrap {
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #f1f3f5;
-  }
-
-  .home__office-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    margin-top: 16px;
-    flex-wrap: wrap;
-  }
-
-  .home__office-stats {
-    display: flex;
-    gap: 24px;
-  }
-
-  .home__office-stat {
-    font-size: 14px;
-    color: #4e5968;
-  }
-
-  .home__office-stat strong {
-    font-size: 20px;
-    font-weight: 700;
-    color: #3182f6;
-    margin-right: 4px;
-  }
-
-  .home__agent-chips {
-    display: flex;
-    gap: 4px;
-    flex-wrap: wrap;
-  }
-
-  .home__agent-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 4px 10px 4px 4px;
-    border-radius: 999px;
-    border: 1px solid #f1f3f5;
-    background: #fff;
-    cursor: pointer;
-    font-size: 13px;
-    color: #4e5968;
-    transition: background 0.15s, border-color 0.15s;
-  }
-
-  .home__agent-chip:hover {
-    background: #f8f9fa;
-  }
-
-  .home__agent-chip--selected {
-    border-color: #3182f6;
-    background: #f0f6ff;
-    color: #191f28;
-    font-weight: 600;
-  }
-
-  .home__agent-chip-img {
-    width: 22px;
-    height: 22px;
-    image-rendering: pixelated;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  .home__agent-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  .home__agent-dot--idle { background: var(--color-status-idle); }
-  .home__agent-dot--building { background: var(--color-status-building); }
-  .home__agent-dot--planning { background: var(--color-status-planning); }
-  .home__agent-dot--researching { background: var(--color-status-researching); }
-  .home__agent-dot--verifying { background: var(--color-status-verifying); }
-  .home__agent-dot--blocked { background: var(--color-status-blocked); }
-  .home__agent-dot--syncing { background: var(--color-status-syncing); }
-
   /* 프로젝트 카드 */
   .home__project-card {
     display: block;
@@ -209,7 +122,6 @@
     justify-content: space-between;
     align-items: start;
     gap: 16px;
-    margin-bottom: 24px;
   }
 
   .home__project-card h3 {
@@ -233,49 +145,47 @@
     color: #8b95a1;
   }
 
-  /* 스테이지 */
-  .home__stages {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
+  /* Playground 미리보기 */
+  .home__playground-preview {
+    display: block;
+    padding: 32px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.15s;
   }
 
-  .home__stage {
+  .home__playground-preview:hover {
+    background: #f1f3f5;
+    text-decoration: none;
+  }
+
+  .home__playground-inner {
     display: flex;
-    align-items: start;
-    gap: 10px;
-    padding: 16px;
-    background: #fff;
-    border-radius: 8px;
-    border-bottom: 2px solid transparent;
-  }
-
-  .home__stage--active {
-    border-bottom-color: #3182f6;
-  }
-
-  .home__stage-num {
-    display: inline-flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
+    gap: 16px;
+  }
+
+  .home__playground-desc {
+    font-size: 15px;
+    color: #4e5968;
+    line-height: 1.5;
+  }
+
+  .home__playground-cta {
     flex-shrink: 0;
-    border-radius: 4px;
+    padding: 10px 20px;
+    border-radius: 8px;
     background: #3182f6;
     color: #fff;
-    font-size: 12px;
-    font-weight: 800;
+    font-size: 14px;
+    font-weight: 600;
   }
 
-  .home__stage strong {
-    display: block;
-    font-size: 13px;
-  }
-
-  .home__stage-desc {
-    font-size: 12px;
-    color: #8b95a1;
+  .home__playground-preview:hover .home__playground-cta {
+    background: #1b64da;
   }
 
   /* 3열 업데이트 그리드 */
@@ -308,12 +218,6 @@
     line-height: 1.5;
   }
 
-  .home__update-card p {
-    font-size: 14px;
-    color: #4e5968;
-    line-height: 1.5;
-  }
-
   /* 반응형 */
   @media (max-width: 768px) {
     .home {
@@ -335,15 +239,6 @@
       margin-top: 40px;
     }
 
-    .home__office-bar {
-      flex-direction: column;
-      align-items: start;
-    }
-
-    .home__stages {
-      grid-template-columns: 1fr;
-    }
-
     .home__update-grid {
       grid-template-columns: 1fr;
     }
@@ -357,15 +252,10 @@
       flex-direction: row;
       gap: 8px;
     }
-  }
 
-  @media (min-width: 769px) and (max-width: 1024px) {
-    .home__update-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .home__stages {
-      grid-template-columns: repeat(2, 1fr);
+    .home__playground-inner {
+      flex-direction: column;
+      text-align: center;
     }
   }
 }

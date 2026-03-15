@@ -1,0 +1,713 @@
+@layer pages {
+  .work {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* 히어로 */
+  .work__hero {
+    padding: 64px 0 48px;
+    border-bottom: 1px solid #f1f3f5;
+  }
+
+  .work__hero h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #191f28;
+  }
+
+  .work__tagline {
+    color: #4e5968;
+    font-size: 16px;
+    margin-top: 8px;
+  }
+
+  .work__tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .work__tech-pill {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: #f1f3f5;
+    font-size: 13px;
+    color: #4e5968;
+  }
+
+  /* 섹션 공통 */
+  .work__section {
+    margin-top: 64px;
+  }
+
+  .work__section > h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #191f28;
+    margin-bottom: 24px;
+  }
+
+  .work__section-desc {
+    color: #4e5968;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  /* 구분선 */
+  .work__divider {
+    margin-top: 64px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .work__divider::before,
+  .work__divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #e5e8eb;
+  }
+
+  .work__divider span {
+    font-size: 16px;
+    font-weight: 700;
+    color: #3182f6;
+    white-space: nowrap;
+  }
+
+  /* 로드맵 */
+  .work__roadmap-list {
+    display: grid;
+    gap: 0;
+  }
+
+  .work__roadmap-item {
+    display: flex;
+    gap: 12px;
+    padding: 20px 0;
+    border-bottom: 1px solid #f1f3f5;
+    overflow-wrap: break-word;
+  }
+
+  .work__roadmap-item:first-child {
+    padding-top: 0;
+  }
+
+  .work__roadmap-item--active {
+    border-bottom-color: #3182f6;
+  }
+
+  .work__roadmap-item strong {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+
+  .work__roadmap-item p {
+    color: #4e5968;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .work__roadmap-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #3182f6;
+    color: #fff;
+    font-weight: 800;
+    font-size: 12px;
+  }
+
+  /* 마일스톤 */
+  .work__milestone-list {
+    display: grid;
+    gap: 0;
+  }
+
+  .work__milestone-item {
+    padding: 24px 0;
+    border-bottom: 1px solid #f1f3f5;
+  }
+
+  .work__milestone-item:first-child {
+    padding-top: 0;
+  }
+
+  .work__milestone-item:hover h3 {
+    text-decoration: underline;
+  }
+
+  .work__milestone-header {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .work__milestone-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #3182f6;
+    color: #fff;
+    font-weight: 800;
+    font-size: 13px;
+  }
+
+  .work__milestone-item p {
+    color: #4e5968;
+    font-size: 14px;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+
+  .work__deliverables {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+  }
+
+  .work__deliverable {
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: #f1f3f5;
+    font-size: 12px;
+    color: #4e5968;
+  }
+
+  /* 킥 그리드 */
+  .work__kick-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .work__kick-card {
+    padding: 24px;
+    background: #f8f9fa;
+    border-radius: 12px;
+  }
+
+  .work__kick-card:hover h3 {
+    text-decoration: underline;
+  }
+
+  .work__kick-card p {
+    color: #4e5968;
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* 문제 카드 */
+  .work__problem-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .work__problem-card {
+    padding: 24px;
+    background: #f8f9fa;
+    border-radius: 12px;
+  }
+
+  .work__problem-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #3182f6;
+    color: #fff;
+    font-weight: 800;
+    font-size: 13px;
+  }
+
+  .work__problem-card h3 {
+    margin-top: 12px;
+    font-size: 16px;
+    color: #191f28;
+  }
+
+  .work__problem-card p {
+    margin-top: 8px;
+    color: #4e5968;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* 전략 */
+  .work__strategy {
+    margin-top: 40px;
+    padding: 32px;
+    background: #f8f9fa;
+    border-radius: 12px;
+  }
+
+  .work__strategy h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #191f28;
+  }
+
+  .work__strategy-desc {
+    margin-top: 12px;
+    color: #4e5968;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .work__code {
+    margin-top: 16px;
+    padding: 20px;
+    border-radius: 8px;
+    background: #1e1e1e;
+    overflow-x: auto;
+  }
+
+  .work__code code {
+    color: #d4d4d4;
+    font-size: 13px;
+    line-height: 1.6;
+    font-family: 'Fira Code', 'Consolas', monospace;
+    white-space: pre;
+  }
+
+  .work__metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .work__metric {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 16px;
+    background: #fff;
+    border-radius: 8px;
+    min-width: 120px;
+  }
+
+  .work__metric-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: #3182f6;
+  }
+
+  .work__metric-label {
+    font-size: 12px;
+    color: #8b95a1;
+    margin-top: 4px;
+  }
+
+  /* Anti-Pattern 규칙 */
+  .work__rules {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0;
+  }
+
+  .work__rule {
+    padding: 14px 16px;
+    border-bottom: 1px solid #f1f3f5;
+    font-size: 14px;
+    color: #191f28;
+    font-family: 'Fira Code', 'Consolas', monospace;
+  }
+
+  .work__rule:last-child {
+    border-bottom: none;
+  }
+
+  /* 4-tier 다이어그램 */
+  .work__tier-diagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .work__tier-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .work__tier-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 20px 32px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 2px solid #e5e8eb;
+    width: 100%;
+    text-align: center;
+  }
+
+  .work__tier-tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 999px;
+    background: #e8f3ff;
+    font-size: 12px;
+    font-weight: 600;
+    color: #3182f6;
+  }
+
+  .work__tier-card strong {
+    font-size: 15px;
+    color: #191f28;
+  }
+
+  .work__tier-desc {
+    font-size: 13px;
+    color: #8b95a1;
+  }
+
+  .work__tier-arrow {
+    padding: 8px 0;
+    font-size: 14px;
+    color: #8b95a1;
+    font-weight: 600;
+  }
+
+  /* 접을 수 있는 기술 상세 */
+  .work__collapse-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: inherit;
+    font: inherit;
+  }
+
+  .work__collapse-toggle h2 {
+    margin-bottom: 0;
+  }
+
+  .work__collapse-toggle:hover h2 {
+    color: #3182f6;
+  }
+
+  .work__collapse-icon {
+    display: inline-block;
+    font-size: 14px;
+    color: #8b95a1;
+    transition: transform 0.3s ease;
+  }
+
+  .work__collapse-icon--open {
+    transform: rotate(180deg);
+  }
+
+  .work__collapse-body {
+    margin-top: 24px;
+  }
+
+  .work__sub-section {
+    margin-top: 32px;
+  }
+
+  .work__sub-section:first-child {
+    margin-top: 0;
+  }
+
+  .work__sub-section h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #191f28;
+    margin-bottom: 16px;
+  }
+
+  /* 이벤트 그리드 */
+  .work__event-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .work__event-card {
+    padding: 24px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    overflow-wrap: break-word;
+  }
+
+  .work__event-card:hover h4 {
+    text-decoration: underline;
+  }
+
+  .work__event-card h4 {
+    margin-top: 8px;
+  }
+
+  .work__event-card code {
+    display: block;
+    margin-top: 8px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    background: #e8f3ff;
+    font-size: 12px;
+    color: #3182f6;
+    word-break: break-all;
+  }
+
+  .work__event-card p {
+    color: #4e5968;
+    margin-top: 8px;
+    font-size: 14px;
+  }
+
+  .work__event-dir {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    background: #f1f3f5;
+    color: #8b95a1;
+    letter-spacing: 0.04em;
+  }
+
+  /* 수집 그리드 */
+  .work__collection-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .work__collection-card {
+    padding: 24px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    text-align: center;
+  }
+
+  .work__collection-card strong {
+    display: block;
+    margin-top: 8px;
+    font-size: 15px;
+  }
+
+  .work__collection-card p {
+    color: #4e5968;
+    margin-top: 4px;
+    font-size: 13px;
+  }
+
+  .work__collection-tier {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 999px;
+    background: #e8f3ff;
+    font-size: 12px;
+    font-weight: 600;
+    color: #3182f6;
+  }
+
+  /* 적용 사례 */
+  .work__case-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .work__case-card {
+    padding: 24px;
+    background: #f8f9fa;
+    border-radius: 12px;
+  }
+
+  .work__case-genre {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 999px;
+    background: #e8f3ff;
+    font-size: 12px;
+    font-weight: 600;
+    color: #3182f6;
+  }
+
+  .work__case-card h3 {
+    margin-top: 8px;
+    font-size: 18px;
+    color: #191f28;
+  }
+
+  .work__case-card ul {
+    margin-top: 12px;
+    padding-left: 20px;
+  }
+
+  .work__case-card li {
+    color: #4e5968;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  /* 결과 */
+  .work__result-list {
+    display: grid;
+    gap: 0;
+  }
+
+  .work__result-item {
+    padding: 20px 0;
+    border-bottom: 1px solid #f1f3f5;
+  }
+
+  .work__result-item:first-child {
+    padding-top: 0;
+  }
+
+  .work__result-item strong {
+    font-size: 15px;
+    color: #191f28;
+  }
+
+  .work__result-item p {
+    margin-top: 6px;
+    color: #4e5968;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* 인사이트 */
+  .work__quote {
+    margin: 0;
+    padding: 24px 32px;
+    background: #f8f9fa;
+    border-left: 4px solid #3182f6;
+    border-radius: 0 12px 12px 0;
+    font-size: 16px;
+    color: #191f28;
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .work__insight-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .work__insight-item {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+  }
+
+  .work__insight-item strong {
+    font-size: 15px;
+    color: #191f28;
+  }
+
+  .work__insight-item p {
+    margin-top: 6px;
+    color: #4e5968;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* 반응형 */
+  @media (max-width: 768px) {
+    .work {
+      padding: 0 16px;
+    }
+
+    .work__hero {
+      padding: 40px 0 32px;
+    }
+
+    .work__hero h1 {
+      font-size: 24px;
+    }
+
+    .work__section {
+      margin-top: 40px;
+    }
+
+    .work__divider {
+      margin-top: 40px;
+    }
+
+    .work__kick-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .work__problem-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .work__strategy {
+      padding: 20px;
+    }
+
+    .work__metrics {
+      flex-direction: column;
+    }
+
+    .work__event-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .work__collection-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .work__case-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .work__insight-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .work__quote {
+      padding: 16px 20px;
+      font-size: 15px;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .work__kick-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .work__problem-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .work__collection-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

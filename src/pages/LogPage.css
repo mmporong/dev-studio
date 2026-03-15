@@ -1,30 +1,75 @@
 @layer pages {
-  .chronicle {
+  .log {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 24px;
   }
 
   /* 헤더 */
-  .chronicle__header {
+  .log__header {
     padding: 64px 0 32px;
     border-bottom: 1px solid #f1f3f5;
   }
 
-  .chronicle__header h1 {
+  .log__header h1 {
     font-size: 30px;
     font-weight: 700;
     color: #191f28;
   }
 
-  .chronicle__subtitle {
+  .log__subtitle {
     font-size: 16px;
     color: #4e5968;
     margin-top: 8px;
   }
 
+  /* 타임라인 스트립 */
+  .log__timeline-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 24px 0;
+    border-bottom: 1px solid #f1f3f5;
+  }
+
+  .log__timeline-item {
+    display: flex;
+    gap: 12px;
+    padding: 16px;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+
+  .log__timeline-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #3182f6;
+    color: #fff;
+    font-weight: 800;
+    font-size: 12px;
+  }
+
+  .log__timeline-item strong {
+    display: block;
+    font-size: 14px;
+    color: #191f28;
+    line-height: 1.4;
+  }
+
+  .log__timeline-item p {
+    color: #4e5968;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-top: 4px;
+  }
+
   /* 필터 */
-  .chronicle__filters {
+  .log__filters {
     display: flex;
     align-items: center;
     gap: 16px;
@@ -32,7 +77,7 @@
     border-bottom: 1px solid #f1f3f5;
   }
 
-  .chronicle__select {
+  .log__select {
     padding: 6px 12px;
     border: 1px solid #e5e8eb;
     border-radius: 4px;
@@ -41,12 +86,12 @@
     font-size: 14px;
   }
 
-  .chronicle__tags {
+  .log__tags {
     display: flex;
     gap: 4px;
   }
 
-  .chronicle__tag {
+  .log__tag {
     padding: 6px 16px;
     border: none;
     border-radius: 999px;
@@ -57,94 +102,33 @@
     transition: color 0.15s;
   }
 
-  .chronicle__tag:hover {
+  .log__tag:hover {
     color: #191f28;
   }
 
-  .chronicle__tag--active {
+  .log__tag--active {
     color: #3182f6;
     font-weight: 600;
   }
 
   /* 섹션 공통 */
-  .chronicle__section {
+  .log__section {
     margin-top: 64px;
   }
 
-  .chronicle__section > h2 {
+  .log__section > h2 {
     font-size: 22px;
     font-weight: 700;
     color: #191f28;
     margin-bottom: 24px;
   }
 
-  /* 페이즈 리스트 — hover underline 제거 (클릭 불가이므로) */
-  .chronicle__phase-list {
-    display: grid;
-    gap: 0;
-  }
-
-  .chronicle__phase-item {
-    padding: 32px 0;
+  /* 저널 엔트리 */
+  .log__entry {
     border-bottom: 1px solid #f1f3f5;
   }
 
-  .chronicle__phase-item:first-child {
-    padding-top: 0;
-  }
-
-  .chronicle__phase-item > p {
-    color: #4e5968;
-    margin-top: 8px;
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
-  .chronicle__phase-detail {
-    margin-top: 16px;
-    padding: 16px;
-    border-radius: 8px;
-    background: #f8f9fa;
-  }
-
-  .chronicle__phase-detail strong {
-    display: block;
-    color: #4e5968;
-    font-size: 13px;
-    margin-bottom: 4px;
-  }
-
-  .chronicle__phase-detail p {
-    color: #4e5968;
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
-  .chronicle__outcomes {
-    display: grid;
-    gap: 8px;
-    margin-top: 16px;
-    padding-left: 16px;
-  }
-
-  .chronicle__outcomes li {
-    list-style: disc;
-    color: #191f28;
-  }
-
-  .chronicle__outcomes li p {
-    color: #4e5968;
-    font-size: 14px;
-    margin-top: 2px;
-    line-height: 1.5;
-  }
-
-  /* 저널 엔트리 — 클릭으로 펼침/접힘 */
-  .chronicle__entry {
-    border-bottom: 1px solid #f1f3f5;
-  }
-
-  .chronicle__entry-header {
+  .log__entry-header {
     display: flex;
     justify-content: space-between;
     align-items: start;
@@ -159,16 +143,16 @@
     font: inherit;
   }
 
-  .chronicle__entry-header:hover .chronicle__entry-title {
+  .log__entry-header:hover .log__entry-title {
     color: #3182f6;
   }
 
-  .chronicle__date {
+  .log__date {
     font-size: 13px;
     color: #8b95a1;
   }
 
-  .chronicle__entry-title {
+  .log__entry-title {
     font-size: 18px;
     font-weight: 600;
     color: #191f28;
@@ -176,11 +160,11 @@
     transition: color 0.15s;
   }
 
-  .chronicle__entry--expanded .chronicle__entry-title {
+  .log__entry--expanded .log__entry-title {
     color: #3182f6;
   }
 
-  .chronicle__entry-actions {
+  .log__entry-actions {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -188,7 +172,7 @@
     padding-top: 4px;
   }
 
-  .chronicle__badge {
+  .log__badge {
     padding: 4px 10px;
     border-radius: 999px;
     background: #f1f3f5;
@@ -196,19 +180,18 @@
     color: #4e5968;
   }
 
-  .chronicle__expand-icon {
+  .log__expand-icon {
     display: inline-block;
     font-size: 11px;
     color: #8b95a1;
     transition: transform 0.3s ease;
   }
 
-  .chronicle__expand-icon--open {
+  .log__expand-icon--open {
     transform: rotate(180deg);
   }
 
-  /* 펼쳐진 본문 — 명시적 색상 지정 */
-  .chronicle__entry-body {
+  .log__entry-body {
     padding: 0 0 32px;
     display: grid;
     gap: 24px;
@@ -216,26 +199,26 @@
     background: #fff;
   }
 
-  .chronicle__detail h3 {
+  .log__detail h3 {
     font-size: 18px;
     font-weight: 600;
     color: #191f28;
     margin-bottom: 8px;
   }
 
-  .chronicle__detail > p {
+  .log__detail > p {
     color: #4e5968;
     font-size: 14px;
     line-height: 1.6;
   }
 
-  .chronicle__items {
+  .log__items {
     display: grid;
     gap: 8px;
     margin-top: 16px;
   }
 
-  .chronicle__items li {
+  .log__items li {
     padding: 12px 16px;
     border-radius: 8px;
     background: #f8f9fa;
@@ -243,66 +226,41 @@
     color: #191f28;
   }
 
-  .chronicle__items li strong {
+  .log__items li strong {
     color: #191f28;
   }
 
-  .chronicle__items li p {
+  .log__items li p {
     color: #4e5968;
     font-size: 14px;
     margin-top: 2px;
     line-height: 1.5;
   }
 
-  /* 데이터 보존 원칙 */
-  .chronicle__rules-section {
-    padding: 48px 0 0;
-    border-top: 1px solid #f1f3f5;
-  }
-
-  .chronicle__rules {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-
-  .chronicle__rules li strong {
-    display: block;
-    font-size: 14px;
-    color: #191f28;
-    margin-bottom: 4px;
-  }
-
-  .chronicle__rules li p {
-    color: #4e5968;
-    font-size: 14px;
-    line-height: 1.5;
-  }
-
   /* 반응형 */
   @media (max-width: 768px) {
-    .chronicle {
+    .log {
       padding: 0 16px;
     }
 
-    .chronicle__header {
+    .log__header {
       padding: 40px 0 24px;
     }
 
-    .chronicle__filters {
+    .log__timeline-strip {
+      grid-template-columns: 1fr;
+    }
+
+    .log__filters {
       flex-direction: column;
       align-items: start;
     }
 
-    .chronicle__tags {
+    .log__tags {
       flex-wrap: wrap;
     }
 
-    .chronicle__rules {
-      grid-template-columns: 1fr;
-    }
-
-    .chronicle__entry-header {
+    .log__entry-header {
       flex-direction: column;
       gap: 8px;
     }

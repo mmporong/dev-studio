@@ -3,10 +3,9 @@ import './NavBar.css'
 
 const navItems = [
   { to: '/', label: 'Home' },
-  { to: '/chronicle', label: 'Chronicle' },
-  { to: '/office', label: 'Office' },
-  { to: '/projects', label: 'Projects' },
-  { to: '/architecture', label: 'Architecture' },
+  { to: '/work', label: 'Work' },
+  { to: '/log', label: 'Log' },
+  { to: '/playground', label: 'Playground' },
 ] as const
 
 export function NavBar() {
