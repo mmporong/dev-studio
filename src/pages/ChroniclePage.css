@@ -30,11 +30,9 @@
     align-items: start;
     gap: var(--space-md);
     padding: var(--space-lg);
-    border: 1px solid var(--color-glass-border);
-    border-radius: var(--radius-lg);
-    background: var(--color-glass);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid #e5e8eb;
+    border-radius: 12px;
+    background: #ffffff;
     box-shadow: var(--shadow-card);
   }
 
@@ -47,9 +45,9 @@
 
   .chronicle__select {
     padding: var(--space-xs) var(--space-sm);
-    border: 1px solid var(--color-border);
+    border: 1px solid #e5e8eb;
     border-radius: var(--radius-sm);
-    background: var(--color-bg-surface);
+    background: #f8f9fa;
     color: var(--color-text-primary);
     font-family: var(--font-mono);
     font-size: 0.82rem;
@@ -62,34 +60,24 @@
 
   .chronicle__tag {
     padding: var(--space-xs) var(--space-md);
-    border: 1px solid var(--color-border);
+    border: 1px solid #e5e8eb;
     border-radius: 999px;
     font-size: 0.82rem;
     font-family: var(--font-mono);
     color: var(--color-text-secondary);
-    background: var(--color-bg-surface);
-    transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    background: #ffffff;
+    transition: color 0.15s, background 0.15s;
 
     &:hover {
-      color: var(--color-accent-primary);
-      border-color: var(--color-accent-primary);
-      background: rgba(232,168,73,0.1);
-      transform: translateY(-2px) scale(1.03);
-    }
-
-    &:active {
-      transform: translateY(0) scale(0.97);
-      transition-duration: 0.1s;
+      background: #f1f3f5;
     }
   }
 
   .chronicle__tag--active {
-    background: var(--gradient-accent);
-    color: var(--color-bg-base);
-    border-color: transparent;
+    background: #3182f6;
+    color: #ffffff;
+    border-color: #3182f6;
     font-weight: 700;
-    transform: scale(1.02);
-    box-shadow: var(--shadow-glow);
   }
 
   /* 페이즈 카드 */
@@ -106,23 +94,15 @@
 
   .chronicle__phase-card {
     padding: var(--space-lg);
-    border: 1px solid var(--color-glass-border);
+    border: 1px solid #e5e8eb;
     border-radius: var(--radius-md);
-    background: var(--color-glass);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: #ffffff;
     box-shadow: var(--shadow-card);
     overflow-wrap: break-word;
-    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
-                box-shadow 0.25s ease,
-                border-color 0.2s ease,
-                background 0.2s ease;
+    transition: box-shadow 0.2s ease;
 
     &:hover {
-      transform: translateY(-4px) scale(1.01);
       box-shadow: var(--shadow-card-hover);
-      border-color: rgba(232,168,73,0.25);
-      background: var(--color-glass-hover);
     }
 
     & > p {
@@ -135,8 +115,8 @@
     margin-top: var(--space-md);
     padding: var(--space-md);
     border-radius: var(--radius-sm);
-    border: 1px solid var(--color-border);
-    background: var(--color-bg-surface);
+    border: 1px solid #e5e8eb;
+    background: #f8f9fa;
 
     & strong {
       display: block;
@@ -176,21 +156,15 @@
   }
 
   .chronicle__entry {
-    border: 1px solid var(--color-glass-border);
+    border: 1px solid #e5e8eb;
     border-radius: var(--radius-md);
-    background: var(--color-glass);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: #ffffff;
     box-shadow: var(--shadow-card);
     overflow: hidden;
-    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
-                box-shadow 0.25s ease,
-                border-color 0.2s ease;
+    transition: box-shadow 0.2s ease;
 
     &:hover {
-      transform: translateY(-4px) scale(1.01);
       box-shadow: var(--shadow-card-hover);
-      border-color: rgba(232,168,73,0.25);
     }
   }
 
@@ -202,12 +176,12 @@
     width: 100%;
     padding: var(--space-md) var(--space-lg);
     text-align: left;
-    background: var(--color-bg-surface);
-    border-bottom: 1px solid var(--color-border);
-    transition: background 0.2s ease;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e5e8eb;
+    transition: background 0.15s;
 
     &:hover {
-      background: var(--color-bg-elevated);
+      background: #f1f3f5;
     }
 
     & h2 {
@@ -233,9 +207,9 @@
   .chronicle__badge {
     flex-shrink: 0;
     padding: var(--space-xs) var(--space-sm);
-    border: 1px solid var(--color-border);
+    border: 1px solid #e5e8eb;
     border-radius: 999px;
-    background: var(--color-bg-recessed);
+    background: #f1f3f5;
     font-size: 0.78rem;
     font-family: var(--font-mono);
     color: var(--color-text-secondary);
@@ -277,8 +251,8 @@
     & li {
       padding: var(--space-sm) var(--space-md);
       border-radius: var(--radius-sm);
-      border: 1px solid var(--color-border);
-      background: var(--color-bg-surface);
+      border: 1px solid #e5e8eb;
+      background: #f8f9fa;
       overflow-wrap: break-word;
 
       & p {
@@ -298,11 +272,9 @@
 
   .chronicle__sidebar-panel {
     padding: var(--space-lg);
-    border: 1px solid var(--color-glass-border);
+    border: 1px solid #e5e8eb;
     border-radius: var(--radius-md);
-    background: var(--color-glass);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: #ffffff;
     box-shadow: var(--shadow-card);
 
     & > h2 {
