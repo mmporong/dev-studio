@@ -1,4 +1,5 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect, useRef } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { chroniclePhases } from '../data/chronicle'
 import { journalMemoryRules } from '../data/operationsJournal'
 import { useOffice } from '../contexts/OfficeContext'
@@ -9,9 +10,12 @@ type CategoryFilter = 'all' | 'research' | 'meeting' | 'decision'
 
 export function ChroniclePage() {
   const { journalEntries } = useOffice()
+  const [searchParams] = useSearchParams()
+  const entryParam = searchParams.get('entry')
   const [categoryFilter, setCategoryFilter] = useState<CategoryFilter>('all')
-  const [expandedId, setExpandedId] = useState<string | null>(null)
+  const [expandedId, setExpandedId] = useState<string | null>(entryParam)
   const containerRef = useScrollReveal()
+  const entryRefs = useRef<Record<string, HTMLElement | null>>({})
 
   const uniqueMonths = useMemo(() => {
     const months = new Set(journalEntries.map((e) => e.date.slice(0, 7)))
@@ -26,6 +30,20 @@ export function ChroniclePage() {
     }
     return entries
   }, [journalEntries, monthFilter])
+
+  // URL 파라미터로 전달된 entry 자동 펼침 + 스크롤
+  useEffect(() => {
+    if (entryParam) {
+      setExpandedId(entryParam)
+      // DOM 렌더 후 스크롤
+      requestAnimationFrame(() => {
+        const el = entryRefs.current[entryParam]
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
+      })
+    }
+  }, [entryParam])
 
   return (
     <div className="chronicle page-enter" ref={containerRef}>
@@ -97,6 +115,7 @@ export function ChroniclePage() {
         {filtered.map((entry) => (
           <article
             key={entry.id}
+            ref={(el) => { entryRefs.current[entry.id] = el }}
             className={`chronicle__entry ${expandedId === entry.id ? 'chronicle__entry--expanded' : ''}`}
           >
             <button

@@ -134,7 +134,7 @@ export function HomePage() {
             <article
               key={entry.id}
               className="home__update-card"
-              onClick={() => navigate('/chronicle')}
+              onClick={() => navigate(`/chronicle?entry=${entry.id}`)}
             >
               <time>{entry.date}</time>
               <h3>{entry.researchTitle}</h3>
