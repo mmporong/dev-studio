@@ -6,7 +6,6 @@ import {
   collectionPreview,
 } from '../data/meowbeat'
 import {
-  pageMeta,
   problems,
   antiPatterns,
   strategies,
@@ -34,9 +33,269 @@ const techStack = [
   { label: 'WebGL Wrapper' },
 ]
 
+const workSections = [
+  { id: 'roadmap', tag: '개발', title: '개발 로드맵', summary: 'Phase 0~3 + Post-Launch 4단계 개발 계획' },
+  { id: 'sprint', tag: '개발', title: '스프린트 진행', summary: '8개 스프린트 코드 구현 현황' },
+  { id: 'kicks', tag: '기획', title: '차별화 킥 5선', summary: '먹이주기, 냥냥합체, AI음악, 냥스타그램, 냥카페' },
+  { id: 'problems', tag: 'AI 아키텍처', title: '문제 정의', summary: 'AI 코딩 도구의 Unity 한계 5가지' },
+  { id: 'strategies', tag: 'AI 아키텍처', title: '해결 전략', summary: 'CLAUDE.md, Assembly Def, SO, ServiceLocator' },
+  { id: 'antipatterns', tag: 'AI 아키텍처', title: 'Anti-Pattern 규칙', summary: 'AI hallucination 차단 DO NOT 10개' },
+  { id: 'tiers', tag: 'AI 아키텍처', title: '4-tier 구조', summary: 'Assembly Definition 레이어 다이어그램' },
+  { id: 'techdetail', tag: '기술', title: '기술 상세', summary: 'Bridge Contracts 6개 + 고양이 수집 시스템' },
+  { id: 'cases', tag: '적용', title: '적용 사례', summary: 'MeowBeat + Cat Merge Cafe 2개 프로젝트' },
+  { id: 'results', tag: '적용', title: '정량적 결과', summary: '6가지 효과 — 컴파일 타임 보호, AI 컨텍스트 자동 전달' },
+  { id: 'insights', tag: '인사이트', title: '핵심 인사이트', summary: 'AI가 좋은 코드를 짜도록 환경을 설계하는 것' },
+]
+
+function SectionDetail({ id }: { id: string }) {
+  switch (id) {
+    case 'roadmap':
+      return (
+        <div className="work__detail-body">
+          <h2>개발 로드맵</h2>
+          <div className="work__roadmap-list">
+            {shellStages.map((stage, i) => (
+              <div
+                key={stage.id}
+                className={`work__roadmap-item ${stage.id === 'loading' ? 'work__roadmap-item--active' : ''}`}
+              >
+                <span className="work__roadmap-num">{i + 1}</span>
+                <div>
+                  <strong>{stage.label} — {stage.headline}</strong>
+                  <p>{stage.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )
+
+    case 'sprint':
+      return (
+        <div className="work__detail-body">
+          <h2>스프린트 진행</h2>
+          <div className="work__milestone-list">
+            {milestones.map((ms, i) => (
+              <article key={ms.title} className="work__milestone-item">
+                <div className="work__milestone-header">
+                  <span className="work__milestone-num">{i + 1}</span>
+                  <h3>{ms.title}</h3>
+                </div>
+                <p>{ms.summary}</p>
+                <div className="work__deliverables">
+                  {ms.deliverables.map((d) => (
+                    <span key={d} className="work__deliverable">{d}</span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      )
+
+    case 'kicks':
+      return (
+        <div className="work__detail-body">
+          <h2>차별화 킥 5선</h2>
+          <div className="work__kick-grid">
+            {kicks.map((kick) => (
+              <article key={kick.name} className="work__kick-card">
+                <h3>{kick.name}</h3>
+                <p>{kick.desc}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      )
+
+    case 'problems':
+      return (
+        <div className="work__detail-body">
+          <h2>문제 정의 — AI 코딩 도구의 Unity 한계</h2>
+          <p className="work__section-desc">
+            AI 코딩 도구를 Unity 개발에 적용하면서 반복적으로 마주친 5가지 문제.
+            공통 원인: AI 도구가 프로젝트의 아키텍처 규칙을 모른다.
+          </p>
+          <div className="work__problem-grid">
+            {problems.map((p) => (
+              <article key={p.num} className="work__problem-card">
+                <span className="work__problem-num">{p.num}</span>
+                <h3>{p.title}</h3>
+                <p>{p.symptom}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      )
+
+    case 'strategies':
+      return (
+        <div className="work__detail-body">
+          <h2>해결 — 4가지 AI 최적화 전략</h2>
+          {strategies.map((s) => (
+            <div key={s.id} className="work__strategy">
+              <h3>{s.title}</h3>
+              <p className="work__strategy-desc">{s.description}</p>
+              <pre className="work__code">
+                <code>{s.code.join('\n')}</code>
+              </pre>
+              <div className="work__metrics">
+                {s.metrics.map((m) => (
+                  <div key={m.label} className="work__metric">
+                    <span className="work__metric-value">{m.value}</span>
+                    <span className="work__metric-label">{m.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      )
+
+    case 'antipatterns':
+      return (
+        <div className="work__detail-body">
+          <h2>Anti-Pattern 규칙 10개</h2>
+          <p className="work__section-desc">AI hallucination 차단을 위한 "DO NOT" 규칙</p>
+          <ul className="work__rules">
+            {antiPatterns.map((rule) => (
+              <li key={rule} className="work__rule">{rule}</li>
+            ))}
+          </ul>
+        </div>
+      )
+
+    case 'tiers':
+      return (
+        <div className="work__detail-body">
+          <h2>Assembly Definition 4-tier 구조</h2>
+          <div className="work__tier-diagram">
+            {tierLayers.map((layer, i) => (
+              <div key={layer.tag} className="work__tier-row">
+                <div className="work__tier-card">
+                  <span className="work__tier-tag">{layer.tag}</span>
+                  <strong>{layer.name}</strong>
+                  <span className="work__tier-desc">{layer.desc}</span>
+                </div>
+                {i < tierLayers.length - 1 && (
+                  <div className="work__tier-arrow">↓ 참조</div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )
+
+    case 'techdetail':
+      return (
+        <div className="work__detail-body">
+          <h2>기술 상세</h2>
+          <div className="work__collapse-body">
+            <div className="work__sub-section">
+              <h3>이벤트 시스템 (Bridge Contracts)</h3>
+              <div className="work__event-grid">
+                {bridgeContracts.map((c) => (
+                  <article key={c.name} className="work__event-card">
+                    <span className="work__event-dir">{c.direction}</span>
+                    <h4>{c.name}</h4>
+                    <code>{c.payload}</code>
+                    <p>{c.purpose}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+            <div className="work__sub-section">
+              <h3>고양이 수집</h3>
+              <div className="work__collection-grid">
+                {collectionPreview.map((cat) => (
+                  <article key={cat.tier} className="work__collection-card">
+                    <span className="work__collection-tier">{cat.tier}</span>
+                    <strong>{cat.name}</strong>
+                    <p>{cat.mood}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+
+    case 'cases':
+      return (
+        <div className="work__detail-body">
+          <h2>실제 적용 — 2개 프로젝트</h2>
+          <div className="work__case-grid">
+            {caseStudies.map((cs) => (
+              <article key={cs.name} className="work__case-card">
+                <span className="work__case-genre">{cs.genre}</span>
+                <h3>{cs.name}</h3>
+                <ul>
+                  {cs.highlights.map((h) => (
+                    <li key={h}>{h}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </div>
+      )
+
+    case 'results':
+      return (
+        <div className="work__detail-body">
+          <h2>결과 — 정량적 효과</h2>
+          <div className="work__result-list">
+            {results.map((r) => (
+              <div key={r.effect} className="work__result-item">
+                <strong>{r.effect}</strong>
+                <p>{r.detail}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )
+
+    case 'insights':
+      return (
+        <div className="work__detail-body">
+          <h2>핵심 인사이트</h2>
+          <blockquote className="work__quote">
+            이 작업의 본질은 "좋은 코드를 짜는 것"이 아니라,
+            AI가 좋은 코드를 짜도록 환경을 설계하는 것이었다.
+          </blockquote>
+          <div className="work__insight-grid">
+            <div className="work__insight-item">
+              <strong>CLAUDE.md</strong>
+              <p>AI에게 "무엇을 하지 말 것"을 알려주는 가드레일</p>
+            </div>
+            <div className="work__insight-item">
+              <strong>Assembly Definition</strong>
+              <p>AI가 규칙을 어겼을 때 컴파일러가 즉시 알려주는 자동 피드백 루프</p>
+            </div>
+            <div className="work__insight-item">
+              <strong>ScriptableObject</strong>
+              <p>AI가 하드코딩 대신 선택할 수 있는 구조화된 대안</p>
+            </div>
+            <div className="work__insight-item">
+              <strong>ServiceLocator</strong>
+              <p>AI가 서비스를 찾을 때 항상 동일한 패턴을 따르게 하는 단일 접근점</p>
+            </div>
+          </div>
+        </div>
+      )
+
+    default:
+      return null
+  }
+}
+
 export function WorkPage() {
   const containerRef = useScrollReveal()
-  const [isTechOpen, setIsTechOpen] = useState(false)
+  const [expandedSection, setExpandedSection] = useState<string | null>(null)
+
+  function handleCardClick(id: string) {
+    setExpandedSection((prev) => (prev === id ? null : id))
+  }
 
   return (
     <div className="work page-enter" ref={containerRef}>
@@ -53,249 +312,32 @@ export function WorkPage() {
         </div>
       </header>
 
-      {/* 개발 로드맵 */}
-      <section className="work__section scroll-reveal">
-        <h2>개발 로드맵</h2>
-        <div className="work__roadmap-list">
-          {shellStages.map((stage, i) => (
-            <div
-              key={stage.id}
-              className={`work__roadmap-item ${stage.id === 'loading' ? 'work__roadmap-item--active' : ''}`}
+      {/* 카드 그리드 */}
+      <div className="work__card-grid">
+        {workSections.map((section) => {
+          const isActive = expandedSection === section.id
+          return (
+            <button
+              key={section.id}
+              type="button"
+              className={`work__card ${isActive ? 'work__card--active' : ''}`}
+              onClick={() => handleCardClick(section.id)}
+              aria-expanded={isActive}
             >
-              <span className="work__roadmap-num">{i + 1}</span>
-              <div>
-                <strong>{stage.label} — {stage.headline}</strong>
-                <p>{stage.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 스프린트 진행 */}
-      <section className="work__section scroll-reveal">
-        <h2>스프린트 진행</h2>
-        <div className="work__milestone-list">
-          {milestones.map((ms, i) => (
-            <article key={ms.title} className="work__milestone-item">
-              <div className="work__milestone-header">
-                <span className="work__milestone-num">{i + 1}</span>
-                <h3>{ms.title}</h3>
-              </div>
-              <p>{ms.summary}</p>
-              <div className="work__deliverables">
-                {ms.deliverables.map((d) => (
-                  <span key={d} className="work__deliverable">{d}</span>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* 킥 5선 */}
-      <section className="work__section scroll-reveal">
-        <h2>차별화 킥 5선</h2>
-        <div className="work__kick-grid">
-          {kicks.map((kick) => (
-            <article key={kick.name} className="work__kick-card">
-              <h3>{kick.name}</h3>
-              <p>{kick.desc}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* 구분선 */}
-      <div className="work__divider scroll-reveal">
-        <span>어떻게 만들었나</span>
+              <span className="work__card-tag">{section.tag}</span>
+              <h3 className="work__card-title">{section.title}</h3>
+              <p className="work__card-summary">{section.summary}</p>
+            </button>
+          )
+        })}
       </div>
 
-      {/* AI 최적화 아키텍처 소개 */}
-      <section className="work__section scroll-reveal">
-        <h2>{pageMeta.title}</h2>
-        <p className="work__section-desc">{pageMeta.subtitle}</p>
-        <p className="work__arch-role">{pageMeta.role}</p>
-        <div className="work__tech">
-          {pageMeta.techStack.map((t) => (
-            <span key={t} className="work__tech-pill">{t}</span>
-          ))}
+      {/* 확장 상세 영역 */}
+      {expandedSection && (
+        <div className="work__detail">
+          <SectionDetail id={expandedSection} />
         </div>
-      </section>
-
-      {/* 문제 정의 */}
-      <section className="work__section scroll-reveal">
-        <h2>문제 정의 — AI 코딩 도구의 Unity 한계</h2>
-        <p className="work__section-desc">
-          AI 코딩 도구를 Unity 개발에 적용하면서 반복적으로 마주친 5가지 문제.
-          공통 원인: AI 도구가 프로젝트의 아키텍처 규칙을 모른다.
-        </p>
-        <div className="work__problem-grid">
-          {problems.map((p) => (
-            <article key={p.num} className="work__problem-card">
-              <span className="work__problem-num">{p.num}</span>
-              <h3>{p.title}</h3>
-              <p>{p.symptom}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* 해결 전략 */}
-      <section className="work__section scroll-reveal">
-        <h2>해결 — 4가지 AI 최적화 전략</h2>
-        {strategies.map((s) => (
-          <div key={s.id} className="work__strategy scroll-reveal">
-            <h3>{s.title}</h3>
-            <p className="work__strategy-desc">{s.description}</p>
-            <pre className="work__code">
-              <code>{s.code.join('\n')}</code>
-            </pre>
-            <div className="work__metrics">
-              {s.metrics.map((m) => (
-                <div key={m.label} className="work__metric">
-                  <span className="work__metric-value">{m.value}</span>
-                  <span className="work__metric-label">{m.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </section>
-
-      {/* Anti-Pattern 규칙 */}
-      <section className="work__section scroll-reveal">
-        <h2>Anti-Pattern 규칙 10개</h2>
-        <p className="work__section-desc">AI hallucination 차단을 위한 "DO NOT" 규칙</p>
-        <ul className="work__rules">
-          {antiPatterns.map((rule) => (
-            <li key={rule} className="work__rule">{rule}</li>
-          ))}
-        </ul>
-      </section>
-
-      {/* 4-tier 다이어그램 */}
-      <section className="work__section scroll-reveal">
-        <h2>Assembly Definition 4-tier 구조</h2>
-        <div className="work__tier-diagram">
-          {tierLayers.map((layer, i) => (
-            <div key={layer.tag} className="work__tier-row">
-              <div className="work__tier-card">
-                <span className="work__tier-tag">{layer.tag}</span>
-                <strong>{layer.name}</strong>
-                <span className="work__tier-desc">{layer.desc}</span>
-              </div>
-              {i < tierLayers.length - 1 && (
-                <div className="work__tier-arrow">↓ 참조</div>
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 기술 상세 (접을 수 있는 영역) */}
-      <section className="work__section scroll-reveal">
-        <button
-          type="button"
-          className="work__collapse-toggle"
-          onClick={() => setIsTechOpen(!isTechOpen)}
-          aria-expanded={isTechOpen}
-        >
-          <h2>기술 상세</h2>
-          <span className={`work__collapse-icon ${isTechOpen ? 'work__collapse-icon--open' : ''}`}>▼</span>
-        </button>
-
-        {isTechOpen && (
-          <div className="work__collapse-body">
-            {/* 이벤트 시스템 */}
-            <div className="work__sub-section">
-              <h3>이벤트 시스템 (Bridge Contracts)</h3>
-              <div className="work__event-grid">
-                {bridgeContracts.map((c) => (
-                  <article key={c.name} className="work__event-card">
-                    <span className="work__event-dir">{c.direction}</span>
-                    <h4>{c.name}</h4>
-                    <code>{c.payload}</code>
-                    <p>{c.purpose}</p>
-                  </article>
-                ))}
-              </div>
-            </div>
-
-            {/* 고양이 수집 */}
-            <div className="work__sub-section">
-              <h3>고양이 수집</h3>
-              <div className="work__collection-grid">
-                {collectionPreview.map((cat) => (
-                  <article key={cat.tier} className="work__collection-card">
-                    <span className="work__collection-tier">{cat.tier}</span>
-                    <strong>{cat.name}</strong>
-                    <p>{cat.mood}</p>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
-      </section>
-
-      {/* 적용 사례 */}
-      <section className="work__section scroll-reveal">
-        <h2>실제 적용 — 2개 프로젝트</h2>
-        <div className="work__case-grid">
-          {caseStudies.map((cs) => (
-            <article key={cs.name} className="work__case-card">
-              <span className="work__case-genre">{cs.genre}</span>
-              <h3>{cs.name}</h3>
-              <ul>
-                {cs.highlights.map((h) => (
-                  <li key={h}>{h}</li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* 결과 */}
-      <section className="work__section scroll-reveal">
-        <h2>결과 — 정량적 효과</h2>
-        <div className="work__result-list">
-          {results.map((r) => (
-            <div key={r.effect} className="work__result-item">
-              <strong>{r.effect}</strong>
-              <p>{r.detail}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 인사이트 */}
-      <section className="work__section work__insight scroll-reveal">
-        <h2>핵심 인사이트</h2>
-        <blockquote className="work__quote">
-          이 작업의 본질은 "좋은 코드를 짜는 것"이 아니라,
-          AI가 좋은 코드를 짜도록 환경을 설계하는 것이었다.
-        </blockquote>
-        <div className="work__insight-grid">
-          <div className="work__insight-item">
-            <strong>CLAUDE.md</strong>
-            <p>AI에게 "무엇을 하지 말 것"을 알려주는 가드레일</p>
-          </div>
-          <div className="work__insight-item">
-            <strong>Assembly Definition</strong>
-            <p>AI가 규칙을 어겼을 때 컴파일러가 즉시 알려주는 자동 피드백 루프</p>
-          </div>
-          <div className="work__insight-item">
-            <strong>ScriptableObject</strong>
-            <p>AI가 하드코딩 대신 선택할 수 있는 구조화된 대안</p>
-          </div>
-          <div className="work__insight-item">
-            <strong>ServiceLocator</strong>
-            <p>AI가 서비스를 찾을 때 항상 동일한 패턴을 따르게 하는 단일 접근점</p>
-          </div>
-        </div>
-      </section>
+      )}
     </div>
   )
 }

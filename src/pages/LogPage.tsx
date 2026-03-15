@@ -15,6 +15,7 @@ export function LogPage() {
   const [expandedId, setExpandedId] = useState<string | null>(entryParam)
   const containerRef = useScrollReveal()
   const entryRefs = useRef<Record<string, HTMLElement | null>>({})
+  const detailRef = useRef<HTMLDivElement | null>(null)
 
   const uniqueMonths = useMemo(() => {
     const months = new Set(journalEntries.map((e) => e.date.slice(0, 7)))
@@ -30,6 +31,11 @@ export function LogPage() {
     return entries
   }, [journalEntries, monthFilter])
 
+  const expandedEntry = useMemo(
+    () => filtered.find((e) => e.id === expandedId) ?? null,
+    [filtered, expandedId]
+  )
+
   useEffect(() => {
     if (entryParam) {
       setExpandedId(entryParam)
@@ -41,6 +47,18 @@ export function LogPage() {
       })
     }
   }, [entryParam])
+
+  useEffect(() => {
+    if (expandedId && detailRef.current) {
+      requestAnimationFrame(() => {
+        detailRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+      })
+    }
+  }, [expandedId])
+
+  function handleCardClick(id: string) {
+    setExpandedId((prev) => (prev === id ? null : id))
+  }
 
   return (
     <div className="log page-enter" ref={containerRef}>
@@ -90,81 +108,80 @@ export function LogPage() {
         </div>
       </div>
 
-      {/* 저널 엔트리 리스트 */}
+      {/* 카드 그리드 */}
       <section className="log__section">
-        <h2>개발 일지</h2>
-        {filtered.map((entry) => (
-          <article
-            key={entry.id}
-            ref={(el) => { entryRefs.current[entry.id] = el }}
-            className={`log__entry ${expandedId === entry.id ? 'log__entry--expanded' : ''}`}
-          >
-            <button
-              type="button"
-              className="log__entry-header"
-              onClick={() => setExpandedId(expandedId === entry.id ? null : entry.id)}
+        <div className="log__card-grid">
+          {filtered.map((entry) => (
+            <article
+              key={entry.id}
+              ref={(el) => { entryRefs.current[entry.id] = el }}
+              className={`log__card ${expandedId === entry.id ? 'log__card--active' : ''}`}
+              onClick={() => handleCardClick(entry.id)}
+              role="button"
+              tabIndex={0}
               aria-expanded={expandedId === entry.id}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleCardClick(entry.id) }}
             >
-              <div>
-                <time className="log__date">{entry.date}</time>
-                <h3 className="log__entry-title">{entry.researchTitle}</h3>
+              <span className="log__card-tag">리서치</span>
+              <h3 className="log__card-title">{entry.researchTitle}</h3>
+              <p className="log__card-desc">{entry.researchSummary}</p>
+              <div className="log__card-meta">
+                <span>{entry.meetingItems.length}개 회의 노트</span>
+                <span>{entry.date}</span>
               </div>
-              <div className="log__entry-actions">
-                <span className="log__badge">{entry.meetingItems.length}개 회의 노트</span>
-                <span className={`log__expand-icon ${expandedId === entry.id ? 'log__expand-icon--open' : ''}`}>
-                  ▼
-                </span>
-              </div>
-            </button>
+            </article>
+          ))}
+        </div>
 
-            {expandedId === entry.id && (
-              <div className="log__entry-body">
-                {(categoryFilter === 'all' || categoryFilter === 'research') && (
-                  <div className="log__detail">
-                    <p>{entry.researchSummary}</p>
-                    <ul className="log__items">
-                      {entry.researchItems.map((item) => (
-                        <li key={item.title}>
-                          <strong>{item.title}</strong>
-                          <p>{item.description}</p>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
+        {/* 확장 상세 영역 */}
+        {expandedEntry && (
+          <div className="log__expanded-detail" ref={detailRef}>
+            <div className="log__entry-body">
+              {(categoryFilter === 'all' || categoryFilter === 'research') && (
+                <div className="log__detail">
+                  <p>{expandedEntry.researchSummary}</p>
+                  <ul className="log__items">
+                    {expandedEntry.researchItems.map((item) => (
+                      <li key={item.title}>
+                        <strong>{item.title}</strong>
+                        <p>{item.description}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
-                {(categoryFilter === 'all' || categoryFilter === 'meeting') && (
-                  <div className="log__detail">
-                    <h3>{entry.meetingTitle}</h3>
-                    <p>{entry.meetingSummary}</p>
-                    <ul className="log__items">
-                      {entry.meetingItems.map((item) => (
-                        <li key={`${entry.date}-${item.speaker}`}>
-                          <strong>{item.speaker}</strong>
-                          <p>{item.note}</p>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
+              {(categoryFilter === 'all' || categoryFilter === 'meeting') && (
+                <div className="log__detail">
+                  <h3>{expandedEntry.meetingTitle}</h3>
+                  <p>{expandedEntry.meetingSummary}</p>
+                  <ul className="log__items">
+                    {expandedEntry.meetingItems.map((item) => (
+                      <li key={`${expandedEntry.date}-${item.speaker}`}>
+                        <strong>{item.speaker}</strong>
+                        <p>{item.note}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
-                {(categoryFilter === 'all' || categoryFilter === 'decision') && (
-                  <div className="log__detail">
-                    <h3>회의 결정</h3>
-                    <ul className="log__items">
-                      {entry.decisions.map((item) => (
-                        <li key={item.title}>
-                          <strong>{item.title}</strong>
-                          <p>{item.description}</p>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-            )}
-          </article>
-        ))}
+              {(categoryFilter === 'all' || categoryFilter === 'decision') && (
+                <div className="log__detail">
+                  <h3>회의 결정</h3>
+                  <ul className="log__items">
+                    {expandedEntry.decisions.map((item) => (
+                      <li key={item.title}>
+                        <strong>{item.title}</strong>
+                        <p>{item.description}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
       </section>
     </div>
   )
