@@ -145,47 +145,11 @@
     color: #8b95a1;
   }
 
-  /* Playground 미리보기 */
-  .home__playground-preview {
-    display: block;
-    padding: 32px;
-    background: #f8f9fa;
+  /* 오피스맵 */
+  .home__office-map-wrap {
     border-radius: 12px;
-    text-decoration: none;
-    color: inherit;
-    transition: background 0.15s;
-  }
-
-  .home__playground-preview:hover {
-    background: #f1f3f5;
-    text-decoration: none;
-  }
-
-  .home__playground-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .home__playground-desc {
-    font-size: 15px;
-    color: #4e5968;
-    line-height: 1.5;
-  }
-
-  .home__playground-cta {
-    flex-shrink: 0;
-    padding: 10px 20px;
-    border-radius: 8px;
-    background: #3182f6;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-  }
-
-  .home__playground-preview:hover .home__playground-cta {
-    background: #1b64da;
+    overflow: hidden;
+    border: 1px solid #f1f3f5;
   }
 
   /* 3열 업데이트 그리드 */

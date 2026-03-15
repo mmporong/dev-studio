@@ -2,12 +2,18 @@ import { useNavigate, Link } from 'react-router-dom'
 import { projectSummary } from '../data/meowbeat'
 import { useOffice } from '../contexts/OfficeContext'
 import { useScrollReveal } from '../hooks/useScrollReveal'
+import { OfficeMap } from '../components/office/OfficeMap'
 import { withBasePath } from '../utils/publicPath'
 import './HomePage.css'
 
 export function HomePage() {
   const navigate = useNavigate()
-  const { journalEntries } = useOffice()
+  const {
+    journalEntries,
+    officeAgents,
+    selectedAgentId,
+    setSelectedAgentId,
+  } = useOffice()
   const containerRef = useScrollReveal()
   const recentEntries = journalEntries.slice(0, 3)
 
@@ -30,6 +36,23 @@ export function HomePage() {
         </div>
       </section>
 
+      {/* 에이전트 오피스 */}
+      <section className="home__section scroll-reveal">
+        <div className="home__section-header">
+          <h2>에이전트 오피스</h2>
+          <Link to="/playground" className="home__link-btn">
+            Playground 전체보기 →
+          </Link>
+        </div>
+        <div className="home__office-map-wrap">
+          <OfficeMap
+            agents={officeAgents}
+            selectedAgentId={selectedAgentId}
+            onSelectAgent={setSelectedAgentId}
+          />
+        </div>
+      </section>
+
       {/* 현재 프로젝트 */}
       <section className="home__section scroll-reveal">
         <div className="home__section-header">
@@ -48,22 +71,6 @@ export function HomePage() {
               <span>{projectSummary.platform}</span>
               <span>{projectSummary.build}</span>
             </div>
-          </div>
-        </Link>
-      </section>
-
-      {/* Playground 미리보기 */}
-      <section className="home__section scroll-reveal">
-        <div className="home__section-header">
-          <h2>에이전트 오피스</h2>
-          <Link to="/playground" className="home__link-btn">
-            Playground에서 체험 →
-          </Link>
-        </div>
-        <Link to="/playground" className="home__playground-preview">
-          <div className="home__playground-inner">
-            <p className="home__playground-desc">7명의 AI 에이전트가 일하는 픽셀 사무실을 체험해보세요</p>
-            <span className="home__playground-cta">Playground 열기 →</span>
           </div>
         </Link>
       </section>

@@ -6,6 +6,7 @@ import {
   collectionPreview,
 } from '../data/meowbeat'
 import {
+  pageMeta,
   problems,
   antiPatterns,
   strategies,
@@ -109,6 +110,18 @@ export function WorkPage() {
       <div className="work__divider scroll-reveal">
         <span>어떻게 만들었나</span>
       </div>
+
+      {/* AI 최적화 아키텍처 소개 */}
+      <section className="work__section scroll-reveal">
+        <h2>{pageMeta.title}</h2>
+        <p className="work__section-desc">{pageMeta.subtitle}</p>
+        <p className="work__arch-role">{pageMeta.role}</p>
+        <div className="work__tech">
+          {pageMeta.techStack.map((t) => (
+            <span key={t} className="work__tech-pill">{t}</span>
+          ))}
+        </div>
+      </section>
 
       {/* 문제 정의 */}
       <section className="work__section scroll-reveal">
