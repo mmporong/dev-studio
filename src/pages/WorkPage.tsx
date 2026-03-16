@@ -14,6 +14,8 @@ import {
   tierLayers,
 } from '../data/aiArchitecture'
 import { useState } from 'react'
+import { NumLinkWorkContent } from './NumLinkWorkContent'
+import { projects } from '../data/projects'
 import './WorkPage.css'
 
 const kicks = [
@@ -272,11 +274,11 @@ function SectionDetail({ id }: { id: string }) {
   }
 }
 
-export function WorkPage() {
+function MeowBeatWorkContent() {
   const [activeSection, setActiveSection] = useState('roadmap')
 
   return (
-    <div className="work page-enter">
+    <>
       {/* 프로젝트 Hero */}
       <header className="work__hero">
         <h1>{projectSummary.name}</h1>
@@ -309,6 +311,32 @@ export function WorkPage() {
           <SectionDetail id={activeSection} />
         </div>
       </div>
+    </>
+  )
+}
+
+export function WorkPage() {
+  const [activeProjectId, setActiveProjectId] = useState('meowbeat')
+
+  return (
+    <div className="work page-enter">
+      {/* 프로젝트 탭 */}
+      <div className="work__project-tabs">
+        {projects.map((p) => (
+          <button
+            key={p.id}
+            type="button"
+            className={`work__project-tab ${activeProjectId === p.id ? 'work__project-tab--active' : ''}`}
+            onClick={() => setActiveProjectId(p.id)}
+            style={{ '--tab-accent': p.accent } as React.CSSProperties}
+          >
+            {p.name}
+          </button>
+        ))}
+      </div>
+
+      {activeProjectId === 'meowbeat' && <MeowBeatWorkContent />}
+      {activeProjectId === 'numlink' && <NumLinkWorkContent />}
     </div>
   )
 }

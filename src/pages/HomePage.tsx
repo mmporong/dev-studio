@@ -1,5 +1,5 @@
 import { useNavigate, Link } from 'react-router-dom'
-import { projectSummary } from '../data/meowbeat'
+import { projects } from '../data/projects'
 import { useOffice } from '../contexts/OfficeContext'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { OfficeMap } from '../components/office/OfficeMap'
@@ -61,18 +61,22 @@ export function HomePage() {
             프로젝트 상세 →
           </Link>
         </div>
-        <Link to="/work" className="home__project-card">
-          <div className="home__project-top">
-            <div>
-              <h3>{projectSummary.name}</h3>
-              <p className="home__project-tagline">{projectSummary.tagline}</p>
-            </div>
-            <div className="home__project-meta">
-              <span>{projectSummary.platform}</span>
-              <span>{projectSummary.build}</span>
-            </div>
-          </div>
-        </Link>
+        <div className="home__project-list">
+          {projects.map((project) => (
+            <Link key={project.id} to="/work" className="home__project-card">
+              <div className="home__project-top">
+                <div>
+                  <h3>{project.name}</h3>
+                  <p className="home__project-tagline">{project.tagline}</p>
+                </div>
+                <div className="home__project-meta">
+                  <span>{project.platform}</span>
+                  <span>{project.phase}</span>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
       </section>
 
       {/* 최근 업데이트 */}

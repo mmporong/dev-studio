@@ -132,10 +132,12 @@ export const agents: OfficeAgent[] = [
   },
 ]
 
+import { projects } from './projects'
+
 export const currentProject = {
-  name: 'MeowBeat (냥비트)',
-  phase: 'Phase 2 — 에셋/UI 연결 단계',
-  risk: 'Suno Pro 곡 생성과 AI 아트 생성이 Owner 액션으로 대기 중',
+  name: projects[0]?.name ?? 'LIM Studio',
+  phase: projects[0]?.phase ?? '',
+  risk: projects[0]?.risk ?? '',
 }
 
 export const todayGoals = [

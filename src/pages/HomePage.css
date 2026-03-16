@@ -97,6 +97,13 @@
     text-decoration: underline;
   }
 
+  /* 프로젝트 리스트 */
+  .home__project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
   /* 프로젝트 카드 */
   .home__project-card {
     display: block;
