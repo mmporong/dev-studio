@@ -77,62 +77,87 @@ export const seedJournalEntries: JournalEntry[] = [
     ],
     meetingTitle: '게임 반복 생성 프로세스 정의 회의',
     meetingSummary:
-      '7개 에이전트가 기존 템플릿 자산을 점검하고, "템플릿 복사→CLAUDE.md 특화→AI 스프린트→프로토타입→검증→출시" 프로세스를 확정했다. mcp-unity 도입, 차기작 후보, 재사용 모듈 확장 방향을 결정했다.',
+      '_ProjectTemplate의 실제 자산(18개 C# 스크립트, 4-tier Assembly Definition)을 점검하고, MeowBeat과 Cat Merge Cafe 2회 적용 경험을 바탕으로 "2~3주/게임" 반복 생산 프로세스를 정의했다. 템플릿 코드 4대 수정, 2-레이어 CLAUDE.md 구조, 재사용 모듈 3종 추출, 차기작 "Cat Stack"을 확정했다.',
     meetingItems: [
       {
         speaker: 'Orchestrator',
-        note: '오늘 회의의 목표는 "게임 팩토리" 프로세스를 확정하는 것이다. 템플릿 현황 점검 → 프로세스 정의 → 차기작 후보 순서로 진행한다.',
-      },
-      {
-        speaker: 'Game Designer',
-        note: '차기작 후보로 ① 캐주얼 퍼즐(머지 변형), ② 방치형 시뮬레이션, ③ 미니게임 컬렉션을 제안한다. 머지 장르가 YoY +80% 성장 중이므로 MeowBeat의 머지 모듈을 재활용하는 방향이 ROI가 높다.',
+        note: '_ProjectTemplate에 ServiceLocator, GameBootstrapper, EventBus 등 18개 C# 스크립트와 CLAUDE.md 52줄/AGENTS.md 27줄이 있다. 리서치에 따르면 1인 AI 게임 팩토리는 2~4주/게임이 현실적. 이 사이클을 2주 이하로 단축하는 방안을 논의한다.',
       },
       {
         speaker: 'Developer',
-        note: 'mcp-unity를 템플릿에 사전 설치하면 코드→씬 설정까지 AI가 처리하는 완전 자동화가 가능하다. 현재 4-tier Assembly Def 구조는 유지하되, 공통 패키지(SaveLoad, EventBus, UI Framework)를 UPM 사설 레지스트리로 분리해 게임 간 의존성을 깔끔하게 관리하자.',
+        note: '템플릿 코드를 직접 분석한 결과 4가지 문제를 발견했다. (1) ServiceLocator에 Unregister<T>() 메서드 부재로 핫스왑 불가, (2) MCPBridge가 FindAnyObjectByType을 사용해 CLAUDE.md 자체 규칙 위반, (3) GameBootstrapper의 RegisterServices()가 비어있어 매 게임마다 상속 필요, (4) Cat Merge Cafe 적용 시 폴더 구조가 달라 수동 매핑이 필요했음. 이 네 가지를 먼저 수정해야 반복 생산 마찰이 줄어든다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: 'Developer 분석에 동의한다. MeowBeat에서 만든 MergeManager와 CafeManager는 장르 독립적인 "그리드 기반 머지" 로직이다. 재사용 모듈 후보 3가지: (1) MergeSystem — 아이템 등급 SO + 머지 판정, (2) CollectionSystem — 도감 달성률 추적, (3) CurrencySystem — 재화 관리. 머지 장르 YoY +80% 성장이니 머지 모듈을 템플릿에 넣으면 트렌드를 바로 탈 수 있다.',
       },
       {
         speaker: 'QA Tester',
-        note: 'WebGL 빌드 자동 테스트를 CI에 포함시켜야 한다. Unity Test Framework + GitHub Actions로 빌드 성공/실패를 자동 검증하고, iOS Safari 이슈는 BrowserStack으로 크로스 브라우저 체크를 추가하자.',
+        note: 'Game Designer의 모듈 추출에 찬성하되, 현재 템플릿에 테스트가 0개라는 점을 지적한다. _Game.Domain asmdef이 순수 C#이라 NUnit 테스트를 바로 붙일 수 있는 구조인데 활용을 안 하고 있다. 반복 생산에서 가장 위험한 건 "공유 모듈이 새 게임에서 깨지는 것"이다. _Game.Domain.Tests asmdef + 기본 테스트 5~10개를 템플릿에 포함시키자.',
       },
       {
-        speaker: 'Content Writer',
-        note: '각 게임의 개발 과정을 데브로그로 기록하면 itch.io SEO + 커뮤니티 형성에 유리하다. "AI가 게임 만드는 타임랩스" 포맷의 TikTok/Shorts 영상은 개발자와 게이머 양쪽에 어필 가능한 틈새다.',
+        speaker: 'Developer',
+        note: 'QA Tester 제안에 강하게 동의한다. 추가로 mcp-unity를 통합하면 MCPBridge를 확장해서 씬 하이어라키 조회, 프리팹 인스턴스화, SO 에셋 생성을 Claude Code에서 직접 수행할 수 있다. Claude Code가 개발자 선호 1위(46%)라는 리서치 결과를 감안하면, mcp-unity 연결로 "코드 작성→Unity 테스트" 컨텍스트 스위칭을 제거하는 게 사이클 단축의 핵심이다.',
       },
       {
         speaker: 'DevOps',
-        note: 'GitHub Template → "Use this template" → Actions CI/CD 자동 설정까지 원클릭 파이프라인을 구축하자. WebGL 빌드 → itch.io 자동 배포(butler CLI)까지 포함하면 게임당 배포 오버헤드가 거의 0이 된다.',
+        note: 'Developer의 mcp-unity와 연결해서 CI/CD를 논의한다. 표준 파이프라인 제안: (1) GitHub Template Repository 등록으로 원클릭 복제, (2) .github/workflows/build-webgl.yml — GameCI 기반 Unity WebGL 빌드, (3) 빌드 완료 시 itch.io 자동 배포(butler CLI). itch.io WebGL이 37% 전환율이니 WebGL 빌드-배포 자동화가 최우선이다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'DevOps의 자동 배포와 연결해서 마케팅도 템플릿화해야 한다. DEVLOG_TEMPLATE.md로 개발 과정 자동 기록, itch.io 페이지 템플릿 표준화, 게임 출시 시 Agent Office 대시보드에 카드 자동 추가. 새 게임 출시 = 포트폴리오 자동 업데이트까지 연결하면 "AI 1인 스튜디오" 내러티브가 자동 축적된다.',
       },
       {
         speaker: 'Art Director',
-        note: '에셋 파이프라인에서 AI 아트(Midjourney/DALL-E)를 큐레이션하는 "AI Art Director" 역할이 핵심이다. 게임별 스타일 가이드를 ScriptableObject로 정의하고, 생성된 에셋의 컬러/톤 일관성을 자동 검증하는 프리프로세서를 템플릿에 포함시키자.',
+        note: '에셋 파이프라인 표준화가 필요하다. (1) AI 아트 생성물을 표준 폴더로 자동 정리하는 에디터 스크립트, (2) ThemeConfig.cs의 5개 색상 변수를 SO 프리셋으로 확장해 게임별 테마 교체를 원클릭화, (3) 스프라이트 네이밍 규칙 {category}_{name}_{grade}_{variant}.png 표준 적용. 단, "AI 전형적 디자인(민트+다크) 금지" 원칙은 ThemeConfig 프리셋에서도 배제한다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'CLAUDE.md 안티패턴 누적이 복리 효과를 낸다는 리서치가 있었다. 현재 _ProjectTemplate CLAUDE.md에 9개 금지 규칙이 있는데, Cat Merge Cafe에서는 일부가 누락됐다. 템플릿 CLAUDE.md를 fork하지 말고, 공통 규칙은 상속하고 게임별 추가 규칙만 append하는 구조가 필요하다.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'QA Tester의 CLAUDE.md 상속 질문에 답하면, Claude Code는 프로젝트 루트와 상위 디렉토리의 CLAUDE.md를 모두 읽는다. 템플릿 CLAUDE.md는 아키텍처 공통 규칙만, 각 게임은 .claude/CLAUDE.md에 게임 특화 규칙만 작성하면 된다. Cat Merge Cafe가 이미 이 패턴을 쓰고 있으니 표준으로 확정하면 된다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '차기작 관련 보완한다. 첫 팩토리 사이클은 프로세스 검증이 목적이니 기존 고양이 에셋 70%+ 재활용 가능한 "Cat Stack" 물리 퍼즐을 제안한다. 고양이 쌓기+목표 높이 달성+3 스테이지. 목표 2주. 머지+아이들 하이브리드는 2번째 사이클로 보류한다.',
+      },
+      {
+        speaker: 'Orchestrator',
+        note: '논의를 종합한다. 프로세스 6단계: (1) Template Fork — "Use this template" 원클릭, (2) Design Sprint — 1~2일, GDD + CLAUDE.md 게임 레이어, (3) Dev Sprint — 7~10일, mcp-unity + Claude Code, (4) Art/Audio Sprint — Dev와 병렬, AI 아트 + Suno, (5) QA + Polish — 2~3일, (6) Deploy — 1일, GameCI + itch.io. 총 사이클: 2~3주.',
       },
     ],
     decisions: [
       {
-        title: '게임 팩토리 6단계 프로세스 확정',
+        title: '템플릿 코드 4대 수정 우선 실행',
         description:
-          'GitHub Template 복사(1분) → CLAUDE.md 게임별 특화(5분) → Claude Code+mcp-unity 코어 게임플레이 개발 → Suno 3rd-party API 배경음악 생성 → WebGL 빌드+itch.io 배포 → 다음 게임 반복.',
+          '(1) ServiceLocator에 Unregister<T>() 추가, (2) MCPBridge의 FindAnyObjectByType을 ServiceLocator.Get으로 교체, (3) _Game.Domain.Tests asmdef + 기본 단위 테스트 5~10개 추가, (4) GameBootstrapper에 서비스 등록 예제 코드 제공. 차기작 시작 전 완료.',
       },
       {
-        title: 'mcp-unity 템플릿 사전 설치',
+        title: '2-레이어 CLAUDE.md 표준 확정',
         description:
-          'C:/Unity/_ProjectTemplate/에 mcp-unity를 기본 포함시켜 모든 신규 게임에서 Claude Code가 Unity Editor를 직접 조작할 수 있게 한다.',
+          '템플릿 루트 CLAUDE.md는 아키텍처 공통 규칙(금지 패턴 9개, 네이밍 컨벤션)을 유지하고, 각 게임은 .claude/CLAUDE.md에 게임 특화 규칙만 작성한다. 게임별 안티패턴 발견 시 공통 CLAUDE.md에 역전파한다.',
       },
       {
-        title: '공통 모듈 UPM 분리',
+        title: 'GitHub Template + CI/CD 파이프라인 구축',
         description:
-          'SaveLoad, EventBus, UI Framework, ServiceLocator를 UPM 사설 레지스트리로 분리해 게임 간 코드 중복을 제거하고 독립 업데이트를 가능하게 한다.',
+          '_ProjectTemplate을 GitHub Template Repository로 등록. .github/workflows/build-webgl.yml(GameCI)과 itch.io 자동 배포(butler CLI)를 템플릿에 포함. "Use this template" 원클릭으로 전체 인프라가 즉시 가동.',
       },
       {
-        title: '차기작: MeowBeat 머지 모듈 재활용 게임 우선',
+        title: '재사용 모듈 3종 추출 로드맵',
         description:
-          '머지 장르 +80% YoY 성장세를 활용해, MeowBeat의 MergeManager 코드를 재활용하는 머지 변형 게임을 차기작 1순위로 검토한다.',
+          '1순위: CurrencySystem(재화 관리), 2순위: CollectionSystem(도감/달성률), 3순위: MergeSystem(머지 전용). 각 모듈은 _Game.Domain에 인터페이스, _Game.Core에 기본 구현체를 둔다.',
       },
       {
-        title: '배포 파이프라인 자동화',
+        title: '차기작 "Cat Stack" 하이퍼캐주얼 물리 퍼즐',
         description:
-          'GitHub Actions + itch.io butler CLI로 WebGL 빌드→배포를 자동화하고, 게임당 배포 오버헤드를 최소화한다.',
+          '첫 팩토리 사이클은 프로세스 검증 목적. 기존 고양이 에셋 70%+ 재활용 가능한 물리 퍼즐(고양이 쌓기+목표 높이+3 스테이지). 목표 2주. 머지+아이들 하이브리드는 2번째 사이클로 보류.',
+      },
+      {
+        title: 'AI 에셋 파이프라인 표준화',
+        description:
+          'AI 아트 자동 정리 에디터 스크립트, ThemeConfig SO 프리셋 교체로 전체 UI 스타일 변경, 스프라이트 네이밍 규칙 표준화. Suno 오디오는 게임별 BGM 3곡+SFX 10개를 기본 예산으로 책정.',
       },
     ],
   },
@@ -176,62 +201,87 @@ export const seedJournalEntries: JournalEntry[] = [
     ],
     meetingTitle: '전체 에이전트 비전 공유 회의',
     meetingSummary:
-      '7개 에이전트가 시장/기술/마케팅 리서치 결과를 공유하고, MeowBeat Phase 3 우선순위·마케팅 방향·포트폴리오 전략·차기작 로드맵을 논의해 핵심 결정 5건을 도출했다.',
+      'Phase 2 코드 완료 상태에서 3축 리서치를 공유하고, 머지+리듬 결합이 블루오션임을 확인했다. Phase 3의 6개 런치 블로커(Suno 곡, AI 아트, 프리팹 배치, 머지 UI, 포토 앨범 UI, Android 빌드)를 3주 내 해소하는 로드맵과 itch.io WebGL 데모 선행 배포, TikTok 투-트랙 마케팅 전략이 합의되었다.',
     meetingItems: [
       {
         speaker: 'Orchestrator',
-        note: '3개 축 리서치가 모두 동일한 결론을 가리킨다. 머지+리듬+고양이는 블루오션이며, WebGL+itch.io 배포와 TikTok 데브로그가 최소 비용 UA 전략이다. Phase 3를 이 방향으로 집중 실행한다.',
+        note: 'MeowBeat는 Phase 2 코드 완료 상태이고 6개 런치 블로커가 남아있다. Developer와 Art Director가 priority: high로 대기 중. 3축 리서치 결과를 바탕으로 Phase 3 우선순위를 확정하고, Post-Launch와 차기작 방향까지 논의한다.',
       },
       {
         speaker: 'Game Designer',
-        note: '머지 장르 +80% 성장과 리듬게임 CAGR 8~15%가 교차하는 지점에 MeowBeat가 있다. 직접 경쟁자가 없는 서브장르 공백을 선점하려면 MVP를 빠르게 WebGL로 공개해 시장 반응을 먼저 확인해야 한다. 세션 25분 기준으로 머지 루프+리듬 3곡 플레이를 하나의 세션에 구성하자.',
+        note: '가장 중요한 발견은 "머지+리듬 직접 결합 사례가 전무"하다는 것이다. 리듬게임 $25억 CAGR 8~15%, 머지 YoY +80% — 두 성장 트렌드의 교차점에 MeowBeat가 있다. 블루오션이지만 시장 검증이 안 된 것이기도 하니, MVP(Sprint 0-3+5, 최소 10곡)를 지켜서 리듬 코어 완성도를 먼저 증명해야 한다.',
       },
       {
         speaker: 'Developer',
-        note: 'iOS Safari WebGL 불안정 이슈가 확인됐다. UI Toolkit 대신 Canvas 계열을 사용하고, 1차 타겟을 PC/Android Chrome으로 고정한다. CLAUDE.md에 "WebGL 빌드 시 UI Toolkit 사용 금지" 안티패턴을 추가해야 한다. Phase 3에서 에셋 연결+빌드 테스트가 핵심이다.',
-      },
-      {
-        speaker: 'QA Tester',
-        note: 'WebGL 빌드를 GitHub Actions CI에 포함시키고, BrowserStack으로 크로스 브라우저 자동 테스트를 추가하자. MVP 범위(Sprint 0-3+5)의 기능 테스트 체크리스트를 먼저 확정하고, 에셋 연결 후 바로 QA 스프린트에 돌입한다.',
-      },
-      {
-        speaker: 'Content Writer',
-        note: 'itch.io에 WebGL 데모를 무료 공개해 37% 전환율을 활용하고, 동시에 TikTok/Shorts에 "AI 에이전트가 게임 만드는 과정" 60초 타임랩스를 올리자. 개발자 커뮤니티(r/gamedev, r/ClaudeAI)에는 Agent Office 대시보드와 AI 워크플로우를 공개하고, 게이머에게는 게임 자체로 소통하는 투-트랙 전략이다.',
-      },
-      {
-        speaker: 'DevOps',
-        note: 'unity-webgl-wrapper 포트폴리오 사이트를 스튜디오 허브로, 각 itch.io 페이지를 발견 채널로 분리 운영한다. itch.io→포트폴리오 역링크로 트래픽 순환 구조를 만들고, butler CLI 자동 배포 파이프라인을 구축한다.',
+        note: 'Game Designer에 동의한다. Suno AI 공식 API는 없지만 3rd-party 트랙당 2~5센트면 10곡 $0.50 미만이다. Pro $10/월로 500곡 생성 가능하니 비용은 문제가 아니다. 문제는 Owner가 직접 Suno에서 곡을 생성하고 pipeline.sh로 변환해야 한다는 점. Unity 6 WebGL iOS Safari 불안정(iOS 18.4+)은 MVP가 Android first이니 당장 블로커 아니지만, 포트폴리오 사이트 WebGL 데모에서는 iOS 폴백 처리가 필요하다.',
       },
       {
         speaker: 'Art Director',
-        note: '수익화는 MVP 단계에서 리워드 광고 중심으로 시작하고, 성장기에 시즌패스(고양이 코스튬/악기 스킨)를 도입한다. 아트 에셋은 Cat_2 픽셀아트 기반으로 통일하고, AI 생성 에셋은 REDESIGN.md 컬러 팔레트로 일관성을 검증한다.',
+        note: 'catrush-cats 폴더에 Cat, BackCat, WinkCat 등 7포즈 16티어 스프라이트가 이미 있다. 기존 Feedme/CatRush 에셋이라 MeowBeat 리디자인 가이드에 맞게 색감/해상도를 조정해야 한다. AI 아트 생성 시 기존 픽셀아트 톤을 유지하되, AI 전형적 디자인(민트+다크, 뻔한 그라데이션) 금지 피드백에 따라 독창적 팔레트로 간다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'Art Director의 에셋 교체와 맞물려 Missing Reference 검증이 가장 시급하다. Phase 2에서 15개+ 신규 스크립트가 생성됐고 폴더 구조도 변경됐으니 GUID 참조가 깨졌을 수 있다. itch.io WebGL 37% 전환율은 제대로 로딩될 때 이야기고, 로딩 실패하면 바운스율 90%다. QA 없이 데모 배포는 역효과.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'QA Tester의 로딩 이야기에서 이어서 — itch.io WebGL이 다운로드 전용 대비 6배 전환율(37% vs 6%)이다. TikTok/Shorts에서 AI 게임 개발 타임랩스는 아직 틈새 콘텐츠라 선점 기회가 있다. 투-트랙: (1) 개발자 커뮤니티 대상 Claude Code 1인 개발 타임랩스, (2) 게이머 대상 고양이+리듬 감성 플레이 영상. "머지+리듬 세계 최초"를 후킹으로 쓸 수 있다.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'Content Writer의 마케팅을 실현하려면 배포 파이프라인 정비가 필요하다. 포트폴리오 사이트 자동 배포는 준비되어 있으나 Android 빌드 파이프라인이 아직 없다. GitHub Actions로 Unity 빌드 + Google Play Internal Testing 자동 제출을 구축해야 한다. Unity 템플릿을 GitHub Template으로 공개하면 개발자 커뮤니티 마케팅 소재가 된다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: 'DevOps의 템플릿 공개 제안이 Content Writer의 투-트랙 중 개발자 트랙과 시너지가 좋다. 수익화는 리서치에서 하이브리드 72% 표준, 리워드 광고가 광고 수익 62%, 배틀패스 전환율 12~18%로 나왔다. RewardAdPoints.cs가 이미 구현되어 있으니 적절하다. iOS 수익 효율이 Android 대비 2.3배이므로 Post-Launch iOS 포팅 우선순위를 올려야 한다.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'Game Designer의 iOS 포팅에 보충한다. mcp-unity로 Editor 직접 조작이 가능하니 Phase 3 프리팹 배치를 AI로 자동화할 수 있다. bridgeContracts에 정의된 6개 이벤트 브릿지(OnNoteHit, OnSongComplete, OnCatMerge 등)를 프리팹에 연결하는 작업이 핵심. 1인 AI 개발에서 프로토타입이 수 일로 단축된다는 리서치를 감안하면 Phase 3도 2~3주면 충분하다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'Orchestrator의 순서에서 보완한다. Missing Reference 검증은 에셋 교체 "직후" 즉시 해야 한다. 에셋 교체→GUID 검증→프리팹 배치→통합 QA 순서가 맞다. X-Hero가 TikTok 바이럴로 1,400만 DL을 달성한 것처럼, 우리도 데모가 "돌아가는" 상태에서 숏폼을 찍어야 한다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'QA Tester 말이 맞다. 데모 품질 보장 후 숏폼 제작. 타이밍: Phase 3 완료→itch.io 데모 배포→플레이 숏폼 촬영→TikTok/Shorts 업로드. 개발 과정 타임랩스는 지금부터 촬영 가능. 게임 개발자 90%가 AI 사용 중이니 "Claude Code로 혼자 게임 만들기" 시리즈는 수요가 확실하다.',
+      },
+      {
+        speaker: 'Orchestrator',
+        note: '종합한다. Phase 3 순서: (1) Owner — Suno Pro + 10곡 생성, (2) Art Director — AI 아트(픽셀아트 톤 유지), (3) QA — 에셋 교체 직후 GUID 검증, (4) Developer — 프리팹 배치(mcp-unity), (5) QA — Android 빌드 통합 테스트, (6) itch.io WebGL 데모 배포. 목표 3주. Post-Launch는 iOS 포팅 우선순위 상향, 배틀패스 검토.',
       },
     ],
     decisions: [
       {
-        title: 'Phase 3 최우선: MVP WebGL 빌드 공개',
+        title: 'Phase 3 실행 순서 확정 (목표 3주)',
         description:
-          'Sprint 0-3+5 범위의 에셋 연결→QA→WebGL 빌드를 최우선으로 완료하고, itch.io에 무료 데모로 공개해 시장 반응을 확인한다.',
+          '(1) Owner — Suno Pro 가입+MVP 최소 10곡, (2) Art Director — AI 아트(픽셀아트 톤, AI 전형 디자인 배제), (3) QA — 에셋 교체 직후 GUID/Missing Reference 검증, (4) Developer — 프리팹 배치(mcp-unity), (5) QA — Android 빌드 통합 테스트, (6) itch.io WebGL 데모 배포.',
       },
       {
-        title: '배포 타겟: PC/Android Chrome 우선',
+        title: 'MVP 컷라인 고수 + 순차 공개 전략',
         description:
-          'iOS Safari WebGL 불안정 이슈로 인해 1차 타겟을 PC/Android Chrome으로 고정하고, iOS는 네이티브 앱 출시 시점에 지원한다.',
+          'Sprint 0-3+5(리듬 코어)를 MVP로 유지. 머지(S4)/냥카페(S6)/냥스타그램(S7)은 코드 완료 상태이므로 에셋만 연결하면 되지만, MVP에서는 리듬 코어 완성도를 우선 증명. 나머지는 Day-1 패치 또는 v1.1로 순차 공개.',
       },
       {
-        title: '마케팅: TikTok 데브로그 + itch.io 투-트랙',
+        title: '마케팅 투-트랙 + "머지+리듬 세계 최초" 후킹',
         description:
-          'TikTok/Shorts에 AI 게임 개발 타임랩스 60초 영상을 정기 업로드하고, itch.io 데브로그로 커뮤니티를 형성한다. 포트폴리오 사이트는 스튜디오 허브로 기능한다.',
+          '트랙 A(개발자): Claude Code 1인 개발 타임랩스+Unity AI 템플릿 GitHub 공개. 트랙 B(게이머): itch.io WebGL 데모+고양이 리듬 감성 플레이 영상. "머지+리듬 세계 최초 결합"을 핵심 후킹 메시지로 사용.',
       },
       {
-        title: '수익화: 리워드 광고→시즌패스 단계적 도입',
+        title: 'Post-Launch iOS 포팅 1순위',
         description:
-          'MVP에서는 리워드 광고+광고 제거 IAP만 적용. MAU 안정화 후 시즌패스(코스메틱)를 도입해 하이브리드 수익화로 전환한다.',
+          'iOS 수익 효율이 Android 대비 2.3배. Post-Launch 1순위로 iOS 네이티브 빌드 진행. WebGL iOS Safari 불안정(iOS 18.4+)은 네이티브로 우회하고 WebGL은 폴백 안내 제공.',
       },
       {
-        title: '포지셔닝: "AI Agent-Powered Game Studio"',
+        title: 'Android 빌드 CI/CD + Unity 템플릿 공개',
         description:
-          'LIM Studio를 "1인 개발자+AI 에이전트팀=스튜디오급 반복 생산 능력"으로 포지셔닝한다. Agent Office 대시보드를 개발자 커뮤니티 대상 쇼케이스로 활용한다.',
+          'GitHub Actions 기반 Unity Android 빌드+Google Play Internal Testing 자동 제출 파이프라인 구축. _ProjectTemplate을 GitHub Template Repository로 공개해 개발자 커뮤니티 마케팅 소재로 활용.',
+      },
+      {
+        title: '수익화: 리워드 광고 MVP → 배틀패스 Post-Launch',
+        description:
+          'MVP는 리워드 광고(RewardAdPoints.cs)+광고 제거 IAP만 적용. 배틀패스(전환율 12~18%)는 Post-Launch에서 데이터 기반 검토. 코스메틱(고양이 코스튬/악기 스킨) 아트 방향은 Phase 3에서 미리 확정.',
       },
     ],
   },
