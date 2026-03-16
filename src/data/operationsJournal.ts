@@ -43,6 +43,99 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-03-17T20:00:00-numlink-full-review',
+    date: '2026-03-17',
+    researchTitle: 'NumLink 전수 코드 리뷰 + agent-office 멀티프로젝트 전환',
+    researchSummary:
+      'NumLink 프로젝트의 전체 C# 코드(19개 스크립트)를 성능·기능·구조 3축으로 리뷰하여 62건의 이슈를 발견·수정했다. 동시에 agent-office를 멀티프로젝트 구조로 전환하고 NumLink을 등록·배포했다.',
+    researchItems: [
+      {
+        title: 'CRITICAL 6건 — 게임 실행 불가 수준',
+        description:
+          '(1) GameOver() 매 프레임 반복 호출로 Resources.Load 무한 실행, (2) Thread.Sleep 500ms로 모바일 ANR 직결, (3) MaxBoardSize=7인데 6x8 레벨 존재로 고급 레벨 동작 불가, (4) ZShape 패턴 비정사각형 보드에서 IndexOutOfRange 크래시, (5) 힌트가 다음 숫자가 아닌 이미 연결된 숫자를 가리키는 핵심 기능 버그, (6) 코인/루비가 음수로 내려갈 수 있는 재화 시스템 오염.',
+      },
+      {
+        title: 'HIGH 17건 — 성능·안정성 저하',
+        description:
+          'MAX_NUMBERS=25 하드코딩(6x6+ 보드 버그), ObjectPool Spawn→Destroy(풀 고갈), SaveSystem 동기 I/O 캐시 없음, GC.Collect() 호출(프레임 스파이크), 진동 설정 미저장, Camera.main 미캐싱, LRU 캐시 O(n)+키 중복, GetComponentsInChildren 4곳 중복 호출 등.',
+      },
+      {
+        title: 'MEDIUM+LOW 39건 — 품질·유지보수',
+        description:
+          'Debug.Log 릴리스 빌드 포함(19개 파일), Spiral 패턴이 전체 숫자 숨김, Checkerboard 50% 과다 숨김, DOTween Kill 누락, NumberButton.Number 매번 int.TryParse, 매직 넘버 잔존, LINQ in Update, static 필드 씬 전환 잔존 등.',
+      },
+      {
+        title: 'agent-office 멀티프로젝트 구조 분석',
+        description:
+          '기존 MeowBeat 전용 구조에서 페이지가 /work, /log, /playground로 재편된 상태. ProjectConfig 공통 타입 + 프로젝트 레지스트리를 도입하고, /work 페이지에 탭 스위처를 추가하는 방식이 기존 사이드바+패널 레이아웃과 가장 자연스럽게 통합됨을 확인.',
+      },
+    ],
+    meetingTitle: 'NumLink 코드 품질 + 멀티프로젝트 전환 회의',
+    meetingSummary:
+      '62건의 코드 이슈를 3개 병렬 팀(코어 게임 로직, 보드/레벨/패턴, 매니저/시스템)으로 분담하여 전수 수정 완료. agent-office를 ProjectConfig 레지스트리 기반 멀티프로젝트로 전환하고 NumLink을 등록·배포. Unity Editor 통합(SFX 폴백, 프리뷰 동적 생성, AchievementManager 동적 생성)도 완료.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '오늘 3개 작업을 병렬 진행한다. (1) NumLink Unity Editor 통합 — SFX/파티클/프리뷰 에셋 연결 폴백, (2) agent-office 멀티프로젝트 전환 — NumLink 등록, (3) NumLink 전수 코드 리뷰 + 수정. 코드 리뷰는 3개 그룹으로 분할하여 병렬 실행.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'Part A(Unity Editor 통합) 완료. EffectManager에 Resources.Load 폴백 추가, PuzzleManager에 inGamePuzzlePreview 동적 생성, GameBootstrapper에 AchievementManager 동적 생성. Inspector 미할당 시에도 코드가 동작하도록 방어적 코딩 적용. Part B를 위해 agent-office 리포를 탐색한 결과 페이지 구조가 대폭 변경되어 있어(ProjectsPage 삭제, WorkPage/LogPage/PlaygroundPage 신설) 새 구조 위에 재작업 필요.',
+      },
+      {
+        speaker: 'Art Director',
+        note: 'agent-office에 NumLink 프로젝트 카드를 추가할 때 기존 토스 스타일(#191f28 텍스트, #3182f6 액센트, #f8f9fa 배경)을 유지했다. NumLink의 프로젝트 액센트 컬러를 #3182f6(블루)으로, MeowBeat를 #f97316(오렌지)으로 설정하여 시각적 구분을 확보.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '코드 리뷰에서 가장 심각한 발견: 힌트 시스템이 이미 연결된 숫자를 가리키고 있었다. 이건 게임의 핵심 UX를 망치는 버그다. 또한 Thread.Sleep 500ms는 모바일에서 ANR 직결이고, GameOver 매 프레임 호출은 Resources.Load를 매 프레임 실행시키는 최악 경로. 이 세 가지만 고쳐도 게임 체감이 완전히 달라질 것.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'QA Tester가 지적한 3건 + 나머지 CRITICAL/HIGH를 포함해 62건 전수 수정 완료. 주요 패턴 변경: (1) GameOver → SetGameOver 1회 실행, (2) Thread.Sleep → 코루틴 비동기 대기, (3) MAX_NUMBERS 상수 → 동적 보드 크기, (4) List → HashSet(O(1) 조회), (5) NumberButton.Number → 캐시 프로퍼티, (6) SaveSystem 인메모리 캐시 + try-catch, (7) 모든 Debug.Log에 #if UNITY_EDITOR 가드.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'agent-office 배포 시 리모트에서 페이지 구조 대폭 변경(ChroniclePage→LogPage, OfficePage→PlaygroundPage, ProjectsPage 삭제)이 있어 merge conflict 발생. rebase 중단 후 새 구조 위에 재작업하여 해결. NumLink 코드 수정은 828ed33 커밋으로 43파일 +1786/-334 라인 변경 후 push 완료.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: 'HidePatternApplier 리뷰에서 Spiral 패턴이 보드 전체를 숨기고, Checkerboard가 50%를 숨기는 문제를 발견했다. Spiral은 외곽 1-2겹으로 제한, Checkerboard는 30%로 캡을 설정했다. 패턴별 난이도 밸런스가 개선되어 플레이어 경험이 더 일관될 것.',
+      },
+      {
+        speaker: 'Orchestrator',
+        note: '다음 단계를 정리한다. NumLink은 코드가 정비되었으나 Unity Editor에서의 실제 구동 검증이 필수. Owner가 에디터에서 (1) 컴파일 체크, (2) @Managers 하이러키 구성, (3) Inspector SerializeField 연결, (4) APK 빌드를 직접 수행해야 한다. 이후 Phase 6(킥 구현)과 스토어 준비로 진행.',
+      },
+    ],
+    decisions: [
+      {
+        title: '62건 전수 수정 완료 — 828ed33 커밋',
+        description:
+          'CRITICAL 6건(GameOver 반복, Thread.Sleep, MaxBoardSize, ZShape, 힌트 버그, 재화 음수) + HIGH 17건 + MEDIUM 25건 + LOW 14건을 3개 병렬 팀으로 분담하여 전수 수정. 19개 스크립트 + 4개 설정 파일, +1786/-334 라인 변경.',
+      },
+      {
+        title: 'agent-office 멀티프로젝트 전환 + 배포 완료',
+        description:
+          'ProjectConfig 레지스트리 도입, /work 페이지에 MeowBeat/NumLink 탭 스위처 추가, HomePage에 멀티프로젝트 카드 표시. GitHub Pages 자동 배포(f15e828). 향후 프로젝트 추가 시 data/projects/에 파일 생성 + index.ts 등록만 하면 됨.',
+      },
+      {
+        title: 'NumLink Unity Editor 통합 폴백 완료',
+        description:
+          'EffectManager Resources.Load 폴백, PuzzleManager 프리뷰 동적 생성, GameBootstrapper AchievementManager 동적 생성. Inspector 미할당 상태에서도 코드 레벨 동작 보장.',
+      },
+      {
+        title: '다음 단계: Unity Editor 검증 (Owner 액션)',
+        description:
+          '(1) Unity 에디터 컴파일 체크 0 errors, (2) MainScene에 @Managers + GameBootstrapper 배치, (3) GameManager/PuzzleManager/NumberManager/SettingManager Inspector SerializeField 연결, (4) APK 빌드 테스트. 이 4단계는 Owner가 Unity 에디터에서 직접 수행해야 함.',
+      },
+      {
+        title: 'Phase 6 킥 후보: Daily Puzzle 추천',
+        description:
+          'DailyPuzzleProvider가 이미 구현되어 있고(날짜 기반 결정적 시드), 서버 불필요, D7 리텐션 최고 효과. 5개 킥 후보 중 가장 낮은 구현 비용으로 가장 높은 리텐션 임팩트를 기대할 수 있음.',
+      },
+    ],
+  },
+  {
     id: '2026-03-16T16:00:00-game-factory-process',
     date: '2026-03-16',
     researchTitle: 'AI 게임 팩토리 프로세스 리서치',
