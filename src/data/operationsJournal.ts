@@ -84,6 +84,11 @@ export const seedJournalEntries: JournalEntry[] = [
         description:
           'Windows Task Scheduler로 매일 오전 9시 회의 스크립트를 자동 실행하고, 결과를 GitHub Issues에 자동 기록하는 파이프라인을 구축했다.',
       },
+      {
+        title: 'UI/UX 4개 스트림 병렬 구현',
+        description:
+          'ScriptableObject 테마 시스템, 게임 플레이 피드백 강화(바운스 1.2x Elastic, 라인 그라데이션, 클리어 웨이브+카메라 셰이크, 콤보/진행률 이벤트), 메뉴 UX 개선(패널 Fade/ScaleBounce/SlideIn 트랜지션, 보상 카운트업, Daily Puzzle 상태 이벤트)',
+      },
     ],
     meetingTitle: 'Phase 6 완료 + QA + 수익화 방향 확정 회의',
     meetingSummary:
@@ -138,6 +143,11 @@ export const seedJournalEntries: JournalEntry[] = [
         title: '다음 단계: APK 빌드 + 스토어 등록 준비',
         description:
           'AppLovin MAX SDK 통합 → APK 빌드 → Google Play 내부 테스트 트랙 제출 → 스토어 등록 준비. DevOps 주도로 CI/CD 파이프라인 구성 병행.',
+      },
+      {
+        title: 'UI/UX 개선 완료 — ThemeData SO 기반 색상 통합, 컴파일 0 에러 확인',
+        description:
+          'ThemeData ScriptableObject 기반 색상 통합, DOTween 피드백 시스템(바운스/라인 그라데이션/클리어 웨이브), 패널 트랜지션(Fade/ScaleBounce/SlideIn) 전체 구현 완료. 컴파일 0 에러 확인.',
       },
     ],
   },

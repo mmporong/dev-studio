@@ -14,6 +14,7 @@ const kicks = [
   { name: '업적 시스템', desc: '패턴 발견, 연속 클리어 등 다양한 업적 도전' },
   { name: '60 레벨', desc: '5x5부터 6x8까지 점진적 난이도 상승' },
   { name: 'Daily Puzzle', desc: '매일 새로운 퍼즐 제공, 달력 기반 일일 도전 시스템' },
+  { name: '테마 시스템', desc: 'ScriptableObject 기반 테마 교체 — 색상 팔레트 전체를 원클릭으로 전환' },
 ]
 
 const milestones = [
@@ -22,6 +23,7 @@ const milestones = [
   { title: 'Sprint 3. 힌트 + 저장', summary: '힌트 시스템, 세이브/로드, 진행도 추적', deliverables: ['HintManager', 'SaveSystem', 'NumLinkSaveData'] },
   { title: 'Sprint 4. 업적 + 패턴', summary: '업적 시스템, 숫자 숨김 패턴, 업적 데이터', deliverables: ['AchievementManager', 'HidePatternApplier', 'AchievementData'] },
   { title: 'Phase 6. Daily Puzzle + AdMob + IAP', summary: 'Daily Puzzle 시스템, AdMob 광고 연동, IAP 인앱 결제 구현 — 컴파일 0 에러', deliverables: ['DailyPuzzleManager', 'AdMobManager', 'IAPManager', 'com.mmporong.numlink'] },
+  { title: 'UI/UX 개선. 테마 시스템 + 피드백 강화 + 메뉴 UX', summary: 'ScriptableObject 테마 시스템, 게임 플레이 피드백 강화, 패널 트랜지션 구현 — 컴파일 0 에러', deliverables: ['ThemeManager', 'ThemeData SO', 'DOTween 피드백 시스템', 'PanelTransition'] },
 ]
 
 const roadmap = [
@@ -40,6 +42,8 @@ const techDetails = [
   { name: 'ObjectPoolManager', desc: '파티클/UI 오브젝트 풀링으로 GC 최소화' },
   { name: 'DailyPuzzleManager', desc: '날짜 기반 시드 생성으로 매일 동일한 퍼즐 제공, 달력 UI 연동' },
   { name: 'AdMob + IAP', desc: 'Google AdMob 광고 SDK, Unity IAP 인앱 결제 연동 완료' },
+  { name: 'ThemeData SO', desc: 'ScriptableObject 기반 색상 통합 테마 시스템 — 테마 교체 원클릭화' },
+  { name: 'DOTween 피드백 시스템', desc: '바운스 1.2x Elastic, 라인 그라데이션, 클리어 웨이브+카메라 셰이크, 콤보/진행률 이벤트 기반 피드백' },
 ]
 
 function NumLinkSectionDetail({ id }: { id: string }) {
