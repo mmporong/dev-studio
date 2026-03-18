@@ -43,6 +43,105 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-03-18T20:00:00-numlink-phase6-qa-monetization',
+    date: '2026-03-18',
+    researchTitle: 'NumLink Phase 6 완료 + 60레벨 QA + 수익화 기반 구축',
+    researchSummary:
+      'unity-cli v0.2.26 설치 및 Connector 연동을 시작으로, 게임 로직 CRITICAL 5건 수정·Inspector SerializeField 전수 검증을 완료했다. Phase 6(Daily Puzzle, AdMob SDK, IAP 골격)를 구현하고, 60레벨 전체 보드 QA를 통과시키며 수익화 기반을 확보했다.',
+    researchItems: [
+      {
+        title: 'unity-cli v0.2.26 + Connector 연동',
+        description:
+          'unity-cli v0.2.26을 설치하고 Connector와 연동하여 AI 에이전트가 Unity Editor를 직접 제어할 수 있는 환경을 구성했다.',
+      },
+      {
+        title: '게임 로직 CRITICAL 5건 수정',
+        description:
+          'SetGameOver 중복 호출 방지, RestartGame 시 보드 재생성 누락 수정, AutoSetup 중복 방지 로직 추가, AchievementManager null 체크 강화, 관련 초기화 순서 정리. 게임 실행 안정성 확보.',
+      },
+      {
+        title: 'Inspector SerializeField 전수 검증',
+        description:
+          '9개 매니저 클래스(GameManager, PuzzleManager, NumberManager, SettingManager, AchievementManager, EffectManager, AudioManager, HintManager, UIManager)의 SerializeField를 전수 점검한 결과 문제 0건 확인.',
+      },
+      {
+        title: 'Phase 6 구현: Daily Puzzle + AdMob SDK + IAP 골격',
+        description:
+          'Daily Puzzle — 날짜 기반 시드로 하루 1퍼즐 + 스트릭 보상 시스템 구현. AdMob SDK — 리워드 광고(힌트용), 인터스티셜(레벨 완료 후), 배너(메인 화면) 연동. IAP 골격 — 힌트팩(소모성), 광고 제거(비소모성) 상품 정의. 패키지명 com.mmporong.numlink으로 리브랜딩.',
+      },
+      {
+        title: '수익화 SDK 비교 리서치 → AppLovin MAX + AdMob 추천',
+        description:
+          'AdMob 단독, Unity Ads, AppLovin MAX(미디에이션) 3가지를 eCPM, 통합 난이도, 미디에이션 지원 기준으로 비교. AppLovin MAX로 AdMob·Unity Ads·Pangle을 미디에이션하는 조합이 eCPM 최대화에 가장 유리하다고 결론.',
+      },
+      {
+        title: '60레벨 QA: 10개 테스트 중 8 통과 → 누락 보드 36개 생성 후 전체 통과',
+        description:
+          '자동화 테스트 실행 결과 레벨 25~60 구간에서 보드 데이터 누락 36개 발견. 누락 보드를 생성·검증 후 재실행하여 10/10 통과. 폴백 의존율 0%로 60레벨 전체 보드 데이터 확보.',
+      },
+      {
+        title: '일일 에이전트 회의 시스템 구축',
+        description:
+          'Windows Task Scheduler로 매일 오전 9시 회의 스크립트를 자동 실행하고, 결과를 GitHub Issues에 자동 기록하는 파이프라인을 구축했다.',
+      },
+    ],
+    meetingTitle: 'Phase 6 완료 + QA + 수익화 방향 확정 회의',
+    meetingSummary:
+      'Phase 6 구현 완료를 공식 확정하고, AppLovin MAX + AdMob 미디에이션 조합을 수익화 전략으로 채택했다. 60레벨 전체 보드 데이터를 확보하여 폴백 의존 없이 스토어 출시 가능한 상태임을 확인했다.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '오늘 세 축으로 진행한다. (1) 게임 로직 CRITICAL 수정 + Inspector 전수 검증, (2) Phase 6 구현(Daily Puzzle·AdMob·IAP), (3) 60레벨 QA. 일일 회의 자동화도 병행 구축.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'unity-cli v0.2.26 설치 후 Connector 연동 성공. CRITICAL 5건 수정 완료: SetGameOver 이중 호출, RestartGame 보드 재생성 누락, AutoSetup 중복 초기화, AchievementManager null 참조, 초기화 순서 오류. Inspector SerializeField 9개 매니저 전수 점검 결과 미할당 0건.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'Phase 6 구현 완료. DailyPuzzleManager — Firebase 없이 날짜 시드만으로 동작, 스트릭 7일 보상 지급. AdMob SDK 연동 — 리워드·인터스티셜·배너 3종. IAP — 힌트팩(5·15·30개 소모성), 광고 제거(비소모성) 정의. 패키지명 com.mmporong.numlink 확정.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '60레벨 자동화 테스트 1차 실행: 8/10 통과, 레벨 25~60 보드 데이터 36개 누락 발견. 누락 보드 생성 후 2차 실행: 10/10 통과. 폴백 의존율 0%. 스토어 제출 가능 상태로 판정.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '수익화 SDK 비교 결과를 검토했다. AppLovin MAX 미디에이션이 AdMob 단독 대비 eCPM 15~30% 높고, 통합 난이도도 관리 가능한 수준. Daily Puzzle 스트릭 7일 보상이 리텐션 루프를 강화해 광고 노출 총량도 늘 것으로 예상.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'Windows Task Scheduler + GitHub Issues 기반 일일 회의 자동화 파이프라인 구성 완료. 매일 오전 9시 자동 실행 → 결과 Issue 자동 생성. 다음 단계는 APK 빌드 파이프라인 구성과 Google Play 내부 테스트 트랙 등록.',
+      },
+      {
+        speaker: 'Orchestrator',
+        note: 'Phase 6 완료 확정. 다음 단계: APK 빌드 → Google Play 내부 테스트 → 스토어 등록 준비. AppLovin MAX 미디에이션 연동은 APK 빌드 전에 완료할 것.',
+      },
+    ],
+    decisions: [
+      {
+        title: 'Phase 6 완료 확정',
+        description:
+          'Daily Puzzle(스트릭 보상), AdMob SDK(리워드/인터스티셜/배너), IAP 골격(힌트팩/광고제거), 패키지명 com.mmporong.numlink 리브랜딩 모두 완료. 게임 로직 CRITICAL 5건 수정 및 Inspector 전수 검증(문제 0건) 포함.',
+      },
+      {
+        title: '수익화: AppLovin MAX 미디에이션 + AdMob 조합 채택',
+        description:
+          'AppLovin MAX로 AdMob·Unity Ads·Pangle을 미디에이션하는 전략 채택. AdMob 단독 대비 eCPM 15~30% 향상 기대. APK 빌드 전 MAX SDK 통합 완료 예정.',
+      },
+      {
+        title: '60레벨 전체 보드 데이터 확보 (폴백 의존 0%)',
+        description:
+          '누락 보드 36개를 생성하고 재검증하여 10/10 테스트 통과. 레벨 1~60 전체를 보드 데이터로 제공하며 폴백 없이 스토어 출시 가능한 상태.',
+      },
+      {
+        title: '다음 단계: APK 빌드 + 스토어 등록 준비',
+        description:
+          'AppLovin MAX SDK 통합 → APK 빌드 → Google Play 내부 테스트 트랙 제출 → 스토어 등록 준비. DevOps 주도로 CI/CD 파이프라인 구성 병행.',
+      },
+    ],
+  },
+  {
     id: '2026-03-17T20:00:00-numlink-full-review',
     date: '2026-03-17',
     researchTitle: 'NumLink 전수 코드 리뷰 + agent-office 멀티프로젝트 전환',
