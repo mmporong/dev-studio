@@ -6,7 +6,7 @@ export const numlinkProject: ProjectConfig = {
   tagline: '숫자 연결 퍼즐 — 이미지 해금 + 패턴 발견 + 업적 시스템',
   platform: 'Android (Google Play)',
   engine: 'Unity 6000.x (C#)',
-  phase: 'Sprint 1-4 완료 — Unity Editor 통합 중',
-  risk: '에디터 에셋 연결 + 최종 QA 남음',
+  phase: 'Phase 6 완료 (Daily Puzzle, AdMob, IAP) — 컴파일 0 에러',
+  risk: '60레벨 QA, APK 빌드, 스토어 등록 남음',
   accent: '#3182f6',
 }
