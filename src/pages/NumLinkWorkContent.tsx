@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
 const numlinkSections = [
-  { id: 'roadmap', tag: '개발', title: '개발 로드맵', summary: 'Sprint 1-4 + Editor 통합 + 출시' },
-  { id: 'sprint', tag: '개발', title: '스프린트 진행', summary: '4개 스프린트 구현 현황' },
+  { id: 'roadmap', tag: '개발', title: '개발 로드맵', summary: 'Sprint 1-4 + Phase 6 + 출시' },
+  { id: 'sprint', tag: '개발', title: '스프린트 진행', summary: '4개 스프린트 + Phase 6 구현 현황' },
   { id: 'kicks', tag: '기획', title: '핵심 기능', summary: '이미지 해금, 패턴, 8방향, 업적, 60레벨' },
   { id: 'techdetail', tag: '기술', title: '기술 상세', summary: 'DFS 보드 생성 + 이벤트 시스템' },
 ]
@@ -13,6 +13,7 @@ const kicks = [
   { name: '8방향 연결', desc: '상하좌우 + 대각선까지 8방향 숫자 연결' },
   { name: '업적 시스템', desc: '패턴 발견, 연속 클리어 등 다양한 업적 도전' },
   { name: '60 레벨', desc: '5x5부터 6x8까지 점진적 난이도 상승' },
+  { name: 'Daily Puzzle', desc: '매일 새로운 퍼즐 제공, 달력 기반 일일 도전 시스템' },
 ]
 
 const milestones = [
@@ -20,13 +21,14 @@ const milestones = [
   { title: 'Sprint 2. SFX + 이펙트', summary: '연결/패널티/클리어 사운드, 파티클 시스템, 피치 상승', deliverables: ['EffectManager', 'GameEvents', 'SoundManager 연동'] },
   { title: 'Sprint 3. 힌트 + 저장', summary: '힌트 시스템, 세이브/로드, 진행도 추적', deliverables: ['HintManager', 'SaveSystem', 'NumLinkSaveData'] },
   { title: 'Sprint 4. 업적 + 패턴', summary: '업적 시스템, 숫자 숨김 패턴, 업적 데이터', deliverables: ['AchievementManager', 'HidePatternApplier', 'AchievementData'] },
+  { title: 'Phase 6. Daily Puzzle + AdMob + IAP', summary: 'Daily Puzzle 시스템, AdMob 광고 연동, IAP 인앱 결제 구현 — 컴파일 0 에러', deliverables: ['DailyPuzzleManager', 'AdMobManager', 'IAPManager', 'com.mmporong.numlink'] },
 ]
 
 const roadmap = [
   { id: 'sprint-1-2', label: 'Sprint 1-2', headline: '코어 시스템', description: 'DFS 보드 생성, 이미지 해금, 사운드/파티클 이펙트, 기본 게임 루프 완성.', isActive: false },
   { id: 'sprint-3-4', label: 'Sprint 3-4', headline: '시스템 확장', description: '힌트 시스템, 세이브/로드, 업적, 패턴 시스템 구현 완료.', isActive: false },
-  { id: 'editor-integration', label: 'Editor 통합', headline: 'Unity 에셋 연결', description: 'SFX/파티클 프리팹 연결, 프리뷰 UI, AchievementManager 동적 생성.', isActive: true },
-  { id: 'launch', label: '출시', headline: 'QA + 스토어 등록', description: '최종 QA, Google Play 등록, 스토어 에셋 준비.', isActive: false },
+  { id: 'phase-6', label: 'Phase 6', headline: 'Daily Puzzle + AdMob + IAP', description: 'Daily Puzzle 시스템, AdMob 광고 연동, IAP 인앱 결제 구현 완료. 컴파일 0 에러. 패키지명: com.mmporong.numlink', isActive: false },
+  { id: 'launch', label: '출시 준비', headline: '60레벨 QA + APK 빌드 + 스토어 등록', description: '60레벨 전체 QA, APK 빌드, Google Play 스토어 등록 진행 중.', isActive: true },
 ]
 
 const techDetails = [
@@ -36,6 +38,8 @@ const techDetails = [
   { name: 'HidePatternApplier', desc: '체스보드, 테두리, 대각선 등 다양한 숫자 숨김 패턴' },
   { name: 'SaveSystem', desc: 'JSON 기반 진행도 저장, 레벨별 클리어/업적 상태 추적' },
   { name: 'ObjectPoolManager', desc: '파티클/UI 오브젝트 풀링으로 GC 최소화' },
+  { name: 'DailyPuzzleManager', desc: '날짜 기반 시드 생성으로 매일 동일한 퍼즐 제공, 달력 UI 연동' },
+  { name: 'AdMob + IAP', desc: 'Google AdMob 광고 SDK, Unity IAP 인앱 결제 연동 완료' },
 ]
 
 function NumLinkSectionDetail({ id }: { id: string }) {
@@ -124,7 +128,7 @@ export function NumLinkWorkContent() {
         <h1>NumLink (넘링크)</h1>
         <p className="work__tagline">숫자 연결 퍼즐 — 이미지 해금 + 패턴 발견 + 업적 시스템</p>
         <div className="work__tech">
-          {['Unity C#', 'DFS 보드 생성', 'JSON 레벨 데이터', 'ServiceLocator', 'Event-Driven'].map((label) => (
+          {['Unity C#', 'DFS 보드 생성', 'JSON 레벨 데이터', 'ServiceLocator', 'Event-Driven', 'AdMob', 'IAP'].map((label) => (
             <span key={label} className="work__tech-pill">{label}</span>
           ))}
         </div>
