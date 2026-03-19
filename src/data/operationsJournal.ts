@@ -43,6 +43,110 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-03-19T09:00:00-daily-standup',
+    date: '2026-03-19',
+    researchTitle: 'NumLink 게임 로직 버그 수정 + 7개 분야 병렬 리서치',
+    researchSummary:
+      'NumLink Sprint 5 UI/UX 개선 후 발생한 게임 핵심 로직 3가지 버그(선 미표시, 숫자 사라짐, 클리어 조건 미달)를 수정하고, 7명 에이전트가 각 전문 분야별 중복 없는 병렬 리서치를 수행했다. 퍼즐 시장 $138억→$240억 성장 전망, 글래스모피즘 UI 트렌드 복귀, TikTok 유기적 도달 급락, Unity 6.1 WebGPU 공식 지원 등 핵심 인사이트를 도출했다.',
+    researchItems: [
+      {
+        title: '[Developer] NumLink 게임 로직 버그 3건 수정',
+        description:
+          'NumberManager.CreateConnectionLine()의 isCleared 가드 제거 → actualConnections 기반 중복 체크로 대체. connectedCount++를 ProcessSuccessfulConnection으로 이동. NumberButton OnEnable/SetDefaultTextColor에 ThemeManager null 체크 추가. AutoSetup ClearActiveButtons를 isNew 블록 내로 이동. 컴파일 에러 0건 확인.',
+      },
+      {
+        title: '[Developer] Unity 6.1 WebGPU 공식 지원 + C# 13 제로 할당 패턴',
+        description:
+          'Unity 6000.1.0f1에서 WebGPU가 Web Player 공식 그래픽 API로 승격, WebGL 기본 압축이 brotli로 변경. C# 13의 params ReadOnlySpan<T>로 가변 인자 힙 할당 제거 가능 — 게임 루프 GC 압력 직접 감소. DOTween 1.2.825 Unity 6 호환 유지.',
+      },
+      {
+        title: '[Game Designer] 퍼즐 시장 $138억→$240억, 넘버링크는 틈새 블루오션',
+        description:
+          '퍼즐 게임 시장 CAGR 6.96% 성장 전망. 넘버링크 계열은 주류 차트에 거의 없어 포화도가 낮은 틈새 장르. Block Blast(월 3천만 DL)의 성공 공식은 "단순 조작 + 전략 깊이 분리". 수익화는 리워드 광고 참여율 45-60%, 강제 인터스티셜은 잔존율 직결 훼손.',
+      },
+      {
+        title: '[Art Director] 글래스모피즘 복귀 + AI 에셋 제작 90% 시간 단축',
+        description:
+          'Apple Liquid Glass 영향으로 반투명+굴절+레이어 깊이감이 2026 핵심 트렌드. 뉴모피즘은 저대비 접근성 이슈로 후퇴, 뉴브루탈리즘이 인디 게임에서 부상. AI 도구로 에셋 제작 시간 최대 90% 단축(Meshy AI: 8시간→60초). 색각 이상 대응은 형태+패턴+아이콘 병용 필수.',
+      },
+      {
+        title: '[Content Writer] TikTok 유기적 도달 급락 + Paid Organic 전략',
+        description:
+          '2025 하반기부터 TikTok 무료 노출 급감(42만→6천 뷰 사례). 자연 반응 생긴 게시물에만 소액 부스팅하는 Paid Organic이 일반 광고 대비 100배 효율적. 영상 devlog가 텍스트를 대체하며 30-60초 "변화 전후" 비교 영상이 최고 조회수. K-인디게임 글로벌 진출 원년.',
+      },
+      {
+        title: '[QA Tester] 3개 프로젝트 품질 양호 — NumLink TODO 7건 LOW',
+        description:
+          'NumLink: fix 커밋 10건 활발, TODO 7건 모두 LOW 우선순위, 컴파일 경고는 외부 라이브러리만. MeowBeat: TODO 0건 깔끔, 대량 .meta 미커밋 정리 필요. agent-office: TODO 0건, 완벽 커밋 상태. 모든 프로젝트 게임 로직 관점 안정적.',
+      },
+      {
+        title: '[DevOps] agent-office 배포 정상, npm 13개 패키지 outdated',
+        description:
+          'GitHub Pages 자동 배포 정상 작동(빌드 1.62초). React 19.2.4, Vite 8.0.0 등 업데이트 가능하나 심각하지 않음. NumLink/MeowBeat 모두 Unity 6000.3.5f2 동일 버전, .gitignore 완벽. 즉시 필요한 Critical 사항 없음.',
+      },
+    ],
+    meetingTitle: '이전 회의 흐름 기반 방향성 + 인사이트 종합 회의',
+    meetingSummary:
+      '3/14~3/18 회의 흐름(코드 리뷰→Phase 6→수익화→게임 팩토리)을 이어받아, NumLink Sprint 5 버그 수정 완료를 확인하고 APK 빌드 임박 상태를 공유했다. 7개 분야 리서치에서 "넘버링크 틈새 블루오션", "글래스모피즘 UI", "TikTok Paid Organic", "WebGPU 전환 준비" 4가지 핵심 인사이트를 도출하고, NumLink 스토어 출시와 MeowBeat Phase 3 병렬 진행 전략을 확정했다.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '3/17 62건 코드 리뷰 → 3/18 Phase 6 완료 → 오늘 Sprint 5 버그 수정까지 NumLink가 빠르게 안정화되고 있다. 현재 NumLink는 APK 빌드+스토어 등록만 남았고, MeowBeat는 에셋 작업 대기 상태. 두 프로젝트를 병렬로 진행할 시점이다.',
+      },
+      {
+        speaker: 'Developer',
+        note: '오늘 수정한 3건의 근본 원인은 모두 isCleared 플래그 남용이었다. actualConnections HashSet 기반 중복 체크로 전환하여 라인 렌더링과 connectedCount가 항상 동기화되도록 했다. 또한 Unity 6.1의 WebGPU 공식 지원이 확정되었으니, NumLink WebGL 빌드 시 brotli 압축 서버 설정을 미리 준비해야 한다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '넘버링크 계열이 주류 차트에 거의 없다는 건 위험이자 기회다. Block Blast가 증명했듯 "단순 조작 + 전략 깊이"가 2026 퍼즐 승리 공식인데, NumLink의 경로 연결 코어가 정확히 이 구조다. 차별화 포인트는 Daily Puzzle 메타 루프와 이미지 공개 보상 — 이미 구현되어 있으니 스토어에서 테스트할 준비가 됐다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '글래스모피즘이 다시 떠오르고 있지만, NumLink 현재 테라코타 쿼츠 테마는 따뜻한 톤이라 글래스 효과와 잘 어울릴 수 있다. 다만 뉴모피즘의 저대비 실수를 반복하지 않도록 WCAG AA 4.5:1 대비 기준을 반드시 지켜야 한다. AI 에셋 도구(Meshy AI 등)를 MeowBeat 에셋 작업에 활용하면 Owner 부담을 크게 줄일 수 있다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'TikTok 유기적 도달이 급락했다는 건 중요한 전략 변화 신호다. NumLink 출시 시 Paid Organic 전략을 써야 한다 — 먼저 devlog 영상을 올리고, 자연 반응이 생긴 것에만 소액 부스팅. "AI 1인 개발 타임랩스"는 여전히 틈새 콘텐츠라 선점 가치가 있고, K-인디게임 글로벌 진출 트렌드와도 맞물린다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'NumLink TODO 7건은 모두 LOW라 스토어 출시에 블로커가 아니다. MeowBeat의 대량 미커밋 .meta 파일이 더 시급 — 리팩토링 브랜치에서 정리 후 merge해야 다음 에셋 작업에 충돌이 없다. 오늘 수정한 Sprint 5 버그 3건도 Play Mode에서 에러 0건 확인되었으니 커밋 진행해도 된다.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'agent-office npm 의존성 13개 outdated지만 Breaking change 없으므로 일괄 업데이트 안전하다. NumLink APK 빌드 파이프라인이 아직 없는데, 3/18 회의에서 결정한 GitHub Actions + Google Play Internal Testing 자동화를 이번 주 안에 구축해야 스토어 출시 일정에 맞출 수 있다.',
+      },
+    ],
+    decisions: [
+      {
+        title: 'NumLink Sprint 5 버그 수정 완료 → 커밋 + APK 빌드 단계 진입',
+        description:
+          '선 미표시/숫자 사라짐/클리어 조건 미달 3건 모두 수정, 컴파일 에러 0건, Play Mode 에러 0건 확인. 변경사항 커밋 후 APK 빌드 + AppLovin MAX SDK 통합으로 진행한다.',
+      },
+      {
+        title: '인사이트: 넘버링크 틈새 블루오션 + Daily Puzzle 메타 루프로 차별화',
+        description:
+          '넘버링크 계열은 퍼즐 시장에서 포화도가 낮은 틈새 장르. "단순 조작 + 전략 깊이" 승리 공식에 부합하며, 이미 구현된 Daily Puzzle + 이미지 공개 보상이 경쟁작 대비 메타 루프 차별화 포인트. 스토어에서 빠르게 시장 반응을 테스트한다.',
+      },
+      {
+        title: '인사이트: TikTok Paid Organic + AI 개발 타임랩스 마케팅',
+        description:
+          'TikTok 유기적 도달 급락으로 전략 전환 필요. 자연 반응 게시물에 소액 부스팅하는 Paid Organic 방식 채택. "AI 1인 개발 타임랩스"를 K-인디게임 글로벌 진출 트렌드와 결합하여 선점한다.',
+      },
+      {
+        title: '인사이트: WebGPU 전환 준비 + brotli 서버 설정',
+        description:
+          'Unity 6.1에서 WebGPU가 공식 지원되고 WebGL 기본 압축이 brotli로 변경. agent-office/itch.io 배포 시 Content-Encoding: br 헤더 설정을 미리 준비. 장기적으로 WebGL→WebGPU 전환 로드맵 수립.',
+      },
+      {
+        title: '이번 주 액션: APK 빌드 파이프라인 + MeowBeat .meta 정리',
+        description:
+          'DevOps: GitHub Actions + Google Play Internal Testing 자동화 구축. QA: MeowBeat 리팩토링 브랜치 .meta 파일 정리 후 merge. DevOps: agent-office npm update 실행. 이상 3건을 이번 주 내 완료.',
+      },
+    ],
+  },
+  {
     id: '2026-03-18T20:00:00-numlink-phase6-qa-monetization',
     date: '2026-03-18',
     researchTitle: 'NumLink Phase 6 완료 + 60레벨 QA + 수익화 기반 구축',
