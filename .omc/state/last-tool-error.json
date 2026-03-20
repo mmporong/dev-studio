@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"ls .publish-agent-office.ps1 2>/dev/null && cat .publish-agent-office.ps1 | head -20\",\"description\":\"Check publish script content\"}",
+  "error": "Exit code 2",
+  "timestamp": "2026-03-20T02:32:52.195Z",
+  "retry_count": 1
+}
