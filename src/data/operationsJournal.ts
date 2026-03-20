@@ -43,6 +43,49 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-03-20T09:00:00-daily-standup',
+    date: '2026-03-20',
+    researchTitle: 'NumLink 4-Bug Fix + 버튼/선/게임오버 안정화 + 자동회의 복구',
+    researchSummary:
+      'NumLink에서 버튼 색상 조기 변경, 하이라이트 중복, 패널 3개 동시 등장, 테마 미반영 등 4가지 버그를 일괄 수정했고, 이후 발견된 선 사라짐/버튼 꺼짐/게임오버 흐름 문제까지 3건 추가 수정 완료. daily_standup.bat PATH 오류로 자동 회의가 실패하고 있었던 문제도 해결. 총 커밋 3건(c29ee15, a9ab430, ec2fa2f).',
+    researchItems: [
+      {
+        title: '[Developer] 4-Bug 일괄 수정 + 선/버튼/게임오버 추가 수정',
+        description:
+          'BUG1: OnPointerDown에서 SetConnectedColor 제거, OnPointerUp에서 RestoreUnconnectedColor 호출. BUG2: isConnected 가드 추가로 연결된 버튼 하이라이트 방지. BUG3: StageClear/ShowLevelSelectUI 동시 호출 제거, LevelCompletePanel에 보상 애니메이션 이전. BUG4: UIColorPalette에 Background/TextPrimary/ProgressBarBg 추가. 추가: CreateConnectionLine 전 SetConnectedColor 호출로 선 색상 수정, HandleDragEnd/ForceEndDrag에 색상 복원 추가, GameOverPanel에서 레벨 선택 화면 복귀 구현.',
+      },
+      {
+        title: '[Orchestrator] 프로젝트 상태 — NumLink 3커밋 미push, MeowBeat 리팩토링 진행 중',
+        description:
+          'NumLink: main에 3커밋 앞서 있음(push 필요), 미추적 파일(DailyChallengeHubPanel, _Recovery, Screenshots) 정리 필요. MeowBeat: refactor/ai-friendly 브랜치에서 대규모 리팩토링 중(60+개 새 파일). agent-office: main 동기화 완료, 안정적.',
+      },
+      {
+        title: '[QA Tester] 게임오버 이벤트 흐름 설계 결함 발견',
+        description:
+          'GameOverPanel.OnEnable이 OnAllLivesLost 이벤트를 기다리지만 GameManager.SetGameOver에서 해당 이벤트를 트리거하지 않음 → Show() 미호출 가능. lineRendererPrefab null 시 선 렌더링 불가. isVibrated 플래그 상태 누수 가능(낮음). 전체 기술 부채 6건(TODO/HACK).',
+      },
+      {
+        title: '[DevOps] daily_standup.bat PATH 오류 수정 + 빌드 환경 정상',
+        description:
+          'Windows Task Scheduler가 사용자 PATH를 상속하지 않아 claude 명령어를 찾지 못해 매일 실패(LastTaskResult:1). claude → C:\\Users\\LIMMM\\AppData\\Roaming\\npm\\claude.cmd 전체 경로로 수정. Unity 6000.3.5f2, agent-office Vite 7.1.2 + React 19.1.1 정상.',
+      },
+    ],
+    meetingTitle: '2026-03-20 일일 진행 회의',
+    meetingSummary:
+      'NumLink 게임 핵심 버그 7건 수정 완료(4+3), 자동 회의 시스템 복구, MeowBeat 리팩토링 진행 중. QA에서 게임오버 이벤트 흐름 설계 결함 발견하여 후속 수정 필요.',
+    meetingItems: [
+      { speaker: 'Orchestrator', note: 'NumLink 3커밋 미push 상태. MeowBeat refactor/ai-friendly 브랜치 60+ 파일 변경 중. agent-office 안정. NumLink push + 미추적 파일 정리 우선.' },
+      { speaker: 'Developer', note: '오늘 커밋 3건: 4-bug 일괄 수정(c29ee15), 버튼 사라짐 수정(a9ab430), 선/버튼/게임오버 수정(ec2fa2f). 기술 부채 6건 존재(TODO), 모두 낮은 우선순위.' },
+      { speaker: 'QA Tester', note: '게임오버 흐름에서 OnAllLivesLost 이벤트 미트리거 결함 발견(높음). lineRendererPrefab null 시 선 렌더링 불가(높음). isVibrated 상태 누수(낮음). 전반적 품질은 안정화 진행 중.' },
+      { speaker: 'DevOps', note: 'daily_standup.bat PATH 오류로 매일 자동 회의 실패하고 있었음. claude.cmd 전체 경로로 수정 완료. 내일(3/21)부터 정상 자동 실행 예상.' },
+    ],
+    decisions: [
+      { title: 'NumLink push 및 정리', description: 'NumLink 3커밋 원격 push + 미추적 파일(DailyChallengeHubPanel, _Recovery, Screenshots) 정리' },
+      { title: '게임오버 이벤트 흐름 수정', description: 'GameManager.SetGameOver에서 TriggerAllLivesLost 호출 추가 또는 ShowGameOverScreen에서 직접 Show() 호출로 이벤트-UI 동기화' },
+      { title: 'MeowBeat 리팩토링 리뷰', description: 'refactor/ai-friendly 브랜치 60+ 파일 변경 리뷰 후 main 머지 준비' },
+    ],
+  },
+  {
     id: '2026-03-19T09:00:00-daily-standup',
     date: '2026-03-19',
     researchTitle: 'NumLink 게임 로직 버그 수정 + 7개 분야 병렬 리서치',
