@@ -105,7 +105,7 @@ export function LogPage() {
           {filtered.map((entry) => {
             const isActive = expandedId === entry.id
             return (
-              <div key={entry.id} className={`log__accordion ${isActive ? 'log__accordion--open' : ''}`}>
+              <div key={entry.id} className={`log__accordion ${isActive ? 'log__accordion--open' : ''} ${entry.id.includes('threads-insight') ? 'log__accordion--insight' : ''}`}>
                 <article
                   className="log__card"
                   onClick={() => handleCardClick(entry.id)}
@@ -115,7 +115,9 @@ export function LogPage() {
                   onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleCardClick(entry.id) }}
                 >
                   <div className="log__card-left">
-                    <span className="log__card-tag">리서치</span>
+                    <span className={`log__card-tag ${entry.id.includes('threads-insight') ? 'log__card-tag--insight' : ''}`}>
+                      {entry.id.includes('threads-insight') ? '📊 인사이트' : '리서치'}
+                    </span>
                     <h3 className="log__card-title">{entry.researchTitle}</h3>
                     <p className="log__card-desc">{entry.researchSummary}</p>
                   </div>

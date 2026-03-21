@@ -43,6 +43,67 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-03-21T20:00:00-threads-insight',
+    date: '2026-03-21',
+    researchTitle: '📊 Threads 인사이트 — AI 코딩 도구 전쟁, 게임+AI 융합, 1인 개발 붐',
+    researchSummary:
+      '76개 좋아요 쓰레드 + 26개 저장 쓰레드 분석. 한국 개발자 커뮤니티에서 AI 코딩 도구(Claude Code/Codex/Gemini) 선택이 최대 관심사. 게임+AI 융합 가속(프리팹 자동화, AI NPC, 스프라이트 생성). 1인 개발자 사이드프로젝트 붐. Qlib(MS AI 퀀트), Newton 1.0(로봇 물리엔진), MiroFish(집단지능) 등 신규 도구 발견.',
+    researchItems: [
+      {
+        title: '🥇 AI 코딩 도구 전쟁 (Claude Code vs Codex vs Gemini)',
+        description:
+          'Claude Code가 한국 개발자 사이에서 압도적 관심. @aisolutiondev(꿀팁 45개), @lotshin(마스터 가이드), @seol.cc(앱스토어 제출 자동화). Codex는 @impact_engineer(GitHub 레포 분석), @kang._.climb(게임 에디터 자체 제작). 바이브 코딩: @chris__founder(상위 1% 빌더 18가지 규칙). "비용 대비 효율"이 핵심 선택 기준.',
+      },
+      {
+        title: '🥈 게임+AI 융합 가속',
+        description:
+          '@goldmetale(Unity Inspector 팁 Alt+P), @jukesama(AI 프리팹 자동화 1-2년 내 전망), @kang._.climb(Codex로 게임 에디터 자체 제작), @dothink__(90% 게이머 AI NPC 긍정평가), @andrew_kim_ai(AI 스프라이트 애니메이션), @darkest_alex(오픈소스 파티클 제네레이터). AI가 게임 에셋 제작을 자동화하며 1인 개발 진입 장벽이 급격히 낮아지는 중.',
+      },
+      {
+        title: '🥉 1인 개발자 / 사이드프로젝트 붐',
+        description:
+          '@dalgom.bami, @luyaluyy(1인개발자 필수 사이트 모음 — 중복 등장=높은 수요), @nantestudio(세번째 게임 출시), @hyerrrim(남편 과학실험 사이트 개발), @ha_rim_kang(OpenHunt 주간 우승). "만들어서 공개하는 문화" 확산. AI 도구로 주말 프로젝트→실제 서비스 전환이 가능해짐.',
+      },
+      {
+        title: '4️⃣ AI 시대 커리어/취업 전략 변화',
+        description:
+          '@wkingdeveloper(AI 이력서 꿀팁), @allpass_everything(ChatGPT 자소서 표현), @hosi.oobo(AI 이력서 차별화 필요). AI가 취업 과정 자체를 변화시키는 중 — "AI로 이력서 쓰기"는 기본, 차별화 포인트가 관건.',
+      },
+      {
+        title: '5️⃣ 신규 도구/플랫폼 발견',
+        description:
+          '@softdaddy_o: Qlib(Microsoft AI 퀀트 투자 오픈소스) — 트레이딩 시스템 검토 가치. @ai.ivn: Newton 1.0(로봇 물리엔진) — SimVis XR 연동 가능. @byeongki_j: MiroFish 한국어판(집단지능 시뮬레이션). @joonlee0228: Kotlin 창시자의 LLM 전용 언어. @toy_crane911: Obsidian CEO 신기능.',
+      },
+    ],
+    meetingTitle: 'Threads 커뮤니티 온도 체크',
+    meetingSummary:
+      '한국 개발자 커뮤니티 전반 분위기: "AI를 잘 쓰는 사람이 이긴다" — 도구 활용 능력이 순수 코딩 스킬보다 중요해지는 전환점에 대한 공감대 형성.',
+    meetingItems: [
+      { speaker: '📈 뜨거운 것', note: 'AI 코딩(Claude Code/Codex), 바이브 코딩, 1인 개발, 사이드프로젝트 출시, AI NPC' },
+      { speaker: '📉 식어가는 것', note: '전통적 코딩 인터뷰 준비 (AI가 대체할 것이라는 인식 확산)' },
+      { speaker: '🆕 새로 떠오르는 것', note: 'AI 프리팹 자동화, LLM 전용 프로그래밍 언어, AI 퀀트(Qlib), AI 적응형 난이도' },
+      { speaker: '👥 주목할 작성자', note: '@choi.openai(AI 동향), @aisolutiondev(Claude Code), @goldmetale(Unity), @softdaddy_o(AI 퀀트), @johngrady0608(PKM 자동화 — 비슷한 관심사!)' },
+    ],
+    decisions: [
+      {
+        title: 'Unity Inspector Alt+P 단축키 즉시 적용',
+        description: '@goldmetale 팁 — Properties 창으로 여러 인스펙터 동시 사용. 게임 개발 작업 효율 향상.',
+      },
+      {
+        title: 'Qlib(Microsoft AI 퀀트) 리포 분석 검토',
+        description: '@softdaddy_o 소개 — 트레이딩 시스템에 AI 퀀트 전략 적용 가능성 검토.',
+      },
+      {
+        title: 'Newton 1.0 → SimVis XR 로봇 시뮬레이션 연동 가능성',
+        description: '@ai.ivn 소개 — 로봇 학습용 물리 엔진. SimVis XR 프로젝트에 통합 검토.',
+      },
+      {
+        title: '@johngrady0608의 Threads 크롤링 도구 비교',
+        description: '우리 PKM Threads Engine v6.0과 비교/통합 검토. 비슷한 관심사의 개발자.',
+      },
+    ],
+  },
+  {
     id: '2026-03-22T09:00:00-daily-standup',
     date: '2026-03-22',
     researchTitle: '3/21 결정사항 미이행 점검 + AI 적응형 난이도 + Unity 6.3 LTS + 스토어 준비 전략',
