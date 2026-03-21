@@ -43,6 +43,80 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-03-21T09:00:00-daily-standup',
+    date: '2026-03-21',
+    researchTitle: 'NumLink 게임오버 흐름 수정 + 시장 리서치 + 스토어 준비 점검',
+    researchSummary:
+      'NumLink 게임오버→레벨선택 복귀 흐름을 ReturnToLevelSelect로 전면 재설계. 퍼즐/리듬 시장 리서치(Block Blast MAU 3억, 리듬게임 $50억 전망), ASO 2026 전략 수립, UI/UX 트렌드 반영 계획. 스토어 등록 준비 상태 점검 결과 설명문/개인정보처리방침/ASO 키워드 미비.',
+    researchItems: [
+      {
+        title: '[Orchestrator] NumLink 5커밋 미push, MeowBeat 워킹트리 대량 정리 필요',
+        description:
+          'NumLink: main에 5커밋 ahead(push 필요). 미커밋 변경 3파일(GameManager/PuzzleManager/GameOverPanel — 게임오버 흐름 수정). MeowBeat: refactor/ai-friendly 브랜치에 50+개 미추적 파일. agent-office: origin/main 동기화 완료, 안정.',
+      },
+      {
+        title: '[Developer] RestartGame→ReturnToLevelSelect 전면 재설계 + ClearBoardChildren 역순 반복 수정',
+        description:
+          'GameManager.RestartGame()이 PuzzleManager.ReturnToLevelSelect() 호출하도록 변경. ReturnToLevelSelect: 보드/라인 정리→보드영역 숨기기→NumberManager 리셋→생명UI 숨기기→레벨선택 표시. ClearBoardChildren foreach→역순 for 루프로 ObjectPool Despawn 안정성 확보. GameOverPanel.OnTryAgainClicked 이중호출 방지.',
+      },
+      {
+        title: '[QA Tester] 활성 버그 0건, 기술 부채 7건(LOW), 자동 테스트 전무',
+        description:
+          '최근 21건 fix 커밋으로 알려진 버그 모두 수정. 미해결 TODO 7건(업적UI, 시드해시, SaveSystem 등 전부 LOW). HintManager 디버그 로그 릴리스 잔존 리스크(MEDIUM). 두 프로젝트 모두 자동화 테스트 0건 — 수동 Play Mode 테스트 의존.',
+      },
+      {
+        title: '[Game Designer] Block Blast MAU 3억, 메타레이어 필수화, 리듬게임 $50억 전망',
+        description:
+          'NumLink: 이미지 컬렉션 메타레이어 도입 최우선(Royal Match 패턴). Daily Puzzle 소셜 리더보드 추가. 온보딩 3x3 극소 그리드로 즉각 만족감. MeowBeat: 고양이 반응=핵심 게임플레이 피드백 통합. K-pop 비중 50%+. 냥스타그램 UGC 풀콤보 영상 공유.',
+      },
+      {
+        title: '[Content Writer] 스토어 등록 준비 미비 — 설명문/개인정보처리방침/ASO 키워드 부재',
+        description:
+          'NumLink: 아이콘+스크린샷(QA용 9장) 존재하나 스토어용 정제본 없음. 짧은/긴 설명문, 개인정보처리방침, ASO 키워드 모두 미작성. MeowBeat: 스크린샷/설명문/아이콘 전부 없음. ASO 2026 핵심: 커스텀 제품 페이지(CPP), 숏폼 영상, AI 메타데이터 생성.',
+      },
+      {
+        title: '[DevOps] daily_standup.bat 실행 실패(exit code 1) — 로그 추가 완료',
+        description:
+          '3/21 오전 9시 Task Scheduler 실행됐으나 exit code 1 실패. claude.cmd 경로는 정상 — 비대화형 환경 문제 추정. bat에 >> daily_standup.log 2>&1 추가하여 다음 실행부터 디버깅 가능. NumLink CI/CD 부재, productName "numberchain" 불일치.',
+      },
+      {
+        title: '[Art Director] 미니멀+깊이감 트렌드, DefaultTheme 1개뿐 — 다크모드/색약 모드 필요',
+        description:
+          '2026 트렌드: 글래스모피즘, 마이크로 인터랙션, 슬라이드 내비게이션, 접근성. NumLink: ThemeManager 인프라 준비됐으나 DefaultTheme 1개뿐. ColorVariables에 하드코딩 색상이 ThemeData와 중복. 최우선: ColorVariables 통합→다크모드 에셋 추가→패널 전환 애니메이션 통일.',
+      },
+    ],
+    meetingTitle: '2026-03-21 일일 진행 회의',
+    meetingSummary:
+      'NumLink 게임오버→레벨선택 복귀 흐름 전면 재설계 완료. 시장 리서치 결과 메타레이어/소셜/UGC가 2026 리텐션 삼각형. 스토어 등록 준비 대폭 미비하여 APK 빌드 전 설명문/개인정보처리방침 작성 시급.',
+    meetingItems: [
+      { speaker: 'Orchestrator', note: 'NumLink 5커밋 미push + 미커밋 3파일(게임오버 수정). MeowBeat 워킹트리 50+ 파일 정리 시급. agent-office 안정. 우선순위: NumLink push → 스토어 준비 → MeowBeat 정리.' },
+      { speaker: 'Developer', note: 'RestartGame→ReturnToLevelSelect 전면 재설계. 보드영역 숨기기/복원 패턴 적용. ClearBoardChildren 역순 반복 수정. GameOverPanel 이중호출 방지. 아키텍처 이슈: GameObject.Find, Input.GetKey 직접 사용 잔존.' },
+      { speaker: 'QA Tester', note: '활성 버그 0건(21건 수정 완료). 기술 부채 7건 전부 LOW. HintManager 디버그 로그 릴리스 전 제거 필수. 자동 테스트 전무 — 최소 컴파일 체크 CI 권장.' },
+      { speaker: 'Game Designer', note: '메타레이어 필수화 트렌드. NumLink: 이미지 컬렉션/앨범 시스템 최우선. Daily Puzzle 소셜 리더보드. MeowBeat: 고양이 반응=게임플레이 피드백. 냥스타그램 UGC 확장.' },
+      { speaker: 'Content Writer', note: 'NumLink 스토어 등록 미비: 설명문/개인정보처리방침/ASO 키워드 0건. 스크린샷 정제본 필요. productName "numberchain"→"NumLink" 수정 필요. ASO 2026: CPP + 숏폼 영상 우선.' },
+      { speaker: 'DevOps', note: 'daily_standup.bat 오늘 실패(exit code 1). 로그 기록 추가 완료. NumLink CI/CD 부재 — GameCI 워크플로우 추가 권장. agent-office 배포 파이프라인 정상(최근 5회 전부 success).' },
+      { speaker: 'Art Director', note: '2026 트렌드: 미니멀+깊이감, 마이크로 인터랙션. NumLink: DefaultTheme만 존재 → 다크모드 ThemeData 추가 필요. ColorVariables-ThemeData 색상 중복 통합. 패널 전환 슬라이드 애니메이션 통일.' },
+    ],
+    decisions: [
+      {
+        title: 'NumLink 커밋 push + 스토어 준비 착수',
+        description: '로컬 5커밋 즉시 push. 스토어 설명문(한/영), 개인정보처리방침, ASO 키워드 리서치 시작. productName "numberchain"→"NumLink" 수정.',
+      },
+      {
+        title: '게임오버 흐름 수정 검증',
+        description: 'ReturnToLevelSelect 방식의 게임오버→레벨선택 복귀가 정상 동작하는지 Play Mode 수동 테스트 필수. 보드영역 숨기기/복원이 모든 레벨에서 작동하는지 확인.',
+      },
+      {
+        title: 'HintManager 디버그 로그 #if UNITY_EDITOR 가드 추가',
+        description: 'DEBUG_LOG_INTERVAL 매 180프레임 로그가 릴리스 빌드에 포함되지 않도록 조치.',
+      },
+      {
+        title: 'daily_standup.bat 디버깅',
+        description: '내일(3/22) 실행 후 daily_standup.log 확인하여 실패 원인 파악. 필요시 --dangerously-skip-permissions 플래그 추가 검토.',
+      },
+    ],
+  },
+  {
     id: '2026-03-20T09:00:00-daily-standup',
     date: '2026-03-20',
     researchTitle: 'NumLink 4-Bug Fix + 버튼/선/게임오버 안정화 + 자동회의 복구',
