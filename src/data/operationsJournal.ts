@@ -43,6 +43,80 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-03-22T09:00:00-daily-standup',
+    date: '2026-03-22',
+    researchTitle: '3/21 결정사항 미이행 점검 + AI 적응형 난이도 + Unity 6.3 LTS + 스토어 준비 전략',
+    researchSummary:
+      'NumLink 5커밋 push/productName 수정/MeowBeat 워킹트리 정리 등 3/21 결정사항 전부 미이행 확인. 하이브리드 캐주얼 퍼즐 19개 타이틀 $100만+ 돌파, AI 적응형 난이도 도입 시 71% 수익 증가 데이터 확인. Unity 6.3 LTS IL2CPP 빌드 22% 단축. daily_standup.bat Exit code 9009(명령어 미발견) 원인 파악. Digital Texture/벤토 그리드/Anti-Design 등 2026 UI 신규 트렌드 발굴.',
+    researchItems: [
+      {
+        title: '[Orchestrator] 3/21 결정사항 전부 미이행 — NumLink 5커밋 미push, productName 미수정, MeowBeat 81건 잔존',
+        description:
+          'NumLink: origin/main 대비 5커밋 ahead 유지(push 안 됨). 미커밋 3파일(GameManager/PuzzleManager/GameOverPanel). productName 여전히 "numberchain". MeowBeat: refactor/ai-friendly 브랜치 미추적 55건+수정 26건=81건으로 오히려 증가. agent-office만 동기화 완료 상태.',
+      },
+      {
+        title: '[Game Designer] 하이브리드 캐주얼 퍼즐 $100만+ 19개, AI 적응형 난이도 71% 수익 증가',
+        description:
+          '2026년 하이브리드 캐주얼 퍼즐 19개가 각 $100만+ 달성(37% 매출 성장률). AI 적응형 난이도 도입 시 최대 71% 수익 증가, 20% 리텐션 향상. 내러티브 통합 퍼즐 주류화. 리듬게임: Gen Z 45% 선호, 인디 55% 음원 라이선싱 난항. Mewgenics 출시 수시간 내 개발비 회수로 고양이 IP 파워 입증.',
+      },
+      {
+        title: '[Developer] Unity 6.3 LTS 출시 — IL2CPP 빌드 22% 단축, Box2D v3 API 추가',
+        description:
+          'Unity 6.3 LTS: Box2D v3 저수준 API, Bloom 모바일 최적화, IL2CPP 빌드 22% 단축, HTTP/2 지원. GDD 엔진 버전 "Unity 2022 LTS"→"Unity 6.3 LTS" 갱신 필요(2022 LTS 지원 종료). MeowBeat M0 스프린트 M0-001만 in-progress, Unity 프로젝트 미생성. cat-merge-cafe에 C# 파일 0개.',
+      },
+      {
+        title: '[QA Tester] MeowBeat M0 스프린트 지연 + QA 체크리스트 38건 전체 미실행',
+        description:
+          'MeowBeat M0 스프린트(3/14~15 예정) 3/22 현재 미완료. QA 체크리스트 38개 항목 전체 미실행. 테스트 인프라 전무. agent-office ESLint 오류 1건(OfficeContext.tsx react-refresh 위반). 업계 80%가 테스트 자동화 채택, AI 보조 QA로 개발 시간 28% 절감 사례.',
+      },
+      {
+        title: '[Content Writer] ASO 의미 기반 탐색 전환 + 개인정보처리방침 공개 URL 필수',
+        description:
+          'Google Play NLP 의미 분석으로 전환 — 자연스러운 문장 내 롱테일 키워드 배치 필요. 개인정보처리방침: 공개 URL+Data Safety Form 동시 필수(미준수 시 앱 정지). 숏폼 영상 주 7-14개 목표. Discord 6.56억 유저로 인디 게임 커뮤니티 필수 인프라. 마케팅은 제작 단계부터 시작해야 비용 절감.',
+      },
+      {
+        title: '[DevOps] daily_standup.bat Exit code 9009 — claude.cmd 경로 미발견 확인',
+        description:
+          'daily_standup.log 분석: Exit code 9009(명령어 미발견). claude.cmd 경로 실존 여부 확인 필요. 홈 디렉토리 로그는 시작만 기록되고 종료 없음(행 걸림 추정). agent-office 배포 파이프라인 정상(10회 연속 success). GameCI v4.8.1 안정, NumLink CI/CD 도입 권장.',
+      },
+      {
+        title: '[Art Director] Digital Texture/벤토 그리드/Anti-Design — 독창적 컬러 팔레트 제안',
+        description:
+          '2026 신규 트렌드: Digital Texture(클레이/젤리 촉감 버튼), 벤토 그리드 레이아웃, Soft UI 2.0, 키네틱 타이포, 햅틱 피드백 동기화. NumLink "종이접기" 팔레트(크래프트 베이지+산호+겨자+청록), MeowBeat "야간 골목" 팔레트(딥 네이비+복숭아+라벤더+앰버) 제안. 다크모드 #121212 기반, 색약 3종 프리셋 필요.',
+      },
+    ],
+    meetingTitle: '2026-03-22 일일 진행 회의',
+    meetingSummary:
+      '3/21 결정사항(NumLink push, productName 수정, MeowBeat 정리) 전부 미이행으로 오늘 최우선 처리. AI 적응형 난이도 71% 수익 증가 데이터 확인. Unity 6.3 LTS 업그레이드 검토. daily_standup.bat 9009 에러 원인 파악. 스토어 준비(개인정보처리방침, ASO 키워드) 착수 시급.',
+    meetingItems: [
+      { speaker: 'Orchestrator', note: '3/21 결정사항 3건 전부 미이행. NumLink 5커밋 push + 미커밋 3파일 커밋 + productName 수정이 오늘 1순위. MeowBeat 81건 워킹트리 정리 2순위. agent-office 안정.' },
+      { speaker: 'Game Designer', note: '하이브리드 캐주얼 퍼즐 37% 성장, AI 적응형 난이도 71% 수익 증가 입증. NumLink에 적응형 난이도+짧은 시즌제 배틀패스 도입 제안. MeowBeat 음원 라이선싱 리스크 대비 필요. Mewgenics 고양이 IP 파워 참고.' },
+      { speaker: 'Developer', note: 'Unity 6.3 LTS 출시 — IL2CPP 22% 빌드 단축, Box2D v3 추가. GDD 엔진 버전 갱신 필요(2022 LTS 지원 종료). MeowBeat C# 코드 0개, M0 Unity 프로젝트 생성 시급. GameObject.Find/Input.GetKey 잔존 코드 전환 필요.' },
+      { speaker: 'QA Tester', note: 'MeowBeat M0 스프린트 1주 지연(3/14→3/22). QA 체크리스트 38건 전체 미실행. agent-office ESLint 오류 1건 발견. M1에 EditMode 단위 테스트 태스크 추가 권장. 업계 80% 테스트 자동화 채택.' },
+      { speaker: 'Content Writer', note: 'ASO가 키워드→의미 기반으로 전환. 개인정보처리방침 공개 URL+Data Safety Form 필수(미준수 시 앱 정지). 숏폼 영상 주 7-14개. Discord 커뮤니티 조기 구축. 스토어 설명문 초안 착수 시급.' },
+      { speaker: 'DevOps', note: 'daily_standup.bat Exit code 9009 — claude.cmd 경로 미발견. 로그 분석 완료, 경로 수정 필요. agent-office 배포 10회 연속 success. GameCI v4.8.1로 NumLink CI/CD 도입 권장. Node 22 LTS 업그레이드 검토.' },
+      { speaker: 'Art Director', note: 'Digital Texture(촉감 버튼), 벤토 그리드, Anti-Design이 2026 핵심 트렌드. NumLink "종이접기" 팔레트, MeowBeat "야간 골목" 팔레트 제안. 다크모드 #121212 기반 ThemeData 생성 + ColorVariables 통합 최우선.' },
+    ],
+    decisions: [
+      {
+        title: 'NumLink 즉시 push + productName 수정 (3/21 미이행 최우선)',
+        description: '5커밋 git push + 미커밋 3파일 커밋. productName "numberchain"→"NumLink" 수정. 이틀째 미이행이므로 오늘 반드시 완료.',
+      },
+      {
+        title: 'daily_standup.bat 9009 에러 수정',
+        description: 'claude.cmd 경로 실존 확인 후 bat 파일 수정. npm global 재설치 또는 절대 경로 갱신. 로그 파일 위치 통합.',
+      },
+      {
+        title: '스토어 준비 본격 착수 — 개인정보처리방침 + ASO 키워드',
+        description: '게임 전용 생성기로 개인정보처리방침 초안 → GitHub Pages 배포. 롱테일 ASO 키워드 10-15개 선정. 스토어 설명문 한/영 초안 작성.',
+      },
+      {
+        title: 'MeowBeat M0 스프린트 완료 촉진 + GDD 엔진 버전 갱신',
+        description: 'Unity 프로젝트 생성(M0-003) 우선 완료. GDD 엔진 "Unity 2022 LTS"→"Unity 6.3 LTS" 갱신. 워킹트리 81건 분류 후 commit 또는 .gitignore 처리.',
+      },
+    ],
+  },
+  {
     id: '2026-03-21T09:00:00-daily-standup',
     date: '2026-03-21',
     researchTitle: 'NumLink 게임오버 흐름 수정 + 시장 리서치 + 스토어 준비 점검',
