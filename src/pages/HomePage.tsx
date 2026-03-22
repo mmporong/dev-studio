@@ -25,7 +25,30 @@ export function HomePage() {
           <p className="home__label">indie game studio</p>
           <h1>LIM Studio</h1>
           <p className="home__tagline">고양이와 리듬과 코드를 엮는 1인 개발 스튜디오</p>
-          <p className="home__stack">Unity · Python · AI Pipeline</p>
+          <div className="home__stack">
+            <span className="home__stack-badge">Unity</span>
+            <span className="home__stack-badge">C#</span>
+            <span className="home__stack-badge">React</span>
+            <span className="home__stack-badge">TypeScript</span>
+            <span className="home__stack-badge">Python</span>
+            <span className="home__stack-badge">AI Pipeline</span>
+          </div>
+          <div className="home__hero-links">
+            <a
+              className="home__hero-btn home__hero-btn--github"
+              href="https://github.com/mmporong"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+            <a
+              className="home__hero-btn home__hero-btn--contact"
+              href="mailto:mmporong@gmail.com"
+            >
+              Contact
+            </a>
+          </div>
         </div>
         <div className="home__hero-mascot">
           <img
