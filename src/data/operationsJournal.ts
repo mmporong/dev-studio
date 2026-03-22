@@ -43,8 +43,8 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
-    id: '2026-03-23T09:00:00-daily-standup',
-    date: '2026-03-23',
+    id: '2026-03-22T09:00:00-daily-standup',
+    date: '2026-03-22',
     researchTitle: '3/22 결정사항 부분 이행 + Unity 6.4 출시 + Mewgenics 100만장 + Node 20 EOL 임박',
     researchSummary:
       'NumLink push+productName 수정 완료(4건 중 1건 이행). 스토어 준비/MeowBeat M0/daily_standup.bat은 여전히 미착수. Unity 6.4 출시(ECS 코어 통합, Project Auditor 내장). Mewgenics 1주 100만장·$2,500만 달성으로 고양이 IP 폭발적 성장 확인. Node.js 20 EOL 5주 후(agent-office 워크플로우 영향). AI 음악 도구(Beatoven.ai) 비용 80-95% 절감. CatMergeCafe Mint 색상 WCAG 접근성 완전 미달(대비율 1.17:1).',
@@ -85,7 +85,7 @@ export const seedJournalEntries: JournalEntry[] = [
           'CatMergeCafe Mint(#98FB98) 대비율 1.17:1로 WCAG AA(3.0:1)의 26% 수준 — 허브 초록 #6B9E78(4.8:1)로 교체 필수. 야간 골목 팔레트 5쌍 분석: 3쌍 AAA(14.38:1/10.42:1/9.0:1), 1쌍 AA, 1쌍 AA Large. 2026 마이크로인터랙션 표준 100ms 이하(태스크 완료율 +18%). Digital Texture(grain/noise) 트렌드가 "종이접기" 컨셉과 완벽 정렬. Bento Grid 2.0이 레벨 선택/도감 UI 최적 레이아웃.',
       },
     ],
-    meetingTitle: '2026-03-23 일일 진행 회의',
+    meetingTitle: '2026-03-22 일일 진행 회의',
     meetingSummary:
       '3/22 결정 4건 중 NumLink push+productName만 이행, 나머지 3건 미착수. Unity 6.4 출시 확인(당장 업그레이드 불필요). Mewgenics 100만장 흥행으로 고양이 IP 가치 재확인. Node 20 EOL 5주 전 워크플로우 업그레이드 시급. 스토어 준비(개인정보처리방침+ASO) 3일째 미착수로 최우선 격상.',
     meetingItems: [
