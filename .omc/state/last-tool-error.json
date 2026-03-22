@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"ls .publish-agent-office.ps1 2>/dev/null && cat .publish-agent-office.ps1 | head -20\",\"description\":\"Check publish script content\"}",
-  "error": "Exit code 2",
-  "timestamp": "2026-03-20T02:32:52.195Z",
-  "retry_count": 1
+  "tool_input_preview": "{\"command\":\"cd C:/Users/LIMMM/agent-office && git rebase --continue\",\"description\":\"rebase 계속 진행\"}",
+  "error": "Exit code 1\nYou must edit all merge conflicts and then\nmark them as resolved using git add",
+  "timestamp": "2026-03-22T00:11:27.635Z",
+  "retry_count": 2
 }

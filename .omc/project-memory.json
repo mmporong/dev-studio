@@ -1,0 +1,179 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1774052941759,
+  "projectRoot": "C:\\Users\\LIMMM\\agent-office",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      },
+      {
+        "name": "TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "tsconfig.json"
+        ]
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "react",
+        "version": "19.1.1",
+        "category": "frontend"
+      },
+      {
+        "name": "react-dom",
+        "version": "19.1.1",
+        "category": "frontend"
+      },
+      {
+        "name": "vite",
+        "version": "7.1.2",
+        "category": "build"
+      }
+    ],
+    "packageManager": "npm",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": "npm run build",
+    "testCommand": null,
+    "lintCommand": "npm run lint",
+    "devCommand": "npm run dev",
+    "scripts": {
+      "dev": "vite",
+      "build": "tsc -b && vite build",
+      "lint": "eslint .",
+      "preview": "vite preview",
+      "publish:auto": "powershell -ExecutionPolicy Bypass -File .\\publish-agent-office.ps1",
+      "watch:publish": "powershell -ExecutionPolicy Bypass -File .\\watch-agent-office.ps1"
+    }
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": "type-based"
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "public",
+      "scripts",
+      "src"
+    ],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "dist": {
+      "path": "dist",
+      "purpose": "Distribution/build output",
+      "fileCount": 4,
+      "lastAccessed": 1774052941727,
+      "keyFiles": [
+        "index.html",
+        "status.json",
+        "vite.svg"
+      ]
+    },
+    "public": {
+      "path": "public",
+      "purpose": "Public files",
+      "fileCount": 3,
+      "lastAccessed": 1774052941734,
+      "keyFiles": [
+        "status.json",
+        "vite.svg"
+      ]
+    },
+    "scripts": {
+      "path": "scripts",
+      "purpose": "Build/utility scripts",
+      "fileCount": 1,
+      "lastAccessed": 1774052941734,
+      "keyFiles": [
+        "update-agent-status.ps1"
+      ]
+    },
+    "src": {
+      "path": "src",
+      "purpose": "Source code",
+      "fileCount": 4,
+      "lastAccessed": 1774052941734,
+      "keyFiles": [
+        "App.tsx",
+        "index.css",
+        "main.tsx",
+        "vite-env.d.ts"
+      ]
+    },
+    "dist\\assets": {
+      "path": "dist\\assets",
+      "purpose": "Static assets",
+      "fileCount": 2,
+      "lastAccessed": 1774052941735,
+      "keyFiles": [
+        "index-BmQigJv9.css",
+        "index-GQtat6z2.js"
+      ]
+    },
+    "src\\assets": {
+      "path": "src\\assets",
+      "purpose": "Static assets",
+      "fileCount": 1,
+      "lastAccessed": 1774052941736,
+      "keyFiles": [
+        "react.svg"
+      ]
+    },
+    "src\\components": {
+      "path": "src\\components",
+      "purpose": "UI components",
+      "fileCount": 0,
+      "lastAccessed": 1774052941736,
+      "keyFiles": []
+    },
+    "src\\data": {
+      "path": "src\\data",
+      "purpose": "Data files",
+      "fileCount": 5,
+      "lastAccessed": 1774052941737,
+      "keyFiles": [
+        "agents.ts",
+        "aiArchitecture.ts",
+        "chronicle.ts"
+      ]
+    },
+    "src\\pages": {
+      "path": "src\\pages",
+      "purpose": "Page components",
+      "fileCount": 9,
+      "lastAccessed": 1774052941737,
+      "keyFiles": [
+        "HomePage.css",
+        "HomePage.tsx",
+        "LogPage.css"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "src\\data\\operationsJournal.ts",
+      "accessCount": 1,
+      "lastAccessed": 1774053174906,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

@@ -43,63 +43,76 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
-    id: '2026-03-21T20:00:00-threads-insight',
-    date: '2026-03-21',
-    researchTitle: '📊 Threads 인사이트 — AI 코딩 도구 전쟁, 게임+AI 융합, 1인 개발 붐',
+    id: '2026-03-23T09:00:00-daily-standup',
+    date: '2026-03-23',
+    researchTitle: '3/22 결정사항 부분 이행 + Unity 6.4 출시 + Mewgenics 100만장 + Node 20 EOL 임박',
     researchSummary:
-      '76개 좋아요 쓰레드 + 26개 저장 쓰레드 분석. 한국 개발자 커뮤니티에서 AI 코딩 도구(Claude Code/Codex/Gemini) 선택이 최대 관심사. 게임+AI 융합 가속(프리팹 자동화, AI NPC, 스프라이트 생성). 1인 개발자 사이드프로젝트 붐. Qlib(MS AI 퀀트), Newton 1.0(로봇 물리엔진), MiroFish(집단지능) 등 신규 도구 발견.',
+      'NumLink push+productName 수정 완료(4건 중 1건 이행). 스토어 준비/MeowBeat M0/daily_standup.bat은 여전히 미착수. Unity 6.4 출시(ECS 코어 통합, Project Auditor 내장). Mewgenics 1주 100만장·$2,500만 달성으로 고양이 IP 폭발적 성장 확인. Node.js 20 EOL 5주 후(agent-office 워크플로우 영향). AI 음악 도구(Beatoven.ai) 비용 80-95% 절감. CatMergeCafe Mint 색상 WCAG 접근성 완전 미달(대비율 1.17:1).',
     researchItems: [
       {
-        title: '🥇 AI 코딩 도구 전쟁 (Claude Code vs Codex vs Gemini)',
+        title: '[Orchestrator] 3/22 결정 4건 중 1건만 이행 — NumLink push+productName 완료, 나머지 3건 미착수',
         description:
-          'Claude Code가 한국 개발자 사이에서 압도적 관심. @aisolutiondev(꿀팁 45개), @lotshin(마스터 가이드), @seol.cc(앱스토어 제출 자동화). Codex는 @impact_engineer(GitHub 레포 분석), @kang._.climb(게임 에디터 자체 제작). 바이브 코딩: @chris__founder(상위 1% 빌더 18가지 규칙). "비용 대비 효율"이 핵심 선택 기준.',
+          'NumLink: origin/main 동기화 완료, productName "NumLink" 변경 확인. 워킹트리 untracked 6건(DailyChallengeHubPanel 등) 커밋 필요. MeowBeat: meowbeat/main 브랜치 동기화 완료, SPRINT.md P0-003 in-progress/P0-004 todo, GDD.md 파일 자체가 MeowBeat 리포에 부재. daily_standup.bat: 3/22 09:00 실행 시작 후 종료 로그 없이 끊김, 작업 스케줄러 미등록. 스토어 준비(개인정보처리방침/ASO): 전혀 미착수.',
       },
       {
-        title: '🥈 게임+AI 융합 가속',
+        title: '[Game Designer] Mewgenics 1주 100만장/$2,500만, Royal Match 누적 $50억+, AI 음악 비용 80-95% 절감',
         description:
-          '@goldmetale(Unity Inspector 팁 Alt+P), @jukesama(AI 프리팹 자동화 1-2년 내 전망), @kang._.climb(Codex로 게임 에디터 자체 제작), @dothink__(90% 게이머 AI NPC 긍정평가), @andrew_kim_ai(AI 스프라이트 애니메이션), @darkest_alex(오픈소스 파티클 제네레이터). AI가 게임 에셋 제작을 자동화하며 1인 개발 진입 장벽이 급격히 낮아지는 중.',
+          'Mewgenics: 메타크리틱 89점, Steam 동시접속 115,428명(로그라이트 신기록), 1주 100만장 판매. 고양이 IP 폭발적 파워 재확인. Royal Match: 광고 없는 IAP 전용 모델로 누적 $50억+ 돌파. UNBEATABLE: 인디 리듬게임 최대 성공작(Steam 92% 긍정), 스토리+아케이드 이중 모드 전략. AI 음악 도구(Beatoven.ai/SOUNDRAW) 활용 시 음원 제작비 80-95% 절감. 2026 핵심: 세션 디자인이 그래픽보다 중요.',
       },
       {
-        title: '🥉 1인 개발자 / 사이드프로젝트 붐',
+        title: '[Developer] Unity 6.4 출시(ECS 코어 통합) + CoreCLR 6.7 예정 + 규칙 위반 3건 잔존',
         description:
-          '@dalgom.bami, @luyaluyy(1인개발자 필수 사이트 모음 — 중복 등장=높은 수요), @nantestudio(세번째 게임 출시), @hyerrrim(남편 과학실험 사이트 개발), @ha_rim_kang(OpenHunt 주간 우승). "만들어서 공개하는 문화" 확산. AI 도구로 주말 프로젝트→실제 서비스 전환이 가능해짐.',
+          'Unity 6.4(2026-03-19): ECS 코어 패키지 승격, Project Auditor 내장, DirectStorage API 지원. CoreCLR 로드맵: 6.7 실험적 데스크톱, 6.8 에디터 전환. NumLink(6.3 LTS) 2027년 12월까지 지원, 당장 업그레이드 불필요. 규칙 위반 3건: AutoSetup의 GameObject.Find, NumberManager의 Input.GetKeyDown, PuzzleManager의 FindObjectOfType. cat-merge-cafe C# 0개(문서만 존재).',
       },
       {
-        title: '4️⃣ AI 시대 커리어/취업 전략 변화',
+        title: '[QA Tester] NumLink TODO 6건 전부 LOW + Debug.Log 가드 밖 잔존 MEDIUM + 자동화 테스트 전무',
         description:
-          '@wkingdeveloper(AI 이력서 꿀팁), @allpass_everything(ChatGPT 자소서 표현), @hosi.oobo(AI 이력서 차별화 필요). AI가 취업 과정 자체를 변화시키는 중 — "AI로 이력서 쓰기"는 기본, 차별화 포인트가 관건.',
+          'NumLink: TODO 6건 전부 LOW. #if UNITY_EDITOR 가드 15개 파일 80건 적용으로 개선됐으나, LevelDataProvider/EndlessModeProvider/DailyPuzzleProvider에 가드 밖 Debug.Log 잔존(MEDIUM). 자동화 테스트 0건(수동 Play Mode 의존). agent-office: ESLint 오류 1건(OfficeContext.tsx react-refresh 위반) 지속, 빌드는 정상(2.52s). QA 38건 체크리스트 여전히 전체 미실행.',
       },
       {
-        title: '5️⃣ 신규 도구/플랫폼 발견',
+        title: '[Content Writer] "Paid Organic" SNS 전략 부상 + CPP/CSL 전환율 40% 상승 + 개인정보처리방침 3프로젝트 전무',
         description:
-          '@softdaddy_o: Qlib(Microsoft AI 퀀트 투자 오픈소스) — 트레이딩 시스템 검토 가치. @ai.ivn: Newton 1.0(로봇 물리엔진) — SimVis XR 연동 가능. @byeongki_j: MiroFish 한국어판(집단지능 시뮬레이션). @joonlee0228: Kotlin 창시자의 LLM 전용 언어. @toy_crane911: Obsidian CEO 신기능.',
+          '2026 마케팅 핵심: 오가닉 영상 업로드 후 성과 좋은 영상에만 소액($100-200) 부스팅하는 "Paid Organic" 전략. YouTube Shorts가 TikTok 대비 안정적(크리에이터 85-90%가 Shorts/Reels 선호). CPP/CSL 맞춤 스토어 페이지로 전환율 최대 40% 상승. Discord 출시 12-18개월 전 커뮤니티 구축 권장. NumLink/MeowBeat/CatMergeCafe 3프로젝트 모두 개인정보처리방침 파일 부재.',
+      },
+      {
+        title: '[DevOps] daily_standup.bat 3/22 실행 끊김 + Node 20 EOL 5주 후 + NumLink CI/CD 전무',
+        description:
+          'daily_standup.bat: claude.cmd 경로 정상 존재, bat 파일에 따옴표 감쌈 확인. 3/21은 Exit code 0 성공, 3/22는 시작만 기록되고 종료 없음(실행 중 끊김). 작업 스케줄러에 standup 태스크 미등록. agent-office 배포 5회 연속 성공(30-40초). Node.js 20 EOL 2026-04-30(5주 후), 워크플로우 node-version:20→22/24 업그레이드 필요. GameCI v4.8.1 안정, NumLink CI/CD 도입 권장.',
+      },
+      {
+        title: '[Art Director] CatMergeCafe Mint 접근성 완전 미달(1.17:1) + 마이크로인터랙션 100ms 기준 + Digital Texture 트렌드 정렬',
+        description:
+          'CatMergeCafe Mint(#98FB98) 대비율 1.17:1로 WCAG AA(3.0:1)의 26% 수준 — 허브 초록 #6B9E78(4.8:1)로 교체 필수. 야간 골목 팔레트 5쌍 분석: 3쌍 AAA(14.38:1/10.42:1/9.0:1), 1쌍 AA, 1쌍 AA Large. 2026 마이크로인터랙션 표준 100ms 이하(태스크 완료율 +18%). Digital Texture(grain/noise) 트렌드가 "종이접기" 컨셉과 완벽 정렬. Bento Grid 2.0이 레벨 선택/도감 UI 최적 레이아웃.',
       },
     ],
-    meetingTitle: 'Threads 커뮤니티 온도 체크',
+    meetingTitle: '2026-03-23 일일 진행 회의',
     meetingSummary:
-      '한국 개발자 커뮤니티 전반 분위기: "AI를 잘 쓰는 사람이 이긴다" — 도구 활용 능력이 순수 코딩 스킬보다 중요해지는 전환점에 대한 공감대 형성.',
+      '3/22 결정 4건 중 NumLink push+productName만 이행, 나머지 3건 미착수. Unity 6.4 출시 확인(당장 업그레이드 불필요). Mewgenics 100만장 흥행으로 고양이 IP 가치 재확인. Node 20 EOL 5주 전 워크플로우 업그레이드 시급. 스토어 준비(개인정보처리방침+ASO) 3일째 미착수로 최우선 격상.',
     meetingItems: [
-      { speaker: '📈 뜨거운 것', note: 'AI 코딩(Claude Code/Codex), 바이브 코딩, 1인 개발, 사이드프로젝트 출시, AI NPC' },
-      { speaker: '📉 식어가는 것', note: '전통적 코딩 인터뷰 준비 (AI가 대체할 것이라는 인식 확산)' },
-      { speaker: '🆕 새로 떠오르는 것', note: 'AI 프리팹 자동화, LLM 전용 프로그래밍 언어, AI 퀀트(Qlib), AI 적응형 난이도' },
-      { speaker: '👥 주목할 작성자', note: '@choi.openai(AI 동향), @aisolutiondev(Claude Code), @goldmetale(Unity), @softdaddy_o(AI 퀀트), @johngrady0608(PKM 자동화 — 비슷한 관심사!)' },
+      { speaker: 'Orchestrator', note: '3/22 결정 4건 중 NumLink push+productName 1건만 완료. 스토어 준비/MeowBeat M0/daily_standup 3건 3일째 미착수. NumLink untracked 6건 커밋 필요. 스토어 준비를 오늘 반드시 착수해야 함 — 3일 연속 미이행은 프로젝트 출시 일정에 직접 영향.' },
+      { speaker: 'Game Designer', note: 'Mewgenics 1주 100만장·$2,500만으로 고양이 IP 폭발적 파워 확인 — MeowBeat 차별화 전략 재점검 필요. Royal Match 광고 제거+IAP 모델 NumLink에 적용 검토(힌트/되돌리기 유료화). UNBEATABLE 스토리+아케이드 이중 모드를 MeowBeat에 도입 제안. AI 음악(Beatoven.ai) 무료 플랜으로 프로토타입 착수 가능.' },
+      { speaker: 'Developer', note: 'Unity 6.4 출시(ECS 코어 통합, Project Auditor 내장) 확인. NumLink은 6.3 LTS(2027/12까지 지원)로 당장 업그레이드 불필요. 규칙 위반 3건(AutoSetup/NumberManager/PuzzleManager) 수정 백로그 유지. CoreCLR 6.7 실험적 데스크톱 예정 — 새 프로젝트부터 고려.' },
+      { speaker: 'QA Tester', note: 'NumLink Debug.Log 가드 밖 잔존 3파일(LevelData/Endless/DailyPuzzle) MEDIUM 리스크. 자동화 테스트 전무(3프로젝트 공통). agent-office ESLint 1건 지속(useOffice 훅 분리 필요). QA 38건 체크리스트 코드 부재로 여전히 실행 불가.' },
+      { speaker: 'Content Writer', note: '개인정보처리방침 3프로젝트 전무 — NumLink 출시 블로커. "Paid Organic" SNS 전략(오가닉→소액 부스팅) 채택 권장. YouTube Shorts 주 7-14개, Discord 커뮤니티 조기 구축. CPP/CSL 맞춤 스토어 페이지 전환율 40% 상승 데이터.' },
+      { speaker: 'DevOps', note: 'Node.js 20 EOL 2026-04-30(5주 후) — agent-office 워크플로우 node-version 22/24 업그레이드 시급. daily_standup.bat 3/22 실행 끊김, 작업 스케줄러 재등록 필요. GameCI v4.8.1로 NumLink CI/CD 도입 우선순위 상향.' },
+      { speaker: 'Art Director', note: 'CatMergeCafe Mint(#98FB98) 접근성 완전 미달(1.17:1) — 허브 초록 #6B9E78로 즉시 교체. 야간 골목 팔레트 AAA 접근성 검증 완료. Digital Texture(grain/noise)가 종이접기 컨셉과 완벽 정렬. 마이크로인터랙션 100ms 이하 표준 준수 필요. Bento Grid 2.0으로 레벨 선택 UI 개편 제안.' },
     ],
     decisions: [
       {
-        title: 'Unity Inspector Alt+P 단축키 즉시 적용',
-        description: '@goldmetale 팁 — Properties 창으로 여러 인스펙터 동시 사용. 게임 개발 작업 효율 향상.',
+        title: 'NumLink 스토어 준비 즉시 착수 (3일째 미이행, 최우선)',
+        description: '개인정보처리방침 초안 작성→GitHub Pages 배포. ASO 롱테일 키워드 10-15개 선정. 스토어 설명문 한/영 초안 작성. 3일 연속 미착수이므로 오늘 반드시 1건 이상 완료.',
       },
       {
-        title: 'Qlib(Microsoft AI 퀀트) 리포 분석 검토',
-        description: '@softdaddy_o 소개 — 트레이딩 시스템에 AI 퀀트 전략 적용 가능성 검토.',
+        title: 'Node.js 20→22 워크플로우 업그레이드 (EOL 5주 전)',
+        description: 'agent-office deploy-pages.yml의 node-version: 20→22로 변경. 로컬 개발 환경도 Node 22 LTS로 전환. 4/30 EOL 전 완료 필수.',
       },
       {
-        title: 'Newton 1.0 → SimVis XR 로봇 시뮬레이션 연동 가능성',
-        description: '@ai.ivn 소개 — 로봇 학습용 물리 엔진. SimVis XR 프로젝트에 통합 검토.',
+        title: 'daily_standup.bat 안정화 + 작업 스케줄러 재등록',
+        description: '3/22 실행 끊김 원인 조사(메모리/타임아웃 추정). bat 파일에 타임아웃 설정 추가. Windows 작업 스케줄러에 standup 태스크 재등록.',
       },
       {
-        title: '@johngrady0608의 Threads 크롤링 도구 비교',
-        description: '우리 PKM Threads Engine v6.0과 비교/통합 검토. 비슷한 관심사의 개발자.',
+        title: 'MeowBeat GDD.md 생성 + AI 음악 프로토타입 착수',
+        description: 'MeowBeat 리포에 GDD.md 생성(엔진 버전 Unity 6.3 LTS 명시). Beatoven.ai 무료 플랜으로 프로토타입 트랙 1-2곡 생성 테스트. M0 P0-003/P0-004 마무리.',
       },
     ],
   },
