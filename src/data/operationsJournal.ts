@@ -43,6 +43,63 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-03-23T09:00:00-daily-standup',
+    date: '2026-03-23',
+    researchTitle: '인디 게임 마케팅 전략 + NumLink 안정화 완료 + Google Play 신규 기능',
+    researchSummary:
+      'NumLink DOTween/Animator 충돌 근본 해결 + Debug.Log 250개 제거로 안정화 완료. ASO 최적화 + Google Play 사전 등록 + 숏폼 콘텐츠가 1인 개발자 핵심 마케팅 전략. Google Play 2026년 3월 게임 트라이얼/커뮤니티 포스트/위시리스트 신규 도입.',
+    researchItems: [
+      {
+        title: 'NumLink 안정화 완료 — 3일간 10커밋, 게임 플로우 버그 전수 수정',
+        description:
+          'DOTween/Animator scale 충돌 근본 해결(PlayAnim DOTween 교체), 게임오버→레벨선택 복귀 흐름 수정, NumberButton 풀 재사용 상태 초기화, 이미지 리빌 상태 리셋, Debug.Log 250개 일괄 제거. 프로덕션 준비 완료 상태.',
+      },
+      {
+        title: 'ASO가 최우선 — 앱의 50%+가 검색으로 발견됨',
+        description:
+          '키워드 최적화 + 스크린샷 + 아이콘이 스토어 전환율 결정. title: "NumLink - Number Puzzle", 키워드: numberlink, flow puzzle, connect numbers, number puzzle, 숫자퍼즐, 넘버링크.',
+      },
+      {
+        title: 'Google Play 2026년 3월 신규 기능 — 게임 트라이얼/커뮤니티 포스트/위시리스트',
+        description:
+          '게임 트라이얼: 설치 없이 체험 가능(퍼즐 게임에 유리). 커뮤니티 포스트: 스토어 내 개발자-유저 소통. 위시리스트: 사전 관심 표시. NumLink 출시에 활용 가능.',
+      },
+      {
+        title: '숏폼 콘텐츠 + 마이크로 인플루언서가 저예산 핵심 전략',
+        description:
+          'TikTok/YouTube Shorts 주 7~14개 클립 이상적. 개발 과정 공유가 가장 효과적. 마이크로 인플루언서는 소셜 광고 대비 3배 비용 효율. 소프트 런치(필리핀/캐나다) 후 글로벌 확장 권장.',
+      },
+    ],
+    meetingTitle: '2026-03-23 일일 진행 회의',
+    meetingSummary:
+      'NumLink 안정화 완료(DOTween/Animator 충돌 해결, 프로덕션 로그 정리). 스토어 준비 단계 진입. Google Play 신규 기능(게임 트라이얼) 활용 기회. ASO/스크린샷/개인정보처리방침이 즉시 착수 필요한 Critical 항목.',
+    meetingItems: [
+      { speaker: 'Orchestrator', note: 'NumLink 3일간 10커밋으로 안정화 완료. 스토어 에셋(스크린샷, 아이콘, 설명문) 미준비가 최대 블로커. 개인정보처리방침 없이 AdMob 앱 등록 불가.' },
+      { speaker: 'Game Designer', note: '레벨 60개는 경쟁 앱 대비 1/30 수준. 절차적 생성으로 200+ 확장 필요. Google Play 게임 트라이얼 기능이 퍼즐 게임에 매우 유리.' },
+      { speaker: 'Developer', note: 'DOTween/Animator 충돌 근본 해결 완료. Debug.Log 250개 제거로 릴리스 빌드 준비됨. APK 빌드 + 실기기 테스트가 다음 단계.' },
+      { speaker: 'Content Writer', note: 'ASO 키워드 초안 완성. 한/영 듀얼 설명문 작성 필요. 숏폼 콘텐츠(개발 타임랩스) 주 3개 목표.' },
+      { speaker: 'DevOps', note: 'APK 빌드 파이프라인 미구축. AdMob App ID 설정 → Build → 실기기 테스트 순서. 소프트 런치는 필리핀/태국 권장.' },
+    ],
+    decisions: [
+      {
+        title: '개인정보처리방침 작성 + GitHub Pages 배포',
+        description: 'mmporong.github.io에 privacy-policy.html 배포. AdMob 데이터 수집 조항 포함. Critical — Play Console 등록 필수.',
+      },
+      {
+        title: '스토어 설명문 + ASO 키워드 초안',
+        description: '한국어/영어 dual. title/short description/full description 각각 작성. 스크린샷 5장 제작.',
+      },
+      {
+        title: 'APK 빌드 + 실기기 테스트',
+        description: 'AdMob App ID 설정 → Build → 안드로이드 실기기 설치 테스트. UI 레이아웃/터치 입력/광고 SDK 동작 확인.',
+      },
+      {
+        title: '레벨 확장 전략 결정',
+        description: 'PuzzleGenerator 코드 기반 절차적 생성 vs 수동 200+ 레벨 추가. 리텐션 직결 문제.',
+      },
+    ],
+  },
+  {
     id: '2026-03-22T09:00:00-daily-standup',
     date: '2026-03-22',
     researchTitle: '3/22 결정사항 부분 이행 + Unity 6.4 출시 + Mewgenics 100만장 + Node 20 EOL 임박',
