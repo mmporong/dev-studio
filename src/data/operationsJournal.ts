@@ -43,6 +43,148 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-03-24T10:00:00-job-research',
+    date: '2026-03-24',
+    researchTitle: 'Unity/C# 채용공고 리서치 + 타겟 회사 동향 + 기술면접 트렌드',
+    researchSummary:
+      '잡코리아 기준 Unity 공고 332건 활성. 유모델러(신입/AI도구 우대), 머플(신입/주니어), 나인파이브(WebGL 명시) 3곳이 프로필 최적합. 머플 네이버제트 시드 18억 투자, K-Startup 수상. 면접 트렌드: 메모리 관리 최다 빈출, 구현/BFS 코딩테스트 1순위, WebGL 빌드 포트폴리오 필수화.',
+    researchItems: [
+      {
+        title: '프로필 매칭 TOP 3 공고 발굴',
+        description:
+          '유모델러(★5: 신입+3D캐주얼+AI도구 우대), 머플(★4: 신입/주니어+2D게임+포트폴리오 중심), 나인파이브(★4: WebGL 명시 요구). 신입 유니티 평균연봉 ~2,995만원.',
+      },
+      {
+        title: 'Tier 1 타겟 회사 동향 — 머플이 유일한 Unity 직접 관련',
+        description:
+          '머플: 8명/평균연봉 4,864만/네이버제트 시드 18억/노코드 게임 제작 도구 개발 중. 피플리: 잡플래닛 2.5점 낮음. 퍼피띵게임즈: 정보 부족. 플러그웨이브: 로컬라이제이션 서비스사로 개발직 무관. SHL Lab: 특정 불가.',
+      },
+      {
+        title: '기술면접 트렌드 — 메모리 관리 최다, 디자인 패턴 급증',
+        description:
+          '힙/스택, GC 세대별 동작, 박싱/언박싱이 최다 빈출. 디자인 패턴 실무 연결 질문 급증(싱글톤/옵저버/상태/전략). 코딩테스트: 구현/시뮬레이션 1순위, BFS/DFS 2순위. 프로그래머스 Lv.2 C#이 기본선.',
+      },
+      {
+        title: '포트폴리오 핵심 — 플레이 가능한 WebGL 빌드가 최강 차별점',
+        description:
+          '완성도>수량, 스토어 출시 경험 최우선, "왜 이 기술을 선택했는가" 설명 능력 중시. 쿡앱스 합격 사례: 비전공 군복무 10년 후 전환, 의사결정 과정 어필로 합격.',
+      },
+    ],
+    meetingTitle: '2026-03-24 취업 리서치',
+    meetingSummary:
+      '유모델러/머플/나인파이브 3곳 지원 준비 착수. 코딩테스트(프로그래머스 Lv.2) + 메모리 관리 면접 준비 병행.',
+    meetingItems: [
+      {
+        speaker: 'Job Scout',
+        note: 'Unity 공고 332건 활성 중 신입/경력무관 6건 발굴. 유모델러가 프로필 최적합(신입+3D캐주얼+AI도구 우대). 머플 신입/주니어 환영, 나인파이브 WebGL 명시 요구로 60개 WebGL 프로젝트가 핵심 경쟁력. 신입 평균 연봉 ~3,000만원.',
+      },
+      {
+        speaker: 'Company Analyst',
+        note: 'Tier 1 중 머플만 Unity 직접 관련. 네이버제트 시드 18억, KSGC 5위 수상으로 성장세. 피플리 잡플래닛 2.5점으로 조직 문화 리스크. K-인디 게임 황금기 진입, 드림모션(크래프톤 산하) 주목. Unite Seoul 2026 예정.',
+      },
+      {
+        speaker: 'Skill Advisor',
+        note: '면접 빈출: 메모리 관리(GC/힙/스택) > Unity 생명주기 > 디자인 패턴(SOLID). 코딩테스트: 구현/BFS가 1-2순위, 프로그래머스 Lv.2 C#이 기본선. 포트폴리오: WebGL 플레이 가능 빌드 필수, 트러블슈팅 문서화 트렌드.',
+      },
+    ],
+    decisions: [
+      {
+        title: '유모델러 지원서 준비',
+        description: 'Google Play 출시 + AI 도구 활용 경험 강조, 3D 캐주얼 게임 관련 포트폴리오 정리',
+      },
+      {
+        title: '머플 지원서 준비',
+        description: 'WebGL 프로젝트 포트폴리오 링크 정리, 2D 게임 개발 경험 어필',
+      },
+      {
+        title: '나인파이브 지원서 준비',
+        description: 'WebGL 60개 프로젝트 경험을 핵심 차별점으로 부각',
+      },
+      {
+        title: '코딩테스트 + 면접 준비 시작',
+        description: '프로그래머스 C# Lv.2 구현/BFS/DFS 일 3문제, 메모리 관리/디자인 패턴 정리 노트 작성',
+      },
+    ],
+  },
+  {
+    id: '2026-03-24T09:00:00-daily-standup',
+    date: '2026-03-24',
+    researchTitle: '퍼즐 시장 $121억 성장 전망 + NumLink 200레벨 확장 + 고양이 리듬 블루오션 확인',
+    researchSummary:
+      '퍼즐 시장 CAGR 9% 성장, 하이브리드 루프+메타 레이어 필수화. 고양이+리듬 조합 대형 경쟁자 부재 블루오션 확인. NumLink 200레벨 확장+타이머+별점 시스템 착수. CI Node 20 EOL 5주 전 업그레이드 시급. Debug.Log 100건+ 가드 미적용 릴리스 리스크.',
+    researchItems: [
+      {
+        title: '퍼즐 시장 $61억→$121억 성장, 하이브리드 캐주얼이 대세',
+        description:
+          '글로벌 모바일 퍼즐 CAGR 9%. Block Blast 3억6천만 DL, 멀티플레이어 퍼즐 YoY 22% 성장. 코어 루프+메타 레이어(컬렉션/업그레이드) 2중 구조가 표준화. AI 난이도 조정으로 리텐션 40% 향상 사례.',
+      },
+      {
+        title: '고양이+리듬 게임 블루오션 — 대형 경쟁자 부재',
+        description:
+          'Rhythm Cat(피아노 타일+고양이)만 존재, 차별화된 리듬 메카닉으로 진입 가능. 코지(Cozy) 카테고리 성장 지속. 오리지널 곡+고양이 세계관 음악이 차별화 핵심.',
+      },
+      {
+        title: 'NumLink 200레벨 확장+타이머+별점 시스템 착수',
+        description:
+          'LevelSelectUI 200레벨 동적 생성, BoardDataGenerator 200레벨 매핑, TimerUI 스크립트 추가. 안정화(DOTween/Animator 해결) 이후 콘텐츠 확장 궤도 진입.',
+      },
+      {
+        title: 'Debug.Log 100건+ 가드 미적용 + 자동화 테스트 전무',
+        description:
+          'BoardDataLoader 17건, PreGeneratedBoardManager 28건, PuzzleManager 22건 등 릴리스 빌드에 로그 포함. HBSaveLoadManager 평문 JSON 로그 보안 리스크. 두 프로젝트 모두 자동화 테스트 0건.',
+      },
+      {
+        title: 'CI Node 20 EOL 5주 전 + daily_standup 2일째 실패',
+        description:
+          'Node 20 EOL 2026-04-30, CI 워크플로우 22 LTS 업그레이드 필수. daily_standup exit code 9009(실행 파일 미발견), 작업 스케줄러 태스크 미등록 상태.',
+      },
+      {
+        title: 'iOS 26 Liquid Glass 아이콘 대응 + 마이크로인터랙션 200-500ms 표준',
+        description:
+          'Apple Liquid Glass 디자인 시스템 도입으로 아이콘 4가지 모드 대응 필요. 멀티센서리 피드백(모션+사운드+햅틱) 3종 세트 설계가 2026 표준. 스타일라이즈드+핸드메이드 비주얼 트렌드.',
+      },
+      {
+        title: 'ASO 전략 고도화 — 첫 2장 스크린샷이 전환율 결정',
+        description:
+          'AI 기반 키워드 의도 매칭 중심 전환. CPP(Custom Product Pages) 자연 검색 영향 확대. Instagram Reels 주력+YouTube Shorts 병행 권장. 개인정보처리방침 Google Play 3/4 데드라인 경과, 즉시 처리 필요.',
+      },
+    ],
+    meetingTitle: '2026-03-24 일일 진행 회의',
+    meetingSummary:
+      'NumLink 200레벨 확장 착수로 콘텐츠 블로커 해소 중. 스토어 출시 준비(개인정보처리방침/ASO/스크린샷) 즉시 착수 필요. CI Node 20→22 업그레이드와 daily_standup 장애 복구가 인프라 최우선. Debug.Log 가드 일괄 적용으로 릴리스 품질 확보 시급.',
+    meetingItems: [
+      { speaker: 'Orchestrator', note: 'NumLink 200레벨 확장+타이머+별점 3커밋 진행. MeowBeat 코드 완료 에셋 대기. Cat Merge Cafe M0 보류. 스토어 출시 파이프라인(개인정보처리방침→AdMob→APK) 즉시 착수 권장.' },
+      { speaker: 'Game Designer', note: '퍼즐 시장 CAGR 9%, 하이브리드 루프+메타 레이어 필수. NumLink에 일일 챌린지+리더보드 설계 추가 필요. MeowBeat 피아노 타일 탈피, 고유 리듬 메카닉 정의가 선결 과제.' },
+      { speaker: 'Developer', note: 'NumLink TODO 6건 전부 LOW, 출시 블로커 없음. 200레벨 확장(LevelSelectUI+BoardDataGenerator+TimerUI) 진행 중. Unity 6000.3.x 안정 릴리스 유지, 업그레이드 불필요.' },
+      { speaker: 'QA Tester', note: 'Debug.Log 100건+ 가드 미적용 MEDIUM 리스크. HBSaveLoadManager 평문 JSON 보안 리스크. 자동화 테스트 전무(HIGH). 보드 생성/검증 유닛 테스트 최소 작성 권장.' },
+      { speaker: 'Content Writer', note: '개인정보처리방침 Google Play 3/4 데드라인 경과, 즉시 작성 필요. Instagram Reels 주력+YouTube Shorts 병행. Paid Organic 전략 소액 광고($200) 집행. Discord 커뮤니티 조기 구축 시작.' },
+      { speaker: 'DevOps', note: 'daily_standup 2일째 실패(exit 9009), 작업 스케줄러 재등록+PATH 설정 필요. CI Node 20→22 업그레이드 5주 내 필수. 배포 5회 연속 성공, 파이프라인 안정.' },
+      { speaker: 'Art Director', note: 'iOS 26 Liquid Glass 아이콘 4모드 대응 필수. 마이크로인터랙션 200-500ms+멀티센서리 피드백 표준. 고양이 테마에 스타일라이즈드+핸드메이드+소프트 웜 팔레트 권장.' },
+    ],
+    decisions: [
+      {
+        title: 'NumLink 개인정보처리방침 즉시 작성',
+        description: 'Google Play 3/4 데드라인 경과. Termly 등 생성기 활용 후 GitHub Pages 게시. AdMob 등록 선행 조건.',
+      },
+      {
+        title: 'CI Node 20→22 LTS 업그레이드',
+        description: 'deploy-pages.yml node-version을 22로 변경. EOL 2026-04-30까지 5주 남음. package.json engines 필드도 추가.',
+      },
+      {
+        title: 'daily_standup 장애 복구',
+        description: '작업 스케줄러 DailyStandup 태스크 재등록. PATH 환경변수 명시적 설정으로 9009 에러 해결.',
+      },
+      {
+        title: 'Debug.Log 가드 일괄 적용',
+        description: '릴리스 빌드 대상 100건+ 로그에 #if UNITY_EDITOR 가드 적용. HBSaveLoadManager 평문 JSON 로그 즉시 제거.',
+      },
+      {
+        title: 'NumLink 일일 챌린지+메타 레이어 GDD 설계',
+        description: '멀티플레이어 퍼즐 YoY 22% 성장 트렌드 반영. 코어 루프 완성 후 일일 챌린지→리더보드→컬렉션 메타 순서로 확장.',
+      },
+    ],
+  },
+  {
     id: '2026-03-23T09:00:00-daily-standup',
     date: '2026-03-23',
     researchTitle: '인디 게임 마케팅 전략 + NumLink 안정화 완료 + Google Play 신규 기능',
