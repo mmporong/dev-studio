@@ -170,8 +170,50 @@
   "hotPaths": [
     {
       "path": "src\\data\\operationsJournal.ts",
+      "accessCount": 4,
+      "lastAccessed": 1774242978890,
+      "type": "file"
+    },
+    {
+      "path": "src\\pages\\HomePage.css",
+      "accessCount": 3,
+      "lastAccessed": 1774154448729,
+      "type": "file"
+    },
+    {
+      "path": "src\\pages\\HomePage.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1774154433153,
+      "type": "file"
+    },
+    {
+      "path": "",
       "accessCount": 1,
-      "lastAccessed": 1774053174906,
+      "lastAccessed": 1774154401085,
+      "type": "directory"
+    },
+    {
+      "path": "src",
+      "accessCount": 1,
+      "lastAccessed": 1774154404763,
+      "type": "directory"
+    },
+    {
+      "path": "src\\components\\layout\\NavBar.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1774154409162,
+      "type": "file"
+    },
+    {
+      "path": "src\\App.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1774154409192,
+      "type": "file"
+    },
+    {
+      "path": "src\\components\\layout\\NavBar.css",
+      "accessCount": 1,
+      "lastAccessed": 1774154414705,
       "type": "file"
     }
   ],
