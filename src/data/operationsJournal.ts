@@ -43,6 +43,84 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-03-25T09:00:00-daily-standup',
+    date: '2026-03-25',
+    researchTitle: 'NumLink 출시 최근접 + CI Node 24 전환 긴급 + 하이브리드 캐주얼 메타 레이어 필수화',
+    researchSummary:
+      'NumLink 코드 완료·200레벨 확장 진행 중, 스토어 에셋(개인정보처리방침/스크린샷/ASO) 준비가 출시 유일 블로커. CI Node 20 EOL 임박으로 24 직접 전환 긴급. Vite 8.0 Rolldown 기반 10~30배 빌드 속도 향상 업그레이드 권장. 퍼즐 시장 하이브리드 캐주얼 $42억, 일일 챌린지+메타 레이어 없는 퍼즐은 리텐션 한계. iOS 26.4 Liquid Glass 커스터마이징 옵션 추가, 아이콘 4모드 대응 유지. Google Play 수수료 30%→20% 인하+자체 결제 허용.',
+    researchItems: [
+      {
+        title: 'NumLink 출시에 가장 가까운 프로젝트 — 스토어 에셋만 남음',
+        description:
+          '200레벨 확장(LevelSelectUI+BoardDataGenerator+TimerUI) 3커밋 진행 중. TODO 6건 전부 LOW. 코드 블로커 0건. 개인정보처리방침·스크린샷·ASO 키워드·AdMob 설정·APK 빌드가 출시 전 남은 작업.',
+      },
+      {
+        title: '하이브리드 캐주얼 $42억 — 메타 레이어 없는 퍼즐은 리텐션 한계',
+        description:
+          '퍼즐 시장 CAGR 9%, 다운로드는 3% 감소하며 유저당 지출 증가 구조로 전환. Royal Match 단월 $1억. 상위 20개 하이브리드 캐주얼 중 9개가 소셜 클랜, 4개가 데코 메타 도입. NumLink에 일일 챌린지+테마 해금 시스템 설계 필수.',
+      },
+      {
+        title: 'hololive Dreams 글로벌 사전 등록 — MeowBeat 직접 경쟁 아님',
+        description:
+          'Cover Corp × QualiArts 6레인 판정 리듬+가챠 150곡+50캐릭터. MeowBeat의 원터치 먹이주기 메카닉과 포지션 불일치. "Rhythm Cat" ASO 혼동 방지를 위해 독자 키워드 선점 필요.',
+      },
+      {
+        title: 'Debug.Log 가드 미적용 86건+ 잔존 — 릴리스 빌드 포함',
+        description:
+          '이전 250건 제거 후에도 PuzzleManager 23건, PreGeneratedBoardManager 26건 등 86건+ 가드 없이 릴리스 빌드 노출. HBSaveLoadManager 평문 JSON+Debug.Log(json) 전체 출력 유지. 자동화 테스트 3프로젝트 모두 0건 변화 없음.',
+      },
+      {
+        title: 'CI Node 20→24 직접 전환 긴급 + Vite 8.0 Rolldown 출시',
+        description:
+          'GitHub Actions Node 20 EOL 2026-04-30, Node 22 건너뛰고 24로 직접 이동(2026-06-02 기본 적용). 로컬 이미 v24.12.0. Vite 8.0(2026-03-12) Rolldown 단일 번들러로 빌드 10~30배 속도 향상. DailyStandup 스케줄러 태스크 여전히 미등록.',
+      },
+      {
+        title: 'Google Play 수수료 20% 인하 + iOS 26.4 Liquid Glass 커스터마이징 확대',
+        description:
+          'Epic 합의로 Play Store 수수료 30%→20%, 자체 결제 허용(2026-06-30까지 순차 적용). 개발자 본인 인증 2026 Q3 의무화. iOS 26.4 Liquid Glass "Reduce Bright Effects" 옵션 추가, 아이콘 4모드(Light/Dark/Tinted/Clear) 대응 유지.',
+      },
+      {
+        title: 'ASO 롱테일 키워드 + UGC 스타일 숏폼이 저예산 핵심 전략',
+        description:
+          '광의 키워드 경쟁 과다, "number connect puzzle", "number puzzle offline no ads" 등 롱테일 타겟. 첫 2장 스크린샷이 CVR 결정. TikTok UGC 스타일 콘텐츠 CPI 최저, 허위 광고 플랫폼 전면 차단 중.',
+      },
+    ],
+    meetingTitle: '2026-03-25 일일 진행 회의',
+    meetingSummary:
+      'NumLink 출시 최근접 상태로 스토어 에셋 준비 집중. CI Node 24 전환+DailyStandup 복구 인프라 긴급. Debug.Log 86건+ 릴리스 포함 해결 시급. 하이브리드 캐주얼 메타 레이어(일일 챌린지+테마 해금) GDD 설계 착수. MeowBeat 에셋 대기 중 온보딩 플로우 GDD 보강.',
+    meetingItems: [
+      { speaker: 'Orchestrator', note: 'NumLink 코드 완료+200레벨 확장 중, 스토어 에셋(개인정보처리방침/스크린샷/ASO/AdMob)이 유일 블로커. MeowBeat 코드 완료 에셋 대기. Cat Merge Cafe M0 14% 진행. NumLink 우선 출시 집중 권장.' },
+      { speaker: 'Game Designer', note: '퍼즐 시장 하이브리드 캐주얼 $42억, 메타 레이어 필수. Number Link 2000+ 레벨 수 경쟁 불리 — "엄선된 200개" 포지셔닝 전환. 일일 챌린지+테마 해금이 최소 비용 메타 레이어. MeowBeat 온보딩 플로우 GDD 공백 긴급.' },
+      { speaker: 'Developer', note: 'NumLink TODO 6건 전부 LOW, 출시 블로커 없음. Unity 6.4 ECS 코어 통합+Project Auditor 내장 출시. Vite 8.0 Rolldown 기반 빌드 10~30배 향상, agent-office 업그레이드 권장. cat-merge-cafe C# 코드 아직 0건.' },
+      { speaker: 'QA Tester', note: 'Debug.Log 가드 미적용 86건+ 릴리스 빌드 포함(PuzzleManager 23건, PreGeneratedBoardManager 26건 최심각). HBSaveLoadManager 평문 JSON+로그 출력 유지. SaveSystem<T> 코인/루비 변조 가능. 3프로젝트 자동화 테스트 0건 변화 없음.' },
+      { speaker: 'Content Writer', note: '개인정보처리방침 여전히 미작성 — 출시 차단. Play 수수료 20% 인하+자체 결제 허용 확인. 개발자 본인 인증 Q3 의무화. ASO 롱테일 키워드 타겟 + UGC 스타일 숏폼 콘텐츠가 저예산 핵심. 허위 광고 플랫폼 차단 중.' },
+      { speaker: 'DevOps', note: 'CI Node 20→24 직접 전환 긴급(EOL 5주, GitHub Actions Node 22 건너뜀). 로컬 v24.12.0 정상. DailyStandup 스케줄러 태스크 여전히 미등록 — 3일째 장애. package.json engines 필드 미설정. 배포 파이프라인 자체는 안정.' },
+      { speaker: 'Art Director', note: 'iOS 26.4 Liquid Glass "Reduce Bright Effects" 옵션 추가, 아이콘 4모드 대응 유지. 소프트 3D 플러시 텍스처+마스코트 아이콘 트렌드. 마이크로인터랙션 200-500ms+120fps 표준. NumLink 아이콘 고대비 마이크로 일러스트, MeowBeat 소프트 웜 팔레트(크림+복숭아+웜 라벤더) 권장.' },
+    ],
+    decisions: [
+      {
+        title: 'NumLink 스토어 출시 준비 집중',
+        description: '개인정보처리방침 즉시 작성(Termly 활용 → GitHub Pages 게시). ASO 롱테일 키워드 메타데이터 작성. 스크린샷 첫 2장 CVR 최적화. AdMob App ID 설정 → APK 빌드 → 내부 테스트.',
+      },
+      {
+        title: 'CI Node 20→24 전환 + DailyStandup 복구',
+        description: 'deploy-pages.yml node-version 24로 변경. package.json engines ">=24" 추가. DailyStandup 스케줄러 태스크 재등록(schtasks /create)으로 3일째 장애 복구.',
+      },
+      {
+        title: 'Debug.Log 가드 2차 일괄 적용',
+        description: 'PuzzleManager 23건, PreGeneratedBoardManager 26건 우선 적용. HBSaveLoadManager Debug.Log(json) 즉시 제거. 릴리스 빌드 대상 86건+ 전수 처리.',
+      },
+      {
+        title: 'NumLink 일일 챌린지+테마 해금 GDD 설계',
+        description: '하이브리드 캐주얼 메타 레이어 최소 도입. 절차적 생성 기반 일일 퍼즐 + 색상 팔레트/그리드 스킨 해금 시스템. "엄선된 200개" 포지셔닝으로 레벨 수 경쟁 탈피.',
+      },
+      {
+        title: 'Vite 7→8 + plugin-react 5→6 업그레이드',
+        description: 'agent-office Rolldown 기반 빌드 10~30배 속도 향상. Node 24 호환 확인 후 진행.',
+      },
+    ],
+  },
+  {
     id: '2026-03-24T09:00:00-daily-standup',
     date: '2026-03-24',
     researchTitle: '퍼즐 시장 $121억 성장 전망 + NumLink 200레벨 확장 + 고양이 리듬 블루오션 확인',
