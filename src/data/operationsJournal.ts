@@ -43,6 +43,115 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-03-26T09:00:00-daily-standup',
+    date: '2026-03-26',
+    researchTitle: 'MeowBeat 미커밋 유실 위험 + NumLink 안정화 마무리 + Apple 프로모코드 폐지 당일 + Wordle형 일일 챌린지 필수화',
+    researchSummary:
+      'NumLink 버그 수정 안정화 단계 진입, 워킹 디렉토리 3파일 미커밋. MeowBeat refactor/ai-friendly 브랜치 50+ 미커밋 파일·리모트 미푸시로 유실 위험 최고. Apple 프로모코드 오늘부로 폐지→Offer Code 전환 필수. 퍼즐 시장 $56억→$121억(CAGR 9%), Wordle형 일일 챌린지가 리텐션 핵심(DAU 12M). Debug.Log NumLink 114건·MeowBeat 48건 가드 미적용 지속. CI Node 20→24 전환 마감 4/30. Vite 8.0 Rolldown 빌드 10~30배 향상 업그레이드 권장.',
+    researchItems: [
+      {
+        title: 'MeowBeat 미커밋 50+파일·리모트 미푸시 — 작업 유실 위험 최고',
+        description:
+          'refactor/ai-friendly 브랜치에 대량 미커밋(삭제 5개, 수정 20개, 미추적 50+개). origin에 푸시되지 않아 백업 부재. Scene 파일 수정 포함으로 충돌 위험. 즉시 정리+푸시 최우선.',
+      },
+      {
+        title: 'NumLink 안정화 마무리 단계 — 워킹 디렉토리 3파일 미커밋',
+        description:
+          '200레벨 확장 후 버그 수정 5커밋 완료. GameManager·PuzzleManager·UIManager 수정 상태로 남아 있음. _Recovery 폴더 정리 필요. 스토어 에셋(개인정보처리방침/스크린샷/ASO) 여전히 유일 블로커.',
+      },
+      {
+        title: 'Wordle형 일일 챌린지 = 2026 캐주얼 리텐션 필수 — DAU 12M·$148M 증명',
+        description:
+          '퍼즐 시장 $56억(2024)→$121억(2033, CAGR 9%). Wordle 월 1,073만 DAU·$1.48억 수익. "매일 돌아오는 루틴" 설계가 핵심. NumLink 일일 챌린지+공유 결과 카드 도입 필수. 리듬 게임 시장 $25억→$53억, 인디 아티스트 협업 참여율 28% 향상.',
+      },
+      {
+        title: 'Debug.Log 가드 미적용 NumLink 114건·MeowBeat 48건 — 릴리스 빌드 포함',
+        description:
+          'NumLink: PreGeneratedBoardManager 26건, PuzzleManager 23건, BoardDataLoader 16건 최심각. MeowBeat: SaveSystem 저장경로 노출 6건, CafeManager 코인금액 노출 2건. 자동화 테스트 3프로젝트 모두 0건 변화 없음.',
+      },
+      {
+        title: 'Apple 프로모코드 오늘 폐지 + Play Store 수수료 20% 인하 한국 12/31 적용',
+        description:
+          'iOS 프로모코드 2026-03-26 생성 불가→Offer Code 전환 필수. App Store 제출 4월부터 iOS 26 SDK 필수. Google Play 수수료 30%→20%(미국 6/30, 한국 12/31). 개인정보처리방침 KISA 자동생성 서비스 활용 가능.',
+      },
+      {
+        title: 'CI Node 20→24 전환 마감 4/30 + Vite 8.0 Rolldown 빌드 10~30배 향상',
+        description:
+          'GitHub Actions Node 20 EOL 2026-04-30. deploy-pages.yml 아직 node-version: 20. Vite 8.0 Rolldown 단일 번들러 전환, Oxc 트랜스파일링. agent-office Vite 7→8 업그레이드로 빌드 성능 대폭 개선 가능.',
+      },
+      {
+        title: '마스코트 아이콘+미니멀 HUD 트렌드 — 스토어 첫 2장 스크린샷이 전환율 결정',
+        description:
+          '2026 앱 아이콘 마스코트 트렌드 정점(MeowBeat 고양이 직결). 퍼즐 게임 "방해하지 않는 UI" 원칙. 스크린샷 첫 2장이 전환율 90% 결정, A/B 테스트로 24.3% 향상 가능. 분기별 테스트 앱은 연간 대비 20~30% 전환율 높음.',
+      },
+    ],
+    meetingTitle: '2026-03-26 데일리 스탠드업: MeowBeat 백업 긴급 + NumLink 출시 준비 가속',
+    meetingSummary:
+      'MeowBeat 미커밋 유실 위험 즉시 해소, NumLink 스토어 에셋 준비 병행, Debug.Log 일괄 가드 적용, CI Node 24 전환, Apple Offer Code 전환 결정.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'NumLink 안정화 마무리 단계, 워킹 디렉토리 3파일 커밋 필요. MeowBeat 50+파일 미커밋·리모트 미푸시로 유실 위험 최고 — 오늘 최우선 해소. agent-office 정상 운영.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '퍼즐 시장 $56억→$121억. Wordle DAU 12M이 증명한 일일 챌린지 모델 NumLink 도입 필수. 리듬 게임 인디 아티스트 협업 참여율 28% 향상 — MeowBeat 독립 뮤지션 파트너십 우선. Match-3 포화 속 NumberLink 장르는 차별화 공간 존재.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'NumLink/MeowBeat 프로젝트 디렉토리 C:\\Unity 하위 확인. agent-office 최근 5커밋 +430줄 정상. 소스 코드 기술 부채 실질 0건. Vite 8.0 Rolldown 빌드 10~30배 향상, agent-office 업그레이드 권장. Unity 6.4 업그레이드는 선택적.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'NumLink Debug.Log 145건 중 114건 가드 미적용(PreGeneratedBoardManager 26건·PuzzleManager 23건 최심각). MeowBeat 53건 중 48건 미가드(SaveSystem 경로노출·CafeManager 코인금액 노출). 자동화 테스트 3프로젝트 모두 0건. agent-office 빌드 정상, ESLint 1건만 잔존.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'Apple 프로모코드 오늘 폐지→Offer Code 전환 필수. ASO 2026: AI 기반 검색으로 키워드 나열 무효화, 첫 2장 스크린샷이 전환율 핵심. 개인정보처리방침 KISA 자동생성 활용 가능. TikTok UGC "하루 퍼즐 챌린지" 시리즈 제안.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'CI 파이프라인 정상(최근 4회 모두 성공). deploy-pages.yml Node 20→24 전환 필요(EOL 4/30). DailyStandup 스케줄러 여전히 미등록. package.json engines 필드 미설정, .nvmrc 파일 없음.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '2026 퍼즐 UI "방해하지 않는 미니멀 HUD" 원칙. 마스코트 아이콘 트렌드 정점 — MeowBeat 고양이 캐릭터 직결. 리듬 게임 키네틱 타이포+음악 비주얼라이저 통합 트렌드. 스토어 스크린샷 첫 2장 최적화로 전환율 24.3% 향상 가능. 안티-리퀴드글라스 철학 대두.',
+      },
+    ],
+    decisions: [
+      {
+        title: '[긴급] MeowBeat 미커밋 정리 + 리모트 푸시',
+        description:
+          'refactor/ai-friendly 브랜치 50+파일 미커밋·리모트 미푸시 상태. 오늘 중 정리하고 origin에 푸시하여 유실 위험 해소.',
+      },
+      {
+        title: '[긴급] NumLink 워킹 디렉토리 커밋 + _Recovery 정리',
+        description:
+          'GameManager·PuzzleManager·UIManager 수정분 커밋 여부 결정. _Recovery 폴더 확인 후 정리.',
+      },
+      {
+        title: 'Debug.Log 일괄 가드 적용 — NumLink 114건·MeowBeat 48건',
+        description:
+          '[Conditional("UNITY_EDITOR")] 어트리뷰트 활용 커스텀 Logger 클래스 도입. 출시 전 반드시 완료.',
+      },
+      {
+        title: 'CI Node 20→24 전환 + engines 필드 추가',
+        description:
+          'deploy-pages.yml node-version: 24로 변경, package.json engines ">=24" 추가, .nvmrc 생성. 마감: 4/30 EOL 전.',
+      },
+      {
+        title: 'NumLink 일일 챌린지 + 공유 결과 카드 설계',
+        description:
+          'Wordle 모델 기반 매일 1개 퍼즐 + 풀이시간/힌트 사용 결과 카드 SNS 공유. GDD에 메타 레이어 최소 사양으로 추가.',
+      },
+      {
+        title: 'Apple Offer Code 전환 + 개인정보처리방침 초안 작성',
+        description:
+          '프로모코드 폐지 대응. KISA 자동생성 서비스 활용해 개인정보처리방침 초안 작성 시작.',
+      },
+    ],
+  },
+  {
     id: '2026-03-25T09:00:00-daily-standup',
     date: '2026-03-25',
     researchTitle: 'NumLink 출시 최근접 + CI Node 24 전환 긴급 + 하이브리드 캐주얼 메타 레이어 필수화',
