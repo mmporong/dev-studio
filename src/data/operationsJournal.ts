@@ -43,6 +43,121 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-03-28T09:00:00-daily-standup',
+    date: '2026-03-28',
+    researchTitle:
+      '로직 퍼즐 다운로드 YoY +19% 성장 + Vite 8 Rolldown 10~30배 빌드 + NumLink 6커밋 push 완료 — 출시 준비 가속',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 종합. NumLink 대규모 세션 완료: 게임 흐름 버그 9건 수정, DFS 보드 생성 3건 수정, 안드로이드 빌드 최적화(패키지 9개 제거), UI 리디자인 Phase 1-2 완료. 로직 퍼즐 장르 다운로드 YoY +19% 성장 확인 — NumberLink 틈새 포지셔닝 유리. Vite 8.0 Rolldown 번들러 10~30배 빌드 향상 출시. React 19.2.4 보안 패치(CVE-2026-23864). Unity 6.4 Hub GitHub/GitLab 통합. Node 20 EOL 33일 후(4/30) — deploy-pages.yml 전환 필수.',
+    researchItems: [
+      {
+        title: 'NumLink 대규모 세션 완료 — 버그 12건 수정 + UI 리디자인 + 빌드 최적화',
+        description:
+          '게임 흐름 버그 9건(StageClearPanel, DOTween/Animator 충돌, 타이머, ForceEndDrag), DFS 보드 생성 로직 3건 수정. 안드로이드 빌드 최적화로 불필요 패키지 9개 제거 + Physics2D 최적화. UI 리디자인 Phase 1(레벨선택 3열+난이도 색상+타이머바) + Phase 2(StageClearPanel 별점 팝 애니메이션+클리어 시간) 완료. 6커밋 origin/main 대비 미푸시 상태.',
+      },
+      {
+        title: '로직 퍼즐 다운로드 YoY +19% 성장 — NumberLink 틈새 장르 포지셔닝 최적',
+        description:
+          'Business of Apps 2026 리포트: 로직 퍼즐 다운로드 YoY +19% 증가, 직소 퍼즐 +21%. 매칭 퍼즐이 전체 퍼즐 수익 42% 차지하나 포화. NumberLink는 Match-3 대비 경쟁 밀도 낮은 로직 퍼즐 틈새에 위치하여 차별화 유리. 퍼즐 시장 CAGR 6.96%(2026~2033) 안정 성장.',
+      },
+      {
+        title: 'Vite 8.0 Rolldown 출시(3/12) — Rust 기반 통합 번들러 10~30배 빌드 향상',
+        description:
+          'Vite 8.0 Rolldown 번들러로 esbuild+Rollup 이원화 해소. Rust 기반 10~30배 빌드 속도 향상. DevTools 내장 + Wasm SSR 지원. agent-office 현재 Vite 7.1.2 → 8.x 업그레이드 시 빌드 1.54초에서 추가 단축 기대. plugin registry(registry.vite.dev) 호환성 확인 후 전환 권장.',
+      },
+      {
+        title: 'React 19.2.4 보안 패치(1/26) + npm 공급망 공격 경고(3월)',
+        description:
+          'React 19.2.4 CVE-2026-23864 DoS 취약점 패치. agent-office 현재 React 19.1.1 → 19.1.5+ 업그레이드 권장. React Native 인기 패키지 악성 릴리스 탐지(3월) — npm 공급망 보안 주의. agent-office CSR 앱이라 Server Components RCE(CVE-2025-55182)는 직접 영향 없음.',
+      },
+      {
+        title: 'Unity 6.4 Hub GitHub/GitLab 통합 + DevOps 가격 변경',
+        description:
+          'Unity Hub 신규 프로젝트 생성 시 GitHub/GitLab 리포 자동 연결 기능 추가. Unity DevOps Version Control 시트 과금 제거(3/1). Unity 6.4 ECS Core 패키지 통합 + Project Auditor 기본 내장 유지. NumLink/MeowBeat 즉시 전환 불필요하나 Hub 업데이트 적용 권장.',
+      },
+      {
+        title: 'Node 20 EOL 33일(4/30) + GitHub Actions 6/2 Node 24 기본 전환',
+        description:
+          'deploy-pages.yml node-version: 20 → 24 전환 필수. upload-pages-artifact v3→v4, actions/checkout v4→v5 업그레이드 권장. FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true로 사전 테스트 가능. .nvmrc 생성하여 로컬/CI 버전 일치 보장 필요.',
+      },
+      {
+        title: '모바일 게임 UI 2026: 내러티브 UI + 미니멀 HUD + 커스텀 손그림 일러스트',
+        description:
+          'UI가 스토리텔링 역할 수행하는 내러티브 UI 트렌드 주류화. 미니멀 HUD + 제스처 숨김으로 몰입 극대화. 커스텀 손그림 일러스트가 스톡 이미지 대체 — Anti-AI 슬롭과 연결. 3D 인터랙티브 요소 + AI 적응형 레이아웃 도입 가속. 폴더블/태블릿 대응 반응형 UI 필수.',
+      },
+      {
+        title: 'ASO 2026: 12~18개월 사전 마케팅 + 스크린샷 3~5초 결정 + 숏폼 에피소드 필수',
+        description:
+          '인디 게임 마케팅 출시 12~18개월 전 시작이 표준. 유저 3~5초 내 스크린샷으로 설치 결정. 광고 크리에이티브가 스케일링 핵심 요소. Discord/Steam 커뮤니티 조기 구축이 유기적 성장 기반. 숏폼(TikTok/Shorts) 에피소드형 시리즈가 알고리즘 선호.',
+      },
+    ],
+    meetingTitle: '2026-03-28 데일리 스탠드업: NumLink 대규모 세션 리뷰 + 출시 준비 로드맵',
+    meetingSummary:
+      'NumLink 게임 흐름 버그 12건 수정 + UI 리디자인 Phase 1-2 + 안드로이드 빌드 최적화 완료 리뷰. 6커밋 미푸시 즉시 해소 결정. 로직 퍼즐 +19% 성장으로 NumberLink 포지셔닝 재확인. Vite 8 Rolldown + React 19.2.4 보안 패치 업그레이드 이번 주 진행. Input.GetKeyDown 2건 + Debug.Log 145건 릴리스 전 정리 필수. 커스텀 스킬/훅 5+3개 구현으로 AI 개발 파이프라인 고도화.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'NumLink 이번 세션에서 대규모 작업 완료: 버그 12건 수정, UI 리디자인 2단계, 빌드 최적화, 커스텀 스킬 5개+훅 3개 구현. 6커밋 미푸시 상태 지속 — 오늘 즉시 push 필수. MeowBeat 이번 세션 작업 없음, 130+파일 미커밋 여전히 리스크. agent-office PKM 동기화 setup.sh 확장 완료.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '로직 퍼즐 다운로드 YoY +19% 성장은 NumLink에 호재. 매칭 퍼즐(42% 수익)은 Block Blast/Royal Match가 지배하나 NumberLink 계열은 경쟁 밀도 낮음. 퍼즐 시장 CAGR 6.96% 안정 성장 전망. 일일 챌린지+결과 공유 카드 패턴이 캐주얼 퍼즐 리텐션 표준 — NumLink 200레벨 이후 일일 모드 도입 검토. 브레인 트레이닝/마인드풀니스 프레이밍이 ASO에 유리.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'NumLink 코드 품질 점검: Input.GetKeyDown 2건(NumberManager.cs:188,193) CLAUDE.md 위반 즉시 수정. Debug.Log 145건 잔존 — #if UNITY_EDITOR 가드 일괄 적용 필요. TODO 5건(모두 LOW, 향후 리팩토링). GameManager UI 로직 집중 SRP 위반은 Phase 5에서 해소 예정. mcp-unity 포트 충돌 해결 완료. claude/gemini CLI PATH 수정 완료.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'NumLink 게임 흐름 버그 9건 수정 검증 필요: StageClearPanel 표시, DOTween/Animator scale 충돌, ForceEndDrag 성공 라인 보존, LineRenderer sortingOrder. DFS 보드 생성 3건 수정도 회귀 테스트 대상. Debug.Log 145건은 릴리스 빌드 성능 영향 — 정리 우선순위 상향. 자동화 테스트 0건 상태 지속.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'ASO 2026: 유저 3~5초 내 스크린샷으로 설치 결정. NumLink UI 리디자인 Phase 2 완료로 스크린샷용 비주얼 확보. 인디 게임 12~18개월 사전 마케팅 표준 — 개발일지 숏폼 즉시 시작 재확인. 브레인 트레이닝 키워드 + 로직 퍼즐 카테고리 ASO 최적화 필요. 광고 크리에이티브가 UA 스케일링 핵심.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'Node 20 EOL 33일(4/30). deploy-pages.yml node-version 20→24 + upload-pages-artifact v3→v4 + checkout v4→v5 이번 주 일괄 전환. .nvmrc 24 생성 필수. NumLink 6커밋 push + MeowBeat 분할 커밋 오늘 진행. agent-office npm audit: ajv ReDoS(moderate) + brace-expansion DoS(moderate) 잔존. Vite 7→8 업그레이드는 Rolldown 호환성 확인 후 별도 PR.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '내러티브 UI 트렌드: UI가 게임 세계관의 일부로 작동. NumLink 레벨선택 3열 리디자인 + StageClearPanel 별점 팝 애니메이션은 방향성 적절. 미니멀 HUD 트렌드에 맞춰 게임 중 점수 한 줄 압축 유지. 커스텀 손그림 일러스트가 스톡 이미지 대체 주류화 — Anti-AI 슬롭 디자인 원칙 계속 준수. 폴더블/태블릿 반응형 UI 대응 중기 과제.',
+      },
+    ],
+    decisions: [
+      {
+        title: 'NumLink 6커밋 origin/main push 즉시 실행',
+        description:
+          '별점 UI, StageClearPanel, 레벨선택 리디자인, 안드로이드 빌드 최적화 등 6커밋 미푸시 해소. 유실 리스크 제거.',
+      },
+      {
+        title: 'Input.GetKeyDown 2건 + Debug.Log 145건 이번 주 정리',
+        description:
+          'NumberManager.cs:188,193 Input.GetKeyDown → InputAction 전환. Debug.Log 145건 #if UNITY_EDITOR 가드 적용. 릴리스 빌드 품질 확보.',
+      },
+      {
+        title: 'Node 20→24 + CI 액션 버전 일괄 업그레이드 이번 주',
+        description:
+          'deploy-pages.yml node-version 24 + upload-pages-artifact v4 + checkout v5 + .nvmrc 생성. EOL 33일 전 선제 전환.',
+      },
+      {
+        title: 'React 19.1.1→19.1.5+ 보안 패치 즉시 적용',
+        description:
+          'CVE-2026-23864 DoS 취약점 패치. CSR 앱이라 Server Components RCE는 무관하나 보안 최신화 필수.',
+      },
+      {
+        title: 'Vite 8 Rolldown 업그레이드 별도 PR 진행',
+        description:
+          'Vite 7.1.2→8.x Rolldown 번들러 전환. 10~30배 빌드 향상. plugin 호환성 확인 후 단독 PR로 진행.',
+      },
+      {
+        title: 'NumLink 일일 챌린지 모드 설계 시작',
+        description:
+          '로직 퍼즐 +19% 성장 + Wordle식 일일 챌린지 표준 정착. 200레벨 완료 후 일일 모드 + 결과 공유 카드 기능 설계.',
+      },
+    ],
+  },
+  {
     id: '2026-03-27T09:00:00-daily-standup',
     date: '2026-03-27',
     researchTitle:
