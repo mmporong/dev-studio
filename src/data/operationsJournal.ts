@@ -43,8 +43,8 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
-    id: '2026-03-28T09:00:00-daily-standup',
-    date: '2026-03-28',
+    id: '2026-03-27T09:00:00-daily-standup-v2',
+    date: '2026-03-27',
     researchTitle:
       '로직 퍼즐 다운로드 YoY +19% 성장 + Vite 8 Rolldown 10~30배 빌드 + NumLink 6커밋 push 완료 — 출시 준비 가속',
     researchSummary:
@@ -91,7 +91,7 @@ export const seedJournalEntries: JournalEntry[] = [
           '인디 게임 마케팅 출시 12~18개월 전 시작이 표준. 유저 3~5초 내 스크린샷으로 설치 결정. 광고 크리에이티브가 스케일링 핵심 요소. Discord/Steam 커뮤니티 조기 구축이 유기적 성장 기반. 숏폼(TikTok/Shorts) 에피소드형 시리즈가 알고리즘 선호.',
       },
     ],
-    meetingTitle: '2026-03-28 데일리 스탠드업: NumLink 대규모 세션 리뷰 + 출시 준비 로드맵',
+    meetingTitle: '2026-03-27 데일리 스탠드업: NumLink 대규모 세션 리뷰 + 출시 준비 로드맵',
     meetingSummary:
       'NumLink 게임 흐름 버그 12건 수정 + UI 리디자인 Phase 1-2 + 안드로이드 빌드 최적화 완료 리뷰. 6커밋 미푸시 즉시 해소 결정. 로직 퍼즐 +19% 성장으로 NumberLink 포지셔닝 재확인. Vite 8 Rolldown + React 19.2.4 보안 패치 업그레이드 이번 주 진행. Input.GetKeyDown 2건 + Debug.Log 145건 릴리스 전 정리 필수. 커스텀 스킬/훅 5+3개 구현으로 AI 개발 파이프라인 고도화.',
     meetingItems: [
@@ -154,116 +154,6 @@ export const seedJournalEntries: JournalEntry[] = [
         title: 'NumLink 일일 챌린지 모드 설계 시작',
         description:
           '로직 퍼즐 +19% 성장 + Wordle식 일일 챌린지 표준 정착. 200레벨 완료 후 일일 모드 + 결과 공유 카드 기능 설계.',
-      },
-    ],
-  },
-  {
-    id: '2026-03-27T09:00:00-daily-standup',
-    date: '2026-03-27',
-    researchTitle:
-      'Node 20 EOL 34일 카운트다운 + Unity 6.4 출시 + Vite 8 Rolldown 10~30배 빌드 향상 — 인프라 전환 시점 도래',
-    researchSummary:
-      '7명 에이전트 병렬 리서치 종합. NumLink 6커밋 미푸시+MeowBeat 130파일 미커밋 상태 지속. Node 20 EOL 4/30(34일 후) → Node 24 직행 전환 필수. Unity 6.4 ECS 통합+Project Auditor 내장 출시. Vite 8.0.3 Rolldown 번들러 10~30배 빌드 향상. agent-office npm audit HIGH 2건(flatted DoS, minimatch ReDoS). ASO AI 검색 전환으로 의도 중심 메타데이터 필수. Anti-AI 슬롭 디자인 운동 주류화 — 인간 크래프트 프리미엄 10~50배.',
-    researchItems: [
-      {
-        title: 'NumLink 6커밋 미푸시 + MeowBeat 130파일 미커밋 — 코드 유실 리스크 지속',
-        description:
-          'NumLink main 브랜치 origin 대비 6커밋 앞서감(별점 UI, StageClearPanel, 레벨선택 리디자인 등). MeowBeat GoogleMobileAds/ExternalDependencyManager 대규모 업그레이드 포함 130+파일 미커밋. agent-office는 origin과 동기화 완료.',
-      },
-      {
-        title: 'Node 20 EOL 2026-04-30(34일 후) → Node 24 직행 전환 필수',
-        description:
-          'GitHub Actions 2026-06-02부터 Node 24 기본 런타임. deploy-pages.yml 현재 node-version: 20. upload-pages-artifact@v3→v4 업그레이드도 필요. .nvmrc 미존재로 로컬/CI 버전 불일치 위험.',
-      },
-      {
-        title: 'Unity 6.4 출시 — ECS 에디터 통합 + Project Auditor 내장',
-        description:
-          'Unity 6.4(2026년 3월) ECS 패키지 에디터 직접 통합, Project Auditor 기본 내장, URP 커스텀 렌더패스 C# 지원, Sprite Atlas 런타임 생성. NumLink/MeowBeat 즉시 전환 불필요하나 중기 마이그레이션 검토 권장.',
-      },
-      {
-        title: 'Vite 8.0.3 Rolldown 번들러 — 빌드 10~30배 향상',
-        description:
-          'agent-office 현재 Vite 7.1.2. Vite 8.0.3(2026-03-12) Rust 기반 Rolldown 번들러 통합으로 빌드 속도 10~30배 향상. npm install vite@latest로 업그레이드 가능. 현재 빌드 1.54초로 양호하나 장기 유지보수 관점에서 전환 권장.',
-      },
-      {
-        title: 'npm audit HIGH 2건 — flatted DoS + minimatch ReDoS',
-        description:
-          'agent-office npm audit 결과 HIGH 2건(flatted parse() 무제한 재귀 DoS, minimatch ReDoS), moderate 3건(ajv, brace-expansion, js-yaml). React CVE-2025-55182(CVSS 10.0)는 CSR 앱이라 직접 영향 없으나 react@19.1.5+ 업그레이드 권장.',
-      },
-      {
-        title: 'ASO 2026: AI 검색 전환 — 키워드 채우기 무효화, 의도 중심 메타데이터 필수',
-        description:
-          'App Store/Google Play 검색 AI 전환으로 단순 키워드 반복 무효. 스크린샷 첫 2장이 전환율 90% 결정. 10개 언어 현지화 CSL 앱 전환율 35~50% 향상. Google Play 수수료 20% 인하(Epic 합의) 한국 2026년 말 적용 예정.',
-      },
-      {
-        title: 'Anti-AI 슬롭 디자인 주류화 — 인간 크래프트 프리미엄 10~50배',
-        description:
-          'Merriam-Webster "slop" 2025년 올해의 단어. 마스코트 아이콘 인게이지먼트 +34%. MeowBeat 고양이 감정 상태 시스템+warm amber 팔레트. NumLink 오프화이트+딥 인디고 미니멀. 의도적 불완전성(Wabi-Sabi)·손그림 요소·촉각적 질감이 핵심 차별화.',
-      },
-    ],
-    meetingTitle: '2026-03-27 데일리 스탠드업: 인프라 전환 시점 + 출시 준비 품질 점검',
-    meetingSummary:
-      'NumLink 미푸시 6커밋·MeowBeat 130파일 미커밋 유실 리스크 재확인. Node 20→24 전환 34일 데드라인. Debug.Log 가드 NumLink 40건·MeowBeat 35건 릴리스 전 필수 정리. ASO AI 검색 전환 대비 스토어 메타데이터 전략 수립. 숏폼 개발일지 콘텐츠 즉시 시작 합의.',
-    meetingItems: [
-      {
-        speaker: 'Orchestrator',
-        note: 'NumLink main 6커밋 미푸시, MeowBeat 130+파일 미커밋 상태 3일째 지속. Phase 4 95% 완료, Phase 5 ServiceLocator 전환 대기. MeowBeat Sprint 2 디자인 교체가 최대 블로커. agent-office 안정. 오늘 최우선: NumLink git push + MeowBeat 미커밋 정리.',
-      },
-      {
-        speaker: 'Game Designer',
-        note: 'NumberLink 계열은 Match-3 대비 시장 포화도 낮은 틈새 장르로 포지셔닝 유리. Wordle식 일일 챌린지+공유 결과 카드 패턴이 캐주얼 퍼즐 표준으로 정착. MeowBeat 고양이+리듬 니치는 Cytus/Phigros 팬층과 차별화 가능. 시즌 패스보다 광고+IAP 하이브리드가 1인 개발에 현실적.',
-      },
-      {
-        speaker: 'Developer',
-        note: 'NumLink Input.GetKeyDown() 2건 CLAUDE.md 위반 즉시 수정 필요. GameBootstrapper ServiceLocator 주석 처리 방치 중. GameManager에 UI 로직 집중(단일 책임 위반). MeowBeat ButtonController 노래/구매 저장 미구현은 데이터 지속성 버그 위험. Unity 6.4 출시됐으나 즉시 전환 불필요. Vite 8 Rolldown 업그레이드 권장.',
-      },
-      {
-        speaker: 'QA Tester',
-        note: 'NumLink Debug.Log 자체 스크립트 40건 가드 미적용, MeowBeat 35건(AdmobManager 12건 최심각). 3프로젝트 모두 자동화 테스트 0건 — 수동 테스트 전적 의존. agent-office ESLint 에러 1건(OfficeContext.tsx Fast Refresh). 빌드는 3프로젝트 모두 정상.',
-      },
-      {
-        speaker: 'Content Writer',
-        note: 'ASO 2026 핵심: AI 검색 전환으로 의도 중심 자연어 메타데이터 필수. 스크린샷 첫 2장이 전환율 결정적. Google Play 수수료 20% 인하(Epic 합의). 숏폼 마케팅은 에피소드형 시리즈 콘텐츠가 알고리즘 선호. 개발일지 숏폼 즉시 시작 권장. 한국어 개인정보 처리방침 AI 기본법 반영 필요.',
-      },
-      {
-        speaker: 'DevOps',
-        note: 'Node 20 EOL 2026-04-30(34일 후) 긴급. deploy-pages.yml node-version 20→24 전환 + upload-pages-artifact v3→v4 업그레이드 필수. .nvmrc 파일 생성으로 로컬/CI 버전 일치 보장 필요. GitHub Actions 2026-06-02부터 Node 24 기본 런타임 전환 예정. CI 파이프라인 구조 자체는 양호.',
-      },
-      {
-        speaker: 'Art Director',
-        note: 'HUD 피로 해소 트렌드 — NumLink 점수 한 줄 압축, 나머지 제스처 숨김. 마스코트 아이콘 인게이지먼트 +34%, MeowBeat 고양이 감정 시스템 설계 권장. NumLink 팔레트: 오프화이트(#F8F5F0)+딥 인디고(#3D5A80). MeowBeat: 크리미 아이보리(#FFF8F0)+코랄 피치(#FF6B6B). 민트+다크 AI 슬롭 절대 금지. Anti-AI 손그림 질감 차별화.',
-      },
-    ],
-    decisions: [
-      {
-        title: 'NumLink git push 즉시 실행',
-        description:
-          '6커밋 미푸시 상태 3일째 — 오늘 중 반드시 origin/main에 push하여 유실 리스크 해소.',
-      },
-      {
-        title: 'MeowBeat 130파일 미커밋 정리 + 커밋',
-        description:
-          'GoogleMobileAds 업그레이드 포함 130+파일 미커밋. 논리적 단위로 분할 커밋 후 push.',
-      },
-      {
-        title: 'Node 20→24 전환 이번 주 내 완료',
-        description:
-          'deploy-pages.yml node-version 24 + upload-pages-artifact v4 + .nvmrc 생성. EOL 34일 전 선제 전환.',
-      },
-      {
-        title: 'agent-office npm audit fix 실행',
-        description:
-          'flatted DoS(HIGH) + minimatch ReDoS(HIGH) 즉시 패치. Vite 8 업그레이드는 별도 PR로 진행.',
-      },
-      {
-        title: 'NumLink Input.GetKeyDown → InputAction 즉시 수정',
-        description:
-          'NumberManager.cs:188,193 CLAUDE.md 위반 항목. ServiceLocator 주석 해제도 함께 진행.',
-      },
-      {
-        title: '숏폼 개발일지 콘텐츠 이번 주 시작',
-        description:
-          'TikTok/Shorts 에피소드형 시리즈로 NumLink 퍼즐 풀이 + MeowBeat 고양이 캐릭터 영상 제작 시작.',
       },
     ],
   },
