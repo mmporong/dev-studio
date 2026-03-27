@@ -226,28 +226,49 @@
     text-decoration: underline;
   }
 
+  .home__game-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+
   .home__game-icon {
     width: 64px;
     height: 64px;
-    image-rendering: pixelated;
-    margin-bottom: 16px;
+    border-radius: 14px;
+    flex-shrink: 0;
   }
 
   .home__game-name {
     font-size: 18px;
     font-weight: 600;
     color: #191f28;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
 
   .home__game-badge {
     display: inline-block;
-    align-self: flex-start;
     font-size: 12px;
     font-weight: 600;
     padding: 3px 8px;
     border-radius: 4px;
-    margin-bottom: 12px;
+  }
+
+  .home__game-screenshots {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  .home__game-ss {
+    flex: 1;
+    min-width: 0;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 6px;
   }
 
   .home__game-desc {

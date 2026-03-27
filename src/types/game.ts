@@ -7,6 +7,7 @@ export interface PublishedGame {
   reviewCount?: number
   downloads: string
   playStoreUrl: string
-  iconSprite: string
+  icon: string
+  screenshots: string[]
   accent: string
 }

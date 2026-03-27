@@ -11,7 +11,12 @@ export const publishedGames: PublishedGame[] = [
     downloads: '1,000+',
     playStoreUrl:
       'https://play.google.com/store/apps/details?id=com.hardboiledexpress.hefeedmee',
-    iconSprite: 'catrush-cats/Cat/01.png',
+    icon: 'games/hefeedmee/icon.png',
+    screenshots: [
+      'games/hefeedmee/ss1.png',
+      'games/hefeedmee/ss2.png',
+      'games/hefeedmee/ss3.png',
+    ],
     accent: '#f97316',
   },
   {
@@ -22,7 +27,12 @@ export const publishedGames: PublishedGame[] = [
     downloads: '100+',
     playStoreUrl:
       'https://play.google.com/store/apps/details?id=com.hardboiledexpress.meowsurvivors',
-    iconSprite: 'catrush-cats/Cat/07.png',
+    icon: 'games/meowsurvivors/icon.png',
+    screenshots: [
+      'games/meowsurvivors/ss1.png',
+      'games/meowsurvivors/ss2.png',
+      'games/meowsurvivors/ss3.png',
+    ],
     accent: '#10b981',
   },
   {
@@ -33,7 +43,12 @@ export const publishedGames: PublishedGame[] = [
     downloads: '10+',
     playStoreUrl:
       'https://play.google.com/store/apps/details?id=com.hardboiledexpress.meowpang',
-    iconSprite: 'catrush-cats/Cat/13.png',
+    icon: 'games/meowpang/icon.png',
+    screenshots: [
+      'games/meowpang/ss1.png',
+      'games/meowpang/ss2.png',
+      'games/meowpang/ss3.png',
+    ],
     accent: '#8b5cf6',
   },
 ]

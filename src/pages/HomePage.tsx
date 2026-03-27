@@ -82,22 +82,36 @@ export function HomePage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
-                src={withBasePath(game.iconSprite)}
-                alt={game.name}
-                className="home__game-icon"
-              />
-              <h3 className="home__game-name">{game.name}</h3>
-              <span
-                className="home__game-badge"
-                style={{
-                  background: `${game.accent}14`,
-                  color: game.accent,
-                }}
-              >
-                {game.genre}
-              </span>
+              <div className="home__game-header">
+                <img
+                  src={withBasePath(game.icon)}
+                  alt={game.name}
+                  className="home__game-icon"
+                />
+                <div>
+                  <h3 className="home__game-name">{game.name}</h3>
+                  <span
+                    className="home__game-badge"
+                    style={{
+                      background: `${game.accent}14`,
+                      color: game.accent,
+                    }}
+                  >
+                    {game.genre}
+                  </span>
+                </div>
+              </div>
               <p className="home__game-desc">{game.description}</p>
+              <div className="home__game-screenshots">
+                {game.screenshots.map((ss, i) => (
+                  <img
+                    key={i}
+                    src={withBasePath(ss)}
+                    alt={`${game.name} 스크린샷 ${i + 1}`}
+                    className="home__game-ss"
+                  />
+                ))}
+              </div>
               <div className="home__game-footer">
                 {game.rating && (
                   <span className="home__game-rating">
