@@ -16,7 +16,7 @@ export function Footer() {
             </a>
           </div>
         </div>
-        <p className="footer__copy">&copy; 2025 mmporong</p>
+        <p className="footer__copy">&copy; 2025 하드보일드 · 임주영</p>
       </div>
     </footer>
   )

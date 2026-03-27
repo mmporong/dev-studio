@@ -3,7 +3,7 @@ import type { ProjectConfig } from '../../types/project'
 export const meowbeatProject: ProjectConfig = {
   id: 'meowbeat',
   name: 'MeowBeat (냥비트)',
-  tagline: '고양이 리듬 캐주얼 게임 — AI 음악 + 먹이주기 + 머지 + 냥카페',
+  tagline: 'AI가 만든 음악으로 고양이에게 밥을 주는 리듬 게임',
   platform: 'Android first (WebGL 추후)',
   engine: 'Unity 6000.x (C#)',
   phase: 'Phase 2 — 에셋/UI 연결 단계',

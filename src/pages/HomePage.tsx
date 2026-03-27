@@ -23,9 +23,11 @@ export function HomePage() {
       {/* Hero */}
       <section className="home__hero">
         <div className="home__hero-text">
-          <p className="home__label">indie game studio</p>
-          <h1>LIM Studio</h1>
-          <p className="home__tagline">고양이와 리듬과 코드를 엮는 1인 개발 스튜디오</p>
+          <p className="home__label">cat game studio</p>
+          <h1>하드보일드</h1>
+          <p className="home__tagline">
+            고양이를 사랑하는 1인 개발자가 만드는 작고 따뜻한 게임들
+          </p>
           <div className="home__stack">
             <span className="home__stack-badge">Unity</span>
             <span className="home__stack-badge">C#</span>
@@ -37,11 +39,15 @@ export function HomePage() {
           <div className="home__hero-links">
             <a
               className="home__hero-btn home__hero-btn--github"
-              href="https://github.com/mmporong"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#games"
+              onClick={(e) => {
+                e.preventDefault()
+                document
+                  .getElementById('games')
+                  ?.scrollIntoView({ behavior: 'smooth' })
+              }}
             >
-              GitHub
+              게임 보러가기
             </a>
             <a
               className="home__hero-btn home__hero-btn--contact"
@@ -60,17 +66,17 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* 출시 게임 */}
-      <section className="home__section scroll-reveal">
+      {/* 출시한 게임들 */}
+      <section id="games" className="home__section scroll-reveal">
         <div className="home__section-header">
-          <h2>출시 게임</h2>
+          <h2>출시한 게임들</h2>
           <a
             className="home__link-btn"
             href="https://play.google.com/store/apps/developer?id=%ED%95%98%EB%93%9C%EB%B3%B4%EC%9D%BC%EB%93%9C"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Google Play에서 보기 →
+            Google Play에서 전체 보기 →
           </a>
         </div>
         <div className="home__game-grid">
@@ -153,9 +159,9 @@ export function HomePage() {
       {/* 현재 프로젝트 */}
       <section className="home__section scroll-reveal">
         <div className="home__section-header">
-          <h2>현재 프로젝트</h2>
+          <h2>만들고 있는 게임</h2>
           <Link to="/work" className="home__link-btn">
-            프로젝트 상세 →
+            개발 과정 보기 →
           </Link>
         </div>
         <div className="home__project-list">
@@ -179,9 +185,9 @@ export function HomePage() {
       {/* 최근 업데이트 */}
       <section className="home__section scroll-reveal">
         <div className="home__section-header">
-          <h2>최근 업데이트</h2>
+          <h2>개발 일지</h2>
           <Link to="/log" className="home__link-btn">
-            전체 로그 →
+            일지 전체 보기 →
           </Link>
         </div>
         <div className="home__update-grid">

@@ -4,7 +4,7 @@ export const publishedGames: PublishedGame[] = [
   {
     id: 'hefeedmee',
     name: '집사야 밥 줘!',
-    description: '점점 빨라지는 리듬 게임으로 고양이에게 쿠키를 먹이세요!',
+    description: '리듬에 맞춰 고양이에게 밥을 주세요! 쉽게 시작하고, 점점 빨라지는 중독성',
     genre: '리듬 캐주얼',
     rating: 4.6,
     reviewCount: 42,
@@ -22,7 +22,7 @@ export const publishedGames: PublishedGame[] = [
   {
     id: 'meowsurvivors',
     name: '냥냥 서바이벌',
-    description: '다가오는 적을 물리치며 고양이와 오래 생존하세요!',
+    description: '고양이와 함께 밀려오는 적을 물리치세요. 한 판 2분, 출퇴근길에 딱!',
     genre: '서바이벌 캐주얼',
     downloads: '100+',
     playStoreUrl:
@@ -38,7 +38,7 @@ export const publishedGames: PublishedGame[] = [
   {
     id: 'meowpang',
     name: '고양이를 합칠고양',
-    description: '고양이들을 뭉쳐서 큰 고양이로 만드는 퍼즐 게임',
+    description: '고양이를 합쳐 더 큰 고양이로! 수박게임 스타일의 힐링 퍼즐',
     genre: '퍼즐 캐주얼',
     downloads: '10+',
     playStoreUrl:
