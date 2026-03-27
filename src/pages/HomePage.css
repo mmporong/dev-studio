@@ -199,6 +199,91 @@
     color: #8b95a1;
   }
 
+  /* 출시 게임 그리드 */
+  .home__game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .home__game-card {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.15s;
+  }
+
+  .home__game-card:hover {
+    background: #f1f3f5;
+    text-decoration: none;
+  }
+
+  .home__game-card:hover .home__game-name {
+    text-decoration: underline;
+  }
+
+  .home__game-icon {
+    width: 64px;
+    height: 64px;
+    image-rendering: pixelated;
+    margin-bottom: 16px;
+  }
+
+  .home__game-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #191f28;
+    margin-bottom: 8px;
+  }
+
+  .home__game-badge {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+
+  .home__game-desc {
+    font-size: 14px;
+    color: #4e5968;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+
+  .home__game-footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    color: #8b95a1;
+    margin-bottom: 16px;
+  }
+
+  .home__game-rating {
+    color: #f97316;
+    font-weight: 600;
+  }
+
+  .home__game-reviews {
+    color: #8b95a1;
+    font-weight: 400;
+    margin-left: 2px;
+  }
+
+  .home__game-store-link {
+    margin-top: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: #3182f6;
+  }
+
   /* 오피스맵 */
   .home__office-map-wrap {
     border-radius: 12px;
@@ -263,6 +348,10 @@
 
     .home__section {
       margin-top: 40px;
+    }
+
+    .home__game-grid {
+      grid-template-columns: 1fr;
     }
 
     .home__update-grid {

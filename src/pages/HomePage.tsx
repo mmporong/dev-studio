@@ -1,5 +1,6 @@
 import { useNavigate, Link } from 'react-router-dom'
 import { projects } from '../data/projects'
+import { publishedGames } from '../data/publishedGames'
 import { useOffice } from '../contexts/OfficeContext'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { OfficeMap } from '../components/office/OfficeMap'
@@ -56,6 +57,65 @@ export function HomePage() {
             alt="고양이 마스코트"
             className="home__cat-sprite"
           />
+        </div>
+      </section>
+
+      {/* 출시 게임 */}
+      <section className="home__section scroll-reveal">
+        <div className="home__section-header">
+          <h2>출시 게임</h2>
+          <a
+            className="home__link-btn"
+            href="https://play.google.com/store/apps/developer?id=%ED%95%98%EB%93%9C%EB%B3%B4%EC%9D%BC%EB%93%9C"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Google Play에서 보기 →
+          </a>
+        </div>
+        <div className="home__game-grid">
+          {publishedGames.map((game) => (
+            <a
+              key={game.id}
+              className="home__game-card"
+              href={game.playStoreUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={withBasePath(game.iconSprite)}
+                alt={game.name}
+                className="home__game-icon"
+              />
+              <h3 className="home__game-name">{game.name}</h3>
+              <span
+                className="home__game-badge"
+                style={{
+                  background: `${game.accent}14`,
+                  color: game.accent,
+                }}
+              >
+                {game.genre}
+              </span>
+              <p className="home__game-desc">{game.description}</p>
+              <div className="home__game-footer">
+                {game.rating && (
+                  <span className="home__game-rating">
+                    ★ {game.rating}
+                    {game.reviewCount && (
+                      <span className="home__game-reviews">
+                        ({game.reviewCount})
+                      </span>
+                    )}
+                  </span>
+                )}
+                <span className="home__game-downloads">
+                  {game.downloads} 다운로드
+                </span>
+              </div>
+              <span className="home__game-store-link">Google Play →</span>
+            </a>
+          ))}
         </div>
       </section>
 
