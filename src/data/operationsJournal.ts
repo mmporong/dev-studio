@@ -43,6 +43,116 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-03-28T09:00:00-daily-standup',
+    date: '2026-03-28',
+    researchTitle:
+      'MeowBeat 84파일 미커밋 긴급 + NumLink 스테이지 시스템 10커밋 회귀 + deploy-pages v5 출시 + Vite 8 정식 릴리즈',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 종합. NumLink 스테이지 시스템 도입·UI 수정 10커밋 완료, LevelSelectUI 5커밋 집중으로 회귀 리스크. MeowBeat 84파일(56개 미추적) 유실 위험 긴급. 퍼즐 시장 일일 챌린지 리텐션 40% 증가·동적 리더보드 표준화. 리듬 게임 CAGR 9.1% 성장, Duck Town 경쟁작 주목. Vite 8.0 Rolldown 정식 출시(3/12). deploy-pages v5+checkout v5 Node 24 대응 완료(3/25). TikTok 도달 급락으로 Reels·Shorts 전환 필수. Raw Aesthetic·Brutalist UI 트렌드 주류화.',
+    researchItems: [
+      {
+        title: 'NumLink 스테이지 시스템 10커밋 완료 — 비코드 출시 작업 6건 잔존',
+        description:
+          'NumLink Sprint 1-5 + 게임 흐름 버그 수정 완료, 코드 측면 출시 준비 상태. 남은 6건(개인정보처리방침, 스토어 설명문, 스크린샷, AdMob 설정, APK 빌드, 레벨 확장)은 전부 비코드 작업. MeowBeat Phase 2 코드 완료이나 에셋(Suno 곡, AI 아트, 프리팹)이 전면 블로커. NumLink 출시 우선 집중 결정.',
+      },
+      {
+        title: '2026 퍼즐/리듬 게임 시장: 일일 챌린지 리텐션 40% 증가 + Duck Town 경쟁작',
+        description:
+          '캐주얼 퍼즐은 일일 챌린지(리텐션 40%↑), AI 적응형 난이도, 동적 리더보드가 핵심 트렌드. 리듬 게임 CAGR 9.1% 성장, 광고+IAP+구독 하이브리드 수익화 표준. Duck Town(리듬+펫 육성)이 MeowBeat 직접 경쟁작. Flow Free 2.2억 DL 지배적이나 NumberLink 계열 소셜/일일 챌린지 부재로 차별화 가능.',
+      },
+      {
+        title: 'Vite 8.0 정식 출시(3/12) + Unity 6.3 LTS 패치 + Debug.Log 69건 정리 필요',
+        description:
+          'Vite 8.0 Rolldown 정식 릴리즈, 빌드 10-30x 향상. agent-office 7.1.2→8.0 업그레이드 가능, 기존 플러그인 호환 확인. Unity 6.3 LTS Box2D v3+레이트레이싱 API+Enhanced Audio. NumLink Debug.Log 69건/16파일, _Recovery 씬 백업 4개 미추적 정리 필요.',
+      },
+      {
+        title: 'NumLink UI 회귀 + MeowBeat 84파일 미커밋 — 품질 리스크 긴급',
+        description:
+          'NumLink 10커밋 중 LevelSelectUI 5건 집중, 스크롤-BackButton-스테이지 전환 회귀 리스크. MainScene.unity 미커밋으로 코드-씬 불일치 가능. MeowBeat 84파일(56개 미추적, AdMob·CafeManager 수익화 코드 포함) 유실 위험 매우 높음. 자동화 테스트 0건 지속.',
+      },
+      {
+        title: '2026 인디게임 숏폼 마케팅·ASO: TikTok 급락, Reels·Shorts 전환 필수',
+        description:
+          'TikTok 유기적 도달 급락(42.5만→6천 사례). Reels·Shorts 중심 멀티플랫폼 전환 필수. Apple CPP 70개 확대+키워드 연결, Google 숏폼 비디오 발견 도입(3/2). 퍼즐 게임 롱테일 키워드+스크린샷 A/B 테스트(상위 57% 실행)가 전환율 핵심.',
+      },
+      {
+        title: 'GitHub Actions deploy-pages v5 + checkout v5 출시 — Node 24 대응 완료',
+        description:
+          'deploy-pages v5.0.0(3/25), checkout v5.0.0 출시로 Node 24 런타임 대응 완료. Node 24 기본 전환 6/2 확정. agent-office deploy-pages.yml에서 v4→v5 업그레이드 필요. FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true로 사전 테스트 가능. Unity 빌드 파이프라인 breaking change 없음.',
+      },
+      {
+        title: '2026 모바일 게임 UI: Raw Aesthetic·Brutalist UI + AI 하이브리드 에셋 워크플로우',
+        description:
+          'AI 전형적 디자인(민트+다크) 거부하는 Raw Aesthetic/Brutalist UI 주류화. 볼드 타이포, 가시적 그리드, 의도적 마이크로인터랙션 핵심. 캐주얼 퍼즐은 Lo-Fi 미니멀+클린 스타일라이즈드 대세. 인디 에셋은 AI 생성+Aseprite 수동 정제 하이브리드 워크플로우가 2026 표준.',
+      },
+    ],
+    meetingTitle: '2026-03-28 데일리 스탠드업: MeowBeat 미커밋 긴급 + NumLink 출시 마무리 + CI 액션 업그레이드',
+    meetingSummary:
+      'MeowBeat 84파일(56개 미추적) 유실 리스크 긴급 해소 결정. NumLink 코드 완료 확인, 비코드 출시 작업 6건 이번 주 집중. LevelSelectUI 5커밋 집중 회귀 테스트 필수. deploy-pages v5+checkout v5 이번 주 업그레이드. Vite 8.0 정식 출시 확인, 별도 PR 진행. TikTok 급락으로 Reels·Shorts 멀티플랫폼 마케팅 전환. Raw Aesthetic UI 트렌드 NumLink 방향성 부합 확인.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'NumLink는 코드 완료 상태이며, 남은 6건(개인정보처리방침, 스토어 설명문, 스크린샷, AdMob, APK 빌드, 레벨 확장)은 전부 비코드 작업이므로 이번 주 집중하면 Google Play 내부 테스트 진입 가능합니다. MeowBeat는 에셋(Suno 곡, AI 아트, 프리팹)이 전면 블로커로 Owner 액션 선행 필요. 우선순위: NumLink 출시 마무리 > MeowBeat 미커밋 해소 > agent-office 인프라 업그레이드.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '퍼즐 게임 시장에서 일일 챌린지(리텐션 40% 증가)와 동적 리더보드가 핵심 레버로 자리잡았고, NumLink에 도입하면 Flow Free 대비 확실한 차별점을 확보할 수 있습니다. MeowBeat 쪽은 Duck Town(리듬+펫 육성, 2025.08 출시)이 직접 경쟁 레퍼런스이며, 리듬 게임 수익화는 광고+소액 IAP+구독 하이브리드 모델이 업계 표준입니다. MVP 이후 소셜 레이어 추가를 GDD 로드맵에 반영할 것을 권장합니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'Vite 8.0이 3/12 정식 출시되었고 Rolldown 번들러로 빌드 10-30배 향상 확인, agent-office 7.1.2→8.0 업그레이드 준비 완료. Unity 6.3 LTS 안정적 패치 진행 중. NumLink Debug.Log 69건/16파일 잔존하며 _Recovery 폴더에 씬 백업 4개가 미추적 상태로 남아 있어 정리 필요합니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'NumLink 최근 10커밋 중 LevelSelectUI에 5건이 집중되어 스크롤-BackButton-스테이지 전환 회귀 리스크가 높습니다. MeowBeat는 84파일(56개 미추적, AdMob·CafeManager 수익화 코드 포함) 유실 위험이 매우 높아 즉시 커밋이 필요합니다. 양 프로젝트 자동화 테스트 0건으로, 최소 게임 흐름 happy path 테스트 1건 추가를 권장합니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'TikTok 유기적 도달이 크게 하락(42.5만→6천 사례)하면서 Instagram Reels와 YouTube Shorts가 인디 게임 마케팅 핵심 채널로 부상했습니다. Apple CPP 70개 확대+유기 검색 연결, Google Play 숏폼 비디오 발견 도입(3/2)으로 NumLink 출시 시 적극 활용해야 합니다. 스크린샷 A/B 테스트(상위 57% 실행)와 롱테일 키워드 조합이 전환율에 가장 큰 영향을 줍니다.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'deploy-pages v5.0.0(3/25)과 checkout v5.0.0이 Node 24 대응 완료 상태로 출시되었습니다. agent-office deploy-pages.yml에서 deploy-pages v4→v5, checkout v4→v5로 업그레이드 필요하며, 전환 전 FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true로 사전 테스트 가능합니다. Node 24 기본 전환일 6/2 확정, Unity 빌드 파이프라인은 breaking change 없이 GameCI 안정 유지.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '2026년 UI 트렌드 핵심은 Raw Aesthetic — AI 전형적 민트+다크 그라데이션을 거부하고 볼드 타이포·가시적 그리드·의도적 마이크로인터랙션이 주류입니다. NumLink UI 리디자인 Phase 2(3열 레이아웃, 난이도 색상 체계)는 클린 스타일라이즈드 트렌드에 잘 부합합니다. MeowBeat 에셋 제작 시 AI 생성+Aseprite 수동 정제 하이브리드 워크플로우를 권장합니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: 'MeowBeat 84파일 미커밋 즉시 해소 — 유실 리스크 긴급',
+        description:
+          '56개 미추적 파일(AdMob, CafeManager 등 수익화 코드 포함)이 복구 불가 상태. 분할 커밋으로 즉시 안전장치 확보. 에셋 작업 전 코드 베이스라인 확정.',
+      },
+      {
+        title: 'NumLink _Recovery 폴더 정리 + MainScene.unity 커밋',
+        description:
+          '_Recovery 씬 백업 4개 검증 후 삭제 또는 .gitignore 추가. MainScene.unity 미커밋 해소하여 코드-씬 일치 보장.',
+      },
+      {
+        title: 'NumLink 레벨선택 UI 회귀 테스트 실시',
+        description:
+          'LevelSelectUI 5커밋 집중 변경으로 스크롤·BackButton·스테이지 전환 회귀 리스크. 수동 회귀 테스트 우선, happy path 자동화 테스트 1건 추가 검토.',
+      },
+      {
+        title: 'deploy-pages v5 + checkout v5 이번 주 업그레이드',
+        description:
+          '3/25 출시된 deploy-pages v5.0.0과 checkout v5.0.0으로 Node 24 대응. FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true 사전 테스트 후 전환.',
+      },
+      {
+        title: 'Vite 8.0 Rolldown 업그레이드 별도 PR 진행',
+        description:
+          'Vite 8.0 정식 출시 확인(3/12). agent-office 7.1.2→8.0 전환으로 빌드 10-30x 향상. 플러그인 호환성 확인 후 단독 PR.',
+      },
+      {
+        title: 'NumLink 출시 비코드 작업 6건 이번 주 집중',
+        description:
+          '개인정보처리방침, 스토어 설명문+ASO 키워드, 스크린샷 5장, AdMob 설정, APK 빌드, 레벨 확장. 완료 시 Google Play 내부 테스트 진입.',
+      },
+    ],
+  },
+  {
     id: '2026-03-27T09:00:00-daily-standup-v2',
     date: '2026-03-27',
     researchTitle:
