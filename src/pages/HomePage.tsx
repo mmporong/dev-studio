@@ -28,32 +28,37 @@ export function HomePage() {
           <p className="home__tagline">
             고양이를 사랑하는 1인 개발자가 만드는 작고 따뜻한 게임들
           </p>
+          <div className="home__hero-section-label">🛠️ Tech Stack</div>
           <div className="home__stack">
-            <span className="home__stack-badge">Unity</span>
-            <span className="home__stack-badge">C#</span>
-            <span className="home__stack-badge">React</span>
-            <span className="home__stack-badge">TypeScript</span>
-            <span className="home__stack-badge">Python</span>
-            <span className="home__stack-badge">AI Pipeline</span>
+            <img src="https://img.shields.io/badge/Unity-000000?style=flat&logo=unity&logoColor=white" alt="Unity" />
+            <img src="https://img.shields.io/badge/C%23-239120?style=flat&logo=csharp&logoColor=white" alt="C#" />
+            <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" alt="Python" />
+            <img src="https://img.shields.io/badge/Cursor-000000?style=flat&logo=cursor&logoColor=white" alt="Cursor" />
+            <img src="https://img.shields.io/badge/Claude-D97757?style=flat&logo=anthropic&logoColor=white" alt="Claude" />
+            <img src="https://img.shields.io/badge/Notion-000000?style=flat&logo=notion&logoColor=white" alt="Notion" />
+            <img src="https://img.shields.io/badge/Slack-4A154B?style=flat&logo=slack&logoColor=white" alt="Slack" />
+            <img src="https://img.shields.io/badge/Adobe_Photoshop-31A8FF?style=flat&logo=adobephotoshop&logoColor=white" alt="Adobe Photoshop" />
+            <img src="https://img.shields.io/badge/SolidWorks-CC1F35?style=flat&logo=solidworks&logoColor=white" alt="SolidWorks" />
+            <img src="https://img.shields.io/badge/AutoCAD-0696D7?style=flat&logo=autocad&logoColor=white" alt="AutoCAD" />
           </div>
+          <div className="home__hero-section-label">📫 Contact</div>
           <div className="home__hero-links">
-            <a
-              className="home__hero-btn home__hero-btn--github"
-              href="#games"
-              onClick={(e) => {
-                e.preventDefault()
-                document
-                  .getElementById('games')
-                  ?.scrollIntoView({ behavior: 'smooth' })
-              }}
-            >
-              게임 보러가기
+            <a href="mailto:mmporong@gmail.com">
+              <img src="https://img.shields.io/badge/Email-mmporong%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email" />
             </a>
             <a
-              className="home__hero-btn home__hero-btn--contact"
-              href="mailto:mmporong@gmail.com"
+              href="https://play.google.com/store/apps/dev?id=7488802924019572290"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Contact
+              <img src="https://img.shields.io/badge/Google_Play-4FC3F7?style=flat-square&logo=googleplay&logoColor=white" alt="Google Play" />
+            </a>
+            <a
+              href="https://www.youtube.com/@hardboiledexpress940"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="https://img.shields.io/badge/YouTube-FF0000?style=flat-square&logo=youtube&logoColor=white" alt="YouTube" />
             </a>
           </div>
         </div>

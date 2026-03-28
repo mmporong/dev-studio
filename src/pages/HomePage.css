@@ -46,53 +46,38 @@
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: 12px;
   }
 
-  .home__stack-badge {
-    font-size: 13px;
-    font-weight: 500;
-    color: #4e5968;
-    background: #f1f3f5;
-    padding: 4px 10px;
-    border-radius: 6px;
+  .home__stack img {
+    height: 22px;
+  }
+
+  .home__hero-section-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #191f28;
+    margin-top: 20px;
+    margin-bottom: 8px;
   }
 
   .home__hero-links {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
-    margin-top: 20px;
   }
 
-  .home__hero-btn {
+  .home__hero-links a {
     display: inline-flex;
-    align-items: center;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 600;
     text-decoration: none;
-    transition: background 0.15s, color 0.15s;
+    transition: opacity 0.15s;
   }
 
-  .home__hero-btn--github {
-    background: #191f28;
-    color: #fff;
+  .home__hero-links a:hover {
+    opacity: 0.8;
   }
 
-  .home__hero-btn--github:hover {
-    background: #333d4b;
-    text-decoration: none;
-  }
-
-  .home__hero-btn--contact {
-    background: #e8f3ff;
-    color: #3182f6;
-  }
-
-  .home__hero-btn--contact:hover {
-    background: #d0e8ff;
-    text-decoration: none;
+  .home__hero-links img {
+    height: 24px;
   }
 
   .home__hero-mascot {
