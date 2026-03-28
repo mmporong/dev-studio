@@ -176,14 +176,14 @@
     },
     {
       "path": "src\\pages\\HomePage.tsx",
-      "accessCount": 10,
-      "lastAccessed": 1774577121012,
+      "accessCount": 11,
+      "lastAccessed": 1774661130682,
       "type": "file"
     },
     {
       "path": "src\\data\\publishedGames.ts",
-      "accessCount": 6,
-      "lastAccessed": 1774577133108,
+      "accessCount": 8,
+      "lastAccessed": 1774661099300,
       "type": "file"
     },
     {
@@ -217,6 +217,12 @@
       "type": "file"
     },
     {
+      "path": "src\\types\\game.ts",
+      "accessCount": 2,
+      "lastAccessed": 1774661082358,
+      "type": "file"
+    },
+    {
       "path": "",
       "accessCount": 1,
       "lastAccessed": 1774154401085,
@@ -238,12 +244,6 @@
       "path": "src\\components\\layout\\NavBar.css",
       "accessCount": 1,
       "lastAccessed": 1774154414705,
-      "type": "file"
-    },
-    {
-      "path": "src\\types\\game.ts",
-      "accessCount": 1,
-      "lastAccessed": 1774576116060,
       "type": "file"
     },
     {
