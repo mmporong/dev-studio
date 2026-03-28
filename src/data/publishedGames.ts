@@ -51,16 +51,4 @@ export const publishedGames: PublishedGame[] = [
     ],
     accent: '#8b5cf6',
   },
-  {
-    id: 'luckiseverything',
-    name: 'LuckIsEverything',
-    description: '오늘의 운을 간단한 선택으로 테스트하세요! 50:50 확률 그것뿐!',
-    genre: '캐주얼',
-    downloads: '5+',
-    playStoreUrl:
-      'https://play.google.com/store/apps/details?id=com.harboiledexpress.luckiseverything',
-    icon: 'games/luckiseverything/icon.png',
-    screenshots: [],
-    accent: '#f59e0b',
-  },
 ]
