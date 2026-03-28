@@ -21,8 +21,8 @@ export const publishedGames: PublishedGame[] = [
   },
   {
     id: 'meowsurvivors',
-    name: '냥냥 서바이벌',
-    description: '고양이와 함께 밀려오는 적을 물리치세요. 한 판 2분, 출퇴근길에 딱!',
+    name: 'Meow Survivors',
+    description: '자동 발사 무기로 밀려오는 적을 물리치세요!',
     genre: '서바이벌 캐주얼',
     downloads: '100+',
     playStoreUrl:
@@ -37,8 +37,8 @@ export const publishedGames: PublishedGame[] = [
   },
   {
     id: 'meowpang',
-    name: '고양이를 합칠고양',
-    description: '고양이를 합쳐 더 큰 고양이로! 수박게임 스타일의 힐링 퍼즐',
+    name: '합칠고양',
+    description: '같은 고양이 두 마리를 합쳐 더 큰 고양이로! 수박게임 스타일 퍼즐',
     genre: '퍼즐 캐주얼',
     downloads: '10+',
     playStoreUrl:
@@ -50,5 +50,17 @@ export const publishedGames: PublishedGame[] = [
       'games/meowpang/ss3.png',
     ],
     accent: '#8b5cf6',
+  },
+  {
+    id: 'luckiseverything',
+    name: 'LuckIsEverything',
+    description: '오늘의 운을 간단한 선택으로 테스트하세요! 50:50 확률 그것뿐!',
+    genre: '캐주얼',
+    downloads: '5+',
+    playStoreUrl:
+      'https://play.google.com/store/apps/details?id=com.harboiledexpress.luckiseverything',
+    icon: 'games/luckiseverything/icon.png',
+    screenshots: [],
+    accent: '#f59e0b',
   },
 ]
