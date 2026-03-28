@@ -45,7 +45,7 @@
   .home__stack {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 0;
   }
 
   .home__stack img {
@@ -63,7 +63,7 @@
   .home__hero-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 0;
   }
 
   .home__hero-links a {
