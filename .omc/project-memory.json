@@ -170,20 +170,50 @@
   "hotPaths": [
     {
       "path": "src\\data\\operationsJournal.ts",
-      "accessCount": 4,
-      "lastAccessed": 1774242978890,
-      "type": "file"
-    },
-    {
-      "path": "src\\pages\\HomePage.css",
-      "accessCount": 3,
-      "lastAccessed": 1774154448729,
+      "accessCount": 11,
+      "lastAccessed": 1774398453127,
       "type": "file"
     },
     {
       "path": "src\\pages\\HomePage.tsx",
+      "accessCount": 10,
+      "lastAccessed": 1774577121012,
+      "type": "file"
+    },
+    {
+      "path": "src\\data\\publishedGames.ts",
+      "accessCount": 6,
+      "lastAccessed": 1774577133108,
+      "type": "file"
+    },
+    {
+      "path": "src\\pages\\HomePage.css",
+      "accessCount": 4,
+      "lastAccessed": 1774576150865,
+      "type": "file"
+    },
+    {
+      "path": "src\\components\\layout\\NavBar.tsx",
+      "accessCount": 3,
+      "lastAccessed": 1774577097619,
+      "type": "file"
+    },
+    {
+      "path": "src\\components\\layout\\Footer.tsx",
+      "accessCount": 3,
+      "lastAccessed": 1774577140063,
+      "type": "file"
+    },
+    {
+      "path": "src\\data\\projects\\meowbeat.ts",
       "accessCount": 2,
-      "lastAccessed": 1774154433153,
+      "lastAccessed": 1774577135753,
+      "type": "file"
+    },
+    {
+      "path": "src\\data\\projects\\numlink.ts",
+      "accessCount": 2,
+      "lastAccessed": 1774577138468,
       "type": "file"
     },
     {
@@ -199,12 +229,6 @@
       "type": "directory"
     },
     {
-      "path": "src\\components\\layout\\NavBar.tsx",
-      "accessCount": 1,
-      "lastAccessed": 1774154409162,
-      "type": "file"
-    },
-    {
       "path": "src\\App.tsx",
       "accessCount": 1,
       "lastAccessed": 1774154409192,
@@ -214,6 +238,24 @@
       "path": "src\\components\\layout\\NavBar.css",
       "accessCount": 1,
       "lastAccessed": 1774154414705,
+      "type": "file"
+    },
+    {
+      "path": "src\\types\\game.ts",
+      "accessCount": 1,
+      "lastAccessed": 1774576116060,
+      "type": "file"
+    },
+    {
+      "path": "src\\pages\\LogPage.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1774576556283,
+      "type": "file"
+    },
+    {
+      "path": "src\\pages\\WorkPage.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1774576556579,
       "type": "file"
     }
   ],
