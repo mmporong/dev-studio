@@ -21,7 +21,7 @@ export const publishedGames: PublishedGame[] = [
   },
   {
     id: 'meowsurvivors',
-    name: 'Meow Survivors',
+    name: '냥냥 서바이벌',
     description: '자동 발사 무기로 밀려오는 적을 물리치세요!',
     genre: '서바이벌 캐주얼',
     downloads: '100+',
