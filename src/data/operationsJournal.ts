@@ -258,6 +258,67 @@ export const seedJournalEntries: JournalEntry[] = [
     ],
   },
   {
+    id: '2026-03-29T20:00:00-threads-insight',
+    date: '2026-03-29',
+    researchTitle: '📊 Threads 인사이트 — AI 수익화 자동화, 트레이딩 봇, 생산성 도구 실전기',
+    researchSummary:
+      '47개 수집 노트 중 이전 인사이트(3/21) 미포함 영역 분석. 바이브 코딩 기반 제휴 마케팅 자동화가 실제 수익으로 이어지는 사례 다수 발견. 크립토 트레이딩 봇(GRVT 142% 수익·터틀수프 전략)이 개인 개발자 사이에서 확산. Claude for Excel(Cowork)·HWP 자동 변환 등 AI 생산성 도구가 실무 침투 가속. Unity 6.8 CoreCLR 전환 확정으로 게임 개발 생태계 대전환 예고.',
+    researchItems: [
+      {
+        title: '🥇 AI 수익화 & 마케팅 자동화 — "만들고 끝"이 아닌 "만들어서 돈 버는" 시대',
+        description:
+          '바이브 코딩으로 제휴 마케팅 사이트 구축 사례 등장: Claude Code + Google Antigravity → 네이버 SEO + IndexNow 연동 → 자동 트래픽 유입. 크몽 시장 분석 결과 트레이딩뷰 지표(873건)·애드센스 승인(780건)·매크로 자동화(661건)가 3대 메가 히트. AI 서비스는 일반 개발 대비 2~4배 프리미엄. 숏폼 수익화 12단계 공식(1년 3억, 월 1억+ 조회수) 공유 — 레드오션 진입 + 구조 분석이 핵심.',
+      },
+      {
+        title: '🥈 트레이딩 봇 & AI 퀀트 — 개인 개발자의 금융 자동화',
+        description:
+          'GRVT 고성능 전략: 1년 142.82% 수익, MDD 7.74%, PF 3.025(손익비 3:1), 승률 69.93%. 구정 연휴부터 새벽 3~4시까지 개발. 터틀수프 전략 봇: 유동성 스윕 기반 역추세 매매, BTC/ETH/XRP/SOL 멀티코인 확장, 시각화 대시보드까지 구축. Perplexity AI 실전 투자 프롬프트 7선 — 유동성 방향 감지 엔진 등 기관급 분석을 개인이 AI로 수행하는 흐름.',
+      },
+      {
+        title: '🥉 AI 생산성 도구 실전 침투 — Excel부터 HWP까지',
+        description:
+          'Claude for Excel(Cowork): =GPT() 셀 함수가 아닌 워크북 전체를 읽는 사이드바. 탭·수식·셀 의존 관계를 모두 파악 후 모델 감사/변환/생성. MS Copilot이 수식 가속이라면 Claude는 모델 이해. HWP→HWPX 변환 자동화: 한컴 공식 변환기 + Claude Code 연동으로 레거시 공공문서 일괄 처리. component.gallery: UI 컴포넌트 용어 라이브러리로 비개발자 바이브 코딩 시 디자인 요청 정확도 향상.',
+      },
+      {
+        title: '4️⃣ 게임 기술 대전환 — Unity 6.8 CoreCLR & AI 게임 생성',
+        description:
+          'Unity 6.8에서 Mono → CoreCLR 완전 전환 확정. .NET 10 최신 문법 사용 가능, C# 컴파일 시간 대폭 단축. GDC 2026에서 공식 발표. CodeWisp: 게임 엔진 없이 텍스트 설명만으로 웹게임 자동 생성하는 AI 플랫폼 — 프로토타이핑 용도로 주목. GPT-5.4가 Minecraft 클론·3D 공간을 원샷 생성하며 코딩 벤치마크에서 Claude Opus 4.6을 넘었다는 평가 등장.',
+      },
+      {
+        title: '5️⃣ 부동산·금융 버티컬 AI 앱 등장',
+        description:
+          '재개발뷰: 바이브 코딩으로 만든 공동주택 공시가격 조회 앱. "본업은 아니지만 이 계정의 최종 존재이유"라는 개발자 코멘트가 인상적 — 사이드프로젝트가 버티컬 SaaS로 진화하는 패턴. Perplexity 기반 유동성 방향 감지·밸류에이션 분석 프롬프트가 개인 투자자 사이에서 공유되며 "AI로 기관을 이길 수 없지만 게임을 바꿀 수 있다"는 공감대 형성.',
+      },
+    ],
+    meetingTitle: 'Threads 커뮤니티 수익화 & 실전 도구 트렌드',
+    meetingSummary:
+      '3/21 인사이트가 "AI 도구 선택"에 집중했다면, 이번에는 "선택한 도구로 실제 돈을 버는 방법"으로 커뮤니티 관심이 이동. 트레이딩·마케팅·생산성 영역에서 구체적 수익 데이터가 공유되는 단계.',
+    meetingItems: [
+      { speaker: '📈 뜨거운 것', note: '바이브 코딩 수익화(제휴 마케팅·숏폼), 크립토 트레이딩 봇(터틀수프·GRVT), Claude for Excel, Unity CoreCLR' },
+      { speaker: '📉 식어가는 것', note: '단순 AI 도구 소개 콘텐츠 (이제는 "써봤다" 수준을 넘어 "얼마 벌었다"를 원함)' },
+      { speaker: '🆕 새로 떠오르는 것', note: 'AI 제휴 마케팅 자동화, CodeWisp(엔진리스 게임), HWP AI 처리, 부동산 버티컬 앱' },
+      { speaker: '💰 수익 데이터', note: '숏폼 1년 3억 / GRVT 142% 연수익 / 크몽 AI 프리미엄 2~4배 / 트레이딩뷰 지표 873건 수요' },
+    ],
+    decisions: [
+      {
+        title: '크몽 AI 서비스 시장 분석 → 트레이딩 시스템 수익화 검토',
+        description: '트레이딩뷰 지표가 크몽 최다 서비스(873건). OpenClaw 트레이딩 시스템의 지표/전략을 크몽·Fiverr에서 판매 가능성 검토. AI 프리미엄(2~4배) 적용 시 단가 경쟁력 확보.',
+      },
+      {
+        title: 'Claude for Excel(Cowork) 실무 테스트',
+        description: '워크북 전체를 이해하는 AI 사이드바 — 트레이딩 리포트 자동 감사, 데이터 변환에 적용 테스트. MS Copilot과 비교 평가.',
+      },
+      {
+        title: 'Unity 6.8 CoreCLR 마이그레이션 준비',
+        description: 'MeowBeat 프로젝트의 .NET 버전 및 Mono 의존성 체크. CoreCLR 전환 시 컴파일 시간 단축 효과 사전 확인. 6.8 프리뷰 나오면 즉시 테스트.',
+      },
+      {
+        title: '바이브 코딩 제휴 마케팅 파이프라인 레퍼런스 저장',
+        description: 'Claude Code + Antigravity + Naver IndexNow 조합의 SEO 자동화 워크플로우를 PKM에 레퍼런스로 보관. 향후 사이드프로젝트 수익화 시 참고.',
+      },
+    ],
+  },
+  {
     id: '2026-03-27T09:00:00-daily-standup-v2',
     date: '2026-03-27',
     researchTitle:
