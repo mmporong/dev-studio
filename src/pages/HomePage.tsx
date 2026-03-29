@@ -64,11 +64,20 @@ export function HomePage() {
         </div>
         <div className="home__hero-mascot">
           <img
-            src={withBasePath('catrush-cats/Cat/01.png')}
-            alt="고양이 마스코트"
-            className="home__cat-sprite"
+            src={withBasePath('Profile_Icon_Orange.png')}
+            alt="하드보일드 개발자 프로필"
+            className="home__profile-icon"
           />
         </div>
+      </section>
+
+      {/* 그래픽 배너 */}
+      <section className="home__graphic-banner scroll-reveal">
+        <img
+          src={withBasePath('GraphicImage.jpg')}
+          alt="하드보일드 고양이들"
+          className="home__graphic-image"
+        />
       </section>
 
       {/* 출시한 게임들 */}
