@@ -43,6 +43,111 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-03-29T09:00:00-daily-standup',
+    date: '2026-03-29',
+    researchTitle:
+      'NumLink UGUI→UI Toolkit 전환 착수 + Poki 넘버링크 블루오션 + Google Play 수수료 20% 인하 + GitHub Actions v6 출시',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 종합. NumLink에서 UGUI→UI Toolkit 전환 작업이 본격 시작되어 6개 신규 파일 생성, 이중 경로(UIToolkit 우선+UGUI 폴백) 패턴 적용. Poki WebGL 플랫폼에 넘버링크/플로우 계열 퍼즐 부재로 블루오션 기회 확인. Google Play가 Epic 합의로 수수료 20%로 인하(6/30 적용). GitHub Actions checkout/setup-node v6 출시, Node 24 강제 전환 6/2 확정. 퍼즐 시장 CAGR 6.02% 성장, 일일 스트릭 상위 69% 채택. YouTube Shorts 참여율 5.91%로 숏폼 선두. 소프트 3D/플러시코어 아이콘 트렌드 주류화.',
+    researchItems: [
+      {
+        title: 'NumLink UI Toolkit 전환 착수 — 6파일 신규, 이중 경로 패턴 적용',
+        description:
+          'NumLink에서 UGUI→UI Toolkit 전환이 본격 시작. UIToolkitManager, GameOverController, StageClearController, InGameHUDController, LevelSelectController, UIScreenBase 6개 파일 신규 생성. GameManager/HUDManager/PuzzleManager/AutoSetup 4개 파일에 "UIToolkit 우선, UGUI 폴백" 이중 경로 패턴 적용. Phase 5 진행률 70%.',
+      },
+      {
+        title: '퍼즐 시장 CAGR 6.02% + Poki 넘버링크 블루오션 + Duet Ducks 경쟁작 분석',
+        description:
+          '퍼즐 게임 시장 2024년 $62.8B→2033년 $98.6B 전망. 상위 퍼즐 69%가 일일 스트릭 채택, 멀티플레이어 퍼즐 YoY 22% 성장. Poki 상위권에 넘버링크/플로우 계열 부재로 NumLink 블루오션 기회. Duet Ducks(Mobirix, 리듬+오리수집, 120곡)가 MeowBeat 직접 경쟁작이나 메타게임 깊이에서 차별화 가능.',
+      },
+      {
+        title: 'Unity 6.3 UI Toolkit 강화 + Vite 8.0.3 + TypeScript 6.0 출시',
+        description:
+          'Unity 6.3 LTS에서 UI Toolkit 커스텀 셰이더/포스트프로세싱/SVG 지원 강화. Vite 8.0.3 Rolldown 번들러 통합(빌드 10-30x). TypeScript 6.0.2, ESLint 10.1.0 메이저 업데이트 가능. React 19.2.4 마이너 업데이트 안전.',
+      },
+      {
+        title: 'UIToolkit/UGUI 이중 구조 회귀 리스크 + MeowBeat .meta 삭제 3건 + 자동화 테스트 0건',
+        description:
+          'NumLink UIToolkit/UGUI 이중 구조에서 한쪽만 초기화되는 엣지 케이스 가능. LevelSelectUI cachedCleared null 시 전 스테이지 잠금 리스크. MeowBeat Input.meta/Item.meta/SaveLoad.meta 삭제로 참조 깨짐 가능. _Recovery 씬 백업 4개(2MB) 정리 필요. 양 프로젝트 자동화 테스트 전무.',
+      },
+      {
+        title: 'Google Play 수수료 20% 인하(Epic 합의) + ASO 롱테일 키워드 + YouTube Shorts 참여율 선두',
+        description:
+          'Google Play가 Epic 합의로 수수료 20%로 인하, 6/30부터 적용. 대체 결제 허용 + 서드파티 스토어 등록 프로그램 도입. ASO는 롱테일 키워드+메타데이터 최적화가 핵심. YouTube Shorts 참여율 5.91%(일 2000억 뷰)로 숏폼 선두, Instagram Reels 도달률 30.81%.',
+      },
+      {
+        title: 'GitHub Actions checkout/setup-node v6 출시 + Node 24 강제 6/2 + React/Vite 메이저 업데이트',
+        description:
+          'actions/checkout v6, actions/setup-node v6 출시. Node.js 20 EOL 2026년 4월, 6/2부터 Node 24 강제 전환. agent-office deploy-pages.yml v4→v6 업그레이드 필요. Vite 7→8, TypeScript 5→6, ESLint 9→10 메이저 업데이트 가능하나 별도 브랜치 테스트 권장.',
+      },
+      {
+        title: '소프트 3D/플러시코어 아이콘 트렌드 + AI 에셋 워크플로우(Midjourney→SD→Real-ESRGAN)',
+        description:
+          '2026 앱 아이콘: 마스코트 중심 + 소프트 3D/플러시코어 스타일 주류. 아이콘 리디자인만으로 설치 21.5% 증가 사례. 인디 에셋 제작: Midjourney 컨셉→Stable Diffusion+ControlNet 일관성→Real-ESRGAN 업스케일 워크플로우 2026 표준. 스토어 스크린샷 처음 3장이 전환율 90% 결정.',
+      },
+    ],
+    meetingTitle: '2026-03-29 데일리 스탠드업: NumLink UI Toolkit 전환 + Poki 블루오션 + Google Play 수수료 인하',
+    meetingSummary:
+      'NumLink UGUI→UI Toolkit 전환 6파일 신규 확인, 이중 경로 안정화 후 UGUI 폴백 제거 필요. Poki에 넘버링크 계열 부재로 블루오션 기회, WebGL 우선 출시 검토 결정. Google Play 수수료 20% 인하(6/30)로 수익 구조 개선. GitHub Actions v6+Node 24 이번 주 업그레이드. MeowBeat 미커밋 파일 지속 — 즉시 정리 재권고. 소프트 3D 아이콘+AI 에셋 워크플로우로 에셋 제작 착수 권장.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'NumLink는 Phase 5(아키텍처 마이그레이션) 70% 진행 중이며, UI Toolkit 전환이 본격 시작되었습니다. 4개 핵심 매니저 파일 수정이 미커밋 상태로 데이터 손실 위험이 있어 즉시 커밋이 필요합니다. MeowBeat도 ~34개 파일 미커밋 지속 중. 우선순위: NumLink UI Toolkit 안정화 > 미커밋 정리 > Poki WebGL 출시 검토.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: 'Poki WebGL 상위권에 넘버링크/플로우 계열 퍼즐이 전무하여 NumLink에게 블루오션 기회입니다. 일일 스트릭(상위 69% 채택)+멀티플레이어(YoY 22% 성장)가 리텐션 핵심이므로 MVP 이후 반드시 도입해야 합니다. Duet Ducks(리듬+오리수집)가 MeowBeat 직접 경쟁작이나, 카페경영+캣스타그램 메타게임 깊이에서 2단계 우위 확보 가능합니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'NumLink에서 UGUI→UI Toolkit 전환이 시작되어 UIToolkitManager 외 5개 컨트롤러가 신규 생성되었습니다. "UIToolkit 우선, UGUI 폴백" 이중 경로 패턴으로 안전하게 전환 중이나, 안정화 후 UGUI 폴백 코드 일괄 제거가 필요합니다. Unity 6.3 LTS에서 UI Toolkit이 대폭 강화(커스텀 셰이더, SVG 지원)되어 전환 타이밍이 적절합니다. Undo 기능 미구현(Debug.Log만 존재)이 중간 우선순위 기술 부채입니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '컴파일 블로킹 이슈는 없으나, UIToolkit/UGUI 이중 구조에서 한쪽만 초기화되는 엣지 케이스가 회귀 리스크입니다. LevelSelectUI에서 첫 플레이 시 cachedCleared null이면 전 스테이지가 잠길 수 있어 수동 QA 필요합니다. MeowBeat는 삭제된 .meta 3건(Input/Item/SaveLoad)의 대응 폴더 확인이 P0입니다. 양 프로젝트 자동화 테스트 전무 상태 지속.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'Google Play가 Epic 합의로 수수료를 30%에서 20%로 인하하여 인디 개발자 수익 구조가 개선됩니다(6/30 적용). ASO는 롱테일 키워드 3개 이상 조합이 전환율 핵심이며, 스크린샷 A/B 테스트는 상위 57%가 실행 중입니다. 숏폼 마케팅은 YouTube Shorts(참여율 5.91%, 일 2000억 뷰)가 선두이며, 15-35초 길이에 70% 이상 완주율이 핵심 지표입니다.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'GitHub Actions checkout v6, setup-node v6이 출시되었고 Node.js 24 강제 전환이 6/2로 확정되었습니다. agent-office deploy-pages.yml에서 v4→v6 업그레이드가 시급합니다. 의존성 현황: Vite 8.0.3, TypeScript 6.0.2, ESLint 10.1.0 메이저 업데이트 가능하나 별도 브랜치 테스트 필요. React 19.2.4, react-router-dom 7.13.2는 안전한 마이너/패치 업데이트입니다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '2026 앱 아이콘 트렌드는 마스코트 중심 + 소프트 3D/플러시코어이며, 아이콘 리디자인만으로 설치 21.5% 증가 사례가 있습니다. NumLink는 미니멀+높은 대비로 숫자 연결 메카닉을 즉시 전달하는 아이콘이 필요합니다. MeowBeat 에셋은 Midjourney 컨셉→SD+ControlNet 일관성→Real-ESRGAN 업스케일 워크플로우를 권장합니다. 스토어 스크린샷 처음 3장이 전환율의 90%를 결정하므로 NumLink 5장 구성안 즉시 착수해야 합니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: 'NumLink UI Toolkit 전환 안정화 — UGUI 폴백 코드 관리 계획 수립',
+        description:
+          '이중 경로 패턴으로 안전하게 전환 중이나, 안정화 기준(전 화면 UIToolkit 정상 동작 확인) 충족 후 UGUI 폴백 코드 일괄 제거 예정. Undo 기능 구현도 병행.',
+      },
+      {
+        title: 'NumLink Poki WebGL 우선 출시 검토 — 블루오션 선점',
+        description:
+          'Poki 상위권에 넘버링크/플로우 계열 부재 확인. WebGL 빌드 테스트 후 Poki 제출 가능성 평가. 보상형 비디오 광고 기반 수익화.',
+      },
+      {
+        title: 'MeowBeat 미커밋 파일 즉시 정리 + NumLink 4파일 커밋',
+        description:
+          'MeowBeat ~34개 파일, NumLink 핵심 매니저 4개 + UIToolkit 6파일 미커밋. 양쪽 모두 분할 커밋으로 즉시 안전장치 확보.',
+      },
+      {
+        title: 'agent-office GitHub Actions v6 + Node 24 업그레이드 — 6/2 데드라인',
+        description:
+          'checkout v4→v6, setup-node v4→v6, node-version 20→24 업그레이드. React 19.2.4 마이너 업데이트 동시 진행. Vite 8/TS 6은 별도 브랜치.',
+      },
+      {
+        title: 'NumLink 스토어 에셋 제작 착수 — 스크린샷 5장 + 앱 아이콘',
+        description:
+          '처음 3장이 전환율 90% 결정. 1장 게임플레이, 2장 클리어 보상, 3장 난이도 선택 구성. 미니멀+높은 대비 아이콘. Google Play 수수료 20% 인하(6/30) 전 출시 목표.',
+      },
+    ],
+  },
+  {
     id: '2026-03-28T09:00:00-daily-standup',
     date: '2026-03-28',
     researchTitle:
