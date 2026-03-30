@@ -21,7 +21,14 @@ export function HomePage() {
   return (
     <div className="home page-enter" ref={containerRef}>
       {/* Hero */}
-      <section className="home__hero">
+      <section
+        className="home__hero"
+        style={
+          {
+            '--hero-bg': `url(${withBasePath('images/hero-bg.png')})`,
+          } as React.CSSProperties
+        }
+      >
         <div className="home__hero-text">
           <p className="home__label">cat game studio</p>
           <h1>하드보일드</h1>
