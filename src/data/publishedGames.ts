@@ -8,7 +8,7 @@ export const publishedGames: PublishedGame[] = [
     genre: '리듬 캐주얼',
     rating: 4.6,
     reviewCount: 42,
-    downloads: '1,000+',
+    downloads: '4,000+',
     playStoreUrl:
       'https://play.google.com/store/apps/details?id=com.hardboiledexpress.hefeedmee',
     icon: 'games/hefeedmee/icon.png',
