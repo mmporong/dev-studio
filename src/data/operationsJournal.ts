@@ -43,6 +43,111 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-03-30T09:00:00-daily-standup',
+    date: '2026-03-30',
+    researchTitle:
+      'MeowBeat 34파일 미커밋 3일째 긴급 + Poki MAU 1억 돌파 블루오션 + Google Play Game Trials 도입 + Node.js 20 EOL 31일 + Unity 6.4 출시',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 종합. NumLink·MeowBeat 양쪽 2일간 커밋 0건으로 미커밋 파일 누적 심각(MeowBeat 34개, NumLink 12개). Poki MAU 1억 돌파+연결 퍼즐 공백으로 NumLink WebGL 블루오션 기회 지속. Google Play Game Trials 기능 신규 도입으로 체험판 내장 가능. AI 적응형 난이도 도입 시 리텐션 15-25% 개선 데이터. Node.js 20 EOL 4/30 임박(31일). Unity 6.4 출시(ECS 코어 통합). Debug.Log 285건 잔존(NumLink 149+MeowBeat 136). Leonardo AI Phoenix 2.0으로 캐릭터 에셋 파이프라인 효율화 가능.',
+    researchItems: [
+      {
+        title: '3개 프로젝트 Git 상태: NumLink·MeowBeat 2일간 커밋 0건, MeowBeat 34파일 미커밋 3일째',
+        description:
+          'NumLink은 feature/uitoolkit 브랜치에서 4개 수정+8개 미추적 파일 미커밋. MeowBeat은 14개 수정/삭제+20개 미추적=34파일 미커밋 3일째 방치로 데이터 손실 위험 긴급. agent-office만 15건 커밋으로 활발. NumLink Phase 5 Singleton→ServiceLocator 3건 todo, MeowBeat Sprint 2(디자인) 17%로 MVP 병목.',
+      },
+      {
+        title: 'Block Blast DAU 7천만 독주 + Poki MAU 1억 돌파 + AI 적응형 난이도 리텐션 15-25%↑',
+        description:
+          '퍼즐 시장 Block Blast DAU 7천만·일 매출 $584K 독주. AI 적응형 난이도 도입 시 매출 71%↑, 리텐션 15-25%↑ 데이터. Poki MAU 1억 돌파, 2026년 3월 역대 최강 월. 연결/링크 퍼즐 경쟁 공백으로 NumLink 진입 기회. Duet Cats(리듬+고양이+먹이주기)가 MeowBeat 직접 경쟁작.',
+      },
+      {
+        title: 'NumLink UI 리디자인+스테이지 시스템 완료 + UI Toolkit UXML 5개 준비 + Unity 6.4 ECS 코어 통합',
+        description:
+          'NumLink 지난 주 25커밋으로 레벨선택 UI 스테이지 시스템 전면 개편. UI Toolkit UXML 레이아웃 5개+컨트롤러 6개 준비되어 있으나 UGUI와 병행 운영 중. TODO 기술부채 5건. Unity 6.4 출시로 ECS 코어 패키지 승격, Project Auditor 기본 탑재, URP 커스텀 렌더 패스 지원.',
+      },
+      {
+        title: 'Debug.Log 285건 잔존 + MeowBeat .meta 삭제 3건 방치 + 자동화 테스트 전무',
+        description:
+          'NumLink 23파일 149건, MeowBeat 35파일 136건 Debug.Log 잔존으로 릴리스 빌드 성능 영향. MeowBeat Input/Item/SaveLoad .meta 삭제 상태 git 방치로 클론 시 임포트 에러 유발. PuzzleManager FindObjectOfType+GameObject.Find 3건 코딩 규칙 위반. 양 프로젝트 자동화 테스트 전무.',
+      },
+      {
+        title: 'Google Play 수수료 20% 인하 + Game Trials 도입 + 숏폼 Paid Organic 모델 + CSL 활용',
+        description:
+          'Google Play 수수료 20% 인하(6/30 시행)+Game Trials 체험판 내장 기능 신규 도입. 숏폼 주 7-14개 클립+자연 반응 좋은 영상에 $100-200 부스팅하는 Paid Organic 모델이 인디 표준. Custom Store Listings으로 타겟별 스토어 페이지 차별화. ASO는 AI 기반 사용자 의도 분석으로 진화.',
+      },
+      {
+        title: 'Node.js 20 EOL 4/30 임박 + GitHub Actions v4→v6 + Vite 8/TS 6/ESLint 10 메이저 대기',
+        description:
+          'Node.js 20 EOL까지 31일, Node 22 LTS 전환 시급. actions/checkout v4→v5/v6+6/2 Node 24 강제 전환. Vite 7→8(Rolldown 빌드 10-30x), TypeScript 5→6(Go 기반 7.0 준비), ESLint 9→10 메이저 업그레이드 대기. React 19.1.1 최신.',
+      },
+      {
+        title: 'Soft 3D/Plushcore 아이콘 + Leonardo AI Phoenix 2.0 캐릭터 파이프라인 + 세로형 스크린샷 96%',
+        description:
+          '2026 앱 아이콘: Soft 3D/Plushcore+단일 오브젝트 집중이 주류. Leonardo AI Phoenix 2.0 LoRA+Consistent Character Engine으로 MeowBeat 고양이 캐릭터 일관된 포즈 일괄 생성 가능(기존 Midjourney→SD 대비 효율↑). 스크린샷 세로형 96% 표준, 처음 3장이 전환율 90% 결정. Liquid Glass+Modern Skeuomorphism UI 트렌드.',
+      },
+    ],
+    meetingTitle: '2026-03-30 데일리 스탠드업: 미커밋 긴급 정리 + Poki 블루오션 선점 + Node.js EOL 대응',
+    meetingSummary:
+      'MeowBeat 34파일 미커밋 3일째 방치로 즉시 정리 최우선. NumLink UI Toolkit 전환 안정화 후 UGUI 제거 일정 확정 필요. Poki MAU 1억 돌파+연결 퍼즐 공백으로 NumLink WebGL 우선 출시 전략 재확인. Google Play Game Trials+수수료 20% 인하로 출시 환경 개선. Node.js 20 EOL 31일 남아 즉시 전환. Debug.Log 285건 릴리스 전 정리. Leonardo AI Phoenix 2.0으로 MeowBeat 에셋 파이프라인 전환 검토.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '2일간 NumLink과 MeowBeat 양쪽 커밋이 0건입니다. agent-office만 15건으로 웹사이트 작업에 집중되었습니다. MeowBeat은 34개 미커밋 파일이 3일째 방치 중이고 MainScene.unity 손실 시 복구 불가하므로 오늘 반드시 분할 커밋해야 합니다. NumLink은 Phase 5 Singleton→ServiceLocator 전환 3건이 남았고, MeowBeat Sprint 2(디자인)가 17%로 MVP 컷라인의 병목입니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: 'Poki가 MAU 1억을 돌파하며 2026년 3월이 역대 최강 월로 평가됩니다. 연결/링크 퍼즐이 여전히 경쟁 공백이므로 NumLink WebGL 출시 우선순위를 유지해야 합니다. AI 적응형 난이도가 리텐션 15-25% 개선 데이터를 보여주고 있어 MVP 이후 반드시 도입해야 합니다. Duet Cats(리듬+고양이+먹이주기)가 MeowBeat 직접 경쟁작으로 확인되었고, 카페경영+캣스타그램 메타게임 깊이에서 차별화해야 합니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'NumLink에서 지난 주 25커밋으로 레벨선택 UI 스테이지 시스템을 전면 개편했고, UI Toolkit UXML 5개+컨트롤러 6개가 준비되어 있으나 UGUI와 병행 운영 중입니다. 전환 완료 시점을 이번 스프린트 내 결정해야 합니다. Unity 6.4가 출시되어 ECS 코어 통합, Project Auditor 기본 탑재가 포함되었습니다. MeowBeat은 AdMob v11+IAP 통합 후 빌드 안정성 실기기 검증이 필요합니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '심각한 컴파일 에러는 없으나 품질 부채가 누적 중입니다. Debug.Log가 NumLink 149건+MeowBeat 136건=총 285건 잔존하여 릴리스 빌드 성능에 영향을 줍니다. MeowBeat의 Input/Item/SaveLoad .meta 3건이 삭제 상태로 git에 방치되어 클론 시 임포트 에러를 유발합니다. PuzzleManager의 FindObjectOfType과 GameObject.Find 3건은 코딩 규칙 위반이며, 양 프로젝트 자동화 테스트가 전무한 상태입니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'Google Play가 Game Trials 기능을 새로 도입하여 유료 게임 체험판 내장이 가능해졌습니다. 숏폼 마케팅은 주 7-14개 클립 제작 후 자연 반응 좋은 영상에 $100-200 부스팅하는 Paid Organic 모델이 인디 표준입니다. Custom Store Listings으로 타겟별 스토어 페이지 최소 3개 변형을 준비해야 하며, ASO는 키워드 나열에서 자연스러운 문장형 설명으로 전환해야 합니다.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'Node.js 20 EOL이 4월 30일로 31일 남았습니다. agent-office 워크플로우의 node-version을 20에서 22 LTS로 즉시 전환해야 합니다. actions/checkout v4→v5/v6 업그레이드도 필요하며, 6월 2일부터 GitHub Actions가 Node 24를 강제합니다. 빌드 도구는 Vite 8(Rolldown 10-30x 빠름), TypeScript 6, ESLint 10 메이저 업그레이드가 대기 중이나 별도 브랜치 테스트가 필요합니다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: 'NumLink 앱 아이콘은 Soft 3D/Plushcore 스타일로 숫자 하나를 부드럽고 촉감 있는 질감으로 표현하면 2026년 트렌드와 정확히 부합합니다. MeowBeat 고양이 캐릭터는 Leonardo AI Phoenix 2.0의 LoRA+Consistent Character Engine으로 전환하면 참조 이미지 15-20장에서 수십 장의 일관된 포즈를 한 번에 생성할 수 있어 기존 파이프라인 대비 대폭 효율화됩니다. 스크린샷은 세로형으로 Apple은 감성형, Google Play는 기능 시연형으로 차별화해야 합니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: '[긴급] MeowBeat 34파일 + NumLink 12파일 미커밋 즉시 정리',
+        description:
+          'MeowBeat 34개 파일 3일째 방치로 MainScene.unity 손실 위험. NumLink UI Toolkit 전환 관련 12파일도 미커밋. 양쪽 모두 의미 단위 분할 커밋으로 오늘 반드시 안전장치 확보. .meta 삭제 3건은 git rm으로 정식 제거.',
+      },
+      {
+        title: 'NumLink Poki WebGL 우선 출시 전략 유지 — MAU 1억 블루오션 선점',
+        description:
+          'Poki MAU 1억 돌파, 2026년 3월 역대 최강 월. 연결/링크 퍼즐 경쟁 공백 지속 확인. WebGL 빌드 테스트 후 Poki 제출 준비. AI 적응형 난이도는 MVP 이후 D1 리텐션 31.85% 벤치마크 목표로 스펙 초안 작성.',
+      },
+      {
+        title: 'Node.js 20→22 LTS 전환 + GitHub Actions v6 업그레이드 — EOL 31일',
+        description:
+          'Node.js 20 EOL 4/30 임박. agent-office deploy-pages.yml node-version 20→22, actions/checkout v4→v6 업그레이드. Vite 8/TS 6은 별도 브랜치 테스트 후 진행.',
+      },
+      {
+        title: 'Debug.Log 285건 정리 스프린트 + 코딩 규칙 위반 수정',
+        description:
+          'NumLink PuzzleManager(23건), PreGeneratedBoardManager(26건) 우선 정리. 최소 Conditional attribute 또는 로그 래퍼 전환. FindObjectOfType/GameObject.Find 코딩 규칙 위반 수정. 릴리스 전 필수.',
+      },
+      {
+        title: 'MeowBeat AI 에셋 파이프라인 Leonardo Phoenix 2.0 전환 검토',
+        description:
+          'Leonardo AI Phoenix 2.0 LoRA+Consistent Character Engine으로 고양이 캐릭터 스타일 고정 후 포즈/표정 일괄 생성. 기존 Midjourney→SD+ControlNet 대비 효율↑. NumLink 앱 아이콘은 Soft 3D/Plushcore 스타일로 착수.',
+      },
+    ],
+  },
+  {
     id: '2026-03-29T09:00:00-daily-standup',
     date: '2026-03-29',
     researchTitle:
