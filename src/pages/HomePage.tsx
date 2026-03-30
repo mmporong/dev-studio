@@ -25,7 +25,7 @@ export function HomePage() {
         className="home__hero"
         style={
           {
-            '--hero-bg': `url(${withBasePath('images/hero-bg.png')})`,
+            '--hero-bg': `url(${withBasePath('GraphicImage.jpg')})`,
           } as React.CSSProperties
         }
       >
@@ -76,15 +76,6 @@ export function HomePage() {
             className="home__profile-icon"
           />
         </div>
-      </section>
-
-      {/* 그래픽 배너 */}
-      <section className="home__graphic-banner scroll-reveal">
-        <img
-          src={withBasePath('GraphicImage.jpg')}
-          alt="하드보일드 고양이들"
-          className="home__graphic-image"
-        />
       </section>
 
       {/* 출시한 게임들 */}
