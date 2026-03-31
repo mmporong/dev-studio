@@ -43,6 +43,116 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-03-31T09:00:00-daily-standup',
+    date: '2026-03-31',
+    researchTitle:
+      'MeowBeat 16일 커밋 공백+64건 .meta 미커밋 긴급 + Pair 퍼즐 매출 363%↑ 블루오션 + Vite 8/TS 6 출시 + Google Play 수수료 20% 인하 확정 + Plushcore 아이콘 트렌드',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 종합. MeowBeat 16일간 커밋 없이 64건 .meta 미커밋으로 빌드 깨짐 위험 긴급. NumLink feature/uitoolkit 3일 정체. Pair(연결) 퍼즐 서브장르 매출 363% 폭증으로 NumLink 장르 선택 적중. Vite 8.0(Rolldown 10-30x)·TypeScript 6.0 출시, Node.js 20 EOL D-30. Google Play 수수료 20% 인하(6/30 시행)+개발자 인증 필수화(9월). Plushcore/Soft 3D 아이콘 트렌드, SpriteFlow 등 AI 에셋 도구 신규 등장.',
+    researchItems: [
+      {
+        title: 'MeowBeat 16일 커밋 공백+64건 .meta 미커밋, NumLink 3일 정체 — 미커밋 정리 최우선',
+        description:
+          'MeowBeat은 3/15 이후 16일간 커밋 없이 수정 27건+미추적 50건(총 64건 .meta 포함) 방치. MainScene.unity 씬 파일 미커밋으로 corruption 위험 매우 높음. NumLink은 feature/uitoolkit 브랜치에서 수정 4건+UIToolkit 폴더가 3일째 미커밋. agent-office만 활발(어제 6커밋). NumLink MVP 약 60%, MeowBeat MVP 약 40%.',
+      },
+      {
+        title: 'Pair(연결) 퍼즐 매출 363%↑ + Block Blast MAU 3억 + DDA 플러그인 Unity 통합 가능',
+        description:
+          'Pair(연결/매칭) 서브장르가 퍼즐 내 유일하게 다운로드+매출 동시 성장(매출 +47%, 하이브리드 캐주얼 내 363%↑). Block Blast DAU 7천만·MAU 3억·일매출 $584K. Poki MAU 1억, 연결 퍼즐 경쟁 공백 지속. DDA_Plugin_Unity(퍼지 로직/ONNX) 등 Unity용 적응형 난이도 플러그인 바로 적용 가능. Duet Cats 주간 매출 $470만 피크, 100곡+ 라이브러리.',
+      },
+      {
+        title: 'NumLink UI Toolkit 전환 진행 중 + MeowBeat 코드 완료/에셋 미완 + Unity 6.4 ECS 코어 통합',
+        description:
+          'NumLink은 UGUI→UI Toolkit 전환 활발(GameManager/HUDManager/PuzzleManager에 UITK 우선 분기 추가). MeowBeat은 AdMob v11+IAP 구현 완료, 씬/에셋 정리 단계. TODO 기술부채 NumLink 5건, MeowBeat 0건. Unity 6.4 출시(ECS 코어 통합, Project Auditor 내장). Unity CoreCLR 6.8 목표.',
+      },
+      {
+        title: 'Debug.Log 202건 + 코딩 규칙 위반 6건 + MeowBeat .meta 64건 미커밋 — 품질 리스크 상',
+        description:
+          'NumLink Debug.Log 149건(23파일), MeowBeat 53건(22파일). NumLink 코딩 규칙 위반 5건(Input.GetKeyDown 2건, FindObjectOfType 1건, GameObject.Find 2건), MeowBeat 1건. MeowBeat .meta 64건 미커밋으로 다른 환경에서 Missing Reference 대량 발생 위험. 양 프로젝트 자동화 테스트 전무.',
+      },
+      {
+        title: 'Google Play 수수료 20% 인하(6/30)+개발자 인증 필수화(9월) + 숏폼 74% 비디오 마케팅',
+        description:
+          'Google Play 수수료 20%로 인하(한국/일본 12/31 시행). 개발자 인증 9월부터 필수. AAB 크기 150→200MB 증가. 게임 마케팅 크리에이티브 74.1%가 비디오, 58%가 30초 미만 숏폼. Paid Organic 모델(오가닉 게시→$200 부스팅). Poki WebGL 초기 다운로드 8MB 이하 목표, 웹 독점권 요구.',
+      },
+      {
+        title: 'Vite 8.0(Rolldown)+TS 6.0 출시 + Node.js 20 EOL D-30 + CI Node 버전 불일치',
+        description:
+          'Vite 8.0.3 출시(3/12, Rolldown 빌드 10-30x). TypeScript 6.0.2 출시(3/24, strict 기본 활성화). Node.js 20 EOL 4/30(D-30), CI가 node-version:20 고정으로 즉시 전환 필요. 로컬은 Node 24, CI만 불일치. outdated 패키지 14개(메이저 7개). 빌드 정상(2.2초, 440KB JS).',
+      },
+      {
+        title: 'Plushcore/Soft 3D 아이콘 트렌드 + AI 에셋 도구(SpriteFlow/PixelLab) 신규 등장',
+        description:
+          'Soft 3D+Plushcore(파스텔+통통한 질감)가 2026 앱 아이콘 주류. 마스코트 아이콘+Variable Icon(다크/라이트 변환) 트렌드. SpriteFlow(레퍼런스 1장→무한 변형), PixelLab(컨셉→방향별 회전 뷰 자동생성) 등 AI 스프라이트 도구 신규. 스토어 스크린샷 첫 3장이 전환율 결정. Cozy Game 시장 675% 성장.',
+      },
+    ],
+    meetingTitle: '2026-03-31 데일리 스탠드업: MeowBeat 미커밋 긴급 + Pair 퍼즐 블루오션 확인 + Vite 8/TS 6 메이저 출시',
+    meetingSummary:
+      'MeowBeat 16일간 커밋 공백+64건 .meta 미커밋으로 빌드 깨짐 위험 최우선 해결. NumLink feature/uitoolkit 3일 정체도 커밋 필요. Pair 퍼즐 서브장르 매출 363%↑로 NumLink 장르 선택 적중 재확인. Vite 8.0+TS 6.0 출시로 메이저 업그레이드 검토 시작, Node.js 20 EOL D-30 CI 전환 시급. Google Play 수수료 20% 인하+개발자 인증 필수화 대응. Plushcore 스타일 아이콘+AI 에셋 파이프라인 구축 착수.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'MeowBeat이 3/15 이후 16일간 커밋 없이 64건 파일이 미커밋 상태입니다. MainScene.unity 씬 파일 포함으로 corruption 위험이 극도로 높습니다. NumLink도 feature/uitoolkit 브랜치에서 3일 정체 중입니다. MeowBeat MVP 40%, NumLink MVP 60%로 양쪽 모두 에셋/UI 작업이 병목입니다. 오늘 반드시 양 프로젝트 미커밋 파일을 분할 커밋해야 합니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: 'Pair(연결) 퍼즐 서브장르가 하이브리드 캐주얼 내 매출 363% 폭증하며 퍼즐 시장에서 가장 성장성 높은 카테고리로 확인되었습니다. NumLink의 장르 선택이 정확히 적중했습니다. Block Blast MAU 3억은 단순 코어 루프의 힘을 증명하므로 NumLink도 복잡도를 높이지 말아야 합니다. DDA_Plugin_Unity 등 Unity용 적응형 난이도 플러그인이 바로 적용 가능하며, MVP 이후 도입을 권장합니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'NumLink은 UI Toolkit 전환이 활발하게 진행 중이며, GameManager/HUDManager/PuzzleManager에 UITK 우선+UGUI 폴백 패턴을 적용했습니다. 미커밋 4파일(+65줄)이 3일째 방치 중이라 즉시 커밋 필요합니다. MeowBeat은 AdMob v11+IAP 구현이 완료되어 코드는 거의 끝났고 에셋/UI가 남았습니다. Unity 6.4가 출시되어 ECS 코어 통합+Project Auditor 내장이 포함되었고, CoreCLR은 6.8 목표입니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'MeowBeat .meta 64건 미커밋이 가장 심각합니다. 다른 환경에서 프로젝트를 열면 Missing Reference가 대량 발생합니다. Debug.Log가 NumLink 149건+MeowBeat 53건=총 202건 잔존합니다. NumLink에서 Input.GetKeyDown 2건(모바일 빌드 시 동작 불가), FindObjectOfType/GameObject.Find 3건의 코딩 규칙 위반이 있습니다. 양 프로젝트 자동화 테스트가 전무한 상태입니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'Google Play 수수료가 20%로 인하되며 6/30 시행, 한국/일본은 12/31입니다. 개발자 인증이 9월부터 필수화되므로 즉시 확인이 필요합니다. 게임 마케팅의 74%가 비디오, 58%가 30초 미만 숏폼입니다. Poki는 WebGL 8MB 이하+웹 독점권을 요구하며, Playtest 기능으로 실제 유저 피드백을 빠르게 수집할 수 있습니다. ASO는 롱테일 키워드("number link", "connect numbers") 차별화가 필수입니다.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'Node.js 20 EOL이 D-30(4/30)으로 CI의 node-version:20을 22 이상으로 즉시 전환해야 합니다. 로컬은 이미 Node 24입니다. Vite 8.0.3(Rolldown 10-30x)과 TypeScript 6.0.2가 출시되었으나 breaking changes가 있어 별도 브랜치 테스트가 필요합니다. outdated 패키지 14개 중 마이너/패치 7개는 안전하게 적용 가능합니다. 현재 빌드는 정상(2.2초, JS 440KB/gzip 139KB)입니다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: 'Plushcore(파스텔+통통한 질감)와 Soft 3D가 2026 앱 아이콘 주류입니다. NumLink은 Soft 3D+Bold Geometric 하이브리드로 숫자를 부드러운 3D로, 연결선은 기하학적 대비로 표현하면 좋겠습니다. MeowBeat은 마스코트+Plushcore 스타일로 코랄/피치 컬러를 사용합니다. SpriteFlow와 PixelLab 등 AI 에셋 도구가 새로 등장하여 레퍼런스 1장에서 무한 스프라이트 변형이 가능합니다. Cozy Game 시장이 675% 성장하여 MeowBeat의 방향성이 시장과 부합합니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: '[긴급] MeowBeat 64건 + NumLink 미커밋 즉시 분할 커밋',
+        description:
+          'MeowBeat 64건(.meta 44건+수정 15건+삭제 5건) 16일째 방치로 빌드 깨짐 위험. NumLink UI Toolkit 전환 4파일 3일째 미커밋. 양쪽 모두 오늘 의미 단위 분할 커밋으로 안전장치 확보.',
+      },
+      {
+        title: '[긴급] CI Node.js 20→22 전환 (EOL D-30)',
+        description:
+          'Node.js 20 EOL 4/30까지 30일. deploy-pages.yml의 node-version을 20에서 22 LTS로 변경. 로컬(Node 24)과 CI 버전 불일치도 해소.',
+      },
+      {
+        title: 'Pair 퍼즐 매출 363%↑ 확인 — NumLink Poki WebGL 출시 가속',
+        description:
+          'Pair(연결) 퍼즐이 하이브리드 캐주얼 내 매출 363% 폭증. Poki에 연결 퍼즐 경쟁 공백 지속. Phase 5 완료 후 Phase 6(킥 구현)→Phase 7(Poki 배포) 최단 경로로 진행.',
+      },
+      {
+        title: 'Vite 8/TS 6 메이저 업그레이드는 별도 스프린트에서 진행',
+        description:
+          'Vite 8.0(Rolldown)+TS 6.0 출시되었으나 breaking changes 있음. 마이너/패치(React 19.2.4, react-router-dom 등)는 이번 주 안전 적용, 메이저는 별도 브랜치 테스트 후 진행.',
+      },
+      {
+        title: 'MeowBeat AI 에셋 파이프라인 구축 착수',
+        description:
+          'MeowBeat MVP 병목이 에셋/UI(Sprint 2 디자인 17%). SpriteFlow/PixelLab 등 AI 에셋 도구+Plushcore 스타일로 고양이 캐릭터 파이프라인 구축. Midjourney 컨셉→LoRA 학습→대량 생산 3단계.',
+      },
+      {
+        title: 'Google Play 개발자 인증 상태 즉시 확인',
+        description:
+          '9월부터 미인증 개발자 앱 설치 제한. 수수료 20% 인하(한국 12/31)를 반영한 가격 전략도 수립 필요.',
+      },
+    ],
+  },
+  {
     id: '2026-03-30T09:00:00-daily-standup',
     date: '2026-03-30',
     researchTitle:
