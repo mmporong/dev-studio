@@ -3,18 +3,13 @@ import { projects } from '../data/projects'
 import { publishedGames } from '../data/publishedGames'
 import { useOffice } from '../contexts/OfficeContext'
 import { useScrollReveal } from '../hooks/useScrollReveal'
-import { OfficeMap } from '../components/office/OfficeMap'
+
 import { withBasePath } from '../utils/publicPath'
 import './HomePage.css'
 
 export function HomePage() {
   const navigate = useNavigate()
-  const {
-    journalEntries,
-    officeAgents,
-    selectedAgentId,
-    setSelectedAgentId,
-  } = useOffice()
+  const { journalEntries } = useOffice()
   const containerRef = useScrollReveal()
   const recentEntries = journalEntries.slice(0, 3)
 
@@ -162,23 +157,6 @@ export function HomePage() {
               <span className="home__game-store-link">Google Play →</span>
             </a>
           ))}
-        </div>
-      </section>
-
-      {/* 에이전트 오피스 */}
-      <section className="home__section scroll-reveal">
-        <div className="home__section-header">
-          <h2>에이전트 오피스</h2>
-          <Link to="/playground" className="home__link-btn">
-            Playground 전체보기 →
-          </Link>
-        </div>
-        <div className="home__office-map-wrap">
-          <OfficeMap
-            agents={officeAgents}
-            selectedAgentId={selectedAgentId}
-            onSelectAgent={setSelectedAgentId}
-          />
         </div>
       </section>
 
