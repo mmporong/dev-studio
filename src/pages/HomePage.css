@@ -30,9 +30,9 @@
     background-size: cover;
     background-position: center 20%;
     background-repeat: no-repeat;
-    opacity: 0.25;
+    opacity: 0.45;
     z-index: -1;
-    filter: blur(2px);
+    filter: blur(1px);
   }
 
   .home__hero-text {
@@ -112,9 +112,9 @@
   }
 
   .home__profile-icon {
-    width: 160px;
-    height: 160px;
-    border-radius: 24px;
+    width: 100px;
+    height: 100px;
+    border-radius: 18px;
     object-fit: cover;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   }
