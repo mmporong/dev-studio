@@ -176,27 +176,39 @@
     },
     {
       "path": "src\\pages\\HomePage.tsx",
-      "accessCount": 32,
-      "lastAccessed": 1774945897139,
+      "accessCount": 33,
+      "lastAccessed": 1774949893156,
       "type": "file"
     },
     {
       "path": "src\\data\\operationsJournal.ts",
-      "accessCount": 11,
-      "lastAccessed": 1774398453127,
+      "accessCount": 22,
+      "lastAccessed": 1774946077343,
       "type": "file"
     },
     {
+      "path": "src",
+      "accessCount": 16,
+      "lastAccessed": 1774958774879,
+      "type": "directory"
+    },
+    {
       "path": "src\\data\\publishedGames.ts",
-      "accessCount": 10,
-      "lastAccessed": 1774944246249,
+      "accessCount": 11,
+      "lastAccessed": 1774949926584,
       "type": "file"
     },
     {
       "path": "src\\components\\layout\\Footer.tsx",
-      "accessCount": 9,
-      "lastAccessed": 1774945912980,
+      "accessCount": 10,
+      "lastAccessed": 1774949891722,
       "type": "file"
+    },
+    {
+      "path": "",
+      "accessCount": 8,
+      "lastAccessed": 1774958812553,
+      "type": "directory"
     },
     {
       "path": "src\\components\\layout\\NavBar.css",
@@ -206,21 +218,27 @@
     },
     {
       "path": "src\\App.tsx",
-      "accessCount": 5,
-      "lastAccessed": 1774945836324,
+      "accessCount": 6,
+      "lastAccessed": 1774949859753,
       "type": "file"
     },
     {
       "path": "src\\components\\layout\\NavBar.tsx",
-      "accessCount": 5,
-      "lastAccessed": 1774945851631,
+      "accessCount": 6,
+      "lastAccessed": 1774949892209,
       "type": "file"
     },
     {
-      "path": "src",
-      "accessCount": 3,
-      "lastAccessed": 1774945057396,
-      "type": "directory"
+      "path": "src\\pages\\LogPage.tsx",
+      "accessCount": 6,
+      "lastAccessed": 1774958877163,
+      "type": "file"
+    },
+    {
+      "path": "index.html",
+      "accessCount": 4,
+      "lastAccessed": 1774950046018,
+      "type": "file"
     },
     {
       "path": "src\\data\\projects\\meowbeat.ts",
@@ -247,12 +265,6 @@
       "type": "file"
     },
     {
-      "path": "index.html",
-      "accessCount": 2,
-      "lastAccessed": 1774945175478,
-      "type": "file"
-    },
-    {
       "path": "src\\styles\\tokens.css",
       "accessCount": 2,
       "lastAccessed": 1774945176213,
@@ -265,21 +277,27 @@
       "type": "file"
     },
     {
-      "path": "",
-      "accessCount": 1,
-      "lastAccessed": 1774154401085,
-      "type": "directory"
-    },
-    {
-      "path": "src\\pages\\LogPage.tsx",
-      "accessCount": 1,
-      "lastAccessed": 1774576556283,
+      "path": "src\\contexts\\LanguageContext.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1774949883385,
       "type": "file"
     },
     {
       "path": "src\\pages\\WorkPage.tsx",
-      "accessCount": 1,
-      "lastAccessed": 1774576556579,
+      "accessCount": 2,
+      "lastAccessed": 1774949885505,
+      "type": "file"
+    },
+    {
+      "path": "src\\data",
+      "accessCount": 2,
+      "lastAccessed": 1774958795647,
+      "type": "directory"
+    },
+    {
+      "path": "package.json",
+      "accessCount": 2,
+      "lastAccessed": 1774971142211,
       "type": "file"
     },
     {
@@ -301,9 +319,93 @@
       "type": "file"
     },
     {
-      "path": "src\\contexts\\LanguageContext.tsx",
+      "path": ".env.pages.example",
       "accessCount": 1,
-      "lastAccessed": 1774945821999,
+      "lastAccessed": 1774949857452,
+      "type": "file"
+    },
+    {
+      "path": "vite.config.ts",
+      "accessCount": 1,
+      "lastAccessed": 1774949858280,
+      "type": "file"
+    },
+    {
+      "path": "src\\main.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1774949859354,
+      "type": "file"
+    },
+    {
+      "path": "src\\contexts\\OfficeContext.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1774949883095,
+      "type": "file"
+    },
+    {
+      "path": "src\\hooks\\useAgentSync.ts",
+      "accessCount": 1,
+      "lastAccessed": 1774949883827,
+      "type": "file"
+    },
+    {
+      "path": "src\\hooks\\usePersistentJournal.ts",
+      "accessCount": 1,
+      "lastAccessed": 1774949884282,
+      "type": "file"
+    },
+    {
+      "path": "src\\hooks\\useUnityBridge.ts",
+      "accessCount": 1,
+      "lastAccessed": 1774949884677,
+      "type": "file"
+    },
+    {
+      "path": "src\\pages\\PlaygroundPage.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1774949885613,
+      "type": "file"
+    },
+    {
+      "path": "src\\components\\office\\OfficeMap.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1774949886040,
+      "type": "file"
+    },
+    {
+      "path": "src\\utils\\publicPath.ts",
+      "accessCount": 1,
+      "lastAccessed": 1774949892756,
+      "type": "file"
+    },
+    {
+      "path": "src\\data\\projects\\index.ts",
+      "accessCount": 1,
+      "lastAccessed": 1774949901666,
+      "type": "file"
+    },
+    {
+      "path": "publish-agent-office.ps1",
+      "accessCount": 1,
+      "lastAccessed": 1774949902111,
+      "type": "file"
+    },
+    {
+      "path": "push-to-agent-office.ps1",
+      "accessCount": 1,
+      "lastAccessed": 1774949910448,
+      "type": "file"
+    },
+    {
+      "path": "src\\types\\unity.ts",
+      "accessCount": 1,
+      "lastAccessed": 1774949917742,
+      "type": "file"
+    },
+    {
+      "path": "public\\status.json",
+      "accessCount": 1,
+      "lastAccessed": 1774949927279,
       "type": "file"
     }
   ],
