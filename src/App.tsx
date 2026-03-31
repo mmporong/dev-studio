@@ -1,5 +1,6 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { OfficeProvider } from './contexts/OfficeContext'
+import { LanguageProvider } from './contexts/LanguageContext'
 import { NavBar } from './components/layout/NavBar'
 import { Footer } from './components/layout/Footer'
 import { ScrollToTop } from './components/layout/ScrollToTop'
@@ -10,6 +11,7 @@ import { PlaygroundPage } from './pages/PlaygroundPage'
 
 function App() {
   return (
+    <LanguageProvider>
     <OfficeProvider>
       <div className="app-shell">
         <ScrollToTop />
@@ -30,6 +32,7 @@ function App() {
         <Footer />
       </div>
     </OfficeProvider>
+    </LanguageProvider>
   )
 }
 

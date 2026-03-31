@@ -1,14 +1,17 @@
 import { NavLink } from 'react-router-dom'
+import { useLanguage } from '../../contexts/LanguageContext'
 import './NavBar.css'
 
 const navItems = [
-  { to: '/', label: 'Home' },
-  { to: '/work', label: 'Work' },
-  { to: '/log', label: 'Log' },
-  { to: '/playground', label: 'Playground' },
-] as const
+  { to: '/', key: 'home' as const },
+  { to: '/work', key: 'work' as const },
+  { to: '/log', key: 'log' as const },
+  { to: '/playground', key: 'playground' as const },
+]
 
 export function NavBar() {
+  const { locale, t, toggleLocale } = useLanguage()
+
   return (
     <nav className="navbar" aria-label="Main navigation">
       <div className="navbar__inner">
@@ -25,10 +28,13 @@ export function NavBar() {
                 `navbar__link ${isActive ? 'navbar__link--active' : ''}`
               }
             >
-              {item.label}
+              {t.nav[item.key]}
             </NavLink>
           ))}
         </div>
+        <button className="navbar__lang" onClick={toggleLocale} aria-label="Toggle language">
+          {locale === 'ko' ? 'EN' : 'KO'}
+        </button>
         <a
           className="navbar__github"
           href="https://github.com/mmporong"

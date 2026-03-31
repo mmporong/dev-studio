@@ -169,40 +169,58 @@
   },
   "hotPaths": [
     {
+      "path": "src\\pages\\HomePage.css",
+      "accessCount": 35,
+      "lastAccessed": 1774945353285,
+      "type": "file"
+    },
+    {
+      "path": "src\\pages\\HomePage.tsx",
+      "accessCount": 32,
+      "lastAccessed": 1774945897139,
+      "type": "file"
+    },
+    {
       "path": "src\\data\\operationsJournal.ts",
       "accessCount": 11,
       "lastAccessed": 1774398453127,
       "type": "file"
     },
     {
-      "path": "src\\pages\\HomePage.tsx",
-      "accessCount": 11,
-      "lastAccessed": 1774661130682,
-      "type": "file"
-    },
-    {
       "path": "src\\data\\publishedGames.ts",
-      "accessCount": 9,
-      "lastAccessed": 1774662871621,
-      "type": "file"
-    },
-    {
-      "path": "src\\pages\\HomePage.css",
-      "accessCount": 7,
-      "lastAccessed": 1774663132431,
-      "type": "file"
-    },
-    {
-      "path": "src\\components\\layout\\NavBar.tsx",
-      "accessCount": 3,
-      "lastAccessed": 1774577097619,
+      "accessCount": 10,
+      "lastAccessed": 1774944246249,
       "type": "file"
     },
     {
       "path": "src\\components\\layout\\Footer.tsx",
-      "accessCount": 3,
-      "lastAccessed": 1774577140063,
+      "accessCount": 9,
+      "lastAccessed": 1774945912980,
       "type": "file"
+    },
+    {
+      "path": "src\\components\\layout\\NavBar.css",
+      "accessCount": 6,
+      "lastAccessed": 1774945869578,
+      "type": "file"
+    },
+    {
+      "path": "src\\App.tsx",
+      "accessCount": 5,
+      "lastAccessed": 1774945836324,
+      "type": "file"
+    },
+    {
+      "path": "src\\components\\layout\\NavBar.tsx",
+      "accessCount": 5,
+      "lastAccessed": 1774945851631,
+      "type": "file"
+    },
+    {
+      "path": "src",
+      "accessCount": 3,
+      "lastAccessed": 1774945057396,
+      "type": "directory"
     },
     {
       "path": "src\\data\\projects\\meowbeat.ts",
@@ -223,28 +241,34 @@
       "type": "file"
     },
     {
+      "path": "src\\components\\layout\\Footer.css",
+      "accessCount": 2,
+      "lastAccessed": 1774943302919,
+      "type": "file"
+    },
+    {
+      "path": "index.html",
+      "accessCount": 2,
+      "lastAccessed": 1774945175478,
+      "type": "file"
+    },
+    {
+      "path": "src\\styles\\tokens.css",
+      "accessCount": 2,
+      "lastAccessed": 1774945176213,
+      "type": "file"
+    },
+    {
+      "path": "src\\i18n\\index.ts",
+      "accessCount": 2,
+      "lastAccessed": 1774945934798,
+      "type": "file"
+    },
+    {
       "path": "",
       "accessCount": 1,
       "lastAccessed": 1774154401085,
       "type": "directory"
-    },
-    {
-      "path": "src",
-      "accessCount": 1,
-      "lastAccessed": 1774154404763,
-      "type": "directory"
-    },
-    {
-      "path": "src\\App.tsx",
-      "accessCount": 1,
-      "lastAccessed": 1774154409192,
-      "type": "file"
-    },
-    {
-      "path": "src\\components\\layout\\NavBar.css",
-      "accessCount": 1,
-      "lastAccessed": 1774154414705,
-      "type": "file"
     },
     {
       "path": "src\\pages\\LogPage.tsx",
@@ -256,6 +280,30 @@
       "path": "src\\pages\\WorkPage.tsx",
       "accessCount": 1,
       "lastAccessed": 1774576556579,
+      "type": "file"
+    },
+    {
+      "path": "src\\styles\\base.css",
+      "accessCount": 1,
+      "lastAccessed": 1774945058724,
+      "type": "file"
+    },
+    {
+      "path": "src\\i18n\\ko.ts",
+      "accessCount": 1,
+      "lastAccessed": 1774945808409,
+      "type": "file"
+    },
+    {
+      "path": "src\\i18n\\en.ts",
+      "accessCount": 1,
+      "lastAccessed": 1774945811619,
+      "type": "file"
+    },
+    {
+      "path": "src\\contexts\\LanguageContext.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1774945821999,
       "type": "file"
     }
   ],
