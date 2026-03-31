@@ -17,7 +17,7 @@ export function NavBar() {
     <nav className="navbar" aria-label="Main navigation">
       <div className="navbar__inner">
         <NavLink to="/" className="navbar__logo">
-          <span className="navbar__logo-text">LIM Studio</span>
+          <span className="navbar__logo-text">Hardboiled Studio</span>
         </NavLink>
         <div className="navbar__links">
           {navItems.map((item) => (

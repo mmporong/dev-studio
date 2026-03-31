@@ -8,7 +8,7 @@ export const ko = {
   },
   hero: {
     label: 'cat game studio',
-    title: '하드보일드',
+    title: '하드보일드 스튜디오',
     tagline: '고양이를 사랑하는 1인 개발자가 만드는 작고 따뜻한 게임들',
     techStack: '🛠️ Tech Stack',
     contact: '📫 Contact',
@@ -28,6 +28,6 @@ export const ko = {
     viewAll: '일지 전체 보기 →',
   },
   footer: {
-    copy: '© 2025 하드보일드 · 임주영',
+    copy: '© 2025 Hardboiled Studio · 임주영',
   },
 } as const

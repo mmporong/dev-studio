@@ -182,8 +182,8 @@
     },
     {
       "path": "src\\data\\operationsJournal.ts",
-      "accessCount": 22,
-      "lastAccessed": 1774946077343,
+      "accessCount": 31,
+      "lastAccessed": 1774974031747,
       "type": "file"
     },
     {
@@ -200,8 +200,8 @@
     },
     {
       "path": "src\\components\\layout\\Footer.tsx",
-      "accessCount": 10,
-      "lastAccessed": 1774949891722,
+      "accessCount": 11,
+      "lastAccessed": 1774999586748,
       "type": "file"
     },
     {
@@ -209,6 +209,12 @@
       "accessCount": 8,
       "lastAccessed": 1774958812553,
       "type": "directory"
+    },
+    {
+      "path": "src\\components\\layout\\NavBar.tsx",
+      "accessCount": 7,
+      "lastAccessed": 1774999585774,
+      "type": "file"
     },
     {
       "path": "src\\components\\layout\\NavBar.css",
@@ -223,12 +229,6 @@
       "type": "file"
     },
     {
-      "path": "src\\components\\layout\\NavBar.tsx",
-      "accessCount": 6,
-      "lastAccessed": 1774949892209,
-      "type": "file"
-    },
-    {
       "path": "src\\pages\\LogPage.tsx",
       "accessCount": 6,
       "lastAccessed": 1774958877163,
@@ -236,8 +236,20 @@
     },
     {
       "path": "index.html",
-      "accessCount": 4,
-      "lastAccessed": 1774950046018,
+      "accessCount": 5,
+      "lastAccessed": 1774999584855,
+      "type": "file"
+    },
+    {
+      "path": "src\\i18n\\ko.ts",
+      "accessCount": 3,
+      "lastAccessed": 1774999595307,
+      "type": "file"
+    },
+    {
+      "path": "src\\i18n\\en.ts",
+      "accessCount": 3,
+      "lastAccessed": 1774999597012,
       "type": "file"
     },
     {
@@ -304,18 +316,6 @@
       "path": "src\\styles\\base.css",
       "accessCount": 1,
       "lastAccessed": 1774945058724,
-      "type": "file"
-    },
-    {
-      "path": "src\\i18n\\ko.ts",
-      "accessCount": 1,
-      "lastAccessed": 1774945808409,
-      "type": "file"
-    },
-    {
-      "path": "src\\i18n\\en.ts",
-      "accessCount": 1,
-      "lastAccessed": 1774945811619,
       "type": "file"
     },
     {
@@ -406,6 +406,12 @@
       "path": "public\\status.json",
       "accessCount": 1,
       "lastAccessed": 1774949927279,
+      "type": "file"
+    },
+    {
+      "path": "public\\insights.json",
+      "accessCount": 1,
+      "lastAccessed": 1774973043116,
       "type": "file"
     }
   ],

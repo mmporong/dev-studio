@@ -8,7 +8,7 @@ export const en = {
   },
   hero: {
     label: 'cat game studio',
-    title: 'Hardboiled',
+    title: 'Hardboiled Studio',
     tagline: 'Small, warm games made by a solo developer who loves cats',
     techStack: '🛠️ Tech Stack',
     contact: '📫 Contact',
@@ -28,6 +28,6 @@ export const en = {
     viewAll: 'View all logs →',
   },
   footer: {
-    copy: '© 2025 Hardboiled · Juyoung Lim',
+    copy: '© 2025 Hardboiled Studio · Juyoung Lim',
   },
 } as const

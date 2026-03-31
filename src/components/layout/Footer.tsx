@@ -8,7 +8,7 @@ export function Footer() {
     <footer className="footer">
       <div className="footer__inner">
         <div className="footer__top">
-          <div className="footer__brand">LIM Studio</div>
+          <div className="footer__brand">Hardboiled Studio</div>
           <div className="footer__links">
             <a
               href="https://github.com/mmporong"
