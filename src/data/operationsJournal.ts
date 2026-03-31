@@ -43,6 +43,72 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-03-31T21:00:00-threads-insight-techblog-w14',
+    date: '2026-03-31',
+    researchTitle:
+      '📊 기술 블로그 인사이트 W14 — 크래프톤 게임 AI 전방위 투자 + 엔씨 VLM 한국어 1위 + 토스 Metric Review',
+    researchSummary:
+      '27개 국내 기술 블로그 자동 수집 첫 회차. 16건 신규 아티클 분석. 크래프톤이 CPC(Co-Playable Character)·KIRA AI 비서·프롬 스크래치 모델·CAIO 직책 신설까지 게임 AI 전방위 투자. 엔씨소프트 NC Research는 VARCO-VISION(한국어 VLM 1위)·멀티모달 검색·번역 평가 등 언어/비전 AI 연구 가속. 토스는 Metric Review로 데이터 기반 실행 문화 공유. 1인 인디 개발자 관점에서 CPC 기술의 캐주얼 게임 적용 가능성, 한국어 AI 모델 활용, 데이터 기반 밸런싱 전략 도출.',
+    researchItems: [
+      {
+        title: '🥇 크래프톤 게임 AI 전방위 투자 — CPC·KIRA·프롬 스크래치 모델·CAIO 신설',
+        description:
+          'PUBG Ally로 세계 최초 CPC(Co-Playable Character) 공개 — AI가 실시간으로 유저와 함께 플레이하는 새로운 게임 패러다임. 개인용 AI 비서 KIRA + AI 에이전트 개선 터미너스 키라 기술 연달아 공개. GTC 2026에서 GPU 확보 후 자체 파운데이션 모델 "프롬 스크래치" 개발 선언. 이강욱 신임 CAIO(Chief AI Officer) 선임으로 AI 퍼스트 전환 가속. 게임사가 단순 AI 도구 사용을 넘어 자체 AI 모델/에이전트를 개발하는 단계로 진입.',
+      },
+      {
+        title: '🥈 엔씨소프트 AI 연구 — VARCO-VISION 한국어 1위 + 멀티모달 검색 + 평가 기술',
+        description:
+          'NC Research에서 VARCO-VISION-14B 공개: 동급 오픈소스 VLM 중 한국어 성능 1위(HuggingFace 기준). 멀티모달 정보 검색(MMIR) 기술 트렌드 정리 — 텍스트+이미지 통합 검색이 게임 에셋 관리에 적용 가능. 기계 번역 품질 자동 평가 연구(게임 로컬라이제이션 품질 검증에 활용 가능). OffsetBias로 LLM 평가모델의 편향 문제 해결(EMNLP 2024). LLM 벤치마크 데이터셋 가이드로 모델 선택 시 참고 가치 높음.',
+      },
+      {
+        title: '🥉 게임 IP 다각화 전략 — 하나의 IP에서 스핀오프·모바일·AI 캐릭터로 확장',
+        description:
+          'PUBG: 블라인드스팟(스팀 체험판) — 기존 IP에서 신작 스핀오프. PUBG Ally — 같은 IP에 AI CPC 캐릭터 추가. Dungeon Dive: 다크앤다커 모바일 — PC IP의 모바일 확장. 크래프톤 정글 게임랩 2기에서 스팀 6개 게임 정식 출시 — 대기업이 인디 팀을 육성하여 IP 다양성 확보. 1인 개발자도 하나의 핵심 게임 메커닉(NumberLink 퍼즐)을 다양한 플랫폼/모드로 확장하는 전략 참고.',
+      },
+      {
+        title: '4️⃣ 토스 Metric Review — 데이터 기반 실행 문화',
+        description:
+          '토스 테크에서 "Metric Review, 실행을 이끌다" 공개. 핵심 지표를 정의하고 주기적 리뷰를 통해 팀 전체가 같은 방향으로 실행하는 문화. 게임 개발에 적용: DAU/세션길이/레벨클리어율/광고시청률 등 핵심 지표를 정의하고, 주간 데이터 리뷰로 밸런싱/UX 개선 의사결정. NumLink 출시 후 Google Play Console 데이터를 기반으로 Metric Review 체계 구축 필요.',
+      },
+      {
+        title: '5️⃣ 수집 시스템 현황 — 27개 블로그 중 3개 소스 정상 수집',
+        description:
+          '첫 수집 결과: 크래프톤 블로그(5건), 크래프톤 AI(5건), NC Research(5건), 토스 테크(1건) = 총 16건. RSS 피드 기반 블로그(토스)가 가장 안정적. 스크래핑 기반 소스는 사이트 구조에 따라 성공률 편차 큼. 넷마블·데브시스터즈·카카오·네이버 등 RSS 피드가 있는 블로그의 selector 튜닝 필요. 다음 주까지 수집 성공률 50% 이상 목표.',
+      },
+    ],
+    meetingTitle: '기술 블로그 주간 인사이트 W14 — 게임 AI 투자 급증 & 1인 개발자 시사점',
+    meetingSummary:
+      '국내 대기업 기술 블로그에서 게임 AI 투자가 폭발적으로 증가. 크래프톤은 AI를 게임플레이 핵심(CPC)에 통합하고 자체 모델까지 개발. 엔씨소프트는 한국어 특화 AI 모델로 차별화. 1인 인디 개발자도 이 흐름에서 실행 가능한 전략을 추출해야 함.',
+    meetingItems: [
+      { speaker: '📈 뜨거운 것', note: '게임 AI CPC(크래프톤 PUBG Ally), 한국어 VLM(엔씨 VARCO-VISION), 게임사 자체 파운데이션 모델 개발, AI 에이전트(KIRA)' },
+      { speaker: '📉 식어가는 것', note: '단순 AI 도구 도입 단계 → 이제는 자체 모델 구축/게임플레이 통합 단계로 진화' },
+      { speaker: '🆕 새로 떠오르는 것', note: 'CPC(AI가 유저와 함께 플레이), 멀티모달 검색(MMIR), CAIO 직책, 프롬 스크래치 게임 AI 모델' },
+      { speaker: '🎯 1인 개발자 시사점', note: 'CPC 기술이 캐주얼까지 내려올 시점 주시 / VARCO-VISION으로 한국어 콘텐츠 자동 생성 검토 / Metric Review 체계를 NumLink 출시 후 구축' },
+    ],
+    decisions: [
+      {
+        title: 'CPC 기술 캐주얼 게임 적용 가능성 모니터링',
+        description:
+          '크래프톤의 CPC는 현재 PUBG급 대형 게임에 적용되었지만, 기술이 경량화되면 캐주얼/퍼즐에도 AI 동반자 시스템 도입 가능. Unity용 CPC SDK나 오픈소스 구현체 등장 시 MeowBeat에 테스트.',
+      },
+      {
+        title: 'VARCO-VISION 한국어 게임 콘텐츠 생성 테스트',
+        description:
+          '엔씨소프트의 VARCO-VISION-14B가 한국어 VLM 1위. 게임 스크린샷 설명 자동 생성, 스토어 설명문 한국어 최적화, 유저 리뷰 분석 등에 활용 가능. HuggingFace에서 무료 접근 가능하므로 사이드 테스트 진행.',
+      },
+      {
+        title: 'NumLink 출시 후 Metric Review 체계 구축',
+        description:
+          '토스의 Metric Review 방법론을 참고하여 NumLink 핵심 지표 정의: 일일 퍼즐 완료율, 평균 세션 시간, 레벨별 이탈률, 광고 시청률, 리텐션 D1/D7/D30. Google Play Console + Firebase Analytics 기반 주간 리뷰 루틴 설계.',
+      },
+      {
+        title: 'RSS 수집 스크립트 selector 튜닝 — 수집률 50% 달성',
+        description:
+          '현재 27개 소스 중 4개만 정상 수집. 다음 주까지 넷마블(RSS), 데브시스터즈(RSS), 카카오(RSS), 네이버 D2(Atom), 우아한형제들(RSS) 등 RSS 피드 보유 블로그 우선 튜닝하여 수집 성공률 50% 이상 달성.',
+      },
+    ],
+  },
+  {
     id: '2026-03-31T09:00:00-daily-standup',
     date: '2026-03-31',
     researchTitle:
