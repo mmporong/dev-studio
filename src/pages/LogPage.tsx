@@ -135,8 +135,8 @@ export function LogPage() {
                         <ul className="log__items">
                           {expandedEntry.researchItems.map((item) => (
                             <li key={item.title}>
-                              <strong>{item.title}</strong>
-                              <p>{item.description}</p>
+                              {item.title && <strong>{item.title}</strong>}
+                              {item.description && <p>{item.description}</p>}
                             </li>
                           ))}
                         </ul>
@@ -150,8 +150,8 @@ export function LogPage() {
                         <ul className="log__items">
                           {expandedEntry.meetingItems.map((item) => (
                             <li key={`${expandedEntry.date}-${item.speaker}`}>
-                              <strong>{item.speaker}</strong>
-                              <p>{item.note}</p>
+                              {item.speaker && <strong>{item.speaker}</strong>}
+                              {item.note && <p>{item.note}</p>}
                             </li>
                           ))}
                         </ul>
@@ -162,10 +162,10 @@ export function LogPage() {
                       <div className="log__detail">
                         <h3>회의 결정</h3>
                         <ul className="log__items">
-                          {expandedEntry.decisions.map((item) => (
-                            <li key={item.title}>
-                              <strong>{item.title}</strong>
-                              <p>{item.description}</p>
+                          {expandedEntry.decisions.filter((item) => item.title.trim() || item.description.trim()).map((item) => (
+                            <li key={item.title || item.description}>
+                              {item.title.trim() && <strong>{item.title}</strong>}
+                              {item.description.trim() && <p>{item.description}</p>}
                             </li>
                           ))}
                         </ul>
