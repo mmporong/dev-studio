@@ -8,6 +8,7 @@ import { HomePage } from './pages/HomePage'
 import { WorkPage } from './pages/WorkPage'
 import { LogPage } from './pages/LogPage'
 import { PlaygroundPage } from './pages/PlaygroundPage'
+import { InsightsPage } from './pages/InsightsPage'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/work" element={<WorkPage />} />
             <Route path="/log" element={<LogPage />} />
             <Route path="/playground" element={<PlaygroundPage />} />
+            <Route path="/insights" element={<InsightsPage />} />
             {/* 구 경로 리디렉트 */}
             <Route path="/projects" element={<Navigate to="/work" replace />} />
             <Route path="/architecture" element={<Navigate to="/work" replace />} />

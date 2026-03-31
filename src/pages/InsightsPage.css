@@ -1,0 +1,274 @@
+@layer pages {
+  .insights {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* 헤더 */
+  .insights__header {
+    padding: 64px 0 32px;
+    border-bottom: 1px solid #f1f3f5;
+  }
+
+  .insights__header h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #191f28;
+  }
+
+  .insights__subtitle {
+    font-size: 16px;
+    color: #4e5968;
+    margin-top: 8px;
+  }
+
+  .insights__meta {
+    font-size: 13px;
+    color: #8b95a1;
+    margin-top: 8px;
+  }
+
+  /* 필터 */
+  .insights__filters {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 24px 0;
+    border-bottom: 1px solid #f1f3f5;
+  }
+
+  .insights__select {
+    padding: 6px 12px;
+    border: 1px solid #e5e8eb;
+    border-radius: 4px;
+    background: #fff;
+    color: #191f28;
+    font-size: 14px;
+  }
+
+  .insights__tags {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  .insights__tag {
+    padding: 6px 16px;
+    border: none;
+    border-radius: 999px;
+    font-size: 14px;
+    color: #4e5968;
+    background: transparent;
+    cursor: pointer;
+    transition: color 0.15s;
+  }
+
+  .insights__tag:hover {
+    color: #191f28;
+  }
+
+  .insights__tag--active {
+    color: #3182f6;
+    font-weight: 600;
+  }
+
+  /* 카드 리스트 */
+  .insights__section {
+    margin-top: 32px;
+    margin-bottom: 64px;
+  }
+
+  .insights__week-group {
+    margin-bottom: 32px;
+  }
+
+  .insights__week-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #8b95a1;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f1f3f5;
+  }
+
+  .insights__card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .insights__card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    border: 1px solid #e5e8eb;
+    background: #fff;
+    text-decoration: none;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+
+  .insights__card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    border-color: #d0d5da;
+  }
+
+  .insights__card-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .insights__card-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+
+  /* 회사 뱃지 */
+  .insights__badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .insights__badge--game {
+    background: #fff3e0;
+    color: #e65100;
+  }
+
+  .insights__badge--ai {
+    background: #f3e5f5;
+    color: #7b1fa2;
+  }
+
+  .insights__badge--frontend {
+    background: #e3f2fd;
+    color: #1565c0;
+  }
+
+  .insights__badge--backend {
+    background: #e8f5e9;
+    color: #2e7d32;
+  }
+
+  .insights__badge--infra {
+    background: #fce4ec;
+    color: #c62828;
+  }
+
+  .insights__badge--data {
+    background: #e0f7fa;
+    color: #00695c;
+  }
+
+  .insights__badge--general {
+    background: #f5f5f5;
+    color: #424242;
+  }
+
+  .insights__company {
+    font-size: 12px;
+    font-weight: 600;
+    color: #4e5968;
+  }
+
+  .insights__card-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #191f28;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .insights__card-summary {
+    font-size: 13px;
+    color: #4e5968;
+    margin-top: 4px;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .insights__card-date {
+    font-size: 12px;
+    color: #8b95a1;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .insights__card-link {
+    font-size: 12px;
+    color: #3182f6;
+    flex-shrink: 0;
+    margin-top: 2px;
+    text-decoration: none;
+  }
+
+  .insights__card-link:hover {
+    text-decoration: underline;
+  }
+
+  /* 빈 상태 */
+  .insights__empty {
+    text-align: center;
+    padding: 80px 0;
+    color: #8b95a1;
+    font-size: 16px;
+  }
+
+  .insights__empty p:first-child {
+    font-size: 40px;
+    margin-bottom: 16px;
+  }
+
+  /* 로딩 */
+  .insights__loading {
+    text-align: center;
+    padding: 80px 0;
+    color: #8b95a1;
+    font-size: 14px;
+  }
+
+  /* 카운트 */
+  .insights__count {
+    font-size: 13px;
+    color: #8b95a1;
+    margin-top: 16px;
+  }
+
+  /* 반응형 */
+  @media (max-width: 768px) {
+    .insights {
+      padding: 0 16px;
+    }
+
+    .insights__header {
+      padding: 40px 0 24px;
+    }
+
+    .insights__filters {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .insights__card {
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .insights__card-date {
+      order: -1;
+    }
+  }
+}

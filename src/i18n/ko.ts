@@ -3,6 +3,7 @@ export const ko = {
     home: 'Home',
     work: 'Work',
     log: 'Log',
+    insights: 'Insights',
     playground: 'Playground',
   },
   hero: {

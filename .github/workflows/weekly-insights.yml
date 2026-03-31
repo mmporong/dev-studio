@@ -1,0 +1,46 @@
+name: Weekly Insights Collection
+
+on:
+  schedule:
+    - cron: '0 0 * * 1' # 매주 월요일 00:00 UTC (KST 09:00)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm ci
+
+      - name: Fetch insights
+        run: npx tsx scripts/fetch-insights.ts
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - name: Commit & Push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/insights.json
+          git diff --cached --quiet || git commit -m "chore: weekly insights update"
+          git push
+
+      - name: Telegram notification
+        if: success()
+        run: |
+          ARTICLE_COUNT=$(node -e "const d=require('./public/insights.json'); const w=d.weeks[0]; console.log(w ? w.articles.length : 0)")
+          python3 -c "
+          import urllib.request, json, sys
+          count = sys.argv[1]
+          msg = f'<b>주간 인사이트 수집 완료</b>\n이번 주 {count}건의 새 글이 수집되었습니다.'
+          data = json.dumps({'chat_id':'${{ secrets.TELEGRAM_CHAT_ID }}','parse_mode':'HTML','text':msg}).encode('utf-8')
+          urllib.request.urlopen(urllib.request.Request('https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage',data=data,headers={'Content-Type':'application/json'}))
+          " "$ARTICLE_COUNT"
