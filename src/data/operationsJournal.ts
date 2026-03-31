@@ -46,7 +46,7 @@ export const seedJournalEntries: JournalEntry[] = [
     id: '2026-03-31T09:00:00-daily-standup',
     date: '2026-03-31',
     researchTitle:
-      'MeowBeat 16일 커밋 공백+64건 .meta 미커밋 긴급 + Pair 퍼즐 매출 363%↑ 블루오션 + Vite 8/TS 6 출시 + Google Play 수수료 20% 인하 확정 + Plushcore 아이콘 트렌드',
+      'Pair 퍼즐 매출 363% 성장 + Vite 8 & TS 6 출시 + Google Play 수수료 인하 확정',
     researchSummary:
       '7명 에이전트 병렬 리서치 종합. MeowBeat 16일간 커밋 없이 64건 .meta 미커밋으로 빌드 깨짐 위험 긴급. NumLink feature/uitoolkit 3일 정체. Pair(연결) 퍼즐 서브장르 매출 363% 폭증으로 NumLink 장르 선택 적중. Vite 8.0(Rolldown 10-30x)·TypeScript 6.0 출시, Node.js 20 EOL D-30. Google Play 수수료 20% 인하(6/30 시행)+개발자 인증 필수화(9월). Plushcore/Soft 3D 아이콘 트렌드, SpriteFlow 등 AI 에셋 도구 신규 등장.',
     researchItems: [
@@ -156,7 +156,7 @@ export const seedJournalEntries: JournalEntry[] = [
     id: '2026-03-30T09:00:00-daily-standup',
     date: '2026-03-30',
     researchTitle:
-      'MeowBeat 34파일 미커밋 3일째 긴급 + Poki MAU 1억 돌파 블루오션 + Google Play Game Trials 도입 + Node.js 20 EOL 31일 + Unity 6.4 출시',
+      'Poki MAU 1억 돌파 블루오션 + Google Play Game Trials 도입 + Unity 6.4 출시',
     researchSummary:
       '7명 에이전트 병렬 리서치 종합. NumLink·MeowBeat 양쪽 2일간 커밋 0건으로 미커밋 파일 누적 심각(MeowBeat 34개, NumLink 12개). Poki MAU 1억 돌파+연결 퍼즐 공백으로 NumLink WebGL 블루오션 기회 지속. Google Play Game Trials 기능 신규 도입으로 체험판 내장 가능. AI 적응형 난이도 도입 시 리텐션 15-25% 개선 데이터. Node.js 20 EOL 4/30 임박(31일). Unity 6.4 출시(ECS 코어 통합). Debug.Log 285건 잔존(NumLink 149+MeowBeat 136). Leonardo AI Phoenix 2.0으로 캐릭터 에셋 파이프라인 효율화 가능.',
     researchItems: [
@@ -261,7 +261,7 @@ export const seedJournalEntries: JournalEntry[] = [
     id: '2026-03-29T09:00:00-daily-standup',
     date: '2026-03-29',
     researchTitle:
-      'NumLink UGUI→UI Toolkit 전환 착수 + Poki 넘버링크 블루오션 + Google Play 수수료 20% 인하 + GitHub Actions v6 출시',
+      'NumLink UI Toolkit 전환 착수 + Poki 블루오션 분석 + GitHub Actions v6',
     researchSummary:
       '7명 에이전트 병렬 리서치 종합. NumLink에서 UGUI→UI Toolkit 전환 작업이 본격 시작되어 6개 신규 파일 생성, 이중 경로(UIToolkit 우선+UGUI 폴백) 패턴 적용. Poki WebGL 플랫폼에 넘버링크/플로우 계열 퍼즐 부재로 블루오션 기회 확인. Google Play가 Epic 합의로 수수료 20%로 인하(6/30 적용). GitHub Actions checkout/setup-node v6 출시, Node 24 강제 전환 6/2 확정. 퍼즐 시장 CAGR 6.02% 성장, 일일 스트릭 상위 69% 채택. YouTube Shorts 참여율 5.91%로 숏폼 선두. 소프트 3D/플러시코어 아이콘 트렌드 주류화.',
     researchItems: [
@@ -366,7 +366,7 @@ export const seedJournalEntries: JournalEntry[] = [
     id: '2026-03-28T09:00:00-daily-standup',
     date: '2026-03-28',
     researchTitle:
-      'MeowBeat 84파일 미커밋 긴급 + NumLink 스테이지 시스템 10커밋 회귀 + deploy-pages v5 출시 + Vite 8 정식 릴리즈',
+      'NumLink 스테이지 시스템 개선 + deploy-pages v5 출시 + Vite 8 정식 릴리즈',
     researchSummary:
       '7명 에이전트 병렬 리서치 종합. NumLink 스테이지 시스템 도입·UI 수정 10커밋 완료, LevelSelectUI 5커밋 집중으로 회귀 리스크. MeowBeat 84파일(56개 미추적) 유실 위험 긴급. 퍼즐 시장 일일 챌린지 리텐션 40% 증가·동적 리더보드 표준화. 리듬 게임 CAGR 9.1% 성장, Duck Town 경쟁작 주목. Vite 8.0 Rolldown 정식 출시(3/12). deploy-pages v5+checkout v5 Node 24 대응 완료(3/25). TikTok 도달 급락으로 Reels·Shorts 전환 필수. Raw Aesthetic·Brutalist UI 트렌드 주류화.',
     researchItems: [
@@ -747,7 +747,7 @@ export const seedJournalEntries: JournalEntry[] = [
   {
     id: '2026-03-26T09:00:00-daily-standup',
     date: '2026-03-26',
-    researchTitle: 'MeowBeat 미커밋 유실 위험 + NumLink 안정화 마무리 + Apple 프로모코드 폐지 당일 + Wordle형 일일 챌린지 필수화',
+    researchTitle: 'NumLink 안정화 마무리 + Wordle형 일일 챌린지 트렌드 분석',
     researchSummary:
       'NumLink 버그 수정 안정화 단계 진입, 워킹 디렉토리 3파일 미커밋. MeowBeat refactor/ai-friendly 브랜치 50+ 미커밋 파일·리모트 미푸시로 유실 위험 최고. Apple 프로모코드 오늘부로 폐지→Offer Code 전환 필수. 퍼즐 시장 $56억→$121억(CAGR 9%), Wordle형 일일 챌린지가 리텐션 핵심(DAU 12M). Debug.Log NumLink 114건·MeowBeat 48건 가드 미적용 지속. CI Node 20→24 전환 마감 4/30. Vite 8.0 Rolldown 빌드 10~30배 향상 업그레이드 권장.',
     researchItems: [
@@ -856,7 +856,7 @@ export const seedJournalEntries: JournalEntry[] = [
   {
     id: '2026-03-25T09:00:00-daily-standup',
     date: '2026-03-25',
-    researchTitle: 'NumLink 출시 최근접 + CI Node 24 전환 긴급 + 하이브리드 캐주얼 메타 레이어 필수화',
+    researchTitle: 'NumLink 출시 준비 + 하이브리드 캐주얼 메타 레이어 트렌드',
     researchSummary:
       'NumLink 코드 완료·200레벨 확장 진행 중, 스토어 에셋(개인정보처리방침/스크린샷/ASO) 준비가 출시 유일 블로커. CI Node 20 EOL 임박으로 24 직접 전환 긴급. Vite 8.0 Rolldown 기반 10~30배 빌드 속도 향상 업그레이드 권장. 퍼즐 시장 하이브리드 캐주얼 $42억, 일일 챌린지+메타 레이어 없는 퍼즐은 리텐션 한계. iOS 26.4 Liquid Glass 커스터마이징 옵션 추가, 아이콘 4모드 대응 유지. Google Play 수수료 30%→20% 인하+자체 결제 허용.',
     researchItems: [
@@ -1069,7 +1069,7 @@ export const seedJournalEntries: JournalEntry[] = [
   {
     id: '2026-03-22T09:00:00-daily-standup',
     date: '2026-03-22',
-    researchTitle: '3/22 결정사항 부분 이행 + Unity 6.4 출시 + Mewgenics 100만장 + Node 20 EOL 임박',
+    researchTitle: 'Unity 6.4 출시 + Mewgenics 100만장 달성 + 스프린트 결정사항 이행',
     researchSummary:
       'NumLink push+productName 수정 완료(4건 중 1건 이행). 스토어 준비/MeowBeat M0/daily_standup.bat은 여전히 미착수. Unity 6.4 출시(ECS 코어 통합, Project Auditor 내장). Mewgenics 1주 100만장·$2,500만 달성으로 고양이 IP 폭발적 성장 확인. Node.js 20 EOL 5주 후(agent-office 워크플로우 영향). AI 음악 도구(Beatoven.ai) 비용 80-95% 절감. CatMergeCafe Mint 색상 WCAG 접근성 완전 미달(대비율 1.17:1).',
     researchItems: [
@@ -1143,7 +1143,7 @@ export const seedJournalEntries: JournalEntry[] = [
   {
     id: '2026-03-22T09:00:00-daily-standup',
     date: '2026-03-22',
-    researchTitle: '3/21 결정사항 미이행 점검 + AI 적응형 난이도 + Unity 6.3 LTS + 스토어 준비 전략',
+    researchTitle: 'AI 적응형 난이도 연구 + Unity 6.3 LTS + 스토어 출시 전략',
     researchSummary:
       'NumLink 5커밋 push/productName 수정/MeowBeat 워킹트리 정리 등 3/21 결정사항 전부 미이행 확인. 하이브리드 캐주얼 퍼즐 19개 타이틀 $100만+ 돌파, AI 적응형 난이도 도입 시 71% 수익 증가 데이터 확인. Unity 6.3 LTS IL2CPP 빌드 22% 단축. daily_standup.bat Exit code 9009(명령어 미발견) 원인 파악. Digital Texture/벤토 그리드/Anti-Design 등 2026 UI 신규 트렌드 발굴.',
     researchItems: [
@@ -1291,7 +1291,7 @@ export const seedJournalEntries: JournalEntry[] = [
   {
     id: '2026-03-20T09:00:00-daily-standup',
     date: '2026-03-20',
-    researchTitle: 'NumLink 4-Bug Fix + 버튼/선/게임오버 안정화 + 자동회의 복구',
+    researchTitle: 'NumLink 4건 버그 수정 + 버튼/선/게임오버 안정화',
     researchSummary:
       'NumLink에서 버튼 색상 조기 변경, 하이라이트 중복, 패널 3개 동시 등장, 테마 미반영 등 4가지 버그를 일괄 수정했고, 이후 발견된 선 사라짐/버튼 꺼짐/게임오버 흐름 문제까지 3건 추가 수정 완료. daily_standup.bat PATH 오류로 자동 회의가 실패하고 있었던 문제도 해결. 총 커밋 3건(c29ee15, a9ab430, ec2fa2f).',
     researchItems: [
