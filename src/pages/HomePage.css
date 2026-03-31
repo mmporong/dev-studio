@@ -152,17 +152,22 @@
   }
 
   .home__link-btn {
-    font-size: 14px;
+    font-family: var(--font-label);
+    font-size: 13px;
+    font-weight: 500;
     color: #3182f6;
-    background: none;
+    background: #e8f3ff;
     border: none;
     cursor: pointer;
-    padding: 0;
+    padding: 6px 14px;
+    border-radius: 16px;
     text-decoration: none;
+    transition: all 0.2s ease;
   }
 
   .home__link-btn:hover {
-    text-decoration: underline;
+    background: #d0e8ff;
+    text-decoration: none;
   }
 
   /* 프로젝트 리스트 */
@@ -175,21 +180,25 @@
   /* 프로젝트 카드 */
   .home__project-card {
     display: block;
-    padding: 32px;
-    background: #f8f9fa;
-    border-radius: 12px;
+    padding: 28px 32px;
+    background: #fff;
+    border: 1px solid #f1f3f5;
+    border-radius: 16px;
     text-decoration: none;
     color: inherit;
-    transition: background 0.15s;
+    transition: all 0.25s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
   }
 
   .home__project-card:hover {
-    background: #f1f3f5;
     text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    border-color: #e5e8eb;
   }
 
   .home__project-card:hover h3 {
-    text-decoration: underline;
+    color: #3182f6;
   }
 
   .home__project-top {
@@ -200,9 +209,11 @@
   }
 
   .home__project-card h3 {
-    font-size: 18px;
+    font-family: var(--font-label);
+    font-size: 17px;
     font-weight: 600;
     color: #191f28;
+    transition: color 0.2s;
   }
 
   .home__project-tagline {
@@ -230,21 +241,25 @@
   .home__game-card {
     display: flex;
     flex-direction: column;
-    padding: 32px;
-    background: #f8f9fa;
-    border-radius: 12px;
+    padding: 28px;
+    background: #fff;
+    border: 1px solid #f1f3f5;
+    border-radius: 16px;
     text-decoration: none;
     color: inherit;
-    transition: background 0.15s;
+    transition: all 0.25s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
   }
 
   .home__game-card:hover {
-    background: #f1f3f5;
     text-decoration: none;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    border-color: #e5e8eb;
   }
 
   .home__game-card:hover .home__game-name {
-    text-decoration: underline;
+    color: #3182f6;
   }
 
   .home__game-header {
@@ -255,17 +270,20 @@
   }
 
   .home__game-icon {
-    width: 64px;
-    height: 64px;
+    width: 56px;
+    height: 56px;
     border-radius: 14px;
     flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 
   .home__game-name {
-    font-size: 18px;
+    font-family: var(--font-label);
+    font-size: 17px;
     font-weight: 600;
     color: #191f28;
     margin-bottom: 6px;
+    transition: color 0.2s;
   }
 
   .home__game-badge {
@@ -341,26 +359,39 @@
   }
 
   .home__update-card {
-    padding: 24px 0;
-    border-bottom: 1px solid #f1f3f5;
+    padding: 20px 24px;
+    border: 1px solid #f1f3f5;
+    border-radius: 12px;
     cursor: pointer;
+    transition: all 0.25s ease;
+    background: #fff;
+  }
+
+  .home__update-card:hover {
+    border-color: #e5e8eb;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
   }
 
   .home__update-card:hover h3 {
-    text-decoration: underline;
+    color: #3182f6;
   }
 
   .home__update-card time {
-    font-size: 13px;
+    font-family: var(--font-label);
+    font-size: 12px;
+    font-weight: 500;
     color: #8b95a1;
+    letter-spacing: 0.02em;
   }
 
   .home__update-card h3 {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 600;
     color: #191f28;
-    margin: 8px 0;
+    margin: 8px 0 0;
     line-height: 1.5;
+    transition: color 0.2s;
   }
 
   /* 반응형 */

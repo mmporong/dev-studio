@@ -23,8 +23,9 @@
   }
 
   .navbar__logo-text {
-    font-size: 18px;
-    font-weight: 800;
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 400;
     color: #191f28;
   }
 
@@ -38,33 +39,45 @@
   }
 
   .navbar__link {
-    padding: 8px 12px;
-    font-size: 15px;
+    font-family: var(--font-label);
+    padding: 6px 14px;
+    font-size: 14px;
+    font-weight: 500;
     color: #4e5968;
     text-decoration: none;
-    transition: color 0.15s;
+    border-radius: 20px;
+    transition: all 0.2s ease;
   }
 
   .navbar__link:hover {
     color: #191f28;
+    background: #f1f3f5;
     text-decoration: none;
   }
 
   .navbar__link--active {
     color: #3182f6;
+    background: #e8f3ff;
     font-weight: 600;
   }
 
   .navbar__github {
+    font-family: var(--font-label);
     margin-left: 16px;
-    font-size: 14px;
+    font-size: 13px;
+    font-weight: 500;
     color: #8b95a1;
     text-decoration: none;
-    transition: color 0.15s;
+    padding: 5px 12px;
+    border: 1px solid #e5e8eb;
+    border-radius: 16px;
+    transition: all 0.2s ease;
   }
 
   .navbar__github:hover {
     color: #191f28;
+    border-color: #d1d5db;
+    background: #f8f9fa;
     text-decoration: none;
   }
 
