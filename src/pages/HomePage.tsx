@@ -54,6 +54,20 @@ export function HomePage() {
               <img src="https://img.shields.io/badge/Email-mmporong%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email" />
             </a>
             <a
+              href="https://github.com/mmporong"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/mmporong/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin-white&logoColor=fff" alt="LinkedIn" />
+            </a>
+            <a
               href="https://play.google.com/store/apps/dev?id=7488802924019572290"
               target="_blank"
               rel="noopener noreferrer"
@@ -66,13 +80,6 @@ export function HomePage() {
               rel="noopener noreferrer"
             >
               <img src="https://img.shields.io/badge/YouTube-FF0000?style=flat-square&logo=youtube&logoColor=white" alt="YouTube" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/mmporong/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src="https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin-white&logoColor=fff" alt="LinkedIn" />
             </a>
           </div>
         </div>
