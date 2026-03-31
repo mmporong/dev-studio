@@ -67,6 +67,13 @@ export function HomePage() {
             >
               <img src="https://img.shields.io/badge/YouTube-FF0000?style=flat-square&logo=youtube&logoColor=white" alt="YouTube" />
             </a>
+            <a
+              href="https://www.linkedin.com/in/mmporong/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin-white&logoColor=fff" alt="LinkedIn" />
+            </a>
           </div>
         </div>
         <div className="home__hero-mascot">

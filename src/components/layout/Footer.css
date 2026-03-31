@@ -38,10 +38,16 @@
     text-decoration: underline;
   }
 
+  .footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+  }
+
   .footer__copy {
     font-size: 13px;
     color: #8b95a1;
-    margin-top: 24px;
   }
 
   @media (max-width: 768px) {
