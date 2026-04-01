@@ -19,7 +19,7 @@ export const en = {
     downloads: 'downloads',
     storeLink: 'Google Play →',
     items: {
-      hefeedmee: { name: 'Hey Feed Me!', description: 'Feed your cat to the rhythm! Easy to start, addictively fast-paced', genre: 'Rhythm Casual' },
+      hefeedmee: { name: 'Feed Me!', description: 'Feed your cat to the rhythm! Easy to start, addictively fast-paced', genre: 'Rhythm Casual' },
       meowsurvivors: { name: 'Meow Survivors', description: 'Defeat waves of enemies with auto-firing weapons!', genre: 'Survival Casual' },
       meowpang: { name: 'MeowPang', description: 'Merge two same cats into a bigger one! Suika-style puzzle', genre: 'Puzzle Casual' },
     },
