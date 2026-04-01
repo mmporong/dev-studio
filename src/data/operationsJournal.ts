@@ -43,6 +43,116 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-04-01T09:00:00-daily-standup',
+    date: '2026-04-01',
+    researchTitle:
+      '📊 4/1 데일리 스탠드업 리서치 — 퍼즐 시장 122억$·리듬 게임 CAGR 9.1%·MeowBeat 미커밋 긴급',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 완료. NumLink UI Toolkit 전환 마무리 단계(오늘 아침 버그 3건 수정). MeowBeat 미커밋 34파일 4일째 방치 — 빌드 깨짐 위험. 퍼즐 시장 122억 달러 중 넘버/연결 퍼즐은 블루오션. 리듬 게임 25억→53억 달러 성장 예측(CAGR 9.1%). Poki 월간 1억 플레이어로 웹 게임 부활. ASO가 의도 기반 매칭으로 전환. Unity 6.4 출시, 6.0 LTS 10월 종료 예정. Debug.Log 273건 프로덕션 위험.',
+    researchItems: [
+      {
+        title: '🎯 Orchestrator — 프로젝트 상태 긴급 점검',
+        description:
+          'NumLink: feature/uitoolkit 브랜치에서 레벨선택 UI 버그 3건 수정 완료(오늘 08:38). main 머지 시점 판단 필요. MeowBeat: 마지막 커밋 3/28, 미커밋 34파일(수정 14+미추적 20) 4일째 방치 — .meta 19건 포함으로 빌드 깨짐 확정적. agent-office: Hardboiled Studio 리브랜딩 완료, 빌드/배포 정상.',
+      },
+      {
+        title: '🎮 Game Designer — 퍼즐 122억$, 리듬 CAGR 9.1%, 하이브리드 수익화 표준',
+        description:
+          '퍼즐 게임 매출 122억 달러, 매칭 퍼즐이 42% 지배하나 넘버/연결 퍼즐은 블루오션. 직소 퍼즐 다운로드 21%↑(힐링 트렌드). 리듬 게임 25억→53억 달러(2033), 소셜 기능 탑재 시 DAU 40%↑. Poki 월간 1억 명, 웹 게임 78억 달러 시장. 하이브리드 수익화(광고+IAP) ARPU 28% 우위. 고양이 테마 지속 인기, 리듬+힐링펫 매시업은 시장 공백.',
+      },
+      {
+        title: '💻 Developer — Unity 6.4 출시, TODO 3건, PrimeTween 대안 부상',
+        description:
+          'NumLink 최근 3커밋(+51/-15) UI Toolkit 전환 중. MeowBeat 3커밋(+1423/-1392) AdMob v11+IAP 대규모 업데이트. TODO: NumLink 0건, MeowBeat 3건(구매 저장 로직 미구현). Unity 6.4 출시(ECS 코어 통합, Project Auditor 내장). Unity 6.0 LTS 2026.10 종료 예정. PrimeTween(제로 할당) DOTween 대안으로 부상. C# 14 Extension Members 활용 가능.',
+      },
+      {
+        title: '🔍 QA Tester — Debug.Log 273건, GameObject.Find 23건, 테스트 전무',
+        description:
+          'Debug.Log: NumLink 154건 + MeowBeat 119건 = 273건(프로덕션 위험). MeowBeat GameObject.Find 20건(CRITICAL), Input.GetKey 6건. NumLink GameObject.Find 3건, Input.GetKey 2건. 미커밋 .meta: MeowBeat 19건(빌드 깨짐 확정). 테스트: NumLink 1건(BoardDataTester), MeowBeat 0건. 자동화 테스트 전무.',
+      },
+      {
+        title: '📢 Content Writer — ASO 의도 기반 전환, Poki 8MB 제한, 숏폼 주 7-14개',
+        description:
+          'Google Play Indie Games Accelerator 37개국 확대. ASO가 키워드 매칭에서 의미론적(의도 기반) 매칭으로 전환 — "number puzzle" 대신 "relaxing brain game" 식 롱테일 필요. Poki 초기 다운로드 8MB 이하 필수, SDK 이벤트 통합 필수. TikTok 참여율 3.15%로 숏폼 1순위 채널, 주 7-14개 클립 권장. 출시 12-18개월 전 커뮤니티 빌딩 시작 권장.',
+      },
+      {
+        title: '⚙️ DevOps — 빌드 정상, Node 20 EOL 대응 완료, ESLint v10 대기',
+        description:
+          'agent-office 빌드 성공(284ms, JS 471KB). 핵심 의존성(React 19, Vite 8, TS 6) 최신 유지. Node.js 20 EOL 4/30이나 CI v22로 대응 완료. ESLint v10 메이저 업데이트 출시 — 분기 내 마이그레이션 계획 권장. GitHub Actions 6/2 Node 24 강제 전환 예정, 서드파티 액션 호환성 사전 점검 필요.',
+      },
+      {
+        title: '🎨 Art Director — Raw 미학 트렌드, 코지 게임 675%↑, AI 에셋 도구 다양화',
+        description:
+          '2026 UI 트렌드: Raw/Brutalist 미학(NumLink에 적합), 목적 있는 모션, 환경 통합형 UI. 코지 게임 Steam 태그 675% 성장(MeowBeat 기회). 앱 아이콘: 32px 인식성, 요소 1-2개 제한, A/B 테스트 필수. 스크린샷 첫 3장이 전환율 결정(최대 40% 향상). AI 에셋 도구: Scenario(스타일 학습), PixelLab(픽셀아트), Ludo.ai(애니메이션 스프라이트).',
+      },
+    ],
+    meetingTitle: '4/1 데일리 스탠드업 회의 — MeowBeat 긴급 커밋 + NumLink 머지 판단 + 출시 전략',
+    meetingSummary:
+      '7명 에이전트 종합 회의. MeowBeat 미커밋 34파일 즉시 커밋이 최우선 과제. NumLink UI Toolkit 브랜치 머지 시점 확정 필요. 퍼즐 시장 블루오션 확인, 하이브리드 수익화 전략 채택. Debug.Log 273건 정리 + MeowBeat 코딩규칙 위반 20건 해소 계획 수립.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'MeowBeat 미커밋 34파일이 4일째 방치 중입니다. .meta 19건 포함으로 다른 환경에서 빌드 실패 확정적입니다. 오늘 최우선으로 커밋 정리해야 합니다. NumLink는 UI Toolkit 전환이 마무리 단계이고 오늘 아침 버그 3건을 수정했습니다. feature/uitoolkit → main 머지 시점을 이번 주 내로 확정하길 권고합니다. agent-office는 Hardboiled Studio 리브랜딩 완료로 안정 상태입니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '퍼즐 시장 122억 달러 중 넘버/연결 퍼즐은 블루오션입니다. 직소 퍼즐이 힐링 트렌드로 21% 성장한 점을 참고해 NumLink도 "릴랙싱 퍼즐"로 포지셔닝하는 것을 권고합니다. MeowBeat의 리듬+힐링펫 매시업은 시장에서 독보적 포지션이며, 소셜 기능 강화 시 DAU 40% 증가 레퍼런스가 있습니다. 하이브리드 수익화(광고+IAP)가 업계 표준으로 ARPU 28% 우위를 보입니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'NumLink UI Toolkit 전환은 UXML/USS 기반 4화면이 완성됐고 레벨선택 버그 3건까지 수정 완료했습니다. MeowBeat는 AdMob v11+IAP 대규모 업데이트 커밋 후 미커밋 파일이 누적됐습니다. TODO 3건(구매 저장 로직) 처리가 필요합니다. Unity 6.4가 출시됐고 6.0 LTS가 10월 종료되므로 6.3 LTS 마이그레이션을 분기 내 검토해야 합니다. PrimeTween이 DOTween 대비 제로 할당으로 안전성 우위입니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'Debug.Log 273건이 프로덕션 빌드에서 성능 저하를 유발합니다. #if UNITY_EDITOR 래핑 또는 커스텀 Logger 도입이 시급합니다. MeowBeat의 GameObject.Find 20건은 CRITICAL — ServiceLocator 전환이 필수입니다. Input.GetKey 6건은 모바일에서 작동 불가하므로 InputAction 전환 필요합니다. 양 프로젝트 모두 자동화 테스트가 사실상 전무하여 핵심 Domain 로직 단위테스트 추가를 강력 권고합니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'ASO가 의도 기반 매칭으로 전환됐습니다. NumLink는 "number puzzle" 대신 "시간 때우기 좋은 퍼즐", "머리 쓰는 게임" 같은 의도 기반 롱테일 키워드로 재설계해야 합니다. Poki 제출 시 8MB 빌드 제한과 SDK 이벤트 통합이 필수입니다. 숏폼 마케팅은 TikTok 참여율 3.15%로 1순위 채널이며, 퍼즐 타임랩스/챌린지 영상을 주 7개 이상 발행하는 파이프라인 구축을 권고합니다.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'agent-office 인프라 상태 양호합니다. 빌드 284ms, 번들 471KB, CI 4회 연속 성공. Node.js 20 EOL이 이달 말(4/30)이지만 CI v22로 사전 대응 완료했습니다. ESLint v10 메이저 업데이트가 출시됐으나 급하지 않고 분기 내 계획 수립하면 됩니다. 6/2 GitHub Actions Node 24 강제 전환에 대비해 서드파티 액션 호환성 사전 테스트를 권장합니다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '2026년 Raw/Brutalist 미학 트렌드가 NumLink의 미니멀 퍼즐에 최적입니다. 그리드 기반 레이아웃과 기하학적 서체로 장식 없이 구조로 말하는 인터페이스를 권고합니다. MeowBeat는 코지 게임 675% 성장 트렌드에 맞춰 코랄/피치/크림 따뜻한 팔레트를 유지하고, Scenario AI로 아트 바이블 기반 일관된 고양이 캐릭터 변형을 생성하는 것을 추천합니다. 앱 아이콘은 32px 인식성과 A/B 테스트가 필수입니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: '[P0] MeowBeat 미커밋 34파일 즉시 커밋',
+        description:
+          '.meta 19건 포함 34파일이 4일째 미커밋 상태. 다른 환경에서 빌드 실패 확정적이므로 오늘 최우선으로 커밋 정리 필요.',
+      },
+      {
+        title: '[P1] NumLink UI Toolkit 브랜치 → main 머지 확정',
+        description:
+          'feature/uitoolkit 브랜치에서 UXML/USS 4화면 전환 완료, 버그 3건 수정. 이번 주 내 main 머지 시점 확정 후 진행.',
+      },
+      {
+        title: '[P1] Debug.Log 273건 프로덕션 정리',
+        description:
+          'NumLink 154건 + MeowBeat 119건. #if UNITY_EDITOR 래핑 또는 커스텀 ConditionalLogger 도입으로 프로덕션 빌드에서 제거.',
+      },
+      {
+        title: '[P2] MeowBeat 코딩규칙 위반 해소',
+        description:
+          'GameObject.Find 20건 → ServiceLocator 전환. Input.GetKey 6건 → InputAction 전환. 모바일 빌드 안정성 확보.',
+      },
+      {
+        title: '[P2] ASO 의도 기반 키워드 재설계',
+        description:
+          '스토어 검색이 의미론적 매칭으로 전환됨. NumLink 키워드를 "relaxing brain game", "시간 때우기 퍼즐" 등 의도 기반 롱테일로 재설계.',
+      },
+      {
+        title: '[P3] Unity 6.0→6.3 LTS 마이그레이션 검토',
+        description:
+          'Unity 6.0 LTS 2026.10 종료 예정. 6.3 LTS(2027.12까지 지원)로의 마이그레이션을 분기 내 검토 착수.',
+      },
+    ],
+  },
+  {
     id: '2026-03-31T21:00:00-threads-insight-techblog-w14',
     date: '2026-03-31',
     researchTitle:
