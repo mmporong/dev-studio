@@ -18,10 +18,19 @@ export const en = {
     viewAll: 'View all on Google Play →',
     downloads: 'downloads',
     storeLink: 'Google Play →',
+    items: {
+      hefeedmee: { name: 'Hey Feed Me!', description: 'Feed your cat to the rhythm! Easy to start, addictively fast-paced', genre: 'Rhythm Casual' },
+      meowsurvivors: { name: 'Meow Survivors', description: 'Defeat waves of enemies with auto-firing weapons!', genre: 'Survival Casual' },
+      meowpang: { name: 'MeowPang', description: 'Merge two same cats into a bigger one! Suika-style puzzle', genre: 'Puzzle Casual' },
+    },
   },
   projects: {
     title: 'Games in Progress',
     viewAll: 'View dev process →',
+    items: {
+      meowbeat: { name: 'MeowBeat', tagline: 'A rhythm game where you feed cats to AI-generated music', platform: 'Android first (WebGL later)', phase: 'Phase 2 — Asset/UI Integration' },
+      numlink: { name: 'NumLink', tagline: 'Connect numbers to complete pictures — 200+ brain puzzles', platform: 'Android (Google Play)', phase: 'Phase 6 Complete + UI/UX Polish' },
+    },
   },
   log: {
     title: 'Dev Log',

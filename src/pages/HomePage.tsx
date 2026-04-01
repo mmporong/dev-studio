@@ -100,7 +100,9 @@ export function HomePage() {
           </a>
         </div>
         <div className="home__game-grid">
-          {publishedGames.map((game) => (
+          {publishedGames.map((game) => {
+            const gi = t.games.items[game.id] ?? { name: game.name, description: game.description, genre: game.genre }
+            return (
             <a
               key={game.id}
               className="home__game-card"
@@ -111,11 +113,11 @@ export function HomePage() {
               <div className="home__game-header">
                 <img
                   src={withBasePath(game.icon)}
-                  alt={game.name}
+                  alt={gi.name}
                   className="home__game-icon"
                 />
                 <div>
-                  <h3 className="home__game-name">{game.name}</h3>
+                  <h3 className="home__game-name">{gi.name}</h3>
                   <span
                     className="home__game-badge"
                     style={{
@@ -123,11 +125,11 @@ export function HomePage() {
                       color: game.accent,
                     }}
                   >
-                    {game.genre}
+                    {gi.genre}
                   </span>
                 </div>
               </div>
-              <p className="home__game-desc">{game.description}</p>
+              <p className="home__game-desc">{gi.description}</p>
               <div className="home__game-screenshots">
                 {game.screenshots.map((ss, i) => (
                   <img
@@ -155,7 +157,8 @@ export function HomePage() {
               </div>
               <span className="home__game-store-link">{t.games.storeLink}</span>
             </a>
-          ))}
+            )
+          })}
         </div>
       </section>
 
@@ -168,20 +171,23 @@ export function HomePage() {
           </Link>
         </div>
         <div className="home__project-list">
-          {projects.map((project) => (
+          {projects.map((project) => {
+            const pi = t.projects.items[project.id] ?? { name: project.name, tagline: project.tagline, platform: project.platform, phase: project.phase }
+            return (
             <Link key={project.id} to="/work" className="home__project-card">
               <div className="home__project-top">
                 <div>
-                  <h3>{project.name}</h3>
-                  <p className="home__project-tagline">{project.tagline}</p>
+                  <h3>{pi.name}</h3>
+                  <p className="home__project-tagline">{pi.tagline}</p>
                 </div>
                 <div className="home__project-meta">
-                  <span>{project.platform}</span>
-                  <span>{project.phase}</span>
+                  <span>{pi.platform}</span>
+                  <span>{pi.phase}</span>
                 </div>
               </div>
             </Link>
-          ))}
+            )
+          })}
         </div>
       </section>
 
