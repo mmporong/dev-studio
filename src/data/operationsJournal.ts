@@ -43,6 +43,116 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-04-02T09:00:00-daily-standup',
+    date: '2026-04-02',
+    researchTitle:
+      '📊 4/2 데일리 스탠드업 리서치 — NumLink MVP 70%·MeowBeat 미커밋 해소·Debug.Log 280건·axios 공급망 공격',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 완료. NumLink 세팅 패널·콤보 시스템·보상 계산 신규 구현으로 MVP 70% 달성. MeowBeat 미커밋 34파일 P0 이슈 해소(status clean), GameObject.Find 23건 전량 제거. Debug.Log 총 280건(NumLink 209↑, MeowBeat 71↓). axios npm 공급망 공격 발생(영향 없음). 퍼즐 시장 블루오션 유지, 데스크톱 펫 르네상스 트렌드, ASO 리텐션 기반 알고리즘 전환.',
+    researchItems: [
+      {
+        title: '🎯 Orchestrator — NumLink MVP 70%, MeowBeat P0 해소',
+        description:
+          'NumLink: Settings 패널 생성, 진동 토글, 스프라이트 교체, dead trigger 이벤트 연결 등 다수 커밋. 핵심 매니저 6파일 미커밋 상태(P0). MVP 65%→70%. MeowBeat: 4일 방치 미커밋 34파일 문제 해소(status clean), Packages 삭제 커밋 확인. MVP 40% 유지. agent-office: 안정, 코드 변경 없음.',
+      },
+      {
+        title: '🎮 Game Designer — 데스크톱 펫 르네상스, 하이브리드 수익화 45%',
+        description:
+          '넘버/연결 퍼즐 직접 경쟁작 미발견, 블루오션 유효. 하이브리드 수익화(광고+IAP+구독) 상위 리듬게임 45% 차지. BeatSync AR+AI 난이도 조절로 DAU 35%↑ 사례. 데스크톱 펫 르네상스가 코지 장르 핵심 트렌드 — MeowBeat "리듬+고양이 힐링" 정확히 부합. 솔로 토너먼트 캐주얼 필수 기능 부상.',
+      },
+      {
+        title: '💻 Developer — 콤보 시스템·보상 계산 신규, Unity ECS 코어 승격',
+        description:
+          'NumLink 6파일 변경(+66/-19): 별점 계산 단순화(생명 기반), 콤보 시스템 신규(스트릭 추적), CalculateLevelReward 난이도별 코인 차등, StageClear에 콤보/경과시간 카운트업 애니메이션. TODO 5건 잔존(긴급 없음). Unity 6.4 ECS 코어 승격, Rider 2026.1 출시, CoreCLR 로드맵 발표, Unity Agentic AI 도구 공개.',
+      },
+      {
+        title: '🔍 QA Tester — Debug.Log 280건, MeowBeat 대폭 개선',
+        description:
+          'NumLink Debug.Log 154→209(+55 증가, 개발 중 로그), MeowBeat 119→71(-48 감소). GameObject.Find: MeowBeat 23→0 전량 제거(대폭 개선), NumLink 3건 유지. Input.GetKey NumLink 9건 신규 감지(규칙 위반). 미추적 .meta 2건. 자동화 테스트 여전히 전무. 총 Debug.Log 273→280건.',
+      },
+      {
+        title: '📢 Content Writer — ASO 리텐션 기반 전환, K-인디 글로벌 도약의 해',
+        description:
+          'Apple AI 생성 태그가 스크린샷 텍스트까지 분석 — 비주얼 메타데이터 최적화 필수. Google Play 리텐션 기반 알고리즘 전환(설치 수→유지율). 한국 퍼즐 매출 14% 성장, 2026년 "K-인디 글로벌 도약의 해" 평가. 위시리스트 속도>총량, 소프트 론치 필수. TikTok "버그 실패 영상" 숏폼이 트레일러보다 효과적.',
+      },
+      {
+        title: '⚙️ DevOps — axios 공급망 공격 경보, ESLint 10 대기',
+        description:
+          '빌드 정상(2.49s/483KB, +12KB). axios 1.14.1/0.30.4 RAT 백도어 삽입 공급망 공격 발생(3/31) — agent-office 직접 영향 없으나 간접 의존성 확인 권장. ESLint 10.1.0+react-hooks 7.x 메이저 업데이트 대기. GitHub Actions Node 24 전환 6/2 확정, 사전 테스트 가능. outdated 6개(메이저 4개).',
+      },
+      {
+        title: '🎨 Art Director — 불완전함의 미학, Midjourney v8 Style Creator',
+        description:
+          'Canva 2026 트렌드 "Imperfect by Design" — AI 광택 반동으로 수작업 느낌 프리미엄 가치. NumLink Brutalist 방향 강화 근거. 미니멀 맥시멀리즘 하이브리드 부상, 블루-그린 계열 지배. Midjourney v8 Style Creator로 비주얼 DNA 저장+일관성 유지 파이프라인 가능. 앱 아이콘 Soft 3D 트렌드, 설치 최대 25%↑ 사례.',
+      },
+    ],
+    meetingTitle: '🏢 4/2 데일리 스탠드업 회의 — NumLink 콤보 시스템 검증, MeowBeat 빌드 확인',
+    meetingSummary:
+      'NumLink MVP 70% 달성, 콤보·보상 시스템 QA 필요. MeowBeat P0 해소 확인, 빌드 검증 우선. Debug.Log 총 280건 정리 계획. axios 공급망 공격 간접 의존성 점검. ASO 리텐션 기반 전략 수립 시작.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'NumLink MVP 70% 달성. 미커밋 매니저 6파일 즉시 커밋 P0. MeowBeat 미커밋 해소 확인됐으나 Packages 삭제 후 빌드 정상 여부 검증 필요. 오늘 핵심: NumLink 커밋+Settings 마무리, MeowBeat 빌드 확인.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '넘버/연결 퍼즐 경쟁작 여전히 부재, 블루오션 유효. MeowBeat에 적응형 난이도+데스크톱 펫 아이들 요소 GDD 검토 제안. NumLink 솔로 토너먼트 모드 장기 로드맵에 추가 권고.',
+      },
+      {
+        speaker: 'Developer',
+        note: '콤보 시스템과 보상 계산이 신규 구현됨 — QA 검증 시급. 별점 계산이 타이머→생명 기반으로 단순화되어 밸런스 재확인 필요. CalculateLevelReward 코인 범위(Easy 10~25, Master 50~65) 밸런스 검증 권장.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'MeowBeat 대폭 개선(GameObject.Find 전량 제거, Debug.Log 48건 삭감). 반면 NumLink Debug.Log 55건 증가, Input.GetKey 9건 규칙 위반 신규 감지. 자동화 테스트 전무 상태 지속 — Domain 레이어 TDD 시작 촉구.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'Google Play 리텐션 기반 알고리즘 전환 — NumLink 튜토리얼 완료율이 ASO에 직결. 한국 퍼즐 매출 14% 성장, K-인디 글로벌 도약 환경 조성. 소프트 론치 전략과 TikTok 개발과정 숏폼 파이프라인 구축 권고.',
+      },
+      {
+        speaker: 'DevOps',
+        note: '빌드 정상, 번들 12KB 증가 모니터링. axios 공급망 공격(3/31) 간접 의존성 확인 필요. ESLint 10 마이그레이션과 GitHub Actions Node 24 사전 테스트 이번 주 내 진행 권장.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '"불완전함의 미학" 트렌드가 NumLink Brutalist 방향 강화 근거. Midjourney v8 Style Creator로 프로젝트별 비주얼 DNA 고정 파이프라인 구축 제안. 앱 아이콘 MeowBeat=Soft 3D, NumLink=Retrofuturist 방향.',
+      },
+    ],
+    decisions: [
+      {
+        title: 'P0: NumLink 미커밋 6파일 즉시 커밋',
+        description:
+          'GameManager, NumberManager, PuzzleManager, ResourceManager, GameOverController, StageClearController 커밋하여 작업 유실 방지.',
+      },
+      {
+        title: 'P1: NumLink 콤보·보상 시스템 QA 검증',
+        description:
+          '콤보 리셋 타이밍, CalculateLevelReward 코인 밸런스, 별점 계산 변경사항 테스트.',
+      },
+      {
+        title: 'P1: MeowBeat 빌드 정상 여부 확인',
+        description:
+          'Packages 디렉토리 삭제 후 Unity 빌드가 정상 동작하는지 검증.',
+      },
+      {
+        title: 'P2: axios 간접 의존성 점검',
+        description:
+          'npm ls axios로 agent-office 간접 의존성 확인, 공급망 공격 영향 배제.',
+      },
+      {
+        title: 'P2: Debug.Log 정리 계획 수립',
+        description:
+          'NumLink 209건 + MeowBeat 71건 = 280건. #if UNITY_EDITOR 래핑 또는 커스텀 로거 전환 계획.',
+      },
+      {
+        title: 'P3: ESLint 10 마이그레이션 가이드 검토',
+        description:
+          'ESLint 10.1.0 + react-hooks 7.x + globals 17.x 메이저 업데이트 마이그레이션 계획.',
+      },
+    ],
+  },
+  {
     id: '2026-04-01T09:00:00-daily-standup',
     date: '2026-04-01',
     researchTitle:
