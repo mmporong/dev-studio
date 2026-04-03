@@ -43,6 +43,111 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-04-04T09:00:00-daily-standup',
+    date: '2026-04-04',
+    researchTitle:
+      '📊 4/4 데일리 스탠드업 리서치 — Unity 6.4 출시·모바일 55~60% 점유율·GitHub Actions 4월 업데이트·ASO 유기 다운로드 전략·리듬 퍼즐 장르 융합',
+    researchSummary:
+      '7명 에이전트 직렬 리서치 완료. Unity 6.4 출시(ECS 코어 패키지 통합, Project Auditor 내장, 분기별 지원 업데이트 체계 확립). 모바일 게임 시장 Unity 점유율 55~60% 향해 성장 중, 전체 시장 2027년 1030억 달러 돌파 전망. GitHub Actions 4월 초 업데이트(서비스 컨테이너 진입점 오버라이드, OIDC 커스텀 속성, VNET 장애조치 퍼블릭 프리뷰). ASO에서 앱 다운로드의 65% 이상이 스토어 검색 경유 — 유기 ASO가 인디 개발자 핵심 전략. 리듬 게임에 RPG·퍼즐·비주얼노벨 요소 융합 트렌드 가속, MeowBeat 장르 블렌딩 방향 유효. Stage Tour(RedOctane) Fall 2026 출시 예정으로 플라스틱 악기 리듬 게임 부활 조짐.',
+    researchItems: [
+      {
+        title: '🎯 Orchestrator — agent-office 정상, NumLink·MeowBeat 로컬 부재 P0 지속',
+        description:
+          'agent-office 최신 커밋 4/3 데일리 스탠드업(60f6686). NumLink·MeowBeat 로컬 디렉토리 여전히 부재 — 어제 P0 미해결 상태. 어제 결정사항(TDD 도입, Unity 리스크 모니터링, GitHub Actions 보안 대응) 진행 여부 미확인. 오늘 우선순위: 프로젝트 로컬 복구 P0 재지정.',
+      },
+      {
+        title: '🎮 Game Designer — 퍼즐·리듬 장르 융합, Stage Tour 리듬 게임 부활, AI 적응형 난이도',
+        description:
+          '2026 퍼즐 게임 핵심 트렌드: AI 적응형 난이도(실시간 행동 분석·커스텀 퍼즐 생성), 소셜 멀티플레이(공동 해결·라이브 이벤트), VR/MR 몰입형 퍼즐. 리듬 게임 트렌드: 모바일 프리투플레이 급성장, RPG·퍼즐·비주얼노벨과 장르 블렌딩 가속. Stage Tour(RedOctane) Fall 2026 출시 — 플라스틱 악기 리듬 게임 부활 조짐. MeowBeat의 "고양이+리듬+퍼즐" 혼합 전략 트렌드 부합 확인.',
+      },
+      {
+        title: '💻 Developer — Unity 6.4 출시, ECS 코어 통합, Unity Studio 브라우저 도구 공개',
+        description:
+          'Unity 6.4 출시: Entities Component System(ECS)이 코어 패키지로 에디터 직접 통합, Project Auditor 기본 내장. Adaptive Performance가 PS4/PS5/Xbox Series X|S 콘솔 지원 추가. 분기별 지원 업데이트 체계(6.7 LTS까지) 확립으로 예측 가능한 릴리즈 일정. Unity Studio — 신규 브라우저 기반 인터랙티브 3D 애플리케이션 제작 도구 공개. AI 에이전트가 프로파일러 데이터 분석·UI Toolkit 레이아웃 지원·에셋 생성 지원 예정. 2026 로드맵 테마: "화려함보다 안정성".',
+      },
+      {
+        title: '🔍 QA Tester — 자동화 테스트 부재 4일째, AI 플레이테스팅 트렌드 지속',
+        description:
+          'NumLink·MeowBeat 자동화 테스트 전무 상태 4일 연속. Unity 6.4 Project Auditor 내장으로 코드 품질 분석 도구 기본 제공 — 즉시 활용 가능. AI 기반 self-healing 테스트 시장 확대 중. Debug.Log 280건·Input.GetKey 9건 여전히 미정리. 로컬 복구 후 Domain 레이어 TDD 즉시 착수 촉구(4일 연속 지적).',
+      },
+      {
+        title: '📢 Content Writer — ASO 65% 스토어 검색 경유, 평점 4.0 이상 필수, 지역화 전략',
+        description:
+          '2026 ASO 핵심: 앱 다운로드 65%+ 스토어 직접 검색 경유 — 유기 ASO가 인디 개발자 비용 효율 최고 채널. 77% 사용자가 설치 전 리뷰 최소 1건 확인, 4.0 미만 앱은 검색 상위권에서 사실상 배제. 지역화(단순 번역 아닌 문화 맞춤)가 CTR·전환율·리텐션 동시 향상. 전환율 2~3%만 개선해도 광고 없이 수백 건 추가 유기 설치. 영상 프리뷰·A/B 테스트·시즌 키워드 조합이 2026 ASO 표준.',
+      },
+      {
+        title: '⚙️ DevOps — GitHub Actions 4월 초 업데이트, VNET 장애조치 프리뷰, 가격 인하',
+        description:
+          'GitHub Actions 4/2 업데이트: 서비스 컨테이너 진입점·커맨드 오버라이드 지원, OIDC 커스텀 속성 추가, Azure VNET 장애조치 네트워크 퍼블릭 프리뷰. 가격 변경: 러너 요금 최대 39% 인하(2026년 1월부터), 셀프호스트 러너 $0.002/분 플랫폼 요금 신설(3월부터). 보안 로드맵: 의존성 락킹(commit SHA), L7 이그레스 방화벽, Actions Data Stream(S3/Azure Event Hub). 시크릿 관리: 쓰기 접근과 시크릿 관리 권한 분리 예정.',
+      },
+      {
+        title: '🎨 Art Director — Unity 모바일 UI 3D화, 다이나믹 타이포, 폴더블 대응 필수',
+        description:
+          '2026 모바일 게임 UI/UX: 3D 요소 도입으로 리텐션·몰입감 강화, 환경 통합 인터페이스(UI가 게임 세계에 녹아듦) 주류화. 다이나믹 아이콘·반응형 타이포그래피. 폴더블 디바이스·태블릿 대응 크로스 디바이스 레이아웃 필수화. AI 개인화 적응형 레이아웃 상용화 시작. NumLink Brutalist + 환경 통합 UI, MeowBeat 내러티브 UI(고양이 캐릭터 통합) 방향 유효 재확인.',
+      },
+    ],
+    meetingTitle: '🏢 4/4 데일리 스탠드업 회의 — Unity 6.4 즉시 적용 검토, ASO 전략 수립, 로컬 복구 P0 재지정',
+    meetingSummary:
+      'Unity 6.4 출시로 Project Auditor 즉시 활용 가능 — QA 리스크 부분 해소 기대. 리듬·퍼즐 장르 융합 트렌드 MeowBeat 방향 유효 재확인. GitHub Actions 요금 인하로 CI/CD 비용 절감 효과. ASO 전략(평점 관리·지역화·영상 프리뷰) 출시 전 체계화 필요. NumLink·MeowBeat 로컬 복구 P0 4일째 미해결 — 오늘 반드시 완료.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'NumLink·MeowBeat 로컬 부재 P0 4일째 미해결. agent-office 정상 가동 유지. 오늘 절대 우선순위: 로컬 복구 후 어제 P0/P1 이행 상태 점검. Unity 6.4 업데이트 검토는 P2.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: 'MeowBeat "고양이+리듬+퍼즐" 장르 블렌딩 방향이 2026 트렌드와 정확히 일치. Stage Tour 출시 전 MeowBeat 선점 유리. NumLink AI 적응형 난이도 MVP 이후 로드맵 유지. 리듬 RPG·비주얼노벨 믹싱 참고할 레퍼런스 스터디 추가.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'Unity 6.4 ECS 코어 통합·Project Auditor 내장은 기존 프로젝트에 즉시 영향 없으나 업그레이드 검토 P2. Unity Studio 브라우저 도구 향후 프로토타이핑 활용 가능. 2026 로드맵 "안정성 우선" 방향 — Unity 지속 사용 결정 유지.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '자동화 테스트 부재 4일 연속 지적. Unity 6.4 Project Auditor 내장으로 코드 품질 분석 즉시 가능 — 로컬 복구 후 첫 번째 액션으로 실행 요청. Domain 레이어 TDD 오늘 착수하지 않으면 P0 격상 검토.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'ASO 전략 핵심 3가지: ①평점 4.0 이상 유지 체계 수립 ②출시 12~18개월 전 스토어 페이지 등록 ③지역화(KR·EN·JP) 우선 적용. NumLink·MeowBeat 각각 스토어 메타데이터 초안 작성 시작 권고. 비주얼 아이덴티티 통일 재강조.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'GitHub Actions 러너 요금 최대 39% 인하 확인 — agent-office CI/CD 비용 절감 효과. VNET 장애조치 프리뷰·OIDC 커스텀 속성 적용 검토. 셀프호스트 러너 $0.002/분 요금 신설(3월~) 영향 없음(현재 GitHub 호스트 사용). 보안: 액션 SHA 고정 점검 P2.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '3D UI 요소 도입·환경 통합 인터페이스 트렌드 재확인. NumLink Brutalist + 환경 통합, MeowBeat 내러티브 UI 방향 유지. 폴더블 대응 레이아웃은 MVP 이후 검토. 다이나믹 타이포그래피 적용 시 Unity TextMeshPro 활용 권고.',
+      },
+    ],
+    decisions: [
+      {
+        title: 'P0: NumLink·MeowBeat 로컬 디렉토리 복구 (4일째 미해결, 오늘 완료 필수)',
+        description:
+          'GitHub 클론 또는 경로 재설정으로 두 프로젝트 로컬 환경 즉시 복구. 복구 후 어제 P0/P1 결정사항 이행 상태 즉시 점검.',
+      },
+      {
+        title: 'P1: Domain 레이어 TDD 도입 착수 (로컬 복구 직후 즉시)',
+        description:
+          '4일 연속 지적 사항. 로컬 복구 후 NumLink Domain 레이어 유닛 테스트 TDD 방식으로 즉시 시작. Project Auditor도 실행하여 코드 품질 현황 파악.',
+      },
+      {
+        title: 'P1: Unity 6.4 업그레이드 검토',
+        description:
+          'ECS 코어 통합·Project Auditor 내장 등 주요 변경사항 검토. 기존 프로젝트 URP 기반 호환성 확인 후 업그레이드 일정 결정.',
+      },
+      {
+        title: 'P2: ASO 전략 문서화 착수',
+        description:
+          'NumLink·MeowBeat 각각 스토어 메타데이터 초안 작성. 평점 관리 체계·지역화(KR·EN·JP) 우선순위 정의. 출시 12~18개월 전 마케팅 파이프라인 계획.',
+      },
+      {
+        title: 'P2: GitHub Actions 보안 업데이트 적용',
+        description:
+          'OIDC 커스텀 속성·액션 SHA 고정 점검. 요금 인하(39%) 효과 확인. 셀프호스트 러너 전환 불필요(현재 GitHub 호스트 유지).',
+      },
+    ],
+  },
+  {
     id: '2026-04-03T09:00:00-daily-standup',
     date: '2026-04-03',
     researchTitle:
