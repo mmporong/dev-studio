@@ -43,6 +43,116 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-04-03T09:00:00-daily-standup',
+    date: '2026-04-03',
+    researchTitle:
+      '📊 4/3 데일리 스탠드업 리서치 — Unity HDRP 유지보수 전환·Mewgenics 100만장·GitHub Actions 보안 강화·퍼즐 로직장르 19%↑',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 완료. Unity HDRP 유지보수 모드 전환으로 개발자 이탈 가속(1000+명 Godot 전환), URP 집중 전략 확인 — NumLink/MeowBeat는 URP 사용으로 영향 없음. Mewgenics(고양이 전술 로그라이크) 6시간 만에 15만장, 1주 100만장 판매로 2026 첫 대형 인디 히트. GitHub Actions 2026 보안 로드맵 발표(이그레스 방화벽, npm 토큰 90일 수명 제한). 퍼즐 로직 장르 다운로드 19% YoY 증가, AI 적응형 난이도가 차별화 핵심. 인디 게임 시장 48.5억→55.4억 달러(CAGR 14.3%). Self-healing 테스트 자동화 트렌드 부상.',
+    researchItems: [
+      {
+        title: '🎯 Orchestrator — 프로젝트 현황 점검, NumLink/MeowBeat 로컬 부재',
+        description:
+          'NumLink·MeowBeat 로컬 디렉토리 현재 부재 — 클론 또는 경로 확인 필요(P0). agent-office만 정상 가동 중(최근 커밋: 4/2 데일리 스탠드업). 어제 결정사항 P0(NumLink 미커밋 6파일)·P1(콤보·보상 QA)·P1(MeowBeat 빌드 확인) 진행 상태 미확인. .omc 상태 파일 변경 감지(세션 파일 4개 신규).',
+      },
+      {
+        title: '🎮 Game Designer — 로직 퍼즐 19%↑, Mewgenics 고양이 게임 100만장 돌파',
+        description:
+          '로직 퍼즐 다운로드 YoY 19% 증가, 두뇌 훈련·IQ 향상 수요 급증. 직소 퍼즐도 21%↑(힐링 트렌드). Mewgenics(고양이 전술 로그라이크) 2/10 출시 후 1주 100만장, OpenCritic 89점 Must-Play — 고양이 테마 게임 시장 검증. AI 적응형 난이도가 리텐션 핵심 차별화 요소. Royal Match 월 1.23억 달러로 퍼즐 1위 유지, 하이브리드 수익화(광고+IAP) ARPU 28% 우위 지속.',
+      },
+      {
+        title: '💻 Developer — Unity HDRP 유지보수 전환, 1000+명 Godot 이탈',
+        description:
+          'Unity HDRP 2/25 유지보수 모드 선언 — 신기능 중단, 버그 수정만. 2023 Runtime Fee 후유증과 합쳐 1000+명 개발자 이탈(Godot 4.4 대안 부상). URP가 Unity 유일 활성 렌더 파이프라인으로 집중. NumLink/MeowBeat은 URP 기반으로 직접 영향 없으나, Unity 생태계 축소 리스크 모니터링 필요. Unity Vector AI 광고 플랫폼 매출 YoY 72%↑, 주가는 56% 하락.',
+      },
+      {
+        title: '🔍 QA Tester — Self-healing 테스트 자동화, AI 플레이테스팅 트렌드',
+        description:
+          'AI 기반 self-healing 테스트 자동화 부상 — 앱 변경 시 테스트 스크립트 자동 수정. AI 플레이테스팅이 사람 테스터 보완(이상 탐지, 자동 회귀 테스트). 클라우드 게임 테스팅 시장 105억 달러. 게임 QA 아웃소싱 시장 25억 달러(CAGR 15%). NumLink/MeowBeat 자동화 테스트 전무 상태 지속 — 최소 Domain 레이어 유닛 테스트 도입 시급.',
+      },
+      {
+        title: '📢 Content Writer — 인디 시장 55.4억$, 비주얼 아이덴티티 통일 필수',
+        description:
+          '인디 게임 시장 2025년 48.5억→2026년 55.4억 달러(+14.3%). Steam 위시리스트 속도가 노출 트리거 — 출시 12~18개월 전 마케팅 시작 권장. 스토어 캡슐·트위터 헤더·디스코드 배너·트레일러 썸네일 비주얼 통일이 핵심. "클립 가능한 순간"(유머·실패·긴장) 최적화가 숏폼 마케팅 성공 열쇠. ASO는 필수이나 차별화 불가 — 외부 트래픽 유입이 관건.',
+      },
+      {
+        title: '⚙️ DevOps — GitHub Actions 이그레스 방화벽, npm 토큰 90일 제한',
+        description:
+          'GitHub Actions 2026 보안 로드맵: 러너 이그레스 방화벽(L7, VM 외부 작동), Actions Data Stream 관측성, 보안 기본값 강화. npm 보안: 클래식 토큰 신규 생성 불가, 세분화 토큰 90일 수명 제한, 쓰기 토큰 2FA 기본 요구. Trusted Publishing(OIDC) + Provenance Attestation 자동 생성. Spring 2026 OSS 공급망 공격(tj-actions, Nx, trivy-action) 교훈으로 CI/CD 자체가 공격 타겟 인식 확산.',
+      },
+      {
+        title: '🎨 Art Director — 스토리텔링 UI, 환경 통합 인터페이스, 3D 몰입감',
+        description:
+          '2026 모바일 게임 UI/UX 핵심 트렌드: UI가 스토리텔링 매체로 진화(메뉴↔게임플레이 매끄러운 전환). 환경 통합 인터페이스(UI가 게임 세계에 녹아듦). 고급 제스처·모션(스와이프=장애물 제거, 핀치=3D 시점 조절). 다이나믹 아이콘·타이포그래피. 폴더블/태블릿 크로스 디바이스 반응형 필수. AI 개인화 적응형 레이아웃. 3D 요소로 몰입감·리텐션 강화.',
+      },
+    ],
+    meetingTitle: '🏢 4/3 데일리 스탠드업 회의 — 프로젝트 로컬 복구 P0, Unity 생태계 모니터링, 테스트 자동화 도입',
+    meetingSummary:
+      'NumLink·MeowBeat 로컬 디렉토리 부재 확인 — 클론/경로 복구 P0. Unity HDRP 유지보수 전환으로 URP 집중 확정, 프로젝트 직접 영향 없으나 생태계 리스크 모니터링. Mewgenics 100만장 성공으로 고양이 테마 시장 검증. GitHub Actions 보안 강화·npm 토큰 정책 변경 대응 필요. 자동화 테스트 도입 재촉구.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'NumLink·MeowBeat 로컬 디렉토리 부재 — 클론 또는 경로 재설정 P0. 어제 결정사항(미커밋 6파일, 콤보 QA, MeowBeat 빌드) 진행 확인 불가. agent-office 정상 가동. 오늘 핵심: 프로젝트 로컬 복구 후 어제 P0/P1 이행 상태 점검.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '로직 퍼즐 다운로드 19% 성장 — NumLink 시장 타이밍 양호. Mewgenics 100만장 돌파로 "고양이+전략" 조합 시장 검증 완료 — MeowBeat "고양이+리듬" 조합도 유효. AI 적응형 난이도를 NumLink MVP 이후 우선 검토 권고.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'Unity HDRP 유지보수 전환, URP 유일 활성 파이프라인 확정. NumLink/MeowBeat URP 기반이라 직접 영향 없으나 Unity 주가 56% 하락·개발자 이탈 등 장기 생태계 리스크 존재. Godot 4.4 대안으로 급부상 중 — 차기 프로젝트 엔진 선택 시 비교 검토 필요.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '자동화 테스트 전무 상태 3일째 지적. AI self-healing 테스트·자동 플레이테스팅 트렌드에도 불구하고 기본 유닛 테스트조차 없음. 프로젝트 로컬 복구 후 Domain 레이어 TDD 즉시 시작 촉구. Debug.Log 280건 정리도 미진행.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '인디 시장 55.4억 달러(+14.3%) 성장세. Steam 위시리스트 속도>총량 재확인. 비주얼 아이덴티티 통일(스토어·SNS·배너 일관성)이 인디 마케팅 핵심. NumLink·MeowBeat 각각 비주얼 DNA 확립 후 프리론치 마케팅 파이프라인 구축 시작 권고.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'GitHub Actions 이그레스 방화벽·npm 토큰 90일 제한 정책 대응 필요. agent-office CI/CD에 Trusted Publishing(OIDC) 전환 검토. Spring 2026 OSS 공급망 공격 교훈 — 의존성 lockfile 검증, 액션 SHA 고정 강화. 빌드 정상 유지 중.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '2026 UI 트렌드: 스토리텔링 UI·환경 통합·3D 몰입감. NumLink Brutalist + 환경 통합 UI로 차별화 가능. MeowBeat은 고양이 캐릭터를 UI에 자연스럽게 녹이는 "내러티브 UI" 적용 제안. 폴더블 대응 반응형 레이아웃도 고려.',
+      },
+    ],
+    decisions: [
+      {
+        title: 'P0: NumLink·MeowBeat 로컬 디렉토리 복구',
+        description:
+          'GitHub에서 클론하거나 경로 재설정하여 두 프로젝트 로컬 환경 복구. 어제 P0/P1 결정사항 이행 상태 즉시 점검.',
+      },
+      {
+        title: 'P1: Unity 생태계 리스크 모니터링 체계 수립',
+        description:
+          'HDRP 유지보수 전환·개발자 이탈·주가 하락 등 Unity 리스크 정기 모니터링. URP 로드맵 추적, 차기 프로젝트 Godot 4.4 비교 검토 시작.',
+      },
+      {
+        title: 'P1: Domain 레이어 TDD 도입 착수',
+        description:
+          '프로젝트 복구 후 NumLink Domain 레이어 유닛 테스트 TDD 방식으로 즉시 시작. AI self-healing 테스트 파이프라인은 중기 로드맵.',
+      },
+      {
+        title: 'P2: GitHub Actions 보안 정책 대응',
+        description:
+          'npm 토큰 90일 제한·Trusted Publishing 전환 검토. 액션 SHA 고정 강화, lockfile 검증 프로세스 도입.',
+      },
+      {
+        title: 'P2: 비주얼 아이덴티티 통일 작업 시작',
+        description:
+          'NumLink(Retrofuturist/Brutalist)·MeowBeat(Soft 3D/내러티브 UI) 각각 비주얼 DNA 확립. 스토어·SNS·배너 일관성 확보.',
+      },
+      {
+        title: 'P3: AI 적응형 난이도 GDD 검토',
+        description:
+          'NumLink MVP 완료 후 AI 기반 동적 난이도 조절 시스템 GDD 검토 착수. 로직 퍼즐 리텐션 핵심 차별화 요소.',
+      },
+    ],
+  },
+  {
     id: '2026-04-02T09:00:00-daily-standup',
     date: '2026-04-02',
     researchTitle:
