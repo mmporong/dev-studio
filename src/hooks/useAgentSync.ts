@@ -50,7 +50,7 @@ function isValidPayload(data: unknown): data is StatusPayload {
 export function useAgentSync(): UseAgentSyncResult {
   const [syncMode, setSyncMode] = useState<SyncMode>(() => {
     try {
-      const stored = localStorage.getItem('agent-office-sync-mode')
+      const stored = localStorage.getItem('dev-studio-sync-mode')
       return stored === 'manual' ? 'manual' : 'auto'
     } catch {
       return 'auto'
@@ -89,7 +89,7 @@ export function useAgentSync(): UseAgentSyncResult {
   const handleSetSyncMode = useCallback((mode: SyncMode) => {
     setSyncMode(mode)
     try {
-      localStorage.setItem('agent-office-sync-mode', mode)
+      localStorage.setItem('dev-studio-sync-mode', mode)
     } catch { /* noop */ }
   }, [])
 

@@ -34,7 +34,7 @@ jobs:
       - name: Build site
         run: npm run build
         env:
-          VITE_BASE_PATH: /agent-office/
+          VITE_BASE_PATH: /dev-studio/
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

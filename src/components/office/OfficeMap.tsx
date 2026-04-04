@@ -226,7 +226,7 @@ export function OfficeMap({
 
         <div className="office-room__plaque">
           <strong>LIM Studio</strong>
-          <span>Agent Office</span>
+          <span>Dev Studio</span>
         </div>
       </div>
     </div>

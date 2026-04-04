@@ -22,7 +22,7 @@ export function Footer() {
         <div className="footer__bottom">
           <p className="footer__copy">{t.footer.copy}</p>
           <img
-            src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fmmporong.github.io%2Fagent-office&label=visitors&countColor=%233182f6&style=flat"
+            src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fmmporong.github.io%2Fdev-studio&label=visitors&countColor=%233182f6&style=flat"
             alt="visitors"
           />
         </div>

@@ -29,7 +29,7 @@ export function PlaygroundPage() {
   return (
     <div className="playground page-enter">
       <PhaseHeader
-        studioName="LIM Studio Agent Office"
+        studioName="LIM Studio Dev Studio"
         projectName={currentProject.name}
         phaseLabel={phaseLabel}
         riskLabel={riskLabel}

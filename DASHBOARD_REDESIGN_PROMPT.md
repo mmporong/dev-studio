@@ -1,4 +1,4 @@
-# Agent Office 대시보드 전면 리디자인
+# Dev Studio 대시보드 전면 리디자인
 
 ## 프로젝트 위치
 `C:\Users\LIMMM\unity-webgl-wrapper`
@@ -51,7 +51,7 @@ src/
 - 히어로 영역: 개발자 소개 (mmporong / LIM Studio)
 - 현재 프로젝트 카드 (MeowBeat 상태 요약)
 - 최근 업데이트 타임라인 (최근 저널에서 추출)
-- Agent Office 미니맵 (축소된 오피스 맵, 클릭하면 /office로)
+- Dev Studio 미니맵 (축소된 오피스 맵, 클릭하면 /office로)
 
 #### 크로니클 (`/chronicle`)
 - **게시판 형태** — 카드 리스트 or 타임라인 피드

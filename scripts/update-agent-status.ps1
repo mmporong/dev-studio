@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-  Agent Office status.json 업데이트 스크립트
+  Dev Studio status.json 업데이트 스크립트
 
 .PARAMETER AgentId
   에이전트 ID (orchestrator, game-designer, developer, qa-tester, content-writer, devops, art-director)

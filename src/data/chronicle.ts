@@ -53,14 +53,14 @@ export const chroniclePhases: ChroniclePhase[] = [
   {
     title: '3. 에셋 정리 + 대시보드 업데이트',
     summary:
-      'Cat 폴더 4개 중복을 1개로 통합하고, 서드파티 분리, 컨벤션 정리를 완료했다. Agent Office 대시보드도 MeowBeat 기준으로 전환했다.',
+      'Cat 폴더 4개 중복을 1개로 통합하고, 서드파티 분리, 컨벤션 정리를 완료했다. Dev Studio 대시보드도 MeowBeat 기준으로 전환했다.',
     implementationDetail:
       'git mv로 GUID 보존하며 폴더 구조를 정리했다. Cat→_Legacy/Cat, Cat_2→Cats(번호 제거), 개발 리소스→_Dev, Bolt→ThirdParty, Sounds→Audio 등 925파일이 rename 처리됐다.',
     coreLogic:
       'Unity는 GUID 기반 참조이므로 git mv로 .meta 파일과 함께 이동하면 참조가 유지된다. 코드에서 스프라이트 경로 하드코딩이 없음을 사전 확인한 뒤 실행했다.',
     outcomes: [
       { title: '폴더 구조 정리', description: 'Cats/{Idle,Sleep,Wink,Move,Back,Hand,Run}, _Dev/, ThirdParty/, Audio/ 구조로 정리됐다.' },
-      { title: '대시보드 전환', description: 'Agent Office를 Cat Merge Cafe에서 MeowBeat 기준으로 데이터와 마일스톤을 업데이트했다.' },
+      { title: '대시보드 전환', description: 'Dev Studio를 Cat Merge Cafe에서 MeowBeat 기준으로 데이터와 마일스톤을 업데이트했다.' },
     ],
   },
 ]

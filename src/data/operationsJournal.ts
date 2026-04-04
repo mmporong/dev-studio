@@ -76,9 +76,9 @@ export const seedJournalEntries: JournalEntry[] = [
           'TikTok 유기적 도달률 사실상 소멸(-98.6% 실사례) → YouTube Shorts + Instagram Reels 크로스포스팅 전략으로 전환 필수. Google Play 개발자 신원인증 2026년 9월 의무화 — 미완료 시 앱 설치 불가, 즉시 Play Console에서 완료 필요. Poki WebGL 초기 로드 20MB 이하 기술 요건 필수. AdMob 데이터 수집 항목 Play Console 데이터 안전 공시란 정확 기재 필요.',
       },
       {
-        title: '⚙️ DevOps — GameCI+fastlane 표준·privacy-policy docs/ 배포·agent-office 파이프라인 건전',
+        title: '⚙️ DevOps — GameCI+fastlane 표준·privacy-policy docs/ 배포·dev-studio 파이프라인 건전',
         description:
-          'Unity Android 빌드 자동화 표준: GameCI(ubuntu-latest) + fastlane supply → Play Store internal track. 최초 1회 수동 업로드 후 자동화 가능. NumLink 개인정보처리방침: docs/ 폴더 → mmporong.github.io/numlink/privacy-policy (설정 1시간). agent-office 배포 파이프라인 건전 — 필수 수정 없음(OIDC 기반, npm ci, concurrency 설정 정상).',
+          'Unity Android 빌드 자동화 표준: GameCI(ubuntu-latest) + fastlane supply → Play Store internal track. 최초 1회 수동 업로드 후 자동화 가능. NumLink 개인정보처리방침: docs/ 폴더 → mmporong.github.io/numlink/privacy-policy (설정 1시간). dev-studio 배포 파이프라인 건전 — 필수 수정 없음(OIDC 기반, npm ci, concurrency 설정 정상).',
       },
       {
         title: '🎨 Art Director — 마스코트 아이콘 전환율 +25%·AI 3단계 워크플로·Neo-Brutalism 확정',
@@ -112,7 +112,7 @@ export const seedJournalEntries: JournalEntry[] = [
       },
       {
         speaker: 'DevOps',
-        note: 'NumLink 개인정보처리방침 GitHub Pages 배포가 Google Play 등록 최초 블로커. docs/ 폴더 방식으로 1~2시간 내 완료 가능. agent-office 파이프라인은 건전 — 오늘 배포 이후 추가 작업 불필요.',
+        note: 'NumLink 개인정보처리방침 GitHub Pages 배포가 Google Play 등록 최초 블로커. docs/ 폴더 방식으로 1~2시간 내 완료 가능. dev-studio 파이프라인은 건전 — 오늘 배포 이후 추가 작업 불필요.',
       },
       {
         speaker: 'Art Director',
@@ -163,7 +163,7 @@ export const seedJournalEntries: JournalEntry[] = [
       {
         title: '🎯 Orchestrator — 프로젝트 현황 점검, NumLink/MeowBeat 로컬 부재',
         description:
-          'NumLink·MeowBeat 로컬 디렉토리 현재 부재 — 클론 또는 경로 확인 필요(P0). agent-office만 정상 가동 중(최근 커밋: 4/2 데일리 스탠드업). 어제 결정사항 P0(NumLink 미커밋 6파일)·P1(콤보·보상 QA)·P1(MeowBeat 빌드 확인) 진행 상태 미확인. .omc 상태 파일 변경 감지(세션 파일 4개 신규).',
+          'NumLink·MeowBeat 로컬 디렉토리 현재 부재 — 클론 또는 경로 확인 필요(P0). dev-studio만 정상 가동 중(최근 커밋: 4/2 데일리 스탠드업). 어제 결정사항 P0(NumLink 미커밋 6파일)·P1(콤보·보상 QA)·P1(MeowBeat 빌드 확인) 진행 상태 미확인. .omc 상태 파일 변경 감지(세션 파일 4개 신규).',
       },
       {
         title: '🎮 Game Designer — 로직 퍼즐 19%↑, Mewgenics 고양이 게임 100만장 돌파',
@@ -202,7 +202,7 @@ export const seedJournalEntries: JournalEntry[] = [
     meetingItems: [
       {
         speaker: 'Orchestrator',
-        note: 'NumLink·MeowBeat 로컬 디렉토리 부재 — 클론 또는 경로 재설정 P0. 어제 결정사항(미커밋 6파일, 콤보 QA, MeowBeat 빌드) 진행 확인 불가. agent-office 정상 가동. 오늘 핵심: 프로젝트 로컬 복구 후 어제 P0/P1 이행 상태 점검.',
+        note: 'NumLink·MeowBeat 로컬 디렉토리 부재 — 클론 또는 경로 재설정 P0. 어제 결정사항(미커밋 6파일, 콤보 QA, MeowBeat 빌드) 진행 확인 불가. dev-studio 정상 가동. 오늘 핵심: 프로젝트 로컬 복구 후 어제 P0/P1 이행 상태 점검.',
       },
       {
         speaker: 'Game Designer',
@@ -222,7 +222,7 @@ export const seedJournalEntries: JournalEntry[] = [
       },
       {
         speaker: 'DevOps',
-        note: 'GitHub Actions 이그레스 방화벽·npm 토큰 90일 제한 정책 대응 필요. agent-office CI/CD에 Trusted Publishing(OIDC) 전환 검토. Spring 2026 OSS 공급망 공격 교훈 — 의존성 lockfile 검증, 액션 SHA 고정 강화. 빌드 정상 유지 중.',
+        note: 'GitHub Actions 이그레스 방화벽·npm 토큰 90일 제한 정책 대응 필요. dev-studio CI/CD에 Trusted Publishing(OIDC) 전환 검토. Spring 2026 OSS 공급망 공격 교훈 — 의존성 lockfile 검증, 액션 SHA 고정 강화. 빌드 정상 유지 중.',
       },
       {
         speaker: 'Art Director',
@@ -273,7 +273,7 @@ export const seedJournalEntries: JournalEntry[] = [
       {
         title: '🎯 Orchestrator — NumLink MVP 70%, MeowBeat P0 해소',
         description:
-          'NumLink: Settings 패널 생성, 진동 토글, 스프라이트 교체, dead trigger 이벤트 연결 등 다수 커밋. 핵심 매니저 6파일 미커밋 상태(P0). MVP 65%→70%. MeowBeat: 4일 방치 미커밋 34파일 문제 해소(status clean), Packages 삭제 커밋 확인. MVP 40% 유지. agent-office: 안정, 코드 변경 없음.',
+          'NumLink: Settings 패널 생성, 진동 토글, 스프라이트 교체, dead trigger 이벤트 연결 등 다수 커밋. 핵심 매니저 6파일 미커밋 상태(P0). MVP 65%→70%. MeowBeat: 4일 방치 미커밋 34파일 문제 해소(status clean), Packages 삭제 커밋 확인. MVP 40% 유지. dev-studio: 안정, 코드 변경 없음.',
       },
       {
         title: '🎮 Game Designer — 데스크톱 펫 르네상스, 하이브리드 수익화 45%',
@@ -298,7 +298,7 @@ export const seedJournalEntries: JournalEntry[] = [
       {
         title: '⚙️ DevOps — axios 공급망 공격 경보, ESLint 10 대기',
         description:
-          '빌드 정상(2.49s/483KB, +12KB). axios 1.14.1/0.30.4 RAT 백도어 삽입 공급망 공격 발생(3/31) — agent-office 직접 영향 없으나 간접 의존성 확인 권장. ESLint 10.1.0+react-hooks 7.x 메이저 업데이트 대기. GitHub Actions Node 24 전환 6/2 확정, 사전 테스트 가능. outdated 6개(메이저 4개).',
+          '빌드 정상(2.49s/483KB, +12KB). axios 1.14.1/0.30.4 RAT 백도어 삽입 공급망 공격 발생(3/31) — dev-studio 직접 영향 없으나 간접 의존성 확인 권장. ESLint 10.1.0+react-hooks 7.x 메이저 업데이트 대기. GitHub Actions Node 24 전환 6/2 확정, 사전 테스트 가능. outdated 6개(메이저 4개).',
       },
       {
         title: '🎨 Art Director — 불완전함의 미학, Midjourney v8 Style Creator',
@@ -358,7 +358,7 @@ export const seedJournalEntries: JournalEntry[] = [
       {
         title: 'P2: axios 간접 의존성 점검',
         description:
-          'npm ls axios로 agent-office 간접 의존성 확인, 공급망 공격 영향 배제.',
+          'npm ls axios로 dev-studio 간접 의존성 확인, 공급망 공격 영향 배제.',
       },
       {
         title: 'P2: Debug.Log 정리 계획 수립',
@@ -383,7 +383,7 @@ export const seedJournalEntries: JournalEntry[] = [
       {
         title: '🎯 Orchestrator — 프로젝트 상태 긴급 점검',
         description:
-          'NumLink: feature/uitoolkit 브랜치에서 레벨선택 UI 버그 3건 수정 완료(오늘 08:38). main 머지 시점 판단 필요. MeowBeat: 마지막 커밋 3/28, 미커밋 34파일(수정 14+미추적 20) 4일째 방치 — .meta 19건 포함으로 빌드 깨짐 확정적. agent-office: Hardboiled Studio 리브랜딩 완료, 빌드/배포 정상.',
+          'NumLink: feature/uitoolkit 브랜치에서 레벨선택 UI 버그 3건 수정 완료(오늘 08:38). main 머지 시점 판단 필요. MeowBeat: 마지막 커밋 3/28, 미커밋 34파일(수정 14+미추적 20) 4일째 방치 — .meta 19건 포함으로 빌드 깨짐 확정적. dev-studio: Hardboiled Studio 리브랜딩 완료, 빌드/배포 정상.',
       },
       {
         title: '🎮 Game Designer — 퍼즐 122억$, 리듬 CAGR 9.1%, 하이브리드 수익화 표준',
@@ -408,7 +408,7 @@ export const seedJournalEntries: JournalEntry[] = [
       {
         title: '⚙️ DevOps — 빌드 정상, Node 20 EOL 대응 완료, ESLint v10 대기',
         description:
-          'agent-office 빌드 성공(284ms, JS 471KB). 핵심 의존성(React 19, Vite 8, TS 6) 최신 유지. Node.js 20 EOL 4/30이나 CI v22로 대응 완료. ESLint v10 메이저 업데이트 출시 — 분기 내 마이그레이션 계획 권장. GitHub Actions 6/2 Node 24 강제 전환 예정, 서드파티 액션 호환성 사전 점검 필요.',
+          'dev-studio 빌드 성공(284ms, JS 471KB). 핵심 의존성(React 19, Vite 8, TS 6) 최신 유지. Node.js 20 EOL 4/30이나 CI v22로 대응 완료. ESLint v10 메이저 업데이트 출시 — 분기 내 마이그레이션 계획 권장. GitHub Actions 6/2 Node 24 강제 전환 예정, 서드파티 액션 호환성 사전 점검 필요.',
       },
       {
         title: '🎨 Art Director — Raw 미학 트렌드, 코지 게임 675%↑, AI 에셋 도구 다양화',
@@ -422,7 +422,7 @@ export const seedJournalEntries: JournalEntry[] = [
     meetingItems: [
       {
         speaker: 'Orchestrator',
-        note: 'MeowBeat 미커밋 34파일이 4일째 방치 중입니다. .meta 19건 포함으로 다른 환경에서 빌드 실패 확정적입니다. 오늘 최우선으로 커밋 정리해야 합니다. NumLink는 UI Toolkit 전환이 마무리 단계이고 오늘 아침 버그 3건을 수정했습니다. feature/uitoolkit → main 머지 시점을 이번 주 내로 확정하길 권고합니다. agent-office는 Hardboiled Studio 리브랜딩 완료로 안정 상태입니다.',
+        note: 'MeowBeat 미커밋 34파일이 4일째 방치 중입니다. .meta 19건 포함으로 다른 환경에서 빌드 실패 확정적입니다. 오늘 최우선으로 커밋 정리해야 합니다. NumLink는 UI Toolkit 전환이 마무리 단계이고 오늘 아침 버그 3건을 수정했습니다. feature/uitoolkit → main 머지 시점을 이번 주 내로 확정하길 권고합니다. dev-studio는 Hardboiled Studio 리브랜딩 완료로 안정 상태입니다.',
       },
       {
         speaker: 'Game Designer',
@@ -442,7 +442,7 @@ export const seedJournalEntries: JournalEntry[] = [
       },
       {
         speaker: 'DevOps',
-        note: 'agent-office 인프라 상태 양호합니다. 빌드 284ms, 번들 471KB, CI 4회 연속 성공. Node.js 20 EOL이 이달 말(4/30)이지만 CI v22로 사전 대응 완료했습니다. ESLint v10 메이저 업데이트가 출시됐으나 급하지 않고 분기 내 계획 수립하면 됩니다. 6/2 GitHub Actions Node 24 강제 전환에 대비해 서드파티 액션 호환성 사전 테스트를 권장합니다.',
+        note: 'dev-studio 인프라 상태 양호합니다. 빌드 284ms, 번들 471KB, CI 4회 연속 성공. Node.js 20 EOL이 이달 말(4/30)이지만 CI v22로 사전 대응 완료했습니다. ESLint v10 메이저 업데이트가 출시됐으나 급하지 않고 분기 내 계획 수립하면 됩니다. 6/2 GitHub Actions Node 24 강제 전환에 대비해 서드파티 액션 호환성 사전 테스트를 권장합니다.',
       },
       {
         speaker: 'Art Director',
@@ -559,7 +559,7 @@ export const seedJournalEntries: JournalEntry[] = [
       {
         title: 'MeowBeat 16일 커밋 공백+64건 .meta 미커밋, NumLink 3일 정체 — 미커밋 정리 최우선',
         description:
-          'MeowBeat은 3/15 이후 16일간 커밋 없이 수정 27건+미추적 50건(총 64건 .meta 포함) 방치. MainScene.unity 씬 파일 미커밋으로 corruption 위험 매우 높음. NumLink은 feature/uitoolkit 브랜치에서 수정 4건+UIToolkit 폴더가 3일째 미커밋. agent-office만 활발(어제 6커밋). NumLink MVP 약 60%, MeowBeat MVP 약 40%.',
+          'MeowBeat은 3/15 이후 16일간 커밋 없이 수정 27건+미추적 50건(총 64건 .meta 포함) 방치. MainScene.unity 씬 파일 미커밋으로 corruption 위험 매우 높음. NumLink은 feature/uitoolkit 브랜치에서 수정 4건+UIToolkit 폴더가 3일째 미커밋. dev-studio만 활발(어제 6커밋). NumLink MVP 약 60%, MeowBeat MVP 약 40%.',
       },
       {
         title: 'Pair(연결) 퍼즐 매출 363%↑ + Block Blast MAU 3억 + DDA 플러그인 Unity 통합 가능',
@@ -669,7 +669,7 @@ export const seedJournalEntries: JournalEntry[] = [
       {
         title: '3개 프로젝트 Git 상태: NumLink·MeowBeat 2일간 커밋 0건, MeowBeat 34파일 미커밋 3일째',
         description:
-          'NumLink은 feature/uitoolkit 브랜치에서 4개 수정+8개 미추적 파일 미커밋. MeowBeat은 14개 수정/삭제+20개 미추적=34파일 미커밋 3일째 방치로 데이터 손실 위험 긴급. agent-office만 15건 커밋으로 활발. NumLink Phase 5 Singleton→ServiceLocator 3건 todo, MeowBeat Sprint 2(디자인) 17%로 MVP 병목.',
+          'NumLink은 feature/uitoolkit 브랜치에서 4개 수정+8개 미추적 파일 미커밋. MeowBeat은 14개 수정/삭제+20개 미추적=34파일 미커밋 3일째 방치로 데이터 손실 위험 긴급. dev-studio만 15건 커밋으로 활발. NumLink Phase 5 Singleton→ServiceLocator 3건 todo, MeowBeat Sprint 2(디자인) 17%로 MVP 병목.',
       },
       {
         title: 'Block Blast DAU 7천만 독주 + Poki MAU 1억 돌파 + AI 적응형 난이도 리텐션 15-25%↑',
@@ -708,7 +708,7 @@ export const seedJournalEntries: JournalEntry[] = [
     meetingItems: [
       {
         speaker: 'Orchestrator',
-        note: '2일간 NumLink과 MeowBeat 양쪽 커밋이 0건입니다. agent-office만 15건으로 웹사이트 작업에 집중되었습니다. MeowBeat은 34개 미커밋 파일이 3일째 방치 중이고 MainScene.unity 손실 시 복구 불가하므로 오늘 반드시 분할 커밋해야 합니다. NumLink은 Phase 5 Singleton→ServiceLocator 전환 3건이 남았고, MeowBeat Sprint 2(디자인)가 17%로 MVP 컷라인의 병목입니다.',
+        note: '2일간 NumLink과 MeowBeat 양쪽 커밋이 0건입니다. dev-studio만 15건으로 웹사이트 작업에 집중되었습니다. MeowBeat은 34개 미커밋 파일이 3일째 방치 중이고 MainScene.unity 손실 시 복구 불가하므로 오늘 반드시 분할 커밋해야 합니다. NumLink은 Phase 5 Singleton→ServiceLocator 전환 3건이 남았고, MeowBeat Sprint 2(디자인)가 17%로 MVP 컷라인의 병목입니다.',
       },
       {
         speaker: 'Game Designer',
@@ -728,7 +728,7 @@ export const seedJournalEntries: JournalEntry[] = [
       },
       {
         speaker: 'DevOps',
-        note: 'Node.js 20 EOL이 4월 30일로 31일 남았습니다. agent-office 워크플로우의 node-version을 20에서 22 LTS로 즉시 전환해야 합니다. actions/checkout v4→v5/v6 업그레이드도 필요하며, 6월 2일부터 GitHub Actions가 Node 24를 강제합니다. 빌드 도구는 Vite 8(Rolldown 10-30x 빠름), TypeScript 6, ESLint 10 메이저 업그레이드가 대기 중이나 별도 브랜치 테스트가 필요합니다.',
+        note: 'Node.js 20 EOL이 4월 30일로 31일 남았습니다. dev-studio 워크플로우의 node-version을 20에서 22 LTS로 즉시 전환해야 합니다. actions/checkout v4→v5/v6 업그레이드도 필요하며, 6월 2일부터 GitHub Actions가 Node 24를 강제합니다. 빌드 도구는 Vite 8(Rolldown 10-30x 빠름), TypeScript 6, ESLint 10 메이저 업그레이드가 대기 중이나 별도 브랜치 테스트가 필요합니다.',
       },
       {
         speaker: 'Art Director',
@@ -749,7 +749,7 @@ export const seedJournalEntries: JournalEntry[] = [
       {
         title: 'Node.js 20→22 LTS 전환 + GitHub Actions v6 업그레이드 — EOL 31일',
         description:
-          'Node.js 20 EOL 4/30 임박. agent-office deploy-pages.yml node-version 20→22, actions/checkout v4→v6 업그레이드. Vite 8/TS 6은 별도 브랜치 테스트 후 진행.',
+          'Node.js 20 EOL 4/30 임박. dev-studio deploy-pages.yml node-version 20→22, actions/checkout v4→v6 업그레이드. Vite 8/TS 6은 별도 브랜치 테스트 후 진행.',
       },
       {
         title: 'Debug.Log 285건 정리 스프린트 + 코딩 규칙 위반 수정',
@@ -799,7 +799,7 @@ export const seedJournalEntries: JournalEntry[] = [
       {
         title: 'GitHub Actions checkout/setup-node v6 출시 + Node 24 강제 6/2 + React/Vite 메이저 업데이트',
         description:
-          'actions/checkout v6, actions/setup-node v6 출시. Node.js 20 EOL 2026년 4월, 6/2부터 Node 24 강제 전환. agent-office deploy-pages.yml v4→v6 업그레이드 필요. Vite 7→8, TypeScript 5→6, ESLint 9→10 메이저 업데이트 가능하나 별도 브랜치 테스트 권장.',
+          'actions/checkout v6, actions/setup-node v6 출시. Node.js 20 EOL 2026년 4월, 6/2부터 Node 24 강제 전환. dev-studio deploy-pages.yml v4→v6 업그레이드 필요. Vite 7→8, TypeScript 5→6, ESLint 9→10 메이저 업데이트 가능하나 별도 브랜치 테스트 권장.',
       },
       {
         title: '소프트 3D/플러시코어 아이콘 트렌드 + AI 에셋 워크플로우(Midjourney→SD→Real-ESRGAN)',
@@ -833,7 +833,7 @@ export const seedJournalEntries: JournalEntry[] = [
       },
       {
         speaker: 'DevOps',
-        note: 'GitHub Actions checkout v6, setup-node v6이 출시되었고 Node.js 24 강제 전환이 6/2로 확정되었습니다. agent-office deploy-pages.yml에서 v4→v6 업그레이드가 시급합니다. 의존성 현황: Vite 8.0.3, TypeScript 6.0.2, ESLint 10.1.0 메이저 업데이트 가능하나 별도 브랜치 테스트 필요. React 19.2.4, react-router-dom 7.13.2는 안전한 마이너/패치 업데이트입니다.',
+        note: 'GitHub Actions checkout v6, setup-node v6이 출시되었고 Node.js 24 강제 전환이 6/2로 확정되었습니다. dev-studio deploy-pages.yml에서 v4→v6 업그레이드가 시급합니다. 의존성 현황: Vite 8.0.3, TypeScript 6.0.2, ESLint 10.1.0 메이저 업데이트 가능하나 별도 브랜치 테스트 필요. React 19.2.4, react-router-dom 7.13.2는 안전한 마이너/패치 업데이트입니다.',
       },
       {
         speaker: 'Art Director',
@@ -857,7 +857,7 @@ export const seedJournalEntries: JournalEntry[] = [
           'MeowBeat ~34개 파일, NumLink 핵심 매니저 4개 + UIToolkit 6파일 미커밋. 양쪽 모두 분할 커밋으로 즉시 안전장치 확보.',
       },
       {
-        title: 'agent-office GitHub Actions v6 + Node 24 업그레이드 — 6/2 데드라인',
+        title: 'dev-studio GitHub Actions v6 + Node 24 업그레이드 — 6/2 데드라인',
         description:
           'checkout v4→v6, setup-node v4→v6, node-version 20→24 업그레이드. React 19.2.4 마이너 업데이트 동시 진행. Vite 8/TS 6은 별도 브랜치.',
       },
@@ -889,7 +889,7 @@ export const seedJournalEntries: JournalEntry[] = [
       {
         title: 'Vite 8.0 정식 출시(3/12) + Unity 6.3 LTS 패치 + Debug.Log 69건 정리 필요',
         description:
-          'Vite 8.0 Rolldown 정식 릴리즈, 빌드 10-30x 향상. agent-office 7.1.2→8.0 업그레이드 가능, 기존 플러그인 호환 확인. Unity 6.3 LTS Box2D v3+레이트레이싱 API+Enhanced Audio. NumLink Debug.Log 69건/16파일, _Recovery 씬 백업 4개 미추적 정리 필요.',
+          'Vite 8.0 Rolldown 정식 릴리즈, 빌드 10-30x 향상. dev-studio 7.1.2→8.0 업그레이드 가능, 기존 플러그인 호환 확인. Unity 6.3 LTS Box2D v3+레이트레이싱 API+Enhanced Audio. NumLink Debug.Log 69건/16파일, _Recovery 씬 백업 4개 미추적 정리 필요.',
       },
       {
         title: 'NumLink UI 회귀 + MeowBeat 84파일 미커밋 — 품질 리스크 긴급',
@@ -904,7 +904,7 @@ export const seedJournalEntries: JournalEntry[] = [
       {
         title: 'GitHub Actions deploy-pages v5 + checkout v5 출시 — Node 24 대응 완료',
         description:
-          'deploy-pages v5.0.0(3/25), checkout v5.0.0 출시로 Node 24 런타임 대응 완료. Node 24 기본 전환 6/2 확정. agent-office deploy-pages.yml에서 v4→v5 업그레이드 필요. FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true로 사전 테스트 가능. Unity 빌드 파이프라인 breaking change 없음.',
+          'deploy-pages v5.0.0(3/25), checkout v5.0.0 출시로 Node 24 런타임 대응 완료. Node 24 기본 전환 6/2 확정. dev-studio deploy-pages.yml에서 v4→v5 업그레이드 필요. FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true로 사전 테스트 가능. Unity 빌드 파이프라인 breaking change 없음.',
       },
       {
         title: '2026 모바일 게임 UI: Raw Aesthetic·Brutalist UI + AI 하이브리드 에셋 워크플로우',
@@ -918,7 +918,7 @@ export const seedJournalEntries: JournalEntry[] = [
     meetingItems: [
       {
         speaker: 'Orchestrator',
-        note: 'NumLink는 코드 완료 상태이며, 남은 6건(개인정보처리방침, 스토어 설명문, 스크린샷, AdMob, APK 빌드, 레벨 확장)은 전부 비코드 작업이므로 이번 주 집중하면 Google Play 내부 테스트 진입 가능합니다. MeowBeat는 에셋(Suno 곡, AI 아트, 프리팹)이 전면 블로커로 Owner 액션 선행 필요. 우선순위: NumLink 출시 마무리 > MeowBeat 미커밋 해소 > agent-office 인프라 업그레이드.',
+        note: 'NumLink는 코드 완료 상태이며, 남은 6건(개인정보처리방침, 스토어 설명문, 스크린샷, AdMob, APK 빌드, 레벨 확장)은 전부 비코드 작업이므로 이번 주 집중하면 Google Play 내부 테스트 진입 가능합니다. MeowBeat는 에셋(Suno 곡, AI 아트, 프리팹)이 전면 블로커로 Owner 액션 선행 필요. 우선순위: NumLink 출시 마무리 > MeowBeat 미커밋 해소 > dev-studio 인프라 업그레이드.',
       },
       {
         speaker: 'Game Designer',
@@ -926,7 +926,7 @@ export const seedJournalEntries: JournalEntry[] = [
       },
       {
         speaker: 'Developer',
-        note: 'Vite 8.0이 3/12 정식 출시되었고 Rolldown 번들러로 빌드 10-30배 향상 확인, agent-office 7.1.2→8.0 업그레이드 준비 완료. Unity 6.3 LTS 안정적 패치 진행 중. NumLink Debug.Log 69건/16파일 잔존하며 _Recovery 폴더에 씬 백업 4개가 미추적 상태로 남아 있어 정리 필요합니다.',
+        note: 'Vite 8.0이 3/12 정식 출시되었고 Rolldown 번들러로 빌드 10-30배 향상 확인, dev-studio 7.1.2→8.0 업그레이드 준비 완료. Unity 6.3 LTS 안정적 패치 진행 중. NumLink Debug.Log 69건/16파일 잔존하며 _Recovery 폴더에 씬 백업 4개가 미추적 상태로 남아 있어 정리 필요합니다.',
       },
       {
         speaker: 'QA Tester',
@@ -938,7 +938,7 @@ export const seedJournalEntries: JournalEntry[] = [
       },
       {
         speaker: 'DevOps',
-        note: 'deploy-pages v5.0.0(3/25)과 checkout v5.0.0이 Node 24 대응 완료 상태로 출시되었습니다. agent-office deploy-pages.yml에서 deploy-pages v4→v5, checkout v4→v5로 업그레이드 필요하며, 전환 전 FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true로 사전 테스트 가능합니다. Node 24 기본 전환일 6/2 확정, Unity 빌드 파이프라인은 breaking change 없이 GameCI 안정 유지.',
+        note: 'deploy-pages v5.0.0(3/25)과 checkout v5.0.0이 Node 24 대응 완료 상태로 출시되었습니다. dev-studio deploy-pages.yml에서 deploy-pages v4→v5, checkout v4→v5로 업그레이드 필요하며, 전환 전 FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true로 사전 테스트 가능합니다. Node 24 기본 전환일 6/2 확정, Unity 빌드 파이프라인은 breaking change 없이 GameCI 안정 유지.',
       },
       {
         speaker: 'Art Director',
@@ -969,7 +969,7 @@ export const seedJournalEntries: JournalEntry[] = [
       {
         title: 'Vite 8.0 Rolldown 업그레이드 별도 PR 진행',
         description:
-          'Vite 8.0 정식 출시 확인(3/12). agent-office 7.1.2→8.0 전환으로 빌드 10-30x 향상. 플러그인 호환성 확인 후 단독 PR.',
+          'Vite 8.0 정식 출시 확인(3/12). dev-studio 7.1.2→8.0 전환으로 빌드 10-30x 향상. 플러그인 호환성 확인 후 단독 PR.',
       },
       {
         title: 'NumLink 출시 비코드 작업 6건 이번 주 집중',
@@ -1060,12 +1060,12 @@ export const seedJournalEntries: JournalEntry[] = [
       {
         title: 'Vite 8.0 Rolldown 출시(3/12) — Rust 기반 통합 번들러 10~30배 빌드 향상',
         description:
-          'Vite 8.0 Rolldown 번들러로 esbuild+Rollup 이원화 해소. Rust 기반 10~30배 빌드 속도 향상. DevTools 내장 + Wasm SSR 지원. agent-office 현재 Vite 7.1.2 → 8.x 업그레이드 시 빌드 1.54초에서 추가 단축 기대. plugin registry(registry.vite.dev) 호환성 확인 후 전환 권장.',
+          'Vite 8.0 Rolldown 번들러로 esbuild+Rollup 이원화 해소. Rust 기반 10~30배 빌드 속도 향상. DevTools 내장 + Wasm SSR 지원. dev-studio 현재 Vite 7.1.2 → 8.x 업그레이드 시 빌드 1.54초에서 추가 단축 기대. plugin registry(registry.vite.dev) 호환성 확인 후 전환 권장.',
       },
       {
         title: 'React 19.2.4 보안 패치(1/26) + npm 공급망 공격 경고(3월)',
         description:
-          'React 19.2.4 CVE-2026-23864 DoS 취약점 패치. agent-office 현재 React 19.1.1 → 19.1.5+ 업그레이드 권장. React Native 인기 패키지 악성 릴리스 탐지(3월) — npm 공급망 보안 주의. agent-office CSR 앱이라 Server Components RCE(CVE-2025-55182)는 직접 영향 없음.',
+          'React 19.2.4 CVE-2026-23864 DoS 취약점 패치. dev-studio 현재 React 19.1.1 → 19.1.5+ 업그레이드 권장. React Native 인기 패키지 악성 릴리스 탐지(3월) — npm 공급망 보안 주의. dev-studio CSR 앱이라 Server Components RCE(CVE-2025-55182)는 직접 영향 없음.',
       },
       {
         title: 'Unity 6.4 Hub GitHub/GitLab 통합 + DevOps 가격 변경',
@@ -1094,7 +1094,7 @@ export const seedJournalEntries: JournalEntry[] = [
     meetingItems: [
       {
         speaker: 'Orchestrator',
-        note: 'NumLink 이번 세션에서 대규모 작업 완료: 버그 12건 수정, UI 리디자인 2단계, 빌드 최적화, 커스텀 스킬 5개+훅 3개 구현. 6커밋 미푸시 상태 지속 — 오늘 즉시 push 필수. MeowBeat 이번 세션 작업 없음, 130+파일 미커밋 여전히 리스크. agent-office PKM 동기화 setup.sh 확장 완료.',
+        note: 'NumLink 이번 세션에서 대규모 작업 완료: 버그 12건 수정, UI 리디자인 2단계, 빌드 최적화, 커스텀 스킬 5개+훅 3개 구현. 6커밋 미푸시 상태 지속 — 오늘 즉시 push 필수. MeowBeat 이번 세션 작업 없음, 130+파일 미커밋 여전히 리스크. dev-studio PKM 동기화 setup.sh 확장 완료.',
       },
       {
         speaker: 'Game Designer',
@@ -1114,7 +1114,7 @@ export const seedJournalEntries: JournalEntry[] = [
       },
       {
         speaker: 'DevOps',
-        note: 'Node 20 EOL 33일(4/30). deploy-pages.yml node-version 20→24 + upload-pages-artifact v3→v4 + checkout v4→v5 이번 주 일괄 전환. .nvmrc 24 생성 필수. NumLink 6커밋 push + MeowBeat 분할 커밋 오늘 진행. agent-office npm audit: ajv ReDoS(moderate) + brace-expansion DoS(moderate) 잔존. Vite 7→8 업그레이드는 Rolldown 호환성 확인 후 별도 PR.',
+        note: 'Node 20 EOL 33일(4/30). deploy-pages.yml node-version 20→24 + upload-pages-artifact v3→v4 + checkout v4→v5 이번 주 일괄 전환. .nvmrc 24 생성 필수. NumLink 6커밋 push + MeowBeat 분할 커밋 오늘 진행. dev-studio npm audit: ajv ReDoS(moderate) + brace-expansion DoS(moderate) 잔존. Vite 7→8 업그레이드는 Rolldown 호환성 확인 후 별도 PR.',
       },
       {
         speaker: 'Art Director',
@@ -1212,7 +1212,7 @@ export const seedJournalEntries: JournalEntry[] = [
       },
       {
         speaker: 'Developer',
-        note: 'AI 도입 95% + 개발시간 77% 단축은 현재 Claude Code + Unity 워크플로우가 업계 선도적 수준임을 확인. 에셋 생성·테스트 자동화·코드 리뷰까지 AI 커버리지 확대하면 1인이 3~5인 팀 생산성 달성 가능. agent-office 자체가 AI 파이프라인 데모 케이스.',
+        note: 'AI 도입 95% + 개발시간 77% 단축은 현재 Claude Code + Unity 워크플로우가 업계 선도적 수준임을 확인. 에셋 생성·테스트 자동화·코드 리뷰까지 AI 커버리지 확대하면 1인이 3~5인 팀 생산성 달성 가능. dev-studio 자체가 AI 파이프라인 데모 케이스.',
       },
       {
         speaker: 'Content Writer',
@@ -1285,7 +1285,7 @@ export const seedJournalEntries: JournalEntry[] = [
       {
         title: 'CI Node 20→24 전환 마감 4/30 + Vite 8.0 Rolldown 빌드 10~30배 향상',
         description:
-          'GitHub Actions Node 20 EOL 2026-04-30. deploy-pages.yml 아직 node-version: 20. Vite 8.0 Rolldown 단일 번들러 전환, Oxc 트랜스파일링. agent-office Vite 7→8 업그레이드로 빌드 성능 대폭 개선 가능.',
+          'GitHub Actions Node 20 EOL 2026-04-30. deploy-pages.yml 아직 node-version: 20. Vite 8.0 Rolldown 단일 번들러 전환, Oxc 트랜스파일링. dev-studio Vite 7→8 업그레이드로 빌드 성능 대폭 개선 가능.',
       },
       {
         title: '마스코트 아이콘+미니멀 HUD 트렌드 — 스토어 첫 2장 스크린샷이 전환율 결정',
@@ -1299,7 +1299,7 @@ export const seedJournalEntries: JournalEntry[] = [
     meetingItems: [
       {
         speaker: 'Orchestrator',
-        note: 'NumLink 안정화 마무리 단계, 워킹 디렉토리 3파일 커밋 필요. MeowBeat 50+파일 미커밋·리모트 미푸시로 유실 위험 최고 — 오늘 최우선 해소. agent-office 정상 운영.',
+        note: 'NumLink 안정화 마무리 단계, 워킹 디렉토리 3파일 커밋 필요. MeowBeat 50+파일 미커밋·리모트 미푸시로 유실 위험 최고 — 오늘 최우선 해소. dev-studio 정상 운영.',
       },
       {
         speaker: 'Game Designer',
@@ -1307,11 +1307,11 @@ export const seedJournalEntries: JournalEntry[] = [
       },
       {
         speaker: 'Developer',
-        note: 'NumLink/MeowBeat 프로젝트 디렉토리 C:\\Unity 하위 확인. agent-office 최근 5커밋 +430줄 정상. 소스 코드 기술 부채 실질 0건. Vite 8.0 Rolldown 빌드 10~30배 향상, agent-office 업그레이드 권장. Unity 6.4 업그레이드는 선택적.',
+        note: 'NumLink/MeowBeat 프로젝트 디렉토리 C:\\Unity 하위 확인. dev-studio 최근 5커밋 +430줄 정상. 소스 코드 기술 부채 실질 0건. Vite 8.0 Rolldown 빌드 10~30배 향상, dev-studio 업그레이드 권장. Unity 6.4 업그레이드는 선택적.',
       },
       {
         speaker: 'QA Tester',
-        note: 'NumLink Debug.Log 145건 중 114건 가드 미적용(PreGeneratedBoardManager 26건·PuzzleManager 23건 최심각). MeowBeat 53건 중 48건 미가드(SaveSystem 경로노출·CafeManager 코인금액 노출). 자동화 테스트 3프로젝트 모두 0건. agent-office 빌드 정상, ESLint 1건만 잔존.',
+        note: 'NumLink Debug.Log 145건 중 114건 가드 미적용(PreGeneratedBoardManager 26건·PuzzleManager 23건 최심각). MeowBeat 53건 중 48건 미가드(SaveSystem 경로노출·CafeManager 코인금액 노출). 자동화 테스트 3프로젝트 모두 0건. dev-studio 빌드 정상, ESLint 1건만 잔존.',
       },
       {
         speaker: 'Content Writer',
@@ -1408,7 +1408,7 @@ export const seedJournalEntries: JournalEntry[] = [
     meetingItems: [
       { speaker: 'Orchestrator', note: 'NumLink 코드 완료+200레벨 확장 중, 스토어 에셋(개인정보처리방침/스크린샷/ASO/AdMob)이 유일 블로커. MeowBeat 코드 완료 에셋 대기. Cat Merge Cafe M0 14% 진행. NumLink 우선 출시 집중 권장.' },
       { speaker: 'Game Designer', note: '퍼즐 시장 하이브리드 캐주얼 $42억, 메타 레이어 필수. Number Link 2000+ 레벨 수 경쟁 불리 — "엄선된 200개" 포지셔닝 전환. 일일 챌린지+테마 해금이 최소 비용 메타 레이어. MeowBeat 온보딩 플로우 GDD 공백 긴급.' },
-      { speaker: 'Developer', note: 'NumLink TODO 6건 전부 LOW, 출시 블로커 없음. Unity 6.4 ECS 코어 통합+Project Auditor 내장 출시. Vite 8.0 Rolldown 기반 빌드 10~30배 향상, agent-office 업그레이드 권장. cat-merge-cafe C# 코드 아직 0건.' },
+      { speaker: 'Developer', note: 'NumLink TODO 6건 전부 LOW, 출시 블로커 없음. Unity 6.4 ECS 코어 통합+Project Auditor 내장 출시. Vite 8.0 Rolldown 기반 빌드 10~30배 향상, dev-studio 업그레이드 권장. cat-merge-cafe C# 코드 아직 0건.' },
       { speaker: 'QA Tester', note: 'Debug.Log 가드 미적용 86건+ 릴리스 빌드 포함(PuzzleManager 23건, PreGeneratedBoardManager 26건 최심각). HBSaveLoadManager 평문 JSON+로그 출력 유지. SaveSystem<T> 코인/루비 변조 가능. 3프로젝트 자동화 테스트 0건 변화 없음.' },
       { speaker: 'Content Writer', note: '개인정보처리방침 여전히 미작성 — 출시 차단. Play 수수료 20% 인하+자체 결제 허용 확인. 개발자 본인 인증 Q3 의무화. ASO 롱테일 키워드 타겟 + UGC 스타일 숏폼 콘텐츠가 저예산 핵심. 허위 광고 플랫폼 차단 중.' },
       { speaker: 'DevOps', note: 'CI Node 20→24 직접 전환 긴급(EOL 5주, GitHub Actions Node 22 건너뜀). 로컬 v24.12.0 정상. DailyStandup 스케줄러 태스크 여전히 미등록 — 3일째 장애. package.json engines 필드 미설정. 배포 파이프라인 자체는 안정.' },
@@ -1433,7 +1433,7 @@ export const seedJournalEntries: JournalEntry[] = [
       },
       {
         title: 'Vite 7→8 + plugin-react 5→6 업그레이드',
-        description: 'agent-office Rolldown 기반 빌드 10~30배 속도 향상. Node 24 호환 확인 후 진행.',
+        description: 'dev-studio Rolldown 기반 빌드 10~30배 속도 향상. Node 24 호환 확인 후 진행.',
       },
     ],
   },
@@ -1577,7 +1577,7 @@ export const seedJournalEntries: JournalEntry[] = [
     date: '2026-03-22',
     researchTitle: 'Unity 6.4 출시 + Mewgenics 100만장 달성 + 스프린트 결정사항 이행',
     researchSummary:
-      'NumLink push+productName 수정 완료(4건 중 1건 이행). 스토어 준비/MeowBeat M0/daily_standup.bat은 여전히 미착수. Unity 6.4 출시(ECS 코어 통합, Project Auditor 내장). Mewgenics 1주 100만장·$2,500만 달성으로 고양이 IP 폭발적 성장 확인. Node.js 20 EOL 5주 후(agent-office 워크플로우 영향). AI 음악 도구(Beatoven.ai) 비용 80-95% 절감. CatMergeCafe Mint 색상 WCAG 접근성 완전 미달(대비율 1.17:1).',
+      'NumLink push+productName 수정 완료(4건 중 1건 이행). 스토어 준비/MeowBeat M0/daily_standup.bat은 여전히 미착수. Unity 6.4 출시(ECS 코어 통합, Project Auditor 내장). Mewgenics 1주 100만장·$2,500만 달성으로 고양이 IP 폭발적 성장 확인. Node.js 20 EOL 5주 후(dev-studio 워크플로우 영향). AI 음악 도구(Beatoven.ai) 비용 80-95% 절감. CatMergeCafe Mint 색상 WCAG 접근성 완전 미달(대비율 1.17:1).',
     researchItems: [
       {
         title: '[Orchestrator] 3/22 결정 4건 중 1건만 이행 — NumLink push+productName 완료, 나머지 3건 미착수',
@@ -1597,7 +1597,7 @@ export const seedJournalEntries: JournalEntry[] = [
       {
         title: '[QA Tester] NumLink TODO 6건 전부 LOW + Debug.Log 가드 밖 잔존 MEDIUM + 자동화 테스트 전무',
         description:
-          'NumLink: TODO 6건 전부 LOW. #if UNITY_EDITOR 가드 15개 파일 80건 적용으로 개선됐으나, LevelDataProvider/EndlessModeProvider/DailyPuzzleProvider에 가드 밖 Debug.Log 잔존(MEDIUM). 자동화 테스트 0건(수동 Play Mode 의존). agent-office: ESLint 오류 1건(OfficeContext.tsx react-refresh 위반) 지속, 빌드는 정상(2.52s). QA 38건 체크리스트 여전히 전체 미실행.',
+          'NumLink: TODO 6건 전부 LOW. #if UNITY_EDITOR 가드 15개 파일 80건 적용으로 개선됐으나, LevelDataProvider/EndlessModeProvider/DailyPuzzleProvider에 가드 밖 Debug.Log 잔존(MEDIUM). 자동화 테스트 0건(수동 Play Mode 의존). dev-studio: ESLint 오류 1건(OfficeContext.tsx react-refresh 위반) 지속, 빌드는 정상(2.52s). QA 38건 체크리스트 여전히 전체 미실행.',
       },
       {
         title: '[Content Writer] "Paid Organic" SNS 전략 부상 + CPP/CSL 전환율 40% 상승 + 개인정보처리방침 3프로젝트 전무',
@@ -1607,7 +1607,7 @@ export const seedJournalEntries: JournalEntry[] = [
       {
         title: '[DevOps] daily_standup.bat 3/22 실행 끊김 + Node 20 EOL 5주 후 + NumLink CI/CD 전무',
         description:
-          'daily_standup.bat: claude.cmd 경로 정상 존재, bat 파일에 따옴표 감쌈 확인. 3/21은 Exit code 0 성공, 3/22는 시작만 기록되고 종료 없음(실행 중 끊김). 작업 스케줄러에 standup 태스크 미등록. agent-office 배포 5회 연속 성공(30-40초). Node.js 20 EOL 2026-04-30(5주 후), 워크플로우 node-version:20→22/24 업그레이드 필요. GameCI v4.8.1 안정, NumLink CI/CD 도입 권장.',
+          'daily_standup.bat: claude.cmd 경로 정상 존재, bat 파일에 따옴표 감쌈 확인. 3/21은 Exit code 0 성공, 3/22는 시작만 기록되고 종료 없음(실행 중 끊김). 작업 스케줄러에 standup 태스크 미등록. dev-studio 배포 5회 연속 성공(30-40초). Node.js 20 EOL 2026-04-30(5주 후), 워크플로우 node-version:20→22/24 업그레이드 필요. GameCI v4.8.1 안정, NumLink CI/CD 도입 권장.',
       },
       {
         title: '[Art Director] CatMergeCafe Mint 접근성 완전 미달(1.17:1) + 마이크로인터랙션 100ms 기준 + Digital Texture 트렌드 정렬',
@@ -1622,9 +1622,9 @@ export const seedJournalEntries: JournalEntry[] = [
       { speaker: 'Orchestrator', note: '3/22 결정 4건 중 NumLink push+productName 1건만 완료. 스토어 준비/MeowBeat M0/daily_standup 3건 3일째 미착수. NumLink untracked 6건 커밋 필요. 스토어 준비를 오늘 반드시 착수해야 함 — 3일 연속 미이행은 프로젝트 출시 일정에 직접 영향.' },
       { speaker: 'Game Designer', note: 'Mewgenics 1주 100만장·$2,500만으로 고양이 IP 폭발적 파워 확인 — MeowBeat 차별화 전략 재점검 필요. Royal Match 광고 제거+IAP 모델 NumLink에 적용 검토(힌트/되돌리기 유료화). UNBEATABLE 스토리+아케이드 이중 모드를 MeowBeat에 도입 제안. AI 음악(Beatoven.ai) 무료 플랜으로 프로토타입 착수 가능.' },
       { speaker: 'Developer', note: 'Unity 6.4 출시(ECS 코어 통합, Project Auditor 내장) 확인. NumLink은 6.3 LTS(2027/12까지 지원)로 당장 업그레이드 불필요. 규칙 위반 3건(AutoSetup/NumberManager/PuzzleManager) 수정 백로그 유지. CoreCLR 6.7 실험적 데스크톱 예정 — 새 프로젝트부터 고려.' },
-      { speaker: 'QA Tester', note: 'NumLink Debug.Log 가드 밖 잔존 3파일(LevelData/Endless/DailyPuzzle) MEDIUM 리스크. 자동화 테스트 전무(3프로젝트 공통). agent-office ESLint 1건 지속(useOffice 훅 분리 필요). QA 38건 체크리스트 코드 부재로 여전히 실행 불가.' },
+      { speaker: 'QA Tester', note: 'NumLink Debug.Log 가드 밖 잔존 3파일(LevelData/Endless/DailyPuzzle) MEDIUM 리스크. 자동화 테스트 전무(3프로젝트 공통). dev-studio ESLint 1건 지속(useOffice 훅 분리 필요). QA 38건 체크리스트 코드 부재로 여전히 실행 불가.' },
       { speaker: 'Content Writer', note: '개인정보처리방침 3프로젝트 전무 — NumLink 출시 블로커. "Paid Organic" SNS 전략(오가닉→소액 부스팅) 채택 권장. YouTube Shorts 주 7-14개, Discord 커뮤니티 조기 구축. CPP/CSL 맞춤 스토어 페이지 전환율 40% 상승 데이터.' },
-      { speaker: 'DevOps', note: 'Node.js 20 EOL 2026-04-30(5주 후) — agent-office 워크플로우 node-version 22/24 업그레이드 시급. daily_standup.bat 3/22 실행 끊김, 작업 스케줄러 재등록 필요. GameCI v4.8.1로 NumLink CI/CD 도입 우선순위 상향.' },
+      { speaker: 'DevOps', note: 'Node.js 20 EOL 2026-04-30(5주 후) — dev-studio 워크플로우 node-version 22/24 업그레이드 시급. daily_standup.bat 3/22 실행 끊김, 작업 스케줄러 재등록 필요. GameCI v4.8.1로 NumLink CI/CD 도입 우선순위 상향.' },
       { speaker: 'Art Director', note: 'CatMergeCafe Mint(#98FB98) 접근성 완전 미달(1.17:1) — 허브 초록 #6B9E78로 즉시 교체. 야간 골목 팔레트 AAA 접근성 검증 완료. Digital Texture(grain/noise)가 종이접기 컨셉과 완벽 정렬. 마이크로인터랙션 100ms 이하 표준 준수 필요. Bento Grid 2.0으로 레벨 선택 UI 개편 제안.' },
     ],
     decisions: [
@@ -1634,7 +1634,7 @@ export const seedJournalEntries: JournalEntry[] = [
       },
       {
         title: 'Node.js 20→22 워크플로우 업그레이드 (EOL 5주 전)',
-        description: 'agent-office deploy-pages.yml의 node-version: 20→22로 변경. 로컬 개발 환경도 Node 22 LTS로 전환. 4/30 EOL 전 완료 필수.',
+        description: 'dev-studio deploy-pages.yml의 node-version: 20→22로 변경. 로컬 개발 환경도 Node 22 LTS로 전환. 4/30 EOL 전 완료 필수.',
       },
       {
         title: 'daily_standup.bat 안정화 + 작업 스케줄러 재등록',
@@ -1656,7 +1656,7 @@ export const seedJournalEntries: JournalEntry[] = [
       {
         title: '[Orchestrator] 3/21 결정사항 전부 미이행 — NumLink 5커밋 미push, productName 미수정, MeowBeat 81건 잔존',
         description:
-          'NumLink: origin/main 대비 5커밋 ahead 유지(push 안 됨). 미커밋 3파일(GameManager/PuzzleManager/GameOverPanel). productName 여전히 "numberchain". MeowBeat: refactor/ai-friendly 브랜치 미추적 55건+수정 26건=81건으로 오히려 증가. agent-office만 동기화 완료 상태.',
+          'NumLink: origin/main 대비 5커밋 ahead 유지(push 안 됨). 미커밋 3파일(GameManager/PuzzleManager/GameOverPanel). productName 여전히 "numberchain". MeowBeat: refactor/ai-friendly 브랜치 미추적 55건+수정 26건=81건으로 오히려 증가. dev-studio만 동기화 완료 상태.',
       },
       {
         title: '[Game Designer] 하이브리드 캐주얼 퍼즐 $100만+ 19개, AI 적응형 난이도 71% 수익 증가',
@@ -1671,7 +1671,7 @@ export const seedJournalEntries: JournalEntry[] = [
       {
         title: '[QA Tester] MeowBeat M0 스프린트 지연 + QA 체크리스트 38건 전체 미실행',
         description:
-          'MeowBeat M0 스프린트(3/14~15 예정) 3/22 현재 미완료. QA 체크리스트 38개 항목 전체 미실행. 테스트 인프라 전무. agent-office ESLint 오류 1건(OfficeContext.tsx react-refresh 위반). 업계 80%가 테스트 자동화 채택, AI 보조 QA로 개발 시간 28% 절감 사례.',
+          'MeowBeat M0 스프린트(3/14~15 예정) 3/22 현재 미완료. QA 체크리스트 38개 항목 전체 미실행. 테스트 인프라 전무. dev-studio ESLint 오류 1건(OfficeContext.tsx react-refresh 위반). 업계 80%가 테스트 자동화 채택, AI 보조 QA로 개발 시간 28% 절감 사례.',
       },
       {
         title: '[Content Writer] ASO 의미 기반 탐색 전환 + 개인정보처리방침 공개 URL 필수',
@@ -1681,7 +1681,7 @@ export const seedJournalEntries: JournalEntry[] = [
       {
         title: '[DevOps] daily_standup.bat Exit code 9009 — claude.cmd 경로 미발견 확인',
         description:
-          'daily_standup.log 분석: Exit code 9009(명령어 미발견). claude.cmd 경로 실존 여부 확인 필요. 홈 디렉토리 로그는 시작만 기록되고 종료 없음(행 걸림 추정). agent-office 배포 파이프라인 정상(10회 연속 success). GameCI v4.8.1 안정, NumLink CI/CD 도입 권장.',
+          'daily_standup.log 분석: Exit code 9009(명령어 미발견). claude.cmd 경로 실존 여부 확인 필요. 홈 디렉토리 로그는 시작만 기록되고 종료 없음(행 걸림 추정). dev-studio 배포 파이프라인 정상(10회 연속 success). GameCI v4.8.1 안정, NumLink CI/CD 도입 권장.',
       },
       {
         title: '[Art Director] Digital Texture/벤토 그리드/Anti-Design — 독창적 컬러 팔레트 제안',
@@ -1693,12 +1693,12 @@ export const seedJournalEntries: JournalEntry[] = [
     meetingSummary:
       '3/21 결정사항(NumLink push, productName 수정, MeowBeat 정리) 전부 미이행으로 오늘 최우선 처리. AI 적응형 난이도 71% 수익 증가 데이터 확인. Unity 6.3 LTS 업그레이드 검토. daily_standup.bat 9009 에러 원인 파악. 스토어 준비(개인정보처리방침, ASO 키워드) 착수 시급.',
     meetingItems: [
-      { speaker: 'Orchestrator', note: '3/21 결정사항 3건 전부 미이행. NumLink 5커밋 push + 미커밋 3파일 커밋 + productName 수정이 오늘 1순위. MeowBeat 81건 워킹트리 정리 2순위. agent-office 안정.' },
+      { speaker: 'Orchestrator', note: '3/21 결정사항 3건 전부 미이행. NumLink 5커밋 push + 미커밋 3파일 커밋 + productName 수정이 오늘 1순위. MeowBeat 81건 워킹트리 정리 2순위. dev-studio 안정.' },
       { speaker: 'Game Designer', note: '하이브리드 캐주얼 퍼즐 37% 성장, AI 적응형 난이도 71% 수익 증가 입증. NumLink에 적응형 난이도+짧은 시즌제 배틀패스 도입 제안. MeowBeat 음원 라이선싱 리스크 대비 필요. Mewgenics 고양이 IP 파워 참고.' },
       { speaker: 'Developer', note: 'Unity 6.3 LTS 출시 — IL2CPP 22% 빌드 단축, Box2D v3 추가. GDD 엔진 버전 갱신 필요(2022 LTS 지원 종료). MeowBeat C# 코드 0개, M0 Unity 프로젝트 생성 시급. GameObject.Find/Input.GetKey 잔존 코드 전환 필요.' },
-      { speaker: 'QA Tester', note: 'MeowBeat M0 스프린트 1주 지연(3/14→3/22). QA 체크리스트 38건 전체 미실행. agent-office ESLint 오류 1건 발견. M1에 EditMode 단위 테스트 태스크 추가 권장. 업계 80% 테스트 자동화 채택.' },
+      { speaker: 'QA Tester', note: 'MeowBeat M0 스프린트 1주 지연(3/14→3/22). QA 체크리스트 38건 전체 미실행. dev-studio ESLint 오류 1건 발견. M1에 EditMode 단위 테스트 태스크 추가 권장. 업계 80% 테스트 자동화 채택.' },
       { speaker: 'Content Writer', note: 'ASO가 키워드→의미 기반으로 전환. 개인정보처리방침 공개 URL+Data Safety Form 필수(미준수 시 앱 정지). 숏폼 영상 주 7-14개. Discord 커뮤니티 조기 구축. 스토어 설명문 초안 착수 시급.' },
-      { speaker: 'DevOps', note: 'daily_standup.bat Exit code 9009 — claude.cmd 경로 미발견. 로그 분석 완료, 경로 수정 필요. agent-office 배포 10회 연속 success. GameCI v4.8.1로 NumLink CI/CD 도입 권장. Node 22 LTS 업그레이드 검토.' },
+      { speaker: 'DevOps', note: 'daily_standup.bat Exit code 9009 — claude.cmd 경로 미발견. 로그 분석 완료, 경로 수정 필요. dev-studio 배포 10회 연속 success. GameCI v4.8.1로 NumLink CI/CD 도입 권장. Node 22 LTS 업그레이드 검토.' },
       { speaker: 'Art Director', note: 'Digital Texture(촉감 버튼), 벤토 그리드, Anti-Design이 2026 핵심 트렌드. NumLink "종이접기" 팔레트, MeowBeat "야간 골목" 팔레트 제안. 다크모드 #121212 기반 ThemeData 생성 + ColorVariables 통합 최우선.' },
     ],
     decisions: [
@@ -1730,7 +1730,7 @@ export const seedJournalEntries: JournalEntry[] = [
       {
         title: '[Orchestrator] NumLink 5커밋 미push, MeowBeat 워킹트리 대량 정리 필요',
         description:
-          'NumLink: main에 5커밋 ahead(push 필요). 미커밋 변경 3파일(GameManager/PuzzleManager/GameOverPanel — 게임오버 흐름 수정). MeowBeat: refactor/ai-friendly 브랜치에 50+개 미추적 파일. agent-office: origin/main 동기화 완료, 안정.',
+          'NumLink: main에 5커밋 ahead(push 필요). 미커밋 변경 3파일(GameManager/PuzzleManager/GameOverPanel — 게임오버 흐름 수정). MeowBeat: refactor/ai-friendly 브랜치에 50+개 미추적 파일. dev-studio: origin/main 동기화 완료, 안정.',
       },
       {
         title: '[Developer] RestartGame→ReturnToLevelSelect 전면 재설계 + ClearBoardChildren 역순 반복 수정',
@@ -1767,12 +1767,12 @@ export const seedJournalEntries: JournalEntry[] = [
     meetingSummary:
       'NumLink 게임오버→레벨선택 복귀 흐름 전면 재설계 완료. 시장 리서치 결과 메타레이어/소셜/UGC가 2026 리텐션 삼각형. 스토어 등록 준비 대폭 미비하여 APK 빌드 전 설명문/개인정보처리방침 작성 시급.',
     meetingItems: [
-      { speaker: 'Orchestrator', note: 'NumLink 5커밋 미push + 미커밋 3파일(게임오버 수정). MeowBeat 워킹트리 50+ 파일 정리 시급. agent-office 안정. 우선순위: NumLink push → 스토어 준비 → MeowBeat 정리.' },
+      { speaker: 'Orchestrator', note: 'NumLink 5커밋 미push + 미커밋 3파일(게임오버 수정). MeowBeat 워킹트리 50+ 파일 정리 시급. dev-studio 안정. 우선순위: NumLink push → 스토어 준비 → MeowBeat 정리.' },
       { speaker: 'Developer', note: 'RestartGame→ReturnToLevelSelect 전면 재설계. 보드영역 숨기기/복원 패턴 적용. ClearBoardChildren 역순 반복 수정. GameOverPanel 이중호출 방지. 아키텍처 이슈: GameObject.Find, Input.GetKey 직접 사용 잔존.' },
       { speaker: 'QA Tester', note: '활성 버그 0건(21건 수정 완료). 기술 부채 7건 전부 LOW. HintManager 디버그 로그 릴리스 전 제거 필수. 자동 테스트 전무 — 최소 컴파일 체크 CI 권장.' },
       { speaker: 'Game Designer', note: '메타레이어 필수화 트렌드. NumLink: 이미지 컬렉션/앨범 시스템 최우선. Daily Puzzle 소셜 리더보드. MeowBeat: 고양이 반응=게임플레이 피드백. 냥스타그램 UGC 확장.' },
       { speaker: 'Content Writer', note: 'NumLink 스토어 등록 미비: 설명문/개인정보처리방침/ASO 키워드 0건. 스크린샷 정제본 필요. productName "numberchain"→"NumLink" 수정 필요. ASO 2026: CPP + 숏폼 영상 우선.' },
-      { speaker: 'DevOps', note: 'daily_standup.bat 오늘 실패(exit code 1). 로그 기록 추가 완료. NumLink CI/CD 부재 — GameCI 워크플로우 추가 권장. agent-office 배포 파이프라인 정상(최근 5회 전부 success).' },
+      { speaker: 'DevOps', note: 'daily_standup.bat 오늘 실패(exit code 1). 로그 기록 추가 완료. NumLink CI/CD 부재 — GameCI 워크플로우 추가 권장. dev-studio 배포 파이프라인 정상(최근 5회 전부 success).' },
       { speaker: 'Art Director', note: '2026 트렌드: 미니멀+깊이감, 마이크로 인터랙션. NumLink: DefaultTheme만 존재 → 다크모드 ThemeData 추가 필요. ColorVariables-ThemeData 색상 중복 통합. 패널 전환 슬라이드 애니메이션 통일.' },
     ],
     decisions: [
@@ -1809,7 +1809,7 @@ export const seedJournalEntries: JournalEntry[] = [
       {
         title: '[Orchestrator] 프로젝트 상태 — NumLink 3커밋 미push, MeowBeat 리팩토링 진행 중',
         description:
-          'NumLink: main에 3커밋 앞서 있음(push 필요), 미추적 파일(DailyChallengeHubPanel, _Recovery, Screenshots) 정리 필요. MeowBeat: refactor/ai-friendly 브랜치에서 대규모 리팩토링 중(60+개 새 파일). agent-office: main 동기화 완료, 안정적.',
+          'NumLink: main에 3커밋 앞서 있음(push 필요), 미추적 파일(DailyChallengeHubPanel, _Recovery, Screenshots) 정리 필요. MeowBeat: refactor/ai-friendly 브랜치에서 대규모 리팩토링 중(60+개 새 파일). dev-studio: main 동기화 완료, 안정적.',
       },
       {
         title: '[QA Tester] 게임오버 이벤트 흐름 설계 결함 발견',
@@ -1819,14 +1819,14 @@ export const seedJournalEntries: JournalEntry[] = [
       {
         title: '[DevOps] daily_standup.bat PATH 오류 수정 + 빌드 환경 정상',
         description:
-          'Windows Task Scheduler가 사용자 PATH를 상속하지 않아 claude 명령어를 찾지 못해 매일 실패(LastTaskResult:1). claude → C:\\Users\\LIMMM\\AppData\\Roaming\\npm\\claude.cmd 전체 경로로 수정. Unity 6000.3.5f2, agent-office Vite 7.1.2 + React 19.1.1 정상.',
+          'Windows Task Scheduler가 사용자 PATH를 상속하지 않아 claude 명령어를 찾지 못해 매일 실패(LastTaskResult:1). claude → C:\\Users\\LIMMM\\AppData\\Roaming\\npm\\claude.cmd 전체 경로로 수정. Unity 6000.3.5f2, dev-studio Vite 7.1.2 + React 19.1.1 정상.',
       },
     ],
     meetingTitle: '2026-03-20 일일 진행 회의',
     meetingSummary:
       'NumLink 게임 핵심 버그 7건 수정 완료(4+3), 자동 회의 시스템 복구, MeowBeat 리팩토링 진행 중. QA에서 게임오버 이벤트 흐름 설계 결함 발견하여 후속 수정 필요.',
     meetingItems: [
-      { speaker: 'Orchestrator', note: 'NumLink 3커밋 미push 상태. MeowBeat refactor/ai-friendly 브랜치 60+ 파일 변경 중. agent-office 안정. NumLink push + 미추적 파일 정리 우선.' },
+      { speaker: 'Orchestrator', note: 'NumLink 3커밋 미push 상태. MeowBeat refactor/ai-friendly 브랜치 60+ 파일 변경 중. dev-studio 안정. NumLink push + 미추적 파일 정리 우선.' },
       { speaker: 'Developer', note: '오늘 커밋 3건: 4-bug 일괄 수정(c29ee15), 버튼 사라짐 수정(a9ab430), 선/버튼/게임오버 수정(ec2fa2f). 기술 부채 6건 존재(TODO), 모두 낮은 우선순위.' },
       { speaker: 'QA Tester', note: '게임오버 흐름에서 OnAllLivesLost 이벤트 미트리거 결함 발견(높음). lineRendererPrefab null 시 선 렌더링 불가(높음). isVibrated 상태 누수(낮음). 전반적 품질은 안정화 진행 중.' },
       { speaker: 'DevOps', note: 'daily_standup.bat PATH 오류로 매일 자동 회의 실패하고 있었음. claude.cmd 전체 경로로 수정 완료. 내일(3/21)부터 정상 자동 실행 예상.' },
@@ -1872,10 +1872,10 @@ export const seedJournalEntries: JournalEntry[] = [
       {
         title: '[QA Tester] 3개 프로젝트 품질 양호 — NumLink TODO 7건 LOW',
         description:
-          'NumLink: fix 커밋 10건 활발, TODO 7건 모두 LOW 우선순위, 컴파일 경고는 외부 라이브러리만. MeowBeat: TODO 0건 깔끔, 대량 .meta 미커밋 정리 필요. agent-office: TODO 0건, 완벽 커밋 상태. 모든 프로젝트 게임 로직 관점 안정적.',
+          'NumLink: fix 커밋 10건 활발, TODO 7건 모두 LOW 우선순위, 컴파일 경고는 외부 라이브러리만. MeowBeat: TODO 0건 깔끔, 대량 .meta 미커밋 정리 필요. dev-studio: TODO 0건, 완벽 커밋 상태. 모든 프로젝트 게임 로직 관점 안정적.',
       },
       {
-        title: '[DevOps] agent-office 배포 정상, npm 13개 패키지 outdated',
+        title: '[DevOps] dev-studio 배포 정상, npm 13개 패키지 outdated',
         description:
           'GitHub Pages 자동 배포 정상 작동(빌드 1.62초). React 19.2.4, Vite 8.0.0 등 업데이트 가능하나 심각하지 않음. NumLink/MeowBeat 모두 Unity 6000.3.5f2 동일 버전, .gitignore 완벽. 즉시 필요한 Critical 사항 없음.',
       },
@@ -1910,7 +1910,7 @@ export const seedJournalEntries: JournalEntry[] = [
       },
       {
         speaker: 'DevOps',
-        note: 'agent-office npm 의존성 13개 outdated지만 Breaking change 없으므로 일괄 업데이트 안전하다. NumLink APK 빌드 파이프라인이 아직 없는데, 3/18 회의에서 결정한 GitHub Actions + Google Play Internal Testing 자동화를 이번 주 안에 구축해야 스토어 출시 일정에 맞출 수 있다.',
+        note: 'dev-studio npm 의존성 13개 outdated지만 Breaking change 없으므로 일괄 업데이트 안전하다. NumLink APK 빌드 파이프라인이 아직 없는데, 3/18 회의에서 결정한 GitHub Actions + Google Play Internal Testing 자동화를 이번 주 안에 구축해야 스토어 출시 일정에 맞출 수 있다.',
       },
     ],
     decisions: [
@@ -1932,12 +1932,12 @@ export const seedJournalEntries: JournalEntry[] = [
       {
         title: '인사이트: WebGPU 전환 준비 + brotli 서버 설정',
         description:
-          'Unity 6.1에서 WebGPU가 공식 지원되고 WebGL 기본 압축이 brotli로 변경. agent-office/itch.io 배포 시 Content-Encoding: br 헤더 설정을 미리 준비. 장기적으로 WebGL→WebGPU 전환 로드맵 수립.',
+          'Unity 6.1에서 WebGPU가 공식 지원되고 WebGL 기본 압축이 brotli로 변경. dev-studio/itch.io 배포 시 Content-Encoding: br 헤더 설정을 미리 준비. 장기적으로 WebGL→WebGPU 전환 로드맵 수립.',
       },
       {
         title: '이번 주 액션: APK 빌드 파이프라인 + MeowBeat .meta 정리',
         description:
-          'DevOps: GitHub Actions + Google Play Internal Testing 자동화 구축. QA: MeowBeat 리팩토링 브랜치 .meta 파일 정리 후 merge. DevOps: agent-office npm update 실행. 이상 3건을 이번 주 내 완료.',
+          'DevOps: GitHub Actions + Google Play Internal Testing 자동화 구축. QA: MeowBeat 리팩토링 브랜치 .meta 파일 정리 후 merge. DevOps: dev-studio npm update 실행. 이상 3건을 이번 주 내 완료.',
       },
     ],
   },
@@ -2053,9 +2053,9 @@ export const seedJournalEntries: JournalEntry[] = [
   {
     id: '2026-03-17T20:00:00-numlink-full-review',
     date: '2026-03-17',
-    researchTitle: 'NumLink 전수 코드 리뷰 + agent-office 멀티프로젝트 전환',
+    researchTitle: 'NumLink 전수 코드 리뷰 + dev-studio 멀티프로젝트 전환',
     researchSummary:
-      'NumLink 프로젝트의 전체 C# 코드(19개 스크립트)를 성능·기능·구조 3축으로 리뷰하여 62건의 이슈를 발견·수정했다. 동시에 agent-office를 멀티프로젝트 구조로 전환하고 NumLink을 등록·배포했다.',
+      'NumLink 프로젝트의 전체 C# 코드(19개 스크립트)를 성능·기능·구조 3축으로 리뷰하여 62건의 이슈를 발견·수정했다. 동시에 dev-studio를 멀티프로젝트 구조로 전환하고 NumLink을 등록·배포했다.',
     researchItems: [
       {
         title: 'CRITICAL 6건 — 게임 실행 불가 수준',
@@ -2073,26 +2073,26 @@ export const seedJournalEntries: JournalEntry[] = [
           'Debug.Log 릴리스 빌드 포함(19개 파일), Spiral 패턴이 전체 숫자 숨김, Checkerboard 50% 과다 숨김, DOTween Kill 누락, NumberButton.Number 매번 int.TryParse, 매직 넘버 잔존, LINQ in Update, static 필드 씬 전환 잔존 등.',
       },
       {
-        title: 'agent-office 멀티프로젝트 구조 분석',
+        title: 'dev-studio 멀티프로젝트 구조 분석',
         description:
           '기존 MeowBeat 전용 구조에서 페이지가 /work, /log, /playground로 재편된 상태. ProjectConfig 공통 타입 + 프로젝트 레지스트리를 도입하고, /work 페이지에 탭 스위처를 추가하는 방식이 기존 사이드바+패널 레이아웃과 가장 자연스럽게 통합됨을 확인.',
       },
     ],
     meetingTitle: 'NumLink 코드 품질 + 멀티프로젝트 전환 회의',
     meetingSummary:
-      '62건의 코드 이슈를 3개 병렬 팀(코어 게임 로직, 보드/레벨/패턴, 매니저/시스템)으로 분담하여 전수 수정 완료. agent-office를 ProjectConfig 레지스트리 기반 멀티프로젝트로 전환하고 NumLink을 등록·배포. Unity Editor 통합(SFX 폴백, 프리뷰 동적 생성, AchievementManager 동적 생성)도 완료.',
+      '62건의 코드 이슈를 3개 병렬 팀(코어 게임 로직, 보드/레벨/패턴, 매니저/시스템)으로 분담하여 전수 수정 완료. dev-studio를 ProjectConfig 레지스트리 기반 멀티프로젝트로 전환하고 NumLink을 등록·배포. Unity Editor 통합(SFX 폴백, 프리뷰 동적 생성, AchievementManager 동적 생성)도 완료.',
     meetingItems: [
       {
         speaker: 'Orchestrator',
-        note: '오늘 3개 작업을 병렬 진행한다. (1) NumLink Unity Editor 통합 — SFX/파티클/프리뷰 에셋 연결 폴백, (2) agent-office 멀티프로젝트 전환 — NumLink 등록, (3) NumLink 전수 코드 리뷰 + 수정. 코드 리뷰는 3개 그룹으로 분할하여 병렬 실행.',
+        note: '오늘 3개 작업을 병렬 진행한다. (1) NumLink Unity Editor 통합 — SFX/파티클/프리뷰 에셋 연결 폴백, (2) dev-studio 멀티프로젝트 전환 — NumLink 등록, (3) NumLink 전수 코드 리뷰 + 수정. 코드 리뷰는 3개 그룹으로 분할하여 병렬 실행.',
       },
       {
         speaker: 'Developer',
-        note: 'Part A(Unity Editor 통합) 완료. EffectManager에 Resources.Load 폴백 추가, PuzzleManager에 inGamePuzzlePreview 동적 생성, GameBootstrapper에 AchievementManager 동적 생성. Inspector 미할당 시에도 코드가 동작하도록 방어적 코딩 적용. Part B를 위해 agent-office 리포를 탐색한 결과 페이지 구조가 대폭 변경되어 있어(ProjectsPage 삭제, WorkPage/LogPage/PlaygroundPage 신설) 새 구조 위에 재작업 필요.',
+        note: 'Part A(Unity Editor 통합) 완료. EffectManager에 Resources.Load 폴백 추가, PuzzleManager에 inGamePuzzlePreview 동적 생성, GameBootstrapper에 AchievementManager 동적 생성. Inspector 미할당 시에도 코드가 동작하도록 방어적 코딩 적용. Part B를 위해 dev-studio 리포를 탐색한 결과 페이지 구조가 대폭 변경되어 있어(ProjectsPage 삭제, WorkPage/LogPage/PlaygroundPage 신설) 새 구조 위에 재작업 필요.',
       },
       {
         speaker: 'Art Director',
-        note: 'agent-office에 NumLink 프로젝트 카드를 추가할 때 기존 토스 스타일(#191f28 텍스트, #3182f6 액센트, #f8f9fa 배경)을 유지했다. NumLink의 프로젝트 액센트 컬러를 #3182f6(블루)으로, MeowBeat를 #f97316(오렌지)으로 설정하여 시각적 구분을 확보.',
+        note: 'dev-studio에 NumLink 프로젝트 카드를 추가할 때 기존 토스 스타일(#191f28 텍스트, #3182f6 액센트, #f8f9fa 배경)을 유지했다. NumLink의 프로젝트 액센트 컬러를 #3182f6(블루)으로, MeowBeat를 #f97316(오렌지)으로 설정하여 시각적 구분을 확보.',
       },
       {
         speaker: 'QA Tester',
@@ -2104,7 +2104,7 @@ export const seedJournalEntries: JournalEntry[] = [
       },
       {
         speaker: 'DevOps',
-        note: 'agent-office 배포 시 리모트에서 페이지 구조 대폭 변경(ChroniclePage→LogPage, OfficePage→PlaygroundPage, ProjectsPage 삭제)이 있어 merge conflict 발생. rebase 중단 후 새 구조 위에 재작업하여 해결. NumLink 코드 수정은 828ed33 커밋으로 43파일 +1786/-334 라인 변경 후 push 완료.',
+        note: 'dev-studio 배포 시 리모트에서 페이지 구조 대폭 변경(ChroniclePage→LogPage, OfficePage→PlaygroundPage, ProjectsPage 삭제)이 있어 merge conflict 발생. rebase 중단 후 새 구조 위에 재작업하여 해결. NumLink 코드 수정은 828ed33 커밋으로 43파일 +1786/-334 라인 변경 후 push 완료.',
       },
       {
         speaker: 'Game Designer',
@@ -2122,7 +2122,7 @@ export const seedJournalEntries: JournalEntry[] = [
           'CRITICAL 6건(GameOver 반복, Thread.Sleep, MaxBoardSize, ZShape, 힌트 버그, 재화 음수) + HIGH 17건 + MEDIUM 25건 + LOW 14건을 3개 병렬 팀으로 분담하여 전수 수정. 19개 스크립트 + 4개 설정 파일, +1786/-334 라인 변경.',
       },
       {
-        title: 'agent-office 멀티프로젝트 전환 + 배포 완료',
+        title: 'dev-studio 멀티프로젝트 전환 + 배포 완료',
         description:
           'ProjectConfig 레지스트리 도입, /work 페이지에 MeowBeat/NumLink 탭 스위처 추가, HomePage에 멀티프로젝트 카드 표시. GitHub Pages 자동 배포(f15e828). 향후 프로젝트 추가 시 data/projects/에 파일 생성 + index.ts 등록만 하면 됨.',
       },
@@ -2206,7 +2206,7 @@ export const seedJournalEntries: JournalEntry[] = [
       },
       {
         speaker: 'Content Writer',
-        note: 'DevOps의 자동 배포와 연결해서 마케팅도 템플릿화해야 한다. DEVLOG_TEMPLATE.md로 개발 과정 자동 기록, itch.io 페이지 템플릿 표준화, 게임 출시 시 Agent Office 대시보드에 카드 자동 추가. 새 게임 출시 = 포트폴리오 자동 업데이트까지 연결하면 "AI 1인 스튜디오" 내러티브가 자동 축적된다.',
+        note: 'DevOps의 자동 배포와 연결해서 마케팅도 템플릿화해야 한다. DEVLOG_TEMPLATE.md로 개발 과정 자동 기록, itch.io 페이지 템플릿 표준화, 게임 출시 시 Dev Studio 대시보드에 카드 자동 추가. 새 게임 출시 = 포트폴리오 자동 업데이트까지 연결하면 "AI 1인 스튜디오" 내러티브가 자동 축적된다.',
       },
       {
         speaker: 'Art Director',
@@ -2424,7 +2424,7 @@ export const seedJournalEntries: JournalEntry[] = [
       },
       {
         speaker: 'ReleaseOps',
-        note: 'refactor(assets) 커밋으로 push 완료. 다음은 Agent Office 대시보드 업데이트다.',
+        note: 'refactor(assets) 커밋으로 push 완료. 다음은 Dev Studio 대시보드 업데이트다.',
       },
     ],
     decisions: [
@@ -2438,7 +2438,7 @@ export const seedJournalEntries: JournalEntry[] = [
       },
       {
         title: '대시보드 전환',
-        description: 'Agent Office를 Cat Merge Cafe에서 MeowBeat 기준으로 전면 업데이트한다.',
+        description: 'Dev Studio를 Cat Merge Cafe에서 MeowBeat 기준으로 전면 업데이트한다.',
       },
     ],
   },

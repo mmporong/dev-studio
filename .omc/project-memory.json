@@ -212,14 +212,20 @@
     },
     {
       "path": "",
-      "accessCount": 8,
-      "lastAccessed": 1774958812553,
+      "accessCount": 9,
+      "lastAccessed": 1775273363698,
       "type": "directory"
     },
     {
       "path": "src\\components\\layout\\NavBar.tsx",
       "accessCount": 7,
       "lastAccessed": 1774999585774,
+      "type": "file"
+    },
+    {
+      "path": "index.html",
+      "accessCount": 7,
+      "lastAccessed": 1775273395364,
       "type": "file"
     },
     {
@@ -238,12 +244,6 @@
       "path": "src\\pages\\LogPage.tsx",
       "accessCount": 6,
       "lastAccessed": 1774958877163,
-      "type": "file"
-    },
-    {
-      "path": "index.html",
-      "accessCount": 6,
-      "lastAccessed": 1775016179013,
       "type": "file"
     },
     {
@@ -319,6 +319,12 @@
       "type": "file"
     },
     {
+      "path": "vite.config.ts",
+      "accessCount": 2,
+      "lastAccessed": 1775273395821,
+      "type": "file"
+    },
+    {
       "path": "src\\styles\\base.css",
       "accessCount": 1,
       "lastAccessed": 1774945058724,
@@ -328,12 +334,6 @@
       "path": ".env.pages.example",
       "accessCount": 1,
       "lastAccessed": 1774949857452,
-      "type": "file"
-    },
-    {
-      "path": "vite.config.ts",
-      "accessCount": 1,
-      "lastAccessed": 1774949858280,
       "type": "file"
     },
     {
@@ -418,6 +418,12 @@
       "path": "public\\insights.json",
       "accessCount": 1,
       "lastAccessed": 1774973043116,
+      "type": "file"
+    },
+    {
+      "path": "README.md",
+      "accessCount": 1,
+      "lastAccessed": 1775273394819,
       "type": "file"
     }
   ],
