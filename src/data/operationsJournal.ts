@@ -46,104 +46,109 @@ export const seedJournalEntries: JournalEntry[] = [
     id: '2026-04-04T09:00:00-daily-standup',
     date: '2026-04-04',
     researchTitle:
-      '📊 4/4 데일리 스탠드업 리서치 — Unity 6.4 출시·모바일 55~60% 점유율·GitHub Actions 4월 업데이트·ASO 유기 다운로드 전략·리듬 퍼즐 장르 융합',
+      '📊 4/4 데일리 스탠드업 리서치 — NumLink 미커밋 폭증·NEKOPARA 직접 경쟁·TikTok 도달률 붕괴·Play 신원인증 의무화·Neo-Brutalism 확정',
     researchSummary:
-      '7명 에이전트 직렬 리서치 완료. Unity 6.4 출시(ECS 코어 패키지 통합, Project Auditor 내장, 분기별 지원 업데이트 체계 확립). 모바일 게임 시장 Unity 점유율 55~60% 향해 성장 중, 전체 시장 2027년 1030억 달러 돌파 전망. GitHub Actions 4월 초 업데이트(서비스 컨테이너 진입점 오버라이드, OIDC 커스텀 속성, VNET 장애조치 퍼블릭 프리뷰). ASO에서 앱 다운로드의 65% 이상이 스토어 검색 경유 — 유기 ASO가 인디 개발자 핵심 전략. 리듬 게임에 RPG·퍼즐·비주얼노벨 요소 융합 트렌드 가속, MeowBeat 장르 블렌딩 방향 유효. Stage Tour(RedOctane) Fall 2026 출시 예정으로 플라스틱 악기 리듬 게임 부활 조짐.',
+      '7명 에이전트 병렬 리서치 완료. NumLink 미커밋 12파일(+944줄) 위험 급증 — MainScene.unity +722줄 포함, 씬 파일 corruption 리스크 9/10. NEKOPARA Sekai Connect 4/14 출시(MeowBeat 직접 경쟁). TikTok 유기 도달률 -98.6% 붕괴로 YouTube Shorts·Reels 크로스포스팅 전략 전환 필요. Google Play 개발자 신원인증 2026년 9월 의무화 — 즉시 완료 요구. Unity 6.8 CoreCLR 출시 전 스토어 출시 시 마이그레이션 불필요. Neo-Brutalism 2025-2026 주류 확정으로 NumLink 디자인 방향 유효.',
     researchItems: [
       {
-        title: '🎯 Orchestrator — agent-office 정상, NumLink·MeowBeat 로컬 부재 P0 지속',
+        title: '🎯 Orchestrator — NumLink 미커밋 12파일 폭증, MeowBeat .meta 삭제 리스크',
         description:
-          'agent-office 최신 커밋 4/3 데일리 스탠드업(60f6686). NumLink·MeowBeat 로컬 디렉토리 여전히 부재 — 어제 P0 미해결 상태. 어제 결정사항(TDD 도입, Unity 리스크 모니터링, GitHub Actions 보안 대응) 진행 여부 미확인. 오늘 우선순위: 프로젝트 로컬 복구 P0 재지정.',
+          '어제(4/3) P0 NumLink 커밋 미완료 → 오히려 12파일(+944줄)로 증가. MainScene.unity +722줄 수정 포함. MeowBeat meowbeat/main에 .meta 파일 3개(Input/Item/SaveLoad) 삭제 상태 방치 — Unity 참조 오류·빌드 실패 가능. 어제 P1(콤보·보상 QA, MeowBeat 빌드 확인) 모두 미이행 확인. 오늘 절대 우선순위: NumLink 커밋 → MeowBeat .meta 처리 → QA 이행.',
       },
       {
-        title: '🎮 Game Designer — 퍼즐·리듬 장르 융합, Stage Tour 리듬 게임 부활, AI 적응형 난이도',
+        title: '🎮 Game Designer — NEKOPARA 4/14 직접 경쟁·Poki 공유유도 공식·리워드광고 62%',
         description:
-          '2026 퍼즐 게임 핵심 트렌드: AI 적응형 난이도(실시간 행동 분석·커스텀 퍼즐 생성), 소셜 멀티플레이(공동 해결·라이브 이벤트), VR/MR 몰입형 퍼즐. 리듬 게임 트렌드: 모바일 프리투플레이 급성장, RPG·퍼즐·비주얼노벨과 장르 블렌딩 가속. Stage Tour(RedOctane) Fall 2026 출시 — 플라스틱 악기 리듬 게임 부활 조짐. MeowBeat의 "고양이+리듬+퍼즐" 혼합 전략 트렌드 부합 확인.',
+          'NEKOPARA Sekai Connect(고양이+리듬+카페) 4월 14일 출시 — IP 700만 장 보유, MeowBeat 최근접 직접 경쟁작. 대응: 퍼즐 비중 강화·캐주얼 진입장벽 낮춤. Poki 성공 공식: 스트레스 완화형 + 정답 공유 버튼으로 바이럴 루프 설계. 리워드 광고 전체 수익 62%, 참여율 45~60% — 막힌 레벨 힌트 리워드 광고가 최적 배치.',
       },
       {
-        title: '💻 Developer — Unity 6.4 출시, ECS 코어 통합, Unity Studio 브라우저 도구 공개',
+        title: '💻 Developer — UI 폴리싱 단계 확정·Input.GetKeyDown 2곳·Unity 6.8 CoreCLR 예정',
         description:
-          'Unity 6.4 출시: Entities Component System(ECS)이 코어 패키지로 에디터 직접 통합, Project Auditor 기본 내장. Adaptive Performance가 PS4/PS5/Xbox Series X|S 콘솔 지원 추가. 분기별 지원 업데이트 체계(6.7 LTS까지) 확립으로 예측 가능한 릴리즈 일정. Unity Studio — 신규 브라우저 기반 인터랙티브 3D 애플리케이션 제작 도구 공개. AI 에이전트가 프로파일러 데이터 분석·UI Toolkit 레이아웃 지원·에셋 생성 지원 예정. 2026 로드맵 테마: "화려함보다 안정성".',
+          '최근 10커밋 중 80% UI 관련 → UI 폴리싱 단계 확정. Input.GetKeyDown 2곳(NumberManager.cs:194,199), GameObject.Find 3곳(AutoSetup·ObjectPoolManager·UIToolkitManager) — 스토어 전 처리 필요. Unity 6.5 Android thin LTO(앱 시작 단축), 6.8 CoreCLR 정식 전환(Mono 대체) 예정 — 현재 출시 시 CoreCLR 마이그레이션 불필요.',
       },
       {
-        title: '🔍 QA Tester — 자동화 테스트 부재 4일째, AI 플레이테스팅 트렌드 지속',
+        title: '🔍 QA Tester — MainScene.unity corruption 리스크 9/10·EditMode 테스트 30분 착수 가능',
         description:
-          'NumLink·MeowBeat 자동화 테스트 전무 상태 4일 연속. Unity 6.4 Project Auditor 내장으로 코드 품질 분석 도구 기본 제공 — 즉시 활용 가능. AI 기반 self-healing 테스트 시장 확대 중. Debug.Log 280건·Input.GetKey 9건 여전히 미정리. 로컬 복구 후 Domain 레이어 TDD 즉시 착수 촉구(4일 연속 지적).',
+          'MainScene.unity 미커밋 리스크 9/10 — Unity 씬 파일 YAML 특성상 merge conflict 시 스크립트 참조 일괄 손상. Manager 4개 의존 체인 미커밋 리스크 7/10. 오늘 30분 투자: git commit + EditMode 테스트 3개로 4일간 반복 지적 기술 부채 절반 해소 가능. 1인 개발자 최소 기준: Domain EditMode 3건 + PlayMode 스모크 1건 + 실기기 2종.',
       },
       {
-        title: '📢 Content Writer — ASO 65% 스토어 검색 경유, 평점 4.0 이상 필수, 지역화 전략',
+        title: '📢 Content Writer — TikTok 도달률 -98.6%·Play 신원인증 9월 의무화·Poki 20MB 제한',
         description:
-          '2026 ASO 핵심: 앱 다운로드 65%+ 스토어 직접 검색 경유 — 유기 ASO가 인디 개발자 비용 효율 최고 채널. 77% 사용자가 설치 전 리뷰 최소 1건 확인, 4.0 미만 앱은 검색 상위권에서 사실상 배제. 지역화(단순 번역 아닌 문화 맞춤)가 CTR·전환율·리텐션 동시 향상. 전환율 2~3%만 개선해도 광고 없이 수백 건 추가 유기 설치. 영상 프리뷰·A/B 테스트·시즌 키워드 조합이 2026 ASO 표준.',
+          'TikTok 유기적 도달률 사실상 소멸(-98.6% 실사례) → YouTube Shorts + Instagram Reels 크로스포스팅 전략으로 전환 필수. Google Play 개발자 신원인증 2026년 9월 의무화 — 미완료 시 앱 설치 불가, 즉시 Play Console에서 완료 필요. Poki WebGL 초기 로드 20MB 이하 기술 요건 필수. AdMob 데이터 수집 항목 Play Console 데이터 안전 공시란 정확 기재 필요.',
       },
       {
-        title: '⚙️ DevOps — GitHub Actions 4월 초 업데이트, VNET 장애조치 프리뷰, 가격 인하',
+        title: '⚙️ DevOps — GameCI+fastlane 표준·privacy-policy docs/ 배포·agent-office 파이프라인 건전',
         description:
-          'GitHub Actions 4/2 업데이트: 서비스 컨테이너 진입점·커맨드 오버라이드 지원, OIDC 커스텀 속성 추가, Azure VNET 장애조치 네트워크 퍼블릭 프리뷰. 가격 변경: 러너 요금 최대 39% 인하(2026년 1월부터), 셀프호스트 러너 $0.002/분 플랫폼 요금 신설(3월부터). 보안 로드맵: 의존성 락킹(commit SHA), L7 이그레스 방화벽, Actions Data Stream(S3/Azure Event Hub). 시크릿 관리: 쓰기 접근과 시크릿 관리 권한 분리 예정.',
+          'Unity Android 빌드 자동화 표준: GameCI(ubuntu-latest) + fastlane supply → Play Store internal track. 최초 1회 수동 업로드 후 자동화 가능. NumLink 개인정보처리방침: docs/ 폴더 → mmporong.github.io/numlink/privacy-policy (설정 1시간). agent-office 배포 파이프라인 건전 — 필수 수정 없음(OIDC 기반, npm ci, concurrency 설정 정상).',
       },
       {
-        title: '🎨 Art Director — Unity 모바일 UI 3D화, 다이나믹 타이포, 폴더블 대응 필수',
+        title: '🎨 Art Director — 마스코트 아이콘 전환율 +25%·AI 3단계 워크플로·Neo-Brutalism 확정',
         description:
-          '2026 모바일 게임 UI/UX: 3D 요소 도입으로 리텐션·몰입감 강화, 환경 통합 인터페이스(UI가 게임 세계에 녹아듦) 주류화. 다이나믹 아이콘·반응형 타이포그래피. 폴더블 디바이스·태블릿 대응 크로스 디바이스 레이아웃 필수화. AI 개인화 적응형 레이아웃 상용화 시작. NumLink Brutalist + 환경 통합 UI, MeowBeat 내러티브 UI(고양이 캐릭터 통합) 방향 유효 재확인.',
+          '마스코트 중심 아이콘 최적화만으로 전환율 최대 25% 상승 확인. AI 에셋 생성 3단계 워크플로: Midjourney v7(컨셉/무드보드) → Leonardo AI(스프라이트 반복 생산) → Adobe Firefly(스토어 제출 저작권 안전). Neo-Brutalism 2025-2026 디지털 주류 확정 — NumLink 방향 유효. MeowBeat HUD: 고양이 표정 5단계 상태 표현, Duet Cats·Beat Cats 레퍼런스.',
       },
     ],
-    meetingTitle: '🏢 4/4 데일리 스탠드업 회의 — Unity 6.4 즉시 적용 검토, ASO 전략 수립, 로컬 복구 P0 재지정',
+    meetingTitle: '🏢 4/4 데일리 스탠드업 회의 — NumLink 커밋 P0 즉시·NEKOPARA 경쟁 대응·Play 신원인증 즉시',
     meetingSummary:
-      'Unity 6.4 출시로 Project Auditor 즉시 활용 가능 — QA 리스크 부분 해소 기대. 리듬·퍼즐 장르 융합 트렌드 MeowBeat 방향 유효 재확인. GitHub Actions 요금 인하로 CI/CD 비용 절감 효과. ASO 전략(평점 관리·지역화·영상 프리뷰) 출시 전 체계화 필요. NumLink·MeowBeat 로컬 복구 P0 4일째 미해결 — 오늘 반드시 완료.',
+      'NumLink 미커밋이 12파일로 폭증 — MainScene.unity corruption 리스크 긴급. NEKOPARA Sekai Connect 4/14 출시로 MeowBeat 직접 경쟁 현실화. TikTok 도달률 붕괴로 숏폼 전략 전환 필요. Google Play 신원인증 9월 전 즉시 완료 요구. Unity 6.8 CoreCLR 전 출시하면 마이그레이션 불필요 — 출시 속도가 곧 기술 리스크 절감.',
     meetingItems: [
       {
         speaker: 'Orchestrator',
-        note: 'NumLink·MeowBeat 로컬 부재 P0 4일째 미해결. agent-office 정상 가동 유지. 오늘 절대 우선순위: 로컬 복구 후 어제 P0/P1 이행 상태 점검. Unity 6.4 업데이트 검토는 P2.',
+        note: 'NumLink 미커밋 12파일은 오늘 즉시 커밋해야 합니다. 씬 파일 포함 상태로 방치 중 — 작업 손실 리스크. MeowBeat .meta 3개 삭제도 오늘 처리. 어제 P0/P1 모두 미이행 — 오늘은 반드시 커밋 완료.',
       },
       {
         speaker: 'Game Designer',
-        note: 'MeowBeat "고양이+리듬+퍼즐" 장르 블렌딩 방향이 2026 트렌드와 정확히 일치. Stage Tour 출시 전 MeowBeat 선점 유리. NumLink AI 적응형 난이도 MVP 이후 로드맵 유지. 리듬 RPG·비주얼노벨 믹싱 참고할 레퍼런스 스터디 추가.',
+        note: 'NEKOPARA Sekai Connect 4/14 출시는 MeowBeat에 최대 위협입니다. 대응 전략: 퍼즐 비중 강화로 차별화. Poki NumLink에 "정답 공유" 기능 추가 시 유기 바이럴 가능. 리워드 광고 막힌 레벨 힌트 배치 수익화 검토.',
       },
       {
         speaker: 'Developer',
-        note: 'Unity 6.4 ECS 코어 통합·Project Auditor 내장은 기존 프로젝트에 즉시 영향 없으나 업그레이드 검토 P2. Unity Studio 브라우저 도구 향후 프로토타이핑 활용 가능. 2026 로드맵 "안정성 우선" 방향 — Unity 지속 사용 결정 유지.',
+        note: 'Input.GetKeyDown 디버그 키 2곳은 #if UNITY_EDITOR 가드로 30분 내 처리 가능. GameObject.Find 3곳 중 ObjectPoolManager는 에디터 가드로 해결, AutoSetup·UIToolkitManager는 ServiceLocator 대체 필요. 현재 버전으로 스토어 출시 시 Unity 6.8 CoreCLR 마이그레이션 불필요.',
       },
       {
         speaker: 'QA Tester',
-        note: '자동화 테스트 부재 4일 연속 지적. Unity 6.4 Project Auditor 내장으로 코드 품질 분석 즉시 가능 — 로컬 복구 후 첫 번째 액션으로 실행 요청. Domain 레이어 TDD 오늘 착수하지 않으면 P0 격상 검토.',
+        note: '오늘 우선순위: git commit 5분 + EditMode 테스트 3개 30분 = 35분으로 4일 부채 해소. MainScene.unity를 하루 더 방치하면 corruption 리스크가 현실화됩니다. 더 이상 미룰 수 없습니다.',
       },
       {
         speaker: 'Content Writer',
-        note: 'ASO 전략 핵심 3가지: ①평점 4.0 이상 유지 체계 수립 ②출시 12~18개월 전 스토어 페이지 등록 ③지역화(KR·EN·JP) 우선 적용. NumLink·MeowBeat 각각 스토어 메타데이터 초안 작성 시작 권고. 비주얼 아이덴티티 통일 재강조.',
+        note: 'Google Play 개발자 신원인증 지금 바로 Play Console에서 완료해야 합니다. 9월 마감이지만 인증 처리에 수 주 걸릴 수 있음. TikTok 유기 마케팅 전략은 폐기, YouTube Shorts 중심으로 전환 권고.',
       },
       {
         speaker: 'DevOps',
-        note: 'GitHub Actions 러너 요금 최대 39% 인하 확인 — agent-office CI/CD 비용 절감 효과. VNET 장애조치 프리뷰·OIDC 커스텀 속성 적용 검토. 셀프호스트 러너 $0.002/분 요금 신설(3월~) 영향 없음(현재 GitHub 호스트 사용). 보안: 액션 SHA 고정 점검 P2.',
+        note: 'NumLink 개인정보처리방침 GitHub Pages 배포가 Google Play 등록 최초 블로커. docs/ 폴더 방식으로 1~2시간 내 완료 가능. agent-office 파이프라인은 건전 — 오늘 배포 이후 추가 작업 불필요.',
       },
       {
         speaker: 'Art Director',
-        note: '3D UI 요소 도입·환경 통합 인터페이스 트렌드 재확인. NumLink Brutalist + 환경 통합, MeowBeat 내러티브 UI 방향 유지. 폴더블 대응 레이아웃은 MVP 이후 검토. 다이나믹 타이포그래피 적용 시 Unity TextMeshPro 활용 권고.',
+        note: 'NumLink 아이콘 Brutalist 마스코트 방향 확정 권고. 스토어 아이콘 교체만으로 전환율 25% 기대. MeowBeat 에셋 생산은 Midjourney v7 → Leonardo AI → Firefly 3단계 워크플로 활용. NEKOPARA 출시 전 MeowBeat 스토어 페이지 선등록 검토.',
       },
     ],
     decisions: [
       {
-        title: 'P0: NumLink·MeowBeat 로컬 디렉토리 복구 (4일째 미해결, 오늘 완료 필수)',
+        title: 'P0: NumLink 미커밋 12파일 즉시 커밋 (오늘 오전)',
         description:
-          'GitHub 클론 또는 경로 재설정으로 두 프로젝트 로컬 환경 즉시 복구. 복구 후 어제 P0/P1 결정사항 이행 상태 즉시 점검.',
+          'MainScene.unity +722줄 포함 corruption 리스크 9/10. TMP 에셋 변경 의도 확인 후 논리 단위 분할 커밋. SettingsPanel.uxml.meta, settings.uss.meta 신규 파일 포함.',
       },
       {
-        title: 'P1: Domain 레이어 TDD 도입 착수 (로컬 복구 직후 즉시)',
+        title: 'P0: MeowBeat .meta 파일 3개 삭제 처리 (오늘 오전)',
         description:
-          '4일 연속 지적 사항. 로컬 복구 후 NumLink Domain 레이어 유닛 테스트 TDD 방식으로 즉시 시작. Project Auditor도 실행하여 코드 품질 현황 파악.',
+          'meowbeat/main에 Input/Item/SaveLoad .meta 삭제 상태 — 의도적 삭제면 커밋, 아니면 복원. 방치 시 빌드 실패 리스크.',
       },
       {
-        title: 'P1: Unity 6.4 업그레이드 검토',
+        title: 'P1: NumLink EditMode 테스트 3개 착수 (오늘 오후, 30분)',
         description:
-          'ECS 코어 통합·Project Auditor 내장 등 주요 변경사항 검토. 기존 프로젝트 URP 기반 호환성 확인 후 업그레이드 일정 결정.',
+          'git commit 완료 직후 PuzzleValidator·ScoreCalculator 등 Domain 레이어 EditMode 테스트 3개 작성. 4일 연속 지적 TDD 부채 즉시 착수.',
       },
       {
-        title: 'P2: ASO 전략 문서화 착수',
+        title: 'P1: Google Play 개발자 신원인증 즉시 완료',
         description:
-          'NumLink·MeowBeat 각각 스토어 메타데이터 초안 작성. 평점 관리 체계·지역화(KR·EN·JP) 우선순위 정의. 출시 12~18개월 전 마케팅 파이프라인 계획.',
+          '2026년 9월 의무화 — 인증 처리 수 주 소요 가능. Play Console에서 즉시 시작. 미완료 시 앱 설치 불가.',
       },
       {
-        title: 'P2: GitHub Actions 보안 업데이트 적용',
+        title: 'P2: NumLink 개인정보처리방침 GitHub Pages 배포',
         description:
-          'OIDC 커스텀 속성·액션 SHA 고정 점검. 요금 인하(39%) 효과 확인. 셀프호스트 러너 전환 불필요(현재 GitHub 호스트 유지).',
+          'docs/ 폴더 방식 → mmporong.github.io/numlink/privacy-policy. AdMob 필수 요건. 1~2시간 내 완료 가능.',
+      },
+      {
+        title: 'P2: NEKOPARA 출시 대응 — MeowBeat 퍼즐 비중 강화·스토어 선등록 검토',
+        description:
+          '4/14 직접 경쟁 출시. MeowBeat 퍼즐 요소 강화로 차별화. 스토어 페이지 선등록 검토(마케팅 선점).',
       },
     ],
   },
