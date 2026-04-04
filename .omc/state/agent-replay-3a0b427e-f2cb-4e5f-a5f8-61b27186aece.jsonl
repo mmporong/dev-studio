@@ -1,7 +1,0 @@
-{"t":0,"agent":"a2cf799","agent_type":"document-specialist","event":"agent_stop","success":true}
-{"t":0,"agent":"aa8917f","agent_type":"document-specialist","event":"agent_stop","success":true}
-{"t":0,"agent":"aa18978","agent_type":"document-specialist","event":"agent_stop","success":true}
-{"t":0,"agent":"a5d4b66","agent_type":"architect","event":"agent_start","parent_mode":"none"}
-{"t":0,"agent":"abf56a1","agent_type":"architect","event":"agent_start","parent_mode":"none"}
-{"t":0,"agent":"a5d4b66","agent_type":"architect","event":"agent_stop","success":true,"duration_ms":165410}
-{"t":0,"agent":"abf56a1","agent_type":"architect","event":"agent_stop","success":true,"duration_ms":181554}

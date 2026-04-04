@@ -1,7 +1,0 @@
-{
-  "tool_name": "WebFetch",
-  "tool_input_preview": "{\"url\":\"https://medium.com/@jengas/shipping-games-with-ai-coding-agents-7676c69f85f8\",\"prompt\":\"What specific AI agent workflow does this developer use to ship games? What results did they achieve? Ho...",
-  "error": "Request failed with status code 403",
-  "timestamp": "2026-03-16T01:27:44.700Z",
-  "retry_count": 3
-}

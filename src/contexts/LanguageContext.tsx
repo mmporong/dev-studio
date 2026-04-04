@@ -10,17 +10,10 @@ interface LanguageContextValue {
 const LanguageContext = createContext<LanguageContextValue | null>(null)
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocale] = useState<Locale>(() => {
-    const saved = localStorage.getItem('lang') as Locale | null
-    return saved === 'en' ? 'en' : 'ko'
-  })
+  const [locale, setLocale] = useState<Locale>('ko')
 
   const toggleLocale = useCallback(() => {
-    setLocale((prev) => {
-      const next = prev === 'ko' ? 'en' : 'ko'
-      localStorage.setItem('lang', next)
-      return next
-    })
+    setLocale((prev) => (prev === 'ko' ? 'en' : 'ko'))
   }, [])
 
   return (

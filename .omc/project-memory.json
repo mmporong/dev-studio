@@ -169,6 +169,12 @@
   },
   "hotPaths": [
     {
+      "path": "src\\data\\operationsJournal.ts",
+      "accessCount": 44,
+      "lastAccessed": 1775262329875,
+      "type": "file"
+    },
+    {
       "path": "src\\pages\\HomePage.css",
       "accessCount": 35,
       "lastAccessed": 1774945353285,
@@ -181,9 +187,9 @@
       "type": "file"
     },
     {
-      "path": "src\\data\\operationsJournal.ts",
-      "accessCount": 31,
-      "lastAccessed": 1774974031747,
+      "path": "src\\data\\agents.ts",
+      "accessCount": 20,
+      "lastAccessed": 1775229612989,
       "type": "file"
     },
     {
@@ -236,20 +242,20 @@
     },
     {
       "path": "index.html",
-      "accessCount": 5,
-      "lastAccessed": 1774999584855,
+      "accessCount": 6,
+      "lastAccessed": 1775016179013,
+      "type": "file"
+    },
+    {
+      "path": "src\\i18n\\en.ts",
+      "accessCount": 4,
+      "lastAccessed": 1775029046317,
       "type": "file"
     },
     {
       "path": "src\\i18n\\ko.ts",
       "accessCount": 3,
       "lastAccessed": 1774999595307,
-      "type": "file"
-    },
-    {
-      "path": "src\\i18n\\en.ts",
-      "accessCount": 3,
-      "lastAccessed": 1774999597012,
       "type": "file"
     },
     {
