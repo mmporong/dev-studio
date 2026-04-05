@@ -42,6 +42,7 @@ function isValidPayload(data: unknown): data is StatusPayload {
     const agent = val as Record<string, unknown>
     if (typeof agent.status !== 'string' || !VALID_STATUSES.has(agent.status)) return false
     if (typeof agent.task !== 'string') return false
+    if (agent.task.length > 200) return false
   }
 
   return true

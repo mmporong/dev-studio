@@ -12,9 +12,9 @@ jobs:
   collect:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: 22
 
@@ -35,12 +35,17 @@ jobs:
 
       - name: Telegram notification
         if: success()
+        env:
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         run: |
           ARTICLE_COUNT=$(node -e "const d=require('./public/insights.json'); const w=d.weeks[0]; console.log(w ? w.articles.length : 0)")
           python3 -c "
-          import urllib.request, json, sys
+          import urllib.request, json, sys, os
           count = sys.argv[1]
+          chat_id = os.environ['TELEGRAM_CHAT_ID']
+          bot_token = os.environ['TELEGRAM_BOT_TOKEN']
           msg = f'<b>주간 인사이트 수집 완료</b>\n이번 주 {count}건의 새 글이 수집되었습니다.'
-          data = json.dumps({'chat_id':'${{ secrets.TELEGRAM_CHAT_ID }}','parse_mode':'HTML','text':msg}).encode('utf-8')
-          urllib.request.urlopen(urllib.request.Request('https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage',data=data,headers={'Content-Type':'application/json'}))
+          data = json.dumps({'chat_id': chat_id, 'parse_mode': 'HTML', 'text': msg}).encode('utf-8')
+          urllib.request.urlopen(urllib.request.Request(f'https://api.telegram.org/bot{bot_token}/sendMessage', data=data, headers={'Content-Type': 'application/json'}))
           " "$ARTICLE_COUNT"

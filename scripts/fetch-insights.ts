@@ -73,6 +73,32 @@ function isoWeek(date: Date): string {
   return `${d.getUTCFullYear()}-W${String(weekNo).padStart(2, '0')}`
 }
 
+/** Max title length passed to LLM */
+const MAX_TITLE_LENGTH = 200
+
+/** Patterns that indicate prompt injection attempts in scraped titles */
+const INJECTION_PATTERNS = [
+  /ignore\s+(all\s+)?previous\s+instructions/i,
+  /disregard\s+(all\s+)?prior/i,
+  /forget\s+(all\s+)?previous/i,
+  /you\s+are\s+now\s+(a\s+)?/i,
+  /<\/?system>/i,
+  /\[INST\]/i,
+  /\bprompt\s*injection\b/i,
+]
+
+/**
+ * Sanitises a title before passing to LLM.
+ * Returns null if the title looks like a prompt injection attempt.
+ */
+function sanitiseForLLM(title: string): string | null {
+  const truncated = title.length > MAX_TITLE_LENGTH ? title.slice(0, MAX_TITLE_LENGTH) : title
+  for (const pattern of INJECTION_PATTERNS) {
+    if (pattern.test(truncated)) return null
+  }
+  return truncated
+}
+
 /** Returns true if date is within the last 7 days */
 function isWithinLastWeek(dateStr: string): boolean {
   if (!dateStr) return false
@@ -258,6 +284,12 @@ async function main() {
       let added = 0
       for (const raw of articles) {
         if (existingUrls.has(raw.url)) continue
+        const cleanTitle = sanitiseForLLM(raw.title)
+        if (!cleanTitle) {
+          console.log(`  [filter] 의심 패턴 감지, 제외: "${raw.title.slice(0, 60)}..."`)
+          continue
+        }
+        raw.title = cleanTitle
         existingUrls.add(raw.url) // prevent duplicates within this run
         newRaw.push({ raw, source })
         added++
