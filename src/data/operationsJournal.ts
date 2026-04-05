@@ -43,6 +43,28 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-04-05T20:00:00-threads-insight',
+    date: '2026-04-05',
+    researchTitle: '📊 Threads 인사이트 — 에이전트 워크플로우 구축 및 LLM API 최적화',
+    researchSummary: '최근 AI 트렌드는 단순한 챗봇 활용을 넘어, Claude Code와 같은 전문 도구를 활용한 복잡한 에이전트 워크플로우 구축에 집중되고 있습니다. 특히, API 레벨에서 구조화된 출력(Structured Outputs)과 캐시 제어 등 고도화된 개발 기법을 적용하는 것이 핵심 경쟁력으로 부상하고 있습니다.',
+    researchItems: [
+      { title: '🥇 Claude Code 기반 에이전트 시스템 구축', description: 'Claude Code는 PM 스킬 학습부터 올인원 툴킷 구성까지, AI 에이전트의 개발 및 시각화 과정을 포괄합니다. 이를 통해 사용자는 복잡한 워크플로우를 체계적으로 설계하고 구현할 수 있습니다.' },
+      { title: '🥈 Claude API 실전 활용 및 최적화 기법', description: '단순 호출을 넘어, Cache Control, Structured Outputs, Batch API 등의 고급 기법을 활용하여 API 사용의 효율성과 안정성을 극대화하는 것이 중요합니다. 이는 실제 상용 서비스 구현의 핵심 역량입니다.' },
+      { title: '🥉 전문 AI 도구의 생태계화 (PageEcho 등)', description: 'PageEcho와 같은 전문 도구들은 특정 기능을 고도화하고 주간 우승을 통해 생태계 내에서 입지를 다지고 있습니다. 이는 AI가 범용성을 넘어 전문 분야별 솔루션으로 진화하고 있음을 보여줍니다.' },
+    ],
+    meetingTitle: 'AI 개발 역량의 \'구현\' 및 \'최적화\' 단계 진입',
+    meetingSummary: 'AI 활용의 초점이 \'무엇을 할 수 있는가\'에서 \'어떻게 안정적이고 효율적으로 구현할 수 있는가\'로 이동하고 있습니다. 따라서 개발자 관점의 시스템 설계 능력과 API 최적화가 필수적입니다.',
+    meetingItems: [
+      { speaker: '뜨는 것', note: '단일 LLM 호출이 아닌, 여러 단계의 추론, 외부 도구 연동, 그리고 피드백 루프(Self-Growth Loop)를 포함하는 복합적인 시스템 설계가 핵심입니다.' },
+      { speaker: '실행 포인트', note: 'JSON 스키마 강제화, 캐싱 전략 도입, 그리고 배치 처리 API를 활용하여 시스템의 견고함과 확장성을 확보해야 합니다.' },
+    ],
+    decisions: [
+      { title: 'Claude Code 기반의 개인 에이전트 툴킷 구축', description: 'Awesome Claude Code Toolkit을 참고하여, 개인의 업무 흐름(PM 스킬, 분석, 보고)에 최적화된 \'올인원\' 에이전트 툴킷을 직접 구축하고 테스트한다.' },
+      { title: 'API 최적화 PoC 진행', description: '실제 사용 시나리오를 설정하고, 단순 API 호출 대신 Structured Outputs와 Cache Control을 적용한 프로토타입(PoC)을 개발하여 성능 개선을 검증한다.' },
+    ],
+  },
+
+  {
     id: '2026-04-05T09:00:00-daily-standup',
     date: '2026-04-05',
     researchTitle:
