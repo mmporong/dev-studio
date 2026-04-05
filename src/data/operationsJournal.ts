@@ -43,6 +43,116 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-04-05T09:00:00-daily-standup',
+    date: '2026-04-05',
+    researchTitle:
+      '📊 4/5 데일리 스탠드업 리서치 — NumLink/MeowBeat 미커밋 3일 연속·Unity 6.4 출시·Liquid Glass 차세대 트렌드·YouTube Shorts 2000억 뷰·ASO 리텐션 중심 전환',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 완료. NumLink 어제 P0 부분 이행(5개 커밋 생성) 확인, 하지만 MainScene.unity·Manager 4개 포함 미커밋 잔재 지속 — 3일 연속 미이행. MeowBeat .meta 3개 삭제 처리 3일째 미이행. Unity 6.4 정식 출시(ECS Core 통합·Project Auditor 내장·Graph Toolkit 내장화). NEKOPARA는 가챠+경영 장르 확인 → MeowBeat(리듬)과 직접 충돌 낮음. ASO 알고리즘 리텐션 중심 전환(평점 4.0 미만 피처드 90% 탈락). YouTube Shorts 일 2,000억 뷰 돌파·팔로워 무관 신규 도달 80%. Neo-Brutalism 다음 "Liquid Glass" 트렌드(애플 선도). agent-office 파이프라인 정상.',
+    researchItems: [
+      {
+        title: '🎯 Orchestrator — NumLink P0 부분 이행, MeowBeat .meta 3일 미이행',
+        description:
+          '어제(4/4) P0 NumLink 커밋 부분 이행 — 5개 커밋 생성(44465ac~61c99da). 하지만 MainScene.unity·Manager 4개·GameOverController·StageClearController 등 여전히 미커밋. MeowBeat Input/Item/SaveLoad .meta 삭제 3일째 미처리. .omc/ 자동생성 파일·Screenshots/ untracked 잔재. 오늘: 두 프로젝트 미커밋 즉시 정리 + .gitignore 강화 P0.',
+      },
+      {
+        title: '🎮 Game Designer — NEKOPARA 가챠+경영 장르 확인, 퍼즐 시장 262.5억 달러',
+        description:
+          'NEKOPARA Sekai Connect 장르 재확인: 가챠+카페경영 샌드박스 — MeowBeat(리듬 전문) 직접 충돌 낮음, 포지셔닝 충돌 없음. 퍼즐 시장 2026년 262.5억 달러(+16.7%). 리워드 광고+IAP 하이브리드 수익화 최적(리워드 광고 수익 50~70%). Poki 월 1억 명·연 6.25억 명, NumLink WebGL 출시 타이밍 유효. 4/14 출시 후 1주 반응 모니터링 후 차별화 문구 확정 권고.',
+      },
+      {
+        title: '💻 Developer — Unity 6.4 출시(ECS Core 통합)·기술 부채 처리 후 커밋 권장',
+        description:
+          'Unity 6.4 정식 출시(2026년 3월) — ECS Core 통합, Project Auditor 내장, Graph Toolkit 내장화로 에디터 설정 단순화. UI Toolkit 6.7 LTS까지 분기별 업데이트 예정(월드스페이스 UI, 커스텀 셰이더 추가). NumLink 세팅 패널 구현 완료 → Input.GetKeyDown 2곳(#if UNITY_EDITOR 가드, 30분) + GameObject.Find 3곳(ServiceLocator 대체) 기술 부채 처리 후 일괄 커밋 권장.',
+      },
+      {
+        title: '🔍 QA Tester — MainScene.unity 4일 미커밋 고위험·TMP 자동변환 안전',
+        description:
+          'MainScene.unity 722줄 변경 4일 미커밋 — YAML 머지 충돌 시 스크립트 참조 일괄 손상 고위험(LevelSelectUI 신규 GameObject+TMP 폰트 기능). TMP 에셋 4개 변경은 Unity 버전업 자동 변환(serializedVersion 3→4) — 안전, 무시 가능. Manager 4개(GameManager/NumberManager/PuzzleManager/ResourceManager) 설정 변경 분 즉시 커밋 필요.',
+      },
+      {
+        title: '📢 Content Writer — ASO 리텐션 중심 전환·YouTube Shorts 2000억 뷰·Reddit 무예산 유효',
+        description:
+          'ASO 2026 핵심 변화: 구글 플레이 알고리즘 설치수→리텐션 중심 전환, 평점 4.0 미만 피처드 90% 탈락. YouTube Shorts 일 2,000억 뷰 돌파(전년比 3배), 팔로워 무관 신규 도달 80% → TikTok 대체 채널 확정. 무예산 마케팅: Reddit 단일 게시물로 수천 위시리스트 가능, 10초 GIF가 텍스트 대비 압도적 성과 — NumLink 출시 전 Reddit+Shorts 동시 배포 권고.',
+      },
+      {
+        title: '⚙️ DevOps — agent-office 정상(8cb9ade)·GitHub Actions OIDC 업데이트·privacy-policy 미존재',
+        description:
+          'agent-office 최신 커밋 8cb9ade(Dev Studio 리네임), 미커밋 .omc/state/ HUD 파일 2개만 존재(무시 가능). GitHub Actions 4월 업데이트: OIDC 커스텀 프로퍼티 클레임 추가, VNET 페일오버 지원. NumLink docs/privacy-policy.html 미존재 확인 — AdMob 심사 블로킹 요소, 정적 HTML 1개 + GitHub Pages /docs 설정으로 1~2시간 내 해소 가능.',
+      },
+      {
+        title: '🎨 Art Director — Liquid Glass 차세대 트렌드·AI 워크플로우 3단계·레트로퓨처리즘 아이콘',
+        description:
+          'Neo-Brutalism 다음 트렌드: "Liquid Glass"(유동적 투명도+깊이감) — 애플이 선도 중, 인디 적용 타이밍 1~2분기 내. AI 에셋 워크플로우 2026 표준: Midjourney(컨셉/무드보드) → Stable Diffusion(스프라이트/텍스처) → Photoshop 후처리 하이브리드. 앱 아이콘 2026 키워드: 레트로퓨처리즘(네온+크롬) + 캐릭터 마스코트 단일 포커스 — NumLink 아이콘 방향으로 Midjourney 초안 3종 제안.',
+      },
+    ],
+    meetingTitle: '🏢 4/5 데일리 스탠드업 회의 — 미커밋 3일 연속 긴급·Unity 6.4 적용 검토·Liquid Glass 주시',
+    meetingSummary:
+      'NumLink·MeowBeat 미커밋이 3일 연속 지속 — 오늘 반드시 완료해야 할 임계점. NEKOPARA 직접 충돌 낮음 확인으로 MeowBeat 전략 재조정. Unity 6.4 출시로 에디터 업그레이드 검토 필요. ASO 리텐션 중심 전환으로 출시 품질 기준 상향. Liquid Glass 차세대 트렌드 모니터링 시작.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'NumLink 어제 5개 커밋 생성했으나 MainScene.unity+Manager 4개 여전히 미커밋입니다. MeowBeat .meta 처리도 3일째 미이행. 오늘은 반드시 두 프로젝트 완전 정리해야 합니다. .gitignore에 .omc/ 추가도 함께.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: 'NEKOPARA 장르를 재확인했습니다 — 가챠+경영이라 MeowBeat 리듬 게임과 직접 충돌 없습니다. 경쟁 위협 강도가 낮아졌으니 MeowBeat 차별화 전략은 4/14 출시 후 반응 보고 수정하면 됩니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'Unity 6.4가 출시됐습니다. ECS Core 통합·Project Auditor 내장 — 스토어 출시 후 업그레이드 검토 권장. 당장은 커밋 정리 우선. Input.GetKeyDown + GameObject.Find 기술 부채 처리 후 일괄 커밋하면 스토어 전 클린업 완료됩니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'TMP 에셋 4개는 Unity 자동 변환으로 안전합니다 — 커밋해도 무방합니다. MainScene.unity 722줄 변경이 4일째 방치 중 — 더 이상 미룰 수 없습니다. 오늘 git commit이 모든 QA 리스크의 출발점입니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'ASO 알고리즘이 리텐션 중심으로 바뀌었습니다. 평점 4.0 미만이면 피처드 기회 90% 사라집니다. 출시 품질 기준을 높게 잡아야 합니다. YouTube Shorts는 팔로워 없어도 신규 도달 80% — 출시 전 10초 GIF 티저 준비 권고합니다.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'agent-office 파이프라인 정상입니다. NumLink docs/privacy-policy가 없습니다 — AdMob 심사 블로킹 요소. 정적 HTML 1개 만들고 GitHub Pages /docs 설정하면 오늘 P2로 완료 가능합니다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: 'Neo-Brutalism 다음은 Liquid Glass 트렌드입니다 — 아직 인디에서 보편화 전이니 당장 적용 불필요. 앱 아이콘은 레트로퓨처리즘+마스코트 단일 포커스 방향으로 Midjourney 초안 3종 제작 권고합니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: 'P0: NumLink 미커밋 완전 정리 (오늘 오전, 기술 부채 처리 포함)',
+        description:
+          'MainScene.unity·Manager 4개·GameOverController·StageClearController 일괄 커밋. Input.GetKeyDown 2곳 #if UNITY_EDITOR 가드 + GameObject.Find 3곳 처리 후 커밋하면 스토어 전 클린업 완료. TMP 에셋 4개는 자동변환이므로 함께 커밋.',
+      },
+      {
+        title: 'P0: MeowBeat .meta 3개 삭제 처리 (오늘 오전, 3일째 미이행)',
+        description:
+          'Input/Item/SaveLoad .meta 삭제 — 의도적이면 커밋, 아니면 복원. 동시에 untracked 새 스크립트 .meta 파일들·Songs/ 정리. .gitignore에 .omc/ 추가.',
+      },
+      {
+        title: 'P1: NumLink docs/privacy-policy GitHub Pages 배포',
+        description:
+          'docs/index.html 개인정보처리방침 생성 → GitHub Pages /docs 설정 → mmporong.github.io/NumLink/ 배포. AdMob 심사 블로킹 요소 해소. 1~2시간 내 완료 가능.',
+      },
+      {
+        title: 'P1: NEKOPARA 4/14 출시 반응 1주일 모니터링 계획 수립',
+        description:
+          '장르 확인(가챠+경영) — MeowBeat(리듬) 직접 충돌 낮음. 출시 후 리뷰·다운로드 반응 1주 관찰 후 MeowBeat 차별화 포지셔닝 확정. 당장 전략 변경 불필요.',
+      },
+      {
+        title: 'P2: NumLink 앱 아이콘 Midjourney 초안 제작',
+        description:
+          '레트로퓨처리즘(네온+크롬) + 캐릭터 마스코트 단일 포커스 방향. Midjourney로 초안 3종 생성 후 선택. Neo-Brutalism 굵은 테두리 유지.',
+      },
+      {
+        title: 'P2: NumLink 출시 전 Reddit + YouTube Shorts 10초 GIF 티저 준비',
+        description:
+          '무예산 마케팅 최고 효율 채널. Reddit r/indiegaming + YouTube Shorts 동시 배포. 팔로워 없어도 신규 도달 80% 가능.',
+      },
+    ],
+  },
+  {
     id: '2026-04-04T09:00:00-daily-standup',
     date: '2026-04-04',
     researchTitle:
