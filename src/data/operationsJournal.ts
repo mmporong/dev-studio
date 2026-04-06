@@ -43,6 +43,112 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-04-06T09:00:00-daily-standup',
+    date: '2026-04-06',
+    researchTitle:
+      '📊 4/6 데일리 스탠드업 리서치 — MeowBeat 곡 시스템 완성·NumLink Debug.Log 65건 릴리즈 위험·Unity 6.4 Project Auditor 내장·퍼즐 다운로드 -7.2%·YouTube Shorts 141%↑',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 완료. MeowBeat 4/6 새벽 곡 연동 완료 — 30개 .meta 파일 staged 상태로 단일 커밋 정리 필요. NumLink 세팅 UI 작업 중(10개 파일 수정), Debug.Log 65건이 릴리즈 빌드 노출 위험. Unity 6.4 Project Auditor 기본 탑재로 별도 설치 없이 기술 부채 분석 가능. 퍼즐 게임 다운로드 -7.2%(시장 포화), 리텐션 메커닉 차별화가 생존 조건. YouTube Shorts 141% 성장으로 TikTok 대체 확정. agent-office 번들 519KB 경고(500KB 임계값 초과).',
+    researchItems: [
+      {
+        title: '🎯 Orchestrator — MeowBeat 곡 시스템 완성·NumLink Settings UI 작업 중·agent-office .omc 미커밋',
+        description:
+          'MeowBeat 마지막 커밋 4/6 새벽: 다곡 지원 시스템 완성, 30개 .meta 파일 staged 대기 중 — 단일 커밋 즉시 정리 필요. NumLink 마지막 커밋 4/1, 현재 10개 .cs/.unity 파일 수정 중(Settings UI 작업). agent-office 마지막 커밋 4/5, .omc 상태 파일 2건 미커밋(무시 가능).',
+      },
+      {
+        title: '🎮 Game Designer — 퍼즐 시장 다운로드 -7.2%·리듬게임 $2.5B·Royal Match $1.46B 리텐션 공식',
+        description:
+          '퍼즐 게임 2025년 다운로드 전년比 -7.2% 감소(시장 포화 신호) — 신규 획득보다 기존 유저 리텐션 ROI 우위. 리듬 게임 시장 $2.5B(CAGR 15%), 지역별 성공 공식 상이(일본: 캐릭터 가챠, 미국: 음악 라이선스). Royal Match $1.46B 달성 공식: 미니게임+적응형 난이도+IAP 전용. NumLink에 데일리 챌린지+적응 난이도 GDD 항목 추가 시급.',
+      },
+      {
+        title: '💻 Developer — Unity 6.4 Project Auditor 내장·Next.js 16.2.2 출시·NumLink UI 버그 수정 위주',
+        description:
+          'Unity 6.4 출시: ECS Core 통합 + Project Auditor 에디터 기본 탑재(별도 설치 불필요) — 기술 부채/성능 분석 즉시 활용 가능. Next.js 16.2.2 출시(Turbopack 캐시 안정화, React 19 필수). NumLink 최근 10커밋 전부 fix/feat — 세팅패널·폰트·스프라이트 UI 버그 수정 위주, 아키텍처 문서화 완료 상태.',
+      },
+      {
+        title: '🔍 QA Tester — NumLink Debug.Log 65건 릴리즈 노출·ResourceManager 테스트값 블로커·MeowBeat 22건 미완료',
+        description:
+          'NumLink: Debug.Log 145건 중 65건이 #if UNITY_EDITOR 가드 밖 — 릴리즈 빌드 노출 시 Google Play 리뷰 거부 가능성. ResourceManager 테스트값(99999 코인/루비) 릴리즈 포함 시 게임 밸런스 파괴(Critical). MeowBeat: Phase 2 코드 완료, art-director 의존성 22건 미완료. 전 프로젝트 자동화 테스트 0건.',
+      },
+      {
+        title: '📢 Content Writer — AI ASO 롱테일+행동신호 중심·YouTube Shorts 141%↑·TikTok 유기 도달 소멸',
+        description:
+          'ASO 2026: AI 기반 알고리즘 전환 — 정확한 키워드보다 롱테일+행동 신호(세션 길이·리텐션) 순위 결정, 스크린샷 연 2~8회 교체가 상위권 기준. YouTube Shorts 조회수 141% 성장 — TikTok 유기 도달 소멸로 Shorts가 인디 핵심 채널로 확정. 퍼즐 키워드: "offline puzzle·relaxing·no ads", 리듬: "tap to beat·piano·rhythm challenge" 첫 스크린샷 텍스트 오버레이 권고.',
+      },
+      {
+        title: '⚙️ DevOps — agent-office 배포 정상(Node22)·번들 519KB 경고·NumLink CI/CD 부재',
+        description:
+          'agent-office GitHub Pages v4 배포 정상, Node.js 22(2026년 6월 Node24 전환까지 여유). Vite 빌드 시 청크 519KB > 500KB 임계값 경고 — manualChunks 분리 권고. NumLink GitHub Actions 자동화 없음(수동 빌드) — 스토어 출시 전 자동화 설계 필요. GitHub Actions 셀프호스팅 가격 인상(분당 $0.002) 모니터링 필요.',
+      },
+      {
+        title: '🎨 Art Director — 미니멀 HUD+환경통합 UI 주류·크리스탈-글로시 팔레트·프로젝트별 액센트 컬러 제안',
+        description:
+          '2025-2026 모바일 게임 UI 주류: 미니멀 HUD + 환경 통합 UI(Sky: Children of Light 방식). 퍼즐/리듬 게임 컬러: 크리스탈-글로시 팔레트 부상, 따뜻한 어스톤+채도 높은 액센트 조합. agent-office 현재 토스 화이트+#3182f6 블루 체계. NumLink(쿨톤 #5a9fd4)·MeowBeat(웜팝 #f97316) 프로젝트 카드 장르별 액센트 컬러 분리 제안.',
+      },
+    ],
+    meetingTitle: '🏢 4/6 데일리 스탠드업 회의 — MeowBeat 곡 시스템 완성 커밋·NumLink Debug.Log P0·ASO 롱테일 전략',
+    meetingSummary:
+      'MeowBeat 곡 연동 완성 이후 30개 .meta 파일이 staged로 남아 있어 즉시 커밋 필요. NumLink Debug.Log 65건 가드 밖 노출이 릴리즈 전 P0 처리 대상으로 부상. Unity 6.4 Project Auditor 내장으로 기술 부채 분석 즉시 활용 가능. ASO 알고리즘 변화로 스크린샷 텍스트 오버레이 전략 수립 필요.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'MeowBeat 4/6 새벽에 곡 시스템 완성됐습니다. 30개 .meta 파일이 staged 상태인데 오늘 단일 커밋으로 정리해야 합니다. NumLink는 10개 파일 수정 중이고 Settings UI 작업 마무리 단계입니다. agent-office .omc 파일 2건은 무시 가능합니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '퍼즐 시장 다운로드가 -7.2% 떨어졌습니다. 이제 신규 설치보다 리텐션이 핵심입니다. Royal Match가 $1.46B을 번 공식이 미니게임+적응 난이도인데, NumLink GDD에 데일리 챌린지 항목을 이번 스프린트에 넣어야 합니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'Unity 6.4 Project Auditor가 에디터에 기본 탑재됐습니다. 별도 설치 없이 바로 기술 부채 분석 가능합니다. NumLink 업그레이드 타이밍을 스토어 출시 후로 잡되, 현재 코드 정리와 병행 검토 권장합니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'NumLink Debug.Log 65건이 릴리즈 빌드에 노출됩니다. Google Play 리뷰에서 걸릴 수 있어 Phase 5 시작 전 반드시 정리해야 합니다. ResourceManager 테스트값 99999도 릴리즈 블로커입니다. 두 건 모두 P0입니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'ASO가 AI 기반으로 바뀌면서 롱테일 키워드와 행동 신호가 순위를 결정합니다. YouTube Shorts가 141% 성장으로 TikTok을 완전히 대체했습니다. 스크린샷 첫 번째 이미지에 "offline puzzle·no ads" 텍스트 오버레이 A/B 테스트를 준비해야 합니다.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'agent-office 배포는 정상입니다. 다만 번들이 519KB로 임계값 500KB를 넘었습니다. vite.config.ts에 manualChunks 추가로 30분 내 해결 가능합니다. NumLink 스토어 출시 전 GitHub Actions 자동화 설계도 일정에 넣어야 합니다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '모바일 게임 UI는 미니멀 HUD + 환경 통합 방향으로 가고 있습니다. agent-office 프로젝트 카드에 NumLink는 쿨톤 #5a9fd4, MeowBeat는 웜팝 #f97316으로 액센트 컬러를 분리하면 장르 인식성이 높아집니다. tokens.css 변수 2개 추가로 수술적 적용 가능합니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: 'P0: MeowBeat .meta 30개 단일 커밋 정리 (오늘 오전)',
+        description:
+          '4/6 곡 시스템 완성 staged 파일 30개를 feat(song): 곡 시스템 안정화 및 에셋 메타 통합 커밋으로 정리. 완료 후 agent-office journal 동기화.',
+      },
+      {
+        title: 'P0: NumLink Debug.Log 65건 가드 밖 정리 (Phase 5 시작 전)',
+        description:
+          'grep -r "Debug.Log" Assets/02.Scripts/ | grep -v "UNITY_EDITOR" 검증 후 수정 커밋. ResourceManager 테스트값(99999 코인/루비) 제거 포함. 릴리즈 빌드 블로커 해소.',
+      },
+      {
+        title: 'P1: NumLink GDD에 데일리 챌린지 + 적응형 난이도 항목 추가',
+        description:
+          'Royal Match $1.46B 검증 공식 — 미니게임+적응 난이도+IAP 전용. 퍼즐 시장 다운로드 감소 대응. 이번 스프린트 GDD 문서에 항목 추가.',
+      },
+      {
+        title: 'P1: agent-office Vite 번들 청크 분할 (519KB→300KB+200KB)',
+        description:
+          'vite.config.ts에 rollupOptions.output.manualChunks 추가 — index(~300KB) + vendor(~200KB) 분리. 작업시간 30분 이내.',
+      },
+      {
+        title: 'P2: 스토어 스크린샷 ASO 텍스트 오버레이 A/B 초안 제작',
+        description:
+          'NumLink 첫 스크린샷: "offline puzzle·relaxing·no ads" 캡션 오버레이. MeowBeat: "tap to beat·piano·rhythm challenge". YouTube Shorts 티저 10초 GIF 동시 제작.',
+      },
+    ],
+  },
+
+  {
     id: '2026-04-05T20:00:00-threads-insight',
     date: '2026-04-05',
     researchTitle: '📊 Threads 인사이트 — 에이전트 워크플로우 구축 및 LLM API 최적화',
