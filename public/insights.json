@@ -1,6 +1,21 @@
 {
-  "lastUpdated": "2026-03-31T15:57:30.687Z",
+  "lastUpdated": "2026-04-06T23:41:39.293Z",
   "weeks": [
+    {
+      "weekOf": "2026-W15",
+      "articles": [
+        {
+          "id": "314c71d71776a667",
+          "title": "인증서 톺아보기 시리즈 2: 유효기간 감소와 발급/갱신 자동화",
+          "url": "https://meetup.nhncloud.com/posts/411",
+          "company": "NHN Cloud Meetup",
+          "category": "infra",
+          "summary": "인증서 톺아보기 시리즈 2: 유효기간 감소와 발급/갱신 자동화",
+          "publishedAt": "2026-04-06T00:31:21.000Z",
+          "collectedAt": "2026-04-06T23:41:39.293Z"
+        }
+      ]
+    },
     {
       "weekOf": "2026-W14",
       "articles": [
@@ -153,6 +168,36 @@
           "summary": "언어모델 평가를 위한 벤치마크 데이터셋 소개와 그 활용 LLM을 평가하기 위한 벤치마크에 대해 소개합니다.",
           "publishedAt": "",
           "collectedAt": "2026-03-31T15:57:30.687Z"
+        },
+        {
+          "id": "f9f966cb187f6dd2",
+          "title": "토스가 디자인 직무를 2개로 줄인 이유",
+          "url": "https://toss.tech/article/Designer",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "토스가 디자인 직무를 2개로 줄인 이유",
+          "publishedAt": "2026-04-03T01:17:00.000Z",
+          "collectedAt": "2026-04-06T23:41:39.293Z"
+        },
+        {
+          "id": "39fbffc850f72607",
+          "title": "97% Smaller, 2x Faster: How es-toolkit Reached 10 Million Weekly Downloads",
+          "url": "https://toss.tech/article/es-toolkit",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "97% Smaller, 2x Faster: How es-toolkit Reached 10 Million Weekly Downloads",
+          "publishedAt": "2026-04-01T01:00:00.000Z",
+          "collectedAt": "2026-04-06T23:41:39.293Z"
+        },
+        {
+          "id": "7812f53d6eb2d3c0",
+          "title": "5년 동안 못 푼 배민 다국어 숙제, AI와 함께 한 달 만에 끝내기",
+          "url": "https://techblog.woowahan.com/26162/",
+          "company": "우아한형제들",
+          "category": "general",
+          "summary": "5년 동안 못 푼 배민 다국어 숙제, AI와 함께 한 달 만에 끝내기",
+          "publishedAt": "2026-04-03T02:30:41.000Z",
+          "collectedAt": "2026-04-06T23:41:39.293Z"
         }
       ]
     },
