@@ -43,6 +43,112 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-04-07T04:00:00-daily-standup',
+    date: '2026-04-07',
+    researchTitle:
+      '📊 4/7 데일리 스탠드업 리서치 — NumLink/MeowBeat 미커밋 17/21개·Unity 6.3 LTS 출시·MeowBeat IAP 저장 로직 블로커·하이브리드 캐주얼 88% 급성장·TikTok 숏폼 인디 핵심 채널',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 완료. NumLink 미커밋 17개(Phase 5 Singleton→ServiceLocator 전환 진행 중), MeowBeat 미커밋 21개(타이틀 난이도 버튼 런타임 생성 미커밋). Unity 6.3 LTS 출시(Unity AI Beta 포함, 2027.12까지 지원). MeowBeat ButtonController.cs:315 IAP 저장 로직 불완성이 HIGH 리스크로 확인됨. 하이브리드 캐주얼 시장 88% YoY 급성장 — 두 게임 모두 소셜 루프/메타 레이어 추가 검토 필요. 인디 게임 ASO 핵심: iOS 첫 3장 스크린샷 CTR 결정, 한국 게이머 66% 리뷰 작성. NumLink/MeowBeat CI/CD 파이프라인 부재. MeowBeat 고양이 캐릭터 픽셀아트+굵은 외곽선 하이브리드가 2025 트렌드 정중앙.',
+    researchItems: [
+      {
+        title: '🎯 Orchestrator — NumLink 미커밋 17개·MeowBeat 미커밋 21개·agent-office 6개',
+        description:
+          'NumLink 최근 커밋: fix(ui): UIToolkit 하트 감소 누락 및 마스터 대각선 이동 수정(3434539). MeowBeat 최근 커밋: feat(ui): 타이틀 화면 난이도 버튼 런타임 자동 생성(1bcacf2). agent-office 최근: chore(standup): 4/6 스탠드업 회의 기록(b41f026). 세 프로젝트 모두 미커밋 파일 누적 — NumLink·MeowBeat 즉시 정리 필요.',
+      },
+      {
+        title: '🎮 Game Designer — 퍼즐 다운로드 -7%·리듬 CAGR 9.1%·하이브리드 캐주얼 88% 급성장',
+        description:
+          '2025년 전체 모바일 게임 다운로드 -7.2%, 퍼즐 장르 수익 집중(Royal Match 단달 $7,800만). 리듬 게임 $2.5B → $5.3B 전망(CAGR 9.1%), AI 난이도 적응이 신규 표준. 하이브리드 캐주얼 수익 88% YoY 급성장 — NumLink 비동기 친구 대결 MVP 포함 여부 결정 시점.',
+      },
+      {
+        title: '💻 Developer — Unity 6.3 LTS·C# 14 AOT 40%↑·NumLink Phase 5 P1-003 블록',
+        description:
+          'Unity 6.3 LTS 출시(Unity AI Beta 포함, 2027.12 지원). C# 14/.NET 10 AOT 컴파일 개선 → 기동 40% 단축. NumLink Phase 5 Singleton→ServiceLocator 마이그레이션(P5-001~003) 진행 중, P1-003 킥 후보 Owner 승인 미완료로 Phase 6 전체 블록 상태.',
+      },
+      {
+        title: '🔍 QA Tester — NumLink 6건·MeowBeat IAP 저장 불완성 HIGH·음악 파이프라인 미구현',
+        description:
+          'NumLink: UGUI 미사용 컴포넌트 DisableAllUgui()로만 비활성화(미삭제), 아키텍처 미결 의문 11건. MeowBeat: ButtonController.cs:315 IAP 저장 로직 불완성(구매 데이터 손실 위험 🔴HIGH), AdmobManager 테스트 디바이스 ID 미등록, AI 음악 파이프라인(Lyria 3) MVP 필수 미착수.',
+      },
+      {
+        title: '📢 Content Writer — iOS 첫 3장 CTR 결정·한국 66% 리뷰·TikTok 숏폼 인디 1위 채널',
+        description:
+          'App Store 다운로드 60%가 검색 경유, 피처링 앱 90%가 평점 4.0 이상. 한국 게이머 66% 리뷰 작성 → 출시 첫 주 리뷰 집중 유도 전략 필수. TikTok "플레이 과정 공개+챌린지" 형식이 퍼즐·리듬 장르 바이럴 최적. Discord 커뮤니티 서버로 얼리 플레이어 리뷰 집중 확보 전략.',
+      },
+      {
+        title: '⚙️ DevOps — agent-office 자동배포 정상·NumLink/MeowBeat CI/CD 미구성',
+        description:
+          'agent-office GitHub Actions 2개 워크플로우 정상 운영(deploy-pages.yml, weekly-insights.yml). NumLink·MeowBeat .github/workflows 디렉토리 없음 — 수동 빌드만 가능. Unity 태그 푸시 시 Android APK 자동 빌드+itch.io 배포 파이프라인 설계 필요(우선순위: NumLink > MeowBeat).',
+      },
+      {
+        title: '🎨 Art Director — 퍼즐 UI 미니멀 극한·고양이 픽셀+Arcane 하이브리드·EU 접근성 법적 의무',
+        description:
+          'Diegetic UI(세계관 내 UI) 표준화 — 퍼즐 게임은 타일+연결선 외 전부 제거. MeowBeat 고양이 캐릭터: 픽셀 실루엣+Arcane식 굵은 외곽선+파스텔 플랫 색채 하이브리드가 2025 트렌드 정중앙. EU 접근성법 2025.06.28 발효 — 색약 팔레트·햅틱 커스터마이징·44px 터치 타깃이 법적 의무.',
+      },
+    ],
+    meetingTitle: '🏢 4/7 데일리 스탠드업 — MeowBeat IAP 블로커·Phase 5 P1-003 언블록·Unity CI/CD 자동화',
+    meetingSummary:
+      'NumLink/MeowBeat 미커밋 파일 누적이 3일 이상 지속되는 가운데, MeowBeat IAP 저장 로직 불완성이 새로운 HIGH 리스크로 확인됨. Unity 6.3 LTS 출시와 C# 14 AOT 개선은 중장기 업그레이드 후보. NumLink Phase 6은 P1-003 킥 후보 Owner 승인 한 건으로 전체가 블록된 상태 — 오늘 즉시 해소 필요. 두 Unity 프로젝트 모두 CI/CD 파이프라인 부재로 스토어 출시 대비 자동화 설계 시급.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'NumLink 17개, MeowBeat 21개 미커밋 파일이 또 누적됐습니다. 특히 MeowBeat는 타이틀 난이도 버튼 런타임 생성 작업이 미커밋 상태입니다. 오늘 안에 두 프로젝트 모두 커밋 정리를 P0으로 잡아야 합니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '하이브리드 캐주얼이 88% YoY 성장했습니다. 순수 퍼즐 메커닉만으로는 D30 리텐션이 어렵습니다. NumLink에 비동기 친구 대결을 MVP에 넣을지 오늘 결정해야 합니다. 리듬 게임은 AI 적응 난이도가 MeowBeat의 차별점이 될 수 있습니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'NumLink Phase 6 전체가 P1-003 킥 후보 Owner 승인 하나로 블록돼 있습니다. docs/GAME_DESIGN.md에서 킥 후보 확인하고 오늘 승인 결정만 내리면 Phase 5 Singleton 전환과 Phase 6을 병렬로 착수할 수 있습니다. Unity 6.3 LTS는 중장기 업그레이드 후보로 모니터링합니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'MeowBeat ButtonController.cs:315 IAP 저장 로직이 불완성입니다. 구매 후 저장이 안 되면 유저 데이터 손실로 스토어 리뷰 폭탄 맞습니다. 이게 오늘 P0입니다. NumLink UGUI 미사용 컴포넌트도 DisableAllUgui()로만 숨겨진 상태라 코드 부채 정리 병행 필요합니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'iOS 출시 때 첫 3장 스크린샷이 CTR을 결정합니다. A/B 테스트 없이 출시하면 기회를 날리는 겁니다. 한국 게이머 66%가 리뷰를 쓰니까 출시 첫 주에 Discord+얼리 플레이어 리뷰 유도 캠페인을 동시에 시작해야 합니다.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'NumLink와 MeowBeat 둘 다 GitHub Actions가 없습니다. 지금은 수동 빌드인데 스토어 출시가 가까워지면 자동화 없이는 릴리즈 품질을 보장할 수 없습니다. NumLink 먼저 태그 푸시 → Android APK 자동 빌드 파이프라인을 이번 주 설계해야 합니다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: 'MeowBeat 캐릭터 아트 방향을 오늘 확정해야 합니다. 픽셀 실루엣에 Arcane식 굵은 외곽선과 파스텔 플랫 색채를 섞은 하이브리드가 2025 트렌드 정중앙입니다. 그리고 EU 접근성법이 6월 28일 발효됩니다. 색약 팔레트를 지금 MVP 스코프에 넣지 않으면 유럽 출시 때 법적 문제가 생깁니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: 'P0: MeowBeat IAP 저장 로직 완성 (ButtonController.cs:315)',
+        description:
+          '구매 완료 후 저장이 안 되는 버그 — 유저 데이터 손실 위험. ButtonController.cs:315 TODO 구현 완료 + AdmobManager 테스트 디바이스 ID 등록. 스토어 출시 전 반드시 해소.',
+      },
+      {
+        title: 'P0: NumLink/MeowBeat 미커밋 파일 정리 (각 17개/21개)',
+        description:
+          'NumLink: Phase 5 Singleton→ServiceLocator 작업 분 커밋. MeowBeat: 타이틀 난이도 버튼 런타임 생성 작업 커밋. 두 프로젝트 모두 오늘 안에 clean status 확보.',
+      },
+      {
+        title: 'P1: NumLink P1-003 킥 후보 Owner 승인 처리 (Phase 6 언블록)',
+        description:
+          'docs/GAME_DESIGN.md 킥 후보 검토 후 승인/수정 결정 → Phase 5 P5-001~003(Singleton 전환)과 Phase 6 병렬 착수 가능. Phase 6 전체 블록 해소.',
+      },
+      {
+        title: 'P1: NumLink GitHub Actions CI/CD 파이프라인 설계',
+        description:
+          '태그 푸시 트리거 → Android APK 자동 빌드 → itch.io 자동 배포. Unity 빌드 자동화 워크플로우 초안 작성. MeowBeat는 NumLink 완료 후 동일 템플릿 적용.',
+      },
+      {
+        title: 'P2: MeowBeat 캐릭터 아트 방향 확정 + 색약 모드 MVP 포함',
+        description:
+          '픽셀 실루엣 + Arcane식 굵은 외곽선 + 파스텔 플랫 색채 하이브리드 방향 확정. EU 접근성법 2025.06.28 발효 대비 — Deuteranopia 대응 팔레트 MVP 스코프 포함 여부 결정.',
+      },
+    ],
+  },
+
+  {
     id: '2026-04-06T09:00:00-daily-standup',
     date: '2026-04-06',
     researchTitle:
