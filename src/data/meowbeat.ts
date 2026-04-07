@@ -64,7 +64,7 @@ export const shellStages: ShellStage[] = [
     label: 'Phase 3',
     headline: '에셋 연결 + QA + 출시',
     description:
-      'AI 아트 생성, Suno 곡 생성, Unity 에디터 프리팹 배치, Android 빌드 테스트, 스토어 등록.',
+      'AI 아트 생성, Lyria 3 곡 생성, Unity 에디터 프리팹 배치, Android 빌드 테스트, 스토어 등록.',
     accent: 'sky',
   },
   {
@@ -89,8 +89,8 @@ export const readinessChecks: StatusItem[] = [
     status: 'ready',
   },
   {
-    title: 'AI 음악 (Suno)',
-    detail: 'Suno Pro 가입 후 곡 30개 생성 필요 — Owner 액션 대기',
+    title: 'AI 음악 (Lyria 3)',
+    detail: 'Lyria 3으로 곡 30개 생성 → 20곡 선별 필요 — Owner 액션 대기',
     status: 'pending',
   },
   {
@@ -173,7 +173,7 @@ export const milestones: MilestoneCard[] = [
 ]
 
 export const launchBlockers = [
-  'Suno Pro 곡 생성 미완료 (Owner 액션)',
+  'Lyria 3 음악 생성 미완료 — 30곡 생성 → 20곡 선별 (Owner 액션)',
   'AI 아트 에셋 미생성 (아이콘/스프라이트/배경)',
   'Unity 에디터 프리팹 배치 미완료',
   '머지 그리드 UI + 머지 이펙트 미구현',
