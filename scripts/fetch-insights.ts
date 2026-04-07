@@ -99,12 +99,12 @@ function sanitiseForLLM(title: string): string | null {
   return truncated
 }
 
-/** Returns true if date is within the last 7 days */
+/** Returns true if date is within the last 30 days */
 function isWithinLastWeek(dateStr: string): boolean {
   if (!dateStr) return false
   const d = new Date(dateStr)
   if (isNaN(d.getTime())) return false
-  const cutoff = Date.now() - 7 * 24 * 60 * 60 * 1000
+  const cutoff = Date.now() - 30 * 24 * 60 * 60 * 1000
   return d.getTime() >= cutoff
 }
 

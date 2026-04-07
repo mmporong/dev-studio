@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-06T23:41:39.293Z",
+  "lastUpdated": "2026-04-07T03:23:00.667Z",
   "weeks": [
     {
       "weekOf": "2026-W15",
@@ -213,6 +213,156 @@
           "summary": "Metric Review, 실행을 이끌다",
           "publishedAt": "2026-03-25T01:00:00.000Z",
           "collectedAt": "2026-03-31T15:57:30.687Z"
+        },
+        {
+          "id": "09722dc22947b45a",
+          "title": "pnpm 모노레포에서 React 19 마이그레이션하기: 숨겨진 호이스팅 레이어가 만든 타입 충돌 트러블슈팅",
+          "url": "https://techblog.woowahan.com/26128/",
+          "company": "우아한형제들",
+          "category": "general",
+          "summary": "pnpm 모노레포에서 React 19 마이그레이션하기: 숨겨진 호이스팅 레이어가 만든 타입 충돌 트러블슈팅",
+          "publishedAt": "2026-03-24T08:15:52.000Z",
+          "collectedAt": "2026-04-07T03:23:00.667Z"
+        }
+      ]
+    },
+    {
+      "weekOf": "2026-W12",
+      "articles": [
+        {
+          "id": "e9e3f58a19a2f193",
+          "title": "수억 건의 보안 신호 속 진짜 위협 찾기 — AI로 보안 모니터링의 패러다임을 바꾸다",
+          "url": "https://tech.kakao.com/posts/817",
+          "company": "카카오테크",
+          "category": "general",
+          "summary": "수억 건의 보안 신호 속 진짜 위협 찾기 — AI로 보안 모니터링의 패러다임을 바꾸다",
+          "publishedAt": "2026-03-15T15:00:00.000Z",
+          "collectedAt": "2026-04-07T03:23:00.667Z"
+        },
+        {
+          "id": "c7ca36bcd2ee5086",
+          "title": "LLM을 이용한 서비스 취약점 분석 자동화 #2",
+          "url": "https://toss.tech/article/vulnerability-analysis-automation-2",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "LLM을 이용한 서비스 취약점 분석 자동화 #2",
+          "publishedAt": "2026-03-20T01:00:00.000Z",
+          "collectedAt": "2026-04-07T03:23:00.667Z"
+        },
+        {
+          "id": "e54d901c4c64d31a",
+          "title": "Stepping into the Software 3.0 Era",
+          "url": "https://toss.tech/article/harness-for-team-productivity-eng",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "Stepping into the Software 3.0 Era",
+          "publishedAt": "2026-03-17T03:38:00.000Z",
+          "collectedAt": "2026-04-07T03:23:00.667Z"
+        },
+        {
+          "id": "a40265b56b70f1d5",
+          "title": "별점 뒤에 숨겨진 리뷰의 온도, LLM으로 한 끗 차이가 다른 추천 만들기",
+          "url": "https://techblog.woowahan.com/25888/",
+          "company": "우아한형제들",
+          "category": "general",
+          "summary": "별점 뒤에 숨겨진 리뷰의 온도, LLM으로 한 끗 차이가 다른 추천 만들기",
+          "publishedAt": "2026-03-20T05:08:27.000Z",
+          "collectedAt": "2026-04-07T03:23:00.667Z"
+        },
+        {
+          "id": "0311b44350e3e2b0",
+          "title": "흩어져 있는 AI 자산, ‘MCP stdio’로 헤쳐모여!",
+          "url": "https://techblog.woowahan.com/25986/",
+          "company": "우아한형제들",
+          "category": "general",
+          "summary": "흩어져 있는 AI 자산, ‘MCP stdio’로 헤쳐모여!",
+          "publishedAt": "2026-03-17T09:32:56.000Z",
+          "collectedAt": "2026-04-07T03:23:00.667Z"
+        },
+        {
+          "id": "956df3eadae0b250",
+          "title": "Claude Code로 Figma 디자인 시스템을 C++ 코드로 변환하기",
+          "url": "https://meetup.nhncloud.com/posts/410",
+          "company": "NHN Cloud Meetup",
+          "category": "infra",
+          "summary": "Claude Code로 Figma 디자인 시스템을 C++ 코드로 변환하기",
+          "publishedAt": "2026-03-16T00:45:59.000Z",
+          "collectedAt": "2026-04-07T03:23:00.667Z"
+        }
+      ]
+    },
+    {
+      "weekOf": "2026-W11",
+      "articles": [
+        {
+          "id": "cbde7c31ac0afec8",
+          "title": "학생에서 개발자로: 로또 구현부터 레거시 개선까지, 서버의 흐름을 배우다",
+          "url": "https://tech.kakao.com/posts/816",
+          "company": "카카오테크",
+          "category": "general",
+          "summary": "학생에서 개발자로: 로또 구현부터 레거시 개선까지, 서버의 흐름을 배우다",
+          "publishedAt": "2026-03-12T15:00:00.000Z",
+          "collectedAt": "2026-04-07T03:23:00.667Z"
+        },
+        {
+          "id": "15d5cd7aeeeeeda7",
+          "title": "학생에서 개발자로: DB, 보안부터 AI까지, 정답보다 합리적인 선택을 배우다",
+          "url": "https://tech.kakao.com/posts/815",
+          "company": "카카오테크",
+          "category": "general",
+          "summary": "학생에서 개발자로: DB, 보안부터 AI까지, 정답보다 합리적인 선택을 배우다",
+          "publishedAt": "2026-03-12T15:00:00.000Z",
+          "collectedAt": "2026-04-07T03:23:00.667Z"
+        },
+        {
+          "id": "63d5e43a022b576d",
+          "title": "한국 문화 이해부터 화면 조작까지: Kanana-V 기능 확장의 모든 것",
+          "url": "https://tech.kakao.com/posts/812",
+          "company": "카카오테크",
+          "category": "general",
+          "summary": "한국 문화 이해부터 화면 조작까지: Kanana-V 기능 확장의 모든 것",
+          "publishedAt": "2026-03-10T15:00:00.000Z",
+          "collectedAt": "2026-04-07T03:23:00.667Z"
+        },
+        {
+          "id": "c92b1ade4d90fb8b",
+          "title": "2026 카카오그룹 신입크루 공채 코딩테스트 2차 문제해설",
+          "url": "https://tech.kakao.com/posts/814",
+          "company": "카카오테크",
+          "category": "general",
+          "summary": "2026 카카오그룹 신입크루 공채 코딩테스트 2차 문제해설",
+          "publishedAt": "2026-03-10T15:00:00.000Z",
+          "collectedAt": "2026-04-07T03:23:00.667Z"
+        },
+        {
+          "id": "95c6052d18505cd0",
+          "title": "2026 카카오그룹 신입크루 공채 코딩테스트 1차 문제해설",
+          "url": "https://tech.kakao.com/posts/813",
+          "company": "카카오테크",
+          "category": "general",
+          "summary": "2026 카카오그룹 신입크루 공채 코딩테스트 1차 문제해설",
+          "publishedAt": "2026-03-10T15:00:00.000Z",
+          "collectedAt": "2026-04-07T03:23:00.667Z"
+        },
+        {
+          "id": "5a139fccfa7d352d",
+          "title": "AI로 바뀐 건 업무가 아니라 사람이었습니다",
+          "url": "https://techblog.woowahan.com/26034/",
+          "company": "우아한형제들",
+          "category": "general",
+          "summary": "AI로 바뀐 건 업무가 아니라 사람이었습니다",
+          "publishedAt": "2026-03-13T02:20:26.000Z",
+          "collectedAt": "2026-04-07T03:23:00.667Z"
+        },
+        {
+          "id": "7e55d649b11ff22b",
+          "title": "RAG, 들어는 봤는데… 내 서비스엔 어떻게 쓰지?",
+          "url": "https://techblog.woowahan.com/25900/",
+          "company": "우아한형제들",
+          "category": "general",
+          "summary": "RAG, 들어는 봤는데… 내 서비스엔 어떻게 쓰지?",
+          "publishedAt": "2026-03-10T02:50:45.000Z",
+          "collectedAt": "2026-04-07T03:23:00.667Z"
         }
       ]
     }
