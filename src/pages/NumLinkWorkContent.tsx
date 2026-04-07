@@ -24,13 +24,16 @@ const milestones = [
   { title: 'Sprint 4. 업적 + 패턴', summary: '업적 시스템, 숫자 숨김 패턴, 업적 데이터', deliverables: ['AchievementManager', 'HidePatternApplier', 'AchievementData'] },
   { title: 'Phase 6. Daily Puzzle + AdMob + IAP', summary: 'Daily Puzzle 시스템, AdMob 광고 연동, IAP 인앱 결제 구현 — 컴파일 0 에러', deliverables: ['DailyPuzzleManager', 'AdMobManager', 'IAPManager', 'com.mmporong.numlink'] },
   { title: 'UI/UX 개선. 테마 시스템 + 피드백 강화 + 메뉴 UX', summary: 'ScriptableObject 테마 시스템, 게임 플레이 피드백 강화, 패널 트랜지션 구현 — 컴파일 0 에러', deliverables: ['ThemeManager', 'ThemeData SO', 'DOTween 피드백 시스템', 'PanelTransition'] },
+  { title: 'Phase 4. 코드 정리 + 인프라 구축', summary: '불필요 코드 제거, ServiceLocator/GameBootstrapper/GameEvents/SaveSystem<T>/GameConstants 도입, Assembly Definition 3개 생성', deliverables: ['ServiceLocator', 'GameBootstrapper', 'GameEvents', 'SaveSystem<T>', 'GameConstants', '.asmdef'] },
+  { title: 'Phase 5. 아키텍처 마이그레이션', summary: 'PuzzleManager God Object 분리, GameObject.Find() 제거, PlayerPrefs→JSON SaveSystem 전환, GameEvents 디커플링 적용. Singleton→ServiceLocator 전환 진행 중.', deliverables: ['LevelDataProvider', 'HidePatternApplier', 'Domain/Interfaces', 'Board 분리 아키텍처'] },
 ]
 
 const roadmap = [
   { id: 'sprint-1-2', label: 'Sprint 1-2', headline: '코어 시스템', description: 'DFS 보드 생성, 이미지 해금, 사운드/파티클 이펙트, 기본 게임 루프 완성.', isActive: false },
   { id: 'sprint-3-4', label: 'Sprint 3-4', headline: '시스템 확장', description: '힌트 시스템, 세이브/로드, 업적, 패턴 시스템 구현 완료.', isActive: false },
   { id: 'phase-6', label: 'Phase 6', headline: 'Daily Puzzle + AdMob + IAP', description: 'Daily Puzzle 시스템, AdMob 광고 연동, IAP 인앱 결제 구현 완료. 컴파일 0 에러. 패키지명: com.mmporong.numlink', isActive: false },
-  { id: 'launch', label: '출시 준비', headline: '60레벨 QA + APK 빌드 + 스토어 등록', description: '60레벨 전체 QA, APK 빌드, Google Play 스토어 등록 진행 중.', isActive: true },
+  { id: 'ai-refactor', label: 'AI 리팩토링', headline: 'Phase 4-5: 코드 정리 + 아키텍처', description: 'ServiceLocator, GameBootstrapper, GameEvents, SaveSystem<T> 도입. PuzzleManager God Object 분리, Singleton→ServiceLocator 전환 진행 중.', isActive: true },
+  { id: 'launch', label: '출시 준비', headline: '60레벨 QA + APK 빌드 + 스토어 등록', description: '60레벨 전체 QA, APK 빌드, Google Play 스토어 등록 진행 중.', isActive: false },
 ]
 
 const techDetails = [
@@ -44,6 +47,8 @@ const techDetails = [
   { name: 'AdMob + IAP', desc: 'Google AdMob 광고 SDK, Unity IAP 인앱 결제 연동 완료' },
   { name: 'ThemeData SO', desc: 'ScriptableObject 기반 색상 통합 테마 시스템 — 테마 교체 원클릭화' },
   { name: 'DOTween 피드백 시스템', desc: '바운스 1.2x Elastic, 라인 그라데이션, 클리어 웨이브+카메라 셰이크, 콤보/진행률 이벤트 기반 피드백' },
+  { name: 'Assembly Definition', desc: 'Domain/Core/Editor 3개 .asmdef로 레이어 분리, 컴파일 경계 강제' },
+  { name: 'Domain/Interfaces', desc: 'IPuzzleBoard, ILevelProvider 등 순수 C# 인터페이스 — UnityEngine 참조 금지' },
 ]
 
 function NumLinkSectionDetail({ id }: { id: string }) {

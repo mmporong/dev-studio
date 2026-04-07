@@ -103,6 +103,11 @@ export const readinessChecks: StatusItem[] = [
     detail: '프리팹 배치, NoteSpawner/ThemeManager 연결, 씬 세팅 필요',
     status: 'pending',
   },
+  {
+    title: '광고 최적화',
+    detail: 'AdFreeManager, 리워드 광고 삽입점, GameEvents 전면 연동 완료 (Sprint 8 ✅)',
+    status: 'ready',
+  },
 ]
 
 export const bridgeContracts: BridgeContract[] = [

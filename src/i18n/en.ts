@@ -29,7 +29,7 @@ export const en = {
     viewAll: 'View dev process →',
     items: {
       meowbeat: { name: 'MeowBeat', tagline: 'A rhythm game where you feed cats to AI-generated music', platform: 'Android first (WebGL later)', phase: 'Phase 2 — Asset/UI Integration' },
-      numlink: { name: 'NumLink', tagline: 'Connect numbers to complete pictures — 200+ brain puzzles', platform: 'Android (Google Play)', phase: 'Phase 6 Complete + UI/UX Polish' },
+      numlink: { name: 'NumLink', tagline: 'Connect numbers to complete pictures — 200+ brain puzzles', platform: 'Android (Google Play)', phase: 'AI Refactoring in Progress (Phase 4-5)' },
     },
   },
   log: {

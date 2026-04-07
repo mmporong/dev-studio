@@ -29,7 +29,7 @@ export const ko = {
     viewAll: '개발 과정 보기 →',
     items: {
       meowbeat: { name: 'MeowBeat (냥비트)', tagline: 'AI가 만든 음악으로 고양이에게 밥을 주는 리듬 게임', platform: 'Android first (WebGL 추후)', phase: 'Phase 2 — 에셋/UI 연결 단계' },
-      numlink: { name: 'NumLink (넘링크)', tagline: '숫자를 이어 그림을 완성하는 두뇌 퍼즐 200+ 스테이지', platform: 'Android (Google Play)', phase: 'Phase 6 완료 + UI/UX 개선' },
+      numlink: { name: 'NumLink (넘링크)', tagline: '숫자를 이어 그림을 완성하는 두뇌 퍼즐 200+ 스테이지', platform: 'Android (Google Play)', phase: 'AI 리팩토링 진행 중 (Phase 4-5)' },
     },
   },
   log: {

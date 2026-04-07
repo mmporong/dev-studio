@@ -6,7 +6,7 @@ export const numlinkProject: ProjectConfig = {
   tagline: '숫자를 이어 그림을 완성하는 두뇌 퍼즐 200+ 스테이지',
   platform: 'Android (Google Play)',
   engine: 'Unity 6000.x (C#)',
-  phase: 'Phase 6 완료 + UI/UX 개선 (테마 시스템, 피드백 강화, 메뉴 UX) — 컴파일 0 에러',
-  risk: 'APK 빌드, 스토어 등록 남음',
+  phase: 'AI 리팩토링 진행 중 (Phase 4-5) — ServiceLocator + GameEvents + SaveSystem 마이그레이션',
+  risk: 'Singleton→ServiceLocator 전환 + 컴파일 확인 완료 후 Phase 6 킥 확정 필요',
   accent: '#3182f6',
 }
