@@ -43,6 +43,117 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-04-12T04:00:00-daily-standup',
+    date: '2026-04-12',
+    researchTitle:
+      '📊 4/12 데일리 스탠드업 — NumLink SaveData 버전관리 커밋·MeowBeat 미커밋 25개·퍼즐 시장 YoY +19%·NumLink QA 인프라 전무·오디오 반응형 파티클 리듬 트렌드',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 완료. NumLink 오늘 2개 커밋 확인(SaveData 버전관리+BM광고 필드, HUD 폰트 2배) — 미커밋 17개 잔존. MeowBeat FarmObject 레이어 수정 커밋 후 25개 미커밋 누적. 로직/숫자 퍼즐 YoY +19% 성장, 퍼즐 시장 $13.87B→$23.99B(CAGR 6.96%), 멀티플레이 리듬 DAU +40%. NumLink Tools/ QA 인프라 완전 미구축(회귀 테스트 불가, 위험도 高). ASO 2026: 첫 스크린샷 3초 내 게임플레이 노출 시 전환율 25~40% 상승, 시리즈형 숏폼이 SNS 승리공식. agent-office Node.js 20 deprecated 경고(2026-09-16 제거 예정). 리듬 게임 UI: 오디오 반응형 절차적 파티클+스타일라이즈드 하이브리드가 2026 주류.',
+    researchItems: [
+      {
+        title: '🎯 Orchestrator — NumLink 2커밋·미커밋 17개·MeowBeat 1커밋·미커밋 25개·agent-office 5커밋',
+        description:
+          'NumLink 오늘 커밋: df1aea1(SaveData 버전관리+BM광고 필드), 0273e1f(HUD 하단버튼 폰트 2배). MeowBeat 오늘 커밋: cf673cf(먹이 오브젝트 FarmObject 레이어 변경). agent-office 최근: f242f1c(Lyria 3 전환), f3bb888(NumLink·MeowBeat 상태 동기화). NumLink SaveData 구조 변경으로 구버전 호환성 테스트 시급.',
+      },
+      {
+        title: '🎮 Game Designer — 퍼즐 YoY +19%·시장 $13.87B·리듬 CAGR 9.1%·멀티플레이 DAU +40%',
+        description:
+          '로직/숫자 퍼즐 다운로드 YoY +19%, 25~44세가 전체의 47% 차지 — 두뇌 훈련 수요 견고. 퍼즐 시장 2024 $13.87B→2033 $23.99B(CAGR 6.96%). 리듬 게임 $2.5B→$5.3B(CAGR 9.1%), 멀티플레이 앱은 DAU +40% 더 높음. Google Play 신규 계정 14일 12명 테스터 의무화 — 사전 베타 플레이어 확보 필수.',
+      },
+      {
+        title: '💻 Developer — 웹 리서치 도구 미지원·로컬 분석 한정·NumLink SaveData 호환성 이슈 확인',
+        description:
+          'Developer 에이전트(Scientist) 외부 웹 리서치 도구 미지원 — Orchestrator 결과로 대체. NumLink SaveData 버전관리 커밋(df1aea1)은 데이터 구조 변경 포함 — 구버전 세이브 로드 시 마이그레이션 성공 여부 확인 필요. MeowBeat 미커밋 25개 중 GoogleMobileAds 설정 파일 포함.',
+      },
+      {
+        title: '🔍 QA Tester — NumLink QA 인프라 전무·MeowBeat known_bugs 6건·_ProjectTemplate 복사 즉시 가능',
+        description:
+          'NumLink Tools/ 디렉토리 자체가 없음 — known_bugs.json, unity_validate.py, qa_static.py 전부 미구축. MeowBeat Tools/ 완비: known_bugs.json 6건, QA 도구 14개 정상 운영. C:/Unity/_ProjectTemplate/Tools/가 존재하므로 NumLink에 즉시 복사 가능. 현재 NumLink는 회귀 테스트 수단이 전혀 없는 상태.',
+      },
+      {
+        title: '📢 Content Writer — ASO AI 태그 전환·스크린샷 3초 룰·시리즈형 숏폼·전환율 25~40%↑',
+        description:
+          'ASO 2026: AI 태그+참여율 알고리즘 — 첫 스크린샷 3초 내 핵심 게임플레이 노출 필수. 밝고 선명한 아이콘+프리뷰 영상 첫 3초 실제 플레이 → 전환율 25~40% 상승. SNS: 단발 클립 아닌 시리즈 형식 숏폼이 2026 승리공식, 3~5개 플랫폼 동시 운영. Apple AI가 스크린샷에서 메타데이터 자동 추출 — 비주얼 품질=검색 노출.',
+      },
+      {
+        title: '⚙️ DevOps — GitHub Pages 24초 배포 정상·Node.js 20 deprecated·weekly-insights 자동화 정상',
+        description:
+          'agent-office 자동배포 정상(build 14초+deploy 10초). weekly-insights.yml 매주 월요일 09:00 KST 자동 실행. Dependabot npm+Actions 주간 자동 PR. Node.js 20 Actions 6건 deprecated 경고(2026-09-16 제거 예정) — Node.js 24 마이그레이션 선행 필요. 보안: GitHub Actions SHA 고정으로 공급망 공격 방어 중.',
+      },
+      {
+        title: '🎨 Art Director — Diegetic UI 표준화·오디오 반응형 파티클 주류·색맹 모드 기본값',
+        description:
+          '2026 모바일 게임: Diegetic UI(HUD 최소화+세계관 통합) 표준화. 퍼즐 UI: 색맹 모드 기본값, 고대비 미제공 시 스토어 리뷰 직접 지적 수준. 보상 순간에만 채도 높은 액센트 컬러 집중. 리듬 게임: 오디오 반응형 절차적 파티클+스타일라이즈드 하이브리드 주류 — MeowBeat 노트 히트 이펙트 교체 검토 시점.',
+      },
+    ],
+    meetingTitle: '🏢 4/12 데일리 스탠드업 — NumLink QA 인프라 긴급 구축·SaveData 마이그레이션 검증·소셜 루프 MVP',
+    meetingSummary:
+      'NumLink에 QA 인프라가 전혀 없는 상태에서 SaveData 구조 변경 커밋이 들어온 것이 오늘의 핵심 리스크. _ProjectTemplate에서 Tools/ 즉시 복사로 회귀 테스트 기반 마련이 P0. MeowBeat는 미커밋 25개 누적 정리가 시급. 퍼즐/리듬 시장 모두 소셜 기능이 리텐션 핵심으로 부상 — 데일리 랭킹 MVP 포함 여부 결정 필요. Node.js 24 마이그레이션은 2026-09 deadline 전 여유 있게 처리.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'NumLink 오늘 SaveData 버전관리 커밋이 들어왔는데 미커밋이 아직 17개입니다. MeowBeat는 25개가 쌓여 있고요. SaveData 구조 변경은 기존 세이브 파일 호환성이 깨질 수 있어서 마이그레이션 테스트를 오늘 P0으로 잡겠습니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '퍼즐 시장이 YoY +19% 성장 중입니다. 그런데 멀티플레이 기능이 DAU를 40% 끌어올린다는 데이터가 나왔습니다. NumLink에 데일리 랭킹 1줄이라도 MVP에 넣을지 오늘 결정해야 합니다. 안 넣으면 D30 리텐션에서 불리합니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'SaveData 버전관리 변경(df1aea1)이 BM 광고 필드 추가를 포함합니다. 구버전 세이브를 로드할 때 null 필드가 생기면 크래시 위험이 있습니다. 마이그레이션 로직이 제대로 구현됐는지 확인이 필요합니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'NumLink에 Tools/ 디렉토리가 아예 없습니다. known_bugs.json도, unity_validate.py도 없어요. 회귀 테스트를 전혀 할 수 없는 상태인데 SaveData 구조까지 바뀌었습니다. _ProjectTemplate에서 복사하는 건 10분이면 되니까 지금 당장 해야 합니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'ASO 알고리즘이 AI 태그 기반으로 바뀌었습니다. 스크린샷 첫 3초에 실제 게임플레이가 나와야 전환율이 25~40% 올라갑니다. NumLink와 MeowBeat 모두 스토어 등록 전에 비주얼 에셋 점검이 필요합니다. 시리즈형 숏폼도 지금부터 준비해야 합니다.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'agent-office 배포 파이프라인은 이상 없습니다. 다만 Node.js 20 Actions 경고가 6건 있고 2026년 9월에 제거됩니다. 여유 있을 때 Node.js 24로 올려두는 게 낫습니다. NumLink·MeowBeat CI/CD는 여전히 없는 상태입니다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: 'MeowBeat 노트 히트 이펙트를 오디오 반응형 버스트로 교체하면 타격감이 크게 달라집니다. 2026 리듬 게임 트렌드 정중앙이고 구현 복잡도도 낮습니다. NumLink는 색맹 모드를 MVP 스코프에 넣어야 합니다. 스토어 리뷰에서 직접 지적받는 수준입니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: 'P0: NumLink Tools/ QA 인프라 구축 (_ProjectTemplate에서 즉시 복사)',
+        description:
+          'C:/Unity/_ProjectTemplate/Tools/에서 unity_validate.py, qa_static.py, known_bugs.json, run_regression.py 복사 후 씬 경로 상수 업데이트. SaveData 변경 이후 회귀 테스트 기반 마련이 시급.',
+      },
+      {
+        title: 'P0: NumLink SaveData 마이그레이션 호환성 검증',
+        description:
+          'df1aea1 커밋(SaveData 버전관리+BM광고 필드) 반영 후 구버전 세이브 파일 로드 시 null 필드 크래시 여부 확인. 마이그레이션 로직 존재 확인 필수.',
+      },
+      {
+        title: 'P0: MeowBeat 미커밋 25개 정리',
+        description:
+          'GoogleMobileAds 설정, 프리팹, 씬 파일 등 25개 미커밋 파일 분류 후 커밋. FarmObject 레이어 변경 작업 완료분 포함.',
+      },
+      {
+        title: 'P1: NumLink 데일리 랭킹 MVP 포함 여부 결정',
+        description:
+          '멀티플레이 기능이 DAU +40%를 기록한 시장 데이터 기반 — 최소 기능으로 데일리 랭킹 1줄 표시 스프린트 추가 검토. GDD 문서에 소셜 루프 항목 추가.',
+      },
+      {
+        title: 'P1: agent-office Node.js 24 마이그레이션',
+        description:
+          'Node.js 20 Actions 6건 deprecated 경고, 2026-09-16 제거 예정. deploy-pages.yml Actions 버전 v4→v5 업데이트 + Node.js 24 호환성 테스트. deadline 전 여유 있게 처리.',
+      },
+      {
+        title: 'P2: MeowBeat 노트 히트 이펙트 오디오 반응형 버스트 교체 검토',
+        description:
+          '2026 리듬 게임 트렌드: 정적 파티클 루프 → 비트 타이밍 동기화 오디오 반응형 버스트. 타격감 체감 향상 직결. Unity 파티클 시스템 오디오 데이터 연동 구현 검토.',
+      },
+    ],
+  },
+
+  {
     id: '2026-04-07T04:00:00-daily-standup',
     date: '2026-04-07',
     researchTitle:
