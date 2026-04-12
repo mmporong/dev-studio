@@ -43,6 +43,117 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-04-13T04:00:00-daily-standup',
+    date: '2026-04-13',
+    researchTitle:
+      '📊 4/13 데일리 스탠드업 — NumLink 폰트·UI 5커밋·MeowBeat 먹기 애니메이션 5커밋·퍼즐 시장 $12.2B·Unity 6.4 ECS 코어 편입·GameCI 빌드 자동화·Diegetic UI 트렌드',
+    researchSummary:
+      '7명 에이전트 첫 병렬 리서치 완료(최초 회의). NumLink 오늘 5커밋(README, 폰트, asmdef 빌드 픽스, 세계관 UI 강화) — 미커밋 약 30개(AutoGenTests 삭제·폰트 에셋 변경 포함). MeowBeat 오늘 5커밋(먹기 애니메이션 흔들기→즉시제거 fix, feedIcon 교체) — 미커밋 약 25개(GoogleMobileAds 미커밋·삭제파일 3개 미스테이지). agent-office 오늘 1커밋(4/12 스탠드업). 퍼즐 게임 시장 $12.2B(3위), IAP 수익 +14%. 리듬 게임 $2.5B→$5.3B(CAGR 9.1%), MeowBeat 고양이 테마 메이저 공백 확인. Unity 6.4 ECS 코어 편입 예정, Mono→CoreCLR 마이그레이션(6.7). MeowBeat GameManager FindObjectOfType 14회 호출(기술부채 HIGH). NumLink 테스트 커버리지 0%. GameCI로 Unity CI 구축 가능. ASO 2026 지속적 실험 사이클 전략, TikTok 유기적 도달 급락→멀티플랫폼 필수. Diegetic UI + 캐릭터 연동 파티클 트렌드.',
+    researchItems: [
+      {
+        title: '🎯 Orchestrator — NumLink 5커밋·미커밋 30개·MeowBeat 5커밋·미커밋 25개',
+        description:
+          'NumLink 오늘 커밋: README 추가, Maplestory SDF 폰트 적용, asmdef 빌드 픽스, 세계관 UI 스타일 강화(총 5개). 미커밋: 폰트 에셋 변경·AutoGenTests 삭제 미스테이지·.omc 파일 다수. MeowBeat 오늘 커밋: 먹기 애니메이션 fix(흔들기→즉시제거), 1초 흔들기 구현, catfood.meta, foodSprite revert, feedIcon 교체(총 5개). 미커밋: GoogleMobileAds prefab/Manifest, Input·Item·SaveLoad 메타 삭제 미스테이지. agent-office 4/12 스탠드업 1커밋. package-lock.json 변경 의도 확인 필요.',
+      },
+      {
+        title: '🎮 Game Designer — 퍼즐 $12.2B·IAP+14%·리듬 CAGR 9.1%·Block Blast 2810만 다운로드',
+        description:
+          '퍼즐 게임 전체 매출 약 $12.2B(3위), IAP 수익 YoY +14% 성장. Numberlink 장르 대형 경쟁작 없음 — 블루오션 확인. 리듬 게임 $2.5B→$5.3B(CAGR 9.1%), MeowBeat 고양이 테마 메이저 타이틀 공백 확인. Block Blast 2026-01 다운로드 1위(2810만). Phigros식 무선 판정선·Rotaeno 자이로 메카닉 트렌드. Day 30 리텐션 공략 위한 데일리 챌린지+스트릭 시스템 권장.',
+      },
+      {
+        title: '💻 Developer — Unity 6.4 ECS 편입·6.7 CoreCLR·MeowBeat FindObjectOfType 14회 기술부채',
+        description:
+          'Unity 6.4 ECS 코어 패키지 편입, GameObject+ECS 통합 트랜스폼 지원 예정. Unity 6.7(2026 LTS) Mono→CoreCLR 마이그레이션. MeowBeat GameManager.cs Start()에서 FindObjectOfType 14회 연속(규칙 위반 HIGH). PlayerController.cs Input.GetKeyDown 직접 사용(규칙 위반). Runtime 동적 GameObject 생성(씬 배치 원칙 위반). Debug.Log 80개+ 미제거. NumLink 아키텍처는 ServiceLocator 정석 구현으로 ECS 하이브리드 전환 유리.',
+      },
+      {
+        title: '🔍 QA Tester — NumLink 테스트 0%·known_bugs 없음·MeowBeat 회귀 2/2 PASS',
+        description:
+          'NumLink Tools/ 폴더 없음 — known_bugs.json·unity_validate.py·qa_static.py 전무. 프로젝트 테스트 파일(*Test*.cs) 0개. MeowBeat known_bugs.json 6건 등록(RT_SIZE_ZERO·YAML_DUPLICATE·MANIFEST_MISSING_AUDIO 등). 회귀 테스트 2/2 PASS. AutoGenTests.cs 37개 케이스(HitEffect·Note·NoteSpawner 커버). 게임플레이 로직(판정 타이밍·점수 계산) 테스트 없음.',
+      },
+      {
+        title: '📢 Content Writer — ASO 지속적 실험 사이클·TikTok 도달 급락·Discord 소유 채널 필수',
+        description:
+          'ASO 2026: Apple App Store Tags AI 도입, Google Play Level Up 참여도 반영. 첫 2장 스크린샷이 전환율 최대 변수. TikTok 유기적 도달 급락(42.5만→6천 사례)→멀티플랫폼+Discord 소유 채널 병행 필수. 퍼즐 주타겟 25~44세 여성(75%), 리듬 아시아 집중. "공유 가능한 순간" 의도적 설계로 UGC 바이럴 유도 권장.',
+      },
+      {
+        title: '⚙️ DevOps — agent-office CI 정상·Unity CI 없음·GameCI 표준·Vercel 전환 검토',
+        description:
+          'agent-office deploy-pages.yml(Node22+Vite8) 정상 운영, SHA 고정 보안 양호. weekly-insights.yml 매주 월 09:00 자동 실행. NumLink·MeowBeat .github/workflows 없음. GameCI(game-ci/unity-actions) 2026 표준 — Library 캐싱으로 빌드 시간 단축. IL2CPP Android 빌드 ubuntu-latest 필요. agent-office GitHub Pages→Vercel 전환 시 PR 프리뷰 배포 이점.',
+      },
+      {
+        title: '🎨 Art Director — Diegetic UI·볼류메트릭 파티클·캐릭터 연동 비주얼 피드백 트렌드',
+        description:
+          '2026 Diegetic UI 주류 — 버튼/아이콘이 세계관에 녹아드는 Dynamic Icons. 퍼즐 접근성: 색상+심볼 이중 구분·흔들림 힌트·접근성 설정 세분화. 리듬: 볼류메트릭 파티클+씬 전체 BPM 동기화가 표준. MeowBeat PERFECT 콤보 시 고양이 픽셀아트 캐릭터 연동 비주얼 피드백 제안. NumLink 오답 연결 흔들림 피드백 추가 권장.',
+      },
+    ],
+    meetingTitle: '🏢 4/13 데일리 스탠드업 — MeowBeat 기술부채 긴급 정리·NumLink QA 인프라 구축·GameCI 도입',
+    meetingSummary:
+      'MeowBeat GameManager.cs FindObjectOfType 14회 호출이 오늘 가장 큰 기술부채로 부상. NumLink는 테스트 커버리지 0%에 Tools/ 인프라 전무 상태. 먹기 애니메이션 5커밋이 완료됐으나 GoogleMobileAds 미커밋·삭제파일 미스테이지가 정리 시급. Unity 6.4/6.7 로드맵으로 현재 아키텍처 점검 필요. GameCI 도입으로 두 프로젝트 CI 자동화 가능. ASO와 커뮤니티 빌딩을 지금부터 시작해야 출시 대비 가능.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'NumLink가 오늘 폰트와 UI 작업으로 5커밋 들어왔습니다. 미커밋 30개 중 AutoGenTests 삭제 파일이 스테이지 안 된 게 위험합니다. MeowBeat는 먹기 애니메이션 5커밋 완료됐지만 GoogleMobileAds 설정이 아직 미커밋입니다. 두 프로젝트 모두 미커밋 정리를 오늘 P0으로 잡겠습니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '퍼즐 시장 IAP가 14% 성장 중이고, Numberlink 장르에 폴리시된 대형 경쟁작이 없습니다. NumLink에 Daily Challenge + 스트릭 시스템이 Day 30 리텐션 핵심입니다. MeowBeat는 고양이 테마 메이저 리듬 게임 공백이 확인됐으니 지금이 출시 타이밍입니다. Phigros식 판정선 이동 방식 레퍼런스 검토를 제안합니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'MeowBeat GameManager.cs가 Start()에서 FindObjectOfType를 14번 부릅니다. 스타트업 시간도 문제지만 CLAUDE.md 규칙 위반입니다. PlayerController도 Input.GetKeyDown 직접 사용 중이고, Runtime에서 GameObject를 동적 생성하는 곳도 있습니다. 이 세 가지가 오늘 기술부채 P0입니다. Unity 6.7에서 CoreCLR 전환이 예정돼 있어 지금 아키텍처 점검이 필요합니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'NumLink에 테스트 파일이 단 하나도 없습니다. Tools/ 인프라도 없고요. Sprint 1-4 완료, 62건 코드리뷰 수정했는데 회귀 보호망이 전무입니다. 오늘 _ProjectTemplate에서 복사해야 합니다. MeowBeat는 회귀 2/2 PASS지만 게임플레이 로직 테스트가 없어서 판정 타이밍·점수 계산이 무방비 상태입니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'Apple이 App Store Tags를 AI로 자동 생성하기 시작했습니다. 스크린샷에서 메타데이터를 추출하니 비주얼 품질이 곧 검색 노출입니다. TikTok 유기적 도달이 급락하고 있어서 Discord 소유 채널을 지금 열어야 합니다. 출시 6~8주 전에 사전 등록 페이지와 devlog 콘텐츠를 시작하는 게 공식입니다.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'agent-office CI/CD는 이상 없습니다. 문제는 NumLink·MeowBeat 둘 다 GitHub Actions가 없다는 겁니다. GameCI가 2026 표준이고, Library 캐싱으로 빌드 시간을 많이 줄일 수 있습니다. NumLink EditMode 테스트 CI부터 추가하고, MeowBeat는 Android AAB 자동 빌드 순으로 구축 제안합니다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: 'MeowBeat PERFECT 콤보 때 고양이 캐릭터가 반응하는 비주얼 피드백을 추가하면 경쟁 차별점이 됩니다. 볼류메트릭 대신 픽셀아트 스타일 파티클로 세계관 일관성 유지하는 방향입니다. NumLink는 오답 연결 시 흔들림 피드백 5줄이면 됩니다. agent-office 게임 카드 hover도 장르별 border-left 컬러로 개선하면 스캔 가독성이 좋아집니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: 'P0: MeowBeat GameManager.cs FindObjectOfType 14회 → SerializeField/ServiceLocator 전환',
+        description:
+          'C:/Unity/Feedme/Assets/Scripts/Manager/GameManager.cs Start()에서 FindObjectOfType 14회 호출 제거. SerializeField 직접 참조 또는 ServiceLocator 패턴으로 전환. CLAUDE.md 규칙 준수 + 스타트업 시간 단축.',
+      },
+      {
+        title: 'P0: NumLink Tools/ QA 인프라 구축 (_ProjectTemplate에서 즉시 복사)',
+        description:
+          'C:/Unity/_ProjectTemplate/Tools/에서 unity_validate.py, qa_static.py, known_bugs.json, run_regression.py 복사 후 NumLink 씬 경로 상수 업데이트. 테스트 커버리지 0% 상태에서 Unity Editor 통합 진입 전 최소 방어선 구축.',
+      },
+      {
+        title: 'P0: MeowBeat 미커밋 25개 정리 (GoogleMobileAds·삭제 파일 스테이지 포함)',
+        description:
+          'GoogleMobileAds prefab/Manifest, Input·Item·SaveLoad 메타 삭제 파일, feedIcon_0327.png 등 분류 후 커밋. MainScene.unity.bak_btn 삭제. 먹기 애니메이션 작업 완료분 포함.',
+      },
+      {
+        title: 'P1: MeowBeat PlayerController.cs Input.GetKeyDown → InputAction 전환',
+        description:
+          'C:/Unity/Feedme/Assets/Scripts/Player/PlayerController.cs L52~53 Input.GetKeyDown → InputAction 마이그레이션. CLAUDE.md 규칙 준수.',
+      },
+      {
+        title: 'P1: NumLink GameCI 기반 Unity CI 추가 (.github/workflows/unity-test.yml)',
+        description:
+          'GameCI(game-ci/unity-actions) + Library 캐싱 + EditMode 테스트 자동 실행. PR 머지 전 회귀 검증 기반 마련. MeowBeat Android AAB 자동 빌드 CI는 후속.',
+      },
+      {
+        title: 'P2: NumLink Daily Challenge + 스트릭 시스템 GDD 추가',
+        description:
+          'Day 30 리텐션 공략을 위한 소셜 루프 최소 설계. Numberlink 장르 경쟁작 없는 블루오션 — 데일리 랭킹 1줄 MVP 포함 여부 GDD에 항목 추가.',
+      },
+    ],
+  },
+
+  {
     id: '2026-04-12T04:00:00-daily-standup',
     date: '2026-04-12',
     researchTitle:
