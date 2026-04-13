@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-07T03:23:00.667Z",
+  "lastUpdated": "2026-04-13T01:23:51.880Z",
   "weeks": [
     {
       "weekOf": "2026-W15",
@@ -13,6 +13,26 @@
           "summary": "인증서 톺아보기 시리즈 2: 유효기간 감소와 발급/갱신 자동화",
           "publishedAt": "2026-04-06T00:31:21.000Z",
           "collectedAt": "2026-04-06T23:41:39.293Z"
+        },
+        {
+          "id": "8aa1744553482e52",
+          "title": "하마터면 못생겨질 뻔했다 - 토스 프론트 2 제작기",
+          "url": "https://toss.tech/article/toss_front",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "하마터면 못생겨질 뻔했다 - 토스 프론트 2 제작기",
+          "publishedAt": "2026-04-09T02:50:00.000Z",
+          "collectedAt": "2026-04-13T01:23:51.880Z"
+        },
+        {
+          "id": "f25e53bdfba82c16",
+          "title": "Layers of your time : 토스와 함께한 시간을 기념하기",
+          "url": "https://toss.tech/article/layers-of-your-time",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "Layers of your time : 토스와 함께한 시간을 기념하기",
+          "publishedAt": "2026-04-07T09:44:00.000Z",
+          "collectedAt": "2026-04-13T01:23:51.880Z"
         }
       ]
     },
