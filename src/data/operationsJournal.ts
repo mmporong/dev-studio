@@ -43,6 +43,116 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-04-14T04:00:00-daily-standup',
+    date: '2026-04-14',
+    researchTitle:
+      '📊 4/14 데일리 스탠드업 — Unity 8패치 업그레이드 필요·하이브리드 캐주얼 +911%·Poki 월 1억 유저·코지 UI 트렌드·Duet Cats 시장검증·GameCI v4 도입 준비',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 완료(제2회). NumLink·MeowBeat 모두 Unity 6000.3.5→13f1 8패치 뒤처짐(UIToolkit 터치 버그 수정 포함). 블록퍼즐 +911% 성장, Poki 월 1억 유저·직접유입 수익 100%. 리듬 게임 CAGR 12.8%, Duet Cats 고양이+리듬 글로벌 1위 시장검증. MeowBeat Farm fix 커밋 반복 패턴(레이어/스프라이트 7건). NumLink TODO 5건 누적. TikTok 유기적 도달 85~90% 하락→YouTube Shorts/Reels 대안. 2026 코지 미학·내러티브 UI 트렌드. 양 프로젝트 에셋 네이밍 혼란(한글·숫자 파일명 산재). GameCI v4 안정, Weekly Insights 워크플로우 실패 이력.',
+    researchItems: [
+      {
+        title: '🎯 Orchestrator — NumLink 미커밋 30개·MeowBeat 미커밋 25개·4/13 액션아이템 미완료',
+        description:
+          'NumLink feature/uitoolkit 브랜치, 폰트·UI 5커밋 완료. 미커밋 30개(AutoGenTests 삭제 미스테이지 HIGH). MeowBeat feature/song-ownership-migration, 먹기 애니메이션 5커밋 완료. 미커밋 25개(GoogleMobileAds 설정 미정리). agent-office main 최신 fix(ci) 4/14. 4/13 P0 액션아이템(미커밋 정리, FindObjectOfType 전환, Tools 복사) 모두 미완료 상태.',
+      },
+      {
+        title: '🎮 Game Designer — 하이브리드 캐주얼 +911%·Poki 월 1억 유저·리듬 CAGR 12.8%·AR 15%',
+        description:
+          '하이브리드 캐주얼(퍼즐+메타레이어) 급성장, 블록퍼즐 +911%. AI 동적 난이도 조절 핵심 차별화. 리듬 게임 CAGR 12.8%, AR 리듬 15% 점유, 아시아태평양 41% 최대 시장. Poki 월 1억 유저, 직접유입 수익 100%, 상위 개발자 연 100만 유로. 로직 퍼즐 다운로드 YoY +19%.',
+      },
+      {
+        title: '💻 Developer — Unity 8패치 뒤처짐·MeowBeat fix 반복·NumLink TODO 5건',
+        description:
+          '두 프로젝트 Unity 6000.3.5→13f1 8패치 뒤처짐. UIToolkit 터치 스크롤 버그(UUM-135398) 수정 포함. 오디오 메인스레드 분리(리듬게임 히치 방지). Burst+IL2CPP 빌드 22% 단축. MeowBeat Farm fix 커밋 7건 반복(레이어/스프라이트 시행착오). NumLink 매니저 통합 부채 5건(UIManager 이벤트, ObjectManager 통합 등).',
+      },
+      {
+        title: '🔍 QA Tester — NumLink Tools 부재·MeowBeat known_bugs 6건·에러핸들링 격차 33배',
+        description:
+          'NumLink Tools/ 완전 부재(unity_validate.py, qa_static.py, known_bugs.json 없음). MeowBeat Tools 완비, known_bugs 6건 등록(4개 error), 회귀테스트 픽스처 미완성. 에러핸들링: NumLink 15파일 689회 분산 vs MeowBeat 9파일 21회 집중(33배 격차).',
+      },
+      {
+        title: '📢 Content Writer — ASO 롱테일·TikTok -90%·Duet Cats 고양이+리듬 1위',
+        description:
+          'ASO: 앱스토어 설치 65% 검색유입, 롱테일 키워드 전환율 우수. TikTok 유기적 도달 85~90% 하락(42.5만→6천 사례), YouTube Shorts/Instagram Reels 대안 부상. Duet Cats(고양이+리듬) 글로벌 1위, 18~34세 여성층 강력 흡인. MeowBeat 정통 리듬게임 포지셔닝으로 차별화 가능.',
+      },
+      {
+        title: '⚙️ DevOps — Unity CI 부재·GameCI v4 안정·Weekly Insights 실패 이력',
+        description:
+          'NumLink·MeowBeat .github/workflows 없음. agent-office 2개 워크플로우 정상(deploy-pages, weekly-insights). Weekly Insights 직전 실행 cancelled/failure 이력. GameCI v4 안정(Ubuntu 22.04, Windows 경로 공백 해결). 동일 Unity 버전으로 Docker 이미지 공유 가능.',
+      },
+      {
+        title: '🎨 Art Director — 코지 내러티브 UI·UIToolkit 108파일·에셋 네이밍 혼란',
+        description:
+          '2026 트렌드: 코지 미학+스토리텔링 통합 UI+부드러운 모션 주류. NumLink UIToolkit 108파일 대규모 작업(USS 7개+UXML 6개). 양 프로젝트 에셋 네이밍 혼란 심각(한글 파일명, 숫자만 파일, PSD 원본 혼재). 고양이 세계관=코지 트렌드 정확히 부합.',
+      },
+    ],
+    meetingTitle: '🏢 4/14 데일리 스탠드업 — Unity 패치 업그레이드·Poki 출시 검토·에셋 네이밍 정리·4/13 P0 미완료 이월',
+    meetingSummary:
+      '4/13 P0 액션아이템 3건(미커밋 정리, FindObjectOfType 전환, Tools 복사) 모두 미완료로 이월. Unity 6000.3.13f1 업그레이드가 UIToolkit 터치 버그+오디오 최적화 포함하여 새 P0로 부상. NumLink Poki 웹 플랫폼 출시가 시장 데이터(월 1억 유저, 수익 100%)로 뒷받침됨. 에셋 네이밍 혼란이 UIToolkit 전환 완료 전 정리 필요.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '4/13 P0 액션아이템 3건이 모두 미완료입니다. 미커밋 정리(NumLink 30개, MeowBeat 25개), FindObjectOfType 전환, Tools 복사 — 이번에는 반드시 완료해야 합니다. 이월 항목을 오늘 P0 최우선으로 재지정합니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '블록퍼즐 +911% 성장과 Poki 월 1억 유저 데이터가 나왔습니다. NumLink은 Poki 웹 출시를 검토할 만합니다 — 직접유입 수익 100%이고 로직 퍼즐 다운로드가 YoY +19%입니다. MeowBeat는 Duet Cats가 고양이+리듬으로 글로벌 1위를 찍었으니 정통 리듬게임으로 포지셔닝해서 차별화합시다.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'Unity 6000.3.5에서 13f1까지 8패치가 밀려 있습니다. UIToolkit 터치 스크롤 버그 수정(UUM-135398)이 포함돼 있어 NumLink UIToolkit 브랜치에 직접 영향입니다. 오디오 메인스레드 분리도 MeowBeat 리듬게임에 중요합니다. MeowBeat Farm 기능에서 fix 커밋이 7건 반복됐는데, 레이어/스프라이트 설계를 한번 재검토해야 합니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'NumLink Tools 부재가 이틀째입니다. 4/13에도 P0이었는데 아직 복사 안 됐습니다. 에러핸들링 격차도 심각합니다 — NumLink 689회 분산 vs MeowBeat 21회 집중, 33배 차이입니다. MeowBeat known_bugs 6건 중 4건이 error 등급이고 회귀테스트 픽스처가 아직 미완성입니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'TikTok 도달이 85~90% 하락했습니다. YouTube Shorts와 Instagram Reels로 전환해야 합니다. Duet Cats가 시장을 검증해줬으니 MeowBeat ASO 키워드를 "cat rhythm game" 롱테일 변형으로 미리 세팅하고, 출시 전 15초 게임플레이 클립 전략을 준비합시다.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'agent-office 배포 정상이지만 Weekly Insights 워크플로우가 실패/취소 이력이 있습니다. 원인 조사 필요합니다. Unity 두 프로젝트 CI/CD 부재가 이틀째인데 GameCI v4가 안정화돼 있고 동일 버전이라 Docker 이미지 공유가 가능합니다. 오늘은 Weekly Insights 실패 원인부터 잡겠습니다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '2026 트렌드가 코지 미학+내러티브 UI입니다. 고양이 세계관이 정확히 부합하니 방향은 맞습니다. 다만 에셋 네이밍이 양 프로젝트 모두 혼란입니다 — 30.png, ㅡㅡㅡ.png, 레이어 20.png 같은 파일이 산재해 있어요. UIToolkit USS 연동 전에 {기능}_{크기}_{상태}.png 형식으로 통일해야 합니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: 'P0: 4/13 미완료 이월 — 미커밋 정리·FindObjectOfType 전환·Tools 복사',
+        description:
+          '4/13 P0 3건 모두 미완료. NumLink 미커밋 30개(AutoGenTests git rm), MeowBeat 미커밋 25개(GoogleMobileAds 정리), MeowBeat FindObjectOfType 14회→ServiceLocator, NumLink Tools/ 복사를 오늘 반드시 완료.',
+      },
+      {
+        title: 'P0: Unity 6000.3.5→6000.3.13f1 동시 업그레이드',
+        description:
+          '8패치 누적. UIToolkit 터치 스크롤 버그(UUM-135398) 수정 + 오디오 메인스레드 분리 + Burst+IL2CPP 빌드 22% 단축. NumLink UIToolkit 브랜치와 MeowBeat 리듬게임 모두에 직접 영향.',
+      },
+      {
+        title: 'P1: NumLink Poki 웹 플랫폼 출시 전략 수립',
+        description:
+          'Poki 월 1억 유저, 직접유입 수익 100%, 상위 개발자 연 100만 유로. 로직 퍼즐 다운로드 YoY +19%. WebGL 빌드 테스트 + Poki SDK 연동 검토 시작.',
+      },
+      {
+        title: 'P1: 에셋 네이밍 컨벤션 통일 (양 프로젝트)',
+        description:
+          '한글/숫자 파일명·PSD 원본 혼재 정리. {기능}_{크기}_{상태}.png 형식 통일. UIToolkit USS 스타일시트 연동과 협업 효율성 확보. 코지 모듈형 디자인 시스템 기반.',
+      },
+      {
+        title: 'P2: MeowBeat ASO 키워드 사전 세팅 + YouTube Shorts 전략',
+        description:
+          'Duet Cats 시장검증 활용, "cat rhythm game" 롱테일 키워드 세팅. TikTok 도달 하락 대비 YouTube Shorts/Reels 15초 클립 전략. 출시 6~8주 전 시작.',
+      },
+      {
+        title: 'P2: DevOps Weekly Insights 워크플로우 실패 원인 조사',
+        description:
+          'agent-office weekly-insights.yml 직전 실행 failure→cancelled 이력. 원인 파악 후 수정. GameCI 도입은 Tools 복사·Unity 업그레이드 완료 후 순차 진행.',
+      },
+    ],
+  },
+  {
     id: '2026-04-13T04:00:00-daily-standup',
     date: '2026-04-13',
     researchTitle:
