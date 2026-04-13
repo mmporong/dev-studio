@@ -39,6 +39,8 @@ interface BlogSource {
   type: 'rss' | 'scrape'
   category: InsightCategory
   selector?: string
+  enabled?: boolean
+  lastError?: string
 }
 
 // ---------------------------------------------------------------------------
@@ -136,7 +138,7 @@ async function fetchRss(source: BlogSource): Promise<RawArticle[]> {
 async function fetchScrape(source: BlogSource): Promise<RawArticle[]> {
   const res = await fetch(source.url, {
     headers: {
-      'User-Agent': 'Mozilla/5.0 (compatible; InsightBot/1.0)',
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
       'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
       'Accept-Language': 'ko-KR,ko;q=0.9,en;q=0.8',
     },
@@ -175,6 +177,11 @@ async function fetchScrape(source: BlogSource): Promise<RawArticle[]> {
     seen.add(url)
     results.push({ title: rawTitle, url, publishedAt: '' })
   })
+
+  if (results.length === 0) {
+    console.warn(`  [degraded] selector matched 0 items: ${source.name}`)
+    source.lastError = `selector 0-match @${new Date().toISOString()}`
+  }
 
   return results
 }
@@ -272,6 +279,10 @@ async function main() {
   const companyStat: Record<string, number> = {}
 
   for (const source of sources) {
+    if (source.enabled === false) {
+      console.log(`[skip] ${source.name} (enabled:false, lastError: ${source.lastError ?? 'n/a'})`)
+      continue
+    }
     console.log(`[fetch] ${source.name} (${source.type})...`)
     try {
       let articles: RawArticle[]
