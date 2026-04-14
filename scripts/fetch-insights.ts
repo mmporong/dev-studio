@@ -3,7 +3,7 @@ import { createHash } from 'crypto'
 import { join } from 'path'
 import RssParser from 'rss-parser'
 import * as cheerio from 'cheerio'
-import Anthropic from '@anthropic-ai/sdk'
+// GitHub Models API (OpenAI-compatible) — no extra SDK needed
 
 // ---------------------------------------------------------------------------
 // Types (mirrored from src/types/insight.ts — no cross-import to keep script
@@ -204,7 +204,7 @@ interface SummaryResult {
 const VALID_CATEGORIES: InsightCategory[] = ['game', 'ai', 'frontend', 'backend', 'infra', 'data', 'general']
 
 async function summariseBatch(
-  client: Anthropic,
+  token: string,
   articles: ArticleToSummarise[],
 ): Promise<SummaryResult[]> {
   const articleList = articles
@@ -212,8 +212,9 @@ async function summariseBatch(
     .join('\n')
 
   const prompt = `아래 기술 블로그 게시글들 각각에 대해 한국어 한 줄 요약과 카테고리를 분류해 주세요.
+비개발 콘텐츠(브랜딩, 채용, 기념, 이벤트, 회고, 사내문화 등)는 카테고리를 "skip"으로 분류해 주세요.
 
-카테고리 선택지: game, ai, frontend, backend, infra, data, general
+카테고리 선택지: game, ai, frontend, backend, infra, data, general, skip
 
 응답 형식 (JSON 배열만, 다른 텍스트 없이):
 [{"summary":"한국어 한 줄 요약","category":"카테고리"},...]
@@ -221,28 +222,42 @@ async function summariseBatch(
 게시글 목록:
 ${articleList}`
 
-  const message = await client.messages.create({
-    model: 'claude-haiku-4-5-20251001',
-    max_tokens: 1024,
-    messages: [{ role: 'user', content: prompt }],
+  const res = await fetch('https://models.inference.ai.azure.com/chat/completions', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      model: 'gpt-4o-mini',
+      messages: [{ role: 'user', content: prompt }],
+      max_tokens: 1024,
+      temperature: 0.1,
+    }),
+    signal: AbortSignal.timeout(30000),
   })
 
-  const text = message.content[0].type === 'text' ? message.content[0].text : '[]'
+  if (!res.ok) throw new Error(`GitHub Models API error: ${res.status} ${res.statusText}`)
+
+  const data = await res.json() as { choices?: { message?: { content?: string } }[] }
+  const text = data.choices?.[0]?.message?.content ?? '[]'
 
   // Extract JSON array from response (may have markdown fences)
   const jsonMatch = text.match(/\[[\s\S]*\]/)
-  if (!jsonMatch) throw new Error('No JSON array in Claude response')
+  if (!jsonMatch) throw new Error('No JSON array in model response')
 
   const parsed: { summary: string; category: string }[] = JSON.parse(jsonMatch[0])
 
   return articles.map((a, i) => {
     const item = parsed[i]
+    const rawCategory = item?.category ?? ''
     const category: InsightCategory =
-      item && VALID_CATEGORIES.includes(item.category as InsightCategory)
-        ? (item.category as InsightCategory)
+      rawCategory !== 'skip' && VALID_CATEGORIES.includes(rawCategory as InsightCategory)
+        ? (rawCategory as InsightCategory)
         : a.defaultCategory
     const summary = item?.summary ?? a.title
-    return { summary, category }
+    const isSkip = rawCategory === 'skip'
+    return { summary, category, skip: isSkip } as SummaryResult & { skip?: boolean }
   })
 }
 
@@ -267,11 +282,10 @@ async function main() {
     }
   }
 
-  // Optionally initialise Claude client
-  const apiKey = process.env.ANTHROPIC_API_KEY
-  const anthropic = apiKey ? new Anthropic({ apiKey }) : null
-  if (!anthropic) {
-    console.log('[warn] ANTHROPIC_API_KEY not set — skipping summarisation, using titles as summaries')
+  // GitHub Models API token (provided by Actions as GITHUB_TOKEN)
+  const ghToken = process.env.GITHUB_TOKEN ?? ''
+  if (!ghToken) {
+    console.log('[warn] GITHUB_TOKEN not set — skipping summarisation, using titles as summaries')
   }
 
   // Collect new raw articles per source
@@ -320,11 +334,11 @@ async function main() {
     const batch = newRaw.slice(i, i + BATCH_SIZE)
     let summaries: SummaryResult[]
 
-    if (anthropic) {
+    if (ghToken) {
       try {
         console.log(`[ai] Summarising batch ${Math.floor(i / BATCH_SIZE) + 1} (${batch.length} articles)...`)
         summaries = await summariseBatch(
-          anthropic,
+          ghToken,
           batch.map(b => ({ title: b.raw.title, url: b.raw.url, defaultCategory: b.source.category })),
         )
       } catch (err) {
@@ -337,7 +351,12 @@ async function main() {
 
     for (let j = 0; j < batch.length; j++) {
       const { raw, source } = batch[j]
-      const { summary, category } = summaries[j]
+      const result = summaries[j] as SummaryResult & { skip?: boolean }
+      if (result.skip) {
+        console.log(`  [filter] 비개발 콘텐츠 제외: "${raw.title.slice(0, 60)}"`)
+        continue
+      }
+      const { summary, category } = result
       summarised.push({
         id: makeId(raw.url),
         title: raw.title,

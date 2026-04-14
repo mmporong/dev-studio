@@ -24,7 +24,7 @@ jobs:
       - name: Fetch insights
         run: npx tsx scripts/fetch-insights.ts
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit & Push
         run: |
