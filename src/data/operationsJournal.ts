@@ -43,6 +43,118 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-04-15T04:00:00-daily-standup',
+    date: '2026-04-15',
+    researchTitle:
+      '📊 4/15 데일리 스탠드업 — 미커밋 축소(30→10/25→12)·퍼즐 $12.2B·MeowBeat 노트 2종 부족·Discord 프리런치·린트 3건',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 완료(제3회). NumLink 미커밋 30→10개 축소(폰트 SDF·테스트 삭제 진행), MeowBeat 미커밋 25→12개+미추적 15개(QA·기획문서 산재). 퍼즐 시장 $12.2B, 로직퍼즐 YoY +19%. 리듬게임 CAGR 12.8%, 아태 41% 점유, 2033년 $18.2B 전망. MeowBeat NoteSpawner에 GameObject.Find 규칙위반 발견. 노트 스프라이트 2종(BrownNote/WhiteNote)만 존재 — 테마 연계 3종 추가 필요. Unity 6000.3.5→13f1 여전히 8패치 뒤처짐. 인디 성공 공식: 출시 12~18개월 전 Discord 커뮤니티+ASO 롱테일 키워드 선행 필수. agent-office 빌드 OK, React 린트 에러 3건.',
+    researchItems: [
+      {
+        title: '🎯 Orchestrator — NumLink 미커밋 10개·MeowBeat 미커밋 12+미추적 15개·agent-office 안정',
+        description:
+          'NumLink feature/uitoolkit 브랜치, 미커밋 10개(폰트 SDF·Tests 삭제 진행중). MeowBeat feature/song-ownership-migration, 미커밋 12개+미추적 15개(QA테스트·Recovery·기획문서). agent-office main 최신 c520a8c(4/14). 4/14 P0 액션아이템(미커밋 정리, FindObjectOfType 전환, Tools 복사, Unity 업그레이드) 모두 미완료 — 3일째 이월.',
+      },
+      {
+        title: '🎮 Game Designer — 퍼즐 $12.2B·로직퍼즐 +19%·리듬 CAGR 12.8%·Discord 프리런치 필수',
+        description:
+          '퍼즐 시장 $12.2B(3위 장르), 모바일 게이머 65% 이상 플레이, 로직퍼즐 YoY +19%. 리듬게임 CAGR 12.8%, 2033년 $18.2B, 아태 41% 점유. 인디 성공 공식: 출시 12~18개월 전 Discord 커뮤니티 빌딩 + ASO 최적화. 앱 발견율 50% 이상 ASO 의존.',
+      },
+      {
+        title: '💻 Developer — Unity 8패치 뒤처짐·MeowBeat GameObject.Find 위반·NumLink TODO 4건',
+        description:
+          'Unity 6000.3.5→13f1 8패치 누적(UIToolkit 터치 버그+빌드 22% 단축). MeowBeat NoteSpawner.cs:52 GameObject.Find("Note") CLAUDE.md 위반 — ServiceLocator/SerializeField 전환 필요. NumLink AchievementManager 업적UI 미구현, ObjectManager→UIManager 통합 검토. MeowBeat ButtonController 구매저장 미구현.',
+      },
+      {
+        title: '🔍 QA Tester — NumLink QA인프라 여전히 부재·MeowBeat known_bugs 6건·agent-office 린트 3건',
+        description:
+          'NumLink known_bugs.json·test_fixtures 부재 3일째. MeowBeat known_bugs 6패턴+회귀픽스처 2개 정비됨. NumLink TODO 5건·MeowBeat TODO 2건(테스트기기ID·구매저장). agent-office 빌드 성공이나 LanguageContext/OfficeContext fast refresh 위반 2건+청크 사이즈 경고.',
+      },
+      {
+        title: '📢 Content Writer — ASO 리텐션 중심 전환·TikTok 도달 계속 하락·Discord+Reddit 12개월 전 착수',
+        description:
+          'ASO 2026: 구글 알고리즘이 설치량→리텐션 중심 전환, 롱테일 키워드(3단어 이상) 집중, 3~6주 주기 업데이트 필수. TikTok 유기적 도달 지속 하락, YouTube Shorts/Reels 주 7~14개 클립 목표. 버그·실패·만족 순간 컷이 트레일러보다 효과적. Discord "게임의 연장선" 운영 시 이탈률 최소화.',
+      },
+      {
+        title: '⚙️ DevOps — agent-office 배포 정상·Daily Standup 04:00 정상·Unity CI 여전히 부재',
+        description:
+          'agent-office GitHub Pages 자동배포(Node 22+npm ci→build). Daily Standup 04:00·Job Research 04:00 Task Scheduler 정상 운영(exit 0). Weekly Insights Telegram 시크릿 설정 검증 필요. NumLink/Feedme CI/CD 미구성 상태 지속.',
+      },
+      {
+        title: '🎨 Art Director — 손그림+미니멀HUD 트렌드·MeowBeat 노트 2종만·에셋 네이밍 혼란 지속',
+        description:
+          '2026 트렌드: 손그림 감성+미니멀 HUD+스케우오모피즘 부활(소프트 그림자·텍스처). NumLink 배경 7종 있으나 ㅡㅡㅡ.png 등 임시 에셋 다수. MeowBeat 노트 BrownNote/WhiteNote 2종만 존재 — 리듬게임 핵심 비주얼 빈약. 고양이 캐릭터(Choonsik·DotCat·CircleCat) 다양하나 노트에 테마 미반영.',
+      },
+    ],
+    meetingTitle:
+      '🏢 4/15 데일리 스탠드업 — P0 3일째 이월·GameObject.Find 위반 추가·노트 에셋 확장·Discord 프리런치 착수',
+    meetingSummary:
+      '4/13부터 P0 액션아이템(미커밋 정리, FindObjectOfType 전환, Tools 복사)이 3일째 이월 중. MeowBeat NoteSpawner에서 새로운 GameObject.Find 규칙위반 발견. 노트 스프라이트 2종은 리듬게임으로 빈약하여 테마 연계 3종 추가 필요. Game Designer와 Content Writer 모두 Discord 프리런치 커뮤니티 즉시 착수를 제안. Unity 8패치 업그레이드 여전히 미완료.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'P0 3일째 이월입니다. NumLink 미커밋이 30→10개로 줄었지만 MeowBeat는 미추적 파일 15개가 새로 쌓였습니다. 4/13 이후 한 건도 완료되지 않은 P0를 오늘은 반드시 1건 이상 닫아야 합니다. MeowBeat 미추적 파일 정리를 가장 먼저 실행합니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '퍼즐 시장 $12.2B, 로직퍼즐 YoY +19%로 NumLink 장르 선택이 유효합니다. 리듬게임 CAGR 12.8%, 아태 41% 점유로 MeowBeat 타이밍도 적절합니다. 핵심은 출시 12~18개월 전 Discord 커뮤니티 — 지금 시작하지 않으면 론칭 후 유저 획득 비용이 3~5배 증가합니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'MeowBeat NoteSpawner.cs 52번 라인에서 GameObject.Find("Note")를 발견했습니다. CLAUDE.md 규칙 위반이고 씬 구조 변경 시 null 크래시 위험입니다. SerializeField 주입으로 교체해야 합니다. Unity 8패치 업그레이드도 3일째 밀리고 있어 UIToolkit 터치 버그가 계속 영향줍니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'NumLink QA 인프라 부재 3일째입니다. known_bugs.json과 test_fixtures가 없어 회귀 방지가 불가능합니다. MeowBeat는 6패턴 등록+픽스처 2개로 정비되어 있어 대조적입니다. agent-office는 빌드 OK이나 React fast refresh 위반 2건과 청크 사이즈 경고를 정리해야 합니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'ASO 알고리즘이 설치량→리텐션 중심으로 전환됐습니다. 롱테일 키워드(3단어 이상)와 3~6주 주기 업데이트가 핵심입니다. Game Designer와 동일하게 Discord 즉시 개설을 제안하며, 게임별 ASO 키워드 초안 10개씩 작성을 착수합시다.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'agent-office GitHub Pages 배포 정상, Daily Standup 04:00 정상 운영 확인됐습니다. Weekly Insights Telegram 시크릿 설정 여부가 아직 불명확합니다. NumLink/Feedme CI/CD 부재 상태가 지속 중이며, GameCI 도입은 Unity 업그레이드 완료 후 순차 진행 방침 유지합니다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '2026 트렌드는 손그림 감성+미니멀 HUD+스케우오모피즘 부활입니다. MeowBeat 노트가 BrownNote/WhiteNote 2종뿐이라 리듬게임 핵심 비주얼이 빈약합니다. 고양이 발바닥(Perfect)·생선뼈(Good)·물음표(Miss) 등 테마 연계 노트 3종 추가를 우선 제안합니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: 'P0: 3일째 이월 — 미커밋 정리·FindObjectOfType 전환·Tools 복사 (반드시 완료)',
+        description:
+          '4/13부터 3일째 이월. NumLink 미커밋 10개 정리, MeowBeat 미커밋 12개+미추적 15개 정리(.gitignore 재검토 포함), MeowBeat FindObjectOfType→ServiceLocator, NumLink Tools/ 복사를 오늘 중 최소 1건 완료 필수.',
+      },
+      {
+        title: 'P0: MeowBeat NoteSpawner.cs GameObject.Find 제거',
+        description:
+          'NoteSpawner.cs:52 GameObject.Find("Note") CLAUDE.md 규칙 위반. [SerializeField]로 NoteContainer 부모를 Inspector 주입 방식으로 교체. 씬 구조 변경 시 런타임 null 크래시 방지.',
+      },
+      {
+        title: 'P0: Unity 6000.3.5→6000.3.13f1 업그레이드 (3일째)',
+        description:
+          '8패치 누적. UIToolkit 터치 스크롤 버그(UUM-135398)+오디오 메인스레드 분리+빌드 22% 단축. NumLink UIToolkit 브랜치와 MeowBeat 리듬게임 모두에 직접 영향. 3일째 미완료.',
+      },
+      {
+        title: 'P1: MeowBeat 테마 연계 노트 스프라이트 3종 추가',
+        description:
+          '현재 BrownNote/WhiteNote 2종은 리듬게임 비주얼로 빈약. 고양이 발바닥(Perfect)·생선뼈(Good)·물음표(Miss) 등 테마 연계 노트 3종 추가. 에셋 투자 대비 게임성 체감 향상이 가장 큰 작업.',
+      },
+      {
+        title: 'P1: Discord 프리런치 커뮤니티 개설 착수',
+        description:
+          'Game Designer+Content Writer 동시 제안. 인디 성공 공식: 출시 12~18개월 전 커뮤니티 빌딩 필수. 미착수 시 론칭 후 유저 획득 비용 3~5배 증가. NumLink 또는 MeowBeat 중 1개 우선 개설+데브로그 주 1회.',
+      },
+      {
+        title: 'P2: ASO 롱테일 키워드 초안 작성 (게임별 10개)',
+        description:
+          'ASO 알고리즘 리텐션 중심 전환 대응. 롱테일 키워드(3단어 이상) 게임별 10개 초안. MeowBeat "cat rhythm game" 변형, NumLink "number connect puzzle" 변형 중심. YouTube Shorts 15초 클립 전략 병행.',
+      },
+    ],
+  },
+
+  {
     id: '2026-04-14T20:00:00-threads-insight',
     date: '2026-04-14',
     researchTitle: 'AI 기반 개발 및 지식 관리의 고도화, 실전 적용 및 생태계 확장',
