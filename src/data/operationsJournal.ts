@@ -43,6 +43,28 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-04-14T20:00:00-threads-insight',
+    date: '2026-04-14',
+    researchTitle: '💡 AI 활용 경험 녹이기 & 개발 트렌드 분석',
+    researchSummary: 'AI 기술의 발전으로 개발자의 역량 정의가 변화하고 있으며, 단순 코딩 능력 외에 프롬프트 엔지니어링, 시스템 설계 능력이 중요해지고 있다. 실제 개발 과정에서는 AI 에이전트의 구체적인 스킬셋 구축과 3D 공간 이해 능력이 핵심 경쟁력이 되고 있다.',
+    researchItems: [
+      { title: 'AI 네이티브 채용 철학', description: '기업들은 지원자가 AI를 \'사용할 수 있는지\'보다 \'AI를 얼마나 잘 활용하여 문제를 해결하는지\'에 초점을 맞추고 있다.' },
+      { title: '2D to 3D 변환 모델', description: 'SAM 같은 비전 모델의 결과물을 받아, 3D 공간 좌표와 부피를 초고속으로 계산하는 전문 모델의 등장이 주목된다.' },
+    ],
+    meetingTitle: 'AI 시대, 개발 역량의 재정의',
+    meetingSummary: 'AI 도구의 발전은 개발자의 역할이 \'코드를 짜는 사람\'에서 \'시스템을 설계하고 AI를 조율하는 사람\'으로 변화하고 있음을 의미한다.',
+    meetingItems: [
+      { speaker: '핵심 역량', note: '프롬프팅, 배경 지식, 파이프라이닝 등 AI를 활용하는 전반적인 시스템 이해도가 중요함.' },
+      { speaker: '시스템 구축', note: 'AI 에이전트의 구체적인 스킬셋(Hook, Skill)을 체계적으로 설계하고 자동 개선하는 능력이 핵심 기술이 되고 있음.' },
+      { speaker: '실무 적용', note: '비용 최적화(Token 관리)와 복잡한 데이터 변환(2D->3D) 같은 실질적인 엔지니어링 역량이 요구됨.' },
+    ],
+    decisions: [
+      { title: '이력서 업데이트', description: 'AI를 활용하여 달성한 구체적인 성과(비용 절감, 효율화 등)를 수치화하여 명시한다.' },
+      { title: '기술 스택 확장', description: '단순 프레임워크 지식 외에, LLM 연동 및 에이전트 워크플로우 설계 경험을 포트폴리오에 포함한다.' },
+    ],
+  },
+
+  {
     id: '2026-04-14T04:00:00-daily-standup',
     date: '2026-04-14',
     researchTitle:
