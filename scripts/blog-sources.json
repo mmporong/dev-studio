@@ -29,7 +29,9 @@
     "rssUrl": null,
     "type": "scrape",
     "category": "ai",
-    "selector": "article a, .card a"
+    "selector": "article a, .card a",
+    "enabled": false,
+    "lastError": "HTTP 404 @ 2026-04-14"
   },
   {
     "name": "엔씨소프트 DANBI",
@@ -59,7 +61,9 @@
     "rssUrl": null,
     "type": "scrape",
     "category": "ai",
-    "selector": "article a, .post-item a"
+    "selector": "article a, .post-item a",
+    "enabled": false,
+    "lastError": "fetch failed @ 2026-04-14"
   },
   {
     "name": "데브시스터즈 DEVTECH",
@@ -82,21 +86,27 @@
     "rssUrl": null,
     "type": "scrape",
     "category": "game",
-    "selector": "a.sidebar-link, article a"
+    "selector": "a.sidebar-link, article a",
+    "enabled": false,
+    "lastError": "fetch failed @ 2026-04-14"
   },
   {
     "name": "플라네타리움",
     "url": "https://snack.planetarium.dev/kor/",
     "rssUrl": "https://snack.planetarium.dev/rss.xml",
     "type": "rss",
-    "category": "game"
+    "category": "game",
+    "enabled": false,
+    "lastError": "Status code 404 @ 2026-04-14"
   },
   {
     "name": "네이버 D2",
     "url": "https://d2.naver.com/home",
     "rssUrl": "https://d2.naver.com/d2.atom",
     "type": "rss",
-    "category": "general"
+    "category": "general",
+    "enabled": false,
+    "lastError": "Status code 406 @ 2026-04-14"
   },
   {
     "name": "카카오테크",
@@ -110,7 +120,9 @@
     "url": "https://fe-developers.kakaoent.com/",
     "rssUrl": "https://fe-developers.kakaoent.com/rss.xml",
     "type": "rss",
-    "category": "frontend"
+    "category": "frontend",
+    "enabled": false,
+    "lastError": "Status code 404 @ 2026-04-14"
   },
   {
     "name": "토스 테크",
@@ -138,7 +150,9 @@
     "url": "https://techblog.woowahan.com/",
     "rssUrl": "https://techblog.woowahan.com/feed/",
     "type": "rss",
-    "category": "general"
+    "category": "general",
+    "enabled": false,
+    "lastError": "Status code 403 @ 2026-04-14"
   },
   {
     "name": "삼성SDS 리서치",
@@ -169,14 +183,18 @@
     "url": "https://techtopic.skplanet.com/",
     "rssUrl": "https://techtopic.skplanet.com/feed/",
     "type": "rss",
-    "category": "general"
+    "category": "general",
+    "enabled": false,
+    "lastError": "Status code 404 @ 2026-04-14"
   },
   {
     "name": "11번가",
     "url": "https://11st-tech.github.io/",
     "rssUrl": "https://11st-tech.github.io/feed.xml",
     "type": "rss",
-    "category": "frontend"
+    "category": "frontend",
+    "enabled": false,
+    "lastError": "Status code 404 @ 2026-04-14"
   },
   {
     "name": "NHN Cloud Meetup",
