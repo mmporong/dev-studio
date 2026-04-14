@@ -138,7 +138,7 @@ async function fetchRss(source: BlogSource): Promise<RawArticle[]> {
 async function fetchScrape(source: BlogSource): Promise<RawArticle[]> {
   const res = await fetch(source.url, {
     headers: {
-      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+      'User-Agent': 'Mozilla/5.0 (compatible; InsightBot/1.0)',
       'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
       'Accept-Language': 'ko-KR,ko;q=0.9,en;q=0.8',
     },
