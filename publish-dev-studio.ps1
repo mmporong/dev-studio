@@ -11,7 +11,7 @@ powershell -ExecutionPolicy Bypass -File (Join-Path $projectPath 'sync-catrush-c
 
 Write-Host ''
 Write-Host '[2/2] Pushing repository to GitHub...'
-powershell -ExecutionPolicy Bypass -File (Join-Path $projectPath 'push-to-agent-office.ps1')
+powershell -ExecutionPolicy Bypass -File (Join-Path $projectPath 'push-to-dev-studio.ps1')
 
 Write-Host ''
 Write-Host 'Publish flow complete.'

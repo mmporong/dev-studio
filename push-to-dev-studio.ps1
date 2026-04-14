@@ -1,7 +1,7 @@
 $ErrorActionPreference = 'Stop'
 
 $projectPath = Split-Path -Parent $MyInvocation.MyCommand.Path
-$targetRemote = 'https://github.com/mmporong/agent-office.git'
+$targetRemote = 'https://github.com/mmporong/dev-studio.git'
 
 Write-Host "Project path: $projectPath"
 Set-Location $projectPath
