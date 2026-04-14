@@ -170,8 +170,8 @@
   "hotPaths": [
     {
       "path": "src\\data\\operationsJournal.ts",
-      "accessCount": 44,
-      "lastAccessed": 1775262329875,
+      "accessCount": 45,
+      "lastAccessed": 1776173431085,
       "type": "file"
     },
     {
@@ -193,10 +193,28 @@
       "type": "file"
     },
     {
+      "path": "",
+      "accessCount": 19,
+      "lastAccessed": 1776173069717,
+      "type": "directory"
+    },
+    {
+      "path": "scripts\\fetch-insights.ts",
+      "accessCount": 17,
+      "lastAccessed": 1776137831581,
+      "type": "file"
+    },
+    {
       "path": "src",
       "accessCount": 16,
       "lastAccessed": 1774958774879,
       "type": "directory"
+    },
+    {
+      "path": "scripts\\blog-sources.json",
+      "accessCount": 12,
+      "lastAccessed": 1776136356350,
+      "type": "file"
     },
     {
       "path": "src\\data\\publishedGames.ts",
@@ -209,12 +227,6 @@
       "accessCount": 11,
       "lastAccessed": 1774999586748,
       "type": "file"
-    },
-    {
-      "path": "",
-      "accessCount": 9,
-      "lastAccessed": 1775273363698,
-      "type": "directory"
     },
     {
       "path": "src\\components\\layout\\NavBar.tsx",
@@ -244,6 +256,12 @@
       "path": "src\\pages\\LogPage.tsx",
       "accessCount": 6,
       "lastAccessed": 1774958877163,
+      "type": "file"
+    },
+    {
+      "path": "src\\data\\meowbeat.ts",
+      "accessCount": 5,
+      "lastAccessed": 1775535371577,
       "type": "file"
     },
     {
@@ -322,6 +340,18 @@
       "path": "vite.config.ts",
       "accessCount": 2,
       "lastAccessed": 1775273395821,
+      "type": "file"
+    },
+    {
+      "path": "publish-dev-studio.ps1",
+      "accessCount": 2,
+      "lastAccessed": 1776173084138,
+      "type": "file"
+    },
+    {
+      "path": "push-to-dev-studio.ps1",
+      "accessCount": 2,
+      "lastAccessed": 1776173085141,
       "type": "file"
     },
     {

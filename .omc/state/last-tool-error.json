@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"git pull origin main --rebase\",\"description\":\"remote 변경사항 pull\"}",
+  "error": "Exit code 128\nerror: cannot pull with rebase: You have unstaged changes.\nerror: Please commit or stash them.",
+  "timestamp": "2026-04-14T13:25:36.502Z",
+  "retry_count": 2
+}

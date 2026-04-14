@@ -1,0 +1,8 @@
+{"t":0,"agent":"a705046","agent_type":"architect","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"a705046","agent_type":"architect","event":"agent_stop","success":true,"duration_ms":50528}
+{"t":0,"agent":"ada31bc","agent_type":"critic","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"ada31bc","agent_type":"critic","event":"agent_stop","success":true,"duration_ms":52686}
+{"t":0,"agent":"aa40f2c","agent_type":"architect","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"aa40f2c","agent_type":"architect","event":"agent_stop","success":true,"duration_ms":15700}
+{"t":0,"agent":"a5614af","agent_type":"critic","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"a5614af","agent_type":"critic","event":"agent_stop","success":true,"duration_ms":30899}
