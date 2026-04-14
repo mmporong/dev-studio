@@ -1,6 +1,21 @@
 {
-  "lastUpdated": "2026-04-13T01:23:51.880Z",
+  "lastUpdated": "2026-04-14T03:10:56.042Z",
   "weeks": [
+    {
+      "weekOf": "2026-W16",
+      "articles": [
+        {
+          "id": "6c6874ff79256a8b",
+          "title": "Artifact Driven Development: 과정을 보지 않기로 했다",
+          "url": "https://meetup.nhncloud.com/posts/412",
+          "company": "NHN Cloud Meetup",
+          "category": "infra",
+          "summary": "Artifact Driven Development: 과정을 보지 않기로 했다",
+          "publishedAt": "2026-04-14T00:28:54.000Z",
+          "collectedAt": "2026-04-14T03:10:56.042Z"
+        }
+      ]
+    },
     {
       "weekOf": "2026-W15",
       "articles": [
