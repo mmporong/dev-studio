@@ -393,7 +393,9 @@ async function main() {
   console.log(`저장 위치: ${outputPath}`)
 }
 
-main().catch(err => {
+main().then(() => {
+  process.exit(0)
+}).catch(err => {
   console.error('[fatal]', err)
   process.exit(1)
 })
