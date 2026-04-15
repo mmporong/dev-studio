@@ -43,6 +43,117 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-04-16T04:00:00-daily-standup',
+    date: '2026-04-16',
+    researchTitle:
+      '📊 4/16 데일리 스탠드업 — 니치퍼즐 222%성장·리듬게임 $5.3B·FarmFood 디버그잔존·QA인프라 전무·UI 분리 시급·ASO 스크린샷 혁명',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 완료(제4회, 첫 GitHub Issue 트래킹). NumLink feature/uitoolkit 미추적 파일 다수(.gitignore 정리 필요), MeowBeat feature/song-ownership-migration unstaged 15건 방치 지속. 니치 퍼즐 서브장르(Block/Sort/Screw) 222% 폭발 성장, Royal Match $1.46B 무광고 모델. 리듬게임 $2.5B→$5.3B(CAGR 9.1%), Hololive Dreams 2026 직접 경쟁자 등장. MeowBeat FarmFoodManager 디버그로그 5개 잔존+farm 3커밋 반복수정. NumLink QA 인프라 전무(테스트 0건). Apple AI 태그로 ASO 스크린샷이 검색순위 직접 결정. MeowBeat UI가 NumLink과 동일 세트 공유 — 브랜드 차별화 불가. Unity 6.4 출시(4/14)됐으나 현재 8패치 뒤처진 6000.3.5 유지 중.',
+    researchItems: [
+      {
+        title: '🎯 Orchestrator — NumLink .gitignore 정리 필요·MeowBeat unstaged 15건 방치·P0 4일째 이월',
+        description:
+          'NumLink feature/uitoolkit 브랜치, 미추적 파일 다수(Scripts/Library, Logs 등 불필요 폴더). MeowBeat feature/song-ownership-migration 브랜치, unstaged 변경 15건 방치(먹이 애니메이션 작업 중단). agent-office main 어제(4/15) 데일리 스탠드업 커밋 1건. 4/13 P0 액션아이템 전부 미완료 — 4일째 이월.',
+      },
+      {
+        title: '🎮 Game Designer — 니치퍼즐 222%성장·Royal Match $1.46B·리듬 $5.3B·Hololive Dreams 직접 경쟁',
+        description:
+          '니치 퍼즐 서브장르(Block +2900% 매출, Sort +176%, Screw +100%) 222% 폭발 성장. Royal Match $1.46B 무광고 IAP 모델. Flow Free 누적 1억+ 다운로드이나 10년 구작 → 현대적 재해석 여지. 리듬게임 $2.5B→$5.3B(CAGR 9.1%), Beatstar Tour Pass 도입 후 ARPDAU 37% 증가. Hololive Dreams 2026 글로벌 출시 예정 — MeowBeat 직접 경쟁자(캐릭터+리듬 조합). NumLink에 데일리 퍼즐 모드 추가 제안(Wordle식 D30 리텐션 2~3배 향상).',
+      },
+      {
+        title: '💻 Developer — FarmFood 디버그로그 5개 잔존·farm 3커밋 반복수정·Unity 6.4 출시·TODO 5+2건',
+        description:
+          'MeowBeat FarmFoodManager 디버그로그 5개 프로덕션 코드에 잔존. 최근 3커밋 모두 farm 먹이 버그 수정 반복(revert 포함) — 안정화 미완. NumLink TODO 5건(시드함수 교체, 업적UI 팝업, ObjectManager 통합). MeowBeat Debug.Log 127건(30파일). Unity 6000.3.5→6000.3.13f1 8패치 뒤처짐. Unity 6.4 ECS Core 통합(4/14 출시).',
+      },
+      {
+        title: '🔍 QA Tester — NumLink QA인프라 전무(테스트 0건)·MeowBeat Farm 고위험·커버리지 0%/3.4%',
+        description:
+          'NumLink: 프로젝트 테스트 0건, Tools/ 부재, known_bugs.json 없음 — QA 인프라 전무 4일째. MeowBeat: AutoGenTests 22건 있으나 Farm 모듈 fix 7연속 고위험. NumLink input 모듈 드래그 회귀 3건, UI 보드 렌더링 fix 5건 연속. 테스트 커버리지 NumLink 0%, MeowBeat ~3.4%.',
+      },
+      {
+        title: '📢 Content Writer — Apple AI 태그=스크린샷 검색순위·틱톡 숏폼+마이크로 인플루언서·퍼즐 유럽 +$706M',
+        description:
+          'Apple AI 태그가 스크린샷에서 자동 생성되어 노출 결정 → 첫 2장 스크린샷이 곧 검색순위. 분기별 A/B 테스트 시 전환율 20-30% 상승. 게이머 87% SNS 일일 사용, #WishlistWednesday 해시태그 캠페인. 퍼즐 유럽 YoY +$706M 매출 강세. 리듬게임 아시아 주도 연 $5B 규모.',
+      },
+      {
+        title: '⚙️ DevOps — Unity CI/CD 전무 지속·agent-office 배포 정상·MeowBeat 색공간 Gamma 문제',
+        description:
+          'NumLink/MeowBeat CI/CD 파이프라인 전혀 없음(.github/workflows 부재). agent-office GitHub Pages 자동배포 정상(최근 5회 success). MeowBeat 색공간 Gamma(0) — NumLink는 Linear(1) 정상, MeowBeat 모바일 출시 시 색상 품질 이슈 가능. GameCI 기반 GitHub Actions 도입 권장.',
+      },
+      {
+        title: '🎨 Art Director — "의도적 미니멀리즘"+어스톤 부상·MeowBeat UI=NumLink 동일·노트 2종 부족·에셋 오류',
+        description:
+          '2026 트렌드: 의도적 미니멀리즘+따뜻한 중성톤(샌드/클레이) 부상, 민트+다크 퇴조. MeowBeat UI가 NumLink 1115폴더와 동일 세트 공유 → 브랜드 차별화 불가, 고양이 테마 전용 UI 킷 필요. 노트 2종(BrownNote/WhiteNote) 부족 → 최소 5종 확장(발바닥/생선/실뭉치/방울/별). .png.meta.png 확장자 오류 2건, ㅡㅡㅡ.png 플레이스홀더 미정리.',
+      },
+    ],
+    meetingTitle:
+      '🏢 4/16 데일리 스탠드업 — P0 4일째 이월·FarmFood 디버그 정리·QA인프라 구축·UI 분리·데일리퍼즐 검토',
+    meetingSummary:
+      '4/13부터 P0 액션아이템 4일째 이월 — 심각한 실행 정체. MeowBeat FarmFoodManager 디버그로그 잔존+farm 안정화 미완이 새 P0로 추가. NumLink QA 인프라 전무 4일째. Game Designer가 NumLink 데일리 퍼즐 모드(Flow Free 차별화)를 제안, Art Director가 MeowBeat UI 완전 분리(고양이 테마 전용 UI 킷)를 제안. Content Writer는 Apple AI 태그 시대 ASO 스크린샷 전략 전환을 강조. DevOps는 MeowBeat 색공간 Gamma→Linear 교정 필요 보고.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'P0 4일째 이월입니다. NumLink .gitignore에 IDE 생성 폴더(Scripts/Library, Logs) 추가가 시급하고, MeowBeat unstaged 15건이 방치 중입니다. 오늘은 "완료 0건" 상태를 반드시 깨야 합니다. FarmFood 디버그로그 정리처럼 30분 내 끝나는 P0부터 닫겠습니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '니치 퍼즐 서브장르가 222% 폭발 성장 중이고, Block Blast가 월 3000만 다운로드로 세계 1위입니다. NumLink의 직접 경쟁작 Flow Free는 10년 구작이라 현대적 재해석 여지가 큽니다. 데일리 퍼즐 모드를 MVP 스코프에 추가하면 D30 리텐션 2~3배 향상 + Flow Free 차별화가 동시에 달성됩니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'MeowBeat FarmFoodManager에 디버그로그 5개가 프로덕션 코드에 남아 있고, farm 먹이 시스템이 3커밋 연속 revert→재수정 중이라 안정화가 필요합니다. Unity 6.4가 4/14에 출시됐지만, 현재 LTS 패치(6000.3.13f1)로 먼저 올리는 게 안전합니다. NumLink Debug.Log도 자체 코드에서 26건 산재합니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'NumLink QA 인프라 전무 4일째입니다. 프로젝트 테스트 0건, known_bugs.json도 없어 회귀 방지가 불가능합니다. input 모듈 드래그 회귀 3건, UI 보드 렌더링 fix 5건이 반복되는 건 테스트 부재가 직접 원인입니다. _ProjectTemplate/Tools/ 복사를 오늘 반드시 실행해야 합니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'Apple AI 태그가 스크린샷에서 자동 생성되어 검색 노출을 직접 결정하는 시대가 됐습니다. 첫 2장 스크린샷을 "기능 나열"이 아닌 "핵심 게임플레이 순간 + 명확한 CTA"로 제작하는 것이 이번 주 최우선 마케팅 태스크입니다. 분기별 A/B 테스트로 전환율 20-30% 향상 가능합니다.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'agent-office GitHub Pages 배포 정상, 최근 5회 워크플로우 모두 success 확인했습니다. MeowBeat 색공간이 Gamma(0)로 설정되어 있어 모바일 출시 시 색상 품질 이슈가 발생할 수 있습니다. NumLink는 Linear(1)로 정상입니다. Unity CI/CD는 GameCI 기반 도입을 NumLink부터 시작하겠습니다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '2026 트렌드는 의도적 미니멀리즘과 따뜻한 어스톤(샌드/클레이)입니다. 가장 시급한 문제는 MeowBeat UI가 NumLink과 1115폴더 동일 세트를 공유하고 있어 브랜드 차별화가 불가능하다는 점입니다. 고양이귀 모양 패널, 발바닥 아이콘 버튼 등 테마 전용 UI 킷을 새로 제작해야 합니다. .png.meta.png 확장자 오류 2건도 즉시 수정 필요합니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: 'P0: 4일째 이월 — 미커밋 정리·.gitignore 업데이트 (오늘 반드시 완료)',
+        description:
+          '4/13부터 4일째 이월. NumLink .gitignore에 IDE 폴더(Scripts/Library, Logs) 추가, MeowBeat unstaged 15건 정리(.gitignore 재검토 포함). 더 이상 미룰 수 없음 — 30분 내 완료 가능한 작업부터 닫을 것.',
+      },
+      {
+        title: 'P0: MeowBeat FarmFoodManager 디버그로그 5개 제거 + farm 안정화',
+        description:
+          'FarmFoodManager.cs에 디버그로그 5줄 프로덕션 잔존. 최근 3커밋이 farm revert→재수정 반복 — 안정화 필요. Debug.Log 127건(30파일) 중 farm 영역부터 정리.',
+      },
+      {
+        title: 'P0: NumLink QA 인프라 구축 (_ProjectTemplate/Tools/ 복사) — 4일째 이월',
+        description:
+          'NumLink 프로젝트 테스트 0건, known_bugs.json 없음, Tools/ 부재. input 드래그 회귀 3건·UI 렌더링 fix 5건 반복의 근본 원인. _ProjectTemplate/Tools/에서 unity_validate.py, qa_static.py, known_bugs.json 복사.',
+      },
+      {
+        title: 'P1: MeowBeat UI를 NumLink에서 완전 분리 — 고양이 테마 전용 UI 킷 제작',
+        description:
+          '현재 두 프로젝트가 1115폴더 동일 UI 공유 → 브랜드 차별화 불가. 2026 트렌드 "UI가 게임 세계관 일부"에 정면 위배. 고양이귀 패널·발바닥 버튼·코튼핑크+크림+라벤더 팔레트로 MeowBeat 고유 아이덴티티 확립.',
+      },
+      {
+        title: 'P1: NumLink 데일리 퍼즐 모드 MVP 스코프 추가 검토',
+        description:
+          'Flow Free(10년 구작)에 없는 기능으로 즉각 차별화. 데일리 퍼즐은 D30 리텐션 2~3배 향상 검증(Wordle/NYT). 구현 비용 낮음(기존 생성기+날짜 시드+공유 기능). Game Designer 제안.',
+      },
+      {
+        title: 'P2: ASO 스크린샷 전략 수립 — Apple AI 태그 시대 대응',
+        description:
+          'Apple AI 태그가 스크린샷에서 자동 생성 → 첫 2장이 검색순위 직접 결정. "기능 나열"→"핵심 게임플레이 순간+CTA" 전환. 분기별 A/B 테스트로 전환율 20-30% 향상 가능. 두 게임 모두 스크린샷 시안 제작 착수.',
+      },
+    ],
+  },
+  {
     id: '2026-04-15T04:00:00-daily-standup',
     date: '2026-04-15',
     researchTitle:
