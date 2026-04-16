@@ -43,6 +43,117 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-04-17T04:00:00-daily-standup',
+    date: '2026-04-17',
+    researchTitle:
+      '📊 4/17 데일리 스탠드업 — 퍼즐14%성장·하이브리드캐주얼전환·리듬CAGR9.1%·Unity6패치뒤처짐·NumLink QA전무·핸드크래프트반란',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 완료(제5회). NumLink feature/uitoolkit 미커밋 다수(폰트·manifest·삭제된 AutoGenTests), MeowBeat feature/song-ownership-migration 미커밋 다수(AdMob·manifest·ProjectSettings). 퍼즐 장르 매출 14% 성장, 하이브리드 캐주얼(퍼즐+메타)이 새로운 표준. 리듬게임 $2.5B→$5.3B(CAGR 9.1%), 30일 리텐션 35%로 모바일 평균(21%) 상회. Unity 6000.3.5→6000.3.11f1 6패치 뒤처짐. NumLink QA 인프라 전무(Tools/ 없음, 테스트 0건). MeowBeat Debug.Log 100건+GetComponent 과다(GM 30건). ASO가 설치수→리텐션/안정성 중심 전환. 2026 디자인 핵심은 핸드크래프트 반란 — AI 광택 거부, 질감+불완전함이 진정성 신호.',
+    researchItems: [
+      {
+        title: '🎯 Orchestrator — NumLink·MeowBeat 미커밋 쌓임·agent-office 클린·정리 커밋 시급',
+        description:
+          'NumLink feature/uitoolkit 브랜치, 미커밋 변경 다수(폰트 에셋, manifest, 삭제된 AutoGenTests 등). MeowBeat feature/song-ownership-migration 브랜치, 미커밋 변경 다수(AdMob 프리팹, manifest, ProjectSettings). agent-office main 클린(어제 데일리 스탠드업 커밋 1건). 이전 P0 액션아이템 여전히 미완료 — 본격 작업 전 워킹 디렉토리 정리 커밋 필수.',
+      },
+      {
+        title: '🎮 Game Designer — 퍼즐14%성장·하이브리드캐주얼=새표준·리듬CAGR9.1%·일본형 캐릭터+스토리 공식',
+        description:
+          '퍼즐 장르 매출 14% 성장, 하이브리드 캐주얼(캐주얼 코어+미드코어 메타)이 새로운 표준. Block Blast 누적 7.68억 DL. 리듬게임 $2.5B→$5.3B(CAGR 9.1%), 30일 리텐션 35%. 일본 시장은 캐릭터+스토리가 성공 공식(Project Sekai), 시장 규모 미국의 39배. MeowBeat은 고양이 수집+육성 메타를 리듬 코어에 결합하는 일본형 전략 채택 검토.',
+      },
+      {
+        title: '💻 Developer — Unity6패치뒤처짐·MeowBeat farm revert반복·Debug.Log100건·GetComponent과다',
+        description:
+          '두 프로젝트 Unity 6000.3.5→최신 6000.3.11f1로 6패치 뒤처짐(빌드 시간 22% 단축 포함). MeowBeat 먹이 시스템 revert 반복 — 레이어/스프라이트 설계 불안정. Debug.Log 100건(20파일), GetComponent 과다(GameManager 30건). NumLink 업적 팝업 UI 미구현(TODO), ObjectManager→UIManager 통합 미완.',
+      },
+      {
+        title: '🔍 QA Tester — NumLink QA인프라 전무(Tools/없음·테스트0건)·MeowBeat known_bugs6건·커버리지 극저',
+        description:
+          'NumLink: Tools/ 폴더 없음, known_bugs.json 전무, NUnit 테스트 0건 — QA 인프라 자체 부재. MeowBeat: known_bugs 6건(error 4, warning 2), unity_validate.py 정상(0 error, 1 warning), qa_static.py CWD 의존 문제, AutoGenTests 1개만 존재. NumLink QA 파이프라인 구축이 최우선.',
+      },
+      {
+        title: '📢 Content Writer — ASO 리텐션중심전환·TikTok Paid Organic·Discord 커뮤니티=핵심자산',
+        description:
+          'Google Play 알고리즘이 설치수→리텐션/안정성/업데이트 빈도 중심으로 전환. Apple CPP 한도 70개 확대. TikTok 유기적 도달 급감 → Paid Organic 모델($200 부스팅)이 필수. 평점 4.0 미만 앱은 검색 노출되어도 무시(77%). Discord 커뮤니티가 광고 독립적 트래픽 핵심 자산.',
+      },
+      {
+        title: '⚙️ DevOps — agent-office 배포정상·MeowBeat productName "hefeedmee"·Gamma색공간·자동화정상',
+        description:
+          'agent-office GitHub Pages 자동배포 정상(deploy-pages.yml). MeowBeat productName이 "hefeedmee"(임시명 그대로), 색공간 Gamma(0) — Linear 교정 필요. NumLink 정상(Linear, WebGL). DailyStandup_ClaudeCode, JobResearch_ClaudeCode 모두 Running. run_build.bat이 구 경로(unity-webgl-wrapper) 참조 — 경로 불일치.',
+      },
+      {
+        title: '🎨 Art Director — 핸드크래프트반란·15색제한팔레트·환경통합형HUD·크래프트지톤 제안',
+        description:
+          '2026년 핵심 "핸드크래프트 반란" — AI 광택 거부, 질감+불완전함이 진정성 신호. 퍼즐 게임은 15색 이하 제한 팔레트+음의 공간이 몰입/가독성 극대화(Monument Valley 사례). 리듬 게임은 즉각적 시각 피드백+환경 통합형 HUD가 대세. 크래프트지 베이지(#E8D5B7)+잉크 블랙(#1A1A2E)+주홍(#E63946) 3색 축 제안.',
+      },
+    ],
+    meetingTitle:
+      '🏢 4/17 데일리 스탠드업 — 미커밋정리·하이브리드캐주얼전략·Unity업그레이드·QA인프라·핸드크래프트비주얼',
+    meetingSummary:
+      '첫 GitHub Issue 트래킹 회의. NumLink/MeowBeat 모두 미커밋 방치 지속 — 정리 커밋 최우선. 퍼즐 14% 성장+하이브리드 캐주얼 전환 흐름에 맞춰 메타 요소 결합 필요. 리듬게임 CAGR 9.1%, 일본형 캐릭터+스토리 공식이 MeowBeat에 적합. Unity 6패치 뒤처짐 업그레이드 필요. NumLink QA 인프라 전무 해결 시급. MeowBeat productName/색공간 정리 필요. 디자인은 핸드크래프트 반란 트렌드 — 크래프트지 톤 3색 축 채택 검토.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'NumLink·MeowBeat 모두 미커밋 변경이 쌓여 있습니다. 이전 P0 액션아이템도 여전히 미완료 상태입니다. 본격 작업 전에 두 프로젝트의 워킹 디렉토리 정리 커밋을 오늘 반드시 진행해야 합니다. agent-office는 클린 상태로 정상입니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '퍼즐 장르 매출 14% 성장, 하이브리드 캐주얼이 새로운 표준이 됐습니다. Block Blast 7.68억 DL이 증명합니다. 리듬게임은 CAGR 9.1%로 성장 중이고, 30일 리텐션 35%는 모바일 평균(21%)을 크게 상회합니다. MeowBeat은 일본 시장의 캐릭터+수집+육성 공식(Project Sekai 모델)을 채택하면 리텐션과 수익화 동시 달성이 가능합니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: '두 프로젝트 모두 Unity 6000.3.11f1로 6패치 업그레이드가 필요합니다. 빌드 시간 22% 단축 효과가 있습니다. MeowBeat은 farm 먹이 시스템이 revert 반복 중이라 설계 재검토가 필요하고, Debug.Log 100건과 GetComponent 과다(GameManager 30건)는 릴리스 전 반드시 정리해야 합니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'NumLink에 QA 인프라가 전혀 없습니다. Tools/ 폴더, known_bugs.json, 자동화 테스트 모두 부재 — _ProjectTemplate에서 즉시 복사해야 합니다. MeowBeat은 known_bugs 6건(error 4건) 등록되어 있고 unity_validate.py 정상 동작하지만, qa_static.py의 CWD 의존 문제와 run_regression.py 경로 오류를 수정해야 합니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'ASO 환경이 크게 바뀌었습니다. Google Play 알고리즘이 설치수 대신 리텐션/안정성 중심으로 전환됐고, 평점 4.0 미만은 노출되어도 무시됩니다. TikTok 유기적 도달 급감으로 Paid Organic 모델(자연 트랙션 영상에 $200 부스팅)이 필수입니다. NumLink/MeowBeat 공용 Discord 서버 개설을 제안합니다.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'agent-office 배포 파이프라인 정상입니다. MeowBeat productName이 "hefeedmee"(임시명)로 남아있고 색공간이 Gamma(0)입니다 — Linear로 교정 필요. DailyStandup과 JobResearch 자동화 모두 Running 상태. run_build.bat의 구 경로(unity-webgl-wrapper) 참조도 수정이 필요합니다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '2026년 디자인 핵심은 "핸드크래프트 반란"입니다. AI의 매끈한 미학에 대한 반발로 손으로 만든 질감(종이/잉크/스탬프)이 새로운 진정성 기준입니다. NumLink는 15색 이하 제한 팔레트로 가독성을 극대화하고, MeowBeat은 환경 통합형 HUD로 고양이 테마를 UI에 녹여야 합니다. 두 게임 모두 크래프트지 베이지+잉크 블랙+주홍 3색 축을 기반으로 따뜻한 비주얼 아이덴티티를 확립하길 제안합니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: 'P0: 미커밋 정리 + 워킹 디렉토리 클린업 (NumLink·MeowBeat)',
+        description:
+          'NumLink feature/uitoolkit 미커밋(폰트·manifest 등), MeowBeat feature/song-ownership-migration 미커밋(AdMob·ProjectSettings 등) 모두 정리 커밋. .gitignore 업데이트 포함. 이전 회의부터 계속 이월 중 — 오늘 반드시 완료.',
+      },
+      {
+        title: 'P0: NumLink QA 인프라 구축 (_ProjectTemplate/Tools/ 복사)',
+        description:
+          'NumLink에 Tools/ 폴더, known_bugs.json, unity_validate.py, qa_static.py 전무. 테스트 0건으로 회귀 방지 불가. C:/Unity/_ProjectTemplate/Tools/에서 즉시 복사 후 씬 경로 상수 업데이트.',
+      },
+      {
+        title: 'P0: Unity 6000.3.5→6000.3.11f1 LTS 업그레이드',
+        description:
+          '두 프로젝트 모두 6패치 뒤처짐. 빌드 시간 22% 단축 + 보안/안정성 수정 반영. MeowBeat은 동시에 productName "hefeedmee"→"MeowBeat" 변경 및 색공간 Gamma→Linear 교정도 진행.',
+      },
+      {
+        title: 'P1: MeowBeat 하이브리드 전략 — 고양이 수집+육성 메타 결합 검토',
+        description:
+          '리듬 코어에 캐릭터 수집/육성 메타를 결합하는 일본형 전략(Project Sekai 모델). 퍼즐 14% 성장의 하이브리드 캐주얼 트렌드와도 일치. GDD 수준 스코프 검토 필요.',
+      },
+      {
+        title: 'P1: 핸드크래프트 비주얼 아이덴티티 — 크래프트지 톤 3색 축 채택 검토',
+        description:
+          '2026 "핸드크래프트 반란" 트렌드. 크래프트지 베이지(#E8D5B7)+잉크 블랙(#1A1A2E)+주홍(#E63946) 3색 축. NumLink 15색 제한 팔레트, MeowBeat 환경 통합형 HUD 적용.',
+      },
+      {
+        title: 'P2: Discord 서버 개설 + TikTok 숏폼 파이프라인 구축',
+        description:
+          'ASO 리텐션 중심 전환 시대. Discord 커뮤니티=광고 독립적 트래픽 핵심 자산. TikTok Paid Organic($200 부스팅) + 주 7~14개 숏폼 클립 제작 체계 수립.',
+      },
+    ],
+  },
+  {
     id: '2026-04-16T04:00:00-daily-standup',
     date: '2026-04-16',
     researchTitle:
