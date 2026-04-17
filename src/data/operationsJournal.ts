@@ -43,6 +43,137 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-04-18T04:00:00-daily-standup',
+    date: '2026-04-18',
+    researchTitle:
+      '📊 4/18 데일리 스탠드업 — Unity7폐기·CoreCLR로드맵·MeowBeatFindObjectOfType12연타·QA4일째이월·UGC리듬생존조건·Steam프리런칭·색약이중화',
+    researchSummary:
+      '7명 에이전트 병렬 리서치(제6회). 두 프로젝트 모두 최근 1일 커밋 0건, 미커밋 이월 4일째 지속. MeowBeat Sprint 3 87% blocked(S3-06 FarmScene 파란화면), Sprint 4/6/7 연쇄 차단. NumLink Phase 5 완료지만 Tools/ 여전히 부재. Unity 7 공식 폐기 발표 — 2026 로드맵은 6.x+CoreCLR 집중(6.7 LTS 데스크톱 실험 플레이어). Addressables for Android 신규. Poki SDK 초기 다운로드 8MB 제한. MeowBeat GameManager.cs 94-105줄 FindObjectOfType 12연타 + ButtonController GameObject.Find 6회 + Player Input.GetKeyDown 루프 신규 발견. 2026 라이브옵스 트렌드는 월 20→100 이벤트 플로우+배틀패스 3중 태스크(일/주/시즌). Fortnite Festival 드럼/보컬 추가·RedOctane Stage Tour 2026 가을 복귀. UGC 에디터가 리듬게임 수명 2배. Steam 프리런칭 12-18개월+Google Play Games on PC 140국 노출. Keymailer/Woovit 무료 인플루언서 접근. 2026 UI는 키네틱 타입·Plush3D 런처·4D Vibration 햅틱. 다크모드 #000금지 #121212 권장. 색약 8% 대응 아이콘+패턴+라벨 3중화 필수.',
+    researchItems: [
+      {
+        title: '🎯 Orchestrator — NumLink Phase5 완료·MeowBeat Sprint3 87% blocked·이월4일째',
+        description:
+          'NumLink Phase 5 10/10 완료(Phase 6 킥 구현 미착수), MeowBeat Sprint 3 87%(S3-06 FarmScene 파란화면 blocker), Sprint 4/6/7 연쇄 차단. 전체 진행률 양 프로젝트 모두 약 62%. 이월 P0 4일째: 미커밋 정리·QA인프라·Unity업그레이드. 가장 시급한 1건은 FarmScene 렌더링 복구로 Sprint 3 마감 → Sprint 4 착수 언블록.',
+      },
+      {
+        title: '🎮 Game Designer — 라이브옵스월20→100이벤트·배틀패스3중태스크·UGC리듬생존조건·Fortnite Festival드럼추가',
+        description:
+          '2026 라이브옵스: 이벤트 cadence 월 73→89건, 템플릿화+AI 라이브옵스 표준. Gossip Harbor 월 20→100 이벤트 연속 플로우. 배틀패스 일/주/시즌 3중 태스크가 리텐션 핵심 엔진. Fortnite Festival 2026.4 드럼/보컬 추가로 서구 확장, RedOctane Stage Tour 2026 가을 기타히어로 부활. 소셜/길드 탑재 리텐션 +40%. Beatstar·Beat Saber UGC 에디터 생태계가 수명 2배. Synesthesia e스포츠·KAC/BPL 경쟁씬 확장. GaaS-lite($30+시즌$10-20) 중소 스튜디오 신표준. MeowBeat 길드 챌린지+노트 에디터 MVP 제안, NumLink 데일리 퍼즐 팩+시즌패스 템플릿화 제안.',
+      },
+      {
+        title: '💻 Developer — Unity7폐기·CoreCLR6.7LTS·Addressables for Android·MeowBeat FindObjectOfType12연타 신규발견',
+        description:
+          'Unity 7 공식 폐기, 2026 로드맵은 6.x+CoreCLR 집중. 6.7 LTS부터 데스크톱 CoreCLR 실험 플레이어 도입, 6.3 LTS 지원 2027.12까지, 6.0은 2026.10 만료. Addressables for Android 패키지로 PAD·텍스처 자동 선택. Poki SDK 초기 다운로드 8MB 이하+gameplayStart 필수. 신규 발견: MeowBeat GameManager.cs 94-105줄 FindObjectOfType 12개 연속, ButtonController.cs 347-402줄 GameObject.Find("ItemUI") 6회 반복, Player.cs 23-60줄 Input.GetKeyDown 루프+Find 중첩, LevelSystem.cs 163줄 타이머(2.5f-0.5f*i) 매직 넘버. NumLink LevelSelectUI.cs 437-447줄 보드 크기 40/100/160 하드코딩 중복.',
+      },
+      {
+        title: '🔍 QA Tester — NumLink Tools/4일째부재·MeowBeat QA인프라완비·Tests/Editor 공각상태·.meta 누락 0건',
+        description:
+          'MeowBeat Tools/ 완비 확인 — unity_validate.py·qa_static.py·known_bugs.json·run_regression.py·test_fixtures 모두 존재. AutoQATests/Editor/AutoGenTests.cs 실존(tracked). NumLink Tools/ 여전히 부재 — 4일째 이월, _ProjectTemplate 복사 미실행. Assets/Tests/Editor/ 빈 디렉토리(AutoGenTests 삭제 후 껍데기만). .cs↔.meta 누락 양 프로젝트 0건. MeowBeat 루트에 "C:UnityFeedme/" 잘못된 경로명 폴더 유령 존재(경로 구분자 파싱 실수 잔재).',
+      },
+      {
+        title: '📢 Content Writer — Steam프리런칭12-18개월·GPG on PC 140국·Keymailer/Woovit무료·마이크로스트리머+20%',
+        description:
+          'Steam 위시리스트 벨로시티 5K-10K 론칭 전 목표, 프리런칭 12-18개월 마케팅 표준. Google Play Games on PC 140+국가 기본 노출 — 모바일 게임 PC 확장 무료. Very Big Indie Pitch 런던 5분 6회전 상위3 PR 확보. Keymailer 월 10키 무료·Woovit 무료 무제한 인플루언서 접근. 마이크로스트리머(100-2K뷰) 전환율 +20%. 한국 2026 "설치 중심 종료" 리텐션·팬덤 중심 전환, 원스토어 배틀패스·시즌패스 신뢰형 BM 주류화. itch.io 태그 세분화(puzzle→logic-puzzle) 발견성 핵심. 스크린샷 상위 2장+아이콘이 전환율 20-35% 좌우.',
+      },
+      {
+        title: '⚙️ DevOps — agent-office GHA 10회정상·두프로젝트 워크플로우부재·장기분기리스크·Unity CloudBuild→Build Automation',
+        description:
+          'agent-office GitHub Actions 10회 전부 성공(cancelled 1회만). NumLink/MeowBeat 모두 .github/workflows/ 부재 — CI/CD 공백 지속. NumLink feature/uitoolkit → main 동기화 지연, MeowBeat feature/song-ownership-migration 장기 분기+dirty 상태(Google Ads/manifest 미커밋). Unity Cloud Build → Build Automation 리브랜딩(3/1 가격 개편). 장기 분기 리스크 제거 필요 — 머지 후 삭제 or rebase 복구.',
+      },
+      {
+        title: '🎨 Art Director — 키네틱타입·Plush3D런처·4D Vibration햅틱·색약8%이중화·다크#121212·Maplestory평가',
+        description:
+          '2026 키네틱 히어로 타입(모션화 문자) 부상. Gumdrop·Kawaii 라운드체가 모바일 게임 표준. Maplestory 폰트: 귀여움+가독성 합격, 단 Kinetic 부족 — Bold 웨이트 추가 권장. rlottie(Unity Job System)+DOTween 병행 트렌드, Jitter 프리셋으로 1프레임 반응. 4D Vibration 리듬게임 필살기. Plush 3D+Mascot 캐릭터 아이콘 급상승, "미니 포스터" 런처 원칙. 다크모드 80%+ 선호, #000 금지 #121212 권장. 색약 8% 대응 아이콘+패턴+라벨 3중화 필수. NumLink 15색 팔레트가 색약에 치명적(점선/실선/이중선 테두리 패턴 필요), MeowBeat 노트에 발바닥 아이콘 중첩 필요.',
+      },
+    ],
+    meetingTitle:
+      '🏢 4/18 데일리 스탠드업 — FarmScene언블록·FindObjectOfType12연타리팩터·NumLink Tools복사·Steam프리런칭·색약이중화·장기분기정리',
+    meetingSummary:
+      'MeowBeat Sprint 3 S3-06 FarmScene 파란화면이 Sprint 4/6/7 연쇄 차단 — 오늘 최우선 언블록. NumLink Tools/ 4일째 이월 지속, 바로 복사 실행(CLAUDE.md 지침). MeowBeat GameManager FindObjectOfType 12연타 신규 발견 — ServiceLocator 일괄 전환으로 기동 비용+테스트성 동시 해결. Unity 7 폐기·Poki 8MB 제한 등 로드맵 점검. 2026 라이브옵스 트렌드는 이벤트 cadence·배틀패스·UGC — MeowBeat 노트 에디터 MVP 사전 검토. Steam 프리런칭·GPG on PC 노출 채비. NumLink 15색 팔레트 색약 8% 대응 이중화(패턴 테두리+Bold 폰트). 장기 분기 dirty 상태 제거 필수.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '어제 두 프로젝트 모두 커밋 0건으로 P0가 4일째 이월됐습니다. 진짜 블로커는 MeowBeat S3-06 FarmScene 파란화면입니다. Sprint 3 87%→100% 마감이 Sprint 4/6/7 전진의 전제입니다. FarmFoodManager 렌더링 복구+디버그로그 5개 제거 후 feature/song-ownership-migration에 원자적 커밋이 오늘 최우선입니다. NumLink Tools/ 4일째 부재는 Phase 6 진입 전까지 즉시 블로커는 아니나 오늘 해결 가능하니 병행합니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '2026 라이브옵스는 이벤트 cadence 월 73→89건으로 템플릿화+AI 운영이 표준입니다. Gossip Harbor는 월 20에서 100 이벤트로 연속 플로우 구축, 배틀패스 일/주/시즌 3중 태스크가 리텐션 엔진입니다. 서구권에선 Fortnite Festival 4월 드럼/보컬 추가·RedOctane Stage Tour 가을 복귀로 리듬 장르 재부흥입니다. UGC 에디터는 Beatstar·Beat Saber에서 수명 2배 증명. MeowBeat에 "노트 간격·밀도만 조정" 커스텀 난이도 에디터 MVP를 다음 스프린트에 편입 제안합니다. NumLink는 데일리 퍼즐 팩+시즌패스 템플릿화가 우선입니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'Unity 7 공식 폐기됐습니다. 2026 로드맵은 6.x+CoreCLR(6.7 LTS 데스크톱 실험 플레이어). 6.3 LTS가 2027.12까지 지원되므로 다음 스프린트 플래닝 안건으로 사전 검토 필요합니다. Poki SDK는 초기 다운로드 8MB 이하 제한—MeowBeat 현재 빌드 크기 측정 항목 회귀 체크 추가. 오늘 실시 가능한 신규 기술 부채: MeowBeat GameManager.cs 94-105줄 FindObjectOfType 12개 연속 구간을 ServiceLocator 일괄 등록으로 1커밋 리팩터 제안합니다. 기동 비용과 테스트성을 동시 개선합니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'MeowBeat는 unity_validate.py·qa_static.py·known_bugs.json·run_regression.py 전부 있고 AutoQATests도 tracked 상태로 양호합니다. NumLink Tools/는 4일째 부재이고 Assets/Tests/Editor는 AutoGenTests 삭제 후 빈 껍데기입니다. CLAUDE.md 지침대로 _ProjectTemplate/Tools/를 NumLink에 바로 복사하고 Tests/Editor 공각 상태 처리 커밋 의도를 확인해야 합니다. MeowBeat 루트에 "C:UnityFeedme/" 라는 잘못된 경로명 폴더 1개가 유령으로 남아 있으니 제거해야 합니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'Steam 프리런칭은 12-18개월 리드타임이 표준이고 Google Play Games on PC가 140국 기본 노출을 무료 확장합니다. Keymailer 월 10키+Woovit 무제한 무료가 인플루언서 접근 비용을 0원으로 낮췄고, 마이크로스트리머(100-2K뷰) 구간 전환율이 +20%입니다. 한국은 2026년 설치 중심에서 리텐션·팬덤 중심으로 전환, 원스토어 시즌패스가 주류입니다. NumLink Steam 프리런칭 페이지 등록을 오늘 착수해 12개월 리드타임을 확보하고, MeowBeat 스토어 스크린샷 1-2번 슬롯을 고양이 리액션+BPM 숫자 오버레이로 재디자인(전환율 20-35% 좌우) 제안합니다.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'agent-office GHA는 10회 전부 성공으로 안정적입니다. NumLink·MeowBeat 모두 .github/workflows/가 없어 CI/CD 공백입니다. 더 시급한 문제는 MeowBeat feature/song-ownership-migration의 장기 분기+dirty 상태입니다. Google Ads·manifest 미커밋을 오늘 안에 정리(커밋 or stash)하고 master에 머지 후 브랜치 삭제해야 폭탄을 제거할 수 있습니다. NumLink feature/uitoolkit은 main 기준 rebase로 동기화 복구가 필요합니다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '2026 UI 트렌드는 키네틱 히어로 타입(모션화 문자)·Plush 3D+Mascot 런처 아이콘·4D Vibration 햅틱이 핵심입니다. Maplestory 폰트는 귀여움+가독성 합격이지만 Kinetic 요소 부족하니 Bold 웨이트 추가 권장합니다. 다크모드는 80% 이상 사용자가 선호하며 순흑(#000) 금지, #121212 권장입니다. 접근성 측면에서 NumLink 15색 팔레트는 색약 8%에 치명적이니 숫자 폰트 Bold+테두리 패턴(점선/실선/이중선)으로 이중화해야 합니다. MeowBeat는 Perfect/Good/Miss 판정에 UIImpactFeedbackGenerator(iOS)+VibrationEffect(Android) 차등 햅틱을 적용하면 4D Vibration 트렌드 선점과 시각장애 접근성을 동시 해결합니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: '[P0] MeowBeat S3-06 FarmScene 렌더링 복구 — Sprint 3 마감 언블록',
+        description:
+          'FarmFoodManager 씬 파란화면 근본 원인 진단+디버그로그 5개 제거. feature/song-ownership-migration에 원자적 커밋. Sprint 4(S4-02 머지 그리드 UI)·Sprint 6·Sprint 7 연쇄 언블록 전제. 디버그는 Debug.Log 삽입→mcp__UnityMCP__read_console OBSERVE-NARROW-ROOT 증거 기반 프로토콜 준수.',
+      },
+      {
+        title: '[P0] NumLink Tools/ 일괄 복사 — 4일째 이월 종결',
+        description:
+          'C:/Unity/_ProjectTemplate/Tools/ 전체(unity_validate.py·qa_static.py·known_bugs.json·run_regression.py·test_fixtures)를 C:/Unity/NumLink/Tools/ 로 복사. 씬 경로 상수 NumLink 기준으로 업데이트. CLAUDE.md 지침에 따라 묻지 않고 바로 실행. Assets/Tests/Editor 공각 상태(AutoGenTests 삭제 후 껍데기) 커밋 정리.',
+      },
+      {
+        title: '[P1] MeowBeat GameManager FindObjectOfType 12연타 ServiceLocator 일괄 전환',
+        description:
+          'GameManager.cs 94-105줄 FindObjectOfType 12개 연속을 GameBootstrapper.Awake 시점 ServiceLocator 등록으로 일괄 리팩터. 기동 비용 감소+테스트성 향상 동시 해결. 1커밋 원자 변경. 신규 발견된 ButtonController GameObject.Find 6회·Player Input.GetKeyDown 루프도 차순 태스크로 등록.',
+      },
+      {
+        title: '[P1] MeowBeat 장기 분기 정리 — Google Ads/manifest 미커밋 해소 + 브랜치 머지',
+        description:
+          'feature/song-ownership-migration의 Google Ads 프리팹·AndroidManifest·manifest·ProjectSettings·AutoQATests·_Recovery 미커밋/미추적 일괄 정리(의미 단위 커밋 or .gitignore). Sprint 3 마감 후 master에 머지 후 브랜치 삭제. NumLink feature/uitoolkit도 main 기준 rebase 동기화.',
+      },
+      {
+        title: '[P1] NumLink Steam 프리런칭 페이지 등록 착수',
+        description:
+          'Steam 프리런칭 12-18개월 리드타임 표준에 맞춰 오늘 등록 착수. Google Play Games on PC 140국 기본 노출 활용. 냥이 퍼즐 세계관 컨셉+키 비주얼 1종 준비. 위시리스트 벨로시티 5K-10K 론칭 전 목표. itch.io "logic-puzzle" 세분화 태그 병행 배포 검토.',
+      },
+      {
+        title: '[P1] NumLink 색약 이중화 + Maplestory Bold 웨이트 적용',
+        description:
+          '15색 팔레트가 색약 8%에 치명적 — 숫자 폰트 Bold 웨이트 추가+테두리 패턴(점선/실선/이중선) 3중화로 1-15 구분 가능하게 개선. Maplestory 폰트는 유지하되 키네틱 타입 트렌드 흡수. 다크모드는 순흑 금지 #121212 기준 적용.',
+      },
+      {
+        title: '[P2] MeowBeat 커스텀 난이도 에디터 MVP 스펙 편입',
+        description:
+          'UGC 에디터는 2026 서구권 리듬게임 생존 조건. 기존 manifest.json 구조상 구현 난이도 중하. "노트 간격·밀도만 조정" 최소 MVP로 Sprint 다음 차수에 편입. Beatstar·Beat Saber UGC 생태계 사례 벤치마크.',
+      },
+      {
+        title: '[P2] MeowBeat 햅틱 리듬 레이어 — 4D Vibration 트렌드 선점',
+        description:
+          'Perfect/Good/Miss 판정에 iOS UIImpactFeedbackGenerator+Android VibrationEffect 차등 적용(Heavy/Medium/Light). DOTween으로 노트 히트 시 0.15초 스케일 펀치(1.0→1.2→1.0) 마이크로 인터랙션 추가. 2026 트렌드 선점+시각장애 접근성 동시 해결.',
+      },
+      {
+        title: '[P2] Pocket Gamer Big Indie Pitch 런던 접수 + Woovit 계정 개설',
+        description:
+          'Big Indie Pitch 런던 접수(무료, 5분 6회전 상위 3에 편집부 커버리지). Woovit 무료 계정 개설 후 트위치 마이크로스트리머(100-2K뷰 구간) 30명 큐레이션 리스트업. Keymailer 월 10키 무료 병행.',
+      },
+      {
+        title: '[P3] Unity 6.3 LTS 업그레이드 사전 검토 (CoreCLR 대비)',
+        description:
+          'Unity 7 폐기 확정. 6.3 LTS 지원 2027.12까지, 6.0은 2026.10 만료. 현재 6000.3.5 → 6.3 LTS 업그레이드는 다음 스프린트 플래닝 안건. 6.7 LTS CoreCLR 데스크톱 실험 플레이어 로드맵 인지. 즉시 착수 아님.',
+      },
+    ],
+  },
+  {
     id: '2026-04-17T04:00:00-daily-standup',
     date: '2026-04-17',
     researchTitle:
