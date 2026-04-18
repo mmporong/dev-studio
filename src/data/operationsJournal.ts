@@ -43,6 +43,152 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-04-19T04:00:00-daily-standup',
+    date: '2026-04-19',
+    researchTitle:
+      '📊 4/19 데일리 스탠드업 — 액션아이템10건전부이월·NumLinkTODO120건·FeedmeDebug.Log129건·Unity6.2정식출시·Rive우세·YouTubeShorts ROAS+20%·GameCI도입',
+    researchSummary:
+      '7명 에이전트 병렬 리서치(제7회). 3개 레포 모두 4/18 이후 신규 커밋 전무 — 어제 액션아이템 10건 전부 미완료, 48시간+ 이월 가속화. NumLink Tools/ 폴더 부재 5일째(15분 복사로 끝나는 작업), MeowBeat GoogleMobileAds·manifest 미커밋 지속 방치. 신규 발견: NumLink 실제 코드 TODO/FIXME 120건+(PuzzleManager 26·PreGeneratedBoardManager 26·BoardValidator 16·BoardDataLoader 16), Feedme Debug.Log 129건(31파일) 릴리스 빌드 로그 누출 위험. Unity 6.2 정식 출시(Unity AI Beta 에디터 네이티브 통합+LOD 자동생성+Visible Triangle Mesh). Unity 공식 MCP 2.4.0-pre.1 배포(외부 클라이언트 승인제)로 CoplayDev MCP 대체 경로 검토 필요. 2026 신규 리듬게임 메커니즘: Rizuhuritan Rhythmic Flip(Re)Turn(4/6 출시) "메모리 기반 변형 노트", Rhythm Heaven Groove 7/2 확정 — 마스터 난이도 대신 "기억축" 차별화. 보상형 광고 iOS eCPM $19.63, 퍼즐 IAA +31% 성장, 보상형 참여 D30 리텐션 3.5배. 베트남이 Block Blast APAC 1위·SEA 58억 설치로 CPI 저렴 테스트베드. 콘텐츠: YouTube Shorts ROAS +20%, 참여율 5.91%, CPV $0.10-0.30, 브랜드 62% Shorts 우선 배분. ASO 롱테일 3-5단어 구문("relaxing puzzle game for adults") 전환 우위. "Rhythm Puzzler" 하이브리드 장르 신규 부상 — MeowBeat 포지셔닝 유리. Rive가 2026 UI 애니 주도권(파일 10-15배 작음, 60FPS vs Lottie 17FPS, 상태머신·데이터 바인딩 내장). 온보딩 "3-7스텝 + Skip" 뉴 표준, 인터스티셜 "레벨 클리어 직후 1회/시간" 합의선. QA 공백: Feedme *.Tests.asmdef 0개·NumLink 테스트 0건, 커버리지 <5% 추정. DevOps: agent-office GHA 5/5 성공 안정, 두 프로젝트 .github 부재, package.json scripts에 test/typecheck 없음.',
+    researchItems: [
+      {
+        title: '🎯 Orchestrator — 3개레포48h+커밋제로·액션아이템10건전부이월·NumLinkTools5일째부재·MeowBeat미커밋방치',
+        description:
+          'NumLink feature/uitoolkit 오늘 커밋 0건·미커밋 추적 11개+untracked 15개+. MeowBeat feature/song-ownership-migration 오늘 커밋 0건·미커밋 추적 15개+untracked 10개+. agent-office main 오늘 커밋 0건(최근 6b90175 4/18 스탠드업 문서). 이전 회의 액션아이템 10건 전부 미완료: P0-1 FarmScene 복구 미진행, P0-2 Tools/ 복사 미진행, P1-1~P1-4 전부 정지, P2·P3 전부 정지. 부분 진행 1건: NumLink Maplestory Bold SDF.asset 수정 흔적 있으나 미커밋 중단. 가장 시급한 개입 1건은 NumLink Tools/ 복사(C:/Unity/Feedme/Tools→C:/Unity/NumLink/Tools 21개 스크립트 그대로)로 15분 내 5일 이월 종결 가능. 이후 NumLink 미커밋 11개 원자적 커밋으로 브랜치 안정화.',
+      },
+      {
+        title: '🎮 Game Designer — 보상형광고iOS$19.63·퍼즐IAA+31%·Rizuhuritan메모리변형·Rhythm Heaven 7/2·베트남APAC1위SEA58억',
+        description:
+          '2026 보상형 광고 eCPM iOS $19.63(인터스티셜 대비 4:1 선호), 퍼즐 IAA 매출 전년비 +31% 성장, 보상형 참여 유저 D30 리텐션 3.5배. 2026.4.6 Rizuhuritan! Rhythmic Flip(Re)Turn 출시(메모리형 리듬), Rhythm Heaven Groove 7/2 스위치 확정, Fortnite Festival S14 드럼/보컬 심화 — "마스터 난이도"보다 "기억 기반 변형"(일부 노트 페이드아웃)이 신규 차별화축. 퍼즐 $4.99 월정액(Mario Kart Tour/Pass Royale 전형) 외 부스터팩 $0.99-4.99 번들이 주류. 베트남이 Block Blast APAC 1위, SEA 설치량 58억·캐주얼 광고주 28.4%로 CPI 저렴한 테스트베드. 한국 UA 비용 +22% 부담 회피 가능.',
+      },
+      {
+        title: '💻 Developer — NumLinkTODO120건·FeedmeDebug.Log129건·Unity6.2정식·UnityAI Beta에디터통합·공식MCP2.4배포·72h코드동결',
+        description:
+          'NumLink 실제 코드 TODO/FIXME 120건 이상 집중 발견: PuzzleManager 26건·PreGeneratedBoardManager 26건·BoardValidator 16건·BoardDataLoader 16건 — 기술 부채 4대 핫스팟. Feedme GameManager TODO 16건+AdmobManager 12건+DatabaseManager 11건, 빈 try-catch 0건(양호). Feedme Debug.Log 129건(31파일) 릴리스 빌드 로그 누출·성능 리스크. ShopManager에 빈 public 메서드 패턴 1건. 두 프로젝트 모두 최근 72시간 .cs 수정 0건 — 코드 동결(자소서 작업 기간 맞물림). Unity 6.2 정식 출시: Unity AI Beta 에디터 네이티브 통합·LOD 자동생성·Visible Triangle Mesh. Unity 공식 MCP 2.4.0-pre.1 배포(2026-03), 외부 클라이언트 승인제 전환 — 현재 CoplayDev MCP 대체 경로 1시간 스파이크 조사 필요.',
+      },
+      {
+        title: '🔍 QA Tester — Feedmeknown_bugs6패턴살아있음·NumLink테스트0건·양프로젝트Tests.asmdef0개·커버리지<5%',
+        description:
+          'Feedme known_bugs.json 6패턴 살아있음(RT_SIZE_ZERO·YAML_DUP_ID·YAML_HEADER_REF·YAML_INDENT_M_FATHER·MANIFEST_AUDIO·NOTE_LANE). 단 Tests/ 폴더는 AutoGenTests 단일 파일 24케이스만(HitEffect/Note 국소 범위). NumLink는 전면 공백: Tests/Editor 빈 상태, [Test]/[UnityTest] 0건, Tools/ 디렉토리 자체 부재(5일째), known_bugs.json 없음. 양 프로젝트 사용자 *.Tests.asmdef 0개(PackageCache만 존재) — Test Runner 실행 대상 미정의. 커버리지 매우 낮음 <5% 추정. 릴리스 전 최소 3가지: 씬 로드 smoke(FarmScene 파란화면 회귀)·manifest 정합성(audio 실존)·점수/판정 경계값(Perfect/Good/Miss). 최시급 카테고리: 크래시(FarmScene=런타임 크래시급, 색약/성능 선행).',
+      },
+      {
+        title: '📢 Content Writer — YouTubeShorts ROAS+20%·CPV$0.10-0.30·ASO롱테일3-5단어·Rhythm Puzzler하이브리드장르·SUPERJUMP 3채널',
+        description:
+          'YouTube Shorts ROAS 일반 유튜브 대비 +20%, 평균 참여율 5.91%로 TikTok·Reels 상회. CPV $0.10-0.30, 브랜드 62%가 Shorts에 예산 우선 배분(2026 Shorts가 유튜브 광고 매출 22% 차지). ASO 2026: 롱테일 자연어 키워드 이동 — "relaxing puzzle game for adults"·"match 3 no ads"·"rhythm-based platformer" 같은 3-5단어 구문이 단일 키워드보다 전환 우위, 음성검색 최적화 병행 필요. 인디 리듬·퍼즐 리뷰 재확인 5곳: SUPERJUMP Indie Monthly·The Indie Informer·Indie Game Reviewer·Green Man Gaming·Gaming in the Wild. "Rhythm Puzzler" 하이브리드 장르 신규 카테고리 부상 — MeowBeat 포지셔닝 유리.',
+      },
+      {
+        title: '⚙️ DevOps — agent-officeGHA5/5성공·두프로젝트.github부재·Unity수동주40분·GameCI라이선스시크릿만필요',
+        description:
+          'agent-office GitHub Actions 5/5 전부 success(deploy-pages 일 1회 안정 04/17 최신). NumLink·MeowBeat 모두 .github 부재 — Unity 빌드 100% 로컬 수동, 산출물 전송 경로 없음. agent-office package.json scripts에 test·typecheck 없음(build/lint/preview만) — 배포 전 검증 0건, Sentry/Crashlytics 크래시 리포트 파이프라인 전무. dist/ 산출물 확인(unity/·catrush-cats/·games/). GameCI: UNITY_EMAIL/PASSWORD+라이선스 시크릿만 있으면 Android/iOS/WebGL 한 번에 처리 가능(20k+ 프로젝트 채택). 주간 수동 부담: Unity 2종 × 평균 2회 빌드/주 ≈ 주 40분+(키스토어 서명·WebGL 업로드 포함시 1시간+). GHA/Cloud 필요도 HIGH — NumLink 출시 임박+MeowBeat MVP, 수동 실수 위험 큼.',
+      },
+      {
+        title: '🎨 Art Director — Rive2026우세(파일10-15배작음60FPS)·온보딩3-7스텝+Skip·인터스티셜"클리어직후1회/시간"룰·Lottie17FPS·Spine역할분리',
+        description:
+          'Rive가 2026 UI 애니 포맷 주도권 — 파일 10-15배 작음(240KB→16KB), 60FPS vs Lottie 17FPS. 상태머신·데이터 바인딩 내장으로 AE 의존 탈피. Spine은 캐릭터 스켈레탈 전용으로 역할 분리 명확. 온보딩 "3-7스텝 + Skip"이 뉴 표준: 업프런트 튜토리얼 → 컨텍스추얼 코치마크/툴팁 전환, "첫 의미있는 화면까지 0.5-2초" 구간이 새 온보딩 모먼트(Candy Crush식 즉시 승리). 인터스티셜 광고는 "레벨 클리어 직후 1회/시간" 룰이 2026 합의선 — 5초 모션·1메시지 룰, 명확한 X버튼 필수(구글 페널티 회피), 배너와 UI 중첩 금지. 로컬 확인: NumLink/Feedme 모두 통합 Art 폴더 미존재 — Sprites·Textures 분산 구조, Art 루트 신설 필요성 관찰.',
+      },
+    ],
+    meetingTitle:
+      '🏢 4/19 데일리 스탠드업 — 10건전부이월·Tools15분복사·Debug.Log가드·GameCI도입·Rive파일럿·보상형광고우선·YouTubeShorts메인채널',
+    meetingSummary:
+      '3개 레포 48시간+ 커밋 동결로 어제 P0/P1/P2/P3 10건 전부 미완료 — 근본 원인은 자소서 작업 병행+시작 비용. 오늘 회의 방향: "거대 리팩터" 대신 "15분 내 끝나는 3건"을 먼저 닫아 이월 사슬 끊기. (1) NumLink Tools/ 15분 복사로 5일 이월 종결, (2) Feedme Debug.Log 129건 #if !UNITY_EDITOR 가드 스크립트 일괄 적용(릴리스 로그 누출 차단), (3) NumLink Maplestory Bold 미커밋 정리 커밋. 중기 3건: MeowBeat GameManager FindObjectOfType 12연타 ServiceLocator 전환(어제 P1 유지), Rive 파일럿 도입(NumLink 레벨완료 팝업 1개), GameCI Unity 빌드 워크플로우 1개(라이선스 시크릿+PR 트리거). 시장: 보상형 광고 iOS eCPM $19.63+퍼즐 IAA +31%로 NumLink에 "인터스티셜보다 보상형 우선" 결정. 콘텐츠: YouTube Shorts ROAS+20%로 런칭 크리에이티브 메인 채널 Shorts로 픽스. MeowBeat는 Rhythm Puzzler 하이브리드 장르로 ASO 포지셔닝(3-5단어 롱테일 10개 프리셋). Rizuhuritan 사례의 "메모리 기반 변형 노트" Hard+ 실험 1곡 검토. QA: Feedme known_bugs 6패턴은 살아있으나 *.Tests.asmdef 0개로 Test Runner 실행 불가 — 양 프로젝트 EditMode 어셈블리 정의 1개씩 생성 P1.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '3개 레포 모두 4/18 이후 신규 커밋이 0건이라 어제 액션아이템 10건 전부 미완료로 이월됐습니다. Maplestory Bold SDF.asset에 수정 흔적이 있으나 커밋 전 중단된 것만 "부분 진행"으로 분류됩니다. 근본 원인은 "작업 단위가 커서 시작 비용이 높다"입니다. 오늘은 "15분 내 끝나는 3건"을 먼저 닫는 전략을 제안합니다. 1순위는 NumLink Tools/ 복사입니다 — C:/Unity/Feedme/Tools에 이미 21개 스크립트가 완비되어 있어 그대로 복사+씬 경로 상수만 NumLink 기준 업데이트하면 끝납니다. 2순위는 NumLink 미커밋 11개 원자적 정리, 3순위는 MeowBeat GoogleMobileAds/manifest 미커밋 해소(어제 P1-2 계속 이월). 거대 리팩터는 이 세 건 이후 착수합니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '오늘 발견 중 가장 중요한 수치는 보상형 광고 iOS eCPM $19.63과 퍼즐 IAA 전년비 +31% 성장, 보상형 참여 D30 리텐션 3.5배입니다. NumLink의 광고 전략은 "인터스티셜보다 보상형 우선"으로 바꿔야 합니다 — 힌트 제공·리트라이 리저렉션에 보상형을 배치하고, 인터스티셜은 주 2-3회 수준으로만 유지합니다. 리듬게임 신규 차별화축은 "마스터 난이도 복제"가 아니라 "메모리 기반 변형"입니다. 2026.4.6 출시된 Rizuhuritan Rhythmic Flip(Re)Turn이 일부 노트를 페이드아웃해 기억으로 치는 Hard+ 난이도를 만들었는데, MeowBeat에 실험 트랙 1곡으로 테스트할 가치가 있습니다. 시장 확장은 SEA(베트남/태국)가 1순위 — 베트남이 Block Blast APAC 1위+SEA 58억 설치+CPI 저렴으로 한국 UA 비용 +22% 부담을 회피할 수 있습니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'NumLink 실제 코드 TODO/FIXME가 120건 이상, 그것도 PuzzleManager 26·PreGeneratedBoardManager 26·BoardValidator 16·BoardDataLoader 16으로 4대 핫스팟에 집중돼 있습니다. Sprint 5 착수 전에 "실동작 차단" TODO만 골라내는 트리아지 P2가 필요합니다. Feedme는 Debug.Log 129건(31파일)이 가장 큰 즉시 리스크입니다 — 릴리스 빌드에 그대로 들어가면 성능 저하와 로그 누출이 동시에 발생합니다. 오늘 P1으로 #if !UNITY_EDITOR 가드 또는 [Conditional("UNITY_EDITOR")] 속성 일괄 적용을 제안합니다. 스크립트 1개로 완료 가능합니다. Unity 6.2가 정식 출시돼서 Unity AI Beta가 에디터에 네이티브 통합됐고, Unity 공식 MCP 2.4.0-pre.1이 배포돼 외부 클라이언트가 승인제로 전환됐습니다 — 현재 CoplayDev MCP 대체 경로를 1시간 스파이크로 조사할 가치가 있습니다. GameManager ServiceLocator 전환은 어제 P1 그대로 유지합니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'Feedme는 unity_validate.py·qa_static.py·known_bugs.json 6패턴 전부 살아있지만 실제 테스트 어셈블리가 없는 상태입니다. AutoGenTests 24케이스는 HitEffect·Note 단일 파일만 커버합니다. NumLink는 Tests/Editor 빈 폴더, [Test]/[UnityTest] 0건, Tools/ 부재로 완전 제로입니다. 양 프로젝트 사용자 *.Tests.asmdef가 0개라서 Test Runner가 실행할 대상 자체가 없습니다. 오늘 P1은 "NumLink Tools/ 복사 + 양 프로젝트 EditMode *.Tests.asmdef 1개씩 생성"입니다. 커버리지 <5% 추정이므로 최소 3가지 smoke 테스트만 먼저 확보합니다: (1) 씬 로드(FarmScene 파란화면 회귀), (2) manifest.json audio 파일 실존 검증, (3) 점수/판정 경계값. 크래시 카테고리가 색약·성능보다 선행입니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '런칭 크리에이티브 메인 채널을 YouTube Shorts로 픽스하는 결정을 제안합니다. ROAS 일반 유튜브 대비 +20%, 참여율 5.91%, CPV $0.10-0.30로 TikTok·Reels보다 효율 우위고 측정 정확도도 높습니다. 브랜드 62%가 Shorts에 예산 우선 배분 중이고, 2026년 Shorts가 유튜브 광고 매출 22%를 차지합니다. ASO는 단일 키워드가 끝났습니다 — "relaxing puzzle game for adults", "match 3 no ads", "rhythm-based platformer" 같은 3-5단어 롱테일이 전환을 지배합니다. MeowBeat은 "rhythm puzzle game offline", "cat rhythm game free" 같은 롱테일 10개 프리셋을 구축하고 "Rhythm Puzzler" 하이브리드 장르로 포지셔닝하면 신규 카테고리를 선점할 수 있습니다. 출시 4-6주 전 SUPERJUMP Indie Monthly·The Indie Informer·Gaming in the Wild 3곳에 데모 빌드 송부합니다.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'agent-office GHA는 5/5 전부 성공이고 deploy-pages 일 1회 안정 가동으로 양호합니다. 진짜 문제는 NumLink·MeowBeat 둘 다 .github/workflows/가 없어 100% 로컬 수동 빌드라는 점입니다. Unity 2종 × 평균 2회/주 ≈ 주 40분+(키스토어·WebGL 업로드 포함시 1시간+) 부담이고 수동 실수 위험도 큽니다. 오늘 P1으로 NumLink에 GameCI 최소 워크플로우 1개(Android IL2CPP + WebGL, PR 트리거만) 도입을 제안합니다. UNITY_EMAIL/PASSWORD+라이선스 시크릿만 등록하면 됩니다. 이번 주 90분 투자로 주 40분 회수+회귀 탐지 레이어가 생깁니다. 배포는 수동 유지합니다. 추가로 agent-office package.json scripts에 test·typecheck가 없어 배포 전 검증이 0건인 것도 다음 주 안에 해결 필요합니다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '2026 UI 애니메이션 포맷은 Rive로 무게중심이 넘어갔습니다. 파일 크기 10-15배 작음(240KB→16KB), 60FPS vs Lottie 17FPS, 상태머신·데이터 바인딩 내장으로 AE 의존을 탈피합니다. Spine은 캐릭터 스켈레탈 전용으로 역할이 분리됐습니다. DOTween을 버리지 말고 "Rive(복잡 UI 모션)+DOTween(간단 트윈)" 이원화를 제안합니다. 오늘 P1 파일럿은 NumLink 레벨 완료 팝업 1개에 Rive 적용해 PoC하는 것입니다. 온보딩은 3-7스텝 + Skip이 뉴 표준이라 MeowBeat·NumLink 첫 진입 플로우를 3스텝 Skippable로 압축하고 _ProjectTemplate에 재사용 템플릿으로 선반영해야 합니다. 인터스티셜은 "스테이지 클리어 → 결과 연출 1.2초 → 인터스티셜(시간당 1회)" 타이밍으로 픽스하면 구글 페널티를 피하면서 5초 룰·1메시지 룰을 준수할 수 있습니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: '[P0] NumLink Tools/ 15분 복사 — 5일 이월 종결 (Feedme/Tools 21개 스크립트 그대로 복사)',
+        description:
+          'C:/Unity/Feedme/Tools/ 전체(unity_validate.py·qa_static.py·known_bugs.json·run_regression.py·test_fixtures 21개 스크립트)를 C:/Unity/NumLink/Tools/ 로 복사. 씬 경로 상수만 NumLink 기준으로 업데이트. CLAUDE.md 지침대로 묻지 않고 바로 실행. 5일째 이월된 최단 작업 — 이 한 건을 먼저 닫아 이월 사슬 끊기.',
+      },
+      {
+        title: '[P0] Feedme Debug.Log 129건(31파일) #if !UNITY_EDITOR 가드 일괄 적용',
+        description:
+          '릴리스 빌드 로그 누출·성능 리스크 제거. [Conditional("UNITY_EDITOR")] 속성 또는 #if UNITY_EDITOR 블록으로 일괄 래핑. 스크립트 1개로 완료 가능. GameManager/AdmobManager/DatabaseManager 우선 적용. 기존 디버그 흐름 보존.',
+      },
+      {
+        title: '[P0] NumLink 미커밋 11개 + Maplestory Bold SDF.asset 원자적 정리 커밋',
+        description:
+          'feature/uitoolkit 브랜치의 추적 11개+untracked 15개+를 의미 단위 커밋 2-3개로 정리. Maplestory Bold SDF.asset 수정 흔적은 "P1 색약 이중화 착수"의 부분 진행 결과물로 명시. 브랜치 상태 안정화 후 main 대비 rebase 동기화 준비.',
+      },
+      {
+        title: '[P1] MeowBeat GameManager FindObjectOfType 12연타 ServiceLocator 전환 (어제 P1-1 유지)',
+        description:
+          'GameManager.cs 94-105줄 FindObjectOfType 12개 연속 → GameBootstrapper.Awake 시점 ServiceLocator 등록 일괄 리팩터. 기동 비용 감소+테스트성 향상. 1커밋 원자 변경. 이후 ButtonController Find 6회·Player Input.GetKeyDown 루프 차순 태스크.',
+      },
+      {
+        title: '[P1] MeowBeat 장기 분기 정리 — Google Ads/manifest 미커밋 해소 (어제 P1-2 이월)',
+        description:
+          'feature/song-ownership-migration의 Google Ads 프리팹·AndroidManifest·manifest·ProjectSettings·AutoQATests·_Recovery 미커밋/미추적 일괄 정리(의미 단위 커밋 or .gitignore). FarmScene 복구와 병행. master 머지 후 브랜치 삭제.',
+      },
+      {
+        title: '[P1] NumLink GameCI 최소 워크플로우 1개 도입 (Android IL2CPP + WebGL, PR 트리거)',
+        description:
+          'UNITY_EMAIL/PASSWORD+라이선스 시크릿 등록 → .github/workflows/build.yml 작성. 배포는 수동 유지. 이번 주 90분 투자로 주 40분 수동 부담 회수+회귀 탐지 레이어 확보. GameCI 20k+ 프로젝트 채택 안정성 검증됨.',
+      },
+      {
+        title: '[P1] 양 프로젝트 *.Tests.asmdef EditMode 어셈블리 1개씩 생성',
+        description:
+          'Feedme AutoGenTests와 NumLink Tests/Editor에 EditMode 테스트 어셈블리 정의 추가 → Test Runner 실행 대상 확보. 최소 smoke 3종만: (1) 씬 로드(FarmScene 파란화면 회귀), (2) manifest.json audio 파일 실존, (3) 점수/판정 경계값. 커버리지 <5% → 릴리스 전 10% 목표.',
+      },
+      {
+        title: '[P1] NumLink 보상형 광고 우선 배치 결정 (인터스티셜은 주 2-3회로 제한)',
+        description:
+          '2026 iOS eCPM $19.63+퍼즐 IAA +31% 성장+보상형 D30 리텐션 3.5배 근거. 힌트 제공·리트라이 리저렉션에 보상형 배치, 인터스티셜은 "스테이지 클리어 → 결과 1.2초 → 시간당 1회"로 제한. 구글 페널티 회피 5초·1메시지·명확 X버튼 룰 준수.',
+      },
+      {
+        title: '[P2] NumLink 레벨 완료 팝업 Rive 파일럿 도입 (DOTween 이원화 유지)',
+        description:
+          'Rive 파일 크기 10-15배 작음·60FPS vs Lottie 17FPS·상태머신 내장 활용. 레벨 완료 팝업 1개로 PoC. DOTween은 간단 트윈용으로 병행 유지. 성공 시 MeowBeat 결과 연출·판정 피드백으로 확산.',
+      },
+      {
+        title: '[P2] YouTube Shorts를 런칭 크리에이티브 메인 채널로 픽스 + ASO 롱테일 10개 프리셋',
+        description:
+          'Shorts ROAS +20%·CPV $0.10-0.30·참여율 5.91% 근거. 세로 9:16·15초·첫 3초 훅 제작. ASO: MeowBeat "rhythm puzzle game offline"·"cat rhythm game free" 등 3-5단어 롱테일 10개, NumLink "relaxing number puzzle"·"logic puzzle no ads" 등 10개 프리셋. "Rhythm Puzzler" 하이브리드 장르 포지셔닝.',
+      },
+      {
+        title: '[P2] MeowBeat 메모리 기반 변형 노트 실험 트랙 1곡 추가 (Rizuhuritan 사례)',
+        description:
+          '2026.4.6 출시된 Rizuhuritan Rhythmic Flip(Re)Turn "메모리 기반 변형" 축. 일부 노트를 페이드아웃시켜 Hard+ 난이도 차별화. 기존 Hard 난이도는 유지하고 실험 트랙 1곡만 추가. 마스터 난이도 복제 회피 전략.',
+      },
+      {
+        title: '[P2] Unity 공식 MCP 2.4.0-pre.1 이관 가능성 1시간 스파이크 조사',
+        description:
+          'Unity 공식 MCP 2026-03 배포, 외부 클라이언트 승인제 전환. 현재 CoplayDev MCP 계속 사용할지 vs 공식으로 이관할지 비교. 1시간 스파이크: 지원 기능 매트릭스·인증 플로우·Unity 6.2 호환성. 결정은 다음 주 스프린트 플래닝에서.',
+      },
+      {
+        title: '[P3] Rhythm Heaven Groove 7/2 + Fortnite Festival S14 경쟁 모니터링',
+        description:
+          '닌텐도 Rhythm Heaven Groove 2026.7.2 스위치 출시 확정, Fortnite Festival S14 드럼/보컬 심화. MeowBeat MVP 출시 시점과 겹치지 않도록 마케팅 윈도우 조정 필요. 즉시 착수 아님 — 6월 Pre-Launch 체크리스트에 추가.',
+      },
+    ],
+  },
+  {
     id: '2026-04-18T04:00:00-daily-standup',
     date: '2026-04-18',
     researchTitle:
