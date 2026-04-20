@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-14T03:38:30.386Z",
+  "lastUpdated": "2026-04-20T01:50:00.191Z",
   "weeks": [
     {
       "weekOf": "2026-W16",
@@ -13,6 +13,36 @@
           "summary": "Artifact Driven Development: 과정을 보지 않기로 했다",
           "publishedAt": "2026-04-14T00:28:54.000Z",
           "collectedAt": "2026-04-14T03:10:56.042Z"
+        },
+        {
+          "id": "4cd2239c1122f9ed",
+          "title": "Apache Flink + RocksDB 튜닝으로 광고 Frequency Capping 실시간 집계를 일주일까지 확장하기",
+          "url": "https://toss.tech/article/flink-realtime-frequency-capping",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "Apache Flink + RocksDB 튜닝으로 광고 Frequency Capping 실시간 집계를 일주일까지 확장하기",
+          "publishedAt": "2026-04-16T02:48:00.000Z",
+          "collectedAt": "2026-04-20T01:50:00.191Z"
+        },
+        {
+          "id": "e3cdf25f7e17a91b",
+          "title": "Our Journey to Autoscaling EKS Node Groups for Job Workloads",
+          "url": "https://medium.com/daangn/our-journey-to-autoscaling-eks-node-groups-for-job-workloads-e8a6a7ed845e?source=rss----4505f82a2dbd---4",
+          "company": "당근 테크",
+          "category": "general",
+          "summary": "Our Journey to Autoscaling EKS Node Groups for Job Workloads",
+          "publishedAt": "2026-04-16T09:35:00.000Z",
+          "collectedAt": "2026-04-20T01:50:00.191Z"
+        },
+        {
+          "id": "2eb703e75683d6c6",
+          "title": "Job 워크로드를 위한 EKS Node Group 오토스케일링 도입기",
+          "url": "https://medium.com/daangn/job-%EC%9B%8C%ED%81%AC%EB%A1%9C%EB%93%9C%EB%A5%BC-%EC%9C%84%ED%95%9C-eks-node-group-%EC%98%A4%ED%86%A0%EC%8A%A4%EC%BC%80%EC%9D%BC%EB%A7%81-%EB%8F%84%EC%9E%85%EA%B8%B0-a6a28376d153?source=rss----4505f82a2dbd---4",
+          "company": "당근 테크",
+          "category": "general",
+          "summary": "Job 워크로드를 위한 EKS Node Group 오토스케일링 도입기",
+          "publishedAt": "2026-04-16T06:01:47.000Z",
+          "collectedAt": "2026-04-20T01:50:00.191Z"
         }
       ]
     },
