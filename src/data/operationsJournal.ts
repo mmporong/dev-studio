@@ -43,6 +43,142 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-04-21T04:00:00-daily-standup',
+    date: '2026-04-21',
+    researchTitle:
+      '📊 4/21 데일리 스탠드업 — NumLink9일째미커밋·이월P08건·MeowBeatAutoGenTests4개삭제·MainScene.bak_btn Assets내부·퍼즐$14.4B·Unity6.4Burst웹·Threads4억MAU·뉴모피즘2026',
+    researchSummary:
+      '7명 에이전트 병렬 리서치(제9회). 3개 레포 모두 오늘 커밋 0건 — NumLink 9일째 미커밋 지속(커밋 0건), MeowBeat Farm 영역 10건 커밋 후 미커밋 30파일·Debug.Log 146건 그대로, agent-office 4/20 스탠드업 커밋이 마지막. 이전 P0/P1 완료 0건·이월 8건 — Tools 복사/Debug.Log 가드/미커밋 정리/이벤트 누수 17파일/Awaitable 파일럿/CI 스캐폴드/asmdef/SaveData 버전 모두 미진행. 신규 QA 리스크 2건 발견: (1) MeowBeat `Assets/Scenes/MainScene.unity.bak_btn`(+.meta)이 Assets 내부에 위치 — Unity가 .bak을 에셋으로 인식해 빌드·Import 경고 유발, 5분 내 처리 가능 최시급 항목. (2) MeowBeat `Assets/Tests/Editor/AutoGenTests.*` 4개 파일 전부 Delete 상태 — 테스트 asmdef 통째 소실, 자동 회귀 테스트 완전 비활성. 시장: 2025 모바일 퍼즐 매출 $14.4B·美 YoY +30%($4.6B)·일평균 38분 수렴, Top 90%가 "리더보드+마일스톤 주간 이벤트" 상시 운영, 시즌 패스 서구 탑그로싱 60%+ 채택. 리듬게임 $2.5B→$5.3B(2033) CAGR 9.1%, Dead As Disco 등 "리듬+전투" 하이브리드 급부상. D1 35-40% 후 D3-5 콘텐츠 고갈이 D7 급락 원인 — 메타 진행 부재가 주범. Developer: NumLink TODO 170+건·MeowBeat Debug.Log 146건 Farm 10건 커밋 집중, Unity 6.4 Burst 멀티스레딩 WebGL 공식지원·Addressables 2.6 autoCleanBundleCache+Build Report 윈도우 출시. 콘텐츠: Threads MAU 4억·중앙값 참여율 6.25%(X 3.6% 대비 +73.6%) 인디 저비용 최적 시기, X "2026 Year of the Creator"(1/16) Verified Home 임프레션 수익 풀 2배, 2026 음악 마케팅 3축=월드빌딩+미스터리 캠페인+IRL 활성화, Reels Play Bonus 2.0은 참여·유지·전환 3지표로 리듬게임 짧은 클립과 궁합 우수. DevOps: NumLink/MeowBeat 양측 .github 폴더 자체 부재 지속, agent-office GHA 5/5 성공 유지, Unity Library 캐시는 actions/cache@v3 + Assets/Packages/ProjectSettings 해시 키가 표준. Art: NumLink style(ui) 커밋 2차 정비 완료됐으나 tactile감 약함·피드백 애니/햅틱 부재, MeowBeat SongList/Button 배치 전환 후 시각 hierarchy 단조, 뉴모피즘2026(소프트 섀도+볼드 하이라이트)+마이크로 인터랙션(버튼 팝 0.08s)+레이어드 3D 뎁스+Cozy 톤 2D가 캐주얼 퍼즐 주류.',
+    researchItems: [
+      {
+        title: '🎯 Orchestrator — NumLink9일째미커밋·MeowBeat미커밋30·이전P0/P1완료0건·이월8건·Tools7일째부재',
+        description:
+          'NumLink feature/uitoolkit 오늘 커밋 0건·최근 d6023de(docs README)·미커밋 34개 지속, 마지막 실제 코드 커밋이 9일째 미갱신. MeowBeat feature/song-ownership-migration 오늘 커밋 0건·최근 657032c(fix farm) 포함 Farm 영역 10건이 최근 커밋 집중, 미커밋 30파일. agent-office main 4/20 5efadea(docs standup) 커밋이 마지막·미커밋 7파일(.omc/state 삭제 분). 이전(#40) P0 3건 전부 미완: Tools xcopy 미진행(7일째), Debug.Log 가드 미적용(146건 그대로), 미커밋 정리 미진행(75건→71건 수준). P1 5건(Awaitable 파일럿·이벤트 누수 OnDestroy·CI 스캐폴드·asmdef·SaveData 버전) 전부 이월. 근본 원인 고착: "작업 단위 크기"가 여전히 진입 장벽. 오늘은 "5분 내 리스크 제거 2건 먼저 처리 → 15분 내 P0 2건 실행" 순서로 전환.',
+      },
+      {
+        title: '🎮 Game Designer — 2025퍼즐$14.4B·美+30%/$4.6B·일평균38분·시즌패스60%채택·리듬$5.3B(2033)·D3-5메타부재D7급락',
+        description:
+          '2025 모바일 퍼즐 매출 $14.4B 전 세계·美 시장 YoY +30% $4.6B·일평균 플레이 38분 수렴(Sensor Tower State of Gaming 2026). Top 퍼즐사 90%가 "리더보드+마일스톤 주간 이벤트"를 상시 운영으로 전환 중 — 진행/소셜 이벤트 증가·순수 과금 이벤트 감소세. 시즌 패스는 서구 탑그로싱 60%+ 채택률 달성·메타 레이어가 LTV 90% 견인(Archero). 리듬 장르는 소셜/리더보드가 D30 리텐션 +40% 기여, 시장 규모 $2.5B→$5.3B(2033 CAGR 9.1%). Dead As Disco 등 "리듬+전투" 하이브리드 급부상. D1 35-40% 후 D3-5 콘텐츠 고갈이 D7 급락 원인 — 메타 진행 부재가 주범. 제안: MeowBeat에 "4주 단위 시즌 트랙"(무료 10티어·유료 10티어, 시즌 한정 고양이 1종·테마 배경 1종·곡 2곡) 최소 MVP GDD를 다음 스프린트 우선 항목으로 편입, NumLink는 "주간 숫자 챌린지 리더보드 + 마일스톤 별 3단계 보상"으로 D7 방어.',
+      },
+      {
+        title: '💻 Developer — NumLinkTODO170+·MeowBeatFarm10커밋Debug.Log146·Unity6.4Burst웹공식·Addressables2.6 autoCleanBundleCache',
+        description:
+          'NumLink TODO/FIXME/HACK 170+건으로 어제 120건 대비 +50건 증가(주로 주석 정리 지연). MeowBeat Debug.Log 146건 그대로·어제 커밋된 Farm 10건 영역(FarmFoodManager·CatMoving·CatInteraction)에 디버그 로그 집중 잔존. 2026 Unity 업데이트: Unity 6.4(2026 Q2 LTS 후보) Burst 멀티스레딩 WebGL 공식 지원 — 퍼즐/리듬 계산 서브루틴 성능 개선 가능, WebGL 타겟에 특히 유의미. Addressables 2.6 `autoCleanBundleCache` API 추가로 번들 캐시 자동 정리, Build Report 윈도우 신규 출시로 빌드 크기 분석 UI 개선. 제안: MeowBeat Farm 영역 Debug.Log 한정 제거 또는 `[Conditional("DEV")]` 래퍼 도입(전체 146건 일괄보다 "가장 최근 수정된 10커밋 영역"에 스코프 한정하면 1일 내 완결). 기존 537 IEnumerator는 동결 유지, 신규 코드만 Awaitable(Unity 6.3 LTS 공식 내장) 채택.',
+      },
+      {
+        title: '🔍 QA Tester — NumLink Tools폴더자체부재·MeowBeat MainScene.bak_btn Assets내부·AutoGenTests4개전부삭제·회귀방어망전무',
+        description:
+          '신규 5분내 리스크 1건: MeowBeat `Assets/Scenes/MainScene.unity.bak_btn`(+.meta) 2개 파일이 Assets 내부에 위치 — Unity가 `.bak`도 에셋으로 인식해 Import 경고·빌드 포함 리스크, Assets 밖 또는 `/tmp/backup/`로 이동만 하면 즉시 해소. 신규 P1 리스크: MeowBeat `Assets/Tests/Editor/AutoGenTests.asmdef`·`AutoGenTests.asmdef.meta`·`AutoGenTests.cs`·`AutoGenTests.cs.meta` 4파일 전부 Delete(D) 상태 — 테스트 asmdef 통째 소실로 자동 회귀 테스트 완전 비활성화. 의도된 삭제인지 실수인지 확인 필요(Farm 작업 중 실수 가능성). NumLink는 Tools 폴더 자체 부재(known_bugs.json 없음) 7일째 지속 — QA 파이프라인 0% 이식, 최근 fix 10건 중 6건이 input/ui 회귀(패널티 드래그·RT 크기)였으므로 회귀 방어망 전무가 최대 리스크. 오늘 액션: (1) MainScene.bak_btn 2파일 Assets 밖 이동 5분. (2) AutoGenTests 삭제 의도 확인·커밋 또는 복구. (3) NumLink Tools/ cp -r 복사.',
+      },
+      {
+        title: '📢 Content Writer — Threads4억MAU·참여율6.25%(X3.6%+73.6%)·X 2026YearOfCreator·음악3축=월드빌딩+미스터리+IRL',
+        description:
+          'Threads MAU 4억 돌파(2026 Q1)·중앙값 참여율 6.25%로 X의 3.6%보다 +73.6% 높음 — 인디 저비용 테스트 최적 시기. X "2026 Year of the Creator" 선언(1/16)으로 Verified Home 임프레션 기반 수익 재편 + 풀 2배, 런치 시점 롱폼 아티클 노출 유리. 2026 음악 마케팅 3축 = "월드빌딩 + 미스터리 캠페인 + IRL 활성화"로 확정 — MeowBeat은 캐릭터 세계관(냥이 DJ) + AI 작곡 세션 라이브 릴스 공개로 포맷 직접 부합. Reels Play Bonus 2.0은 참여율·유지율·전환 3지표 측정으로 리듬게임 짧은 클립과 궁합 우수. 제안: MeowBeat Threads 계정 개설 후 "AI 음악 세션 공개" 시리즈 1편(60초 릴스) 업로드 — 곡 생성 프롬프트 → 노트 자동 매핑 화면 → 플레이 컷 3분할 구성, 동일 소스를 Reels/X로 교차 게시해 참여율 A/B 수집. NumLink는 개발 일지 스레드(퍼즐 설계 비하인드) 포맷이 X Verified Home 노출과 시너지.',
+      },
+      {
+        title: '⚙️ DevOps — NumLink/Feedme.github부재지속·agent-officeGHA5/5·UnityLibrary캐시actions/cache@v3표준·플랫폼분리필수',
+        description:
+          'NumLink/MeowBeat 둘 다 `.github/` 폴더 자체 부재 지속(CI 0%), agent-office Pages 배포 최근 5건 전부 success 유지. Unity Library 캐시 2026 표준은 `actions/cache@v3` + `Assets/Packages/ProjectSettings` 해시 키 — 플랫폼별 분리 필수(Android/iOS/WebGL Library가 서로 다름), 미분리 시 캐시 충돌로 빌드 실패. GameCI `game-ci/unity-actions` Caching Strategy 문서가 2026 Q1 갱신됨. 제안: NumLink `.github/workflows/unity-test.yml` 최소 스캐폴드 생성 — EditMode 테스트만 실행(Library 캐시 포함, 빌드는 추후), 빌드 라이선스/Personal 전환 부담 없이 Unity Test Runner만 GHA로 돌려도 회귀 방어망 구축 가능. MeowBeat은 AutoGenTests 삭제 처리 후 동일 스캐폴드 2단계로 추가.',
+      },
+      {
+        title: '🎨 Art Director — NumLink style2차완료tactile감약함·MeowBeat hierarchy단조·뉴모피즘2026+마이크로인터랙션+레이어드3D뎁스',
+        description:
+          'NumLink는 style(ui) 커밋 집중기(HUD·레벨선택·폰트 2배)로 2차 정비 완료됐으나 피드백 애니·햅틱 부재로 tactile감 약함 — 탭 시 화면이 정적 반응만 하고 "손끝의 피드백"이 없음. MeowBeat은 SongList·Button5-9 씬 배치 전환과 노트 겹침 수정 등 구조 정리는 끝났으나 시각 hierarchy(잠금/최고점수 뱃지)가 단조로워 강약 인지가 떨어짐. 2026 UI 트렌드 = 뉴모피즘2026(부드러운 그림자·볼드 하이라이트) + 마이크로 인터랙션(버튼 팝 0.08s·카드 폴드) + 레이어드 3D 뎁스 + AI 스프라이트 variation 파이프라인 + Cozy 톤 2D가 캐주얼 퍼즐 주류. 제안: NumLink HUD 하단 버튼에 뉴모피즘2026 스타일(소프트 섀도 8px/프레스 시 스케일 0.94·0.08s 인터랙션) 적용 1건 — 기존 폰트 2배 상태 유지하며 tactile감만 추가해 Surgical Changes 원칙 준수. MeowBeat 뱃지에 볼드 하이라이트+그림자 대비 추가로 강약 복원.',
+      },
+    ],
+    meetingTitle:
+      '🏢 4/21 데일리 스탠드업 — NumLink9일째미커밋·이월P08건·AutoGenTests4개삭제·MainScene.bak_btn Assets내부·퍼즐$14.4B·Unity6.4Burst·Threads4억·뉴모피즘2026',
+    meetingSummary:
+      '오늘 핵심은 "이월 사슬이 9일째로 늘어난 상황에서 5분 리스크 2건을 먼저 닫고 P0 흐름을 재시작한다". 어제 P0 3건 연속 방치되어 누적 이월이 8건에 도달, 그동안 신규 리스크 2건(MeowBeat MainScene.bak_btn Assets 내부·AutoGenTests 4파일 삭제)까지 발견. 회의 결론: (1) 5분 내 — MeowBeat .bak_btn 2파일 Assets 밖 이동 + AutoGenTests 삭제 의도 확정 커밋. (2) 15분 내 P0 — NumLink Tools/ cp -r 복사(7일째 종결) + MeowBeat Farm 10커밋 영역 한정 Debug.Log 제거. (3) 미커밋 71건 원자적 커밋. 중기 설계: MeowBeat "4주 시즌 트랙" MVP GDD 뼈대(무료 10티어+유료 10티어+시즌 한정 고양이 1종+테마 1종+곡 2곡)를 다음 스프린트 P1로 편입, NumLink "주간 숫자 챌린지 리더보드+마일스톤 3단계 보상"으로 D7 방어. 기술: Unity 6.4 Burst WebGL 멀티스레딩 공식지원·Addressables 2.6 autoCleanBundleCache+Build Report 윈도우 평가 P2, 기존 537 IEnumerator 동결·신규 코드만 Awaitable 파일럿. 콘텐츠: Threads 4억 MAU+참여율 6.25% 우위를 활용해 MeowBeat Threads 계정 개설+"AI 음악 세션 공개" 60초 릴스 1편을 이번 주 실험 P2, NumLink는 X 개발 일지 스레드 포맷. UI: NumLink HUD 하단 버튼 뉴모피즘2026+프레스 피드백 0.08s P2, MeowBeat 뱃지 강약 복원 P2. DevOps: NumLink .github/workflows/unity-test.yml EditMode 전용 스캐폴드 P1, MeowBeat은 AutoGenTests 정리 후 2단계 추가.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '어제(#40) P0 3건 전부 또 미완입니다. 이월이 8건으로 늘었고 NumLink는 9일째 코드 커밋이 없습니다. 원인은 여전히 "작업 단위가 크다"로 고착됐고 이 회의 이후 순서를 바꿉니다. 가장 먼저 5분짜리 리스크 2건을 닫습니다. 첫째, MeowBeat `Assets/Scenes/MainScene.unity.bak_btn`과 meta를 Assets 밖 `/backup/`으로 이동합니다. Unity가 `.bak`도 Import 대상으로 인식해 빌드 경고를 유발합니다. 둘째, `Assets/Tests/Editor/AutoGenTests.*` 4파일 삭제가 의도한 것이면 그대로 커밋해서 확정합니다. 그 다음 15분 내 P0: NumLink `cp -r C:/Unity/Feedme/Tools C:/Unity/NumLink/Tools` 한 줄로 7일 이월을 종결합니다. 마지막으로 미커밋 71건 원자적 커밋. 설계 작업은 이 네 건을 먼저 닫고 시작합니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '오늘 가장 중요한 시장 수치는 2025 모바일 퍼즐 $14.4B 전 세계·美 YoY +30% $4.6B·일평균 38분입니다. Top 퍼즐사 90%가 "리더보드+마일스톤 주간 이벤트"를 상시 운영으로 전환했고, 서구 탑그로싱 60% 이상이 시즌 패스를 채택해 LTV 90%를 메타 레이어에서 뽑고 있습니다. D1 35-40% 리텐션 후 D3-5에 콘텐츠 고갈이 오면 D7이 급락하는데, 메타 진행 부재가 단일 최대 원인으로 지목됩니다. MeowBeat에 "4주 단위 시즌 트랙"을 다음 스프린트 P1로 편입합니다. MVP 스펙은 무료 10티어 + 유료 10티어, 시즌 한정 고양이 1종 + 테마 배경 1종 + 곡 2곡, 4주 단위 로테이션. 이 구조만 있으면 LTV를 핵심 리듬 루프와 분리된 축으로 확장할 수 있습니다. NumLink는 "주간 숫자 챌린지 리더보드 + 마일스톤 별 3단계 보상"으로 D7을 방어합니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'MeowBeat Debug.Log 146건은 어제 커밋된 Farm 영역 10건(FarmFoodManager·CatMoving·CatInteraction)에 집중적으로 잔존합니다. 전체 146건 일괄보다 "최근 수정 10커밋 영역"만 오늘 스코프로 잡으면 하루 안에 완결 가능합니다. 방식은 `[Conditional("DEV")]` 래퍼 도입 또는 단순 제거 둘 중 팀 합의로 갑니다. Unity 6.4가 2026 Q2 LTS 후보로 Burst 멀티스레딩 WebGL 공식 지원을 발표했습니다. 리듬 계산과 퍼즐 평가 루프에 Burst를 적용하면 WebGL 타겟 성능이 의미 있게 개선됩니다. Addressables 2.6도 `autoCleanBundleCache` API와 Build Report 윈도우를 새로 추가했으니 번들 자동 정리로 이전 버전 잔존 번들 문제를 해소할 수 있습니다. 기존 537 IEnumerator는 동결 유지, 신규 코드만 Awaitable(Unity 6.3 LTS 공식 내장)로 파일럿합니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '5분짜리 즉시 해소 가능한 리스크부터 말씀드립니다. MeowBeat `Assets/Scenes/MainScene.unity.bak_btn`과 `.meta`가 Assets 내부에 있습니다. Unity가 `.bak`을 에셋으로 인식해 Import 경고와 빌드 포함 리스크를 유발합니다. `/backup/` 또는 Assets 밖 경로로 이동만 하면 바로 해소됩니다. 더 큰 리스크는 `Assets/Tests/Editor/AutoGenTests.asmdef`·`.cs` 4파일이 전부 Delete 상태로 테스트 asmdef가 통째 소실된 것입니다. Farm 작업 중 실수 삭제인지 의도된 제거인지 먼저 확인해야 합니다. 의도면 커밋해 확정하고, 실수면 복구해야 자동 회귀 테스트가 다시 동작합니다. NumLink는 Tools 폴더 자체가 7일째 부재입니다. 최근 fix 10건 중 6건이 입력/UI 회귀라 회귀 방어망 전무가 가장 큰 장기 리스크입니다. 오늘 Orchestrator의 cp -r로 Tools만 들어오면 NumLink도 qa_static 가동이 가능합니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'Threads MAU가 4억을 돌파했고 중앙값 참여율이 6.25%로 X의 3.6%보다 73.6% 높습니다. 인디 마케터가 저비용으로 채널을 테스트하기에 지금이 가장 좋은 시기입니다. X는 1월 16일 "2026 Year of the Creator"를 선언해 Verified Home 임프레션 기반 수익을 재편하고 풀을 2배로 늘렸습니다. 롱폼 아티클 노출에 유리하니 런치 시점에 맞춰 준비합니다. 2026 음악 마케팅 트렌드는 "월드빌딩 + 미스터리 캠페인 + IRL 활성화" 3축으로 확정됐고, MeowBeat는 "냥이 DJ 세계관 + AI 작곡 세션 라이브 릴스"로 포맷이 정확히 맞습니다. 이번 주 실험 제안: MeowBeat Threads 계정 개설 후 "AI 음악 세션 공개" 시리즈 1편 60초 릴스 업로드. 곡 생성 프롬프트 → 노트 자동 매핑 → 플레이 컷 3분할 구성으로, 동일 소스를 Reels/X에 교차 게시해 참여율을 A/B로 수집합니다. NumLink는 X에 개발 일지 스레드(퍼즐 설계 비하인드) 포맷을 권합니다.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'NumLink와 MeowBeat 양쪽 모두 `.github/` 폴더 자체가 없는 상태가 지속되고 있습니다. agent-office GHA는 최근 5건 전부 success로 안정 가동 중이고 오늘 배포에도 영향 없습니다. 2026 Unity Library 캐시 표준은 `actions/cache@v3` + `Assets/Packages/ProjectSettings` 해시 키 조합으로 픽스됐습니다. Android/iOS/WebGL Library가 서로 다르므로 플랫폼별 분리 키가 필수입니다. 미분리 시 캐시 충돌로 빌드가 깨집니다. 오늘 P1 제안: NumLink `.github/workflows/unity-test.yml` 최소 스캐폴드를 생성합니다. EditMode 테스트만 실행하고 빌드는 뒤로 미루면 Personal 라이선스로도 회귀 방어망이 세워집니다. MeowBeat은 QA Tester가 제기한 AutoGenTests 4파일 정리가 끝난 뒤 2단계로 동일 스캐폴드를 추가합니다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: 'NumLink는 style(ui) 커밋으로 HUD·레벨 선택·폰트 2배 정비가 완료됐습니다. 다만 탭 시 화면이 정적으로만 반응해 "손끝의 피드백"이 없습니다. MeowBeat은 SongList·Button5-9 씬 배치와 노트 겹침 정리가 끝났으나 잠금/최고점수 뱃지의 시각 hierarchy가 단조로워 강약 인지가 떨어집니다. 2026 UI 트렌드는 뉴모피즘2026(소프트 섀도+볼드 하이라이트) + 마이크로 인터랙션(버튼 팝 0.08s) + 레이어드 3D 뎁스 + Cozy 톤 2D가 캐주얼 퍼즐 주류로 확정됐습니다. 오늘 P2 제안: NumLink HUD 하단 버튼에 뉴모피즘2026 스타일을 적용합니다. 소프트 섀도 8px과 프레스 시 스케일 0.94·0.08s 인터랙션 한 건만 추가하면 폰트 2배 상태는 그대로 두고 tactile감만 올릴 수 있어 Surgical Changes 원칙에 맞습니다. MeowBeat 뱃지는 볼드 하이라이트와 그림자 대비를 추가해 강약을 복원합니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: 'P0: MeowBeat 5분 리스크 2건 즉시 해소',
+        description:
+          '`Assets/Scenes/MainScene.unity.bak_btn`+.meta 2파일을 Assets 밖으로 이동(.bak Import 경고 차단). `Assets/Tests/Editor/AutoGenTests.*` 4파일 삭제 의도 확인 후 확정 커밋 또는 복구. 회의 직후 5분 내 완료.',
+      },
+      {
+        title: 'P0: NumLink Tools/ 복사 (7일째 종결)',
+        description:
+          '`cp -r C:/Unity/Feedme/Tools C:/Unity/NumLink/Tools` 한 줄 실행 후 씬 경로 상수 업데이트. 7일째 이월 종결. 이후 qa_static.py/unity_validate.py 작동 확인.',
+      },
+      {
+        title: 'P0: MeowBeat Farm 10커밋 영역 Debug.Log 정리',
+        description:
+          '146건 전체가 아닌 최근 수정된 Farm 10건 커밋 영역(FarmFoodManager·CatMoving·CatInteraction)에만 스코프 한정. [Conditional("DEV")] 래퍼 도입 또는 단순 제거. 1일 내 완결 가능.',
+      },
+      {
+        title: 'P0: 미커밋 71건 원자적 정리 커밋',
+        description:
+          'NumLink 34 + MeowBeat 30 + agent-office 7 총 71건을 논리 단위로 나눠 원자적 커밋. 특히 NumLink `.omc/state/*` 임시 파일과 MeowBeat `_Recovery/`·`ProjectSettings` 변경 분리.',
+      },
+      {
+        title: 'P1: NumLink .github/workflows/unity-test.yml 최소 스캐폴드',
+        description:
+          'EditMode 테스트만 실행(Library actions/cache@v3 + 플랫폼 분리 키 포함, 빌드 없이). Personal 라이선스로도 회귀 방어망 구축. MeowBeat은 AutoGenTests 정리 후 2단계.',
+      },
+      {
+        title: 'P1: MeowBeat "4주 시즌 트랙" MVP GDD 뼈대',
+        description:
+          '무료 10티어 + 유료 10티어, 시즌 한정 고양이 1종·테마 배경 1종·곡 2곡. 4주 단위 로테이션. LTV 90% 메타 레이어 확보가 목적(Archero 모델 참고).',
+      },
+      {
+        title: 'P1: NumLink Awaitable 파일럿 1개 모듈',
+        description:
+          'Unity 6.3 LTS 공식 내장 Awaitable로 레벨 로딩 1개 모듈만 전환. 기존 537 IEnumerator는 동결 유지. 신규 코드에만 적용해 점진적 마이그레이션.',
+      },
+      {
+        title: 'P2: NumLink 주간 숫자 챌린지 리더보드 + 마일스톤 3단계 보상',
+        description:
+          'Top 퍼즐사 90%가 채택한 "리더보드+마일스톤 주간 이벤트" 상시 운영 패턴 도입. D7 방어 목적. 첫 구현은 단일 주차 미니 이벤트로 PoC.',
+      },
+      {
+        title: 'P2: MeowBeat Threads "AI 음악 세션 공개" 릴스 1편',
+        description:
+          'Threads 계정 개설 + 60초 릴스 1편 업로드. 곡 생성 프롬프트 → 노트 자동 매핑 → 플레이 컷 3분할 구성. 동일 소스를 Reels/X로 교차 게시해 참여율 A/B 수집. 이번 주 실험.',
+      },
+      {
+        title: 'P2: NumLink HUD 하단 버튼 뉴모피즘2026 적용',
+        description:
+          '소프트 섀도 8px + 프레스 시 스케일 0.94·0.08s 인터랙션. 폰트 2배 상태 유지하며 tactile감만 추가. MeowBeat 뱃지에 볼드 하이라이트+그림자 대비로 강약 복원.',
+      },
+      {
+        title: 'P2: Unity 6.4 Burst WebGL + Addressables 2.6 평가',
+        description:
+          'Unity 6.4 Burst 멀티스레딩 WebGL 공식지원으로 리듬/퍼즐 평가 루프 성능 개선 여지. Addressables 2.6 autoCleanBundleCache + Build Report 윈도우 평가. 도입 시점은 Unity 6.4 정식 LTS 후.',
+      },
+    ],
+  },
+  {
     id: '2026-04-20T04:00:00-daily-standup',
     date: '2026-04-20',
     researchTitle:
