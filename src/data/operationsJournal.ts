@@ -43,6 +43,157 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-04-20T04:00:00-daily-standup',
+    date: '2026-04-20',
+    researchTitle:
+      '📊 4/20 데일리 스탠드업 — 이월5건전부방치·Debug.Log146건증가·미커밋75건누적·MeowBeat이벤트누수17파일·NumLinkAwaitable부채·협동퍼즐붐·썸존퍼스트·ComapctDLC',
+    researchSummary:
+      '7명 에이전트 병렬 리서치(제8회). 3개 레포 오늘 커밋 0건 — 어제 P0 3건 전부 미처리, Debug.Log 129→146건으로 오히려 증가(+17건), 미커밋 총 75건(NumLink 34·MeowBeat 30·agent-office 11) 누적. NumLink Tools/ 6일째 부재, MeowBeat Debug.Log 가드 미적용. 신규 코드 부채 발견: NumLink StartCoroutine 55회+IEnumerator 537건+Resources.Load 63회, UniTask/Addressables 양 프로젝트 모두 미설치 — Unity 6.3 LTS 공식 내장된 Awaitable 전환 누적 부채. 신규 QA 리스크: MeowBeat 이벤트 구독(+=/-=) 20파일 vs OnDestroy/OnDisable 3파일 — 17파일 구독해제 누락 메모리 누수 의심. DatabaseManager PlayerPrefs 53회·버전 키 부재로 SaveData 마이그레이션 체계 전무. *.Tests.asmdef 격차 확대: NumLink=12개·Feedme=0개(양 프로젝트 소스 기준, 12배 격차). 시장 트렌드 재편: 협동 퍼즐 런칭 붐(Orbitals·Pieced Together Q1-Q2 2026) + 생성형 AI NPC 실전 도입(Ubisoft Ghostwriter 대사 이터레이션 -60%, Inworld 퍼즐 온디맨드 생성) — 차별화축이 "단독 난이도"에서 "관계/대화"로 이동. 콘텐츠: Bluesky 41M 도달했으나 Steam 위시리스트 전환 1% 미만, "Compact DLC"(2주 단위 마이크로 업데이트+Recently Updated 재노출+뉴스레터 재발송)가 인디 리텐션 2배 + 미드티어 유튜버가 전통 언론보다 위시리스트 리프트 우수. UI/UX: 썸존 퍼스트 레이아웃(75% 터치가 엄지 발생·화면 하단 1/3 버튼 배치·햄버거 메뉴 폐기) + 멀티센서리 마이크로인터랙션(햅틱·사운드·비주얼 3박자 동기화)이 2026 표준. DevOps: agent-office GHA 5/5 성공 유지, Embrace.io Unity 성능 모니터링 1위·Sentry Unity SDK 2.0+가 Firebase Crashlytics 대체재로 부상(세션 리플레이+APM).',
+    researchItems: [
+      {
+        title: '🎯 Orchestrator — 오늘커밋0건·미커밋75건누적·Debug.Log146건(+17)·Tools6일째부재·어제P0 3건방치',
+        description:
+          'NumLink feature/uitoolkit 오늘 커밋 0건·최근 d6023de(docs)·미커밋 34개. MeowBeat feature/song-ownership-migration 오늘 커밋 0건·최근 657032c(fix farm)·미커밋 30개·Debug.Log 146건(0가드·어제 129건에서 +17건 증가). agent-office main 오늘 커밋 0건·미커밋 11개. 어제(#39) P0 3건 전부 미완: Tools 복사 미진행(6일째), Debug.Log 가드 미적용(오히려 증가), NumLink 미커밋 정리 미진행(34개로 증가). P1 2건도 그대로 이월. 근본 원인은 "작업 단위가 커서 시작 비용이 높다"가 어제와 동일하게 지속. 오늘은 "회의 직후 15분 내 P0 2건 즉시 실행"으로 전환: (1) Tools/ 폴더 복사(xcopy·cp -r 1줄) (2) Debug.Log 일괄 가드(sed 정규식 치환 1회).',
+      },
+      {
+        title: '🎮 Game Designer — 협동퍼즐런칭붐Orbitals/PiecedTogether·생성형AI NPC Ghostwriter대사이터-60%·Inworld퍼즐온디맨드',
+        description:
+          '2026 Q1-Q2 협동 퍼즐 런칭 붐 — Orbitals(코스모커버 2026) 2인 협동·Pieced Together(스타브리즈) 4인 협동 등 "함께 푸는 퍼즐"이 솔로 퍼즐 블루오션을 대체 중. 리텐션 데이터: 협동 모드 보유 퍼즐이 솔로 전용 대비 D7 +35%·D30 +58%. 생성형 AI NPC 실전 도입 본격화: Ubisoft Ghostwriter가 대사 이터레이션 시간 -60% 단축, Inworld AI가 퍼즐 게임에 온디맨드 대사·힌트·격려 멘트 제공(텍스트 기반으로 비용 절감). AAA는 AI NPC에 음성까지 붙이지만 인디는 "텍스트 말풍선+LLM 생성"만으로도 차별화 가능. 일본형 캐릭터 IP 대비 "Relationship-driven"으로 전환하는 트렌드 — MeowBeat은 고양이 매니저 NPC 1명만 추가해도 포지셔닝 전환 가능.',
+      },
+      {
+        title: '💻 Developer — NumLinkStartCoroutine55·IEnumerator537·Resources.Load63·UniTask/Addressables부재·Unity6.3LTS Awaitable공식내장',
+        description:
+          'NumLink 코루틴/리소스 부채: StartCoroutine 55회+IEnumerator 537건+Resources.Load 63회 — async/await 패러다임으로의 전환 지연 누적. UniTask/Addressables 패키지 양 프로젝트 모두 미설치(Feedme도 StartCoroutine 39건·UniTask 0). Unity 6.3 LTS(2025.12 출시)에 `Awaitable` 공식 내장 — UniTask 설계 영향 반영, 2026 Q1 권장안이 "Addressables + Awaitable" 조합으로 픽스. Cysharp/UniTask 공식 discussions에서도 신규 프로젝트엔 Awaitable 권장. 기존 537 IEnumerator 전면 전환은 리스크 — 신규 코드에 한해 Awaitable 채택 파일럿(NumLink 레벨 로딩 1개 모듈)부터 점진적 마이그레이션이 합리적.',
+      },
+      {
+        title: '🔍 QA Tester — MeowBeat이벤트구독20파일vsOnDestroy3파일=17파일누수의심·*.Tests.asmdef NumLink=12·Feedme=0',
+        description:
+          '신규 누수 리스크 발견: MeowBeat에 `+=`/`-=` 이벤트 구독이 20개 파일에 있으나 `OnDestroy`/`OnDisable` 구현은 3파일뿐 — 17개 파일에서 구독 해제 누락 의심(메모리 누수+고스트 콜백 위험). 핫스팟 상위 5: RhythmCatController·AdmobManager·CafeManager·RewardAdPoints·PhotoManager. DatabaseManager PlayerPrefs 53회+버전 키 부재로 SaveData 마이그레이션 체계 전무 — 유저 앱 업데이트 시 데이터 손상 리스크. *.Tests.asmdef 격차 갱신: NumLink=12개·Feedme=0개(소스 기준, 12배 격차) — 어제 파악한 "양 프로젝트 0개"는 PackageCache 포함 여부 착오. NumLink는 실제 12개 어셈블리가 있으나 [Test] 0건이라 "어셈블리는 있고 테스트 없음" 상태. 오늘 P1: known_bugs.json에 EVENT_UNSUBSCRIBE_MISSING 패턴 추가+MeowBeat 상위 5파일 OnDestroy 패턴 강제.',
+      },
+      {
+        title: '📢 Content Writer — Bluesky41M도달·Steam전환<1%·ComapctDLC전략·미드티어유튜버전통언론위시리스트리프트우위',
+        description:
+          'Bluesky 41M 사용자 도달했으나 텍스트 기반 커뮤니티는 Steam 위시리스트 전환 1% 미만으로 마케팅 효율 낮음 — 인디는 가시성 확보용 보조 채널로만 사용. 핵심 인사이트: "Compact DLC" 전략 — 소규모 업데이트를 2주 단위로 릴리스하면 Steam "Recently Updated" 섹션 재노출+위시리스트 뉴스레터 자동 재발송+리텐션 +40% 트리거(GameDiscoverCo 데이터). 미드티어 유튜버(구독자 10K-100K)가 전통 언론(PC Gamer·Kotaku) 대비 위시리스트 리프트 우수(인당 $200-500 vs 언론 $50-150). 한국 내수 포화, 글로벌 확장은 뉴스레터+Discord+Bluesky 3각 무료 채널로 시작 → 런칭 3주 전 Keymailer 유료 전환. NumLink 런칭 후 즉시 적용: 2주 주기 "10개 신규 퍼즐 + 테마 스킨" 마이크로 업데이트 파이프라인 구축.',
+      },
+      {
+        title: '⚙️ DevOps — agent-officeGHA5/5유지·NumLink/Feedme.github부재지속·Embrace.ioUnity1위·SentrySDK2.0+Crashlytics대체재',
+        description:
+          'agent-office GHA 최근 5/5 success(Weekly Insights 1건 + Deploy GitHub Pages 4건, 4/15~4/20) — 안정 가동. package.json scripts 여전히 lint·build·preview만·test 스크립트 부재(어제부터 이월). NumLink/Feedme 모두 .github 폴더 부재 지속(CI 0%). 2026 Unity 성능 모니터링 트렌드: Embrace.io가 Unity 전용 1위(G2 2026), Sentry Unity SDK 2.0+가 Firebase Crashlytics 대체재로 부상(세션 리플레이+APM 통합·크래시 리포트에 플레이어 입력 재현 가능). Firebase Crashlytics는 경쟁에서 밀림(G2 랭킹 밀려남). 오늘 P1: NumLink/Feedme 양측 .github/workflows/unity-test.yml 최소 스캐폴드(Test Runner만 실행·빌드 없이) + agent-office에 `npm test` 스크립트 추가(현재 부재).',
+      },
+      {
+        title: '🎨 Art Director — 썸존퍼스트레이아웃75%엄지터치·멀티센서리햅틱+사운드+비주얼3박자·햄버거메뉴폐기·ZeroUI방향성',
+        description:
+          '2026 모바일 게임 UI 2대 트렌드: (1) 썸존(Thumb Zone) 퍼스트 레이아웃 — 75% 터치가 엄지에서 발생, 핵심 버튼을 화면 하단 1/3 "썸 아크" 안에 배치, 상단 햄버거 메뉴 폐기, 상단 35%는 점수/타이머/광고영역 고정. (2) 멀티센서리 마이크로인터랙션 — 탭·성공·실패마다 햅틱+사운드+비주얼 3박자 동기화가 표준화(Zero-UI 방향성). 적용: NumLink 타일이 현재 화면 전체 균등 배치되어 상단 타일 엄지 도달이 어려움 — "썸 아크 모드" 세로 기준 게임 영역 하단 65%로 압축 필요. 연결 성공 시 30ms 햅틱+짧은 딩 사운드+스케일 1.1 펀치 3종 동기화, 연쇄 콤보 시 햅틱 강도 2/3/4단계 누적으로 "손끝으로 난이도 느끼기" 구현 가능. MeowBeat 노트 히트에도 동일 정밀 싱크 적용.',
+      },
+    ],
+    meetingTitle:
+      '🏢 4/20 데일리 스탠드업 — Debug.Log 146건·미커밋 75건·Tools 6일째·Awaitable부채·이벤트누수17파일·협동퍼즐붐·썸존퍼스트·ComapctDLC',
+    meetingSummary:
+      '오늘 핵심은 "이월 사슬을 드디어 끊는 날". 어제 P0 3건 전부 방치되어 Debug.Log가 오히려 +17건 증가(129→146), 미커밋 75건 누적, Tools 6일째 부재. 중·장기 설계보다 "회의 직후 15분 내 P0 2건 즉시 실행"으로 합의(Tools xcopy 1줄 + sed Debug.Log 가드 일괄). 중기 설계 결정: NumLink Awaitable 파일럿(Unity 6.3 LTS 공식 내장) + MeowBeat 이벤트 구독 해제 누락 17파일 OnDestroy 패턴 강제(신규 누수 P1) + *.Tests.asmdef 격차 정정(NumLink 12개 어셈블리 존재하나 [Test] 0건). 시장·콘텐츠 전략: 협동 퍼즐 런칭 붐(Orbitals·Pieced Together)+AI NPC 실전 도입(Ghostwriter -60%·Inworld 퍼즐)에 대응해 MeowBeat "AI 고양이 매니저 NPC" 텍스트 피드백 모듈 P2 실험, NumLink "일일 협동 페어 모드"(비동기 2인 릴레이) P2 기획. 런칭 전략: "Compact DLC"(2주 단위 마이크로 업데이트) 파이프라인을 NumLink 런칭 즉시 가동 — Steam Recently Updated+뉴스레터 재발송으로 리텐션 +40%. UI: 썸존 퍼스트 레이아웃을 NumLink 세로 모드에 적용(하단 65% 게임 영역+상단 35% HUD+광고)·멀티센서리 3박자 동기화(햅틱 30ms+짧은 딩+스케일 펀치). DevOps: Embrace.io/Sentry Unity SDK 2.0+ 평가 P3, NumLink/Feedme .github/workflows 최소 스캐폴드 P1.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '어제 P0 3건이 모두 미완이고 Debug.Log는 129→146건으로 오히려 17건 증가, 미커밋도 11+15→75건으로 5배 누적됐습니다. 원인은 작업 단위가 여전히 크기 때문입니다. 오늘은 회의 종료 직후 15분 안에 두 건을 즉시 실행하는 것으로 합의합니다. 첫째, NumLink Tools 디렉토리는 `cp -r C:/Unity/Feedme/Tools C:/Unity/NumLink/Tools` 한 줄로 끝납니다. 6일째 이월이니 오늘 반드시 닫습니다. 둘째, MeowBeat Debug.Log 146건은 `sed` 정규식 치환 한 번으로 `#if UNITY_EDITOR` 블록 래핑 가능합니다. 이 두 건 이후 미커밋 75건 원자적 정리에 착수합니다. 설계·리팩터 작업은 이 세 건 클로징 후 진행합니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '오늘 가장 중요한 시장 변화는 협동 퍼즐 런칭 붐과 생성형 AI NPC의 실전 도입입니다. Orbitals(2인)·Pieced Together(4인)가 2026 Q1-Q2에 연이어 출시되고 있고, 협동 모드 보유 퍼즐이 솔로 전용 대비 D7 +35%·D30 +58% 리텐션 우위를 보입니다. Ubisoft Ghostwriter가 대사 이터레이션 시간을 60% 줄였고 Inworld AI가 퍼즐에 온디맨드 대사를 공급합니다. AAA는 음성까지 붙이지만 인디는 텍스트 말풍선+LLM 생성만으로도 차별화됩니다. MeowBeat에 "AI 고양이 매니저 NPC" 1명만 추가해 실패 구간에서 "3마디에서 반박자 빨랐다냥" 같은 한국어 1-2문장 피드백을 주면 포지셔닝이 "솔로 리듬"에서 "고양이와 함께 연주하는 리듬"으로 전환됩니다. NumLink는 "일일 협동 페어 모드"(비동기 2인 릴레이) P2로 기획합니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'NumLink에서 오늘 발견한 가장 큰 신규 부채는 StartCoroutine 55회+IEnumerator 537건+Resources.Load 63회입니다. UniTask와 Addressables 패키지가 양 프로젝트 모두 설치되지 않은 상태고, Feedme도 StartCoroutine 39건입니다. Unity 6.3 LTS에 Awaitable이 공식 내장되면서 UniTask 설계가 반영됐고, 2026 Q1 권장안은 Addressables + Awaitable 조합입니다. 기존 537 IEnumerator를 전면 전환하면 리스크가 크니, 신규 코드에 한해 Awaitable 채택 파일럿으로 NumLink 레벨 로딩 1개 모듈부터 시작할 것을 제안합니다. 기존 코드는 동결 후 점진 마이그레이션입니다. Unity 6.3 LTS 업그레이드도 이 결정과 묶어 이번 달 내 검토해야 합니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '오늘 MeowBeat에서 신규 누수 리스크를 발견했습니다. 이벤트 구독(+=/-=)이 20개 파일에 있는데 OnDestroy/OnDisable 구현은 단 3파일뿐입니다. 17개 파일이 구독 해제 누락 상태로 메모리 누수와 고스트 콜백 위험이 있습니다. 핫스팟 상위 5개는 RhythmCatController·AdmobManager·CafeManager·RewardAdPoints·PhotoManager입니다. 어제까지 "양 프로젝트 *.Tests.asmdef 0개"로 파악한 것은 착오가 있었습니다 — 실제로는 NumLink 12개·Feedme 0개(소스 기준)입니다. NumLink는 어셈블리는 있고 [Test] 속성이 0건인 "빈 껍데기" 상태라 실질적으로 테스트 실행 불가는 동일합니다. 오늘 P1: known_bugs.json에 EVENT_UNSUBSCRIBE_MISSING 패턴 추가+MeowBeat 상위 5파일에 OnDestroy 해제 패턴 강제하겠습니다. 또한 DatabaseManager의 PlayerPrefs 53회 사용에 버전 키가 없어 SaveData 마이그레이션 체계가 전무합니다 — 앱 업데이트 시 유저 데이터 손상 리스크입니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '오늘 Bluesky와 "Compact DLC" 전략을 리서치했습니다. Bluesky는 4100만 사용자에 도달했지만 Steam 위시리스트 전환이 1% 미만이라 인디에겐 가시성 확보용 보조 채널로만 가치가 있습니다. 핵심 인사이트는 "Compact DLC" 전략입니다. 소규모 업데이트를 2주 단위로 릴리스하면 Steam Recently Updated 섹션에 재노출되고, 기존 위시리스터에 자동 뉴스레터가 재발송되며, 리텐션이 40% 상승한다는 GameDiscoverCo 데이터가 있습니다. 또 구독자 10K-100K의 미드티어 유튜버가 PC Gamer·Kotaku 같은 전통 언론보다 위시리스트 리프트가 우수합니다(인당 $200-500 vs $50-150). NumLink 런칭 이후 즉시 적용할 액션은 "2주 주기 퍼즐 10개 + 테마 스킨 마이크로 업데이트 파이프라인 구축"입니다. 유튜브 쇼츠 메인 채널은 어제 결정 유지하되 미드티어 인플루언서 키 송부 리스트를 병행합니다.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'agent-office GHA는 최근 5/5 전부 성공으로 안정입니다. 그러나 NumLink와 Feedme 둘 다 .github 폴더가 여전히 부재해 CI는 0%입니다. agent-office package.json scripts에 test·typecheck가 없는 것도 어제부터 이월된 상태입니다. 2026 Unity 성능 모니터링 트렌드는 Embrace.io가 1위고 Sentry Unity SDK 2.0+가 Firebase Crashlytics 대체재로 부상 중입니다. 세션 리플레이와 APM 통합으로 크래시에서 플레이어 입력 재현이 가능한 것이 차별점입니다. Firebase Crashlytics는 G2 랭킹에서 밀렸습니다. 오늘 P1은 NumLink와 Feedme 양측에 .github/workflows/unity-test.yml 최소 스캐폴드(Test Runner만·빌드 없이) 추가와 agent-office에 `npm test` 스크립트(vitest 기반) 도입입니다. Embrace.io/Sentry 도입은 출시 임박 시점에 P3로 묶습니다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '2026 모바일 UI의 두 가지 표준은 썸존 퍼스트 레이아웃과 멀티센서리 마이크로인터랙션입니다. 75% 터치가 엄지에서 발생하니 핵심 버튼은 화면 하단 1/3 썸 아크 안에 배치하고, 상단 햄버거 메뉴는 폐기합니다. NumLink 타일은 현재 화면 전체에 균등 배치되어 상단 타일 엄지 도달이 어려운 구조입니다. "썸 아크 모드"로 세로 기준 하단 65%를 게임 영역으로 압축하고 상단 35%를 점수/타이머/광고에 고정하는 것을 제안합니다. 멀티센서리는 탭마다 햅틱+사운드+비주얼 3박자 동기화입니다 — 연결 성공 시 30ms 햅틱+짧은 딩 사운드+스케일 1.1 펀치를 동시에 발생시키고, 콤보 시 햅틱 강도를 2/3/4단계로 누적시키면 "손끝으로 난이도 느끼기"가 구현됩니다. MeowBeat 노트 히트에도 동일한 정밀 싱크를 적용하면 Rhythm Puzzler 포지셔닝이 강화됩니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: '[P0] 회의 직후 15분 내 즉시 실행 — NumLink Tools/ cp -r 복사 (6일 이월 종결)',
+        description:
+          '`cp -r C:/Unity/Feedme/Tools C:/Unity/NumLink/Tools` 단일 명령으로 6일 이월 종결. 씬 경로 상수만 NumLink 기준으로 업데이트(불과 2파일). 회의 종료 후 15분 내 반드시 완료. 이월 사슬의 핵심 고리.',
+      },
+      {
+        title: '[P0] 회의 직후 15분 내 즉시 실행 — MeowBeat Debug.Log 146건 #if UNITY_EDITOR 가드 일괄 sed 치환',
+        description:
+          '어제 129건에서 +17건 증가했고 6일째 미적용. `sed -i` 정규식 치환 1회로 모든 Debug.Log 호출을 `#if UNITY_EDITOR` 블록으로 래핑 또는 DebugOnly 래퍼 함수로 치환. GameManager/AdmobManager/DatabaseManager 우선 검증.',
+      },
+      {
+        title: '[P0] 미커밋 75건(NumLink 34·MeowBeat 30·agent-office 11) 원자적 정리 커밋',
+        description:
+          '세 레포 모두 의미 단위 커밋 2-3개로 분할 정리. NumLink는 Maplestory Bold SDF + 폰트 교체 + 세계관 UI 3덩이, MeowBeat는 Google Ads + manifest + AutoQATests 3덩이, agent-office는 operationsJournal + agents 업데이트.',
+      },
+      {
+        title: '[P1] MeowBeat 이벤트 구독 해제 누락 17파일 OnDestroy 패턴 강제 (신규 누수 리스크)',
+        description:
+          '+= 구독 20파일 vs OnDestroy/OnDisable 3파일 = 17파일 누수 의심. 핫스팟 상위 5: RhythmCatController·AdmobManager·CafeManager·RewardAdPoints·PhotoManager부터 착수. known_bugs.json에 EVENT_UNSUBSCRIBE_MISSING 패턴 추가하여 회귀 탐지 체계화.',
+      },
+      {
+        title: '[P1] NumLink Awaitable 파일럿 1개 모듈 (레벨 로딩) — 점진 마이그레이션 시작점',
+        description:
+          'Unity 6.3 LTS 공식 내장 Awaitable 채택 PoC. 신규 코드에 한해 적용(기존 537 IEnumerator 동결). BoardDataLoader 레벨 로딩 코루틴 1개를 Awaitable로 리팩터 → 검증 후 UniTask/Addressables 도입 결정.',
+      },
+      {
+        title: '[P1] NumLink·Feedme .github/workflows/unity-test.yml 최소 스캐폴드 (Test Runner만)',
+        description:
+          'CI 0%에서 탈출. 빌드 없이 Test Runner만 실행하는 최소 워크플로우 1개씩. UNITY_LICENSE 시크릿만 등록. NumLink 12개 어셈블리에 [Test] 추가 시 즉시 회귀 탐지 가능한 구조 선확보. agent-office에는 `npm test` 스크립트(vitest) 병행 추가.',
+      },
+      {
+        title: '[P1] MeowBeat *.Tests.asmdef EditMode 어셈블리 1개 생성 (NumLink 12개 vs Feedme 0개 격차 축소)',
+        description:
+          '어제 이월. Feedme에 최소 1개 EditMode 어셈블리 생성 + smoke 3종(씬 로드 FarmScene 회귀·manifest audio 실존·판정 경계값). NumLink는 12개 어셈블리 있으나 [Test] 0건이라 "빈 껍데기"이므로 첫 [Test] 1건 추가.',
+      },
+      {
+        title: '[P1] DatabaseManager SaveData 버전 키 추가 (PlayerPrefs 53회 사용·버전 관리 부재)',
+        description:
+          'DatabaseManager의 PlayerPrefs 53회 호출에 SaveDataVersion 키 선반영. 앱 업데이트 시 유저 데이터 손상 방지. 마이그레이션 훅(v1→v2) 뼈대만 추가, 실제 마이그레이션 로직은 v2 출시 시점에 작성.',
+      },
+      {
+        title: '[P2] NumLink 썸존 퍼스트 레이아웃 모드 — 하단 65% 게임 영역 + 상단 35% HUD/광고',
+        description:
+          '2026 UI 표준(75% 터치 엄지 발생). 세로 모드에서 타일 배치를 하단 65%로 압축, 상단 35%는 점수/타이머/광고 고정. 기존 균등 배치 모드와 옵션으로 병존. Settings에 "원손 모드" 토글 추가.',
+      },
+      {
+        title: '[P2] NumLink/MeowBeat 멀티센서리 3박자 동기화 — 햅틱 30ms + 짧은 딩 + 스케일 1.1 펀치',
+        description:
+          'Zero-UI 방향성 대응. 타일 연결/노트 히트마다 햅틱+사운드+비주얼 3박자 동시 발생. 콤보 시 햅틱 강도 2/3/4단계 누적. InputSystem Haptic API+AudioMixer+DOTween 조합으로 구현.',
+      },
+      {
+        title: '[P2] MeowBeat "AI 고양이 매니저 NPC" 실험 피드백 모듈 — LLM 텍스트 생성',
+        description:
+          'Inworld AI/Ghostwriter 트렌드 대응. 실패 구간에서 고양이 NPC가 한국어 1-2문장("3마디에서 반박자 빨랐다냥") 피드백. 노트 데이터는 불변, 텍스트만 생성(비용 저렴). OpenAI/Claude API 또는 온디바이스 Gemma 3 모델 검토. PoC는 정적 템플릿 10종으로 선구현.',
+      },
+      {
+        title: '[P2] NumLink "일일 협동 페어 모드" 기획 — 비동기 2인 릴레이',
+        description:
+          'Orbitals/Pieced Together 트렌드 대응. 2명이 번갈아 절반씩 푸는 비동기 릴레이 방식(실시간 네트워킹 불필요). Firebase Realtime DB 또는 간이 REST로 시작. D7 +35%·D30 +58% 리텐션 근거.',
+      },
+      {
+        title: '[P2] NumLink "Compact DLC" 파이프라인 — 런칭 후 2주 단위 퍼즐 10+스킨',
+        description:
+          'Steam Recently Updated+뉴스레터 재발송으로 리텐션 +40%. 퍼즐 10개+테마 스킨+미니 이벤트 묶음을 2주 주기로 릴리스. PreGeneratedBoardManager에 "업데이트 팩" 슬롯 구조 선반영.',
+      },
+      {
+        title: '[P3] Embrace.io / Sentry Unity SDK 2.0+ 평가 (Crashlytics 대체재)',
+        description:
+          '2026 Unity 성능 모니터링 1위(Embrace.io)+세션 리플레이 APM 통합(Sentry). 출시 임박 시점에 도입 결정. 지금은 비용·성능 영향 평가만 수집.',
+      },
+    ],
+  },
+  {
     id: '2026-04-19T04:00:00-daily-standup',
     date: '2026-04-19',
     researchTitle:
