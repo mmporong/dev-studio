@@ -43,6 +43,142 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-04-22T04:00:00-daily-standup',
+    date: '2026-04-22',
+    researchTitle:
+      '📊 4/22 데일리 스탠드업 — NumLink10일째미커밋·MainScene.bak_btn15일째·Tools8일째·GetComponent810건·UGC$2.2B·Unity6.5BreakingChanges·Material3Expressive·TikTokSparkCPI-30%',
+    researchSummary:
+      '7명 에이전트 병렬 리서치(제10회). 3개 레포 오늘 커밋 0건 — NumLink는 마지막 실제 코드 커밋이 1358503(4-12 fix build)로 10일째 미커밋, MeowBeat는 어제 Farm 영역 커밋을 넣었지만 오늘 추가 0건·미커밋 30파일. agent-office는 스탠드업 기록만. 어제 P0 4건 검증: (A) MainScene.unity.bak_btn 미해소 — Unity가 .bak을 Import 지속, 실은 2026-04-07 생성으로 15일째 상주. (B) AutoGenTests 해소 — Tests/Editor 폴더 자체 부재로 삭제 확정. (C) NumLink Tools 미해소 — 10일째 부재(회의 기준 8일째). (D) Debug.Log 부분해소 — 146→129건(-17)으로 소폭 감소했으나 FarmFoodManager 5·Cats 7·GameManager 16 잔존. 신규 코드 부채 정량화: NumLink `GetComponent<>`/`FindObjectOfType` 호출 810건 vs MeowBeat 82건(10배 격차) — ServiceLocator 원칙 전면 위반, uitoolkit 브랜치 머지 시 Inspector 재직렬화로 런타임 탐색 추가 증가 우려. NumLink async void 13건 vs MeowBeat 0건. 시장: Naavik UGC 2026 리포트 Roblox+Fortnite+Overwolf 3대 UGC 크리에이터 페이아웃 $2.2B(+47% YoY), Fortnite Festival Harmonix Patchwork 동적 음악, 퍼즐 D30 벤치마크 5.35%(장르 최상위) — 길드·커뮤니티 허브 부재 시 "이탈자가 안 보여 더 쉽게 떠난다". Supersonic D30+ 플레이북=주간 랭킹+시즌 업데이트 LiveOps, 온보딩 진행 표시 미채택 앱은 90% 이탈. 기술: Unity 6.5 breaking changes 2026-03-27 공지(6.7 LTS까지 분기 지원·Android thin LTO·Shader Graph Stencil·CoreCLR 에디터는 6.8 목표), ECS/DOTS는 6.7 LTS까지 incremental 안정화(2026 연내 stable 불투명), Input System 1.10에서 `InputSystem_Actions.inputactions` 에셋 분리 필수+UI 액션맵 이름 변경 시 UI Toolkit 입력 깨짐. 콘텐츠: Google Play Custom Store Listing 2026 "inactive users"(28일 미접속) 타겟팅 GA, TikTok Spark Ads 모바일 게임 CPI $1.50-5.00에서 20-30% 비용 절감 가능(상위사 분기 2,400-2,600 크리에이티브 변형 +25-30%), Steam Next Fest 2026 2월 Windrose 35.1만 신규 위시리스트·Vampire Crawlers는 데모 플레이가 총 위시리스트 43.2% 견인 — "핵심 훅 강한 데모"가 전환 1순위. DevOps: NumLink/MeowBeat .github 전무 지속, agent-office deploy-pages.yml+weekly-insights.yml 최근 5/5 success. GitHub Actions OIDC 2026-03-12 custom properties GA로 클라우드 trust policy 세분화 가능, Vercel Hobby 100GB vs Cloudflare Pages 무제한 대역폭(단 빌드 500분 vs Vercel 6,000분). Art: Material 3 Expressive 2025말 정식(스프링 모션+다이나믹 셰이프+진동 컬러, 46 리서치·1.8만 참여자), Bento Grid 2.0 12-24px 코너 라운딩+키네틱 타이포+스크롤 반응 타일 모바일 정복 원년, 리듬게임 3단 피드백 루프(Pre-look ahead→Immediate hit→Post 정확도 리포트) — Post 결여 시 자가교정 불가. 신규 QA 리스크: MeowBeat Tools/__pycache__ cpython-314 .pyc 3개 .gitignore 누락 우려, NumLink Screenshots/ 25개 2.1MB 누적.',
+    researchItems: [
+      {
+        title: '🎯 Orchestrator — NumLink10일째미커밋(1358503,4-12)·MeowBeat미커밋30·4건P0중2건미해소1건해소1건부분·미커밋64',
+        description:
+          'NumLink feature/uitoolkit 오늘·어제 커밋 0건, 마지막 실제 코드 커밋 1358503(2026-04-12 fix build asmdef), 미커밋 34파일 10일째 누적. MeowBeat feature/song-ownership-migration 오늘 커밋 0건·어제 Farm 10건·미커밋 30파일 재누적. agent-office main 4/20 이후 스탠드업 기록만. 어제(#41) P0 4건: (A) MainScene.unity.bak_btn 미해소(4-07 생성, 15일째 상주·1.6MB Unity Import 지속) (B) AutoGenTests 해소(Tests/Editor 폴더 자체 부재로 삭제 확정) (C) NumLink Tools 미해소(10일째) (D) Debug.Log 부분해소(146→129건 -17). 신규 리스크: NumLink feature/uitoolkit 미커밋 34파일 10일 누적으로 머지 충돌·작업 유실 위험 급증. 오늘 15분 P0: (1) Tools 복사 `cp -r C:/Unity/_ProjectTemplate/Tools C:/Unity/NumLink/Tools` 5분 (2) MainScene.bak_btn 2파일 `C:/Unity/Feedme/_backups/` 이동 5분 (3) NumLink 34파일 중 안전한 1건 원자 커밋 5분.',
+      },
+      {
+        title: '🎮 Game Designer — UGC크리에이터$2.2B(+47%YoY)·퍼즐D30=5.35%·온보딩진행바미채택90%이탈·HarmonixPatchwork동적음악',
+        description:
+          'Naavik State of UGC 2026 리포트: Roblox+Fortnite+Overwolf 3대 UGC 생태계 크리에이터 페이아웃 2025년 $2.2B(+47% YoY), Fortnite Festival Harmonix Patchwork 동적 음악 시스템으로 UEFN UGC 곡 제작 인프라 확장 중·Beat Saber도 커뮤니티 차트 중심으로 진화. 모바일 퍼즐 D30 벤치마크 5.35%(장르 최상위)지만 Game Growth Advisor 2026-03 진단은 "길드·커뮤니티 허브 없는 게임은 이탈자가 안 보여서 더 쉽게 떠난다". Supersonic D30+ 플레이북=주간 랭킹+시즌 업데이트 LiveOps 사이클 핵심. 온보딩 진행 표시(Progress Indicator) 도입 제품 78%·미도입 앱 90% 이탈. 제안: MeowBeat "냥友 길드 채보 공유" MVP — 길드 최대 10명·주간 지정곡 1개를 길드원이 ★1~3 스탬프로 채우기·누적 점수 시즌 랭킹·기존 manifest.json 곡 "유저 제작 Hard 채보" 업로드 1슬롯(JSON 전용·오디오 제외로 검열 부담 최소). Firebase 무료 티어+GuildHubScene·길드 CRUD·주간 리셋 크론·2주 스프린트(Unity 8일+백엔드 4일+QA 2일). 온보딩은 첫 3곡에 진행바+"집사 레벨 1→5" 마일스톤.',
+      },
+      {
+        title: '💻 Developer — Unity6.5Breaking(2026-03-27)·ECS 6.7LTS점진·InputSystem1.10UI브레이킹·NumLinkGetComponent810건(MeowBeat82건10배)',
+        description:
+          'Unity 6.5 breaking changes 2026-03-27 공지: 6.7 LTS까지 분기별 지원 릴리스 확정·Android thin LTO 빌드·Shader Graph Stencil 지원, CoreCLR 에디터는 6.8 목표. ECS/DOTS 상태(2025-12): 2026 Unite Barcelona에서 incremental 아키텍처 업데이트 로드맵 공개·6.7 LTS까지 점진 안정화(2026 연내 stable 불투명). Input System 1.10: `InputSystem_Actions.inputactions` 에셋 분리 필수·`InputSystem.actions`는 edit-mode 전용·UI 액션맵 이름 변경 시 UI Toolkit 입력 깨짐(브레이킹). 코드 부채 신규 축: NumLink `GetComponent<>()`+`FindObjectOfType` 호출 810건 vs MeowBeat 82건(10배 격차) — 전역 지침 ServiceLocator 원칙 전면 위반, uitoolkit 브랜치 머지 시 Inspector 재직렬화로 런타임 탐색 추가 증가 우려. NumLink async void 13건 vs MeowBeat 0건(MeowBeat는 청정). 제안: NumLink Update/FixedUpdate 내 `GetComponent<>()` 호출만 우선 캐싱 리팩터(1개 씬·1 PR 단위) 착수. Input System 1.10은 uitoolkit 머지 후 UI 액션맵 브레이킹 조사 후 보류.',
+      },
+      {
+        title: '🔍 QA Tester — MainScene.bak_btn15일째(4-07생성)·NumLinkTools8일째부재·MeowBeat__pycache__gitignore우려·Screenshots2.1MB',
+        description:
+          '어제 P0 3건 중 1건 해소·2건 미해소. (1) 미해소: MeowBeat `Assets/Scenes/MainScene.unity.bak_btn`+`.meta` 여전히 Assets 내부 상주(2026-04-07 생성·1.6MB·15일째·Unity가 매 refresh마다 씬 자산으로 import 중). (2) 해소: `Assets/Tests/Editor/` 폴더 자체 부재로 AutoGenTests 4파일 삭제 상태 확정. (3) 미해소: NumLink `Tools/`·`test_fixtures/` 루트 부재(8일째)·`unity_validate.py` 프로젝트 어디에도 없음·`test_board_generator.py` 1개만 루트. 보너스 해소: MeowBeat Tools/state/ 부재·_Recovery/ 부재(복구 작업 종료). 신규 리스크 2건: (A) MeowBeat `Tools/__pycache__/` cpython-314 .pyc 3개(beat_extractor·note_generator·scene_analyzer) 커밋 오염 위험·.gitignore 누락 가능성 (B) NumLink `Screenshots/` 25개 2.1MB 누적 레포 비대화+`.omc/handoffs/final.md` "UI Redesign USS var() 전환" 최종 검증 보고 미종결. 제안: MainScene.bak_btn 2파일을 `C:/Unity/Feedme/_backups/`로 즉시 이동 — 15일째 매 refresh 1.6MB 중복 임포트 중, import 시간·meta 충돌 리스크 누적.',
+      },
+      {
+        title: '📢 Content Writer — GooglePlayCSL비활성사용자GA·TikTokSparkCPI$1.50-5.00(-30%)·SteamNextFest2026-2Windrose35.1만·데모전환43.2%',
+        description:
+          'Google Play Custom Store Listing 2026 확장: 2025년부터 "비활성 사용자(inactive users)" 타겟팅 GA — 28일 이상 미접속/삭제 이탈자에게 별도 CSL 노출, 광고 메시지-스토어 페이지 불일치 시 CPI 상승·CSL 연결 시 전환율 개선 확인. TikTok Spark Ads 2026 모바일 게임 평균 CPI $1.50-5.00, Spark Ads 활용 시 20-30% 비용 절감. 하이브리드 크리에이티브(SLG+캐주얼 퍼즐 믹스)가 CPI 감소 핵심, 상위 게임사는 분기당 2,400-2,600개 크리에이티브 변형 생산(전년비 +25-30%). Steam Next Fest 2026-02 결과: 1위 Windrose 35.1만 신규 위시리스트, Vampire Crawlers 13만(총 위시리스트의 43.2%)·Burglin\' Gnomes는 위시리스트의 절반이 데모 플레이 — "핵심 훅 강한 데모"가 전환 지표 1순위. 제안: NumLink "Google Play CSL 3종 분기 캠페인" — ①기본(글로벌 키워드) ②"퍼즐 복귀러" CSL(28일 이탈자·"3분 짬내서 풀던 그 퍼즐" 카피+짧은 영상) ③TikTok Spark Ads 연결 CSL(15초 원테이크+하이라이트 자막). 하이브리드 크리에이티브 5개 변형 + Spark Ads로 CPI $1.50 목표 — NumLink는 3분 세션성·즉각 만족감이 핵심 훅이라 복귀러·Spark Ads와 궁합 최적.',
+      },
+      {
+        title: '⚙️ DevOps — NumLink/MeowBeat.github부재지속·agent-office5/5성공·OIDC CustomProperties GA(3-12)·VercelHobby100GB vs CFPages무제한',
+        description:
+          'NumLink `.github` 부재·CI/CD 0건·Unity 빌드 자동화 미구축(Editor 통합 필요 상태와 일치). MeowBeat(Feedme) `.github` 부재·Unity WebGL 빌드 수동·노트 manifest 검증 자동화 공백. agent-office `deploy-pages.yml`+`weekly-insights.yml` 2개 정상·최근 5회 전부 success(최신 04-20 19:09Z Deploy Pages 성공). 신규 CI/CD 트렌드: (1) GitHub Actions OIDC 커스텀 프로퍼티 GA(2026-03-12) — 리포지토리 custom properties를 OIDC 클레임으로 사용해 클라우드 trust policy 세분화·Action allowlisting 전 플랜 확대로 reusable workflow 공격면 축소. (2) Vercel Hobby 2026 유지 100GB/1M Edge req/월 vs Cloudflare Pages 대역폭 무제한·agent-office 트래픽 증가 시 100GB 초과 Vercel $40/100GB 과금·CF Pages 0원(단 CF Pages 빌드 500분 vs Vercel 6,000분). 제안: NumLink·MeowBeat에 `.github/workflows/validate.yml` 최소 스캐폴드 추가 — `unity_validate.py`+`qa_static.py` 정적 검증 push 시 실행·Unity 빌드 없이 순수 Python이라 무료 분 0 소모·회귀 방지 즉효. agent-office는 현 Vercel 유지·대역폭 50GB 돌파 시 Cloudflare Pages 마이그레이션 재검토 트리거 설정.',
+      },
+      {
+        title: '🎨 Art Director — Material3Expressive(2025말46리서치·1.8만참여자)·BentoGrid2.0코너12-24px·리듬3단피드백(Pre→Immediate→Post)',
+        description:
+          '2026 UI/UX 3대 트렌드. (1) Material 3 Expressive(Google, 2025말 정식) — 46개 리서치·1.8만 참여자 검증·스프링 모션 피직스+다이나믹 셰이프+진동형 컬러·"감정 공명 인터페이스"로 게임 UI 흡수 중·Real Racing 사례 체크. (2) Bento Grid 2.0 모바일 정복 원년 — 12~24px 과장 코너 라운딩+키네틱 타이포+스크롤 반응 타일·사이즈 비대칭 모듈로 "Daily/Now Playing" 강조·게임 콘솔·VR 헤드셋 UI까지 확산. (3) 리듬게임 3단 피드백 루프 — Pre-feedback(look-ahead)→Immediate(hit 순간)→Post-feedback(정확도 리포트) 분리 설계, Post 결여 시 자가교정 불가·120Hz/240Hz 터치 샘플링 대응 판정창 조정 필수. 제안: MeowBeat "판정 Post-Feedback 레이어 추가" — 현재 Hit Immediate 이펙트만 있고 Post 부재, 16마디/코러스 전환 지점마다 화면 상단 Bento Grid 2.0 스타일 미니 스코어카드(Perfect%/Good%/Miss 수) 2초 슬라이드인·Material 3 Expressive 스프링 이즈(overshoot 120%) 튕김·코너 라운딩 16px·곡 무드 컬러 다이나믹 착색. "어느 구간에서 밀렸나" 실시간 자가진단 → 재도전 동기 강화, 뉴모피즘2026·멀티센서리·핸드크래프트 중복 없음.',
+      },
+    ],
+    meetingTitle:
+      '🏢 4/22 데일리 스탠드업 — NumLink10일째미커밋·MainScene.bak_btn15일째·Tools8일째·GetComponent810건·UGC$2.2B·Unity6.5Breaking·Material3Expressive·TikTokSparkCPI-30%',
+    meetingSummary:
+      '오늘 핵심은 "이월 사슬을 끊는 회의 직후 15분 실행 블록". 어제 P0 4건 중 2건 해소(AutoGenTests 삭제 확정·Debug.Log -17건), 2건 미해소(MainScene.bak_btn·NumLink Tools). 신규 고정 리스크 3건 추가: NumLink GetComponent 810건(MeowBeat의 10배)·__pycache__ .gitignore 누락 우려·Screenshots 2.1MB 누적. 결론: (1) 회의 직후 15분 즉시 — MainScene.bak_btn 2파일 `_backups/` 이동(5분·15일 이월 종결)+NumLink Tools cp -r 복사(5분·10일 이월 종결)+NumLink 34파일 중 안전 1건 원자 커밋(5분). (2) 오늘 P0 — NumLink Update/FixedUpdate 내 GetComponent 호출만 1개 씬·1 PR 캐싱 리팩터 착수(부채 810건 점진 정리 시작). (3) P0 — MeowBeat Debug.Log 잔존 28건(FarmFoodManager 5+Cats 7+GameManager 16) [Conditional("DEV")] 래퍼 일괄 적용. 신규 전략 P1: (A) MeowBeat "냥友 길드 채보 공유" MVP GDD 뼈대(길드 10명+주간 지정곡+UGC Hard 채보 1슬롯·2주 스프린트)로 4/21 "4주 시즌 트랙"을 UGC+커뮤니티 축으로 확장 — D30 5.35% 벤치마크 상향·길드 커뮤니티 허브로 이탈자 가시화. (B) NumLink·MeowBeat `.github/workflows/validate.yml` 최소 스캐폴드(unity_validate+qa_static Python 전용·Unity 빌드 0). (C) MeowBeat 판정 Post-Feedback 레이어(16마디 Bento Grid 2.0 미니 스코어카드). P2: NumLink Google Play CSL 3종 분기 캠페인(기본+복귀러+TikTok Spark Ads 연결)·Input System 1.10 업그레이드 보류(UI 액션맵 브레이킹 조사 후)·Unity 6.5 breaking changes 모니터링·__pycache__ .gitignore 보강.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '어제(#41) P0 4건 중 2건 해소·2건 미해소입니다. AutoGenTests는 Tests/Editor 폴더 자체 부재로 삭제 확정됐고 Debug.Log는 146→129건으로 17건 줄었습니다. 문제는 MainScene.bak_btn이 실은 2026-04-07 생성이라 오늘 15일째 상주 중이고 NumLink Tools는 10일째입니다. NumLink는 마지막 실제 코드 커밋이 1358503(4-12 fix build)로 오늘 10일째 미커밋이고 feature/uitoolkit 브랜치에 34파일이 누적되어 머지 충돌 리스크가 급증하고 있습니다. 회의 직후 15분 블록을 확정합니다. 첫 5분: MainScene.bak_btn 2파일을 `C:/Unity/Feedme/_backups/`로 이동합니다. 다음 5분: `cp -r C:/Unity/_ProjectTemplate/Tools C:/Unity/NumLink/Tools` 한 줄로 10일 이월을 종결합니다. 마지막 5분: NumLink 34파일 중 가장 안전한 단위 1건만 원자 커밋해 10일 정체를 깹니다. 이 블록을 끝내야 오늘의 다른 P0가 순서대로 돌아갑니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: 'Naavik 2026 UGC 리포트가 결정적 수치를 제공했습니다. Roblox+Fortnite+Overwolf 3대 UGC 크리에이터 페이아웃이 2025년 $2.2B, YoY +47%입니다. Fortnite Festival은 Harmonix Patchwork 동적 음악으로 UEFN UGC 곡 제작 인프라를 확장했고 Beat Saber도 커뮤니티 차트 중심으로 진화했습니다. 모바일 퍼즐 D30 벤치마크는 5.35%로 장르 최상위지만 Game Growth Advisor 2026-03 진단은 "길드·커뮤니티 허브 없는 게임은 이탈자가 안 보여서 더 쉽게 떠난다"입니다. 온보딩 진행 표시가 없는 앱은 90% 이탈합니다. 어제 제안한 "4주 시즌 트랙"을 "냥友 길드 채보 공유"로 확장합니다. 길드 최대 10명, 주간 지정곡 1개를 길드원이 ★1~3 스탬프로 채우고, 누적 점수로 시즌 랭킹. UGC는 풀 오픈이 아니라 기존 manifest.json 곡에 대한 "유저 제작 Hard 채보 1슬롯"만 열어 검열 부담을 최소화합니다. MVP는 Firebase 무료 티어+GuildHubScene 단일 씬에 2주 스프린트(Unity 8일+백엔드 4일+QA 2일)로 산정했습니다. 온보딩은 첫 3곡에 진행바와 "집사 레벨 1→5" 마일스톤을 반드시 넣습니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'Unity 6.5 breaking changes가 2026-03-27 공지로 떴습니다. 6.7 LTS까지 분기별 지원 릴리스가 확정됐고 Android thin LTO 빌드와 Shader Graph Stencil이 추가됐습니다. CoreCLR 에디터는 6.8 목표입니다. ECS/DOTS는 2026 Unite Barcelona에서 incremental 로드맵만 공개돼 2026 연내 stable이 사실상 힘들어 보입니다. Input System 1.10은 `InputSystem_Actions.inputactions` 에셋 분리가 필수이고 UI 액션맵 이름 변경 시 UI Toolkit 입력이 깨지는 브레이킹이 있습니다. NumLink uitoolkit 브랜치 머지 후로 업그레이드를 보류하고 조사를 먼저 해야 합니다. 신규 부채 정량화가 충격적입니다. NumLink는 `GetComponent<>()`+`FindObjectOfType` 호출이 810건, MeowBeat는 82건으로 10배 격차입니다. 전역 지침 ServiceLocator 원칙이 전면 위반 상태이고 uitoolkit 브랜치 머지 시 Inspector 재직렬화로 런타임 탐색이 더 늘어날 위험이 있습니다. async void는 NumLink 13건, MeowBeat 0건으로 MeowBeat는 청정합니다. 오늘 제안은 NumLink Update/FixedUpdate 내 `GetComponent<>()` 호출만 1개 씬, 1 PR 단위로 캐싱 리팩터 착수입니다. 전체 810건 일괄은 비현실적이니 Update 루프 스코프로 시작합니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '어제 P0 3건 중 1건 해소 2건 미해소입니다. 가장 오래 방치된 건 MainScene.unity.bak_btn+meta 2파일이 2026-04-07 생성으로 오늘 15일째 Assets 내부에 상주 중이라는 것입니다. 1.6MB 짜리가 매 Unity refresh마다 씬 자산으로 import되고 있어서 import 시간과 meta 충돌 리스크가 누적됩니다. 5분만 있으면 _backups/로 옮겨 즉시 해소됩니다. AutoGenTests는 Tests/Editor 폴더 자체가 부재해 삭제가 확정됐고 MeowBeat Tools/state와 _Recovery도 복구 작업이 끝나 청소됐습니다. NumLink Tools는 8일째 부재이고 unity_validate.py가 프로젝트 어디에도 없어서 회귀 방어망이 전무합니다. 신규 리스크 2건 보고합니다. 첫째, MeowBeat Tools/__pycache__에 cpython-314 .pyc 3개(beat_extractor·note_generator·scene_analyzer)가 있는데 .gitignore에 등록돼 있는지 확인이 필요합니다. 둘째, NumLink Screenshots 폴더에 25개 2.1MB가 누적돼 레포가 비대화되고 있고 .omc/handoffs/final.md에 "UI Redesign USS var() 전환" 최종 검증 보고가 미종결입니다. 오늘 최우선은 MainScene.bak_btn 이동입니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '구글플레이 Custom Store Listing이 2026 들어 "비활성 사용자" 타겟팅을 GA로 풀었습니다. 28일 이상 미접속 또는 삭제한 이탈자에게 별도 CSL을 노출할 수 있고 광고 메시지와 스토어 페이지 불일치 시 CPI가 오르니까 CSL 연결 시 전환율 개선이 검증됐습니다. TikTok Spark Ads는 2026 모바일 게임 평균 CPI $1.50-5.00에서 20-30% 비용 절감이 가능하고 상위 게임사는 분기당 크리에이티브 2,400-2,600개 변형을 생산하고 있습니다. 전년 대비 +25-30% 증가입니다. Steam Next Fest 2026-02 결과가 결정적입니다. 1위 Windrose가 35.1만 신규 위시리스트를 얻었고 Vampire Crawlers는 13만 위시리스트 중 데모 플레이가 43.2%를 견인했습니다. Burglin\' Gnomes는 위시리스트의 절반이 데모 플레이에서 왔습니다. "핵심 훅 강한 데모"가 전환 1순위로 확정됐습니다. 오늘 제안은 NumLink Google Play CSL 3종 분기 캠페인입니다. 기본+복귀러(28일 이탈자·"3분 짬내서 풀던 그 퍼즐" 카피+짧은 영상)+TikTok Spark Ads 연결(15초 원테이크+하이라이트 자막)의 3개 리스팅 세트입니다. 하이브리드 크리에이티브 5개 변형과 Spark Ads로 CPI $1.50을 목표합니다. NumLink는 3분 세션성과 즉각 만족감이 핵심 훅이라 복귀러와 Spark Ads 양쪽과 궁합이 최적입니다.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'NumLink와 MeowBeat 양쪽 `.github` 부재가 지속됩니다. agent-office는 deploy-pages.yml과 weekly-insights.yml이 정상이고 최근 5회 전부 success입니다. 최신은 04-20 19:09Z Deploy Pages 성공입니다. 신규 트렌드 2건입니다. GitHub Actions OIDC가 2026-03-12 custom properties를 GA로 풀어 리포지토리 custom properties를 OIDC 클레임으로 사용해 클라우드 trust policy 세분화가 가능해졌고, Action allowlisting도 전 플랜으로 확대되어 reusable workflow 공격면이 축소됩니다. 또 하나, Vercel Hobby 2026은 100GB/1M Edge req/월을 유지하는데 Cloudflare Pages는 대역폭 무제한입니다. agent-office 트래픽이 늘면 Vercel은 100GB 초과 시 $40/100GB 과금이고 CF Pages는 0원입니다. 단 CF Pages 빌드는 500분으로 Vercel 6,000분보다 빡빡합니다. 오늘 제안은 NumLink와 MeowBeat 둘 다에 `.github/workflows/validate.yml` 최소 스캐폴드를 추가하는 것입니다. unity_validate.py와 qa_static.py 정적 검증만 push 시 실행하니까 Unity 빌드 없이 순수 Python이라 무료 분 소모가 0이고 회귀 방지가 즉효입니다. agent-office는 Vercel 유지하되 대역폭 50GB 돌파 시점에 Cloudflare Pages 마이그레이션 재검토를 트리거로 걸어둡니다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '2026 UI/UX 3대 트렌드를 정리했습니다. 첫째, Material 3 Expressive가 2025년말 정식입니다. 46개 리서치와 1.8만 참여자 검증으로 스프링 모션 피직스+다이나믹 셰이프+진동형 컬러가 "감정 공명 인터페이스"로 게임 UI에 흡수되고 있고 Real Racing에서 먼저 체크됩니다. 둘째, Bento Grid 2.0이 모바일 정복 원년으로 12~24px 과장 코너 라운딩+키네틱 타이포+스크롤 반응 타일이 특징이고 사이즈 비대칭 모듈로 "Daily/Now Playing" 강조가 일반화됐습니다. 셋째, 리듬게임 3단 피드백 루프가 베스트 프랙티스입니다. Pre-feedback(look-ahead)→Immediate(hit 순간)→Post-feedback(정확도 리포트) 분리 설계가 핵심이고 Post가 없으면 자가교정이 불가합니다. 120Hz/240Hz 터치 샘플링 대응 판정창 조정도 필수입니다. 오늘 제안은 MeowBeat "판정 Post-Feedback 레이어 추가"입니다. 지금 MeowBeat은 Hit Immediate 이펙트만 있고 Post가 부재입니다. 16마디 또는 코러스 전환 지점마다 화면 상단에 Bento Grid 2.0 스타일 미니 스코어카드(Perfect% Good% Miss 수)를 2초 슬라이드인으로 띄우고 Material 3 Expressive 스프링 이즈(overshoot 120%)로 튕기듯 등장시킵니다. 코너 라운딩 16px, 곡 무드 컬러 다이나믹 착색으로 "어느 구간에서 밀렸나"를 실시간 자가진단시켜 재도전 동기를 강화합니다. 뉴모피즘2026·멀티센서리·핸드크래프트와 중복이 없어 4/21 스킬과 스택됩니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: 'P0: 15분 이월 종결 블록 — MainScene.bak_btn 이동 + Tools 복사 + NumLink 1건 원자 커밋',
+        description:
+          '회의 직후 15분 연속 블록. (1) MeowBeat `MainScene.unity.bak_btn`+meta 2파일 `C:/Unity/Feedme/_backups/`로 이동(15일 이월 종결). (2) `cp -r C:/Unity/_ProjectTemplate/Tools C:/Unity/NumLink/Tools`+씬 경로 상수 업데이트(10일 이월 종결·qa_static 가동). (3) NumLink 34파일 중 안전 1건 원자 커밋(10일 미커밋 사슬 절단).',
+      },
+      {
+        title: 'P0: NumLink GetComponent 810건 Update/FixedUpdate 스코프 캐싱 착수',
+        description:
+          'MeowBeat 82건의 10배 격차·ServiceLocator 원칙 전면 위반. 전체 810건 일괄 불가 → Update/FixedUpdate 내 호출만 1개 씬·1 PR 단위로 캐싱 리팩터. uitoolkit 브랜치 머지 전에 점진 정리 시작.',
+      },
+      {
+        title: 'P0: MeowBeat Debug.Log 잔존 28건 [Conditional("DEV")] 래퍼 일괄 적용',
+        description:
+          'FarmFoodManager 5+Cats 7+GameManager 16=28건 대상. 146→129(-17) 소폭 진전을 마무리. 래퍼 도입으로 릴리스 빌드에서 자동 제외, 146건 전체가 아닌 잔존 28건만 스코프.',
+      },
+      {
+        title: 'P1: NumLink·MeowBeat `.github/workflows/validate.yml` 최소 스캐폴드',
+        description:
+          '`unity_validate.py`+`qa_static.py` 정적 검증을 push 트리거로 실행. Unity 빌드 없이 순수 Python이라 무료 분 소모 0·회귀 방지 즉효. MeowBeat는 Tools 구조 이미 존재, NumLink는 P0-Tools 완료 후 2단계.',
+      },
+      {
+        title: 'P1: MeowBeat "냥友 길드 채보 공유" MVP GDD 뼈대',
+        description:
+          '4/21 "4주 시즌 트랙"을 UGC+커뮤니티 축으로 확장. 길드 10명+주간 지정곡+★1~3 스탬프+시즌 랭킹+UGC Hard 채보 1슬롯(JSON). Firebase 무료 티어+GuildHubScene·2주 스프린트. D30 5.35% 상향·이탈자 가시화 목적.',
+      },
+      {
+        title: 'P1: MeowBeat 판정 Post-Feedback 레이어 (16마디 Bento Grid 미니 스코어카드)',
+        description:
+          '현재 Immediate hit 이펙트만 있고 Post 부재. 16마디/코러스 지점마다 화면 상단 Bento Grid 2.0 스타일 미니 스코어카드(Perfect%/Good%/Miss) 2초 슬라이드인·Material 3 Expressive 스프링 이즈 overshoot 120%·코너 16px. 자가교정+재도전 동기 강화.',
+      },
+      {
+        title: 'P1: MeowBeat 온보딩 진행 표시 (첫 3곡 "집사 레벨 1→5" 마일스톤)',
+        description:
+          'Supersonic 2026 데이터: 진행 표시 미채택 앱 90% 이탈. 첫 3곡에 진행바+집사 레벨 마일스톤 의무 배치. "냥友 길드" MVP와 함께 온보딩 레이어 구축.',
+      },
+      {
+        title: 'P2: NumLink Google Play CSL 3종 분기 캠페인 + TikTok Spark Ads 연결',
+        description:
+          '①기본(글로벌 키워드) ②"퍼즐 복귀러" CSL(28일 이탈자·"3분 짬내서 풀던 그 퍼즐"+짧은 영상) ③TikTok Spark Ads 연결 CSL(15초 원테이크+하이라이트 자막). 하이브리드 크리에이티브 5변형·CPI $1.50 목표. 복귀러 타겟팅 GA 활용.',
+      },
+      {
+        title: 'P2: Unity 6.5 breaking changes + Input System 1.10 모니터링',
+        description:
+          '6.5 breaking 2026-03-27 공지(Android thin LTO·Shader Graph Stencil·CoreCLR 6.8). Input System 1.10 UI 액션맵 이름 변경 시 UI Toolkit 입력 깨짐 — uitoolkit 머지 후 조사 먼저, 업그레이드는 보류.',
+      },
+      {
+        title: 'P2: MeowBeat `__pycache__` .gitignore 보강 + NumLink Screenshots 정리',
+        description:
+          'Tools/__pycache__/ cpython-314 .pyc 3개 .gitignore 등록 여부 확인·필요 시 추가. NumLink Screenshots/ 25개 2.1MB 선별 삭제 또는 Git LFS 고려. 레포 비대화 방지.',
+      },
+      {
+        title: 'P2: agent-office Vercel/Cloudflare Pages 마이그레이션 트리거 설정',
+        description:
+          'Vercel Hobby 100GB vs CF Pages 무제한 대역폭(단 빌드 500분 vs 6,000분). 50GB 돌파 시점에 CF Pages 재검토 트리거. GitHub Actions OIDC custom properties GA(3-12) 적용 여부도 동시 검토.',
+      },
+    ],
+  },
+  {
     id: '2026-04-21T04:00:00-daily-standup',
     date: '2026-04-21',
     researchTitle:
