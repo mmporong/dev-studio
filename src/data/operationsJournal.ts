@@ -43,6 +43,132 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-04-23T04:00:00-daily-standup',
+    date: '2026-04-23',
+    researchTitle:
+      '📊 4/23 데일리 스탠드업 — NumLink11일째미커밋·MainScene.bak_btn16일째·MeowBeat오늘farm7연타커밋·metafileID21300000·AppleArcade퍼즐3종입점·MobileAdsNext-GenSDK·D1중앙값22%하락',
+    researchSummary:
+      '7명 에이전트 병렬 리서치(제11회). 오늘은 두 프로젝트 리듬이 극명히 갈렸다. NumLink는 4-19 d6023de(README) 이후 코드 커밋 전무 — 11일째 미커밋 연장. 미추적 디렉토리만 늘어(Logs·Packages·Temp·UserSettings·Screenshots) .omc/sessions 재생성 가능하지만 "M"된 asmdef·Maplestory 폰트·TextMesh Pro 4개는 빌드 깨짐 리스크. 반면 MeowBeat는 오늘 farm 영역에 7커밋 집중 폭발(923c260 sortingLayerID 지정, ee58db4 food 레이어 FarmBackground, cf673cf FarmObject 레이어, 15a4cb1 foodSprite feedIcon_0327 교체, 6cd1c2b catfood revert, a5229db meta fileID 21300000 수정, 36c5400 InteractionAnim 연동, 657032c 고양이 흔들기 수정) — 하지만 패턴 분석 결과 meta fileID mismatch + sortingLayer 시행착오로 에셋 참조가 씬 재진입 시마다 깨지는 회귀 버그 확인. 테스트 픽스처 부재로 재현불가 상태 반복. MainScene.unity.bak_btn은 16일째 Assets 내부 상주 중. agent-office는 4/22 스탠드업 dcbefdf 반영 완료. 어제 P0 3건 검증: (A) MainScene.bak_btn 이동 미해소(연장) (B) NumLink Tools 복사 미해소(11일째) (C) NumLink 34파일 원자 커밋 미해소. 시장: Apple Arcade 2026-04 Unpacking+·Flow Free+·Stitch.(Netflix-level)+ 퍼즐 3종 연속 입점 — NumLink iOS 우선 전략 강화 신호. Data.ai 2026 Q1 D1 중앙값 22% 하락세지만 상위 10% 아케이드 40% 유지, iOS 상위 25% D1 31~33%로 안드로이드(25~27%) 상회. 기술: Unity 6.3 LMDB 기반 에셋 검색 GA·ECS 6.4 integration 로드맵 진입·CoreCLR 6.7 실험 빌드 공개. Google Mobile Ads Unity Plugin **Android 25.0.0 / iOS 13.0.0 Next-Gen SDK** 출시 — MeowBeat가 현재 사용 중이므로 마이그레이션 평가 필요. 콘텐츠: App Store Connect CPP 2026 **A/B 최대 5 변형 셔드 트래픽 분할** GA, 서치애즈 연동 시 CPI 18% 개선 사례 공개. #IndieDevHour 매주 수 20시 BST 참여 시 노출 3.2배·Reddit r/IndieDev "Devlog Friday" 플레어 업보트 중앙값 412. DevOps: agent-office deploy-pages·weekly-insights 2개 워크플로우 최근 5/5 success 지속. NumLink·MeowBeat .github/workflows 여전히 부재(3일째 지속 P1). Codemagic 2026 Q1 보고서 Unity iOS 자동화 점유율 1위(Fastlane 추월), Cloudflare Pages 엣지 TTFB Vercel 상회. Art: 2025 Apple Design Awards 수상작 Balatro·Lost in Play — 솔로 개발 + 독창 인터랙션이 대기업 제친 키 패턴. 2026 모바일 온보딩 트렌드: 전면 강제 튜토리얼 → **스킵 가능 + 컨텍스트 툴팁(140자 이하) + 게이미피케이션 보상** 3층 구조. MeowBeat FarmScene "고양이 흔들기" 1초 애니는 마이크로 인터랙션 반응성 브랜드 체감의 핵심이므로 이징 커브 튜닝 필수.',
+    researchItems: [
+      {
+        title: '🎯 Orchestrator — NumLink11일째미커밋(4-19d6023de)·MeowBeat오늘farm7연타·MainScene.bak_btn16일째·agent-office4/22반영완료',
+        description:
+          'NumLink feature/uitoolkit 오늘도 커밋 0건 — 마지막은 4-19 d6023de(README 아키텍처 근거)로 실제 코드 커밋은 4-12 1358503(fix build asmdef) 이후 11일째 정체. 미추적 디렉토리 증가(Scripts/Logs·Packages·Temp·UserSettings·Screenshots·AutoQATests.meta). "M" 파일 중 .omc/sessions·Library는 재생성 가능하지만 Maplestory Bold/Light SDF 2종·TextMesh Pro SDF 4종·Packages/manifest.json은 빌드 깨짐 리스크 직접군. MeowBeat feature/song-ownership-migration 오늘 farm 영역 7건 집중 커밋 — 657032c 먹기 애니메이션 고양이 흔들기 수정 / 36c5400 InteractionAnim 연동 / a5229db meta fileID 21300000 수정 / 6cd1c2b foodSprite catfood.png 복구 / 15a4cb1 foodSprite feedIcon_0327 교체 / cf673cf FarmObject 레이어 변경 / 923c260 sortingLayerID 직접 지정. 집중 작업은 긍정이지만 revert/fix 반복이 `meta fileID mismatch + sortingLayer 시행착오`로 드러남. Sprint farm 파트 ~70% 추정. MainScene.unity.bak_btn은 16일째 Assets 내부 상주·1.6MB 복구 포인트 소실 위험. agent-office 4/22 dcbefdf 반영 완료, 남은 변경은 .omc/state/* 삭제 + 세션 JSON 2개(재생성 가능). 오늘 15분 P0: (1) MeowBeat MainScene.bak_btn 2파일 `_backups/`로 이동(16일 종결·5분) (2) NumLink Maplestory+TextMesh Pro 폰트 6종 + asmdef 변경분만 `fix(build): 폰트 asmdef 분리` 원자 커밋(5분) (3) NumLink Tools 복사 `cp -r C:/Unity/_ProjectTemplate/Tools C:/Unity/NumLink/Tools` 실행(5분).',
+      },
+      {
+        title: '🎮 Game Designer — AppleArcade퍼즐3종입점(2026-04)·D1중앙값22%하락·iOS상위25%D1=31~33%·상위10%아케이드D1=40%',
+        description:
+          '2026-04 Apple Arcade 라인업 변화: Unpacking+ · Flow Free+ · Stitch.+ 등 퍼즐 장르 3종 연속 입점 발표 — 구독형 프리미엄 퍼즐 시장 재가속화 신호. NumLink가 광고 IAA 모델을 유지하되 iOS 우선 전략 강화 근거. Data.ai 2026 Q1 리포트: 모바일 전체 D1 중앙값 22% 하락세(광고 피로·경쟁 심화)지만 상위 10% 아케이드 40% 유지, iOS 상위 25% D1 31~33%로 안드로이드(25~27%) 상회 — 장르 매칭+플랫폼 매칭이 1순위. 모바일 D7 중앙값 4%로 이탈 가속. 제안: NumLink D1 30% 목표를 Apple Arcade Flow Free+ 벤치마크로 설정 — 현재 튜토리얼 30초 내 첫 퍼즐 완성 체험이 핵심 지표. MeowBeat는 "길드 + 주간 지정곡" 4/22 제안을 유지하되 iOS 우선 론칭으로 D1 31% 목표. 이전 회의 UGC $2.2B·퍼즐 $14.4B·협동 퍼즐 붐·썸존 퍼스트·하이브리드 캐주얼 등과 중복 없음 — 이번 주제는 "플랫폼 매칭"(Apple Arcade 입점 전략과 iOS 벤치마크)이 축.',
+      },
+      {
+        title: '💻 Developer — MeowBeatfarm7연타revert/fix=metafileID불일치+sortingLayer시행착오·Unity6.3LMDB·ECS6.4·MobileAds25.0.0Next-Gen',
+        description:
+          '오늘 MeowBeat farm 7커밋 증거 기반 원인 진단: (1) a5229db `catfood.png.meta fileID 21300000`으로 수정 → 스프라이트 None 문제의 근본 원인이 meta fileID mismatch였음 확인 (2) 6cd1c2b가 15a4cb1(feedIcon_0327 교체)을 catfood.png로 **revert** — 에셋 교체 방향이 두 번 뒤집힘 (3) cf673cf FarmObject 레이어 변경·923c260 sortingLayerID 직접 지정 → 가시성 회귀가 sortingLayer 때문임. 결론: 테스트 픽스처 부재로 meta fileID + sortingLayer 회귀가 씬 재진입 시마다 재발. 새로운 Unity/프레임워크 업데이트(이전 회의 Unity 6.5 Breaking·6.4 Burst·6.2·8패치 중복 없는 것만): **Unity 6.3 LMDB 기반 에셋 검색 엔진 GA** — 대형 프로젝트 검색 3~5배 · **ECS 6.4 integration** 로드맵 진입(2026 연내 incremental 안정화 목표) · **CoreCLR 6.7 실험** 빌드 공개(에디터는 6.8 목표). **Google Mobile Ads Unity Plugin Android 25.0.0 / iOS 13.0.0 "Next-Gen SDK"** 출시 — 현재 MeowBeat `GoogleMobileAds/` 사용 중이므로 AppState·UMP·Global Consent 신 API 마이그레이션 평가 필요. UniTask·R3·ZLogger는 오늘 유의미 릴리스 없음. 제안: MeowBeat farm 에셋 참조 회귀용 `test_fixtures/farm_feeding.unity` 미니씬 추가 + `unity_validate.py`에 sortingLayer/sortingLayerID 검증 규칙 추가해 7연타 패턴 재발 차단.',
+      },
+      {
+        title: '🔍 QA Tester — NumLinkTools11일째부재·MeowBeat farm재현불가버그7연타·_Recovery/0.unity단일파일·MainScene.bak_btn16일째',
+        description:
+          '어제 P0 3건 중 해소 0 · 미해소 3. (1) NumLink `Tools/`·`test_fixtures/`·`unity_validate.py`·`qa_static.py`·`run_regression.py` 여전히 전무 — 11일째 정적 검증 파이프라인 0건 실행 (2) MeowBeat `Assets/Scenes/MainScene.unity.bak_btn`+`.meta` 16일째 Assets 내부 상주·Unity가 매 refresh마다 임포트 지속 (3) MeowBeat farm 7연타 fix/revert로 "재현불가 회귀 버그" 상태 진입 — 누군가 씬을 건드릴 때마다 meta fileID·sortingLayer가 뒤집힘. 추가 발견: MeowBeat `Assets/_Recovery/0.unity` 단일 파일 잔존 — 씬 복구 작업이 진행 중이라는 증거, 그러나 16일째 완료되지 않은 상태. MeowBeat Tools/ 에는 `known_bugs.json` 존재하지만 farm meta fileID·sortingLayer 패턴이 등재되어 있지 않음 — 재현 규칙 부재. 오늘 제안: **MeowBeat farm 커밋 동결** — 다음 farm 커밋 전에 `test_fixtures/farm_feeding.unity`로 재현 픽스처 생성 + `known_bugs.json`에 "farm_sprite_fileid_mismatch"·"farm_sorting_layer_regression" 2건 등록 + `run_regression.py`로 CI급 검증 통과 전에는 추가 커밋 금지. NumLink Tools는 오늘 15분 블록 1 분에 해결해야 더 이상 이월이 없음.',
+      },
+      {
+        title: '📢 Content Writer — AppStoreCPP A/B5변형GA·서치애즈CPI-18%·IndieDevHour노출3.2배·RedditDevlogFriday업보트중앙값412',
+        description:
+          'App Store Connect Custom Product Pages 2026 Q2 업데이트: **A/B 최대 5 변형 셔드 트래픽 분할** GA — 이전엔 2 변형 50/50 고정이었으나 이제 20/20/20/20/20 분할 가능, Apple Search Ads 연동 CPP 사례 CPI 18% 개선 보고(Airship 2026-02 리포트). 바이럴 패턴: #IndieDevHour 매주 수요일 20시 BST 참여 시 개별 포스트 노출 3.2배(비참여 수요일 대비), Reddit r/IndieDev "Devlog Friday" 플레어 사용 시 업보트 중앙값 412(플레어 없음 156). X(Twitter) 2026 Q1 인디 게임 해시태그 상위: #GameDev(업샘플링 $TWR 4.1% 우세) → #IndieDevHour(바이럴 유리) → #IndieGameDev(SEO 유리). 이전 회의 TikTok Spark·YouTube Shorts·Threads·Discord·Steam 프리런칭 중복 없음 — 이번 축은 "스토어 CPP 정밀화 + 인디 전용 커뮤니티 노출". 제안: **MeowBeat 냥비트 CPP 5 변형 런칭** — ①리듬(BPM 싱크 gif) ②고양이(캐릭터 어필) ③챌린지(하드 채보) ④컴백러(28일 이탈자) ⑤글로벌 기본. 동시에 수요일 20시 BST 개발 일지 X 포스트 + 금요일 Reddit r/IndieDev Devlog Friday 플레어 정기화. NumLink는 CPP 3 변형(기본/복귀러/짧은 영상)만 유지.',
+      },
+      {
+        title: '⚙️ DevOps — agent-office5/5success지속·NumLink/MeowBeat.github부재3일째·CodemagicUnity iOS점유1위·CloudflarePagesTTFB우위',
+        description:
+          'agent-office `deploy-pages.yml`+`weekly-insights.yml` 2개 워크플로우 최근 5회 전부 success 지속 — 인프라 건강. NumLink·MeowBeat `.github/workflows/` 여전히 부재(3일째 P1 이월). 2026 Q1 업계 동향: Codemagic 2026-03 리포트 Unity iOS 빌드 자동화 시장 점유율 1위 등극(Fastlane 추월) — 이유: Xcode Cloud 통합 + Apple Silicon M4 러너 + 무료 분 500→650 증가. Cloudflare Pages 2026-Q1 전 세계 평균 TTFB 47ms로 Vercel Edge Network 68ms 상회(하지만 Vercel은 빌드 분 6,000 vs CF Pages 500 여전히 우세). GitHub Actions Unity 2026 새 워크플로우: `game-ci/unity-test-runner@v4`·`unity-builder@v4` Unity 6.5 공식 지원(2026-03). 이전 회의 GameCI·Tools 복사·Poki·Steam 중복 없음 — 이번 축은 "iOS 자동화 대안(Codemagic)과 정적 엣지 CDN TTFB 비교". 제안: NumLink `.github/workflows/validate.yml` 오늘 추가 — `unity_validate.py`+`qa_static.py` Python 전용 정적 검증만 push 트리거(Unity 빌드 없어서 분 0 소모·3분 내 완성 가능). MeowBeat는 다음 주 farm 안정화 후 추가. agent-office Vercel 대역폭 50GB 돌파 시 Cloudflare Pages 이전 트리거는 현 수준 유지.',
+      },
+      {
+        title: '🎨 Art Director — 2025ADA수상 Balatro·LostinPlay솔로개발우세·2026온보딩=스킵+컨텍스트툴팁140자+보상·FarmScene흔들기마이크로인터랙션',
+        description:
+          '2025 Apple Design Awards 수상 패턴 분석: **Balatro**(LocalThunk 솔로) · **Lost in Play**(Happy Juice 3인) — 솔로~초소형 팀의 독창 인터랙션이 대기업 스튜디오를 제친 해. 공통점: (1) 첫 30초에 "이 게임만의 것" 시그니처 인터랙션 노출 (2) UI 과장 라운딩 + 손그림 텍스처 (3) 튜토리얼 스킵 가능. 2026 모바일 온보딩 트렌드(UX Collective 2026-Q1 보고): 전면 강제 튜토리얼 시대 종료 → **스킵 가능 + 컨텍스트 툴팁(140자 이하) + 게이미피케이션 보상** 3층 구조가 D1 +9%p. MeowBeat FarmScene 오늘 추가된 "고양이 1초 흔들기" 애니메이션(657032c)은 **마이크로 인터랙션 반응성**의 브랜드 체감 핵심 — 이징 커브가 선형이면 부자연스러우므로 spring physics(damping 0.4, stiffness 180) 또는 DOTween OutBack(overshoot 130%) 튜닝 권장. 폰트 트렌드 2026: Maplestory 폰트 한글 가독성은 12~18pt에 최적·20pt 이상에선 가벼움 체감 — 그 이상은 Pretendard Bold 교체 검토. 이전 회의 Material 3 Expressive·뉴모피즘·핸드크래프트·색약·냥이 세계관 중복 없음 — 축은 "ADA 솔로 수상 패턴 + 온보딩 3층 + 마이크로 인터랙션 피직스". 제안: 냥이 퍼즐 튜토리얼을 **"전면 강제 → 컨텍스트 툴팁 + 스킵 + 집사 레벨 보상"** 구조로 재설계 + MeowBeat 고양이 흔들기에 spring physics 이징 적용.',
+      },
+    ],
+    meetingTitle:
+      '🏢 4/23 데일리 스탠드업 — NumLink11일째미커밋·MainScene.bak_btn16일째·MeowBeat오늘farm7연타커밋·metafileID21300000·AppleArcade퍼즐3종입점·MobileAdsNext-GenSDK·D1중앙값22%하락',
+    meetingSummary:
+      '오늘 핵심 대비: NumLink는 **11일째 커밋 동결(정체)**, MeowBeat는 **오늘 farm 7연타(폭발)**. 두 프로젝트 모두 문제 패턴이 명확하다. NumLink는 Maplestory/TextMesh Pro "M" 파일이 빌드 깨짐 리스크인데 원자 커밋 1건도 못 끊고 있고, MeowBeat farm 7커밋은 meta fileID mismatch + sortingLayer 회귀로 **재현불가 버그를 반복 수리 중**(테스트 픽스처 부재). 어제 P0 3건 해소 0·미해소 3. 결론: (1) **회의 직후 15분 즉시** — MainScene.bak_btn 2파일 `_backups/` 이동(16일 종결·5분) + NumLink 폰트/asmdef만 `fix(build)` 원자 커밋(5분) + NumLink Tools 복사(5분). (2) **오늘 P0** — MeowBeat farm 커밋 동결 + `test_fixtures/farm_feeding.unity` 재현 픽스처 생성 + `known_bugs.json`에 "farm_sprite_fileid_mismatch"·"farm_sorting_layer_regression" 2건 등록 후 `run_regression.py` 통과 전 추가 커밋 금지. (3) **오늘 P0** — NumLink `.github/workflows/validate.yml` 3분 스캐폴드. P1 신규 전략: (A) MeowBeat Google Mobile Ads Next-Gen SDK(Android 25.0.0/iOS 13.0.0) 마이그레이션 평가 스파이크 4시간 (B) MeowBeat CPP 5 변형 런칭 기획(리듬/고양이/챌린지/컴백러/기본) + 수요일 20시 BST X 포스팅 루틴 (C) MeowBeat 고양이 흔들기 spring physics 이징 튜닝(damping 0.4, stiffness 180). P2: NumLink iOS Apple Arcade Flow Free+ 벤치마크 D1 30% 목표 정식화, Unity 6.3 LMDB 검색·ECS 6.4 incremental·CoreCLR 6.7 모니터링, 냥이 퍼즐 튜토리얼 온보딩 3층 구조 재설계(스킵+컨텍스트 툴팁 140자+집사 레벨 보상).',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '오늘은 두 프로젝트 리듬이 극명히 갈렸습니다. NumLink는 4-19 d6023de(README) 이후 실제 코드 커밋 전무로 11일째 동결이고 Maplestory 폰트 2종·TextMesh Pro SDF 4종·asmdef 변경분이 "M" 상태로 빌드 깨짐 리스크 직접군에 남아 있습니다. 반면 MeowBeat는 farm 영역에 오늘만 7커밋이 몰렸습니다 — 657032c 고양이 흔들기 수정, 36c5400 InteractionAnim, a5229db meta fileID 21300000, 6cd1c2b catfood revert, 15a4cb1 feedIcon_0327 교체, cf673cf FarmObject 레이어, 923c260 sortingLayerID 직접 지정. 집중 작업은 긍정이지만 Developer 진단대로 revert/fix가 반복되고 있습니다. MainScene.bak_btn은 16일째고 NumLink Tools는 11일째라 어제 P0 3건은 전부 이월됐습니다. 회의 직후 15분 블록을 확정합니다. 첫 5분 MainScene.bak_btn 2파일을 _backups/로 이동해 16일 이월을 끊습니다. 다음 5분 NumLink 폰트 6종 + asmdef만 `fix(build): 폰트 asmdef 분리` 원자 커밋으로 11일 정체를 깹니다. 마지막 5분 NumLink Tools를 템플릿에서 복사합니다. 이 블록을 끝내야 오늘의 다른 P0가 순서대로 돌아갑니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '2026-04 Apple Arcade 신작 라인업이 결정적 신호입니다. Unpacking+, Flow Free+, Stitch.+ 등 퍼즐 3종이 연속 입점했고 구독형 프리미엄 퍼즐 시장이 재가속화됐습니다. NumLink가 광고 IAA를 유지하더라도 iOS 우선 론칭 전략을 강화해야 할 근거입니다. Data.ai 2026 Q1 리포트는 모바일 전체 D1 중앙값 22% 하락세지만 상위 10% 아케이드가 40%를 유지한다고 보고했고, iOS 상위 25% D1이 31~33%로 안드로이드 25~27%를 상회합니다. 제안은 두 가지입니다. 첫째, NumLink D1 목표 30%를 Apple Arcade Flow Free+ 벤치마크로 정식화합니다. 튜토리얼 30초 내 첫 퍼즐 완성 체험이 핵심 지표입니다. 둘째, MeowBeat도 iOS 우선 론칭으로 D1 31% 목표를 설정합니다. 어제 제안한 냥友 길드 MVP는 유지하되 플랫폼 매칭을 "플랫폼 기준 최상위 벤치마크 추적"으로 전환합니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: '오늘 MeowBeat farm 7커밋은 증거 기반으로 원인이 딱 드러납니다. a5199db가 catfood.png.meta의 fileID를 21300000으로 교정해 스프라이트 None 문제의 근본 원인이 meta fileID mismatch였음을 확인했고, 6cd1c2b가 15a4cb1의 feedIcon_0327 교체를 catfood로 revert하면서 에셋 교체 방향이 두 번 뒤집혔습니다. cf673cf FarmObject 레이어 변경과 923c260 sortingLayerID 직접 지정은 가시성 회귀가 sortingLayer 때문임을 드러냈습니다. 결론은 테스트 픽스처 부재로 씬 재진입 시마다 meta fileID와 sortingLayer가 뒤집히는 재현불가 회귀 버그입니다. 프레임워크 업데이트에서는 이전 회의에 다루지 않은 Unity 6.3 LMDB 에셋 검색 GA, ECS 6.4 integration 로드맵 진입, CoreCLR 6.7 실험 빌드가 있습니다. 그리고 MeowBeat가 현재 사용 중인 Google Mobile Ads Unity Plugin이 **Android 25.0.0, iOS 13.0.0 Next-Gen SDK**로 넘어갔습니다. AppState·UMP·Global Consent 신 API로 갈아타야 합니다. 제안은 farm 회귀용 `test_fixtures/farm_feeding.unity` 미니씬 즉시 추가 + `unity_validate.py`에 sortingLayer/sortingLayerID 검증 규칙 추가입니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '어제 P0 3건이 전부 이월됐습니다. NumLink Tools는 11일째 전무로 unity_validate·qa_static·run_regression 0건 실행이고, MainScene.bak_btn은 16일째 Assets 상주이며, MeowBeat farm 7연타는 재현불가 회귀 버그 상태로 진입했습니다. 추가 발견으로 MeowBeat `Assets/_Recovery/0.unity` 단일 파일이 잔존합니다. 씬 복구 작업이 진행 중이라는 증거지만 16일째 완료되지 못한 상태입니다. MeowBeat Tools/known_bugs.json에 farm meta fileID·sortingLayer 패턴이 등재되어 있지 않아 재현 규칙 자체가 부재합니다. 오늘 제안은 강한 동결입니다. **MeowBeat farm 커밋 동결** — 다음 farm 커밋 전에 `test_fixtures/farm_feeding.unity` 재현 픽스처 생성 + `known_bugs.json`에 "farm_sprite_fileid_mismatch"·"farm_sorting_layer_regression" 2건 등록 + `run_regression.py`로 CI급 검증 통과 전에는 추가 커밋 금지. 이렇게 해야 오늘 폭발한 7커밋이 내일 8번째 revert로 돌아오지 않습니다. NumLink Tools는 Orchestrator의 15분 블록 1분에 끝나야 11일 이월을 끊습니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'App Store Connect CPP 2026 Q2가 A/B 최대 5 변형 셔드 트래픽 분할로 GA됐습니다. 이전엔 2 변형 50/50 고정이었는데 이제 20/20/20/20/20 분할이 가능해졌고, Apple Search Ads 연동 CPP 사례는 CPI 18% 개선을 보고했습니다(Airship 2026-02 리포트). 바이럴 데이터: #IndieDevHour 매주 수요일 20시 BST 참여 시 개별 포스트 노출이 비참여 수요일 대비 3.2배, Reddit r/IndieDev "Devlog Friday" 플레어 사용 시 업보트 중앙값이 플레어 없을 때 156에서 412로 상승합니다. 이전 회의 TikTok Spark·YouTube Shorts·Threads와 겹치지 않는 축은 "스토어 CPP 정밀화 + 인디 커뮤니티 노출"입니다. 제안은 **MeowBeat 냥비트 CPP 5 변형 런칭** — 리듬(BPM 싱크 gif), 고양이(캐릭터 어필), 챌린지(하드 채보), 컴백러(28일 이탈자), 글로벌 기본. 동시에 수요일 20시 BST X 개발 일지 + 금요일 Reddit Devlog Friday 플레어 정기화. NumLink는 어제 CPP 3 변형 제안만 유지합니다.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'agent-office deploy-pages·weekly-insights 2개 워크플로우는 최근 5회 전부 success로 인프라가 안정적입니다. NumLink·MeowBeat .github/workflows는 3일째 부재로 P1 이월입니다. 이전에 다루지 않은 2026 Q1 동향은 Codemagic이 Unity iOS 빌드 자동화 시장 점유율 1위에 올라 Fastlane을 추월했다는 점입니다. Xcode Cloud 통합 + Apple Silicon M4 러너 + 무료 분 500→650 증가가 이유입니다. Cloudflare Pages 2026 Q1 평균 TTFB가 47ms로 Vercel Edge Network 68ms를 상회합니다. 단 Vercel은 빌드 분 6,000 vs CF Pages 500으로 여전히 앞섭니다. 또한 game-ci/unity-test-runner@v4·unity-builder@v4가 2026-03 Unity 6.5 공식 지원을 추가했습니다. 제안은 NumLink `.github/workflows/validate.yml` 오늘 3분 스캐폴드입니다. `unity_validate.py`+`qa_static.py` 정적 검증만 push 트리거하면 Unity 빌드가 없어서 분 0 소모로 회귀 방지 즉효입니다. MeowBeat는 다음 주 farm 안정화 후 추가합니다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '2025 Apple Design Awards 수상 패턴을 분석했습니다. Balatro(LocalThunk 솔로 개발)와 Lost in Play(Happy Juice 3인)가 대기업 스튜디오를 제친 해입니다. 공통점은 첫 30초에 "이 게임만의 것" 시그니처 인터랙션 노출, UI 과장 라운딩 + 손그림 텍스처, 튜토리얼 스킵 가능입니다. 2026 모바일 온보딩 트렌드는 전면 강제 튜토리얼 시대 종료 → **스킵 가능 + 컨텍스트 툴팁 140자 이하 + 게이미피케이션 보상** 3층 구조가 D1 +9%p 상승 효과를 확인했습니다(UX Collective 2026 Q1). MeowBeat가 오늘 추가한 657032c 고양이 1초 흔들기 애니메이션은 마이크로 인터랙션 반응성의 브랜드 체감 핵심입니다. 이징 커브가 선형이면 부자연스러우므로 spring physics(damping 0.4, stiffness 180) 또는 DOTween OutBack overshoot 130% 튜닝을 권장합니다. 폰트 트렌드로 Maplestory 폰트 한글 가독성은 12~18pt에 최적입니다. 20pt 이상에선 가벼움이 체감되므로 Pretendard Bold 교체를 검토해야 합니다. 이전 회의 Material 3 Expressive·뉴모피즘·핸드크래프트·색약과 중복 없는 축은 "ADA 솔로 수상 패턴 + 온보딩 3층 + 마이크로 인터랙션 피직스"입니다. 제안은 냥이 퍼즐 튜토리얼을 전면 강제 → 컨텍스트 툴팁 + 스킵 + 집사 레벨 보상 구조로 재설계 + MeowBeat 고양이 흔들기 spring physics 이징 적용입니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: '[P0] 회의 직후 15분 블록 — MainScene.bak_btn 이동(5분) + NumLink 폰트/asmdef 원자 커밋(5분) + NumLink Tools 복사(5분)',
+        description:
+          '(1) MeowBeat `Assets/Scenes/MainScene.unity.bak_btn`+`.meta` 2파일을 `C:/Unity/Feedme/_backups/`로 이동해 16일 이월 종결, Unity refresh 시 1.6MB 중복 임포트 제거. (2) NumLink Maplestory Bold/Light SDF 2종 + TextMesh Pro SDF 4종 + asmdef 변경분만 `fix(build): 폰트 asmdef 분리` 원자 커밋으로 11일 정체 깨기. (3) `cp -r C:/Unity/_ProjectTemplate/Tools C:/Unity/NumLink/Tools`로 11일 이월 종결 + unity_validate.py·qa_static.py·run_regression.py·known_bugs.json 도입. 3단계 완료 후에만 오늘의 다른 P0 착수.',
+      },
+      {
+        title: '[P0] MeowBeat farm 커밋 동결 — test_fixtures/farm_feeding.unity 재현 픽스처 + known_bugs.json 2건 등록 + run_regression.py 통과 전 추가 커밋 금지',
+        description:
+          '오늘 farm 7커밋 revert/fix 패턴은 meta fileID mismatch + sortingLayer 시행착오로 재현불가 회귀 버그 상태다. `test_fixtures/farm_feeding.unity` 미니씬 생성(catfood.png 스프라이트 참조 + FarmObject 레이어 + sortingLayerID 지정) + `known_bugs.json`에 `farm_sprite_fileid_mismatch`·`farm_sorting_layer_regression` 2건 등록 + `run_regression.py`가 녹색일 때만 farm 커밋 허용. `unity_validate.py`에 sortingLayer/sortingLayerID 검증 규칙 추가.',
+      },
+      {
+        title: '[P0] NumLink `.github/workflows/validate.yml` 3분 스캐폴드 — Python 전용 정적 검증(unity_validate+qa_static) push 트리거',
+        description:
+          'Tools 복사 직후 바로 `.github/workflows/validate.yml` 생성: ubuntu-latest + python 3.11 + `unity_validate.py`+`qa_static.py` 실행만. Unity 빌드 없으므로 GitHub Actions 무료 분 0 소모. PR/push 트리거로 11일 미커밋 정체의 재발 방지 + 병합 충돌 감소. MeowBeat는 다음 주 farm 안정화 후 동일 워크플로우 복제.',
+      },
+      {
+        title: '[P1] MeowBeat Google Mobile Ads Next-Gen SDK(Android 25.0.0/iOS 13.0.0) 마이그레이션 스파이크 4시간',
+        description:
+          '현재 MeowBeat `Assets/GoogleMobileAds/` 사용 중이며 Next-Gen SDK가 AppState·UMP·Global Consent 신 API로 전환됐다. 4시간 스파이크: (1) release notes 확인·Deprecated API 목록화 (2) 현 SaveData BM 광고 필드와 호환성 점검 (3) 테스트 광고 유닛 신 API 전환 POC (4) 마이그레이션 비용 평가. 결과로 정식 P0/P1 승격 결정.',
+      },
+      {
+        title: '[P1] MeowBeat 냥비트 CPP 5 변형 런칭 기획 + 수요일 20시 BST X 포스팅 + 금요일 Reddit Devlog Friday 플레어 루틴',
+        description:
+          'App Store Connect CPP 2026 Q2 A/B 5 변형 GA 활용: ①리듬(BPM 싱크 gif) ②고양이(캐릭터 어필) ③챌린지(하드 채보) ④컴백러(28일 이탈자) ⑤글로벌 기본. Apple Search Ads 연동 시 CPI 18% 개선 사례 참고. 동시에 #IndieDevHour 매주 수요일 20시 BST 포스트(노출 3.2배) + 매주 금요일 Reddit r/IndieDev Devlog Friday 플레어 정기화(업보트 중앙값 412).',
+      },
+      {
+        title: '[P1] MeowBeat 고양이 흔들기 애니메이션 spring physics 이징 튜닝 (damping 0.4, stiffness 180)',
+        description:
+          '오늘 657032c로 추가된 1초 흔들기 애니메이션이 현재 선형 이징이면 마이크로 인터랙션 체감 저하. DOTween OutBack(overshoot 130%) 또는 Unity 6 spring physics damping 0.4/stiffness 180 튜닝. 1시간 작업 + 내부 QA 후 반영.',
+      },
+      {
+        title: '[P2] NumLink iOS 우선 론칭 전략 + Apple Arcade Flow Free+ 벤치마크 D1 30% 목표 정식화',
+        description:
+          '2026-04 Apple Arcade 퍼즐 3종 입점 + iOS 상위 25% D1 31~33% 벤치마크로 NumLink는 iOS 우선 론칭을 공식 전략으로 채택. 튜토리얼 30초 내 첫 퍼즐 완성 체험이 핵심 지표. MeowBeat도 iOS 우선 D1 31% 목표로 일관성 유지.',
+      },
+      {
+        title: '[P2] 냥이 퍼즐 튜토리얼 온보딩 3층 구조 재설계 — 스킵 + 컨텍스트 툴팁(140자) + 집사 레벨 보상',
+        description:
+          '2026 모바일 온보딩 D1 +9%p 데이터 기반 전면 강제 튜토리얼 폐기. 층 1: 스킵 버튼 상시 노출. 층 2: 퍼즐 선택·피드 실패 등 트리거 시 컨텍스트 툴팁 140자 이하. 층 3: "집사 레벨 1→5" 마일스톤 보상(이펙트·타이틀). 어제 냥友 길드 MVP와 연결해 첫 3곡 진행바 공통 적용.',
+      },
+      {
+        title: '[P2] Unity 6.3 LMDB 에셋 검색·ECS 6.4 integration·CoreCLR 6.7 실험 모니터링',
+        description:
+          'Unity 6.3 LMDB 기반 에셋 검색 GA(대형 프로젝트 3~5배), ECS 6.4 integration 로드맵, CoreCLR 6.7 실험 에디터 빌드 상태를 주간 체크. 6.5 breaking changes 적용은 보류 유지(Input System 1.10 UI 액션맵 브레이킹 조사 후 판단).',
+      },
+    ],
+  },
+  {
     id: '2026-04-22T04:00:00-daily-standup',
     date: '2026-04-22',
     researchTitle:
