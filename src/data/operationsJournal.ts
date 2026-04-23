@@ -43,6 +43,147 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-04-24T04:00:00-daily-standup',
+    date: '2026-04-24',
+    researchTitle:
+      '📊 4/24 데일리 스탠드업 — NumLink11일정체깨짐·힌트즉시공개·크림톤전환·고양이세계관강화·MeowBeat오늘커밋0건·bak_btn17일째·Unity6.3LTS·퍼즐D7상위10%12%·PurposefulMotion200-500ms',
+    researchSummary:
+      '7명 에이전트 병렬 리서치(제12회). 어제와 정반대 리듬 전환. **NumLink 11일 동결이 깨졌다** — 어제 회의 후 cf7c897 힌트 기능(즉시 공개 + 신규 유저 1개 기본 지급·HintManager.cs 84줄 신규) / 78da36a 퍼즐 셀 크림 톤 전환 + HUD 하단 버튼 확대 / 00d9190 레벨선택 탭 이모지/텍스트 분리(active 색 오염 방지) / 01d8ee0 고양이 세계관 컨셉 강화 / df1aea1 SaveData 버전 관리 + BM 광고 필드 / 4debe05 Tests·폰트·브리프 미추적 추가 / 1358503 AutoGenTests asmdef overrideReferences false + TMP 참조 / d6023de README 아키텍처 근거 등 UI 중심 진전 10건 투하. 다만 NumLink 미커밋 여전 34건(폰트 SDF 6종·asmdef 삭제·Packages/manifest.json)으로 원자 커밋 필요. **MeowBeat는 어제 farm 7연타 이후 오늘 커밋 0건** — feature/song-ownership-migration 중간 상태에서 멈춤, 미커밋 36건 오히려 증가(FarmData.data·SongData.cs·GameManager.cs·Google Mobile Ads 4종 meta·manifest.json). MainScene.unity.bak_btn 17일째 Assets 내부 상주·1.6MB. 어제 P0 3건 전원 이월(MainScene.bak_btn 미이동, NumLink Tools 12일째 부재, MeowBeat farm test_fixtures/known_bugs.json 미등록). 시장: 2026 GameAnalytics 리포트 퍼즐 D7 리텐션 전 장르 1위·중앙값 D7 8%이나 **상위 10%는 D7 12%**, D30은 3% 미만 — "중기 유지"가 퍼즐 핵심 무기. 리듬게임 접근성 표준화: Muse Dash식 2버튼 + 조정 가능한 타이밍 윈도우(±50ms↔±120ms). 2026-04 모바일 게임 **45+ 신작 동시 출격** — 월말(4/28~30) 클러스터 회피 필수, 중순 출시 유리. TikTok/Shorts/Reels **주당 7~14클립 인디 표준**, 오가닉 바이럴 시대 종료 → 최소 $500~1,000 앰플리피케이션 필수. 기술: **Unity 6.3 LTS 2026년 현재 최신 정식 LTS**(지원 2027-12까지), 6.0 LTS 2026-10 EOL 임박 — NumLink/MeowBeat 6.3 LTS 마이그레이션 윈도우 진입. 6.5 Breaking Changes 2026-03-27 업데이트판 공지. DevOps: agent-office GitHub Pages 배포 **최근 5회 전부 success 유지**(36~41s). NumLink manifest.json에 MCP 패키지 교체(gamelovers→coplaydev unity-mcp beta) 미커밋 — WebGL 빌드 시 Library 캐시 무효화 리스크. MeowBeat Addressables link.xml 삭제 미커밋 → Android 빌드 시 코드 스트리핑 오류 리스크. Art: **2026 모바일 UI Purposeful Motion 200~500ms 마이크로 인터랙션** + 햅틱으로 시각 확인 대체, 완료 애니메이션 만족도 +28%. NumLink 어제 3종 변경(크림톤·고양이 세계관·탭 이모지 분리)은 "일러스트 캐주얼화" 2026 트렌드와 정합, 반면 MeowBeat farm 흔들기 1초(657032c)는 권장치(500ms) 2배 초과 → 피드백 지연 리스크.',
+    researchItems: [
+      {
+        title: '🎯 Orchestrator — NumLink11일동결깨짐·어제커밋10건(힌트즉시공개+셀크림톤+탭색오염fix+고양이세계관+SaveData버전)·MeowBeat오늘0건·bak_btn17일째·이슈#43 P0 3건전원이월',
+        description:
+          'NumLink feature/uitoolkit **어제 회의 후 10커밋 폭발 투하** — cf7c897 `feat(hint): 힌트 버튼 즉시 공개 기능 + 신규 유저 1개 기본 지급` (HintManager.cs 84줄 신규), 78da36a `style(ui): 퍼즐 셀 크림 톤 전환 + HUD 하단 버튼 확대`, 00d9190 `fix(ui): 레벨선택 탭 이모지/텍스트 분리로 active 시 색 오염 방지`, d6023de `docs: README에 아키텍처 선택 근거 및 빠른 시작 섹션 추가`, 4debe05 `chore: Tests/폰트/브리프 미추적 파일 추가`, 1358503 `fix(build): AutoGenTests asmdef overrideReferences false + TMP 참조 추가`, 1cf1dcf `fix(build): asmdef 중복 참조 제거 + Maplestory 폰트 적용`, 01d8ee0 `style(ui): 고양이 세계관 컨셉 강화 — 냥이 퍼즐 세계관 적용`, df1aea1 `feat(save): SaveData 버전 관리 + BM 광고 필드 추가`, 0273e1f `style(ui): 인게임 HUD 하단 버튼 라벨 폰트 크기 2배 적용`. 그러나 미커밋 34건 여전: Maplestory Bold/Light SDF 2종·TextMesh Pro SDF 4종·Packages/manifest.json(MCP 패키지 교체)·asmdef 삭제 4건(AutoGenTests). MeowBeat feature/song-ownership-migration은 **어제 farm 7연타 이후 오늘 커밋 0건** — 중간 상태에서 정체, 미커밋 36건으로 오히려 증가(FarmData.data·SongData.cs·GameManager.cs +59줄·Google Mobile Ads 4종 meta·Packages/manifest.json·ProjectSettings/AndroidResolverDependencies.xml·StreamingAssets/Songs/manifest.json). MainScene.unity.bak_btn 17일째 Assets 내부 상주. _Recovery/0.unity 단일 파일 복구 17일째 미종결. agent-office는 4/23 a5f88c7 스탠드업 반영 완료, .omc/state 삭제+세션 JSON 3개만 미추적. **이슈 #43 P0 3건 검증**: (A) MainScene.bak_btn 이동 → 17일째 연장 (B) NumLink Tools cp → 12일째 연장 (C) MeowBeat farm 커밋 동결 + test_fixtures/known_bugs.json 2건 등록 → 미해소. **오늘 15분 P0**: (1) NumLink asmdef 삭제 4건 → `chore(test): AutoGenTests 제거` 단일 원자 커밋(3분) (2) MeowBeat MainScene.unity.bak_btn `_backups/`로 이동(2분·17일 종결) (3) MeowBeat farm 미커밋 분리 커밋(feat(farm) vs chore(ads placeholder) 분리·10분).',
+      },
+      {
+        title: '🎮 Game Designer — 퍼즐D7전장르1위·중앙값D7=8%·상위10%=D7 12%·D30<3%·리듬접근성표준=2버튼+타이밍윈도우조정·NumLink7일출석트랙제안',
+        description:
+          '2026 GameAnalytics Mobile Retention Benchmarks 기준 **퍼즐 장르 D7 리텐션 전 장르 1위** — 중앙값 D7 8%이나 **상위 10%는 D7 12% 도달**. 반면 D30은 3% 미만으로 "중기 유지(D7~D14)"가 퍼즐 핵심 무기. 리듬게임 접근성 측면에서는 2026년 ACM 논문(Blind-Accessible Rhythm Game) 기반으로 **조정 가능한 타이밍 윈도우(±50ms → ±120ms) + Muse Dash식 2버튼 단순 조작**이 표준으로 자리잡음. NumLink 관점: 어제 추가된 힌트 즉시 공개 + 신규 유저 1개 기본 지급은 D1 보조 장치이지만 **D7 방어선이 생존선** — 현재 중앙값 8% 언저리에서 상위 10% 12%로 올리려면 "7일 연속 고양이 먹이주기" 연속 보상 루프 필수. MeowBeat 관점: 어제 farm 7연타로 팜 영역 안정화 진행 중이므로 **"Kitten 모드"**(타이밍 윈도우 ±120ms, 2레인 고정) 추가해 리듬+팜 접근성 대폭 확장. 이전 회의 Apple Arcade 퍼즐 3종·UGC $2.2B·퍼즐 $14.4B·협동 퍼즐·썸존 퍼스트·하이브리드 캐주얼 중복 없음 — 이번 주제는 "D7 리텐션 방어 + 리듬 접근성 표준"이 축. **오늘 결정사항 제안**: NumLink에 **"냥이 7일 출석 트랙"을 힌트 기본 지급과 통합** — D1~D7 각 날짜에 고양이 일러스트 1장씩 해금(Day7에 프리미엄 힌트 3개 + 신규 세계관 스팟 공개). 어제 추가한 "신규 유저 힌트 1개 기본 지급"을 D1 보상으로 재배치해 연속 접속 동기 생성 → D7 수치 방어에 직접 기여.',
+      },
+      {
+        title: '💻 Developer — NumLink어제UI폴리싱3종+힌트로직신규84줄·ObjectManager→UIManager통합TODO·AchievementManager미구현·Unity6.3LTS공식(2027-12지원)·6.0LTS2026-10EOL',
+        description:
+          'NumLink 어제 3건 UI 폴리싱 집중 분석: (1) **cf7c897 힌트 즉시 공개** — HintManager.cs 84줄 신규, 신규 유저 1개 기본 지급 로직은 SaveData 마이그레이션(df1aea1)과 연동되어 안전 (2) **78da36a 퍼즐 셀 크림톤 + HUD 하단 버튼 확대** — 스타일 전용, 로직 건드리지 않음 (3) **00d9190 레벨선택 탭 이모지/텍스트 분리** — active 시 색 오염 근본 해결, UI Toolkit 방식 적용. 기술부채 잔존 1: ObjectManager→UIManager 통합 TODO (`Assets/02. Scripts/Managers/ObjectManager.cs:5` 줄에 명시), 기술부채 2: AchievementManager 업적 해금 팝업 미구현(`AchievementManager.cs:124`). **Unity 6.3 LTS가 2026년 현재 최신 정식 LTS**(지원 2027-12까지)이며 **Unity 6.0 LTS는 2026-10 EOL** — NumLink/MeowBeat 6.3 LTS 마이그레이션 윈도우 진입. Unity 6.5 Breaking Changes는 2026-03-27 업데이트판 공지(이전 회의 다룸·중복 아님). 이전 회의 Mobile Ads Next-Gen·Unity 6.5·6.4 Burst·6.2·8패치·Awaitable·GetComponent 810건·Material3 중복 없음. **오늘 결정사항 제안**: MeowBeat의 미커밋 farm 변경(GameManager +59줄, SongManager 변경, FarmData.data, manifest.json 동시 변경)은 **song-ownership-migration 브랜치 중간 상태** — 오늘 중 스테이징 분리 커밋(feat(farm) vs chore(ads placeholder) 분리)으로 마이그레이션 PR 정리 필수. 동시에 Unity 6.3 LTS 업그레이드 POC 스파이크(4시간) 착수.',
+      },
+      {
+        title: '🔍 QA Tester — NumLinkTools12일째부재+Tests/Editor비어있음→회귀자동탐지불가·MeowBeatbak_btn17일째+farm미커밋15건누적·_Recovery/0.unity17일째복구미종결',
+        description:
+          'NumLink 어제 힌트/셀톤/탭 3건 커밋은 **수동 Play 검증에만 의존** — 프로젝트 `Tools/known_bugs.json`·회귀 검증 픽스처 부재 12일째, `Tests/Editor/` 폴더 자체가 비어있어 회귀 자동 탐지 불가. HintManager.cs 84줄 신규 코드가 SaveData v1→v2 마이그레이션 경로와 함께 릴리스됐는데 이를 검증할 테스트 0건 — 힌트 지급 로직 버그 발생 시 프로덕션까지 통과 리스크. MeowBeat 최대 리스크: **MainScene.unity.bak_btn 17일째 Assets 내부 상주** (4/7 생성 추정·1.6MB Unity refresh 시 중복 임포트 지속). git에 미커밋 15건 누적 — FarmData.data·manifest.json·SongData.cs·GameManager.cs +59줄·Google Mobile Ads Editor 4종 meta 등이 함께 뭉쳐 있어 **씬 백업 + farm 작업물 동시 유실 리스크 최대**. `Assets/_Recovery/0.unity` 단일 파일 복구 작업 17일째 미종결. MeowBeat `Tools/known_bugs.json`에 어제 farm 7연타로 드러난 meta fileID·sortingLayer 패턴 **여전히 미등록** — 오늘도 누군가 씬을 건드리면 회귀 재발 가능. **오늘 결정사항 제안**: MeowBeat git 상태 긴급 정리 — (A) farm 커밋 분리 (B) MainScene.unity.bak_btn 삭제 또는 `.gitignore`/`_backups/` 이동 (C) `known_bugs.json`에 `farm_sprite_fileid_mismatch`·`farm_sorting_layer_regression` 2건 즉시 등록. NumLink는 `Tools/` 템플릿 이식으로 최소 검증 파이프라인 구축(12일 종결·5분 cp -r).',
+      },
+      {
+        title: '📢 Content Writer — 2026-04 45+ 신작동시출격·월말클러스터회피·주당7-14클립인디표준·오가닉바이럴종료·NumLink고양이세계관3종마케팅훅발굴',
+        description:
+          '2026-04 모바일 게임 시장 **45+ 신작 동시 출격** — 월말(4/28~30) 클러스터 회피 필수, **중순(4/24~26) 출시 유리**. 퍼즐 장르는 2019년 이래 매출 3위 유지(ASO World 2026-04 리포트). TikTok/Shorts/Reels **주당 7~14클립이 인디 표준**(Cloutboost 2026 리포트), **오가닉 바이럴 시대 종료** → 최소 $500~1,000 앰플리피케이션 예산 필수. NumLink 어제 커밋(01d8ee0 냥이 퍼즐 세계관 + cf7c897 힌트 시스템) 기반 **차별화 훅 3종 발굴**: (1) **고양이 IP 크로스프로모션** — MeowBeat와 연계해 "LIM Studio 고양이 유니버스" 브랜딩 (2) **"막혔을 때 냥이가 도와준다" 힌트 UX 스토리텔링** — 힌트 발동 시 고양이 캐릭터 등장 연출 영상 (3) **숫자 연결 궤적을 고양이 발자국/털실로 시각화한 5~8초 TikTok 클립 소재** — ASMR 유리. 이전 회의 CPP 5 변형·#IndieDevHour·Reddit Devlog Friday·TikTok Spark CPI·Threads·YouTube Shorts·Discord·Steam 중복 없음 — 이번 주제는 "출시 타이밍 + 클립 제작 쉐이프"가 축. **오늘 결정사항 제안**: NumLink 고양이 세계관 전환 기념 **세로 15초 숏폼 3종**(①Before/After 리스킨 비교 ②힌트 발동 만족 루프 ③털실 궤적 ASMR) 스토리보드 작성 → **이번 주 내 TikTok/Shorts/Reels 동시 업로드**로 월중 ASO 골든타임(4/25~27) 선점. 중순 출시 트레일러로도 전환 가능.',
+      },
+      {
+        title: '⚙️ DevOps — agent-office최근5회배포success(36-41s)·NumLinkmanifestMCP교체(gamelovers→coplaydev)미커밋·MeowBeatAddressableslink.xml삭제미커밋·GameCI 2레이어캐시제안',
+        description:
+          'agent-office GitHub Pages 배포 **최근 5회 전부 success 유지**(deploy-pages.yml 실행 시간 36~41초). 어제 4/23 스탠드업 반영 커밋 a5f88c7 배포 완료. NumLink `Packages/manifest.json` 미커밋 변경분 분석: **MCP 패키지 교체(gamelovers→coplaydev unity-mcp beta)** — WebGL 빌드 시 의존성 재다운로드로 Library 캐시 무효화 가능, 빌드 시간 2배 증가 리스크. MeowBeat는 manifest/AndroidResolver 변경 없이 **Addressables link.xml 삭제만 존재** → Android 빌드 시 코드 스트리핑 오류 리스크 (IL2CPP가 Addressables 타입을 strip 가능성). 이전 회의 Codemagic·Cloudflare Pages·game-ci v4·Fastlane·agent-office CI 중복 없음 — 이번 주제는 "manifest 변경 커밋 분리 + GameCI 캐시 전략"이 축. **웹 리서치**: GameCI Unity 공식 actions에서 **2-레이어 캐시**(Library + LFS, restore-keys로 부분 복원) 도입 시 WebGL 빌드 시간 40~60% 단축 사례 공개. **오늘 결정사항 제안**: NumLink `Packages/manifest.json` 변경사항을 `chore(deps): mcp unity 패키지 coplaydev로 전환` 단독 커밋으로 분리 후(5분), NumLink `.github/workflows/validate.yml`에 GameCI 2-레이어 캐시(Library + LFS, restore-keys 부분 복원) 도입 스캐폴드 준비(30분, 빌드는 이후 단계).',
+      },
+      {
+        title: '🎨 Art Director — 2026 PurposefulMotion 200-500ms+햅틱·완료애니만족도+28%·NumLink셀크림톤+고양이세계관=일러스트캐주얼화정합·MeowBeat흔들기1초=권장치2배초과',
+        description:
+          '2026 모바일 UI는 **"Purposeful Motion"** (목적성 있는 200~500ms 마이크로 인터랙션) + **햅틱(Selection/Light)으로 시각 확인 대체** 추세가 표준화(Tubik·MARSMATICS 2026 리포트). **완료 애니메이션이 만족도 +28% 상승 사례** 공개(Mobile-First Gaming UX 2026·DigitalEdge). NumLink 어제 3종 변경 평가: **정합** — (A) 78da36a 퍼즐 셀 크림 톤 전환 → 2026 "일러스트 캐주얼화" 트렌드와 완벽 정합(파스텔·따뜻한 톤) (B) 01d8ee0 고양이 세계관 강화 → IP 중심 아트 디렉션과 정합 (C) 00d9190 레벨선택 탭 이모지/텍스트 분리 → 가독성 대폭 상승, active 색 오염 근본 해결. MeowBeat 평가: **리스크** — 657032c farm 흔들기 1초 애니메이션은 **Purposeful Motion 권장치(200~500ms) 2배 초과** → 사용자 피드백 지연 체감 발생 가능(터치 후 1초 동안 동작 묶임). 이전 회의 Material3·뉴모피즘·색약 이중화·핸드크래프트 비주얼 중복 없음 — 이번 주제는 "마이크로 인터랙션 타이밍 + 햅틱"이 축. **오늘 결정사항 제안**: (A) NumLink 숫자 연결 **성공 시 셀 크림톤에 맞춘 200~300ms 팝 애니메이션 + 경량 햅틱(Selection/Light) 추가** — 완료 만족도 +28% 효과 적용 (B) MeowBeat farm **흔들기를 500ms로 단축** → Purposeful Motion 상한 맞추고 플로우 체감 개선, DOTween OutBack easing(overshoot 130%) 또는 spring physics damping 0.4 적용.',
+      },
+    ],
+    meetingTitle:
+      '🤝 4/24 종합 회의 — NumLink 11일 정체 깨짐(10커밋 투하)·MeowBeat 오늘 0건 역전·bak_btn 17일째·어제 P0 3건 전원 이월·Unity 6.3 LTS 윈도우 진입·D7 12% 상위 10% 겨냥',
+    meetingSummary:
+      '어제와 정반대 리듬 전환. NumLink가 11일 동결 깨고 어제 회의 후 UI 중심 10커밋 투하(힌트 즉시 공개+신규 유저 1개 지급, 셀 크림톤, 탭 색 오염 fix, 고양이 세계관, SaveData 버전 관리). 반면 MeowBeat는 어제 farm 7연타 이후 오늘 커밋 0건으로 정체 — 미커밋 36건으로 오히려 증가. 이슈 #43 P0 3건 전원 이월(bak_btn 17일째·NumLink Tools 12일째·MeowBeat farm test_fixtures/known_bugs.json 미등록). 시장/기술 축은 "D7 리텐션 방어(퍼즐 상위 10%=12%) + Unity 6.3 LTS 마이그레이션 윈도우 + Purposeful Motion 200-500ms + 중순 4/25~27 ASO 골든타임". 어제 커밋된 UI 폴리싱 3종은 2026 "일러스트 캐주얼화" 트렌드와 정합 — 고양이 세계관 전환 기념 숏폼 3종으로 마케팅 활용 가능.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'NumLink 11일 동결 깨짐 — 어제 회의 후 10커밋 투하(힌트·셀 크림톤·탭 색오염 fix·고양이 세계관·SaveData 버전). 반면 MeowBeat는 오늘 커밋 0건, 미커밋 36건으로 오히려 증가. 이슈 #43 P0 3건 전원 이월(bak_btn 17일째·Tools 12일째·farm 커밋 동결 미등록). 오늘 15분 P0: NumLink asmdef 삭제 4건 chore(test) 원자 커밋 + MeowBeat bak_btn _backups/ 이동 + MeowBeat farm 미커밋 feat(farm)/chore(ads) 분리.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '2026 GameAnalytics 퍼즐 D7 전 장르 1위·중앙값 8%·상위 10%는 12% 도달·D30 3% 미만 — "중기 유지"가 퍼즐 핵심 무기. 리듬게임 접근성 표준은 조정 가능 타이밍 윈도우 ±50ms↔±120ms + Muse Dash 2버튼. NumLink는 어제 추가된 신규 유저 힌트 1개 기본 지급을 "냥이 7일 출석 트랙" D1 보상으로 재배치해 D7 12% 겨냥. MeowBeat에 "Kitten 모드"(±120ms·2레인 고정) 추가해 팜 연동 접근성 확장.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'NumLink 어제 UI 폴리싱 3종(힌트 84줄 신규·셀 크림톤·탭 이모지 분리)은 안전(SaveData 마이그레이션 df1aea1과 연동). 기술부채 2건 잔존(ObjectManager→UIManager 통합 TODO, AchievementManager 팝업 미구현). **Unity 6.3 LTS 2027-12까지 지원·6.0 LTS 2026-10 EOL** — 마이그레이션 윈도우 진입. MeowBeat farm 미커밋은 song-ownership-migration 중간 상태 → 스테이징 분리 커밋(feat(farm) vs chore(ads placeholder)) 오늘 필수.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'NumLink Tools/ 12일째 부재 + Tests/Editor 비어있음 → 어제 힌트 84줄·SaveData 버전 관리가 **수동 Play 검증에만 의존** (회귀 자동 탐지 0건). MeowBeat MainScene.bak_btn 17일째 Assets 내부 상주 + farm 미커밋 15건 뭉쳐서 씬 백업+작업물 동시 유실 리스크 최대. known_bugs.json에 farm_sprite_fileid_mismatch·farm_sorting_layer_regression 여전히 미등록. 오늘: MeowBeat git 긴급 정리 + NumLink Tools cp -r(5분).',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '2026-04 모바일 게임 **45+ 신작 동시 출격** — 월말 클러스터 회피, **중순 4/24~26 출시 유리**. TikTok/Shorts/Reels **주당 7~14클립 인디 표준**·오가닉 바이럴 종료. NumLink 어제 고양이 세계관 + 힌트 기반 마케팅 훅 3종 발굴: (1) 고양이 IP 크로스프로모션(MeowBeat 연계) (2) "막혔을 때 냥이가 도와준다" 힌트 스토리텔링 (3) 털실/발자국 궤적 ASMR 클립. 세로 15초 숏폼 3종 스토리보드 → 4/25~27 ASO 골든타임 선점.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'agent-office GitHub Pages 최근 5회 배포 전부 success(36~41s) 유지. NumLink Packages/manifest.json 미커밋 = **MCP 패키지 교체(gamelovers→coplaydev unity-mcp beta)** → WebGL 빌드 Library 캐시 무효화 리스크. MeowBeat Addressables link.xml 삭제 미커밋 → Android IL2CPP 코드 스트리핑 오류 리스크. GameCI 2-레이어 캐시(Library+LFS) 도입 시 WebGL 빌드 40~60% 단축 사례. 오늘: NumLink chore(deps) 단독 커밋 분리(5분).',
+      },
+      {
+        speaker: 'Art Director',
+        note: '2026 모바일 UI "Purposeful Motion" 200~500ms + 햅틱(Selection/Light)이 표준·완료 애니 만족도 +28%. NumLink 어제 3종(셀 크림톤·고양이 세계관·탭 이모지 분리)은 "일러스트 캐주얼화" 2026 트렌드와 **정합** — 가독성+IP 중심 아트 디렉션 성공. MeowBeat farm 흔들기 1초는 **권장치 2배 초과** → 피드백 지연. 오늘: NumLink 숫자 연결 성공 시 200~300ms 팝 + 햅틱 추가 / MeowBeat 흔들기 500ms로 단축(DOTween OutBack overshoot 130% 또는 spring damping 0.4).',
+      },
+    ],
+    decisions: [
+      {
+        title: 'P0 — NumLink asmdef 삭제 4건 `chore(test): AutoGenTests 제거` 단일 원자 커밋 (3분)',
+        description:
+          '미커밋 34건 중 asmdef 삭제 4건(AutoGenTests.asmdef/meta/cs/meta)이 가장 쉬운 원자 단위. `git rm` 후 단일 커밋으로 종결해 feature/uitoolkit 추진력 유지. 나머지 폰트 SDF 6종·Packages/manifest.json(MCP 전환)은 각각 chore(fonts)·chore(deps)로 분리 예정.',
+      },
+      {
+        title: 'P0 — MeowBeat MainScene.unity.bak_btn `_backups/`로 이동 (2분·17일째 종결)',
+        description:
+          '4/7 생성 1.6MB 백업 파일이 Assets 내부 17일째 상주 → Unity refresh 시마다 중복 임포트 + 씬 작업물 유실 리스크. `git mv Assets/Scenes/MainScene.unity.bak_btn _backups/` 후 .meta 함께 이동, 커밋.',
+      },
+      {
+        title: 'P0 — MeowBeat farm 미커밋 분리 커밋 (10분)',
+        description:
+          'feat(farm): FarmData.data + SongData.cs + GameManager.cs +59줄 + SongManager.cs + manifest.json(StreamingAssets/Songs) + OptionManager.cs / chore(ads placeholder): Google Mobile Ads Editor 4종 meta 변경 / chore(deps): Packages/manifest.json + AndroidResolverDependencies.xml. 분리 후 feature/song-ownership-migration PR 정리.',
+      },
+      {
+        title: 'P0 — MeowBeat farm test_fixtures + known_bugs.json 2건 등록 (20분)',
+        description:
+          '이슈 #43에서 이월된 P0 지속. `Tools/test_fixtures/farm_feeding.unity` 미니씬 + `Tools/known_bugs.json`에 `farm_sprite_fileid_mismatch`(detector: meta fileID 21300000 검증)·`farm_sorting_layer_regression`(detector: sortingLayerID null 검증) 2건 등록. `run_regression.py` 통과 전 farm 추가 커밋 금지.',
+      },
+      {
+        title: 'P0 — NumLink Tools cp -r (5분·12일째 종결)',
+        description:
+          '`cp -r C:/Unity/_ProjectTemplate/Tools C:/Unity/NumLink/Tools` 실행 후 씬 경로 상수 NumLink용으로 업데이트. unity_validate.py + qa_static.py + known_bugs.json + run_regression.py 4종 도입. 어제 커밋된 HintManager.cs 84줄·SaveData 버전 관리를 회귀 검증 대상에 포함.',
+      },
+      {
+        title: 'P1 — MeowBeat farm 흔들기 애니 500ms 단축 + NumLink 숫자 연결 성공 팝 200~300ms + 햅틱',
+        description:
+          'Art Director 진단 — 흔들기 1초는 Purposeful Motion 권장치(200~500ms) 2배 초과 → 피드백 지연. DOTween OutBack easing(overshoot 130%) 또는 spring physics damping 0.4·stiffness 180 적용. NumLink는 셀 크림톤에 맞춰 숫자 연결 성공 시 200~300ms 팝 + 경량 햅틱(Selection/Light) 추가 → 완료 만족도 +28% 효과 겨냥.',
+      },
+      {
+        title: 'P1 — NumLink "냥이 7일 출석 트랙" + 힌트 기본 지급 통합 기획',
+        description:
+          'Game Designer 제안 — 어제 추가된 신규 유저 힌트 1개 기본 지급을 D1 보상으로 재배치. D1~D7 각 날짜에 고양이 일러스트 1장씩 해금(Day7에 프리미엄 힌트 3개 + 신규 세계관 스팟 공개). 퍼즐 D7 상위 10% = 12% 겨냥. HintManager.cs + SaveData(df1aea1 v1→v2) 연동 구조 활용.',
+      },
+      {
+        title: 'P1 — NumLink 고양이 세계관 전환 기념 세로 15초 숏폼 3종 스토리보드',
+        description:
+          '(1) Before/After 리스킨 비교 (기본→크림톤+고양이) (2) 힌트 발동 만족 루프 ("막혔을 때 냥이가 도와준다") (3) 털실/발자국 궤적 ASMR. TikTok/Shorts/Reels 동시 업로드 → 4/25~27 ASO 골든타임 선점. 중순 4/24~26 출시 윈도우 활용.',
+      },
+      {
+        title: 'P1 — NumLink chore(deps): MCP 패키지 coplaydev 전환 단독 커밋 + GameCI 2-레이어 캐시 스캐폴드',
+        description:
+          'Packages/manifest.json 변경(gamelovers→coplaydev unity-mcp beta)을 단독 커밋으로 분리(5분) → WebGL 빌드 Library 캐시 무효화 사전 차단. 이후 `.github/workflows/validate.yml`에 GameCI 2-레이어 캐시(Library + LFS, restore-keys 부분 복원) 스캐폴드 준비(30분·빌드는 다음 단계).',
+      },
+      {
+        title: 'P1 — Unity 6.3 LTS 업그레이드 POC 스파이크 (4시간)',
+        description:
+          '6.0 LTS 2026-10 EOL 임박·6.3 LTS가 2027-12까지 지원되는 현재 최신 정식 LTS. NumLink/MeowBeat 마이그레이션 윈도우 진입. 별도 브랜치에서 NumLink 먼저 POC → 에셋 임포트 안정성·asmdef 깨짐·Mobile Ads/Addressables 호환성 체크리스트 작성.',
+      },
+      {
+        title: 'P2 — MeowBeat "Kitten 모드"(±120ms·2레인 고정) 접근성 확장',
+        description:
+          '2026 리듬게임 접근성 표준(Muse Dash식 2버튼 + 조정 가능 타이밍 윈도우)에 맞춰 Easy보다 쉬운 Kitten 모드 추가. 팜 연동(먹이주기 연속 보상)으로 D7 리텐션 방어. SongManager·OptionManager 확장 필요.',
+      },
+      {
+        title: 'P2 — 이월 지속 항목 — NumLink GetComponent 810건 캐싱 1 PR / MeowBeat Debug.Log 잔존 28건 [Conditional("DEV")] / MeowBeat 냥友 길드 MVP + 판정 Post-Feedback 레이어 + 첫 3곡 진행바',
+        description:
+          '어제부터 P2로 강등된 잔여 과제들. 12~23일째 누적 이월 중이지만 P0/P1 우선순위 작업 완료 전까지 대기.',
+      },
+    ],
+  },
+  {
     id: '2026-04-23T04:00:00-daily-standup',
     date: '2026-04-23',
     researchTitle:
