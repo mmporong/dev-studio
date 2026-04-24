@@ -43,6 +43,152 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-04-25T04:00:00-daily-standup',
+    date: '2026-04-25',
+    researchTitle:
+      '📊 4/25 데일리 스탠드업 — NumLink동결재진입(오늘0커밋)·Scripts하위Library오염·MeowBeat13일째역전정체·bak_btn18일째·Sentis→Inference리브랜딩·Duet Cats하이브리드·Variable Font베스트프랙티스·macos-26 AppleSiliconGA·YouTubeShortsCPM$4·RewardedVideo iOS eCPM$19.63·Royal Match월$104.5M',
+    researchSummary:
+      '7명 에이전트 병렬 리서치(제13회). 어제 11일 동결 깨진 NumLink가 **다시 침묵** — 오늘 신규 커밋 0건, 미커밋 34건 그대로 스테이징 대기. 심각한 신규 발견: **NumLink `Assets/02. Scripts/` 하위에 Library/·Logs/·Temp/·UserSettings/·Packages/ 임시 폴더가 `.meta`와 함께 커밋 대상으로 노출** (루트 `.gitignore`는 `/Library/`만 차단 → Scripts 하위는 추적됨). Unity가 이를 에셋으로 인덱싱 중, 빌드/CI 노이즈 유발. **MeowBeat는 13일째 커밋 0건**(마지막 4/12 `fix(farm)`), `Assets/_Recovery/0.unity` 1.6MB가 13일째, `MainScene.unity.bak_btn` 18일째, `AutoQATests/` 신규 untracked까지 3종 씬 복사본 누적 3.2MB. 이슈 #44 P0 3건(asmdef 원자커밋·bak_btn 이동·farm 분리) 전원 이월. 시장: **Royal Match 월 $104.5M**(Similarweb, 머지+스토리 1위)·**Duet Cats**(냥비트 직접 경쟁작·리듬+퍼즐 피스 수집+디오라마 꾸미기) / **Phigros 200+곡 무료 무광고** + Project Sekai 콜라보 → 리듬게임 재부흥 본격화. MeowBeat는 "곡 클리어 → 퍼즐 피스 1개 드롭 → 고양이 룸 꾸미기" 이중 루프로 D7 방어가 합리적. 기술: **Unity 6.6에서 Apple 통합 레이어 Swift로 재작성**(Unite 2025 로드맵) + **6.7이 2026 LTS 타겟** + CoreCLR 전환 확정. **Sentis → com.unity.ai.inference 리브랜딩**(2.4.1, DirectML 가속·RMSNormalization 최적화) → manifest.json 패키지 ID 교체 대응 필요 시점. QA: NumLink `Tools/` **여전히 부재**(오늘도 미복사, AutoGenTests 삭제 후 대체 테스트 0건). MeowBeat `Tools/known_bugs.json` 6건 등록 상태 유지. 마케팅: **YouTube Shorts CPM $4**(롱폼 대비 저렴) + 숏폼 광고 뷰레이트 64.9%(완료율 중심 KPI). **Rewarded Video eCPM iOS $19.63 / Android $16.49**(미국)·완료율 95%+ vs 비리워드 60~70%. DevOps: NumLink/Feedme 모두 `.github/workflows/` 0건(기술부채 공식 등재 시점). **GitHub Actions macos-26 러너 2026-02-26 GA**(Apple Silicon arm64 네이티브 + Intel 동시 지원) → iOS 파이프라인 도입 전제 확보. agent-office `.omc/sessions/*.json` 4건·`.omc/state/*` 6건 삭제 상태로 쌓여있어 배포 전 정리 필요. Art: **Variable Font 2026 "trend → best practice" 전환**(단일 파일로 스태틱 6-8종 대체·kinetic typography). **Sonic+Motion 동시 피드백**(오디오 칩+비주얼 모션 타이밍 일치) 표준·과한 juiciness 역효과·hit-stop/frame freeze가 임팩트 키워드. Figma Config 2026은 6/23-25 예정(아직 미발표).',
+    researchItems: [
+      {
+        title: '🎯 Orchestrator — NumLink오늘0커밋(어제10건폭발후침묵)·미커밋34건정체·MeowBeat13일째정체(마지막4/12 fix(farm))·bak_btn18일째·_Recovery13일째·agent-office b0b9312이후오늘0건·이슈#44 P0 3건전원이월',
+        description:
+          '어제 NumLink 11일 동결 깬 10커밋 폭발 이후 **오늘 신규 커밋 0건으로 다시 침묵** — 24시간 내 추가 커밋 없음. 미커밋 34건 그대로 대기(Maplestory SDF 2종·TMP SDF 4종·Packages/manifest.json·AutoGenTests asmdef 삭제 4건). 어제 회의 P0 첫째(`chore(test): AutoGenTests 제거` 원자 커밋)도 미반영 → 스테이징만 남은 상태. MeowBeat feature/song-ownership-migration은 **마지막 커밋 2026-04-12 이후 13일째 완전 정체**, 미커밋 36건(FarmData.data·SongData.cs·GameManager.cs·SongManager.cs·OptionManager.cs·Google Mobile Ads 4종·manifest.json·StreamingAssets/Songs/manifest.json·ProjectSettings/AndroidResolverDependencies.xml). agent-office는 어제 b0b9312(4/24 스탠드업) 이후 오늘 신규 커밋 0건·`.omc/state/*` 6건 삭제·`.omc/sessions/*.json` 4건 untracked. **이슈 #44 P0 3건 전원 이월**: (A) asmdef 원자 커밋 미반영 (B) bak_btn 18일째(어제 17일 → +1일 연장) (C) farm 미커밋 분리 미실행. **오늘 20분 P0**: (1) NumLink `chore(test): AutoGenTests 제거` 원자 커밋(3분·즉시 종결) (2) MeowBeat bak_btn `_backups/` 이동(2분·18일 종결) (3) agent-office `.gitignore`에 `.omc/sessions/` + `.omc/state/` 2줄 추가 후 정리(5분·배포 전 필수).',
+      },
+      {
+        title: '🎮 Game Designer — Royal Match월$104.5M·DuetCats(냥비트직접경쟁작)리듬+퍼즐피스+디오라마·Phigros 200+곡무료·MeowBeat이중루프제안',
+        description:
+          '**Royal Match 월 $104.5M**(Similarweb Top Grossing Puzzle 2025-08 기준) — 머지+스토리 조합이 퍼즐 매출 1위 유지, Gossip Harbor 2위. **Duet Cats(Rhythm Meow Game)는 MeowBeat 직접 경쟁작** — "리듬 탭 + 퍼즐 피스 수집 + 고양이 탑 꾸미기"라는 3중 루프로 앱스토어 상위권 유지. 탑 꾸미기는 **리듬 클리어 외 장기 수집 동기**를 제공해 D7~D30 리텐션 방어에 직접 기여. **Phigros 200+곡 무료·무광고** + Project Sekai 콜라보는 유저 획득 비용을 낮추면서 리듬게임 재부흥의 신호 — 팬덤 기반 오가닉 유입이 2026 트렌드. 이전 회의 Apple Arcade 퍼즐 3종·UGC $2.2B·퍼즐 $14.4B·협동 퍼즐·D7 상위 10% 12%·Kitten 모드 중복 없음 — 이번 주제는 **"경쟁작 벤치마크 + 수집 루프 이식"**이 축. **오늘 결정사항 제안**: MeowBeat에 **"곡 클리어 시 퍼즐 피스 1개 드롭 → 고양이 룸 꾸미기 언락"** 이중 루프 도입. Duet Cats 검증 패턴을 이식해 리듬 + 수집 + 디오라마 3중 동기 확보. 현재 고양이 세계관(어제 NumLink에도 적용)과 크로스 IP 시너지. 구현 시 CLAUDE.md 규칙 준수 — 룸 프리팹은 씬 하이러키 미리 배치, Instantiate 금지.',
+      },
+      {
+        title: '💻 Developer — Unity6.6 Apple Swift재작성·6.7이 2026 LTS타겟·CoreCLR확정·Sentis→com.unity.ai.inference 리브랜딩(2.4.1)·NumLink Assets/02. Scripts하위 Library·Temp·Logs 임시폴더오염',
+        description:
+          'Unite 2025 로드맵 발표 분석: **Unity 6.6에서 Apple 통합 레이어가 Swift로 재작성** (Objective-C→Swift 전환) + **6.7이 2026 LTS 타겟**. CoreCLR 전환 + Verified Packages 체계로 "Fewer Surprises" 방향 확정 — 장기 안정성 확보 시점이 2026 하반기. **Sentis → com.unity.ai.inference 리브랜딩**(현재 2.4.1): DirectML 가속 추가, RMSNormalization 서브그래프 최적화, NonMaxSuppression 오퍼레이터 재작성. 향후 Unity 6.4+ 업그레이드 시 MeowBeat/NumLink 양쪽 `Packages/manifest.json`에서 패키지 ID 변경 대응이 필요할 수 있음(현재 두 프로젝트 모두 미사용이면 무관). **NumLink 구조 오염 신규 발견**: `C:/Unity/NumLink/Assets/02. Scripts/Library/`·`Logs/`·`Temp/`·`UserSettings/`·`Packages/` 5종 폴더가 `.meta`와 함께 존재 — 루트 `.gitignore`는 `/Library/`만 차단(루트 앵커)이므로 **Scripts 하위 임시 폴더는 차단 안 됨**. Unity가 에셋으로 인덱싱 중·CI 빌드 시 노이즈·Library 캐시 무효화 간접 리스크. 이전 회의 Unity 6.3 LTS·6.5 Breaking·GetComponent 810건·ObjectManager TODO·AchievementManager 미구현 중복 없음. **오늘 결정사항 제안**: NumLink `.gitignore`에 `Assets/**/[Ll]ibrary/`·`Assets/**/[Tt]emp/`·`Assets/**/[Ll]ogs/`·`Assets/**/[Uu]ser[Ss]ettings/`·`Assets/**/[Pp]ackages/` 5패턴 추가 후 `git rm --cached` + .meta 동반 삭제로 Scripts 하위 정리. Sentis 패키지 명칭 변경은 6.5 LTS 업그레이드 시점 병행.',
+      },
+      {
+        title: '🔍 QA Tester — NumLink Tools 13일째부재(템플릿 미복사 지속)·Tests/Editor비어있음·AutoGenTests삭제후 대체테스트0건·MeowBeat bak_btn18일째+_Recovery13일째+AutoQATests신규untracked 3종씬복사본3.2MB·known_bugs MeowBeat6건/NumLink0건',
+        description:
+          'NumLink 어제 힌트 기능(HintManager.cs 84줄) + SaveData v1→v2 마이그레이션 커밋됐으나 **`Tools/known_bugs.json`·회귀 검증 픽스처 부재 13일째**(어제 12일 → +1일). AutoGenTests 삭제는 git status에 D로 반영됐으나 **대체 테스트 0개** — 테스트 공백 지속, HintManager 신규 로직 회귀 탐지 자동화 불가. MeowBeat 복사본 누적 3종 파일 발견: (A) `MainScene.unity.bak_btn` 18일째(4/7 생성 추정·1.6MB) (B) `Assets/_Recovery/0.unity` 13일째(4/12 생성 추정·1.6MB) (C) `Assets/AutoQATests/` 폴더 신규 untracked — 씬 복사본 합계 3.2MB+ 누적 중. Unity refresh 시마다 중복 임포트 + 씬 작업물 유실 리스크 지속. MeowBeat `Tools/known_bugs.json`에 6건 등록 상태 유지(어제 회의 farm_sprite_fileid_mismatch·farm_sorting_layer_regression 2건 등록은 이미 반영됐을 가능성·확인 필요). NumLink known_bugs.json **여전히 파일 자체 부재**. 이전 회의 Tools 8일·12일째·AutoGenTests 삭제 자체 중복 없음 — 이번 주제는 "씬 복사본 3종 누적 + Tools 미복사 연장"이 축. **오늘 결정사항 제안**: MeowBeat 3종 씬 복사본을 **정리 커밋 1건**으로 묶어 처리 — bak_btn은 `_backups/`로 이동, `_Recovery/`와 `AutoQATests/`는 목적 확인 후 `.gitignore` 또는 삭제. NumLink `Tools/` 템플릿 복사 **오늘 5분 내 즉시 실행**(13일째 연장 차단).',
+      },
+      {
+        title: '📢 Content Writer — YouTube Shorts CPM$4·숏폼뷰레이트64.9%·Rewarded Video iOS eCPM$19.63/Android$16.49·완료율95%+vs비리워드60-70%·퍼즐D7 4.5%/D30 1.20%',
+        description:
+          '**YouTube Shorts 광고 평균 CPM $4**(롱폼 YouTube 대비 현저히 낮음) — 단가 저렴해 인디 스튜디오 노출 실험 부담 적음. **숏폼 광고 뷰레이트 64.9%**(2023 61.98%에서 상승) — 스크롤/정지 기반이라 CTR보다 **정지율·시청완료율**이 KPI로 적합. **리워드 비디오 eCPM 미국 iOS $19.63 / Android $16.49**(글로벌 high single~low double digits) + **완료율 95%+** (비리워드 60~70% 대비 압도적). 장르 벤치마크: **퍼즐 D7 리텐션 4.5% / D30 1.20%**(글로벌 평균)으로 낮지만 **오퍼월 + 리워드 광고 결합 시 개선 효과** 확인. 이전 회의 TikTok Spark CPI·Threads·Discord·Steam·주당 7-14클립·앰플리피케이션 $500-1000·영상 광고 15초 중복 없음 — 이번 주제는 "YouTube Shorts 경제성 + Rewarded Video 완료율 KPI"가 축. **오늘 결정사항 제안**: MeowBeat(리듬)·NumLink(퍼즐) 양쪽에 **리워드 비디오 슬롯을 "재도전/힌트/부활" 트리거에 배치** 후 **완료율 90%+ KPI** 설정. 동시에 **YouTube Shorts용 세로 15초 플레이 영상**(2초 훅 + 12초 핵심 + 1초 CTA) 제작 → 어제 결정된 숏폼 3종(Before/After·힌트 루프·털실 ASMR)을 Shorts 포맷으로 재활용. 성공 지표는 **시청완료율 65%+ + install-per-view**로 측정.',
+      },
+      {
+        title: '⚙️ DevOps — NumLink/Feedme .github/workflows 0건(기술부채 공식등재 시점)·agent-office정상·macos-26 AppleSilicon GA(2026-02-26)·agent-office .omc/sessions+.omc/state 배포전정리필요',
+        description:
+          '**NumLink·Feedme 두 Unity 프로젝트 모두 `.github/workflows/` 미존재** → GameCI 자동빌드 파이프라인 0% (로컬 수동 빌드 의존·13일 이상 이 상태 지속). agent-office만 `deploy-pages.yml`(Node22+Vite→GitHub Pages) + `weekly-insights.yml` 2종 운영 중이며 최근 5일 연속 standup 커밋으로 배포 파이프라인 정상 동작 확인. **GitHub Actions macos-26 러너 2026-02-26 GA 전환** — Apple Silicon arm64 네이티브 + Intel x64 동시 지원, M1 러너는 public repo 무료·private repo도 free plan 분수 소진 가능. **self-hosted Mac 없이도 Unity iOS 빌드 GitHub Actions 네이티브 arm64 가능** → iOS 파이프라인 도입 시 `macos-26` 기본값 채택 권고. **agent-office 로컬 정리 부채**: `.omc/sessions/*.json` 4건 untracked + `.omc/state/*` 6건 deleted 상태로 쌓임 → 배포 전 `.gitignore` 추가 필수. 이전 회의 GameCI 6.x·Unity Cloud Build·Codemagic·Fastlane·Cloudflare Pages 중복 없음 — 이번 주제는 "CI/CD 부재 공식 등재 + macos-26 시점 확보"가 축. **오늘 결정사항 제안**: (1) agent-office `.gitignore`에 `.omc/sessions/` + `.omc/state/` 추가 + 기존 잔재 정리 후 배포(5분) (2) NumLink/Feedme CI/CD 0건을 **공식 기술부채로 등재**(이슈 생성) + 5월 중 `macos-26` GA 전제로 GameCI 6.x 최소 빌드 워크플로우 스파이크 1회 진행(우선 WebGL부터).',
+      },
+      {
+        title: '🎨 Art Director — 2026 Juice 트렌드=Sonic+Motion동시피드백·과한juiciness역효과·Variable Font "best practice"전환·kinetic typography·Figma Config 2026(6/23-25)',
+        description:
+          '2026 Juice 트렌드는 **Sonic+Motion 동시 피드백**(오디오 칩+비주얼 모션 타이밍 일치)으로 이동 — 과한 juiciness는 역효과, **subtlety가 키워드**. hit-stop·frame freeze로 임팩트 강조. **Variable Font 2026년 "trend → best practice" 전환** — 단일 파일로 스태틱 폰트 6-8종 대체(로드 최적화) + **kinetic typography**가 hero 섹션 주력(CSS View Transitions 결합). **Figma Config 2026은 6/23-25 예정**(아직 미발표·2026 상반기 주요 업데이트는 AI Design Agents + Git 네이티브 통합 + 디자인 토큰 production repo 자동 쓰기 방향). 이전 회의 Material3 Expressive·뉴모피즘 2026·Purposeful Motion 200-500ms·핸드크래프트·색약 이중화 중복 없음 — 이번 주제는 **"Variable Font 베스트프랙티스 + Sonic+Motion 동기화"**가 축. **오늘 결정사항 제안**: MeowBeat 리듬 판정 텍스트("Perfect"/"Good"/"Miss")에 **Variable Font weight(400→900) + width axis**를 DOTween으로 **0.08초 팝 애니메이션** + 판정 SE 트리거를 모션 peak(50ms 지점)에 정확 동기화. 현재 단순 스케일+페이드 → weight-axis 모션으로 변경 시 **파일 1개로 프리젠스 2배**. NumLink 숫자 연결 성공 피드백에도 동일 패턴(숫자 weight 팝→정착) 적용 가능 — 어제 결정된 200-300ms 팝과 결합.',
+      },
+    ],
+    meetingTitle:
+      '🤝 4/25 종합 회의 — NumLink 동결 재진입(어제 폭발 후 오늘 0건)·Scripts 하위 Library 오염 발견·MeowBeat 13일째·bak_btn 18일째+_Recovery 13일째+AutoQATests 신규·이슈 #44 P0 3건 전원 이월·Duet Cats 이중 루프 제안·Unity 6.6 Swift 재작성·macos-26 GA',
+    meetingSummary:
+      'NumLink 어제 11일 동결 깬 폭발 이후 다시 24시간 침묵 — 미커밋 34건 그대로 대기. 심각한 **신규 발견 2건**: (A) NumLink `Assets/02. Scripts/` 하위에 Library·Logs·Temp 등 임시 폴더가 `.meta`와 함께 커밋 대상으로 노출(루트 .gitignore 앵커 우회) (B) MeowBeat 씬 복사본 3종(bak_btn 18일+_Recovery 13일+AutoQATests 신규) 3.2MB+ 누적. MeowBeat는 13일째 커밋 0건(정체 심화). 이슈 #44 P0 3건(asmdef 원자커밋·bak_btn 이동·farm 분리) 전원 이월. 시장/기술 축은 "Duet Cats 이중 루프 벤치마크 + Unity 6.6 Apple Swift 재작성 + Variable Font 베스트프랙티스 전환 + macos-26 GA 시점 확보 + YouTube Shorts CPM $4 경제성". 어제 고양이 세계관 전환은 Duet Cats 크로스카테고리 트렌드와 정합 — 리듬+퍼즐 피스+디오라마 이중 루프를 MeowBeat에 이식할 타이밍.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'NumLink 어제 10커밋 폭발 이후 오늘 신규 0건으로 다시 침묵 — 미커밋 34건 그대로 대기. MeowBeat 13일째 커밋 0건(마지막 4/12). 이슈 #44 P0 3건(asmdef 원자커밋·bak_btn 이동·farm 분리) 전원 이월. agent-office는 어제 b0b9312 이후 오늘 0건·.omc/state 6건 deleted·.omc/sessions 4건 untracked. 오늘 20분 P0: NumLink chore(test) AutoGenTests 제거 3분 + MeowBeat bak_btn _backups/ 이동 2분 + agent-office .gitignore 추가 5분.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: 'Royal Match 월 $104.5M(퍼즐 매출 1위·머지+스토리). Duet Cats는 MeowBeat 직접 경쟁작 — 리듬+퍼즐 피스+고양이 탑 꾸미기 3중 루프로 D7~D30 방어. Phigros 200+곡 무료+Project Sekai 콜라보로 리듬게임 재부흥 본격화. MeowBeat에 "곡 클리어 → 퍼즐 피스 1개 드롭 → 고양이 룸 꾸미기 언락" 이중 루프 도입 제안. 어제 NumLink 고양이 세계관과 크로스 IP 시너지.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'Unity 6.6에서 Apple 통합 레이어 Swift 재작성·6.7이 2026 LTS 타겟·CoreCLR 전환 확정(Unite 2025 로드맵). Sentis → com.unity.ai.inference 리브랜딩(2.4.1·DirectML 가속). NumLink `Assets/02. Scripts/` 하위 Library·Logs·Temp·UserSettings·Packages 5종 임시 폴더가 .meta와 함께 커밋 대상 — 루트 .gitignore 앵커(`/Library/`) 우회됨. 오늘: NumLink .gitignore에 `Assets/**/[Ll]ibrary/` 등 5패턴 추가 + git rm --cached + .meta 동반 삭제.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'NumLink Tools 13일째 부재(어제 12일 → +1일)·Tests/Editor 비어있음·AutoGenTests 삭제 후 대체 테스트 0건. MeowBeat 씬 복사본 3종 누적 3.2MB+: bak_btn 18일째 + _Recovery/0.unity 13일째 + AutoQATests/ 신규 untracked. known_bugs: MeowBeat 6건 유지·NumLink 0건(파일 부재). 오늘: MeowBeat 3종 씬 복사본 정리 커밋 1건(bak_btn=_backups/ 이동·_Recovery/AutoQATests=목적 확인 후 .gitignore 또는 삭제) + NumLink Tools cp -r 5분 즉시 실행.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'YouTube Shorts CPM $4(롱폼 대비 저렴·정지율/완료율 KPI). Rewarded Video eCPM iOS $19.63/Android $16.49·완료율 95%+(비리워드 60-70%). 퍼즐 D7 4.5%/D30 1.20%(글로벌 평균). 오늘: NumLink/MeowBeat 양쪽 리워드 비디오 슬롯 "재도전/힌트/부활" 트리거 배치 + 완료율 90%+ KPI 설정. 어제 숏폼 3종(Before/After·힌트 루프·털실 ASMR) YouTube Shorts 포맷(2초 훅+12초 핵심+1초 CTA)으로 재활용.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'NumLink/Feedme `.github/workflows/` 0건(공식 기술부채 등재 시점). agent-office 정상(deploy-pages.yml + weekly-insights.yml). **macos-26 러너 2026-02-26 GA** — Apple Silicon arm64 네이티브+Intel 동시·M1 free plan 사용 가능·self-hosted Mac 없이 iOS 빌드. agent-office `.omc/sessions/` 4건·`.omc/state/` 6건 deleted 배포 전 정리 필요. 오늘: agent-office .gitignore에 .omc/sessions/·.omc/state/ 2줄 추가+정리 + NumLink/Feedme CI/CD 부재 공식 기술부채 이슈 생성.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '2026 Juice 트렌드 = Sonic+Motion 동시 피드백(오디오 칩+비주얼 모션 타이밍 일치)·과한 juiciness 역효과·subtlety 키워드(hit-stop·frame freeze). Variable Font 2026 "best practice" 전환·단일 파일로 스태틱 6-8종 대체·kinetic typography. Figma Config 2026 6/23-25 예정. 오늘: MeowBeat 판정 텍스트(Perfect/Good/Miss)에 Variable Font weight(400→900)+width axis DOTween 0.08초 팝 + 판정 SE를 모션 peak(50ms) 정확 동기화. NumLink 숫자 연결 성공에도 동일 패턴 적용(어제 결정 200-300ms 팝과 결합).',
+      },
+    ],
+    decisions: [
+      {
+        title: 'P0 — NumLink `chore(test): AutoGenTests 제거` 원자 커밋 (3분·이슈 #44 이월 종결)',
+        description:
+          '어제 결정 이월 — 미커밋 34건 중 asmdef 삭제 4건(AutoGenTests.asmdef/meta/cs/meta)이 가장 쉬운 원자 단위. `git rm` 확정 후 단일 커밋으로 종결, 나머지 폰트 SDF 6종·Packages/manifest.json(MCP 전환) 커밋 노이즈 제거.',
+      },
+      {
+        title: 'P0 — MeowBeat MainScene.unity.bak_btn `_backups/` 이동 (2분·18일째 종결)',
+        description:
+          '어제 결정 이월 — 4/7 생성 1.6MB 백업이 Assets 내부 18일째 상주(어제 17일 → +1일). `git mv Assets/Scenes/MainScene.unity.bak_btn _backups/` + .meta 동반 이동 후 커밋. 18일 누적 종결.',
+      },
+      {
+        title: 'P0 — MeowBeat 씬 복사본 3종 정리 커밋 1건 (_Recovery/AutoQATests 포함·10분)',
+        description:
+          'QA Tester 신규 발견 — `Assets/_Recovery/0.unity` 13일째 + `Assets/AutoQATests/` 신규 untracked까지 bak_btn과 함께 3.2MB+ 누적. 목적 확인 후 `_Recovery/`는 `.gitignore` 등록 또는 커밋·`AutoQATests/`는 AutoQA 실험물이면 `_experiments/` 이동. 단일 `chore(scene): 씬 복사본 3종 정리` 커밋으로 종결.',
+      },
+      {
+        title: 'P0 — agent-office `.gitignore`에 `.omc/sessions/`·`.omc/state/` 추가 + 잔재 정리 (5분·배포 전 필수)',
+        description:
+          'DevOps 발견 — 로컬에 `.omc/sessions/*.json` 4건 untracked + `.omc/state/*` 6건 deleted 누적. 오늘 4/25 standup 커밋 전 `.gitignore` 2줄 추가 + `git rm --cached` 정리 후 배포. 기존 4일 연속 배포 success 흐름 유지.',
+      },
+      {
+        title: 'P0 — NumLink `.gitignore` 패치 + `Assets/02. Scripts/` 하위 임시 폴더 제거 (10분)',
+        description:
+          'Developer 신규 발견 — `Assets/02. Scripts/Library/`·`Logs/`·`Temp/`·`UserSettings/`·`Packages/` 5종 폴더가 `.meta`와 함께 커밋 대상. 루트 `.gitignore`는 `/Library/` 앵커라 Scripts 하위 미차단. `Assets/**/[Ll]ibrary/`·`Assets/**/[Tt]emp/`·`Assets/**/[Ll]ogs/`·`Assets/**/[Uu]ser[Ss]ettings/`·`Assets/**/[Pp]ackages/` 5패턴 추가 + `git rm --cached` + .meta 동반 삭제.',
+      },
+      {
+        title: 'P0 — NumLink Tools/ 템플릿 복사 (5분·13일째 종결)',
+        description:
+          'QA Tester 어제 결정 이월 — `cp -r C:/Unity/_ProjectTemplate/Tools C:/Unity/NumLink/Tools`. unity_validate.py + qa_static.py + known_bugs.json + run_regression.py 4종 도입. 어제 커밋된 HintManager.cs 84줄 + SaveData v1→v2 마이그레이션 회귀 검증 대상에 포함. AutoGenTests 삭제 후 대체 테스트 0건 공백 차단.',
+      },
+      {
+        title: 'P1 — MeowBeat "곡 클리어 → 퍼즐 피스 드롭 → 고양이 룸 꾸미기" 이중 루프 도입 기획',
+        description:
+          'Game Designer 제안 — Duet Cats(직접 경쟁작) 검증 패턴 이식. 리듬 클리어 외 장기 수집 동기로 D7~D30 방어. 어제 NumLink 고양이 세계관과 크로스 IP 시너지. 룸 프리팹은 씬 하이러키 미리 배치(CLAUDE.md Instantiate 금지 준수). Duet Cats와 Royal Match(월 $104.5M·머지+스토리) 벤치마크를 GDD에 반영.',
+      },
+      {
+        title: 'P1 — MeowBeat 판정 텍스트 Variable Font 0.08초 weight 팝 + SE peak 50ms 동기화',
+        description:
+          'Art Director 제안 — 2026 Juice 트렌드(Sonic+Motion 동시 피드백·subtlety·hit-stop) 적용. Variable Font weight(400→900)+width axis를 DOTween 0.08초 애니메이트 → 파일 1개로 프리젠스 2배. 판정 SE 트리거를 모션 peak(50ms) 정확 동기화. NumLink 숫자 연결 성공에도 동일 패턴(숫자 weight 팝→정착·어제 결정 200-300ms 팝 결합).',
+      },
+      {
+        title: 'P1 — NumLink/MeowBeat 리워드 비디오 슬롯 "재도전/힌트/부활" 트리거 배치 + 완료율 90%+ KPI',
+        description:
+          'Content Writer 제안 — iOS eCPM $19.63·완료율 95%+(비리워드 60-70% 대비). 퍼즐 D7 4.5%/D30 1.20% 평균 대비 오퍼월+리워드 광고 결합 개선 효과. NumLink 힌트 지급 로직(HintManager 84줄)에 리워드 영상 트리거 통합, MeowBeat는 farm 애드 SDK 이미 설치된 상태 활용. 완료율 90%+를 실측 KPI로 대시보드 추가.',
+      },
+      {
+        title: 'P1 — YouTube Shorts 세로 15초(2초 훅+12초 핵심+1초 CTA) 3종 제작 — 어제 숏폼 재활용',
+        description:
+          'Content Writer 제안 — YouTube Shorts CPM $4·뷰레이트 64.9% 경제성 활용. 어제 결정된 NumLink 숏폼 3종(Before/After 리스킨·힌트 루프·털실 ASMR) Shorts 포맷 재활용. 성공 지표는 시청완료율 65%+ + install-per-view. TikTok/Reels 동시 업로드 병행으로 4/25~27 ASO 골든타임 막차.',
+      },
+      {
+        title: 'P1 — NumLink/Feedme CI/CD 부재 공식 기술부채 등재 + macos-26 기반 GameCI 스파이크 5월 예약',
+        description:
+          'DevOps 제안 — 두 프로젝트 `.github/workflows/` 0건 상태 장기 지속. GitHub Actions macos-26 러너 2026-02-26 GA(Apple Silicon arm64 네이티브) 확보됐으니 5월 중 GameCI 6.x 최소 빌드 워크플로우 스파이크 1회(우선 WebGL부터). 오늘은 기술부채 이슈 생성으로 트래킹 확보.',
+      },
+      {
+        title: 'P2 — Sentis → com.unity.ai.inference 패키지 ID 전환 모니터링',
+        description:
+          'Developer 리서치 — Unity 6.6+ 시점에 manifest.json 패키지 ID 변경 대응 필요. 현재 NumLink/MeowBeat 양쪽 Sentis 미사용 확인되면 무관·사용 중이라면 6.3 LTS→6.5 업그레이드 시 병행 교체. 오늘은 사용 여부 점검만.',
+      },
+      {
+        title: 'P2 — MeowBeat song-ownership-migration 브랜치 farm 미커밋 분리 커밋 (이슈 #44 지속 이월·10분)',
+        description:
+          '13일째 정체 해소 — feat(farm) + chore(ads placeholder) + chore(deps) 3분리. FarmData.data·SongData.cs·GameManager.cs +59줄·Google Mobile Ads 4종 meta·manifest.json(Songs/Packages)·AndroidResolver 분리. 단 코어 스크립트 4종 동시 수정본은 의도 파악 먼저 필요 → 사용자 컨펌 후 진행(오늘 긴급 순위 밖).',
+      },
+    ],
+  },
+  {
     id: '2026-04-24T04:00:00-daily-standup',
     date: '2026-04-24',
     researchTitle:
