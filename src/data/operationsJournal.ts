@@ -43,6 +43,137 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-04-26T04:00:00-daily-standup',
+    date: '2026-04-26',
+    researchTitle:
+      '📊 4/26 데일리 스탠드업 — NumLink동결재진입2일째연속침묵·미커밋34건정체·MeowBeat14일째0커밋·agent-office4/25후정지·이슈#45 P0 5건전원이월·Unity6.7 CoreCLR데스크톱플레이어실험판·ECSStackReview공개·.NET10통합·SUPERSTAR LDH(8그룹300+카드)리듬출시·GossipHarbor4/15퍼즐매출2위·인도Q1퍼즐+78%YoY·리워드번들링IAA+IAP·OTA스테이지드롤아웃표준·Apple6월ASO스크린샷캡션인덱싱·Reddit인디광고$25-50/일위시리스트·코지+캣롱테일·iOS26.4 LiquidGlass·M3Expressive스프링모션+블러·푸피스쿼시텍스처·키네틱타이포·GHActions커스텀러너GA·OIDC',
+    researchSummary:
+      '7명 에이전트 병렬 리서치(제14회). NumLink 어제 동결 재진입 후 24시간 추가 침묵 — 오늘 신규 커밋 0건, 미커밋 34건 그대로. **NumLink는 4/24 10커밋 폭발 → 4/25 0건 → 4/26 0건의 2일 연속 동결 재진입 패턴** 확정. MeowBeat는 마지막 커밋 4/12 fix(farm) 이후 **14일째 완전 정체**, 미커밋 36건 그대로(FarmData·SongData·GameManager·SongManager·OptionManager·Google Mobile Ads 4종·manifest.json·StreamingAssets/Songs/manifest.json). agent-office는 4/25 스탠드업 커밋 이후 오늘 신규 0건. **이슈 #45 P0 5건 전원 이월** — (A) NumLink chore(test) AutoGenTests 제거 (B) NumLink Scripts 하위 Library/Logs/Temp/UserSettings/Packages 5종 임시 폴더 정리 (C) NumLink Tools 템플릿 복사 14일째 (D) MeowBeat bak_btn _backups/ 이동 19일째 (E) MeowBeat 씬 복사본 3종(_Recovery+AutoQATests) 정리. QA: **NumLink QA 인프라 0%** — Tools 폴더 부재, known_bugs.json 부재, Assets/Tests/Editor 비어있음, AutoGenTests 삭제 후 대체 테스트 0건, Debug.Log 64파일 누적(증가). MeowBeat known_bugs.json 7건 등록 상태 19일째 정체(신규 0건). 기술: **Unity 2026 로드맵 공식 발표** — Unity 6.7에 CoreCLR 데스크톱 플레이어 실험판 포함 예정·6.4 ECS 코어 패키지화·.NET 10 + CoreCLR Unity 통합 진행 중. **2026-04 ECS Stack Review 공개**(Discussions 1717216). NumLink/MeowBeat 양쪽 모바일 빌드 IL2CPP "code size" 옵션 미적용 — APK 사이즈 절감 여지 확인 시점. 시장: **SUPERSTAR LDH 2026-04 출시**(LDH 8그룹 300+ 카드형 리듬, 카드 컬렉션 메타로 D7 방어). **Gossip Harbor 4/15 퍼즐 매출 2위**(머지+스토리·Royal Match 다음). **인도 Q1 2026 퍼즐 매출 +78% YoY**(Mobile Marketing Reads, Q1 $300M 중 AI+퍼즐 견인). 신규 수익화 트렌드: **리워드 번들링(IAA+IAP 융합) + OTA 라이브옵스**(스테이지드 롤아웃 표준화). 마케팅: **Apple 6월 ASO 알고리즘 업데이트** — 스크린샷 내부 캡션 텍스트도 키워드 인덱싱 대상으로 확대(Phiture 2026 ASO Trends). "시각=검색" 패러다임 전환. **Reddit 인디 광고 $25-50/일로 위시리스트 유의미**(서브 서브레딧 타깃·IMPRESS 분석). 코지+캣 트렌드 정점, "relaxing/no wifi/match" 롱테일 키워드 우세(PC Gamer 4월 코지 게임 리뷰). DevOps: **agent-office 배포 5건 연속 success**(36~41s, GitHub Pages·Vite). NumLink/MeowBeat `.github/workflows/` 0건 지속. **GH Actions 2026-04 업데이트** — 커스텀 러너 이미지 GA·OIDC 커스텀 속성·2026 보안 로드맵 공개. **모바일 OTA가 릴리스 인프라화** — 스테이지드 롤아웃 + 핫픽스 표준(Capgo·React Native 사례). Art: **iOS 26.4 Liquid Glass**(4/22 출시) 굴절·반투명 머티리얼 두 가지 커스터마이즈 옵션 추가(9to5Mac). **Material 3 Expressive 스프링 모션 + 블러 깊이**가 Android 16 표준(Android Authority). 모바일 게임 UI 트렌드: **푸피(Puffy)·스쿼시(Squash) 텍스처 + 모듈 퍼즐 레이아웃**(Pixune). **키네틱 타이포그래피**가 hero/판정 텍스트 표준(Digital Silk). 어제 결정 P1(MeowBeat 판정 텍스트 Variable Font 0.08초 weight 팝)과 결합 시 푸피 스쿼시 모션으로 임팩트 배가.',
+    researchItems: [
+      {
+        title: '🎯 Orchestrator — NumLink2일째연속침묵(4/24폭발→4/25 0건→4/26 0건)·미커밋34건그대로·MeowBeat14일째정체(마지막4/12)·미커밋36건·agent-office4/25후정지·이슈#45 P0 5건전원이월',
+        description:
+          'NumLink 4/24 10커밋 폭발 이후 4/25·4/26 연속 신규 커밋 0건 — 동결 재진입 패턴 확정. 미커밋 34건(Maplestory SDF 2종·TMP SDF 4종·Packages/manifest.json·AutoGenTests asmdef 삭제 4건) 그대로 스테이징 대기. MeowBeat feature/song-ownership-migration 마지막 커밋 4/12 이후 **14일째 완전 정체**, 미커밋 36건 변동 없음(FarmData.data·SongData.cs·GameManager.cs·SongManager.cs·OptionManager.cs·Google Mobile Ads 4종·manifest.json·StreamingAssets/Songs/manifest.json·ProjectSettings/AndroidResolverDependencies.xml). agent-office는 4/25 스탠드업 커밋 이후 오늘 신규 0건. **이슈 #45 P0 5건 전원 이월**: (A) NumLink chore(test) AutoGenTests 제거 (B) NumLink Scripts 하위 Library/Logs/Temp/UserSettings/Packages 5종 임시 폴더 정리 (C) NumLink Tools 템플릿 복사 14일째 (D) MeowBeat bak_btn _backups/ 이동 19일째(어제 18일 → +1) (E) MeowBeat 씬 복사본 3종 정리. **오늘 25분 P0 일괄 처리 안**: (1) NumLink chore(test) AutoGenTests 제거 원자 커밋 3분 (2) NumLink Library 오염 .gitignore 패치 + git rm --cached 10분 (3) NumLink Tools cp -r 5분 (4) MeowBeat bak_btn _backups/ 이동 2분 (5) MeowBeat _Recovery + AutoQATests 정리 5분. 25분이면 #45 P0 5건 모두 종결 가능.',
+      },
+      {
+        title: '🎮 Game Designer — SUPERSTAR LDH(8그룹300+카드형리듬)4월출시·GossipHarbor4/15퍼즐매출2위(머지+스토리)·인도Q1퍼즐+78%YoY($300M중AI+퍼즐견인)·리워드번들링IAA+IAP융합·OTA라이브옵스·MeowBeat주간카드컬렉션메타제안',
+        description:
+          '**SUPERSTAR LDH 2026-04 출시**(AppGamer 4/20-27 신작 리스트) — LDH 엔터테인먼트 8그룹 300+ 카드 컬렉션 + 리듬 매칭. 카드 컬렉션 메타로 D7~D30 방어가 표준화. **Gossip Harbor가 4/15 퍼즐 매출 2위**(Similarweb Top Grossing Puzzle) — 머지+스토리 조합이 Royal Match($104.5M) 다음. **인도 Q1 2026 퍼즐 매출 +78% YoY**(Mobile Marketing Reads, Q1 $300M 중 AI+퍼즐이 주도) — 인도/동남아 신흥 시장 진출 시점. 신규 수익화 트렌드: **리워드 번들링(IAA+IAP 융합)** — 광고 시청 후 IAP 할인 트리거가 표준(StudioKrew 2026 분석). **OTA 라이브옵스**(스테이지드 롤아웃 + 핫픽스 표준화)로 시즈널 이벤트가 인프라화. 이전 회의 Royal Match·Duet Cats·Phigros·UGC $2.2B·퍼즐 D7 4.5%·Apple Arcade 3종 중복 없음 — 이번 주제는 **"카드 컬렉션 메타 + 인도 신흥 시장 + IAA+IAP 융합"**이 축. **오늘 결정사항 제안**: MeowBeat에 **"주간 카드 컬렉션 메타"** 추가 P1 — SUPERSTAR LDH 검증 패턴 이식. 어제 P1 "곡 클리어 → 퍼즐 피스 드롭 → 고양이 룸 꾸미기" 이중 루프와 결합해 **"카드(고양이/곡 아트) 주간 가챠 + 룸 꾸미기 + 퍼즐 피스"** 3중 루프 구성. 카드는 곡 ZIP에 PNG 1장 추가하면 신규 에셋 10초 단위 생성 가능 → 비용 0에 가까운 메타.',
+      },
+      {
+        title: '💻 Developer — Unity6.7 CoreCLR데스크톱플레이어실험판공식예정·6.4 ECS코어패키지화·.NET10+CoreCLR통합진행·2026-04 ECSStackReview공개·NumLink IL2CPPcodesize옵션미적용·NumLink어제5건커밋(힌트즉시공개·HUD확대·탭색오염)',
+        description:
+          '**Unity 2026 로드맵(digitalproduction.com 2025-11)** 공식: 6.7에 **CoreCLR 데스크톱 플레이어 실험판** 포함 예정·Verified Packages 체계 강화·"Fewer Surprises" 방향. **Unity 6.4 ECS 코어가 verified package화**(2026-03 CoreCLR/ECS Status Update, Discussions 1711852). **2026-04 ECS Stack Review 공개**(Discussions 1717216) — DOTS 1.0 이후 안정화 평가 마감 단계. **.NET 10 정식 출시 후 CoreCLR Unity 통합 토론**(Discussions 1696014) — 게임 코드 일부 .NET 10 기능 활용 가능 시점이 2026 하반기로 다가옴. **IL2CPP 빌드 옵션 "code size" vs "speed" 절충**(Unity 공식 KB 208412186) — NumLink/MeowBeat 양쪽 모바일 빌드에 미적용 상태로 APK 사이즈 절감 여지 큼(WebGL 빌드는 zip 압축률 영향). NumLink 어제(4/24) 5건 커밋 흔적 — 힌트 즉시 공개·HUD 하단 버튼 확대·레벨선택 탭 색 오염 방지·고양이 세계관 강화·SaveData 버전 관리(이미 #44에서 다룸). 이전 회의 Unity 6.6 Apple Swift·Sentis→com.unity.ai.inference·6.5 Breaking·6.3 LTS 중복 없음 — 이번 주제는 **"6.7 로드맵 + ECS 코어 패키지화 + IL2CPP code size 시험"**이 축. **오늘 결정사항 제안**: P1 **NumLink IL2CPP "code size" 옵션 시험 빌드** — Player Settings → Android → IL2CPP Code Generation 옵션을 "Faster (smaller) builds"로 전환 후 APK 사이즈 비교(현재 vs code size). 절감 폭이 5%+ 나오면 즉시 채택, 미미하면 이슈로 트래킹 후 6.4 LTS 시점에 재평가.',
+      },
+      {
+        title: '🔍 QA Tester — NumLink QA인프라0%(Tools부재14일·known_bugs부재·Tests/Editor빈폴더·Debug.Log 64파일증가추세)·MeowBeat known_bugs 7건19일정체(신규0건)·MeowBeat Debug.Log 31파일중복',
+        description:
+          '**NumLink QA 인프라 0%** — `C:/Unity/NumLink/Tools/` 폴더 자체 부재(14일째)·`known_bugs.json` 파일 부재·`Assets/Tests/Editor/` 비어있음·AutoGenTests 삭제(어제 staged) 후 대체 테스트 0건. Debug.Log 누적 64파일(증가 추세, 4/22 #42 시점 Debug.Log 146건/+17 카운트보다 더 분산). 어제 커밋된 HintManager.cs 84줄·SaveData v1→v2 마이그레이션·UI 변경 5건이 회귀 검증 0%인 채로 누적 — 마이그레이션 실패 시 데이터 손실 리스크가 가장 심각. **MeowBeat `Tools/known_bugs.json` 7건 등록 상태 19일째 정체**(마지막 추가 4/7, 이후 신규 0건). farm_sprite_fileid_mismatch·farm_sorting_layer_regression 등 어제 다룬 항목이 등록되어 있지만 실제 회귀 검증 fixtures(test_fixtures/)는 비어있을 가능성 높음. MeowBeat Debug.Log 31파일(중복 31개) — 4/19 #39 시점 Debug.Log 129건과 정합. 모바일 호환성 리스크: Android 15 EdgeToEdge 강제·iOS 19 Privacy Manifest 신규 항목·Liquid Glass 4/22 출시(iOS 26.4) 모두 미점검. 이전 회의 bak_btn 18일·_Recovery 13일·AutoQATests 신규·Tools 13일째 부재 중복 없음 — 이번 주제는 **"NumLink QA 인프라 0% 공식 등재 + Debug.Log 누적 추세 + 모바일 OS 신규 호환성 리스크"**가 축. **오늘 결정사항 제안**: P0 **NumLink Tools 템플릿 5분 즉시 복사**(`cp -r C:/Unity/_ProjectTemplate/Tools C:/Unity/NumLink/Tools` + 씬 경로 상수 업데이트) → known_bugs.json 빈 파일 생성 + numlink_hint_data_loss·numlink_savedata_v1_v2 2건 즉시 등록. 14일째 종결.',
+      },
+      {
+        title: '📢 Content Writer — Apple6월ASO알고스크린샷캡션인덱싱(시각=검색패러다임)·Reddit인디광고$25-50/일위시리스트유의미·코지+캣트렌드정점·"relaxing/nowifi/match"롱테일우세·Discord마케팅2026표준화',
+        description:
+          '**Apple 6월 ASO 알고리즘 업데이트** 예고(Phiture 2026 ASO Trends) — 스크린샷 내부 캡션 텍스트도 키워드 인덱싱 대상으로 확대 적용. "시각=검색" 패러다임 전환으로 **스크린샷 캡션이 메타데이터 키워드 슬롯과 동등 비중**. 단순 게임 화면이 아닌 키워드 박힌 캡션 오버레이가 ASO 핵심 무기로 부상. **롱테일 키워드 최적화**가 ASO 우위 확보 핵심(MobileAction 2026 분석) — "puzzle"·"rhythm" 같은 헤드 키워드보다 **"no wifi puzzle"·"relaxing match"·"cat rhythm offline"** 같은 3~4단어 조합이 CVR 높음. **Reddit 인디 광고 $25-50/일로도 위시리스트 유의미**(IMPRESS 2026) — r/IndieGaming·r/IndieDev 같은 메인 서브레딧보다 **r/CozyGames·r/PuzzleGames 같은 서브 서브레딧**이 CTR 2~3배. **코지+캣 트렌드 정점**(PC Gamer 2026-04 cozy games 리뷰) — 4월 신작 쇼케이스에서 고양이 IP·디오라마 꾸미기·릴렉싱 톤이 핵심. Discord 2026 마케팅 표준화(Zen Media) — 인디 게임은 Discord 서버 = 1차 커뮤니티. 이전 회의 YouTube Shorts CPM $4·TikTok Spark CPI -30%·Threads 4억·Steam 프리런칭·D1 22% 하락·인앱 광고 eCPM 중복 없음 — 이번 주제는 **"Apple 6월 알고 대비 + 롱테일 키워드 + Reddit 마이크로 광고"**가 축. **오늘 결정사항 제안**: P2 **NumLink/MeowBeat 스크린샷 캡션 키워드 3종 A/B 테스트(1주)** — A안 "Connect numbers, no wifi, relaxing", B안 "Cat puzzle, offline, brain training", C안 "Match & connect, cozy" 3종을 각 스크린샷 5장에 박아 1주 후 CVR 비교. Apple 6월 알고 출시 전 데이터 확보.',
+      },
+      {
+        title: '⚙️ DevOps — agent-office5건연속success(36~41s)·NumLink/MeowBeat .github/workflows0건지속·GHActions2026-04커스텀러너이미지GA·OIDC커스텀속성·2026보안로드맵공개·모바일OTA스테이지드롤아웃표준화',
+        description:
+          '**agent-office GitHub Pages 배포 5건 연속 success** 유지(36~41s, Vite·Node22) — deploy-pages.yml + weekly-insights.yml 2종 안정 운영. **NumLink/MeowBeat `.github/workflows/` 0건 지속**(어제 #45 공식 기술부채 등재 결정 후 미진행). **GitHub Actions 2026-04 업데이트**(github.blog 2026-04-02): **커스텀 러너 이미지 GA**(이제 production 사용 가능) + **OIDC 커스텀 속성**(보안 클레임 세분화). **2026 GitHub Actions 보안 로드맵 공개** — provenance 강화·secret rotation 자동화 방향. **모바일 OTA가 릴리스 인프라화**(Capgo·Medium React Native 사례 2026): 핫픽스 + 스테이지드 롤아웃이 표준 — Apple/Google 가이드라인 준수 OTA 패턴 정립. Game-CI vs Cloud Runner 비교(game.ci 공식 문서) — Cloud Runner는 GameCI 6.x에서 정식 지원, GitHub Actions 분 무료 활용 우위. 이전 회의 macos-26 GA·.omc/sessions 정리·deploy-pages 정상·weekly-insights·MCP 패키지 교체 중복 없음 — 이번 주제는 **"GH Actions 2026-04 업데이트 + OTA 인프라화 + GameCI Cloud Runner 비교"**가 축. **오늘 결정사항 제안**: P2 **NumLink GameCI 6.x WebGL 빌드 워크플로우 신설**(macos-26·Cloud Runner) — 어제 #45 P1로 등재된 5월 스파이크를 한 주 앞당겨 4/27~28 주말 1~2시간 스파이크. WebGL부터 시작해 빌드 1회 성공 검증 후 Android·iOS 단계 확장. agent-office 5건 연속 성공 흐름이 인프라 자신감 확보 시점.',
+      },
+      {
+        title: '🎨 Art Director — iOS26.4 LiquidGlass굴절·반투명머티리얼(4/22출시)·M3Expressive스프링모션+블러깊이(Android16표준)·푸피·스쿼시텍스처+모듈퍼즐레이아웃·키네틱타이포hero/판정표준',
+        description:
+          '**iOS 26.4 Liquid Glass 4/22 출시**(9to5Mac, Wikipedia) — 굴절·반투명 머티리얼에 두 가지 커스터마이즈 옵션 추가(투명도/굴절도 조절 가능). 시스템 위젯·앱 인터페이스에서 **굴절 + 블러 깊이가 핵심 비주얼 언어**. **Material 3 Expressive(Android Authority)**: **스프링 모션 + 블러 깊이**가 Android 16 표준 — 단순 페이드/슬라이드 → 스프링 오버슈트 + 깊이 블러 교차로 진화. **2026 모바일 게임 UI 트렌드**(Pixune): **푸피(Puffy) 텍스처 + 스쿼시(Squash) 모션 + 모듈 퍼즐 레이아웃** — 부드럽게 부풀어 보이는 텍스처와 탄력적 변형이 캐주얼 퍼즐의 비주얼 정체성. **키네틱 타이포그래피(Digital Silk·Adobe 2026 트렌드)**가 hero 섹션·판정 텍스트 표준 — 글자 자체가 모션 컴포넌트. 이전 회의 Variable Font 베스트프랙티스·Material 3 Expressive·Purposeful Motion 200-500ms·뉴모피즘 2026·핸드크래프트 비주얼 중복 없음 — 이번 주제는 **"iOS 26.4 Liquid Glass + 푸피·스쿼시 텍스처 + 키네틱 타이포 응용"**이 축. **오늘 결정사항 제안**: P2 **MeowBeat 노트 히트 스쿼시·스프링 모션 프로토 1일** — 노트 히트 시 0.12초 squash(scale 1.0→1.3→0.9→1.0) + DOTween Spring 이징(`Ease.OutBack`). 어제 결정 P1 Variable Font weight(400→900) 0.08초 팝과 결합 시 **"weight 팝(글자) + 스쿼시(노트 핀) + 블러 펄스(배경)"** 3중 피드백. NumLink 숫자 연결 성공에도 동일 squash 적용 가능 — 어제 200-300ms 팝과 결합. iOS 26.4 Liquid Glass는 게임 본문에는 적용 미루고 메뉴/HUD 패널만 시험.',
+      },
+    ],
+    meetingTitle:
+      '🤝 4/26 종합 회의 — NumLink2일째연속침묵(4/24폭발→4/25/4/26 0건)·MeowBeat14일째·이슈#45 P0 5건전원이월(Library오염+Tools부재+bak_btn19일+_Recovery14일)·25분일괄P0종결안·Unity6.7 CoreCLR로드맵·SUPERSTAR LDH카드컬렉션메타·Apple6월ASO스크린샷캡션·iOS26.4 LiquidGlass·푸피스쿼시',
+    meetingSummary:
+      'NumLink 4/24 10커밋 폭발 이후 4/25·4/26 연속 0커밋 — 동결 재진입 패턴 2일째 확정. MeowBeat 14일째 정체 변동 없음. 이슈 #45 P0 5건 전원 이월(Library 오염·Tools 부재·bak_btn 19일·_Recovery 14일·AutoQATests). **오늘 핵심 결정**: 25분 P0 일괄 처리로 #45 P0 5건 전원 종결 — 더 미루면 #46→#47로 이월 누적되어 부채 가속. 시장/기술 축은 "Unity 6.7 CoreCLR 데스크톱 실험판 + SUPERSTAR LDH 카드 컬렉션 메타 + Gossip Harbor 4/15 매출 2위 + 인도 Q1 퍼즐 +78% + 리워드 번들링 + Apple 6월 ASO 스크린샷 캡션 인덱싱 + iOS 26.4 Liquid Glass + 푸피·스쿼시 + GH Actions 커스텀 러너 GA + OTA 스테이지드 롤아웃". 마케팅 P2 "스크린샷 캡션 키워드 3종 A/B"는 Apple 6월 알고 출시 전 데이터 확보 골든타임.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'NumLink 4/24 폭발 → 4/25 0건 → 4/26 0건의 2일 연속 침묵 패턴 확정. 미커밋 34건 그대로. MeowBeat 14일째 0커밋(마지막 4/12), 미커밋 36건 변동 없음. agent-office 4/25 스탠드업 후 정지. 이슈 #45 P0 5건 전원 이월(AutoGenTests 제거·Library 오염 정리·Tools 복사·bak_btn 이동·씬 복사본 3종). 오늘 25분 P0 일괄 처리: chore(test) AutoGenTests 3분 + Library 정리 10분 + Tools cp -r 5분 + bak_btn 이동 2분 + _Recovery/AutoQATests 5분.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: 'SUPERSTAR LDH 4월 출시(LDH 8그룹 300+ 카드형 리듬·카드 컬렉션 D7 메타). Gossip Harbor 4/15 퍼즐 매출 2위(머지+스토리). 인도 Q1 2026 퍼즐 +78% YoY($300M 중 AI+퍼즐 견인). 리워드 번들링(IAA+IAP 융합) + OTA 라이브옵스 표준화. MeowBeat에 P1 "주간 카드 컬렉션 메타" 제안 — 어제 P1 이중 루프와 결합해 "카드 가챠 + 룸 꾸미기 + 퍼즐 피스" 3중 루프. 카드는 곡 ZIP에 PNG 1장 추가로 비용 0.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'Unity 2026 로드맵 공식: 6.7에 CoreCLR 데스크톱 플레이어 실험판·6.4 ECS 코어 패키지화·.NET 10 + CoreCLR 통합 진행. 2026-04 ECS Stack Review 공개. NumLink/MeowBeat IL2CPP "code size" 옵션 미적용 — APK 절감 여지. 오늘: P1 NumLink IL2CPP code size 시험 빌드(Player Settings → Android → IL2CPP Code Generation "Faster (smaller) builds" 전환 후 현재 vs code size 비교). 5%+ 절감 시 즉시 채택.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'NumLink QA 인프라 0%: Tools 부재 14일째·known_bugs.json 부재·Tests/Editor 빈 폴더·AutoGenTests 삭제 후 대체 0건·Debug.Log 64파일 누적(증가). MeowBeat known_bugs 7건 등록 상태 19일째 정체(신규 0건). 모바일 호환성 리스크: Android 15 EdgeToEdge·iOS 19 Privacy Manifest·iOS 26.4 Liquid Glass(4/22 출시) 미점검. 오늘: P0 NumLink Tools cp -r 5분 즉시 + known_bugs.json 빈 파일 + numlink_hint_data_loss·numlink_savedata_v1_v2 2건 등록.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'Apple 6월 ASO 알고리즘 업데이트 — 스크린샷 캡션 텍스트도 키워드 인덱싱(Phiture). "시각=검색" 패러다임. 롱테일 키워드 우세("no wifi puzzle"·"relaxing match"·"cat rhythm offline"). Reddit 인디 광고 $25-50/일 위시리스트 유의미(서브 서브레딧 r/CozyGames·r/PuzzleGames CTR 2~3배). 코지+캣 정점(PC Gamer 4월). 오늘: P2 NumLink/MeowBeat 스크린샷 캡션 키워드 3종 A/B 테스트(1주) — Apple 6월 알고 출시 전 데이터 확보 골든타임.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'agent-office 5건 연속 success(36~41s). NumLink/MeowBeat .github/workflows 0건 지속. GH Actions 2026-04: 커스텀 러너 이미지 GA·OIDC 커스텀 속성·2026 보안 로드맵. 모바일 OTA가 릴리스 인프라화(스테이지드 롤아웃 + 핫픽스 표준·Capgo). 오늘: P2 NumLink GameCI 6.x WebGL 빌드 워크플로우 신설(macos-26·Cloud Runner) — 4/27~28 주말 1~2시간 스파이크로 #45 P1 등재된 5월 스파이크 한 주 앞당김.',
+      },
+      {
+        speaker: 'Art Director',
+        note: 'iOS 26.4 Liquid Glass 4/22 출시(굴절·반투명 머티리얼 두 옵션). M3 Expressive 스프링 모션 + 블러 깊이(Android 16 표준). 푸피(Puffy) 텍스처 + 스쿼시(Squash) 모션 + 모듈 퍼즐 레이아웃(Pixune). 키네틱 타이포그래피 hero/판정 표준. 오늘: P2 MeowBeat 노트 히트 스쿼시·스프링 모션 프로토 1일(0.12초 squash + DOTween Ease.OutBack). 어제 P1 Variable Font weight 팝과 결합 — "weight(글자) + 스쿼시(노트) + 블러(배경)" 3중 피드백. iOS 26.4 Liquid Glass는 메뉴/HUD만 시험.',
+      },
+    ],
+    decisions: [
+      {
+        title: 'P0 — NumLink chore(test) AutoGenTests 제거 원자 커밋 (3분·이슈 #45 이월 종결)',
+        description:
+          '#45 P0 1번 이월 — 미커밋 34건 중 AutoGenTests asmdef 4종 삭제(D 상태)가 가장 쉬운 원자 단위. `git rm` 확정 후 단일 커밋으로 종결. 폰트 SDF 6종·Packages/manifest.json은 별개 커밋으로 분리.',
+      },
+      {
+        title: 'P0 — NumLink .gitignore 패치 + Assets/02. Scripts 하위 임시 폴더 5종 제거 (10분·이슈 #45 이월 종결)',
+        description:
+          '#45 P0 5번 이월 — Library/·Logs/·Temp/·UserSettings/·Packages/ 5종이 .meta와 함께 커밋 대상. `Assets/**/[Ll]ibrary/`·`Assets/**/[Tt]emp/`·`Assets/**/[Ll]ogs/`·`Assets/**/[Uu]ser[Ss]ettings/`·`Assets/**/[Pp]ackages/` 5패턴 추가 + `git rm --cached -r` + .meta 동반 삭제.',
+      },
+      {
+        title: 'P0 — NumLink Tools/ 템플릿 복사 (5분·14일째 종결)',
+        description:
+          '#45 P0 6번 이월 — `cp -r C:/Unity/_ProjectTemplate/Tools C:/Unity/NumLink/Tools` 실행 후 씬 경로 상수 업데이트. unity_validate.py + qa_static.py + known_bugs.json + run_regression.py 4종 도입. 즉시 numlink_hint_data_loss + numlink_savedata_v1_v2 2건을 known_bugs.json에 등록(어제 커밋된 HintManager 84줄 + SaveData v1→v2 마이그레이션 회귀 검증 대상).',
+      },
+      {
+        title: 'P0 — MeowBeat MainScene.unity.bak_btn _backups/ 이동 (2분·19일째 종결)',
+        description:
+          '#45 P0 2번 이월 — 4/7 생성 1.6MB 백업이 Assets 내부 19일째 상주(어제 18일 → +1). `git mv Assets/Scenes/MainScene.unity.bak_btn _backups/MainScene.unity.bak_btn` + .meta 동반 이동 후 커밋. 19일 누적 종결.',
+      },
+      {
+        title: 'P0 — MeowBeat 씬 복사본 3종 정리 커밋 (_Recovery + AutoQATests 포함·5~10분·이슈 #45 이월 종결)',
+        description:
+          '#45 P0 3번 이월 — Assets/_Recovery/0.unity 14일째 + Assets/AutoQATests/ 신규 untracked까지 bak_btn 합산 3.2MB+ 누적. _Recovery는 .gitignore 등록 후 삭제, AutoQATests는 AutoQA 실험물이면 _experiments/ 이동. 단일 chore(scene) 커밋으로 종결.',
+      },
+      {
+        title: 'P1 — NumLink IL2CPP "code size" 옵션 시험 빌드 + APK 사이즈 비교',
+        description:
+          'Developer 제안 — Player Settings → Android → IL2CPP Code Generation "Faster (smaller) builds" 전환 후 현재 vs code size APK 사이즈 비교. 절감 폭 5%+ 시 즉시 채택, 미미하면 이슈 등재 후 6.4 LTS 시점에 재평가. WebGL 빌드는 zip 압축률에 영향 받으므로 Android만 우선.',
+      },
+      {
+        title: 'P1 — MeowBeat 주간 카드 컬렉션 메타 추가 기획 (SUPERSTAR LDH 벤치마크)',
+        description:
+          'Game Designer 제안 — SUPERSTAR LDH(4월 출시·LDH 8그룹 300+ 카드형) 검증 패턴 이식. 어제 P1 이중 루프(곡 클리어 → 퍼즐 피스 드롭 → 룸 꾸미기)와 결합해 **"카드(고양이/곡 아트) 주간 가챠 + 룸 꾸미기 + 퍼즐 피스"** 3중 루프 구성. 카드 에셋은 곡 ZIP에 PNG 1장 추가로 비용 0에 가까움.',
+      },
+      {
+        title: 'P2 — NumLink/MeowBeat 스크린샷 캡션 키워드 3종 A/B 테스트 (1주·Apple 6월 ASO 알고 대비)',
+        description:
+          'Content Writer 제안 — Apple 6월 알고리즘 업데이트(스크린샷 캡션 키워드 인덱싱) 출시 전 데이터 확보 골든타임. A안 "Connect numbers, no wifi, relaxing", B안 "Cat puzzle, offline, brain training", C안 "Match & connect, cozy" 3종을 각 스크린샷 5장에 박아 1주 후 CVR 비교. 롱테일 키워드 우세 검증.',
+      },
+      {
+        title: 'P2 — NumLink GameCI 6.x WebGL 빌드 워크플로우 스파이크 (4/27~28 주말 1~2시간)',
+        description:
+          'DevOps 제안 — #45 P1 등재된 5월 스파이크를 한 주 앞당김. macos-26 GA + GH Actions 커스텀 러너 GA + Cloud Runner 정식 지원이 모두 확보된 시점. WebGL 빌드 1회 성공 검증 후 Android·iOS 단계 확장. agent-office 5건 연속 성공 흐름이 자신감 근거.',
+      },
+      {
+        title: 'P2 — MeowBeat 노트 히트 스쿼시·스프링 모션 프로토 1일',
+        description:
+          'Art Director 제안 — 0.12초 squash(scale 1.0→1.3→0.9→1.0) + DOTween Ease.OutBack 스프링 이징. 어제 결정 P1 Variable Font weight(400→900) 0.08초 팝과 결합 시 **"weight(글자) + 스쿼시(노트 핀) + 블러 펄스(배경)"** 3중 피드백. NumLink 숫자 연결 성공에도 동일 squash 적용. iOS 26.4 Liquid Glass는 게임 본문 미루고 메뉴/HUD 패널만 시험.',
+      },
+    ],
+  },
+  {
     id: '2026-04-25T04:00:00-daily-standup',
     date: '2026-04-25',
     researchTitle:
