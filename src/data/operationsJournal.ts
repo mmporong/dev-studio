@@ -43,6 +43,132 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-04-27T04:00:00-daily-standup',
+    date: '2026-04-27',
+    researchTitle:
+      '📊 4/27 데일리 스탠드업 — NumLink동결3일째연속침묵·미커밋35건+증가·MeowBeat20일째0커밋·agent-office4/26후정지·이슈#46 P0 5건전원이월누적·25분일괄안폐기→단일강제착수모드전환·BlockBlast21일우주마라톤글로벌1위·MENA Gulf Ramadan IAP급증·라이브이벤트2~4주D30 ROAS+30%·MeowBeat OptionManager.SongVolume슬라이더신규·SongManager bgm0.5배+OptionManager.CurrentVolume단일소스교체기회·NumLink Domain순수성OK이나FindObjectOfType5건/GameObject.Find3건매니저층위반·known_bugs7건전원auto_fix=false·미드티어유튜버$5K~25K·AppleAds D7/D30 ROAS1위·MetaAdvantage+스케일1위·LiteASO MCP+ChatGPT AI검색노출신전장·Renovate90+매니저Dependabot우위·CopilotPR코드리뷰무라이선스GA·Rive60FPSvsLottie17FPS파일1015배작음·다크모드#000금지#09090B 4단계서피스토큰·캐주얼아이콘소프트3D플러시·첫60초인스턴트플레이10초단일메커닉표준',
+    researchSummary:
+      '7명 에이전트 병렬 리서치(제15회). NumLink **동결 3일째 진입** — 4/24 10커밋 폭발 → 4/25 0건 → 4/26 0건 → 4/27 0건. 미커밋 어제 34건 → **오늘 35건+ 증가**(Logs/Packages/Temp/UserSettings 신규 untracked, AutoGenTests는 D 상태 stage 대기). MeowBeat 마지막 커밋 4/12 657032c 이후 **20일째 완전 정체**, MainScene.unity.bak_btn 4/8 생성 기준 **20일째 누적**. agent-office 4/26 c337317 이후 신규 0건. **이슈 #46 P0 5건 전원 이월(누적 2일째)** — 25분 일괄 처리안 어제 미실행. **오늘 결정**: Orchestrator 권고에 따라 **25분 일괄안 폐기 → 단일 항목 강제 착수 모드 전환**. 가장 가벼운 #1(AutoGenTests rm 커밋)부터 5분 컷 단독 실행로 동결 흐름 끊기. 시장: **Block Blast가 21일 우주 로켓 테마 마라톤 + 컬렉터블로 글로벌 다운로드 1위 유지**(Singular State of Gaming 2026). **MENA Gulf 권역 IAP·세션길이 급증**, Ramadan 등 현지 이벤트 연동 시 전환율 상승(GAMES.GG 2026 Regional Insights). **라이브 이벤트 2~4주 갱신 시 D30 ROAS +30%, 설치 +200% MoM**(Udonis Live Events Report 2026). 기술: **MeowBeat OptionManager에 SongVolume 슬라이더 신규 추가**(PlayerPrefs 영속화), SongManager bgm 1·2번 곡 0.5배 기본밸런스 × 사용자 음량, GameManager OnLanguageChanged + KO/EN 곡명 분기 + 잠금곡 톤다운(0.45 알파 0.7) 구현. **신규 리스크**: SongManager.Play 핫패스에서 매 곡 시작마다 PlayerPrefs.GetFloat("SongVolume") 호출 — OptionManager.CurrentVolume static 프로퍼티가 이미 존재하므로 단일 진실 소스로 교체 권장(5분). **PrimeTween 제로 GC 검증**(DOTween 734B/animation 대비), Codemagic Unity LTS 프리설치 + Google Play 자동배포 내장. QA: NumLink Debug.Log 60+파일 정체(어제 64에서 감축 0건), MeowBeat Debug.Log 36파일/146건, FindObjectOfType 4파일/22건 잔존. **NumLink Domain 레이어 UnityEngine 참조는 0건(순수성 OK)**이나 FindObjectOfType 5건·GameObject.Find 3건(패키지 제외) 매니저층 위반 잔존, ServiceLocator 패턴 미적용 영역 존재. **MeowBeat known_bugs 7건 전원 auto_fix=false**(수동 에스컬레이션만, 14일째 자동수정 0개), test_fixtures 폴더 부재로 RT_SIZE_ZERO/YAML 3종 회귀 검증 불가. 마케팅: **미드티어 게임 유튜버(10만~50만 구독) 영상 1편 단가 $5,000~$25,000, 게임 CPM $4~$15**(InfluencerMarketingHub 2026). **Apple Ads는 D7/D30 ROAS 1위, Meta Advantage+는 스케일 1위 — 성숙 UA는 3~5채널 동시 운영이 표준**(Singular 2026 ROI Index). **TikTok 오가닉 리치 2025~2026 급락, 어필리에이트 크리에이터 군단 전환 필요. TikTok Shop GMV 2026 $87B 전망**. **AppTweak·Lite ASO가 ChatGPT/Claude MCP 연동 출시 — AI 검색(ChatGPT Directory) 노출이 신규 ASO 전장**(WWDC 2025 AI Tags). DevOps: agent-office Pages **6연속 success**(04-20~25 19:1x UTC 정시) 유지. NumLink/Feedme `.github/workflows/` 여전히 0건. **Renovate 90+ 매니저·그룹 PR·대시보드, Dependabot 대비 우위**. **Copilot PR 코드리뷰 전조직 무라이선스 확장 GA**(2026-04-23). Art: **Rive 60FPS vs Lottie 17FPS, 파일 10~15배 작음** — 모션 전환 시급(rivemasterclass.com). **다크모드는 #000 금지, #09090B 4단계 서피스 토큰 표준**(recursion.software). 캐주얼 아이콘 트렌드: **소프트 3D + 플러시 텍스처 + 친근 캐릭터**(envato.com). **첫 60초 "인스턴트 플레이 + 10초 단일 메커닉" 표준**(iabdi.com). 한국 인디는 OLED 친화 다크 + 변동 폰트 헤드라인 채택 가속.',
+    researchItems: [
+      {
+        title: '🎯 Orchestrator — NumLink동결3일째연속침묵(미커밋34→35+증가)·MeowBeat20일째정체(bak_btn20일+1)·agent-office4/26후정지·이슈#46 P0 5건전원이월누적2일째·25분일괄안폐기→단일강제착수모드전환제안',
+        description:
+          'NumLink 4/24 10커밋 폭발 → 4/25 0건 → 4/26 0건 → 4/27 0건의 **3일 연속 침묵**. cf7c897 이후 신규 커밋 0건. 미커밋 어제 34건 → 오늘 35건+ 증가(Logs/Packages/Temp/UserSettings 신규 untracked, AutoGenTests는 D 상태 stage 대기). **NumLink는 동결 → 폭발 → 동결의 진동 패턴이 1주째 고착화**. MeowBeat feature/song-ownership-migration 657032c 이후 **20일째 완전 정체**, MainScene.unity.bak_btn 4/8 생성 기준 어제 19일 → **오늘 20일째**. 미커밋 36건 변동 거의 없음. agent-office 4/26 스탠드업 커밋 후 정지. **이슈 #46 P0 5건 전원 이월 누적 2일째**: (1) AutoGenTests 제거 — 미완료(D 상태 stage 대기, 커밋 안 됨) (2) Library .gitignore 패치 — 미완료(Library/Logs/Packages/Temp/UserSettings 여전히 untracked) (3) Tools 템플릿 cp -r — 미완료(Tools/ 흔적 없음) (4) MeowBeat bak_btn _backups/ 이동 — 미완료(여전히 Scenes/ 루트) (5) MeowBeat _Recovery + AutoQATests 정리 — 미완료(둘 다 untracked 유지). **오늘 결정사항**: 25분 일괄 처리안 어제 미실행 → **폐기**. 단일 항목 강제 착수 모드로 전환 — 가장 가벼운 #1(AutoGenTests rm 커밋)부터 5분 컷 단독 실행로 동결 흐름 끊기. 일괄안은 합리적이지만 결과가 0이므로 "1건 종결 → 다음 1건"의 원자 호흡으로 변경.',
+      },
+      {
+        title: '🎮 Game Designer — BlockBlast21일우주로켓마라톤+컬렉터블글로벌1위유지(Singular)·MENA Gulf Ramadan연동전환율급증(GAMES.GG)·라이브이벤트2~4주D30 ROAS+30%·설치+200%MoM(Udonis)·MeowBeat21일골든벨마라톤+NumLink21일숫자별자리공용엔진제안',
+        description:
+          '**Block Blast가 21일 우주 로켓 테마 마라톤 + 컬렉터블로 글로벌 다운로드 1위 유지**(Singular State of Gaming 2026). 21일 단일 시즌 컨테이너가 캐주얼 retention의 표준으로 부상. **MENA Gulf 권역 IAP·세션길이 급증**, Ramadan 등 현지 이벤트 연동 시 전환율 상승(GAMES.GG 2026 Regional Insights) — 한국/일본/미국 외 차세대 시장으로 Gulf 권역 부상. **라이브 이벤트 2~4주 갱신 시 D30 ROAS +30%, 설치 +200% MoM**(Udonis Live Events Report 2026). 어제 SUPERSTAR LDH/Gossip Harbor/인도 +78% 중복 없음 — 이번 주제는 **"21일 단일 시즌 마라톤 + MENA Gulf 진출 + 라이브 이벤트 갱신 주기"**가 축. **오늘 결정사항 제안**: P1 **MeowBeat "21일 골든벨 마라톤" 시즌 컨테이너 GDD 1페이지 초안 작성** — 매일 1곡 한정 해금 + 7/14/21일째 컬렉터블 고양이 도장(스티커북) 보상 마일스톤 3단 구조, Day 21 클리어 시 한정 야옹 보이스팩 지급. NumLink는 동일 골격을 **"21일 숫자 별자리"** 테마로 변형해 동일 라이브옵스 엔진 1회 구현으로 2게임 공용화 — 4월 5주차 스프린트 첫 티켓으로 등록. 어제 P1 이중 루프와 결합 시 **시즌 마라톤 → 카드 가챠 → 룸 꾸미기 → 퍼즐 피스** 4중 루프 완성.',
+      },
+      {
+        title: '💻 Developer — MeowBeat OptionManager.SongVolume슬라이더신규·SongManager bgm0.5배기본×사용자음량·GameManager OnLanguageChanged+KO/EN곡명+잠금곡톤다운·NumLink최신cf7c897(힌트즉시공개+기본1지급)·PrimeTween제로GC검증·Codemagic Unity LTS프리설치+GooglePlay자동배포내장',
+        description:
+          '**MeowBeat OptionManager에 SongVolume 슬라이더 신규 추가**(PlayerPrefs 영속화). **SongManager에서 bgm 1·2번 곡 0.5배 기본밸런스 × 사용자 음량 곱 적용**. **GameManager에 OnLanguageChanged 이벤트 + KO/EN 곡명 분기 + 잠금곡 톤다운(0.45 알파 0.7) 구현**. NumLink 최신 커밋 cf7c897 = 힌트 즉시공개 + 신규유저 1개 기본지급. **신규 리스크 발견**: MeowBeat의 PlayerPrefs.GetFloat("SongVolume") 호출이 SongManager.Play 핫패스에서 매 곡 시작마다 발생 중 — OptionManager.CurrentVolume static 프로퍼티가 이미 존재하므로 단일 진실 소스 교체 가능(5분 작업, GameConstants 패턴 부합). 외부 동향: **PrimeTween 제로 GC 검증**(DOTween 734B/animation 대비), **Codemagic은 Unity LTS 프리설치 + Google Play 자동배포 내장**. 어제 Unity 6.7 CoreCLR/ECS Stack Review/IL2CPP code size 중복 없음 — 이번 주제는 **"MeowBeat 라이브 코드 변경 분석 + PrimeTween/Codemagic 도입 검토"**가 축. **오늘 결정사항 제안**: P0 **MeowBeat SongManager의 PlayerPrefs.GetFloat("SongVolume") 직접 조회를 OptionManager.CurrentVolume 참조로 교체**(5분 작업) — 디스크 I/O 제거 + 단일 진실 소스 확립. 핫패스 최적화 + ServiceLocator 패턴 부합. PrimeTween 도입은 P2로 별도 검토.',
+      },
+      {
+        title: '🔍 QA Tester — NumLink Debug.Log 60+파일정체(감축0)·MeowBeat Debug.Log 36파일/146건+FindObjectOfType 4파일/22건·known_bugs7건전원auto_fix=false(14일정체)·NumLink Domain순수성OK이나FindObjectOfType5건/GameObject.Find3건매니저층위반·test_fixtures부재로RT_SIZE_ZERO/YAML 3종회귀불가',
+        description:
+          'NumLink Debug.Log 누적 64 → **오늘도 60+파일 정체, 어제 대비 감축 0건**. MeowBeat Debug.Log 36파일/146건, **FindObjectOfType 4파일/22건 잔존**. **MeowBeat known_bugs.json 7건 전원 auto_fix=false**(수동 에스컬레이션만, 14일째 자동수정 0개) — 등록은 됐지만 자동 수정 파이프라인 0%. NumLink Tools/known_bugs.json/Tests/Editor 3종 모두 부재 확정 — **14일째 QA 인프라 zero**. **신규 리스크**: NumLink Domain 레이어 UnityEngine 참조는 0건(순수성 OK)이나, **FindObjectOfType 5건·GameObject.Find 3건(패키지 제외) 매니저층 위반 잔존**, ServiceLocator 패턴 미적용 영역 존재. MeowBeat _Recovery 폴더·test_fixtures 폴더 모두 부재 — known_bugs 7건 중 RT_SIZE_ZERO/YAML 3종 회귀 검증 불가능. 어제 Tools 부재 14일째/known_bugs 부재/AutoGenTests 삭제 후 대체 0건/iOS 26.4 Liquid Glass 미점검 중복 없음 — 이번 주제는 **"Debug.Log 감축 0 + ServiceLocator 위반 매니저층 정량화 + auto_fix=false 14일 정체"**가 축. **오늘 결정사항 제안**: P0 **NumLink에 최소 인프라 부트스트랩** — `cp C:/Unity/_ProjectTemplate/Tools/unity_validate.py + known_bugs.json 골격`을 NumLink로 1회 복사·씬 경로 상수만 치환(15분 작업). 14일 정체된 QA 0건 상태 즉시 깨고 내일부터 회귀 검증 파이프라인 진입.',
+      },
+      {
+        title: '📢 Content Writer — 미드티어유튜버$5K~25K영상1편/CPM$4~$15(InfluencerMarketingHub)·AppleAds D7/D30 ROAS1위·MetaAdvantage+스케일1위·3~5채널동시운영표준(Singular2026 ROI Index)·TikTok오가닉리치급락→어필리에이트군단전환·TikTokShop GMV2026 $87B·LiteASO MCP+ChatGPT AI검색노출신전장(WWDC25 AI Tags)',
+        description:
+          '**미드티어 게임 유튜버(10만~50만 구독) 영상 1편 단가 $5,000~$25,000, 게임 CPM $4~$15**(InfluencerMarketingHub 2026) — 인플루언서 단가 표 공개. **Apple Ads는 D7/D30 ROAS 1위, Meta Advantage+는 스케일 1위 — 성숙 UA는 3~5채널 동시 운영이 표준**(Singular 2026 ROI Index). 단일 채널 의존 시대 종료. **TikTok 오가닉 리치 2025~2026 급락, 어필리에이트 크리에이터 군단으로 전환 필요. TikTok Shop GMV 2026년 $87B 전망**. **AppTweak·Lite ASO가 ChatGPT/Claude MCP 연동 출시 — AI 검색(ChatGPT Directory) 노출이 신규 ASO 전장으로 부상**(WWDC 2025 AI Tags). 어제 Apple 6월 ASO 캡션/Reddit 인디 광고/코지+캣/롱테일 키워드 중복 없음 — 이번 주제는 **"인플루언서 단가 표 + Apple Ads vs Meta vs UAC 분담 + Lite ASO MCP AI 검색 진입"**이 축. **오늘 결정사항 제안**: P2 **NumLink·MeowBeat 양 게임의 App Store/Play Store 메타데이터를 Lite ASO MCP에 연결해 "AI 검색 노출용 자연어 설명문" 별도 작성** — 기존 키워드 나열형이 아닌 "고양이가 박자에 맞춰 점프하는 무료 리듬게임" 같은 ChatGPT 추천용 한 줄 카피 3안을 이번 주 내 등록. ChatGPT Directory 노출이 신규 트래픽 채널로 부상 시점.',
+      },
+      {
+        title: '⚙️ DevOps — agent-office Pages6연속success(04-20~25 19:1x UTC정시)·NumLink/Feedme .github/workflows0건지속·Renovate90+매니저+그룹PR+대시보드Dependabot우위·CycloneDX1.6+SLSA어테스테이션·CopilotPR코드리뷰전조직무라이선스확장GA(2026-04-23)',
+        description:
+          'agent-office Pages 6연속 success(04-20~25 19:1x UTC 정시) 유지. **NumLink/Feedme `.github/workflows/` 여전히 0건**. **Renovate 90+ 매니저·그룹 PR·대시보드 — Dependabot 대비 우위**(appsecsanta.com 2026 비교). **CycloneDX 1.6 + SLSA 어테스테이션** 표준화 진행. **Copilot PR 코드리뷰 전조직 무라이선스 확장 GA**(github.blog 2026-04-23) — 인디/소규모 팀도 무료 PR 자동 리뷰 가능. 어제 GH Actions 커스텀 러너 GA/OIDC/macos-26/GameCI Cloud Runner/모바일 OTA 중복 없음 — 이번 주제는 **"Renovate 도입 vs Dependabot + Copilot PR GA + CycloneDX 1.6 SBOM"**이 축. **오늘 결정사항 제안**: P1 **NumLink 레포에 `renovate.json`(preset `config:recommended` + `group:monorepos`) + 최소 GH Actions `unity-validate.yml`(Tools/unity_validate.py 실행, push/PR 트리거) 두 파일을 한 PR로 도입** — 의존성 자동화 + CI 시작점 동시 확보. NumLink가 Tools 도입과 동시에 워크플로우 첫 진입 골든타임. Copilot PR 코드리뷰가 GA로 무료 풀린 시점이라 추가 비용 없이 자동 리뷰 가동.',
+      },
+      {
+        title: '🎨 Art Director — Rive60FPSvsLottie17FPS+파일1015배작음(rivemasterclass)·다크모드#000금지#09090B 4단계서피스토큰표준(recursion.software)·캐주얼아이콘소프트3D+플러시텍스처+친근캐릭터(envato)·첫60초인스턴트플레이10초단일메커닉표준(iabdi)·한국인디OLED친화다크+변동폰트헤드라인가속',
+        description:
+          '**Rive 60FPS vs Lottie 17FPS, 파일 10~15배 작음**(rivemasterclass.com) — 모션 전환 시급. **다크모드는 #000 금지, #09090B 4단계 서피스 토큰 표준**(recursion.software) — Background/Surface1/Surface2/Overlay 4단 토큰. **캐주얼 아이콘 트렌드: 소프트 3D + 플러시 텍스처 + 친근 캐릭터**(envato.com) — App Store Featured 아트 흐름. **첫 60초 "인스턴트 플레이 + 10초 단일 메커닉" 표준**(iabdi.com) — 튜토리얼 텍스트 제거가 D1 +15%. 한국 인디는 OLED 친화 다크 + 변동 폰트 헤드라인 채택 가속. 어제 iOS 26.4 Liquid Glass/M3 Expressive 스프링/푸피·스쿼시/키네틱 타이포 중복 없음 — 이번 주제는 **"Rive vs Lottie + #09090B 다크 토큰 + 첫 60초 인스턴트 플레이"**가 축. **오늘 결정사항 제안**: P1 **NumLink 다크 팔레트를 #000 → #09090B 기반 4단계 서피스(Background/Surface1/Surface2/Overlay)로 재정의 + 시작 화면 튜토리얼 텍스트 제거하여 "10초 안에 첫 숫자 연결" 인스턴트 플레이 흐름으로 전환**. Lottie 사용 중인 별점/콤보 이펙트 1건을 Rive 프로토타입으로 교체해 60FPS 베이스라인 측정. 한국 인디 OLED 친화 흐름과 정합.',
+      },
+    ],
+    meetingTitle:
+      '🤝 4/27 종합 회의 — NumLink동결3일째·MeowBeat20일째·이슈#46 P0 5건전원이월누적2일째·25분일괄안폐기→단일강제착수모드전환·BlockBlast21일마라톤·라이브이벤트2-4주D30 ROAS+30%·MeowBeat SongManager.PlayerPrefs핫패스버그·NumLink ServiceLocator위반8건·LiteASO MCP AI검색노출신전장·Renovate+Copilot PR GA·Rive60FPS+#09090B다크토큰+첫60초인스턴트플레이',
+    meetingSummary:
+      'NumLink 동결 3일째 진입(미커밋 35건+ 증가). MeowBeat 20일째 정체. 이슈 #46 P0 5건 전원 이월 누적 2일째. **오늘 핵심 결정**: 25분 일괄 처리안 폐기 → **단일 항목 강제 착수 모드 전환** — AutoGenTests rm 커밋(5분 컷)부터 단독 실행로 동결 끊기. **신규 P0 발견**: MeowBeat SongManager.Play 핫패스에서 매 곡 시작마다 PlayerPrefs.GetFloat("SongVolume") 호출 → OptionManager.CurrentVolume 단일 소스 5분 교체로 디스크 I/O 제거. **신규 P0**: NumLink Tools/unity_validate.py + known_bugs.json 골격 15분 복사 — 14일 정체 즉시 종결. 시장/기술 축은 "Block Blast 21일 우주 마라톤 1위 + MENA Gulf Ramadan + 라이브 이벤트 2~4주 갱신 D30 +30% + MeowBeat OptionManager 라이브 변경 분석 + PrimeTween/Codemagic + ServiceLocator 위반 8건 정량 + 인플루언서 $5K~25K + Apple/Meta 3~5채널 분담 + Lite ASO MCP ChatGPT 노출 + Renovate 90+ vs Dependabot + Copilot PR GA + Rive 60FPS vs Lottie 17FPS + #09090B 4단계 서피스 + 첫 60초 인스턴트 플레이". 마케팅 P2 "Lite ASO MCP 자연어 카피 3안"는 ChatGPT Directory 노출 신전장 진입 골든타임.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'NumLink 동결 3일째(4/24 폭발 → 4/25/4/26/4/27 0건). 미커밋 어제 34 → 오늘 35건+ 증가. MeowBeat 20일째 정체(마지막 4/12), bak_btn 4/8 생성 기준 20일째. agent-office 4/26 후 정지. 이슈 #46 P0 5건 전원 이월 누적 2일째. **오늘 결정**: 25분 일괄안 폐기 → 단일 항목 강제 착수 모드 전환. 가장 가벼운 #1(AutoGenTests rm 커밋)부터 5분 컷 단독 실행로 동결 흐름 끊기. 일괄안 결과 0이므로 "1건 종결 → 다음 1건" 원자 호흡 변경.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: 'Block Blast 21일 우주 로켓 마라톤+컬렉터블 글로벌 1위(Singular). MENA Gulf Ramadan 연동 전환율 급증(GAMES.GG). 라이브 이벤트 2~4주 갱신 D30 ROAS +30%, 설치 +200% MoM(Udonis). 오늘: P1 MeowBeat "21일 골든벨 마라톤" 시즌 컨테이너 GDD 1페이지(매일 1곡 한정 해금 + 7/14/21일 도장 마일스톤 + Day 21 한정 야옹 보이스팩) + NumLink "21일 숫자 별자리" 동일 엔진 공용화. 4월 5주차 스프린트 첫 티켓.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'MeowBeat OptionManager.SongVolume 슬라이더 신규+SongManager bgm 0.5배+GameManager OnLanguageChanged+KO/EN+잠금곡 톤다운 라이브 변경. **신규 리스크**: SongManager.Play 핫패스에서 매 곡 시작마다 PlayerPrefs.GetFloat 호출 — OptionManager.CurrentVolume static이 이미 존재. 외부: PrimeTween 제로 GC 검증, Codemagic Unity LTS 프리설치+Play 자동배포 내장. 오늘: P0 SongManager의 PlayerPrefs 직접 조회를 OptionManager.CurrentVolume 참조로 교체(5분) — 디스크 I/O 제거+단일 진실 소스.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'NumLink Debug.Log 60+파일 정체(감축 0). MeowBeat Debug.Log 36파일/146건+FindObjectOfType 4파일/22건 잔존. MeowBeat known_bugs 7건 전원 auto_fix=false(14일 자동수정 0). NumLink Domain 순수성 OK이나 FindObjectOfType 5건+GameObject.Find 3건 매니저층 위반(ServiceLocator 미적용). test_fixtures 부재로 RT_SIZE_ZERO/YAML 3종 회귀 불가. 오늘: P0 NumLink Tools/unity_validate.py + known_bugs.json 골격 15분 복사 — 14일 정체 즉시 종결.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '미드티어 유튜버(10만~50만) 영상 1편 $5K~25K, CPM $4~15(InfluencerMarketingHub 2026). Apple Ads D7/D30 ROAS 1위·Meta Advantage+ 스케일 1위·성숙 UA 3~5채널 분담 표준(Singular 2026 ROI Index). TikTok 오가닉 급락→어필리에이트 군단, TikTok Shop GMV 2026 $87B. **AppTweak·Lite ASO MCP+ChatGPT AI 검색 노출**이 신규 ASO 전장. 오늘: P2 NumLink·MeowBeat Lite ASO MCP 연결+자연어 한 줄 카피 3안("고양이가 박자에 맞춰 점프하는 무료 리듬게임" 형) 1주 내 등록.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'agent-office Pages 6연속 success(04-20~25 19:1x UTC). NumLink/Feedme .github/workflows 여전히 0건. Renovate 90+ 매니저·그룹 PR·대시보드 Dependabot 우위. CycloneDX 1.6+SLSA 어테스테이션. **Copilot PR 코드리뷰 전조직 무라이선스 확장 GA**(2026-04-23). 오늘: P1 NumLink에 renovate.json(config:recommended+group:monorepos)+unity-validate.yml(Tools/unity_validate.py 실행, push/PR 트리거) 두 파일 한 PR 도입 — 의존성 자동화+CI 시작점 동시. Copilot PR 무료 풀린 시점이라 추가 비용 0.',
+      },
+      {
+        speaker: 'Art Director',
+        note: 'Rive 60FPS vs Lottie 17FPS, 파일 10~15배 작음(rivemasterclass). 다크모드 #000 금지·#09090B 4단계 서피스 토큰(Background/Surface1/Surface2/Overlay) 표준(recursion.software). 캐주얼 아이콘 소프트 3D+플러시 텍스처(envato). 첫 60초 "인스턴트 플레이+10초 단일 메커닉"(iabdi). 한국 인디 OLED 친화 다크+변동 폰트 가속. 오늘: P1 NumLink 다크 팔레트 #000→#09090B 4단계 서피스 재정의+시작 화면 튜토리얼 텍스트 제거(10초 안 첫 숫자 연결)+Lottie 별점/콤보 이펙트 1건 Rive 프로토 60FPS 측정.',
+      },
+    ],
+    decisions: [
+      {
+        title: 'P0 — 단일 항목 강제 착수 #1: NumLink AutoGenTests rm 커밋 5분 컷 단독 실행 (#46 이월 누적 2일째 종결 시도)',
+        description:
+          'Orchestrator 권고 — 25분 일괄안 어제 미실행 → **폐기**. 가장 가벼운 항목 1건(AutoGenTests asmdef 4종 D 상태 stage 대기)부터 단독 5분 컷으로 chore(test) 원자 커밋. 일괄안은 합리적이지만 결과가 0이므로 "1건 종결 → 다음 1건"의 원자 호흡으로 변경. 이 1건만 끊기면 동결 흐름 깨지고 나머지 4건도 연쇄 가속.',
+      },
+      {
+        title: 'P0 — MeowBeat SongManager 핫패스 PlayerPrefs.GetFloat → OptionManager.CurrentVolume 교체 (5분·신규 발견)',
+        description:
+          'Developer 신규 리스크 발견 — SongManager.Play 핫패스에서 매 곡 시작마다 PlayerPrefs.GetFloat("SongVolume") 호출 중. OptionManager.CurrentVolume static 프로퍼티가 이미 존재하므로 즉시 교체 가능(5분 작업). 디스크 I/O 제거 + 단일 진실 소스 확립 + GameConstants 패턴 부합. 라이브 코드 변경 분석에서 발견된 가장 명확한 핫패스 비효율.',
+      },
+      {
+        title: 'P0 — NumLink Tools/unity_validate.py + known_bugs.json 골격 15분 복사 (14일 QA 0% 종결)',
+        description:
+          'QA Tester 권고 — `cp C:/Unity/_ProjectTemplate/Tools/unity_validate.py + known_bugs.json 골격` NumLink로 1회 복사·씬 경로 상수 치환(15분 작업). 14일 정체된 QA 0건 상태 즉시 깨고 내일부터 회귀 검증 파이프라인 진입. NumLink Domain 순수성은 OK이나 FindObjectOfType 5건·GameObject.Find 3건 매니저층 위반 잔존이 known_bugs 등록 1순위.',
+      },
+      {
+        title: 'P1 — NumLink renovate.json + unity-validate.yml 한 PR 도입 (의존성 자동화 + CI 시작점 동시)',
+        description:
+          'DevOps 제안 — preset `config:recommended` + `group:monorepos` Renovate + 최소 GH Actions `unity-validate.yml`(Tools/unity_validate.py 실행, push/PR 트리거) 두 파일을 한 PR로 도입. NumLink가 Tools 도입과 동시에 워크플로우 첫 진입 골든타임. Copilot PR 코드리뷰가 GA로 무료 풀린 시점이라 추가 비용 0에 자동 리뷰 가동. Renovate 90+ 매니저는 Dependabot 대비 우위.',
+      },
+      {
+        title: 'P1 — MeowBeat "21일 골든벨 마라톤" 시즌 GDD 1페이지 + NumLink "21일 숫자 별자리" 공용 엔진 (Block Blast 벤치마크)',
+        description:
+          'Game Designer 제안 — Block Blast가 21일 우주 로켓 테마 마라톤 + 컬렉터블로 글로벌 1위 유지(Singular State of Gaming 2026). 매일 1곡 한정 해금 + 7/14/21일째 컬렉터블 고양이 도장(스티커북) 보상 마일스톤 3단 구조, Day 21 클리어 시 한정 야옹 보이스팩 지급. NumLink는 동일 골격을 "21일 숫자 별자리" 테마로 변형해 동일 라이브옵스 엔진 1회 구현으로 2게임 공용화. 4월 5주차 스프린트 첫 티켓. 어제 P1 이중 루프와 결합 시 "시즌 마라톤 → 카드 가챠 → 룸 꾸미기 → 퍼즐 피스" 4중 루프 완성.',
+      },
+      {
+        title: 'P1 — NumLink 다크 팔레트 #09090B 4단계 서피스 + 시작 화면 튜토리얼 텍스트 제거 (첫 60초 인스턴트 플레이)',
+        description:
+          'Art Director 제안 — #000 → #09090B 기반 Background/Surface1/Surface2/Overlay 4단계 서피스 토큰 재정의(recursion.software 표준). 시작 화면 튜토리얼 텍스트 제거하여 "10초 안에 첫 숫자 연결" 인스턴트 플레이 흐름 전환(iabdi 첫 60초 표준). Lottie 사용 중인 별점/콤보 이펙트 1건을 Rive 프로토타입으로 교체해 60FPS 베이스라인 측정(rivemasterclass — Rive 60FPS vs Lottie 17FPS, 파일 10~15배 작음).',
+      },
+      {
+        title: 'P2 — NumLink/MeowBeat Lite ASO MCP 연결 + 자연어 한 줄 카피 3안 (ChatGPT Directory 노출 신전장)',
+        description:
+          'Content Writer 제안 — AppTweak·Lite ASO가 ChatGPT/Claude MCP 연동 출시 — AI 검색(ChatGPT Directory) 노출이 신규 ASO 전장으로 부상(WWDC 2025 AI Tags). 양 게임의 App Store/Play Store 메타데이터를 Lite ASO MCP에 연결해 "AI 검색 노출용 자연어 설명문" 별도 작성 — 기존 키워드 나열형이 아닌 "고양이가 박자에 맞춰 점프하는 무료 리듬게임" 같은 ChatGPT 추천용 한 줄 카피 3안을 이번 주 내 등록.',
+      },
+      {
+        title: 'P2 — 미드티어 유튜버 1명 시범 의뢰 견적 ($5K 미만 + CPM $4~15·인플루언서 단가 표 활용)',
+        description:
+          'Content Writer 신규 시장 데이터 — 미드티어(10만~50만 구독) 영상 1편 $5,000~$25,000 단가 공개(InfluencerMarketingHub 2026). 한국·일본 마이크로(1만~5만 구독) 게임 유튜버 1명 시범 의뢰($500~2,000 범위) 견적 조사. NumLink는 영문 글로벌, MeowBeat는 한일 코지+캣 시장 우선. Apple Ads D7/D30 ROAS 1위 + Meta Advantage+ 스케일 1위 3~5채널 분담 표준과 결합.',
+      },
+      {
+        title: 'P2 — NumLink AppGroupOver 매니저층 ServiceLocator 위반 8건 정량 등록 + GameBootstrapper 1주 안 리팩토링 티켓',
+        description:
+          'QA Tester 신규 정량 — NumLink Domain 레이어 UnityEngine 참조 0건(순수성 OK)이나 FindObjectOfType 5건 + GameObject.Find 3건(패키지 제외) 매니저층 위반 잔존, ServiceLocator 패턴 미적용 영역 존재. known_bugs.json 등록 + GameBootstrapper.Awake() 단일화 티켓 1주 안 처리. CLAUDE.md 규칙 명시(GameObject.Find 금지·FindObjectOfType는 Bootstrapper에서만)와 일치.',
+      },
+    ],
+  },
+  {
     id: '2026-04-26T04:00:00-daily-standup',
     date: '2026-04-26',
     researchTitle:
