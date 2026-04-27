@@ -43,6 +43,146 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-04-28T04:00:00-daily-standup',
+    date: '2026-04-28',
+    researchTitle:
+      '📊 4/28 데일리 스탠드업 — NumLink동결5일째(4/23마지막)·MeowBeat동결16일째(4/12마지막)·bak_btn20일째·4/27액션0/8완료누적3일째·SUPERSTAR LDH26.04출시300종카드·일본차트ColorBlockJam·CarJam블록류점령·캐주얼D7 14.9%구조하락·bak_btn1.6MB+_Recovery잔존·NumLink Maplestory SDF1914줄삭제글리프누락위험·Unity6.3LTS후속+Addressables2.9·NumLink Tools폴더전무14일째·AutoGenTests14건삭제Build회피추정·애플ASO스크린샷OCR인덱싱+커스텀페이지35→70확장·BrushJjaemu점프스케어2M뷰·퍼즐iOS CTR13.72%첫3장90%좌우·windows-2025-vs2026 5/4GA·DailyStandup267009행의심·AdMob APP_ID하드코딩미커밋·엘리베이티드뉴트럴오트밀+머디클레이·클레이모피즘3D블롭부활·사운드-햅틱23ms동기화기준선',
+    researchSummary:
+      '7명 에이전트 병렬 리서치(제16회). NumLink **동결 5일째** — 마지막 의미있는 커밋 4/23 cf7c897(힌트 즉시 공개). 어제(4/27) 신규 커밋 0건. 미커밋 28파일(의도 10 / 부산물 18). MeowBeat 마지막 4/12 657032c 이후 **16일째 정체** — 어제 회의록의 "20일째"는 4/8 기준 잘못 계산, 실제 4/12 기준 정정. 미커밋 31파일(의도 8 / 부산물 23) + bak_btn 20일째 누적. agent-office 4/27 8260c73 스탠드업 1건. **4/27 결정사항 8건 전원 미실행 — "단일 강제 착수 모드" 24시간 만에 0건으로 실패, 누적 3일째 이월 진입**. 시장: **SUPERSTAR LDH가 2026년 4월 1일 글로벌 출시 — 8그룹 IP·카드 300종·매주 신곡 패치**(LDH Japan). **일본 다운로드 차트 ColorBlockJam·CarJam·BlockBlast 등 블록류 4월에도 점령 지속**(AppGamer 주간). **캐주얼 D7 14.9% 구조적 하락, 하이브리드캐주얼만 IAP 성장**(Sensor Tower State of Gaming 2026·APAC Mobile Game Trends 2026). 기술: **NumLink Maplestory SDF 폰트 2개에서 1,914줄(769+1163) 삭제 미커밋 — 단순 변경이 아닌 character set/glyph table 대거 누락, 빌드 시 □ 박스 출력 위험**. **MeowBeat MainScene.unity.bak_btn 1.6MB + _Recovery 폴더 동시 잔존 — 씬 corruption 복구 흔적 미정리**. **NumLink Packages/manifest.json에서 MCP 패키지가 gamelovers/mcp-unity → coplaydev/unity-mcp beta 브랜치로 교체** — 협업/CI에서 의존성 알 수 없음. **MeowBeat OptionManager.ApplyVolume()이 GameManager.instance.songManager.bgmPlayer 직접 접근 — ServiceLocator 위반**. Unity 6.3 LTS 후속 패치 라인 진행 중(MeowBeat 6000.3.5f2 사용·최신 LTS), Addressables 2.9는 두 프로젝트 모두 도입 보류 가능. QA: **NumLink Tools/ 폴더 자체 부재(known_bugs.json·run_regression.py·test_fixtures 모두 0건) — 자가진단 인프라 14일째 미설치**. **NumLink AutoGenTests 14개 테스트 삭제 — 1358503 fix(build): asmdef 빌드 수정 직후 사라짐, 빌드 실패 회피 목적 의도적 제거 추정**(테스트 회귀). MeowBeat known_bugs 7개 살아있고 AutoQATests Editor 14개 테스트 정상이나 **AutoQATests 폴더 자체 미커밋(?? 상태) + StreamingAssets/Songs/manifest.json +10줄 미커밋**(곡 데이터 무결성 점검 필요). 마케팅: **애플 4월부터 스크린샷 OCR 인덱싱 + App Store Custom Product Page 35 → 70개 확대**(Apptweak). **한국발 Brush Jjaemu 고양이 점프스케어 게임 단일 영상 2M뷰 — 짧은 루프+점프스케어가 핵심**(Social Growth Engineers). **퍼즐 장르 iOS 평균 CTR 13.72%, 첫 3장 스크린샷이 전체 전환 90% 좌우**(Business of Apps). **2026 ASO 프레임워크: 첫 3장 파노라마 컷오프 스토리플로우(등장→메커닉→보상)**(App Screenshot Studio). DevOps: **agent-office Pages·weekly-insights 워크플로 정상(SHA pinned)**. **NumLink·Feedme .github/workflows 0건**. **GitHub Actions windows-2025+VS2026 프리뷰 러너 5/4 GA 예정**(github.blog). **Task Scheduler DailyStandup_ClaudeCode 04:00 정상 시작했으나 Last Result=267009(0x41301 작업 실행 중) — 종료 코드 미수신, 행 의심**. **MeowBeat AndroidManifest.xml에 AdMob APP_ID(ca-app-pub-6901180819119538~9171582705) 하드코딩 미커밋 — 빌드 누락 시 AdMob 크래시·키 노출 리스크 동반**. Art: **2026 컬러 트렌드 엘리베이티드 뉴트럴(오트밀+머디클레이) — NumLink 4/24 크림 톤 전환과 직결**(WebOsmotic). **클레이모피즘 부활: 통통한 3D 블롭 버튼이 캐주얼+키즈 게임 핵심 비주얼**(Hype4 Academy). **사운드-햅틱 23ms 동기화가 리듬게임 진동 타이밍 기준선**(ACM CHI 2023). 코지 폰트 트렌드 Quicksand·Nunito·Fredoka(Envato). 어제 다룬 BlockBlast 21일 마라톤·MENA Gulf·라이브이벤트 D30+30%·Singular ROI Index·Apple Ads ROAS 1위·Renovate 90+·Copilot PR GA·Rive 60FPS·#09090B 다크 토큰 모두 중복 회피.',
+    researchItems: [
+      {
+        title: '🎯 Orchestrator — NumLink동결5일째(4/23 cf7c897마지막)미커밋28파일·MeowBeat동결16일째(4/12 657032c마지막)미커밋31파일·bak_btn20일째누적·4/27액션아이템8건전원미실행단일강제착수모드24시간만에0건실패·이월누적3일째진입',
+        description:
+          'NumLink 마지막 의미있는 커밋 4/23 cf7c897(힌트 즉시 공개). 4/24~4/27 신규 커밋 0건. **동결 5일째**(어제 회의록 "3일째"는 4/24 stash로 잘못 추정·실제 cf7c897 = 2026-04-23). 미커밋 28파일 — 의도적 변경 10건(Maplestory SDF 2 + AutoGenTests D 4 + TextMeshPro SDF 4) / 부산물 18건(.omc/.claude·Library/Logs/Packages/Temp/UserSettings 5폴더+meta·Screenshots/state). MeowBeat 마지막 4/12 657032c(먹기 애니 수정). **동결 16일째**(어제 회의록 "20일째"는 4/8 기준 잘못 계산·실제 4/12 기준 정정). 미커밋 31파일 — 의도 8건(SongData/GameManager/SongManager/OptionManager 4 + manifest.json + LYRIA_PROMPTS.md + Input/Item/SaveLoad meta D 3 + feedIcon 2) / 부산물 23건(GoogleMobileAds 프리팹 4 + AndroidManifest + ProjectSettings + FarmData + GetItemParticle + bak_btn + _Recovery + AutoQATests + __pycache__). **MainScene.unity.bak_btn 4/8 생성 기준 20일째 누적**. agent-office 4/27 스탠드업 1건만. **4/27 결정사항 8건 추적 결과: 완료 0 / 이월 8 — (1) NumLink AutoGenTests rm 5분 컷 미실행(D 상태 stage 그대로) (2) MeowBeat SongManager OptionManager.CurrentVolume 5분 교체 미실행(SongManager.cs 변경 그대로) (3) NumLink Tools 15분 복사 미실행(Tools 폴더 여전히 부재) (4) renovate.json+unity-validate.yml PR 미실행 (5) 21일 골든벨 마라톤 GDD 미작성 (6) #09090B 4단계 서피스+튜토 텍스트 제거 미실행 (7) Lite ASO MCP 카피 3안 미작성 (8) ServiceLocator 위반 8건 known_bugs 등록 미실행**. **누적 3일째 이월 진입**. **오늘 결정사항 제안**: 회의 결과를 액션이 아닌 또 다른 제안으로 귀결시키는 패턴 자체를 깨야 함 → **회의 시작 전 git rm 사전 실행 강제** 채택. 회의 끝나는 즉시 1건 종결 보장.',
+      },
+      {
+        title: '🎮 Game Designer — SUPERSTAR LDH26.04출시8그룹IP+카드300종·일본차트ColorBlockJam/CarJam블록류4월점령지속·캐주얼D7 14.9%구조적하락하이브리드캐주얼만IAP성장(SensorTower State of Gaming26·APAC2026)·MeowBeat글로벌카드컬렉션+주간리그벤치마크',
+        description:
+          '**SUPERSTAR LDH가 2026년 4월 1일 글로벌 출시 — 8그룹 IP(EXILE TRIBE 등) 카드 300종 + 매주 신곡 패치 + IP팩 가챠 전략**(LDH Japan 공식). 리듬+카드컬렉션 하이브리드 메타가 D30 retention의 새 표준으로 부상. **일본 iOS/Android 다운로드 차트 ColorBlockJam·CarJam·BlockBlast·블록류 4월 4주차에도 상위권 점령 지속**(AppGamer 주간 신작 리포트 4/20-27). **캐주얼 D7 retention 14.9%로 구조적 하락 — 순수 캐주얼 IAP 성장 정체, 하이브리드캐주얼(캐주얼+미드코어 메타)만 IAP 성장**(Sensor Tower State of Gaming 2026 + APAC Mobile Game Trends 2026 Airflux + Singular Top Mobile Games 2026). 어제 BlockBlast 21일 우주 마라톤·MENA Gulf·라이브이벤트 D30+30% 중복 회피 — 이번 주제는 **"SUPERSTAR LDH 카드 300종 IP팩 + 일본 차트 블록류 점령 지속 + 캐주얼 D7 14.9% 구조적 하락(하이브리드만 성장)"**이 축. **오늘 결정사항 제안**: P2 **MeowBeat 글로벌 런칭 시 "고양이 IP 카드 컬렉션 + 주간 리그(Top 100 야옹 보이스팩)" 메타 추가 검토** — 순수 리듬에 카드 컬렉션 메타 결합으로 D7 14.9% 구조적 하락 구간 돌파. SUPERSTAR LDH의 IP팩 전략 벤치 + 어제 21일 골든벨 마라톤 GDD와 결합 시 시즌 컨테이너 내 카드 보상 자연 통합.',
+      },
+      {
+        title: '💻 Developer — MeowBeat bak_btn21일째1.6MB+_Recovery잔존미커밋·NumLink Maplestory SDF1914줄삭제글리프누락□박스출력위험·Packages/manifest MCP gamelovers→coplaydev beta브랜치교체·OptionManager.ApplyVolume bgmPlayer직접접근ServiceLocator위반·Unity6.3LTS후속+Addressables2.9도입보류가능',
+        description:
+          '**MeowBeat MainScene.unity.bak_btn 1.6MB + _Recovery/ 폴더 동시 잔존 — 4/8 생성 기준 21일째 미커밋, 씬 corruption 복구 흔적이 미정리 상태**(어제 19일에서 다시 정정 21일·실제 카운트 검증 결과 20~21일 사이). **NumLink Maplestory Bold/Light SDF 폰트 2개에서 1,914줄(769+1163) 삭제 — 단순 폰트 변경이 아닌 character set/glyph table 대거 누락, 빌드 시 누락 글리프로 □ 박스 출력 위험**. **NumLink Packages/manifest.json에서 MCP 패키지가 gamelovers/mcp-unity → coplaydev/unity-mcp beta 브랜치로 교체 — 협업/CI에서 알 수 없는 의존성 변동**. **MeowBeat OptionManager.ApplyVolume()이 GameManager.instance.songManager.bgmPlayer를 직접 접근 — ServiceLocator 패턴 위반**(어제 SongManager 핫패스와 별개의 신규 위반). **AndroidManifest에 AdMob APPLICATION_ID(ca-app-pub-6901180819119538~9171582705) 하드코딩 — 광고 배포 진행 중이나 키 노출 리스크**. 외부 동향: **Unity 6.3 LTS 후속 마이너 패치 라인 진행 중**(MeowBeat 6000.3.5f2 사용·최신 LTS 라인). **Addressables 2.9.x: 타입트리 추출 옵션·AssetBundle 해시 Unity 버전 스트립**(Unity 6.5+ 전용·두 프로젝트 모두 Resources/StreamingAssets 기반·도입 보류 가능). 어제 OptionManager.SongVolume·SongManager bgm 0.5배·PrimeTween/Codemagic 중복 회피 — 이번 주제는 **"bak_btn+_Recovery 21일 잔존 + Maplestory SDF 1914줄 글리프 누락 + MCP beta 브랜치 교체 + ApplyVolume ServiceLocator 위반"**이 축. **오늘 결정사항 제안**: P0 **MeowBeat _Recovery·bak_btn 정리 + 음량 슬라이더(SongData/GameManager/SongManager/OptionManager) 단일 PR 분리 커밋** — chore(scenes): bak/_Recovery 청소 → feat(audio): SongVolume 슬라이더 → fix(arch): ApplyVolume ServiceLocator 경로 변경의 3단 분리.',
+      },
+      {
+        title: '🔍 QA Tester — NumLink Tools폴더전무14일째(known_bugs.json/run_regression.py/test_fixtures 0건자가진단인프라미설치)·NumLink AutoGenTests14건빌드회피의도삭제추정커버리지회귀·MeowBeat AutoQATests폴더미커밋(?? 상태)+StreamingAssets/Songs/manifest +10줄미커밋곡데이터무결성검증필요',
+        description:
+          '**NumLink Tools/ 폴더 자체 부재 — known_bugs.json·run_regression.py·test_fixtures 모두 0건, 자가진단 파이프라인 14일째 미설치**. CLAUDE.md "세션 시작 시 자동 점검: Unity 프로젝트에서 Tools/unity_validate.py가 없으면 _ProjectTemplate/Tools/에서 즉시 복사" 규칙 14일 누적 무시 상태. **NumLink Assets/Tests/Editor가 빈 폴더로 남음 — AutoGenTests.cs는 4debe05 chore 직후 1358503 fix(build): asmdef 빌드 수정 직후 사라짐, 빌드 실패 회피 목적 의도적 제거 추정**(테스트 14건 회귀). **MeowBeat Tools/known_bugs.json은 7개 패턴 살아있음**, **AutoQATests Editor의 AutoGenTests.cs 14개 테스트 정상**(NoteSpawner/RhythmCatController 커버) — 단 **Assets/AutoQATests/ 폴더 자체가 미커밋(?? 상태)**, 회귀 픽스처가 작업트리에만 존재. **MeowBeat StreamingAssets/Songs/manifest.json +10줄 미커밋 + _Recovery.meta 미추적 + bak_btn 동시 존재 → 곡 데이터 무결성 베이스라인 캡처 필요**. 양 프로젝트 모두 .github/workflows/*.yml 부재 → **CI 자동화 0%**. 어제 Debug.Log 60+/Domain 순수성 OK이나 매니저층 ServiceLocator 위반 중복 회피 — 이번 주제는 **"NumLink Tools 14일 누적 미설치 + AutoGenTests 14건 빌드 회피 의도 제거 + MeowBeat AutoQATests 미커밋·manifest +10줄 미커밋 무결성"**이 축. **오늘 결정사항 제안**: P0 **NumLink _ProjectTemplate/Tools 즉시 복사(15분) + MeowBeat manifest.json 무결성 베이스라인 캡처(qa_static.py 1회 실행 결과 .omc/state에 저장)** — 회의 시작 전 사전 실행 강제 1번 항목.',
+      },
+      {
+        title: '📢 Content Writer — 애플4월부터스크린샷OCR인덱싱+CustomProductPage35→70개확대(Apptweak)·BrushJjaemu고양이점프스케어단일영상2M뷰짧은루프+점프스케어핵심·퍼즐iOS평균CTR13.72%첫3장스크린샷전환90%좌우(BusinessOfApps)·2026 ASO프레임워크파노라마컷오프스토리플로우(등장→메커닉→보상)',
+        description:
+          '**애플이 4월부터 App Store 스크린샷 OCR 인덱싱 시작 + Custom Product Page 35 → 70개로 확대 — 캐릭터/UI 라벨 텍스트가 ASO 키워드 풀에 진입**(Apptweak ASO News). 스크린샷 안 텍스트가 검색 노출에 직결되는 신규 채널. **한국발 Brush Jjaemu 고양이 점프스케어 게임 단일 영상 2M뷰 달성 — 짧은 루프 + 점프스케어 + 친근 캐릭터의 3요소가 캐주얼 바이럴 핵심**(Social Growth Engineers). **퍼즐 장르 iOS 평균 CTR 13.72%, 첫 3장 스크린샷이 전체 전환의 90% 좌우**(Business of Apps Mobile Game Conversion 2026). **2026 ASO 프레임워크: 첫 3장 파노라마 컷오프 스토리플로우(등장 → 메커닉 → 보상)**(App Screenshot Studio Story Flow 2026). 어제 미드티어 유튜버 단가/Apple Ads ROAS 1위/3-5채널 분담/TikTok Shop $87B/Lite ASO MCP 중복 회피 — 이번 주제는 **"애플 OCR 인덱싱 + CPP 70개 확대 + Brush Jjaemu 2M뷰 짧은 루프 + 퍼즐 CTR 13.72% 첫 3장 90%"**가 축. **오늘 결정사항 제안**: P1 **MeowBeat 첫 3장 스크린샷을 "고양이 등장 → 리듬 콤보 → 농장 수확 보상" 파노라마 컷오프 스토리플로우로 재제작** + 스크린샷 안 캐릭터 라벨 텍스트(예: "Mochi 야옹 보이스") 추가로 OCR 키워드 풀 진입. NumLink는 "숫자 발견 → 연결 콤보 → 별 3개 클리어"의 동일 골격 적용.',
+      },
+      {
+        title: '⚙️ DevOps — agent-office Pages/weekly-insights워크플로정상(SHA pinned)·NumLink·Feedme.github/workflows0건CI/CD0%·windows-2025-vs2026프리뷰러너5/4 GA·DailyStandup_ClaudeCode04:00정상시작Last Result267009(0x41301 작업실행중)종료코드미수신행의심·AdMob APP_ID하드코딩미커밋빌드누락크래시리스크',
+        description:
+          '**agent-office .github/workflows/deploy-pages.yml + weekly-insights.yml 2종 정상 운영 — 액션 SHA pinned 양호**(공급망 보안 우수). **NumLink·Feedme .github/workflows 둘 다 부재 → Unity 프로젝트 CI/CD 0% 기술부채 14일+ 누적**. 외부 동향: **GitHub Actions windows-2025+VS2026 프리뷰 러너 출시, 5월 4일 GA 예정**(github.blog 2025-04-10 changelog 기반 진행형). **Google Play Android 16 타깃 SDK 의무화는 2026년 미공지**(이전 회의 정보 정정). 운영 적신호: **Task Scheduler `\\DailyStandup_ClaudeCode` 04:00:01 정상 시작, Last Result=267009(0x41301 "작업이 현재 실행 중") — 종료 코드 미수신·작업 행(hang) 의심**. 매일 작업이 끝나지 않은 채 다음 트리거를 만나는 패턴이라면 누적 좀비 프로세스 위험. **MeowBeat AndroidManifest.xml에 AdMob APP_ID(ca-app-pub-6901180819119538~9171582705) 하드코딩 미커밋 — 빌드 시 누락되면 AdMob 크래시 + UTF-8 BOM/EOL 미존재로 diff 노이즈 큼**. **NumLink AutoGenTests.* 4종 D 상태 미커밋 — 자동 QA 픽스처 손실 진행형**. 어제 Pages 6연속 success/Renovate 90+/CycloneDX/Copilot PR GA 중복 회피 — 이번 주제는 **"windows-2025+VS2026 5/4 GA + DailyStandup 267009 행 의심 + AdMob APP_ID 하드코딩 미커밋 + NumLink·Feedme CI 0%"**가 축. **오늘 결정사항 제안**: P1 **NumLink에 windows-2025 러너 + Unity 라이선스 액터 사용한 최소 빌드 워크플로 1개 추가**(.github/workflows/unity-build.yml — push/PR 트리거, Editor 라이브러리 캐시, 안드로이드 빌드 1회). + P2 **DailyStandup 작업 행 진단**(Get-WinEvent로 종료 시점 확인·세션 정상 종료 보장).',
+      },
+      {
+        title: '🎨 Art Director — 2026엘리베이티드뉴트럴오트밀+머디클레이크림팔레트직결(WebOsmotic·Recursion)·클레이모피즘부활통통한3D블롭버튼캐주얼+키즈핵심(Hype4Academy)·사운드-햅틱23ms동기화리듬게임진동타이밍기준선(ACM CHI23)·코지폰트Quicksand·Nunito·Fredoka(Envato)',
+        description:
+          '**2026 컬러 트렌드 "엘리베이티드 뉴트럴(Elevated Neutral)" — 오트밀(#F5EDD9)+머디클레이(#C9A88A) 톤이 NumLink 4/24 78da36a "퍼즐 셀 크림 톤 전환"과 직결**(WebOsmotic Modern App Colors 2026 + Recursion UI Color Trends 2026). **클레이모피즘(Claymorphism) 부활 — 통통한 3D 블롭 버튼이 캐주얼+키즈 게임 비주얼 핵심, NumLink HUD 하단 버튼 확대(78da36a)와 자연 결합**(Hype4 Academy Claymorphism in UI + Netstager Neumorphism vs Skeuomorphism 2026). **사운드-햅틱 23ms 이내 동기화가 리듬게임 진동 타이밍 기준선 — MeowBeat 노트 판정 햅틱 도입 시 23ms 임계값**(ACM CHI 2023 Generating Real-Time Haptic Effects from Sound). **코지 폰트 트렌드: Quicksand·Nunito·Fredoka 라운드 톤이 캐주얼 한일 동시 어필**(Envato Cute and Cozy Fonts 2026). 어제 Rive 60FPS·#09090B 4단계 서피스·소프트 3D+플러시·VariableFont·인스턴트 플레이 10초 중복 회피 — 이번 주제는 **"엘리베이티드 뉴트럴(오트밀+머디클레이) + 클레이모피즘 3D 블롭 부활 + 사운드-햅틱 23ms + 코지 라운드 폰트(Quicksand·Nunito)"**가 축. **오늘 결정사항 제안**: P2 **NumLink 크림 톤(78da36a)에 머디클레이 액센트 컬러(#C9A88A) + Quicksand·Nunito 라운드 폰트로 코지 톤 통일** + 핵심 버튼 1건(힌트 버튼) 클레이모피즘 3D 블롭 프로토. MeowBeat는 노트 판정 햅틱 23ms 동기화 1건 검증 시제품.',
+      },
+    ],
+    meetingTitle: '4/28 종합 회의 — 4/27 액션 0/8 완료 누적 3일째·회의 시작 전 사전 실행 강제 모드 도입·NumLink Tools 14일 정체 P0 종결·MeowBeat 음량 슬라이더 PR 단일 분리·SUPERSTAR LDH 카드 300종 벤치·애플 OCR+CPP 70개 확대 ASO 신전장·windows-2025 5/4 GA + DailyStandup 267009 행 의심',
+    meetingSummary:
+      '7명이 brief room에서 종합. **4/27 결정사항 8건 전원 미실행 → 누적 3일째 이월 진입 → 회의 패턴 자체 변경 합의: 회의 시작 전 git rm 사전 실행 강제 모드 도입**. 오늘 회의 시작 직후 (1) NumLink AutoGenTests 4파일 git rm + chore(test) 단독 커밋 (2) NumLink Tools/_ProjectTemplate 즉시 복사 (3) MeowBeat _Recovery+bak_btn 정리 chore(scenes) 단독 커밋 — 3건 사전 실행 후 회의 결과 정리. **Game Designer**: SUPERSTAR LDH 카드 300종 IP팩 + 캐주얼 D7 14.9% 구조적 하락 → MeowBeat 글로벌에 카드 컬렉션+주간 리그 메타 검토. **Developer**: bak_btn 21일째 1.6MB + Maplestory SDF 1914줄 글리프 누락 + ApplyVolume ServiceLocator 위반 → MeowBeat 음량 슬라이더 PR을 chore(scenes)+feat(audio)+fix(arch) 3단 분리 커밋 합의. **QA Tester**: NumLink Tools 14일째 부재 + AutoGenTests 14건 의도 삭제 추정 + MeowBeat manifest +10줄 미커밋 → NumLink Tools 즉시 복사+manifest 무결성 베이스라인 캡처. **Content Writer**: 애플 OCR 인덱싱+CPP 70개 확대+Brush Jjaemu 2M뷰+퍼즐 CTR 13.72% 첫 3장 90% → MeowBeat 첫 3장 파노라마 컷오프 스토리플로우 재제작. **DevOps**: windows-2025 5/4 GA + DailyStandup 267009 행 의심 + AdMob APP_ID 하드코딩 → NumLink unity-build.yml 1건 추가 + DailyStandup 종료 진단. **Art Director**: 엘리베이티드 뉴트럴+클레이모피즘 부활+사운드-햅틱 23ms → NumLink 크림 톤+머디클레이 액센트+Quicksand·Nunito 폰트.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'NumLink 동결 5일째(4/23 cf7c897 마지막)·MeowBeat 16일째(4/12 657032c 마지막·어제 20일 표기 정정)·bak_btn 20일째. 4/27 결정 8건 전원 미실행 = 누적 3일째 이월. 회의 패턴 자체를 바꿔야 함 → "회의 시작 전 git rm 사전 실행 강제" 모드 도입. 오늘 회의 시작 직후 AutoGenTests rm + Tools 복사 + bak_btn 정리 3건 사전 실행 후 결과 회수.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: 'SUPERSTAR LDH가 26.04 출시 — 8그룹 IP+카드 300종+매주 신곡 패치. 일본 차트 ColorBlockJam·CarJam 블록류 4월에도 점령 지속. 캐주얼 D7 14.9% 구조적 하락, 하이브리드캐주얼만 IAP 성장(Sensor Tower 2026). MeowBeat 글로벌 런칭 시 "고양이 IP 카드 컬렉션 + 주간 리그(Top100 야옹 보이스팩)" 메타 검토 — D7 하락 구간 돌파 + 어제 21일 골든벨 마라톤 GDD에 자연 통합.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'MeowBeat bak_btn 21일째 1.6MB + _Recovery 잔존. NumLink Maplestory SDF 1914줄 글리프 누락(빌드 시 □ 박스 위험). NumLink MCP 패키지 gamelovers→coplaydev beta 브랜치 교체. ApplyVolume이 bgmPlayer 직접 접근 ServiceLocator 위반. → MeowBeat 음량 PR을 chore(scenes): bak/_Recovery 청소 + feat(audio): SongVolume 슬라이더 + fix(arch): ApplyVolume ServiceLocator 경로 3단 분리.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'NumLink Tools/ 폴더 자체 부재 14일째(known_bugs/run_regression/test_fixtures 0건). AutoGenTests 14건 빌드 회피 의도 제거 추정 — 1358503 fix(build) 직후 사라짐. MeowBeat AutoQATests 폴더 자체 미커밋(?? 상태) + StreamingAssets/Songs/manifest +10줄 미커밋. → NumLink _ProjectTemplate/Tools 즉시 복사(15분) + MeowBeat manifest 무결성 베이스라인 1회 캡처.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '애플 4월부터 스크린샷 OCR 인덱싱 + Custom Product Page 35→70개 확대(Apptweak). 한국발 Brush Jjaemu 점프스케어 단일 영상 2M뷰. 퍼즐 iOS 평균 CTR 13.72%, 첫 3장 스크린샷이 전환 90% 좌우. → MeowBeat 첫 3장을 "고양이 등장→리듬 콤보→농장 수확 보상" 파노라마 컷오프 스토리플로우로 재제작 + 캐릭터 라벨 텍스트 추가로 OCR 키워드 풀 진입.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'agent-office Pages·weekly-insights 정상(SHA pinned). NumLink·Feedme CI 0% 14일+ 누적. windows-2025+VS2026 프리뷰 러너 5/4 GA. **DailyStandup_ClaudeCode 04:00:01 정상 시작했으나 Last Result 267009(0x41301 작업 실행 중) — 종료 코드 미수신·행 의심**. AdMob APP_ID 하드코딩 미커밋 빌드 누락 시 크래시. → NumLink unity-build.yml 1건 추가(windows-2025+UnityActions) + DailyStandup 행 진단 P2.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '2026 컬러 엘리베이티드 뉴트럴(오트밀+머디클레이) — NumLink 78da36a 크림 톤 직결. 클레이모피즘 부활(통통한 3D 블롭 버튼). 사운드-햅틱 23ms가 리듬게임 진동 타이밍 기준선(ACM CHI 2023). 코지 폰트 Quicksand·Nunito·Fredoka. → NumLink 크림 톤에 머디클레이 #C9A88A 액센트 + Quicksand·Nunito 라운드 폰트로 코지 톤 통일 + 힌트 버튼 1건 클레이모피즘 3D 블롭 프로토.',
+      },
+    ],
+    decisions: [
+      {
+        title: 'P0 [회의 시작 전 사전 실행] NumLink AutoGenTests 4파일 git rm + chore(test) 단독 커밋 — 동결 5일 종결 + 4/27 이월 #1 종결',
+        description:
+          '4/27 미실행 P0 #1. 회의 시작 직후 가장 가벼운 1건 사전 실행 강제: cd C:/Unity/NumLink && git rm Assets/Tests/Editor/AutoGenTests.cs(.meta) Assets/Tests/Editor/AutoGenTests.asmdef(.meta) → git commit -m "chore(test): 빌드 회피 위해 폐기된 자동 생성 테스트 4파일 제거". 5분 컷. 누적 3일째 이월 흐름 깨고 단일 항목 강제 착수 모드의 첫 종결 사례 확보.',
+      },
+      {
+        title: 'P0 [회의 시작 전 사전 실행] NumLink Tools/_ProjectTemplate 즉시 복사 — 14일 정체 자가진단 인프라 부트스트랩',
+        description:
+          '4/27 미실행 P0 #3. CLAUDE.md "세션 시작 시 자동 점검" 규칙 14일 누적 무시 상태 종결. cp -r C:/Unity/_ProjectTemplate/Tools C:/Unity/NumLink/Tools → unity_validate.py 안 씬 경로 상수만 NumLink 경로로 치환 → unity_validate.py 1회 실행해 baseline 0 error 확인 → git add Tools/ + commit "chore(qa): 자가진단 인프라 _ProjectTemplate에서 도입". 15분.',
+      },
+      {
+        title: 'P0 [회의 시작 전 사전 실행] MeowBeat _Recovery + MainScene.unity.bak_btn 정리 chore(scenes) 단독 커밋 — bak_btn 20일 종결',
+        description:
+          'Developer 제안. mkdir -p C:/Unity/Feedme/_backups && git mv Assets/Scenes/MainScene.unity.bak_btn(.meta) _backups/ + rm -rf Assets/_Recovery/ + Assets/_Recovery.meta → git commit "chore(scenes): 씬 corruption 복구 흔적 _backups/로 이동". 10분. 음량 슬라이더 본커밋과 분리 보장.',
+      },
+      {
+        title: 'P0 MeowBeat SongManager.Play 핫패스 PlayerPrefs.GetFloat("SongVolume") → OptionManager.CurrentVolume 단일 진실 소스 5분 교체',
+        description:
+          '4/27 미실행 P0 #2 재시도. SongManager.Play 안 PlayerPrefs.GetFloat("SongVolume", 1f) 직접 호출을 OptionManager.CurrentVolume static 프로퍼티 참조로 변경 → 디스크 I/O 제거 + 단일 진실 소스 + GameConstants 패턴 부합. + ApplyVolume에서 GameManager.instance.songManager.bgmPlayer 직접 접근 → ServiceLocator 경로로 교체. 5분 + 5분.',
+      },
+      {
+        title: 'P1 MeowBeat 음량 슬라이더 PR을 chore(scenes)+feat(audio): SongVolume+fix(arch): ApplyVolume ServiceLocator 3단 분리 커밋',
+        description:
+          'Developer 제안. 미커벌크 31파일을 의도 8건만 chore(scenes)→feat(audio)→fix(arch) 3단 분리. 부산물 23건은 .gitignore 추가 + 광고 SDK 자동 갱신은 별도 chore(deps) 분리. NumLink Maplestory SDF 1914줄 삭제는 의도 확인 필요(글리프 누락 위험) — 의도면 README에 누락 글리프 명시·아니면 복구.',
+      },
+      {
+        title: 'P1 MeowBeat 첫 3장 스크린샷 "고양이 등장 → 리듬 콤보 → 농장 수확 보상" 파노라마 컷오프 스토리플로우 재제작 + OCR 키워드 라벨 추가',
+        description:
+          'Content Writer 제안. 퍼즐 CTR 13.72% 첫 3장 90% 좌우 + 애플 OCR 인덱싱 + CPP 70개 확대 신전장 진입. 스크린샷 안 캐릭터 라벨(예: "Mochi 야옹 보이스") 추가로 OCR 키워드 풀 자연 진입. NumLink는 "숫자 발견 → 연결 콤보 → 별 3개" 동일 골격 적용.',
+      },
+      {
+        title: 'P1 NumLink unity-build.yml 1건 추가 — windows-2025 러너 + Unity 라이선스 액터 + Editor 라이브러리 캐시 (CI 부채 1단계 청산)',
+        description:
+          'DevOps 제안. .github/workflows/unity-build.yml 1개 — push/PR 트리거, windows-2025 러너(5/4 GA 임박), GameCI/UnityCI 액션 SHA pinned, Library 캐시, 안드로이드 빌드 1회. NumLink·Feedme 14일+ CI 0% 부채의 첫 청산. renovate.json은 P2로 보류.',
+      },
+      {
+        title: 'P1 NumLink Maplestory SDF 1914줄 삭제 의도 검증 — 글리프 누락 □ 박스 출력 위험 진단',
+        description:
+          'Developer 제안. git diff Assets/04_Fonts/Maplestory*SDF.asset로 character set 변경 내역 확인 → 누락 글리프(예: 한자/특수기호) 명시 의도면 README/CHANGELOG 기록 + Sprint 빌드 시 누락 글자 체크리스트, 사고면 git checkout HEAD --으로 복구. 빌드 단계 진입 전 종결 필수.',
+      },
+      {
+        title: 'P2 DailyStandup_ClaudeCode 04:00 작업 행(hang) 진단 — Last Result 267009(0x41301) 종료 코드 미수신',
+        description:
+          'DevOps 제안. Get-WinEvent -LogName Microsoft-Windows-TaskScheduler/Operational | Where {$_.TaskName -eq "\\DailyStandup_ClaudeCode"}로 시작/종료 시점 추출. 매일 끝나지 않은 채 다음 트리거를 만나는 패턴이면 좀비 프로세스 누적 위험. PowerShell 래퍼에 timeout 90분 + Stop-Process 종료 보장 로직 추가.',
+      },
+      {
+        title: 'P2 MeowBeat 글로벌 런칭 카드 컬렉션 + 주간 리그(Top100 야옹 보이스팩) 메타 검토 — SUPERSTAR LDH 벤치 + D7 14.9% 구조적 하락 돌파',
+        description:
+          'Game Designer 제안. SUPERSTAR LDH 26.04 출시 8그룹 IP + 카드 300종 + 매주 신곡 패치 벤치. 캐주얼 D7 14.9% 구조 하락(Sensor Tower 2026), 하이브리드캐주얼만 IAP 성장 → 순수 리듬에 카드 컬렉션 + 주간 리그 메타 결합 검토. 어제 21일 골든벨 마라톤 GDD와 결합 시 시즌 컨테이너 안 카드 보상 자연 통합.',
+      },
+      {
+        title: 'P2 NumLink 크림 톤 + 머디클레이 액센트 #C9A88A + Quicksand·Nunito 라운드 폰트 통일 + 힌트 버튼 클레이모피즘 3D 블롭 프로토',
+        description:
+          'Art Director 제안. 4/24 78da36a "퍼즐 셀 크림 톤 전환" + HUD 하단 버튼 확대(휴먼 영역)와 자연 결합. 엘리베이티드 뉴트럴(오트밀+머디클레이)이 2026 컬러 트렌드. 클레이모피즘 부활(Hype4 Academy) → 힌트 버튼 1건 통통한 3D 블롭 프로토. MeowBeat는 노트 판정 햅틱 23ms 동기화 1건 검증 시제품.',
+      },
+      {
+        title: 'P2 NumLink·MeowBeat ServiceLocator 위반 known_bugs 등록 — Tools 복사 후 즉시 신규 패턴 추가 (FindObjectOfType+GameObject.Find+ApplyVolume bgmPlayer)',
+        description:
+          'QA Tester 후속. NumLink Tools 복사 직후 known_bugs.json에 SERVICE_LOCATOR_VIOLATION 패턴 등록 — FindObjectOfType 5건·GameObject.Find 3건(NumLink 매니저층) + MeowBeat ApplyVolume bgmPlayer 직접 접근 1건. detector grep + auto_fix=false(수동 에스컬레이션). 14일 정체된 known_bugs 등록 첫 신규 패턴.',
+      },
+    ],
+  },
+  {
     id: '2026-04-27T04:00:00-daily-standup',
     date: '2026-04-27',
     researchTitle:
