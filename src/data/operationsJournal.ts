@@ -43,6 +43,156 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-04-29T04:00:00-daily-standup',
+    date: '2026-04-29',
+    researchTitle:
+      '📊 4/29 데일리 스탠드업 — NumLink동결6일째(4/23마지막)·MeowBeat동결17일째(4/12마지막)·bak_btn21일째·4/28액션0/8누적4일째이월(사전실행강제24h만에재실패)·Habby Dicero4/22주사위로그라이트100K인스톨$65K·Hearthside4/21머지+도시건설코지6×6보드·Skillz vs Papaya4/23 $420M판례스킬광고카피리스크·Unity6.4 GA(2026-04-26)ECS Core편입+ProjectAuditor기본+DirectStorage40%↓·GoogleMobileAds Unity v11.0.0 GMA Android25.0.0+iOS13.0.0+UMP Android4.0.0·MeowBeat manifest11곡titleKo한글명qa_static0E/0W run_regression2/2 PASS14일미커밋·NumLink Tools부재15일째·NumLink·Feedme.gitignore누수11/12종산출물떠다님·Reels광고33%CPM15-25%↓UGC CTR3.8%·마이크로인플루언서$150-800블렌디드CPI60%↓·퍼즐광고near-fail후크우세Merge3D플레이어블15%·Vercel Hobby4/29 30일retention캡발효·GitHub Actions OIDC custom properties claim GA·Unity DevOps 5/1과금개시UVCS폐지+25GB무료·DailyStandup267009이틀연속재현·Mobbin4월AI Agent Scope패턴Polestar드래그타일·모션디자인"문제풀어야"원칙·슬라이더stick·스와이프thrum햅틱·glassmorphism외과적사용',
+    researchSummary:
+      '7명 에이전트 병렬 리서치(제17회). NumLink **동결 6일째** — 4/23 cf7c897 이후 4/24~4/28 신규 커밋 0건. 미커밋 D4·M6·미추적 14건(어제 28파일에서 통합 정리·실질 변동 없음). MeowBeat 마지막 4/12 657032c 이후 **17일째 정체** — 미커밋 M14·D3·미추적 10건 + bak_btn 21일째 + _Recovery 잔존. agent-office 4/28 5a27b46 스탠드업 1건만(4/29 0건). **4/28 결정사항 8건 전원 미실행 → 누적 4일째 이월 진입** — 어제 도입한 "회의 시작 전 사전 실행 강제 모드"가 24시간 만에 재차 실패. **destructive 액션 메인 에이전트 confirm 글로벌 규칙과 충돌**이 근본 원인 → 오늘 결정 = "사용자 1회 승인 = 3건 일괄 실행 트랙"으로 전환. 시장: **Habby Dicero 4/22 글로벌 출시 — 주사위 로그라이트 신메타·인도·필리핀 소프트론칭 100K 인스톨·$65K IAP·9,000 광고 크리에이티브**(PocketGamer.biz·gamingonphone). **Hearthside: A Teeny Tiny Game 4/21 출시 — Dorfromantik형 머지+도시건설 하이브리드 코지 메타 6×6 보드**(Pocket Gamer). **Skillz vs Papaya 4/23 평결 — 봇 사용 허위광고로 $420M 배상**(Lanham Act 사상 최대), 퍼즐·트리비아 광고 카피 "스킬"·"실제 플레이어" 표현 리스크 급증(PocketGamer.biz·Law.com). 기술: **Unity 6.4 정식 출시(2026-04-26 Supported) — ECS Core 편입(Entities/Collections/Mathematics/Entities Graphics 내장)·Project Auditor 에디터 기본 탑재(룰은 com.unity.project-auditor-rules로 분리)·Windows DirectStorage NVMe→GPU 직행 로딩 텍스처/메시 최대 40% 단축**(공식 매뉴얼·discussions.unity.com). **Unity 6.5 breaking changes 로드맵 2026-03-27 갱신**. **GoogleMobileAds Unity v11.0.0 — GMA Android SDK 25.0.0+iOS 13.0.0+UMP Android 4.0.0 의존성 업데이트, Editor 시뮬레이터에서도 Rewarded onPaidEvent 발화**(MeowBeat v10 이하 머무르면 신정책 미적용 위험). **MeowBeat 미커밋 20파일 +1,189/-1,089·NumLink 12파일 -2,501줄 — 미커밋 빅뱅 위험 임계치 도달**. QA: **MeowBeat manifest.json +10줄 = 11곡 전부 titleKo 한글명 신규 추가**(soft_cat→폭신한 고양이·hardwood_dash→마루 질주 등) — qa_static.py 0E/0W·run_regression 2/2 PASS **무결성 통과**지만 14일째 미커밋. **NumLink Tools/ 폴더 자체 부재 15일째**(ls 실패·known_bugs.json·run_regression.py·test_fixtures 0건). **NumLink .gitignore 누수 — .omc/·state/·Screenshots/ 미등록 → 작업 산출물 11종이 working tree에 떠다님**(Feedme도 12종 untracked). 마케팅: **Instagram Reels 광고 노출 비중 33%로 상승**(2024 19%→2025 26%→2026 Q1 33%, AdAmigo·Benly), Reels CPM Feed/Stories 대비 15~25% 낮음·평균 CTR 0.76% → **UGC 결합 시 3.8%까지 상승**. **마이크로 인플루언서(10K~100K) 단가 — 인스타 $150~500/포스트·틱톡 $200~800/영상·유튜브 $500+, 2026 플레이북 단일 매크로 1명 대신 마이크로 수백명 동시 활성화, 블렌디드 CPI $4~5로 60% 절감**(InfluencerMarketingHub·Apptica). **2026 퍼즐 광고 메타 = "근접 실패(near-fail)·불안 압박감"이 "치유·폴리시" 압도** — 플레이어블 Merge 3D 15%·캐러셀 11%·스핀휠 9%(Lancaric·NextBigGames). **Royal Kingdom IP 매치3·캐논슈터·타워디펜스·항해·기지건설 장르 다변화 + 동일 로딩/엔드카드 브랜드 통일성**. DevOps: **agent-office deploy-pages.yml 4/27 19:15Z 42s success·weekly-insights 4/27 01:53Z 37s success — 7연속 성공**. **NumLink/Feedme .github 자체 부재 변동 없음**. **DailyStandup_ClaudeCode 4/29 04:00:01 실행됐으나 LastTaskResult=267009(0x41301) 이틀 연속 재현** — task already running 잔존 코드 가능성(실제 5a27b46 스탠드업 정상 생성됨). **GitHub Actions 4/2 OIDC custom properties claim GA**·service container override·Azure private networking failover preview. **Vercel 4/29(오늘) Hobby plan retention 30일 캡 발효** — 30일 초과 preview deployment 자동 삭제 시작(open PR latest preview 보존). **Cloudflare Pages pnpm 10 빌드 지원** + 4/21 Network Overview 대시보드. **Unity DevOps 5/1부 과금 개시**(3~4월 무료 프로모션 종료, UVCS per-seat 폐지·25GB 무료·Egress 100GB 무료). **CA/Browser Forum 코드 서명 인증서 유효기간 458일 캡, EV SmartScreen 즉시 bypass 폐지 → Azure Trusted Signing $10/월 권장**(Windows 빌드 배포 시). Art: **Mobbin 4월 신규 등록 = AI Agent Scope 패턴**(Polestar EV·Paramount+·Beside AI 리셉셔니스트·Nibble AI 협상) — 챗봇 데모 넘어 "AI 처리 범위 명시 + 사람 핸드오프 끊김 없음" 표준화(Mobbin·CoolCuration April 2026). Pinterest·Apple Reminders 스크린 라이브러리 갱신. **Polestar 드래그형 타일 카드** = 가장 중요한 차량 상태 한눈에 surface — 모바일 게임 메인 메뉴 응용 가능. **2026 모션 디자인 = "모든 애니메이션은 문제를 풀어야 한다 — 명확화/안내/확인이 아니면 스킵" 원칙**·**슬라이더 stick·스와이프 thrum 햅틱 표준화**·**reduced-motion 지원 필수**(Primotech·UXDesign.cc·DesignStudioUIUX 2026). **glassmorphism 외과적 사용**(오버레이 카드·알림 패널·미디어 컨트롤·컨텍스트 메뉴만, 주 콘텐츠 위 surgical)(Muz.li·Pixune Best Mobile Game UI 2026 Review). 어제 다룬 SUPERSTAR LDH 카드 300종·일본 차트 ColorBlockJam·캐주얼 D7 14.9% 구조 하락·Maplestory SDF 1914줄·MCP coplaydev beta·OCR/CPP 70개·BrushJjaemu·CTR 13.72%·windows-2025/VS2026 5/4·AdMob APP_ID·엘리베이티드 뉴트럴·클레이모피즘·사운드-햅틱 23ms·코지 폰트 Quicksand 모두 중복 회피.',
+    researchItems: [
+      {
+        title: '🎯 Orchestrator — NumLink동결6일째(4/23 cf7c897마지막)미커밋D4·M6·미추적14·MeowBeat동결17일째(4/12 657032c마지막)미커밋M14·D3·미추적10+bak_btn21일째+_Recovery잔존·agent-office4/28 5a27b46 1건만·4/28액션8건전원미실행누적4일째이월·사전실행강제모드24h만에재실패destructive confirm글로벌규칙과충돌',
+        description:
+          'NumLink 마지막 의미있는 커밋 4/23 cf7c897(힌트 즉시 공개). 4/24~4/28 신규 커밋 0건. **동결 6일째**. 미커밋 D4(AutoGenTests cs/asmdef +meta 2)·M6(Maplestory SDF 2 + TextMeshPro SDF 4 + Packages 2)·미추적 14건(.omc 7+.claude 3+Library/Logs/Packages/Temp/UserSettings 5폴더+meta+AutoQATests.meta+Screenshots+state). MeowBeat 마지막 4/12 657032c(먹기 애니 수정). **동결 17일째**. 미커밋 M14(SongData/GameManager/SongManager/OptionManager 4+manifest+LYRIA_PROMPTS.md+GoogleMobileAds 프리팹 3+AndroidManifest+ProjectSettings 3+FarmData+GetItemParticle)·D3(Input/Item/SaveLoad meta)·미추적 10건(.editorconfig+.vsconfig+AutoQATests+feedIcon 2+bak_btn 2+_Recovery 2+ignore.conf+state+__pycache__+docs/GAME_BRIEF). **MainScene.unity.bak_btn 4/8 생성 기준 21일째 누적**. agent-office 4/28 5a27b46 스탠드업 1건만, 4/29 0건. **4/28 결정사항 8건 추적 결과: 완료 0 / 이월 8 — 누적 4일째 이월 진입**. 어제 도입한 "회의 시작 전 git rm 사전 실행 강제 모드"가 24시간 만에 재차 실패한 근본 원인 = **CLAUDE.md "destructive 액션은 사용자 confirm 후 실행" 글로벌 규칙과 회의 자동화의 비대화형 실행이 충돌**. 메인 에이전트가 회의록만 작성하고 끝나는 패턴 반복. **오늘 결정사항 제안**: 회의록에 git rm/cp 명령 즉시 복붙 가능 형태로 보존하고 **사용자 1회 승인 = 3건 일괄 실행 트랙**으로 분리(NumLink AutoGenTests rm + Tools 복사 + .gitignore 3줄 추가 + MeowBeat _Recovery·bak_btn 이동). + 누적 이월 4일째 메트릭 자체를 대시보드 1뷰로 노출.',
+      },
+      {
+        title: '🎮 Game Designer — Habby Dicero4/22글로벌출시주사위로그라이트인도필리핀100K인스톨$65K IAP9000광고크리에이티브·Hearthside4/21머지+도시건설코지하이브리드6×6보드·Skillz vs Papaya4/23 $420M판례Lanham Act사상최대퍼즐광고스킬/실제플레이어카피리스크',
+        description:
+          '**Habby Dicero가 2026년 4월 22일 글로벌 출시 — 매치3·블록이 아닌 "주사위 로그라이트" 신메타, 인도·필리핀 소프트론칭에서 100K 인스톨·$65K IAP·9,000 광고 크리에이티브 운용**(PocketGamer.biz·gamingonphone·Mobidictum 글로벌 차트 3월). 주사위 굴림+덱빌딩 결합으로 캐주얼 D7 retention 회복 사례. **Hearthside: A Teeny Tiny Game 4/21 출시 — Dorfromantik형 "머지+도시건설 하이브리드" 코지 메타·6×6 작은 보드 공간 관리**(Pocket Gamer 신작 4/23 주차). 한 손 플레이·1분 세션이 핵심. **Skillz vs Papaya 4/23 평결 — 봇 사용 허위광고로 $420M 배상**(Lanham Act 사상 최대 false advertising verdict)(PocketGamer.biz·Law.com·Law360). 퍼즐·트리비아 광고 카피에 **"스킬"·"실제 플레이어"·"skill-based" 표현 리스크 급증** — 봇 매칭/AI 봇 사용 시 광고에 사실 표시 의무. 어제 다룬 SUPERSTAR LDH·일본 ColorBlockJam·캐주얼 D7 14.9% 중복 회피 — 이번 주제는 **"Habby Dicero 주사위 로그라이트 + Hearthside 6×6 머지+도시건설 + Skillz $420M 판례"**가 축. **오늘 결정사항 제안**: P1 **NumLink "공간 제약형 보드 사이즈 모드" 추가 검토** — Hearthside 6×6 미니보드 사례, 한 손 플레이·1분 세션을 별도 챕터로 분리(필리핀 BlockBlast Top3 고정 핵심 = 짧은 세션·낮은 진입장벽). + P1 광고 카피 "skill-based"/"실제 플레이어" 표현 회피 가이드 채택($420M 판례 리스크 회피).',
+      },
+      {
+        title: '💻 Developer — Unity 6.4 GA(2026-04-26 Supported)ECS Core편입+Project Auditor기본탑재+DirectStorage NVMe→GPU40%단축·GoogleMobileAds Unity v11.0.0 GMA Android25.0.0+iOS13.0.0+UMP Android4.0.0 Editor시뮬레이터onPaidEvent발화·MeowBeat미커밋20파일+1189/-1089·NumLink12파일-2501줄미커밋빅뱅위험임계',
+        description:
+          '**Unity 6.4 정식 출시(2026-04-26 Supported)** — ECS가 Core 패키지로 편입(Entities/Collections/Mathematics/Entities Graphics 내장), Project Auditor가 에디터 기본 탑재(룰은 com.unity.project-auditor-rules로 분리), **Windows DirectStorage 지원으로 NVMe→GPU 직행 로딩 텍스처/메시/DOTS 데이터 최대 40% 단축**(공식 매뉴얼 docs.unity3d.com/6000.4·discussions.unity.com·darkounity 블로그). **Unity 6.5 breaking changes 로드맵 2026-03-27자 갱신**. **GoogleMobileAds Unity v11.0.0 라인** — GMA Android SDK 25.0.0+iOS SDK 13.0.0+UMP Android 4.0.0 의존성 업데이트, **Editor 시뮬레이터에서도 Rewarded/RewardedInterstitial onPaidEvent 발화 변경**(github.com/googleads/googleads-mobile-unity v11.0.0). MeowBeat가 v10 이하 머무르면 iOS 13/Android 25 신정책 미적용 위험. **양 프로젝트 미커밋 누적 임계치 도달**: NumLink Maplestory SDF 769+1163줄=1932줄 삭제·AutoGenTests 4파일 414줄·manifest 변동, 총 12파일 -2,501줄. MeowBeat GameManager 59줄·OptionManager 42줄·SongManager 16줄 수정+AndroidManifest 20줄 변동+manifest +10줄+GoogleMobileAds 플레이스홀더 prefab 3종 대규모 리젠+Input/Item/SaveLoad meta 삭제, 총 20파일 +1,189/-1,089. **양쪽 모두 어제 지적된 부채(bak_btn·_Recovery·SDF 1914줄·AdMob ID 하드코딩) 위에 새 변경이 더 쌓이는 중**. 어제 다룬 Unity 6.3 LTS·Addressables 2.9·MCP coplaydev·ApplyVolume·SongManager PlayerPrefs 중복 회피 — 이번 주제는 **"Unity 6.4 GA + DirectStorage 40% 단축 + GMA v11.0.0 + 미커밋 빅뱅 임계 +1189/-1089"**가 축. **오늘 결정사항 제안**: P1 **MeowBeat 미커밋 20파일을 4 atomic 분리 — feat(option) 볼륨 / fix(song) PlayerPrefs 핫패스 / chore(meta) Input/Item/SaveLoad 빈 .meta / chore(ads) GMA placeholder prefab 리젠**. **GMA v11 업그레이드는 별도 Sprint 분리**(AndroidManifest 20줄 변동과 충돌 위험). NumLink Maplestory SDF는 오늘도 손대지 말 것 — 별도 글리프 검증 PR 선결.',
+      },
+      {
+        title: '🔍 QA Tester — MeowBeat manifest11곡titleKo한글명추가qa_static0E/0W run_regression2/2 PASS무결성통과지만14일미커밋·NumLink Tools부재15일째AutoQATests부재AutoGenTests staged delete그대로신규테스트0건·NumLink·Feedme.gitignore누수11/12종산출물working tree떠다님',
+        description:
+          '**MeowBeat manifest.json +10줄 diff = 11곡 전부 titleKo 한글명 신규 추가**(soft_cat→폭신한 고양이·hardwood_dash→마루 질주·breeze_paws→산들 발자국 등). **모든 11곡 audioFile 디스크 실존**(.ogg 10개 + manifest 1) 확인. **qa_static.py 0E/0W·run_regression 2/2 PASS — 무결성 통과**지만 11곡 수정분이 **14일째 미커밋**(어제 그대로). **NumLink Tools/ 폴더 자체 부재 15일째**(ls 실패), AutoQATests/ 폴더 부재, 검증 도구 0개. 한편 Feedme Tools/ 폴더는 16개 스크립트 정상(known_bugs 7개 패턴 어제와 동일·증감 없음). **NumLink Assets/Tests/Editor/AutoGenTests.{cs,asmdef,meta} 4파일 git 상태 D(deleted) 그대로 — 14일째 신규 테스트 추가 흔적 0건**(다른 폴더에도 없음). **NumLink .gitignore 누수 — .omc/·state/·Screenshots/ 미등록 → ?? .omc/, ?? state/, ?? Screenshots/ 작업 산출물 11종 working tree 떠다님**. Feedme도 .editorconfig·_Recovery·ignore.conf 등 12종 untracked. MeowBeat AutoQATests/ 폴더 자체 여전히 git ?? 상태(어제와 동일, AutoGenTests.cs 14건 살아있음). 어제 다룬 Tools 14일·AutoGenTests 14건 의도 삭제·manifest +10줄·known_bugs 7개 중복 회피 — 이번 주제는 **"manifest 11곡 한글명 무결성 통과 14일 미커밋 + .gitignore 누수 11/12종 untracked"**가 축. **오늘 결정사항 제안**: P0 **NumLink에 _ProjectTemplate/Tools/ 5분 안에 복사 + .gitignore에 `.omc/`, `state/`, `Screenshots/` 3줄 추가** — CLAUDE.md "묻지 않고 바로 실행" 규칙으로 추가 합의 없이 즉시 가능, 후속 회귀 테스트 기반선 확보. + P1 MeowBeat manifest 11곡 한글명 추가는 단독 chore(songs) 커밋으로 14일 정체 종결.',
+      },
+      {
+        title: '📢 Content Writer — Instagram Reels광고노출33%(2026 Q1·2024 19%→2025 26%) CPM Feed/Stories대비15-25%↓CTR 0.76→UGC결합3.8%·마이크로인플루언서(10K-100K)$150-800블렌디드CPI $4-5로60%절감단일매크로→마이크로수백명동시활성·2026퍼즐광고메타near-fail압도치유/폴리시플레이어블Merge3D 15%캐러셀11%스핀휠9%',
+        description:
+          '**Instagram Reels가 2026 Q1 기준 Instagram 광고 노출의 33%까지 상승**(2025 Q3 26%, 2024 19%)했고, **Reels CPM은 Feed/Stories 대비 15~25% 낮으며 평균 CTR 0.76%인데 크리에이터 UGC 결합 시 최대 3.8%까지 상승** — 어제 다룬 TikTok Spark 외 Reels가 신규 메인 채널로 부상(AdAmigo Meta Ads CTR Benchmarks 2026·Benly Meta Placement Performance 2026). **마이크로 인플루언서(10K~100K) 단가는 인스타 피드 $150~500/포스트, 틱톡 영상 $200~800/개, 유튜브 통합 $500+/영상** — **2026 플레이북은 "단일 매크로 1명 대신 마이크로 수백명 동시 활성화" 전략**, **블렌디드 CPI는 트래킹 CPI $12 대비 $4~5로 60% 절감 가능**(InfluencerMarketingHub Micro Influencer Rates 2026·Apptica Influencer UA 분석). **2026 퍼즐 광고 크리에이티브 메타는 "근접 실패(near-fail)·불안 압박감"이 "치유·폴리시"를 이김** — Royal Kingdom은 단일 IP에서 매치3·캐논슈터·타워디펜스·항해·기지건설로 장르 다변화하고 동일 로딩/엔드카드/CTA로 브랜드 통일성 확보, **플레이어블 템플릿 1위는 Merge 3D(15%)·이미지 캐러셀(11%)·스핀휠(9%) 순**(Lancaric Playable Ads Trends Feb 2026·NextBigGames 2026 Puzzle Creative Trends·Segwise Best Ad Creative Hooks for Puzzle Games·CAS.ai ASO 2026). 어제 다룬 OCR/CPP 70개·BrushJjaemu 2M뷰·CTR 13.72%·파노라마 컷오프 중복 회피 — 이번 주제는 **"Reels 33% CPM 15-25%↓ UGC CTR 3.8% + 마이크로 $150-800 CPI 60%↓ + near-fail Merge 3D 플레이어블 15%"**가 축. **오늘 결정사항 제안**: P1 **MeowBeat 트레일러를 30초 단일 영상에서 "근접 실패 후크 5초 + 메커닉 10초 + 보상 컷 5초" 구조의 Reels/Shorts 9:16 세로 광고 3종 분리 제작** — 고양이가 박자 놓쳐 떨어지기 직전 near-fail 컷으로 첫 3초 후크, Reels CPM 15~25% 절감 + UGC 결합 CTR 3.8% 상한 노림 + 마이크로 인플루언서 5명($1,000 = $200×5)에게 동일 후크 가이드 배포해 단일 매크로 대비 CPI 절감 검증.',
+      },
+      {
+        title: '⚙️ DevOps — agent-office Pages·weekly-insights 7연속success·NumLink/Feedme.github부재변동없음·DailyStandup267009이틀연속재현task already running잔존추정·GitHub Actions OIDC custom properties claim GA(4/2)·Vercel Hobby4/29 30일retention캡발효·Cloudflare Pages pnpm10·Unity DevOps 5/1과금개시·Azure Trusted Signing $10/월권장',
+        description:
+          '운영 상태: **agent-office deploy-pages.yml 4/27 19:15Z 42s success·weekly-insights 4/27 01:53Z 37s success — 최근 5개 실행 모두 success, 7연속 성공 유지**(SHA pinned 양호). NumLink/Feedme의 .github 디렉토리 자체 부재 — **어제 0건 상태가 변동 없이 유지**, NumLink 4/23 cf7c897 이후 6일째 동결 진행 중. **DailyStandup_ClaudeCode 4/29 04:00:01에 실행됐으나 LastTaskResult=267009(0x41301)가 어제(4/28)에 이어 이틀 연속 재현** — 작업 자체는 trigger 되어 있고 NumberOfMissedRuns=0이지만, 실제 스탠드업 커밋(5a27b46)이 정상 생성된 것으로 보아 **267009는 "task already running" 잔존 코드일 가능성**. 4/30 재현 시 Get-ScheduledTask | Get-ScheduledTaskInfo로 PID 추적 필요. 외부 동향: **(a) GitHub Actions 4/2 업데이트로 service container의 entrypoint/command override 키 신규 지원, OIDC 토큰에 repository custom properties claim GA, Azure private networking failover 퍼블릭 프리뷰**(github.blog/changelog 2026-04-02). **(b) Vercel 4/29(오늘) Hobby plan retention 30일 캡 적용 — 30일 초과 preview deployment 자동 삭제 시작**(open PR latest preview는 보존 정책 강화로 안전). **(c) Cloudflare Pages pnpm 10 빌드 지원 + 4/21 Network Overview 대시보드 추가**(developers.cloudflare.com/pages). **(d) Unity DevOps 3/1부 신규 가격 — UVCS per-seat 폐지·25GB 무료·Egress 100GB 무료, 3~4월 무료 프로모션 진행 중, 5/1부터 과금 개시**(support.unity.com). **(e) 코드 서명 — 3/1부터 CA/Browser Forum이 publicly trusted code signing 인증서 유효기간 458일 캡, EV 즉시 SmartScreen bypass 폐지 → Azure Trusted Signing $10/월이 MS 공식 권장**. WebGL Poki 출시 경로엔 무관하나 Windows 빌드 배포 시 영향. 어제 windows-2025+VS2026 5/4 GA·DailyStandup 267009·AdMob APP_ID·Pages 6연속·Renovate 90+·CycloneDX·Copilot PR GA·SHA pinned 중복 회피 — 이번 주제는 **"Vercel Hobby 30일 retention 4/29 발효 + GitHub OIDC custom properties claim GA + Unity DevOps 5/1 과금 + Azure Trusted Signing $10/월"**이 축. **오늘 결정사항 제안**: P0 **agent-office Vercel Hobby 영향 진단** — 4/29 오늘부로 30일 이상 된 preview 자동 삭제 개시되므로 `vercel ls --prod` 또는 dashboard에서 production deployment 보존 여부 1회 확인 후 production은 retention 정책에서 제외 처리. + P1 GitHub Actions OIDC custom properties claim 활용 검토(deploy-pages.yml 권한 강화). + P2 Unity DevOps 5/1 과금 개시 전 MeowBeat 빌드 자동화 시범 구축.',
+      },
+      {
+        title: '🎨 Art Director — Mobbin4월AI Agent Scope패턴(Polestar EV·Paramount+·Beside AI·Nibble AI)챗봇데모넘어AI처리범위명시+사람핸드오프표준화·Polestar드래그형타일카드차량상태surface·2026모션디자인"문제풀어야"원칙슬라이더stick·스와이프thrum햅틱reduced-motion필수·glassmorphism외과적사용주콘텐츠위surgical(Muz.li·Pixune)',
+        description:
+          '**Mobbin 4월 신규 등록 = AI Agent Scope 패턴**(Polestar EV·Paramount+·Beside AI 리셉셔니스트·Nibble AI 협상) — **챗봇 데모 넘어 "AI 처리 범위 명시 + 사람 핸드오프 끊김 없음" 표준화**(Mobbin·CoolCuration April 2026). Pinterest·Apple Reminders 스크린 라이브러리 갱신. **Polestar 드래그형 타일 카드** = 가장 중요한 차량 상태(climate·locks·charging·software updates)를 한눈에 surface — **모바일 게임 메인 메뉴 응용 가능**(곡 선택·농장·옵션·랭킹 타일 드래그 surface). **2026 모션 디자인 = "모든 애니메이션은 문제를 풀어야 한다 — 명확화/안내/확인이 아니면 스킵" 원칙**(Primotech UI/UX Evolution 2026·UXDesign.cc 10 UX shifts·DesignStudioUIUX). **슬라이더 stick(정착감)·스와이프 thrum(명중감) 햅틱 표준화**·**reduced-motion 지원 필수**(접근성 비협상). **glassmorphism 외과적 사용** — 오버레이 카드·알림 패널·미디어 컨트롤·컨텍스트 메뉴만, 주 콘텐츠 위 surgical 응용(Muz.li 2026·Pixune Best Mobile Game UI 2026 Review). **Liquid Glass(iOS 18) 엔진 unifies iPhone/iPad/Mac/wearables fluid translucent + 15% engagement uplift**(Pixune). 어제 엘리베이티드 뉴트럴·클레이모피즘·사운드-햅틱 23ms·코지 폰트 Quicksand 중복 회피 — 이번 주제는 **"Mobbin 4월 AI Agent Scope + Polestar 드래그 타일 + 모션 문제 풀어야 원칙 + 슬라이더 stick·스와이프 thrum 햅틱 + glassmorphism surgical"**이 축. **오늘 결정사항 제안**: P2 **MeowBeat 메인 메뉴 Polestar 드래그형 타일 카드 패턴 시제품 1건** — 곡 선택·농장 진입·옵션·랭킹을 드래그 가능 타일로 한 화면 surface. + 노트 판정 햅틱 어제 23ms 위에 **stick(슬라이더 정착감)·thrum(스와이프 명중감) 2단 분리** 적용. + NumLink **reduced-motion 토글 1건** 추가(접근성 타협 없음).',
+      },
+    ],
+    meetingTitle: '4/29 종합 회의 — 4/28 액션 0/8 누적 4일째 이월·사전 실행 강제 모드 24h만에 재실패·destructive confirm 글로벌 규칙 충돌이 근본 원인·오늘 = 사용자 1회 승인=3건 일괄 실행 트랙 전환·Habby Dicero 주사위 로그라이트+Hearthside 6×6 머지+도시건설+Skillz $420M 판례·Unity 6.4 GA DirectStorage 40%↓+GMA v11.0.0·MeowBeat manifest 11곡 한글명 무결성 통과 14일 미커밋·NumLink Tools 15일째 부재·.gitignore 누수 11/12종·Reels 33% CPM 15-25%↓ UGC CTR 3.8%·Vercel Hobby 30일 캡 4/29 발효·Mobbin AI Agent Scope+모션 문제 풀어야 원칙',
+    meetingSummary:
+      '7명이 brief room에서 종합. **4/28 결정사항 8건 전원 미실행 → 누적 4일째 이월** — 어제 도입한 "회의 시작 전 사전 실행 강제 모드"가 24시간 만에 재차 실패. 근본 원인 = **CLAUDE.md "destructive 액션은 사용자 confirm 후 실행" 글로벌 규칙과 회의 자동화의 비대화형 실행 충돌**. 오늘 합의 = **"사용자 1회 승인 = 3건 일괄 실행 트랙"으로 전환** — 회의록에 git rm/cp 명령 즉시 복붙 가능 형태로 보존하고, 사용자 단일 승인으로 NumLink AutoGenTests rm + Tools 복사 + .gitignore 3줄 + MeowBeat _Recovery·bak_btn 이동 4건 일괄 실행. **Game Designer**: Habby Dicero 주사위 로그라이트 100K 인스톨 + Hearthside 6×6 머지+도시건설 코지 + Skillz $420M 판례 → NumLink "공간 제약형 보드 사이즈 모드" GDD 검토 + 광고 카피 "skill-based" 회피. **Developer**: Unity 6.4 GA(DirectStorage 40%↓) + GMA v11.0.0 + 미커밋 빅뱅 임계 +1189/-1089 → MeowBeat 4 atomic 분리(option/song/meta/ads) + GMA v11은 별도 Sprint. **QA Tester**: manifest 11곡 한글명 무결성 통과 14일 미커밋 + Tools 15일 부재 + .gitignore 누수 11/12종 → Tools 5분 복사 + .gitignore 3줄 추가 + manifest 단독 chore(songs) 커밋. **Content Writer**: Reels 33% CPM 15-25%↓ UGC CTR 3.8% + 마이크로 인플루언서 CPI 60%↓ + near-fail 후크 우세 → MeowBeat 30초 트레일러 → near-fail 5+10+5 Reels/Shorts 3종 분리 + 마이크로 5명 $1,000. **DevOps**: Vercel Hobby 30일 retention 4/29 발효 + GitHub OIDC custom properties claim GA + Unity DevOps 5/1 과금 + DailyStandup 267009 이틀 연속 → Vercel 영향 1회 진단 + OIDC 권한 강화 검토. **Art Director**: Mobbin 4월 AI Agent Scope(Polestar 드래그 타일) + 모션 "문제 풀어야" 원칙 + 슬라이더 stick·스와이프 thrum 햅틱 + glassmorphism surgical → MeowBeat 메인 메뉴 드래그 타일 시제품 + 햅틱 stick/thrum 2단 + NumLink reduced-motion 토글.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'NumLink 동결 6일째(4/23 cf7c897 마지막)·MeowBeat 17일째(4/12 657032c 마지막)·bak_btn 21일째·_Recovery 잔존. 4/28 결정 8건 전원 미실행 = 누적 4일째 이월. 어제 도입한 "사전 실행 강제 모드"가 24시간 만에 재실패한 근본 원인은 destructive 액션 사용자 confirm 글로벌 규칙과 비대화형 실행 충돌. 오늘 = "사용자 1회 승인 = 3건 일괄 실행 트랙" 전환. 회의록에 git rm/cp 명령 복붙 가능 형태 보존, 메인은 작성만, 사용자 한 번 OK로 4건 일괄 실행.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: 'Habby Dicero 4/22 글로벌 출시 — 주사위 로그라이트 인도·필리핀 100K 인스톨·$65K IAP·9000 광고 크리에이티브. Hearthside 4/21 — Dorfromantik형 머지+도시건설 6×6 코지 보드. Skillz vs Papaya 4/23 $420M 평결 Lanham Act 사상 최대(봇 사용 허위광고). → NumLink "공간 제약형 보드 사이즈 모드" 검토 + 광고 카피 "skill-based"/"실제 플레이어" 회피 가이드.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'Unity 6.4 GA(2026-04-26 Supported) — ECS Core 편입 + Project Auditor 기본 + DirectStorage NVMe→GPU 40% 단축. GoogleMobileAds Unity v11.0.0 — GMA Android 25.0.0+iOS 13.0.0+UMP Android 4.0.0 + Editor 시뮬레이터 onPaidEvent 발화. MeowBeat 미커밋 20파일 +1189/-1089·NumLink 12파일 -2501줄 빅뱅 임계. → MeowBeat 4 atomic 분리(feat(option)/fix(song)/chore(meta)/chore(ads)) + GMA v11은 별도 Sprint(AndroidManifest 충돌 방지). NumLink SDF는 오늘 손대지 말 것.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'MeowBeat manifest +10줄 = 11곡 titleKo 한글명 추가, qa_static 0E/0W·run_regression 2/2 PASS 무결성 통과, 단 14일 미커밋. NumLink Tools 폴더 자체 부재 15일째·AutoQATests 부재·AutoGenTests staged delete 그대로 신규 테스트 0건. NumLink .gitignore 누수 → .omc/·state/·Screenshots/ 11종 working tree 떠다님(Feedme도 12종). → P0 Tools 5분 복사+.gitignore 3줄 추가+manifest 단독 chore(songs).',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'Instagram Reels 광고 노출 33%(Q1 2026, 2024 19→2025 26%)·Reels CPM Feed 대비 15-25% 낮음·CTR 0.76 → UGC 3.8%(AdAmigo·Benly). 마이크로 인플루언서(10K-100K) 인스타 $150-500·틱톡 $200-800·블렌디드 CPI $4-5로 60% 절감(InfluencerMarketingHub·Apptica). 2026 퍼즐 광고 = near-fail 우세, 플레이어블 Merge 3D 15%·캐러셀 11%·스핀휠 9%(Lancaric·NextBigGames). → MeowBeat 트레일러 30초 단일 → "near-fail 5+메커닉 10+보상 5" Reels/Shorts 9:16 3종 + 마이크로 5명 $1,000 가이드 배포.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'agent-office 7연속 success(SHA pinned)·NumLink/Feedme .github 부재 변동 없음. DailyStandup_ClaudeCode 267009 이틀 연속 재현 — task already running 잔존 추정. GitHub Actions 4/2 OIDC custom properties claim GA·service container override·Azure private networking failover preview. **Vercel 4/29 Hobby plan 30일 retention 캡 발효** — 30일+ preview 자동 삭제 시작. Unity DevOps 5/1 과금 개시(UVCS 폐지·25GB 무료). Azure Trusted Signing $10/월 권장(EV SmartScreen bypass 폐지). → P0 Vercel Hobby 영향 1회 진단·OIDC 권한 강화 검토·Unity DevOps 시범 구축.',
+      },
+      {
+        speaker: 'Art Director',
+        note: 'Mobbin 4월 신규 = AI Agent Scope 패턴(Polestar EV·Paramount+·Beside·Nibble) — AI 처리 범위 명시+사람 핸드오프 표준. Polestar 드래그형 타일 카드 = 차량 상태 한눈에 surface. 2026 모션 디자인 "모든 애니메이션은 문제를 풀어야" 원칙·슬라이더 stick·스와이프 thrum 햅틱·reduced-motion 필수(Primotech·UXDesign.cc). glassmorphism 외과적 사용(주 콘텐츠 위 surgical)(Muz.li·Pixune). → MeowBeat 메인 메뉴 Polestar 드래그 타일 시제품 + 햅틱 stick/thrum 2단 + NumLink reduced-motion 토글.',
+      },
+    ],
+    decisions: [
+      {
+        title: 'P0 [사용자 1회 승인 = 3건 일괄 실행]: NumLink AutoGenTests git rm + Tools 복사 + .gitignore 3줄 추가 + MeowBeat _Recovery·bak_btn _backups/ 이동 — 15분 컷·누적 4일째 이월 종결',
+        description:
+          '4/28 사전 실행 강제 모드 24h 재실패 → 트랙 전환. 사용자 1회 승인으로 일괄 실행 가능한 명령 묶음: (1) `cd C:/Unity/NumLink && git rm Assets/Tests/Editor/AutoGenTests.cs(.meta) Assets/Tests/Editor/AutoGenTests.asmdef(.meta) && git commit -m "chore(test): 빌드 회피 위해 폐기된 자동 생성 테스트 4파일 제거"` (2) `cp -r C:/Unity/_ProjectTemplate/Tools C:/Unity/NumLink/Tools && python3 C:/Unity/NumLink/Tools/unity_validate.py(0 error 검증) && echo -e ".omc/\\nstate/\\nScreenshots/" >> C:/Unity/NumLink/.gitignore && git add Tools/ .gitignore && git commit -m "chore(qa): 자가진단 인프라 _ProjectTemplate에서 도입 + .gitignore 누수 3종 등록"` (3) `cd C:/Unity/Feedme && mkdir -p _backups && git mv Assets/Scenes/MainScene.unity.bak_btn(.meta) _backups/ && rm -rf Assets/_Recovery/ Assets/_Recovery.meta && git commit -m "chore(scenes): 씬 corruption 복구 흔적 _backups/로 이동·_Recovery 제거"`. 누적 4일째 이월 흐름 차단 및 단일 항목 강제 착수 모드의 첫 종결 사례 확보.',
+      },
+      {
+        title: 'P0 agent-office Vercel Hobby plan 영향 진단 — 4/29 발효된 30일 retention 캡으로 30일 초과 preview 자동 삭제 개시',
+        description:
+          'DevOps. 오늘(4/29)부로 Vercel Hobby plan에서 30일 이상 된 preview deployment 자동 삭제 시작 — agent-office가 Hobby라면 영향. `vercel ls --prod` 또는 Vercel dashboard에서 production deployment 보존 여부 1회 확인 후 production은 retention 정책 제외 처리. open PR latest preview는 보존되므로 작업 흐름 안전.',
+      },
+      {
+        title: 'P0 MeowBeat SongManager.Play 핫패스 PlayerPrefs.GetFloat → OptionManager.CurrentVolume 5분 교체 + ApplyVolume bgmPlayer ServiceLocator 경로 5분 교체 (4/28 이월 #4 3차 재시도)',
+        description:
+          'SongManager.Play 안 PlayerPrefs.GetFloat("SongVolume", 1f) 직접 호출을 OptionManager.CurrentVolume static 프로퍼티 참조로 변경 → 디스크 I/O 제거 + 단일 진실 소스 + GameConstants 패턴 부합. + ApplyVolume에서 GameManager.instance.songManager.bgmPlayer 직접 접근 → ServiceLocator 경로로 교체. 5분+5분. 음량 슬라이더 본 PR 분리 안에 fix(song) 커밋 1건으로 포함.',
+      },
+      {
+        title: 'P1 MeowBeat 미커밋 20파일을 4 atomic 커밋 분리 — feat(option) 볼륨 / fix(song) PlayerPrefs 핫패스 / chore(meta) 빈 .meta / chore(ads) GMA placeholder. GMA v11 업그레이드는 별도 Sprint',
+        description:
+          'Developer. (1) feat(option): OptionManager 볼륨 처리 정리 (2) fix(song): SongManager PlayerPrefs 핫패스 제거 + ApplyVolume ServiceLocator 경로 (3) chore(meta): Input/Item/SaveLoad 빈 .meta 삭제 (4) chore(ads): GoogleMobileAds placeholder prefab 3종 리젠. GMA v11.0.0 업그레이드는 AndroidManifest 20줄 변동과 충돌 위험 → 별도 Sprint로 분리. NumLink Maplestory SDF는 오늘 손대지 말 것 — 별도 글리프 검증 PR 선결.',
+      },
+      {
+        title: 'P1 MeowBeat manifest 11곡 한글명 단독 chore(songs) 커밋 — qa_static 0E/0W·run_regression 2/2 PASS 무결성 통과, 14일 정체 종결',
+        description:
+          'QA Tester. soft_cat→폭신한 고양이·hardwood_dash→마루 질주 등 11곡 titleKo 신규 추가는 무결성 통과된 깨끗한 변경 → P1 P2의 다른 변경과 섞지 말고 단독 커밋: `git add Assets/StreamingAssets/Songs/manifest.json && git commit -m "chore(songs): 11곡 titleKo 한글명 일괄 추가"`. 14일 정체 끝.',
+      },
+      {
+        title: 'P1 MeowBeat 트레일러 30초 단일 → "근접 실패 후크 5초+메커닉 10초+보상 컷 5초" Reels/Shorts 9:16 세로 광고 3종 분리 제작 + 마이크로 인플루언서 5명 $1,000',
+        description:
+          'Content Writer. Reels CPM Feed 대비 15-25% 낮음·UGC 결합 CTR 3.8% 상한·near-fail 후크 우세(Lancaric·NextBigGames 2026). 고양이가 박자 놓쳐 떨어지기 직전 컷이 첫 3초 후크. 마이크로 인플루언서 5명($200×5)에게 동일 후크 가이드 배포해 단일 매크로 대비 CPI 절감 검증($12 → $4-5).',
+      },
+      {
+        title: 'P1 NumLink "공간 제약형 보드 사이즈 모드" GDD 1페이지 — Hearthside 6×6 사례, 한 손 플레이·1분 세션 별도 챕터 + 광고 카피 "skill-based"/"실제 플레이어" 회피 가이드($420M 판례)',
+        description:
+          'Game Designer. Hearthside 4/21·Skillz vs Papaya 4/23 $420M 판례. 6×6 미니보드를 NumLink 별도 챕터로 분리해 짧은 세션·낮은 진입장벽 어필(필리핀 BlockBlast Top3 핵심). 동시에 NumLink·MeowBeat 광고 카피 일괄 점검 — "skill-based"/"실제 플레이어"/"100% 봇 없음" 표현은 사실 입증 의무 동반, "퍼즐 풀이"·"리듬 매칭"으로 표기.',
+      },
+      {
+        title: 'P1 GitHub Actions OIDC custom properties claim 활용 검토 — agent-office deploy-pages.yml 권한 강화 (4/2 GA)',
+        description:
+          'DevOps. github.blog 4/2 changelog: OIDC 토큰에 repository custom properties claim GA. agent-office Pages 배포 워크플로의 OIDC 권한 강화 검토 — 기존 SHA pinned 양호 위에 claim 기반 세분화 인가 적용 가능성 1차 분석.',
+      },
+      {
+        title: 'P2 Unity DevOps 5/1 과금 개시 전 MeowBeat 빌드 자동화 시범 구축 — 무료 프로모션 종료 임박',
+        description:
+          'DevOps. Unity DevOps 3~4월 무료 프로모션 종료, 5/1부터 과금 개시(UVCS per-seat 폐지·25GB 무료·Egress 100GB 무료). MeowBeat 빌드 자동화 시범 구축 시 4월 말 시작이 유리. NumLink unity-build.yml과 별개로 Unity Cloud Build 무료 한도 안에서 1회 빌드 검증.',
+      },
+      {
+        title: 'P2 NumLink Maplestory SDF 1914줄 삭제 의도 검증 — 글리프 누락 □ 박스 위험 (의도면 README·사고면 git checkout HEAD --)',
+        description:
+          'Developer. NumLink Maplestory Bold/Light SDF 769+1163=1914줄 character set/glyph table 삭제 미커밋. 빌드 시 누락 글리프 □ 박스 출력 위험. 단순 폰트 변경이 아니므로 Maplestory SDF는 오늘 손대지 말 것 — 별도 글리프 검증 PR 선결 조건. 의도 확인되면 README에 누락 글리프 명시·아니면 git checkout HEAD --으로 복구.',
+      },
+      {
+        title: 'P2 NumLink unity-build.yml 1건 추가 — windows-2025+VS2026 5/4 GA·UnityActions·Library 캐시·안드로이드 빌드 1회',
+        description:
+          'DevOps. NumLink·Feedme CI 0% 14일+ 누적. 어제 windows-2025+VS2026 프리뷰 러너 5/4 GA 보고 → 5/4 이후 NumLink 우선 적용. .github/workflows/unity-build.yml 1건 추가, push/PR 트리거, GameCI/UnityCI 액션 SHA pinned, Library 캐시, 안드로이드 빌드 1회.',
+      },
+      {
+        title: 'P2 MeowBeat 메인 메뉴 Polestar 드래그형 타일 카드 패턴 시제품 + 노트 판정 햅틱 stick/thrum 2단 분리 + NumLink reduced-motion 토글',
+        description:
+          'Art Director. Mobbin 4월 신규 등록 사례. MeowBeat 메인 메뉴를 곡 선택·농장 진입·옵션·랭킹 드래그 가능 타일로 한 화면 surface. 노트 판정 햅틱은 어제 23ms 임계 위에 stick(슬라이더 정착감)·thrum(스와이프 명중감) 2단 분리 적용. NumLink는 reduced-motion 토글 1건만 추가(접근성 비협상).',
+      },
+      {
+        title: 'P2 DailyStandup_ClaudeCode 267009 이틀 연속 재현 — 4/30 재현 시 Get-ScheduledTask | Get-ScheduledTaskInfo PID 추적',
+        description:
+          'DevOps. LastTaskResult=267009(0x41301 task already running) 4/28+4/29 이틀 연속. 실제 스탠드업 커밋은 정상 생성됨(5a27b46) → 잔존 코드 가능성. 4/30 재현 시 PID 추적·timeout 90분+Stop-Process 종료 보장 래퍼 도입.',
+      },
+      {
+        title: 'P2 잔여 (4/28 이전 이월 다수): 글로벌 카드 컬렉션·주간 리그·크림 톤 머디클레이·첫 3장 파노라마 컷오프·renovate.json·21일 골든벨 마라톤·#09090B 4단계·Lite ASO MCP·GetComponent 810건·Debug.Log [Conditional("DEV")]·냥이 7일 출석·냥友 길드·판정 Post-Feedback·첫 3곡 진행바',
+        description:
+          '오늘 P0~P1에 자원 우선 — 위 항목은 사용자 1회 승인 + 4 atomic 커밋 + Reels 트레일러 + 공간 제약 GDD가 안정 착륙한 다음 차주 Sprint로 이월. 누적 이월 4일째 메트릭은 대시보드 1뷰로 노출 검토.',
+      },
+    ],
+  },
+  {
     id: '2026-04-28T04:00:00-daily-standup',
     date: '2026-04-28',
     researchTitle:
