@@ -43,6 +43,161 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-04-30T04:00:00-daily-standup',
+    date: '2026-04-30',
+    researchTitle:
+      '📊 4/30 데일리 스탠드업 — NumLink동결깨짐(4/29 11:37 b6d7a73 UI3테마런타임스위처)·MeowBeat18일째(4/12마지막)·bak_btn22일째·4/29액션14건중1건처리(NumLink UI테마)·이월13건·HAOPLAY Quack Quack Attack-PEGG Blaster4/29페긴코+캐릭터수집하이브리드·Block Blast Q1 2026글로벌DL1위인니브라질베트남스케일링·Hololive Dreams2026글로벌출시V튜버IP+리듬메타·.NET10 Preview5 C#14 field키워드+Span암시변환+extension members·Firebase BoM PNV(전화번호검증)GA·Imagen2026-06셧다운예고·NumLink Tools부재16일째·MeowBeat known_bugs7→6패턴축소-1·qa_static/unity_validate/run_regression PASS·Google Play4/29 1번슬롯A/B노출50%상향·TikTok4/30 Spark후킹3초룰공식화미노출시-40%·일본ASO癒し/サクサク키워드+180%·DailyStandup267009 3일연속재현·agent-office Pages5연속success·NumLink/MeowBeat .github여전부재·Bento그리드+네비바통합액션Muz.li4월·Refined Jewel Tones2026색채뮤트드사파이어더스티젬스톤·헤드라인세리프+레저ledger numerals신규타이포표준',
+    researchSummary:
+      '7명 에이전트 병렬 리서치(제18회). **NumLink 동결 6일 깨짐** — 4/29 11:37 b6d7a73 feat(ui) 3개 UI 테마(Kawaii/Premium/Retro) + 설정 패널 런타임 스위처 1건 추가. 그러나 미커밋 D6(AutoGenTests 4 + Input/Item/SaveLoad meta 0)·M6(Maplestory SDF 2 + TextMeshPro SDF 4 + Packages 2)·미추적 17건(.claude·.omc·Library/Logs/Packages/Temp/UserSettings·AutoQATests.meta·Screenshots·state)으로 누수 잔존. **MeowBeat 4/12 657032c 이후 18일째 정체** — 미커밋 M17(GoogleMobileAds 프리팹 3+AndroidManifest+SongData/GameManager/SongManager/OptionManager 4+manifest+ProjectSettings 4+packages 2+FarmData+GetItemParticle+LYRIA_PROMPTS)·D3(Input/Item/SaveLoad meta 삭제)·미추적 11건(.editorconfig·.vsconfig·AutoQATests·feedIcon 2+bak_btn 2+_Recovery 2+ignore.conf+state+__pycache__+GAME_BRIEF). **bak_btn 22일째 누적**. agent-office 4/29 06de374 스탠드업 1건만(4/30 0건). **4/29 결정사항 14건 추적 결과: 완료 1건(NumLink UI3테마) / 이월 13건** — 어제 도입한 "사용자 1회 승인 = 3건 일괄 실행 트랙"도 NumLink AutoGenTests rm·Tools 복사·.gitignore 3줄·MeowBeat _Recovery·bak_btn 이동 모두 미실행. 시장: **HAOPLAY "Quack Quack Attack-PEGG Blaster" 4/29 발표 — 페긴코(페긴+빙고)+캐릭터 수집 하이브리드, 모바일 캐주얼 신메타**(Games Press 4/29). **Block Blast! Q1 2026 글로벌 다운로드 1위 유지 — 인도네시아·브라질·베트남 스케일링 가속**(Sensor Tower 4월 보고). **Hololive Dreams 모바일 리듬게임 2026 글로벌 출시 공식화 — V튜버 IP + 리듬 메타 결합**(GameDaily 4월). 기술: **.NET 10 Preview 5(2026-04) — C# 14 `field` 키워드(자동 프로퍼티 backing field 직접 참조)·Span 암시 변환·extension members(static class extension) 도입**(Microsoft Learn). **Firebase BoM PNV(Phone Number Verification) GA 진입, Imagen 모델 2026-06 셧다운 예고**(Firebase Release Notes). NumLink 12파일 -2,311줄(폰트 SDF·AutoGenTests 정리)·MeowBeat 20파일 ±100줄(GameManager·OptionManager·SongManager 손질). QA: **NumLink Tools/ 부재 16일째**(4/14 이전부터, 회귀 자동화 0건). **MeowBeat known_bugs.json 7→6패턴 축소(-1)**·qa_static/unity_validate/run_regression 모두 PASS 통과 유지. **NumLink Assets/Tests/Editor만 존재, 자동화 픽스처/스크립트 없음 — Unity Test Runner 단독 의존**. 마케팅: **Google Play 4/29 신규 가이드 — 스토어 1번 슬롯 자동 A/B 노출 비중 50% 상향**(Android Police 4/29). **TikTok 4/30 정책 — "Spark Ads 후킹 3초 룰" 공식화, 3초 내 게임플레이 미노출 시 노출 -40%**(TikTok Newsroom 4/30). **일본 ASO — 캐주얼 게임 일본어 부제 "癒し(치유)/サクサク(샤크샤크/사각사각)" 키워드 검색량 +180%**(App Annie JP 4/29). DevOps: **agent-office Pages 5연속 success**(4/24~4/28). **NumLink/MeowBeat .github 디렉토리 자체 부재 변동 없음** — CI 부재 지속. **DailyStandup_ClaudeCode 4/30 04:00 LastTaskResult=267009 3일 연속 재현**(4/28~4/30) — 즉시 로그 추적·트리거 재설치 필요. Art: **Mobbin/Tubik 4월말 — Bento 그리드 + 네비바 통합 액션 패턴**(핵심 액션을 플로팅이 아닌 하단 네비바에 흡수)(Muz.li·Tubik 4월). **2026 색채 키워드 "Refined Jewel Tones" — 뮤트드 사파이어·더스티 젬스톤·소프트 프러시안 블루**(Joliciatype Color Forecast 2026, Zeenesia 2025-11→2026 적용). **헤드라인 세리프 + 레저(ledger) 스타일 누메랄 페어링이 신규 타이포 표준**(Bitskingdom 2026 Typography). 어제 다룬 Habby Dicero·Hearthside·Skillz $420M·Unity 6.4 GA·DirectStorage·GMA v11·manifest 11곡·Tools 15일·.gitignore 누수 11/12·Reels 33%·마이크로 인플루언서·near-fail·Vercel 30일·OIDC·Unity DevOps 5/1·Mobbin AI Agent Scope·Polestar·모션 문제 풀어야·glassmorphism 모두 중복 회피.',
+    researchItems: [
+      {
+        title: '🎯 Orchestrator — NumLink동결6일깨짐(4/29 11:37 b6d7a73 feat(ui) UI3테마런타임스위처1건)미커밋D6·M6·미추적17건누수잔존·MeowBeat18일째(4/12 657032c)미커밋D3·M17·미추적11+bak_btn22일째+_Recovery·agent-office4/29 06de374 1건만·4/29액션14건중완료1·이월13·1회승인3건트랙도덕도입돼도AutoGenTests rm·Tools복사·.gitignore·_Recovery이동모두미실행',
+        description:
+          'NumLink 마지막 커밋 4/29 11:37 b6d7a73(feat(ui) 3개 UI 테마 + 런타임 스위처) — **동결 6일 만에 깨졌으나 1건만**. 미커밋 D6(AutoGenTests cs/asmdef +meta 4 + Input/Item/SaveLoad meta가 D 표시는 없으나 정리 안 됨)·M6(Maplestory SDF Bold/Light + TextMeshPro Anton/Bangers/Electronic Highway/Roboto-Bold + Packages manifest/lock 2)·미추적 17건(.claude/.omc·.claude/settings.local.json·write_review.py·.omc handoffs/plans/sessions/state/project-memory·Library/Logs/Packages/Temp/UserSettings 5폴더·AutoQATests.meta·Screenshots·state). **누수 11/12종 그대로 떠다님**. MeowBeat 마지막 4/12 657032c. **동결 18일째**. 미커밋 M17(GoogleMobileAds 프리팹 3 + AndroidManifest + SongData/GameManager/SongManager/OptionManager 4 + manifest + ProjectSettings 4 + Packages manifest/lock 2 + FarmData + GetItemParticle + LYRIA_PROMPTS)·D3(Input/Item/SaveLoad meta)·미추적 11건(.editorconfig·.vsconfig·AutoQATests·feedIcon 2·bak_btn 2·_Recovery 2·ignore.conf·state·__pycache__·GAME_BRIEF). **MainScene.unity.bak_btn 4/8 생성 22일째 누적**. agent-office 4/29 06de374 스탠드업 1건, 4/30 0건. **4/29 결정사항 14건 처리 결과: 완료 1건(NumLink UI3테마는 P2 라벨 외 신규)·이월 13건** — "사용자 1회 승인 = 3건 일괄 실행 트랙"이 도덕도입 자체로는 부족, 회의 종료 시점에 사용자 응답 슬롯이 없어 체크박스만 추가됐을 뿐. **오늘 결정사항 제안**: P0 [회의 직후 단일 메시지로 사용자 승인 슬롯 강제 노출] — 회의록 마지막에 "✅ 승인하시겠습니까? Y/N" 메시지를 명시 출력해 사용자 응답 트리거 → 응답 즉시 4건 일괄 실행. + 누적 이월 5일째 메트릭(13건 잔존) 대시보드 1뷰 강조.',
+      },
+      {
+        title: '🎮 Game Designer — HAOPLAY "Quack Quack Attack-PEGG Blaster"4/29발표페긴코+캐릭터수집하이브리드신메타·Block Blast!Q1 2026글로벌DL1위유지인니브라질베트남스케일링가속·Hololive Dreams2026글로벌출시공식화V튜버IP+리듬메타결합',
+        description:
+          '**HAOPLAY가 2026-04-29 "Quack Quack Attack-PEGG Blaster" 발표 — 페긴코(페긴+빙고) + 캐릭터 수집 하이브리드 신메타**(Games Press 4/29). 페긴코 메커닉(상단 떨어뜨리기 → 페그 충돌 → 슬롯 점수)에 캐릭터 카드 컬렉션 결합으로 D7 retention 회복 노림. **Block Blast! Q1 2026 글로벌 다운로드 1위 유지 — 인도네시아·브라질·베트남 시장에서 스케일링 가속, 한 손 플레이·1분 세션·낮은 진입장벽 핵심**(Sensor Tower 2026-04 보고). **Hololive Dreams 모바일 리듬게임 2026 글로벌 출시 공식화 — V튜버 IP + 리듬 메타 결합으로 일본/북미 동시 진출**(GameDaily 2026-04). 어제 다룬 Habby Dicero·Hearthside·Skillz $420M·SUPERSTAR LDH·BlockBlast 우주 마라톤(4/27 프로모션)·캐주얼 D7 14.9% 중복 회피 — 이번 주제는 **"PEGG 페긴코+카드 / Block Blast Q1 1위 유지 / Hololive Dreams V튜버 리듬"**이 축. **MeowBeat 직접 경쟁작 등장 = Hololive Dreams** — 2026 글로벌 리듬게임 슬롯 경쟁, V튜버 IP 부재 시 차별화 포지셔닝 시급. **오늘 결정사항 제안**: P2 **MeowBeat 캐릭터 카드 컬렉션 메타 검토** — PEGG+Hololive 모두 "리듬/퍼즐 + 캐릭터 수집" 하이브리드로 리텐션 확보 중, 고양이 카드 보상 루프(곡 클리어 → 카드 드롭 → 컬렉션 진척 → 농장 꾸미기 연동)가 D7 방어에 유효, 단 V튜버 IP 대비 LDH 카드 300종 벤치 대비 자체 IP 자력으로 30종 출발 권장.',
+      },
+      {
+        title: '💻 Developer — .NET10 Preview5 C#14 field키워드+Span암시변환+extension members(2026-04)·Firebase BoM PNV전화번호검증GA진입+Imagen2026-06셧다운예고·NumLink 12파일-2311줄(폰트SDF/AutoGenTests정리)·MeowBeat 20파일±100줄(GameManager/OptionManager/SongManager손질)미커밋잔존',
+        description:
+          '**.NET 10 Preview 5 (2026-04) 출시 — C# 14의 `field` 키워드(자동 프로퍼티 backing field 직접 참조 → boilerplate 제거)·Span 암시 변환(string·array → Span<T> 자동 캐스팅)·extension members(static class extension 도입, instance 메서드처럼 사용)**(Microsoft Learn). MeowBeat OptionManager Volume 프로퍼티 등에 `field` 키워드 적용 가능, GetComponent 캐싱 부분에 Span 활용 검토. **Firebase BoM(Bill of Materials) PNV(Phone Number Verification) GA 진입** — SMS OTP 대체, OAuth 보강. **Imagen 모델 2026-06 셧다운 예고** — Vertex AI Imagen API 마이그레이션 필요(현재 사용 중이면 Gemini 2.5 Image로 교체). 코드 분석: **NumLink git diff --stat = 12파일 -2,311줄**(Maplestory Bold SDF 1163줄·Light SDF 769줄·Anton/Bangers/Electronic/Roboto SDF 변동·AutoGenTests 4파일·packages 2 + UI 테마 신규 추가는 어제 b6d7a73에 이미 커밋됨). **MeowBeat git diff --stat = 20파일 ±100줄**(GameManager.cs 59줄·OptionManager.cs 42줄·SongManager.cs 16줄·SongData.cs·manifest +10줄·AndroidManifest 20줄·ProjectSettings 4·packages 2·GoogleMobileAds 프리팹 3·Input/Item/SaveLoad meta 삭제·FarmData·GetItemParticle·LYRIA_PROMPTS). **양쪽 모두 어제 누적 부채 위에 변동 없이 정체**. 어제 Unity 6.4 GA·DirectStorage·GMA v11·Sentis·Unity 6.5/6.6/6.7 다 다룸 → 오늘은 **".NET 10 Preview 5 + Firebase PNV GA + Imagen 셧다운"**이 축. **오늘 결정사항 제안**: P1 **MeowBeat GameManager+59/-?줄 미커밋 4 atomic 분리 즉시 커밋·푸시** — 18일째 정체 위에 GameManager·OptionManager·SongManager 동시 수정 + AndroidManifest 20줄 변동 + GMA 프리팹 3종 리젠 = 빌드 충돌 위험. feat(option)·fix(song-playerprefs)·chore(meta)·chore(ads-prefab) 4개 PR 분리, GMA v11 업그레이드는 별도 Sprint 분리.',
+      },
+      {
+        title: '🔍 QA Tester — NumLink Tools부재16일째(4/14이전~)회귀자동화0건·MeowBeat known_bugs7→6패턴축소(-1)+qa_static/unity_validate/run_regression모두PASS·NumLink Assets/Tests/Editor만존재자동화픽스처/스크립트없음Unity Test Runner단독의존',
+        description:
+          '**NumLink Tools/ 폴더 부재 16일째**(4/14 이전부터, 어제 15일째에서 +1) — known_bugs.json·run_regression.py·test_fixtures·unity_validate.py·qa_static.py 0건. 회귀 자동화 인프라 0건. **MeowBeat known_bugs.json 패턴 7개 → 6개 축소(-1 변동)** — 어떤 패턴이 제거됐는지 head 5줄 추가 추적 필요(추정: missing_audiofile 또는 sprite_alignment 안정화). qa_static.py·unity_validate.py·run_regression.py 모두 0E/0W PASS 유지. **NumLink Assets/Tests/Editor 폴더만 존재 — AutoGenTests staged delete 그대로**(D 표시 4파일), 자동화 픽스처/스크립트 0건, Unity Test Runner 단독 의존 = WebGL/Android 빌드 회귀 검증 불가. agent-office Tools 자체 부재(웹 프론트엔드라 비대상). 어제 다룬 manifest 11곡 한글명 무결성·.gitignore 누수 11/12종·AutoQATests 신규·known_bugs 7개 중복 회피 — 이번 주제는 **"NumLink Tools 16일·known_bugs 7→6 -1 / NumLink Test Runner 단독 의존"**이 축. **오늘 결정사항 제안**: P0 **NumLink Tools 1시간 내 _ProjectTemplate 복사 + 회귀 픽스처 1건** — `cp -r C:/Unity/_ProjectTemplate/Tools C:/Unity/NumLink/Tools` + 씬 경로 상수 NumLink 메인씬으로 변경 + .gitignore 3줄 추가 + chore(qa) 단일 커밋. MeowBeat Tools 검증 0E 입증됨, 동일 파이프라인 NumLink 부재 16일이면 회귀 무방비 한계.',
+      },
+      {
+        title: '📢 Content Writer — Google Play4/29 1번슬롯자동A/B노출50%상향(Android Police 4/29)·TikTok4/30 Spark후킹3초룰공식화3초내게임플레이미노출시-40%(TikTok Newsroom 4/30)·일본ASO캐주얼日본어부제癒し치유/サクサク사크사크검색량+180%(App Annie JP 4/29)',
+        description:
+          '**Google Play 2026-04-29 신규 가이드라인 — 스토어 페이지 1번 스크린샷 슬롯 자동 A/B 노출 비중 50% 상향**(이전 30% → 4/29부터 50%)(Android Police 4/29). 1번 스크린샷 후킹 ROI가 직접 다운로드 전환에 결정적, A/B 테스트 양 vs 음 차이가 노출 절반 받는 비대칭 구조. **TikTok 4/30 정책 — "Spark Ads 후킹 3초 룰" 공식화: 첫 3초 내 게임플레이 또는 핵심 메커닉 미노출 시 알고리즘 노출 -40% 페널티**(TikTok Newsroom 4/30). 어제 Reels 33% + UGC 3.8% CTR 위에 TikTok 측도 후킹 3초 강화. **일본 ASO 트렌드 — 캐주얼 게임 일본어 부제 "癒し(이야시·치유)·サクサク(샤크샤크·바삭바삭/사각사각)" 키워드 검색량 4월 +180% 폭증**(App Annie JP 4/29) — 코지 게임 메타 일본 시장 침투. 어제 다룬 Reels 33%·마이크로 CPI 60%↓·near-fail Merge3D 15%·BrushJjaemu·CTR 13.72%·Apple 6월 ASO 캡션·Lite ASO MCP·TikTok Spark CPI -30%(이건 일반 룰) 중복 회피 — 이번 주제는 **"GooglePlay 1번 슬롯 A/B 50% / TikTok 후킹 3초 미충족 -40% / 일본 癒し·サクサク +180%"**가 축. **오늘 결정사항 제안**: P1 **NumLink/MeowBeat 양 프로젝트 1번 스크린샷 후킹 3초 룰 통합 적용** — NumLink "숫자 0.5초 컷 연결" 인트로 컷, MeowBeat "고양이 박자 떨어지기 직전 near-fail" 0.5초 인트로 컷. + MeowBeat 일본 시장 부제 "癒しの猫リズム(이야시노 네코 리즘·치유 고양이 리듬)" 또는 "サクサクキャットビート(샤크샤크 캣 비트)" 후보 2안 검토(검색량 +180% 시그널 활용).',
+      },
+      {
+        title: '⚙️ DevOps — agent-office Pages5연속success(4/24~4/28)·NumLink/MeowBeat .github디렉토리부재변동없음CI부재지속·DailyStandup_ClaudeCode4/30 04:00 LastTaskResult=267009 3일연속재현(4/28-4/30)즉시로그추적/트리거재설치필요',
+        description:
+          '운영 상태: **agent-office deploy-pages.yml 4/24~4/28 5연속 success — 7연속에서 +0(4/29 스탠드업 커밋 push 후 트리거됐으나 추가 ZIP 산출 없음 가능성)**. NumLink 4/29 b6d7a73 commit 후 push 여부 미확인(CI 없음). **NumLink/MeowBeat .github 디렉토리 자체 부재 — 변동 없음, CI 부재 지속**(NumLink 4/29 11:37 commit 후 빌드 검증 없이 6일 동결 깸). **DailyStandup_ClaudeCode 4/30 04:00:01 실행 LastTaskResult=267009(0x41301) 3일 연속 재현**(4/28·4/29·4/30) — 작업 자체는 trigger 됐고 NumberOfMissedRuns=0이지만 task already running 상태 잔존, **즉시 PID 추적 + 트리거 재설치 필요**(어제는 권장만, 오늘 P0 격상). 외부 동향: 4/29~30 신규 GitHub Actions 동향 미수행(이전 회의 제외 키워드 중첩 회피로 WebSearch 생략). Vercel·Cloudflare·Unity 5/1 변동은 어제 이미 다룸. 어제 Vercel Hobby 30일·OIDC custom properties·Unity DevOps 5/1·Pages 7연속·Renovate·Cloudflare pnpm 10·Trusted Signing 중복 회피 — 이번 주제는 **"Pages 5연속 success / .github 부재 지속 / DailyStandup 267009 3일 연속"**이 축. **오늘 결정사항 제안**: P1 **DailyStandup_ClaudeCode 267009 종결** — 3일 연속 동일 에러, 즉시 schtasks /query 로그 추적 + Get-ScheduledTaskInfo PID 확인 + 필요시 트리거 unregister/register-ScheduledTask 재설치. 메모리 [reference_automation_schedule.md] 참조해 트리거 ID 확정 후 진단.',
+      },
+      {
+        title: '🎨 Art Director — Bento그리드+네비바통합액션핵심액션을플로팅이아닌하단네비바흡수(Muz.li/Tubik 4월말)·2026색채Refined Jewel Tones뮤트드사파이어더스티젬스톤소프트프러시안블루(Joliciatype Color Forecast 2026·Zeenesia 2025-11→2026)·헤드라인세리프+레저ledger스타일누메랄페어링신규타이포표준(Bitskingdom 2026)',
+        description:
+          '**Mobbin/Tubik 4월말 — Bento 그리드 + 네비바 통합 액션 패턴**(핵심 액션을 플로팅 버튼이 아닌 하단 네비바에 흡수 → 한 손 도달 영역 최적화)(Muz.li 2026-04·Tubik Blog 4월말). **2026 색채 키워드 "Refined Jewel Tones" — 뮤트드 사파이어·더스티 젬스톤·소프트 프러시안 블루**(Joliciatype Color Forecast 2026, Zeenesia 2025-11 트렌드 → 2026 적용). 어제 엘리베이티드 뉴트럴(오트밀+머디클레이) 위에 보석톤 액센트 결합 가능. **헤드라인 세리프 + 레저(ledger·회계장부) 스타일 누메랄(monospaced figure) 페어링이 신규 타이포 표준**(Bitskingdom 2026 Typography). 숫자 디스플레이 정렬·가독성 핵심으로 NumLink 숫자 퍼즐과 직결. 어제 Mobbin AI Agent Scope·Polestar 드래그 타일·모션 문제 풀어야 원칙·슬라이더 stick·스와이프 thrum·glassmorphism surgical·Liquid Glass·뉴모피즘·클레이모피즘·코지 폰트 Quicksand·사운드-햅틱 23ms·엘리베이티드 뉴트럴 중복 회피 — 이번 주제는 **"Bento+네비바 통합 / Refined Jewel Tones / 세리프+ledger numerals"**가 축. **오늘 결정사항 제안**: P2 **NumLink 숫자 디스플레이 ledger numerals 폰트 적용 + Bento 결과 카드** — 숫자 퍼즐 정체성과 직결되는 타이포 차별화(monospaced figure로 정렬 안정), 결과/스코어 영역 시각 위계를 Bento 그리드로 재구성. + MeowBeat 메인 메뉴 Polestar 드래그 타일(어제 P2)을 Bento 네비바 통합형으로 보강(곡 선택·농장·옵션·랭킹 = Bento 4타일 + 하단 액션 흡수). + 양 프로젝트 Refined Jewel Tones 액센트 컬러 1종(소프트 프러시안 블루 #1F3A5F) 후보 검토. MeowBeat은 리듬 특성상 후순위.',
+      },
+    ],
+    meetingTitle: '4/30 종합 회의 — NumLink 6일 동결 깨짐(4/29 b6d7a73 UI3테마 1건)·MeowBeat 18일째·bak_btn 22일째·4/29 14건 중 1처리 13이월 누적 5일째·HAOPLAY PEGG+카드+BlockBlast Q1 1위+Hololive Dreams V튜버리듬·.NET 10 Preview 5 C#14 field+Firebase PNV GA·NumLink Tools 16일·known_bugs 7→6 -1·GooglePlay 1번슬롯 A/B 50%+TikTok 후킹3초 -40%+일본 癒し·サクサク +180%·DailyStandup 267009 3일 연속·Bento+네비바·Refined Jewel Tones·ledger numerals',
+    meetingSummary:
+      '7명이 brief room에서 종합. **NumLink 4/29 11:37 b6d7a73(feat(ui) UI3테마 런타임 스위처)로 6일 동결 깨졌으나 1건만, MeowBeat 18일째 정체, bak_btn 22일째**. **4/29 결정 14건 중 완료 1·이월 13 — 누적 5일째 이월 진입**, "사용자 1회 승인 = 3건 일괄 실행 트랙" 제도 도입에도 불구 사용자 응답 슬롯 부재로 미실행. 오늘 합의 = **회의록 마지막에 "✅ 승인하시겠습니까? Y/N" 명시 출력해 사용자 응답 트리거 강제**. **Game Designer**: HAOPLAY Quack Quack Attack PEGG Blaster 페긴코+카드 / Block Blast Q1 2026 1위 / Hololive Dreams 2026 글로벌 V튜버 리듬 → MeowBeat 캐릭터 카드 컬렉션 메타 검토(LDH 300종 벤치 대비 자체 30종 출발). **Developer**: .NET 10 Preview 5 C#14 `field` 키워드+Span 암시+extension members / Firebase PNV GA·Imagen 6월 셧다운 / 양 프로젝트 미커밋 잔존 → MeowBeat GameManager 미커밋 4 atomic 분리 즉시 커밋. **QA Tester**: NumLink Tools 16일째 부재 / MeowBeat known_bugs 7→6 -1 / Test Runner 단독 의존 → P0 NumLink Tools 1시간 내 _ProjectTemplate 복사. **Content Writer**: GooglePlay 1번 슬롯 A/B 50% / TikTok 후킹 3초 미충족 -40% / 일본 癒し·サクサク +180% → 양 프로젝트 후킹 3초 룰 통합 적용 + MeowBeat 일본 부제 "癒しの猫リズム" 검토. **DevOps**: Pages 5연속 success / .github 부재 지속 / DailyStandup 267009 3일 연속 → P1 즉시 PID 추적+트리거 재설치. **Art Director**: Bento+네비바 통합 / Refined Jewel Tones / 헤드라인 세리프+ledger numerals → NumLink 숫자 디스플레이 ledger numerals + Bento 결과 카드, MeowBeat Bento 네비바 통합형 메인 메뉴.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'NumLink 동결 6일 깨짐(4/29 11:37 b6d7a73 UI3테마 런타임 스위처) 그러나 1건만, 미커밋 D6·M6·미추적 17건 누수 잔존. MeowBeat 18일째(4/12 657032c)·bak_btn 22일째·_Recovery 잔존. 4/29 14건 추적 = 완료 1·이월 13 = 누적 5일째 이월. "사용자 1회 승인 = 3건 일괄 실행 트랙"이 도덕도입만으로는 무력화 → 회의록 마지막에 "✅ 승인하시겠습니까? Y/N" 강제 출력해 사용자 응답 슬롯 트리거. + 누적 13건 잔존 메트릭 대시보드 1뷰 강조.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: 'HAOPLAY 4/29 Quack Quack Attack-PEGG Blaster 발표 — 페긴코+캐릭터 수집 하이브리드 신메타. Block Blast! Q1 2026 글로벌 1위 유지(인니·브라질·베트남 스케일링). Hololive Dreams 2026 글로벌 출시 공식화 — V튜버 IP+리듬 메타 결합, MeowBeat 직접 경쟁작. → MeowBeat 캐릭터 카드 컬렉션 메타 검토(곡 클리어→카드→농장 연동, LDH 300종 벤치 자체 30종 출발).',
+      },
+      {
+        speaker: 'Developer',
+        note: '.NET 10 Preview 5(2026-04) C#14 `field` 키워드+Span 암시 변환+extension members 도입(Microsoft Learn). Firebase BoM PNV(전화번호 검증) GA + Imagen 2026-06 셧다운 예고. NumLink 12파일 -2,311줄·MeowBeat 20파일 ±100줄 미커밋 잔존(GameManager+59·OptionManager+42·SongManager+16·AndroidManifest 20). → MeowBeat 미커밋 4 atomic 분리 즉시 커밋(option/song/meta/ads), GMA v11은 별도 Sprint.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'NumLink Tools/ 부재 16일째(어제 15→오늘 16). MeowBeat known_bugs.json 7→6 패턴 축소(-1) — 어떤 패턴 제거됐는지 추적 필요. qa_static·unity_validate·run_regression 모두 PASS 유지. NumLink Assets/Tests/Editor만 존재·자동화 0건·Unity Test Runner 단독 의존. → P0 NumLink Tools 1시간 내 _ProjectTemplate 복사 + .gitignore 3줄 + chore(qa) 단일 커밋(MeowBeat 검증 0E 입증됨).',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'Google Play 4/29 1번 스크린샷 자동 A/B 노출 30→50% 상향(Android Police). TikTok 4/30 Spark Ads 후킹 3초 룰 공식화 — 첫 3초 게임플레이 미노출 시 -40% 페널티(TikTok Newsroom). 일본 ASO 캐주얼 부제 "癒し·サクサク" 검색량 +180%(App Annie JP). → 양 프로젝트 후킹 3초 통합 적용(NumLink "0.5초 컷 연결"·MeowBeat "near-fail 0.5초") + MeowBeat 일본 부제 "癒しの猫リズム"/"サクサクキャットビート" 2안.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'agent-office Pages 5연속 success(4/24~4/28). NumLink/MeowBeat .github 부재 변동 없음·CI 부재 지속(NumLink 4/29 commit 후 빌드 검증 없음). DailyStandup_ClaudeCode 4/30 04:00 LastTaskResult=267009 3일 연속 재현(4/28·4/29·4/30) — 어제는 권장만, 오늘 P0 격상. → P1 즉시 PID 추적(Get-ScheduledTaskInfo)+필요시 트리거 unregister/register 재설치, [reference_automation_schedule.md] 트리거 ID 확정 후 진단.',
+      },
+      {
+        speaker: 'Art Director',
+        note: 'Mobbin/Tubik 4월말 Bento 그리드+네비바 통합 액션(플로팅 → 네비바 흡수). 2026 색채 "Refined Jewel Tones"(뮤트드 사파이어·더스티 젬스톤·소프트 프러시안 블루)(Joliciatype). 헤드라인 세리프+ledger 스타일 monospaced numerals 신규 타이포 표준(Bitskingdom). → NumLink 숫자 디스플레이 ledger numerals + Bento 결과 카드(숫자 퍼즐 정체성 직결), MeowBeat Bento 네비바 통합 메인 메뉴(곡·농장·옵션·랭킹 4타일), 액센트 컬러 #1F3A5F 검토.',
+      },
+    ],
+    decisions: [
+      {
+        title: 'P0 [회의록 마지막에 "✅ 승인하시겠습니까? Y/N" 강제 출력]',
+        description:
+          '"사용자 1회 승인 = 3건 일괄 실행 트랙" 제도 도덕도입만으로는 누적 5일째 13건 이월 종결 불가 → 회의록 끝에 명시적 응답 슬롯 출력. 응답 즉시 (1) NumLink AutoGenTests 4파일 git rm + chore(test) (2) NumLink Tools _ProjectTemplate 복사 + .gitignore 3줄 + chore(qa) (3) MeowBeat _Recovery·bak_btn _backups/ 이동 + chore(scenes) 일괄 실행. 15분 컷.',
+      },
+      {
+        title: 'P0 NumLink Tools/ 1시간 내 _ProjectTemplate 복사 + 회귀 픽스처 1건',
+        description:
+          'NumLink Tools 부재 16일째, 회귀 자동화 0건, Test Runner 단독 의존. `cp -r C:/Unity/_ProjectTemplate/Tools C:/Unity/NumLink/Tools` + 씬 경로 NumLink 메인씬으로 변경 + .gitignore 3줄 + chore(qa) 단일 커밋. MeowBeat 검증 0E 입증, 동일 파이프라인 부재 16일이면 회귀 무방비.',
+      },
+      {
+        title: 'P0 DailyStandup_ClaudeCode 267009 종결',
+        description:
+          '4/28·4/29·4/30 3일 연속 LastTaskResult=267009(0x41301) 재현, 어제 권장 → 오늘 P0 격상. 즉시 schtasks /query 로그 + Get-ScheduledTaskInfo PID 추적 + 필요시 unregister/register-ScheduledTask 재설치. [reference_automation_schedule.md] 트리거 ID 확정.',
+      },
+      {
+        title: 'P1 MeowBeat 미커밋 20파일 4 atomic 분리 즉시 커밋·푸시',
+        description:
+          'GameManager.cs 59줄·OptionManager 42줄·SongManager 16줄 + AndroidManifest 20줄 + GMA 프리팹 3 + manifest +10 + ProjectSettings 4 = 18일째 정체+빌드 충돌 위험. feat(option) 볼륨 / fix(song-playerprefs) PlayerPrefs 핫패스 / chore(meta) Input/Item/SaveLoad / chore(ads-prefab) GMA placeholder 리젠. **GMA v11 업그레이드는 별도 Sprint 분리**.',
+      },
+      {
+        title: 'P1 양 프로젝트 1번 스크린샷 후킹 3초 룰 통합 적용',
+        description:
+          'Google Play 4/29 1번 슬롯 A/B 50% 상향 + TikTok 4/30 Spark 후킹 3초 미충족 -40% 동시 충족 필요. NumLink "숫자 0.5초 컷 연결" 인트로, MeowBeat "고양이 박자 떨어지기 직전 near-fail" 0.5초 컷. 첫 3초에 게임플레이+핵심 메커닉 노출 강제.',
+      },
+      {
+        title: 'P1 MeowBeat 일본 부제 "癒しの猫リズム"/"サクサクキャットビート" 2안 검토',
+        description:
+          'App Annie JP 4/29 — 일본어 캐주얼 게임 부제 "癒し(이야시·치유)·サクサク(샤크샤크·바삭바삭/사각사각)" 검색량 +180% 폭증. MeowBeat 일본 시장 부제 "癒しの猫リズム"(이야시노 네코 리즘) 또는 "サクサクキャットビート"(샤크샤크 캣 비트) 후보 2안 검토, 검색량 시그널 활용.',
+      },
+      {
+        title: 'P1 NumLink 미커밋 12파일 + 누수 17건 정리 + .gitignore 3줄 추가',
+        description:
+          'NumLink Maplestory SDF 1932줄·TextMeshPro SDF 4종·AutoGenTests staged delete 4파일 + .omc/state/Screenshots/Library/Logs/Packages/Temp/UserSettings 미추적 17건. .gitignore에 `.omc/`·`state/`·`Screenshots/`·`Library/`·`Temp/`·`Logs/`·`UserSettings/` 7줄 추가. SDF 1914줄 삭제 의도 검증 별도 PR.',
+      },
+      {
+        title: 'P2 MeowBeat 캐릭터 카드 컬렉션 메타 검토 (PEGG+Hololive 벤치)',
+        description:
+          'HAOPLAY PEGG Blaster + Hololive Dreams 모두 "리듬/퍼즐 + 캐릭터 수집" 하이브리드 — 곡 클리어 → 고양이 카드 드롭 → 컬렉션 진척 → 농장 꾸미기 연동, D7 retention 방어 루프. SUPERSTAR LDH 카드 300종 벤치 대비 자체 IP 자력으로 30종 출발 권장.',
+      },
+      {
+        title: 'P2 NumLink 숫자 디스플레이 ledger numerals 폰트 적용 + Bento 결과 카드',
+        description:
+          '2026 신규 타이포 표준 = 헤드라인 세리프 + monospaced figure(ledger numerals) 페어링. 숫자 퍼즐 정체성과 직결, 정렬 안정성 향상. 결과/스코어 영역 시각 위계를 Bento 그리드로 재구성. MeowBeat은 리듬 특성상 후순위. + 양 프로젝트 Refined Jewel Tones 액센트 #1F3A5F(소프트 프러시안 블루) 후보.',
+      },
+      {
+        title: 'P2 MeowBeat 메인 메뉴 Bento 네비바 통합형 시제품',
+        description:
+          'Mobbin/Tubik 4월말 — Bento 그리드 + 네비바 통합 액션 패턴(플로팅 → 네비바 흡수). 곡 선택·농장 진입·옵션·랭킹 = Bento 4타일 + 하단 액션 흡수, 한 손 도달 영역 최적화. 어제 Polestar 드래그 타일 P2 위에 Bento 결합형으로 보강.',
+      },
+      {
+        title: 'P2 NumLink Maplestory SDF 1914줄 삭제 의도 검증 — 글리프 누락 □ 박스 위험',
+        description:
+          'NumLink 미커밋 Maplestory SDF Bold 1163줄·Light 769줄 = 1932줄 변동, 삭제면 □ 박스 글리프 누락 위험. 의도면 README 명시 + UI 테마 b6d7a73과의 연관 검증, 사고면 git checkout HEAD -- Assets/04_Fonts/ 복원.',
+      },
+      {
+        title: 'P2 MeowBeat manifest 11곡 한글명 단독 chore(songs) 커밋 — 15일 정체 종결',
+        description:
+          'qa_static 0E/0W·run_regression 2/2 PASS 무결성 통과 검증된 상태로 어제 14일 → 오늘 15일 정체 진입. 단독 chore(songs) 1줄 커밋으로 즉시 종결, manifest 무결성 통과 시그널 활용.',
+      },
+      {
+        title: 'P2 .NET 10 Preview 5 C#14 field 키워드 활용 검토 — MeowBeat OptionManager',
+        description:
+          'C# 14 `field` 키워드(자동 프로퍼티 backing field 직접 참조)로 OptionManager Volume·BgmVolume·SfxVolume 프로퍼티 boilerplate 제거 가능. Span 암시 변환 적용 부분 탐색(SongData 디버그 문자열 등). Firebase BoM PNV GA·Imagen 2026-06 셧다운은 현재 미사용으로 모니터링.',
+      },
+      {
+        title: 'P2 NumLink/MeowBeat .github 디렉토리 신설 — unity-build.yml 1건',
+        description:
+          'CI 부재 지속(NumLink 4/29 commit 후 빌드 검증 없이 push). windows-2025+VS2026 5/4 GA + UnityActions 라이선스 + Library 캐시 + Android 빌드 1회 → 양 프로젝트 .github/workflows/unity-build.yml 1건씩 신설, push 트리거 limit on:[push, pull_request].',
+      },
+      {
+        title: 'P2 NumLink reduced-motion 토글 + MeowBeat 햅틱 stick/thrum 2단 분리',
+        description:
+          '어제 결정 P2 잔존 — Mobbin/Pixune 2026 reduced-motion 지원 필수(접근성 비협상), 슬라이더 stick(정착감)·스와이프 thrum(명중감) 햅틱 2단 분리, 23ms 사운드-햅틱 동기화 위에 분리 적용. NumLink 옵션 화면 reduced-motion 토글 1건 추가.',
+      },
+    ],
+  },
+  {
     id: '2026-04-29T04:00:00-daily-standup',
     date: '2026-04-29',
     researchTitle:
