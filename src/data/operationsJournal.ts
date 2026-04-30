@@ -43,6 +43,161 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-05-01T04:00:00-daily-standup',
+    date: '2026-05-01',
+    researchTitle:
+      '📊 5/1 데일리 스탠드업 — NumLink동결7일째재진입(b6d7a73 1건후0커밋)·MeowBeat19일째신기록·bak_btn23일째·4/30액션16건중완료0이월16누적6일째악화·RoyalMatch Q1 1위유지YoY-21%·Microfun GossipHarbor+172%/22M DL머지2급성장·Block Blast 21일우주로켓시즌콜렉터블·하이브리드캐주얼D1 50%/D0 25분·VS2026 4월업데이트(.NET10/C#14통합)·Unity6.7 SCGI+Burst1.8.25 URP-45%·Asset Store 5/7 Publisher of the Week·NumLink Tools16일째부재·MeowBeat qa_static FAIL/run_regression FAIL(make_fixtures경로)·iOS26.4.2 Reduce Bright Effects·Android16≥600dp orientation강제무시·Apple SearchAds다중슬롯자동도입·Threads광고1월글로벌+73.6%참여율·나노인플루언서D0 ROAS60-100%·어버이날5/8가정의달·agent-office Pages5/5success·GHActions Service컨테이너entrypoint오버라이드+Azure VNET failover·Unity DevOps Egress면제오늘종료·DailyStandup267009 4일연속·Pantone CloudDancer+Phthalo Green양극대비·Tubik AI Copilot모션·Galileo→Stitch+Figma Make MCP·APAC IAP+10.6%',
+    researchSummary:
+      '7명 에이전트 병렬 리서치(제19회). **NumLink 동결 7일째 재진입** — 4/29 11:37 b6d7a73 1건 후 5/1 0커밋, 미커밋 12 tracked + 미추적 17건 누수 그대로. **MeowBeat 4/12 657032c 이후 19일째 정체 신기록** — 미커밋 20 tracked(GoogleMobileAds 프리팹 3 + AndroidManifest + GameManager/SongManager/OptionManager/SongData 4 + manifest + ProjectSettings 4 + Packages 2 + FarmData + GetItemParticle) + D3(Input/Item/SaveLoad meta) + 미추적 11(_Recovery·bak_btn 2·AutoQATests·feedIcon 2·.editorconfig·.vsconfig·ignore.conf·state·__pycache__·GAME_BRIEF). **bak_btn 23일째 잔존**. agent-office 4/30 f8912e9 standup 1건 외 0커밋. **4/30 결정사항 16건 추적 결과: 완료 0건 / 이월 16건 전부 — 누적 6일째 악화**(어제 14건 중 1완료에서 오늘 0완료로 회귀, "Y/N 강제 슬롯" 도덕도입 무력화 입증). 시장: **Royal Match Q1 2026 1위 유지(YoY -21%) / Microfun "Gossip Harbor" +172% 매출·22M DL — 머지2 카테고리 급성장·통폐합 진입**(gamigion·appmagic Q1 보고). **Block Blast 21일 우주로켓 시즌형 라이브이벤트로 D-retention 강화 — 장기 시즌 콜렉터블 보상 표준화**. **하이브리드 캐주얼 D1 50%·D0 25분, 단순 시작→점진적 깊이(업그레이드·빌드)+시뮬레이션 루프가 retention 핵심**(supersonic·naavik 4월). 기술: **Visual Studio 2026 4월 업데이트(2026-04-28) — .NET 10/C# 14 정식 통합·AI 솔루션 인식 빌트인**(Microsoft Learn). **Unity 6.7 LTS Surface Cache GI(SCGI) 광범위 제공 예정·Burst 1.8.25 크로스 CPU 결정성+URP 셰이더 컴파일 -45%**(unity manual·digitalproduction). **Unity Asset Store 봄 세일 종료 후 5/7 Publisher of the Week 재개(95→70→60→50% 단계 할인)**(makaka). NumLink diff 12파일 +190/-2501·MeowBeat diff 20파일 +1189/-1089. QA: **NumLink Tools/ 부재 16일째 — known_bugs/unity_validate/qa_static/run_regression 4종 모두 부재**(CLAUDE.md "Unity AI 자율화 파이프라인" 규칙 위반). **MeowBeat qa_static.py 2 ERROR FAIL — manifest 깨짐 + scene_buttons 깨짐**(어제 PASS에서 회귀). **run_regression.py FAIL — make_fixtures.py가 잘못된 절대경로(C:\\Users\\LIMMM\\Tools\\) 참조**. unity_validate.py 0E/1W 통과. **곡 수 manifest 10곡(어제 11곡 표기 오기 정정)**. bak_btn 23일째 잔존. **iOS 26.4.2(4/22) 보안패치 — LiquidGlass "Reduce Bright Effects" 옵트아웃 추가**(모션 민감 유저 대응). **Android 16 ≥600dp 화면 orientation/aspect 강제 무시 — MeowBeat 세로 고정 게임 영향 가능**(unity discussions). 마케팅: **Apple Search Ads 2026 다중 슬롯 자동 도입 — 검색 결과 상단+하단 추가 노출, 자동 등록·CPT 동일, 관련성 낮으면 노출 제외**(9to5Mac). **Threads 광고 1월 글로벌 정식 오픈 — CPM $5~10·X 대비 참여율 +73.6%(median 6.25%)·Advantage+ CPA -11.7%, 초기 진입자 유리**(ALM Corp). **나노 인플루언서 동시 활용 시 D0 ROAS 60~100%·D7 retention +20%, $2 CPI 크리에이터가 $0.50 페이드 대비 LTV 10배 — 다음 단계 "수십 명 동시 활성화"**(Playio·Envisioner). **X 세로형 9:16 광고는 동일 광고 대비 참여 7배**(X Business). 5/5 어린이날·5/8 어버이날 가정의달 캠페인 적기. DevOps: **agent-office Pages 5/5 success(4/26~4/29) — Deploy GitHub Pages·Weekly Insights 모두 conclusion=success, 회귀 무**. **GitHub Actions 4월말 변경 — Service container entrypoint/command 오버라이드 추가, Azure private networking VNET failover 퍼블릭 프리뷰**(github blog). **Unity DevOps 5/1 과금 발효 후속 — Egress 면제(3·4월 한정)가 오늘부 종료, GB당 Egress 비용 발생 시작, 무료 티어 25GB Storage/100GB Egress**(unity support). **DailyStandup_ClaudeCode 267009 4일 연속**(4/28·29·30·5/1) — schtasks 인코딩 + PowerShell 동기 출력 미수신으로 LastRun 정확 확인 불가, 본 응답 자체가 정상 발화 증거. Art: **Pantone 2026 화이트 "Cloud Dancer"가 5월 들어 미니멀 베이스로 자리잡고, Threads 커뮤니티 선택 Phthalo Green이 액션 컬러로 양극 대비**(pantone·adobe). WGSN·Coloro도 Damson(자두)·Transformative Teal 함께 푸시. **Tubik 2026 트렌드 — AI를 "전지전능 autopilot"이 아닌 "선택 가능 copilot"으로 후퇴, 모션은 스토리텔링 스크롤+작은 디테일이 인간미 핵심**(tubikstudio). **Galileo AI는 2025년 Google 인수 후 "Stitch"로 리브랜딩 — Gemini 기반 텍스트→Tailwind HTML 직출력. Figma는 Make+Code Connect+MCP 서버로 디자인↔코드 경계 해체**(banani·figma release notes). **APAC 게임 — 다운로드 0.8% vs IAP 10.6%(Sensor Tower 2026), 신규 유저 확보 둔화·기존 유저 수익화 +10.6%, 한·일 콘텐츠 퀄리티·프리미엄 IAP 중심**(airbridge). 어제 다룬 HAOPLAY PEGG·Block Blast Q1 1위 유지(이번엔 YoY -21% 새로운 시그널)·Hololive Dreams·.NET 10 Preview 5·Firebase PNV·GoogleMobileAds v11·Bento+네비바·Refined Jewel Tones·ledger numerals·Mobbin AI Agent Scope·Polestar·glassmorphism·Vercel Hobby·OIDC GA·Unity DevOps 5/1 발효(이번엔 발효 후 Egress 영향)·iOS26.4 LiquidGlass(이번엔 Reduce Bright Effects 후속) 모두 중복 회피.',
+    researchItems: [
+      {
+        title: '🎯 Orchestrator — NumLink동결7일째재진입(b6d7a73 1건후5/1 0커밋)미커밋12 tracked+미추적17건누수그대로·MeowBeat19일째신기록(4/12 657032c후미커밋20+D3+미추적11)bak_btn23일째·agent-office4/30 f8912e9 standup1건외0커밋·4/30액션16건중완료0이월16누적6일째악화(어제1→오늘0회귀)Y/N강제슬롯도덕도입무력화입증',
+        description:
+          'NumLink 마지막 커밋 4/29 11:37 b6d7a73(feat(ui) UI3테마). **5/1 0커밋 → 동결 7일째 재진입**(b6d7a73 1건만으로 6일 깸→다시 정체). 미커밋: M8(Maplestory SDF Bold/Light·TextMeshPro SDF 4·Packages 2)+D4(AutoGenTests cs/asmdef +meta)=12 tracked. 미추적 17건(.claude/.omc·.omc handoffs/plans·Library/Logs/Packages/Temp/UserSettings 5폴더·Screenshots·state·UIThemeSwitcher.cs.meta). **AutoGenTests staged delete 17일째 미커밋**·**Tools/ 부재 17일째**. MeowBeat 마지막 4/12 657032c. **동결 19일째 신기록**(어제 18→오늘 19). 미커밋 M17(GoogleMobileAds 프리팹 3+AndroidManifest+GameManager/OptionManager/SongManager/SongData 4+manifest+ProjectSettings 4+Packages 2+FarmData+GetItemParticle+LYRIA_PROMPTS)+D3(Input/Item/SaveLoad meta)+미추적 11(.editorconfig·.vsconfig·AutoQATests·feedIcon 2·**bak_btn 2**·_Recovery 2·ignore.conf·state·__pycache__·GAME_BRIEF). **bak_btn 23일째 누적**. agent-office 4/30 f8912e9 standup 1건만, 5/1 0커밋, clean. **4/30 결정 16건 추적: 완료 0·이월 16 = 전부 미진행**. 4/26→27→28→29→30→**5/1 = 누적 6일째 이월**, 어제 14건 중 1완료(NumLink UI3테마)에서 오늘 0완료로 회귀. "Y/N 강제 슬롯" 도덕도입 자체로는 무력화 입증. **오늘 결정 제안**: P0 [회의 종료 직후 단일 강제 슬롯 "✅ Y/N" 출력 후 즉시 (1) NumLink AutoGenTests git rm + Tools 복사 (2) MeowBeat 미커밋 4 atomic 분리 (3) DailyStandup 267009 PID 추적 — 3건 일괄 30분 컷, 미실행 시 6일째→7일째 자동 진입 차단].',
+      },
+      {
+        title: '🎮 Game Designer — Royal Match Q1 1위유지YoY-21%(매출하락신호)·Microfun GossipHarbor+172%/22M DL머지2급성장통폐합진입·Block Blast 21일우주로켓시즌형콜렉터블라이브이벤트표준화·하이브리드캐주얼D1 50%/D0 25분단순시작→점진적깊이+시뮬레이션루프가retention핵심',
+        description:
+          '**Q1 2026 Royal Match 글로벌 매출 1위 유지하나 YoY -21% 매출 하락**(gamigion·appmagic Q1 보고) — 매치3 카테고리 성숙기 진입, 차별화 메커닉 없으면 자연 감소. **Microfun "Gossip Harbor" +172% 매출·22M DL — 머지2 카테고리 급성장·통폐합 진입**(머지2 = 머지+스토리 진행). **Block Blast 21일 우주로켓 테마 시즌형 라이브이벤트로 D-retention 강화 — 장기 시즌 콜렉터블 보상이 표준화** — 매일 1조각 → 21조각 모으면 한정 보드/모드 해금. **하이브리드 캐주얼 메타: D1 50%·D0 25분·단순 시작→점진적 깊이(업그레이드·빌드)+시뮬레이션 루프가 retention 핵심**(supersonic·naavik 4월). 어제 다룬 HAOPLAY PEGG·Block Blast Q1 1위(이번엔 YoY -21% + 21일 시즌 모델 디테일)·Hololive Dreams·SUPERSTAR LDH·Habby Dicero·Hearthside 중복 회피 — 이번 축은 **"Royal Match -21%/Gossip Harbor +172% 머지2/Block Blast 21일 시즌/D1 50% D0 25분"**. **오늘 결정 제안**: P1 **NumLink·MeowBeat 모두 21일 시즌형 콜렉터블 라이브이벤트 프레임 5월 안에 GDD 명문화** — NumLink "숫자별자리(Number Constellation)" 21일 매일 1조각→한정 보드 스킨, MeowBeat "고양이 농장 × 머지2 메커닉" 곡 클리어 보상으로 받은 고양이 2마리 머지→새 종 해금→새 곡 언락(Gossip Harbor +172% 공식 적용). Royal Match 의존도 하락(-21%)이 시사하듯 단순 레벨 진행만으로는 retention 한계, 콜렉터블 메타 레이어 필수.',
+      },
+      {
+        title: '💻 Developer — VS2026 4월업데이트(2026-04-28).NET10/C#14정식통합+AI솔루션인식빌트인·Unity6.7 LTS SCGI(Surface Cache GI)광범위제공+Burst1.8.25크로스CPU결정성+URP셰이더컴파일-45%·Asset Store 5/7 Publisher of the Week재개(95→70→60→50%)·NumLink 12파일+190-2501·MeowBeat 20파일+1189-1089미커밋잔존',
+        description:
+          '**Visual Studio 2026 4월 업데이트(2026-04-28) — .NET 10/C# 14 정식 통합·AI 솔루션 인식 빌트인**(learn.microsoft visual studio 2026 release notes). **Unity 6.7 LTS Surface Cache GI(SCGI) 광범위 제공 예정·Burst 1.8.25 크로스 CPU 결정성+URP 셰이더 컴파일 -45% 단축**(unity manual 6000.3·digitalproduction). **Unity Asset Store 봄 세일 종료 후 5/7 Publisher of the Week 재개 — 플래시 95→70→60→50% 단계 할인**(makaka·assetstore unity publisher-sale). .NET 10 GA(2025-11 LTS, 2028-11까지)는 이미 발표, Preview 6는 2025-07로 5월 신규 마이너 미확인. Rider 2026 5월 마이너 노트 미확인. **NumLink git diff --stat = 12 files +190 -2501**(폰트 SDF 6종 대량 라인 삭제·atlas 재생성 추정+AutoGenTests 414줄 삭제+packages 소폭+신규 untracked theme-{kawaii,premium,retro}.uss.meta·UIThemeSwitcher.cs.meta·.omc/·Screenshots/·Library/Logs/Temp/UserSettings — .gitignore 누락 가능성). **MeowBeat git diff --stat = 20 files +1189 -1089**(GoogleMobileAds Placeholder prefab 3종 라인 ~1900줄 변경 노이즈 가능성+GameManager+59·SongManager·OptionManager·SongData 실제 코드 수정+manifest 노트 10라인 추가+Input/Item/SaveLoad meta 삭제+신규 untracked AutoQATests/_Recovery/MainScene.unity.bak_btn/__pycache__/GAME_BRIEF.md). 어제 다룬 .NET 10 Preview 5·Firebase PNV·GoogleMobileAds v11·Sentis·Unity 6.4 GA·DirectStorage·Unity 6.5/6.6 중복 회피 — 이번 축은 **"VS2026 4월 업데이트/Unity 6.7 SCGI+Burst URP -45%/Asset Store 5/7"**. **오늘 결정 제안**: P1 **NumLink 권장 .gitignore 추가**(`Library/`·`Logs/`·`Temp/`·`UserSettings/`·`.omc/`·`state/`·`Screenshots/`)+theme-*.uss.meta 3종을 b6d7a73 후속 fix(ui) 커밋으로 분리+AutoGenTests 삭제는 chore(test) 별도 커밋. **MeowBeat 19일 누적을 3개 커밋 분할** — (1) chore(ads) GoogleMobileAds placeholder 재직렬화 노이즈 격리 (2) feat(audio) SongManager·OptionManager·GameManager 옵션 로직 (3) chore(repo) .editorconfig·.vsconfig·.gitignore(_Recovery·AutoQATests·.bak_btn·__pycache__) 추가. .bak_btn 씬 백업은 _Recovery/로 이동하고 추적 제외.',
+      },
+      {
+        title: '🔍 QA Tester — NumLink Tools16일째부재(known_bugs/unity_validate/qa_static/run_regression 4종모두부재CLAUDE.md규칙위반)·MeowBeat qa_static 2 ERROR FAIL(manifest+scene_buttons깨짐어제PASS에서회귀)·run_regression FAIL(make_fixtures경로C:\\Users\\LIMMM\\Tools\\절대경로오류)·iOS26.4.2 Reduce Bright Effects옵트아웃·Android16 ≥600dp orientation강제무시MeowBeat세로영향가능',
+        description:
+          '**NumLink Tools/ 폴더 부재 16일째**(4/15부터, CLAUDE.md "Unity AI 자율화 파이프라인" 규칙 직접 위반: `Tools/unity_validate.py` 부재 시 `C:/Unity/_ProjectTemplate/Tools/`에서 즉시 복사). known_bugs.json·unity_validate.py·qa_static.py·run_regression.py 4종 모두 0건. AutoGenTests 폴더 D 표시는 이미 삭제 완료 상태 확인됨. **미해결 버그 검증 불가**(탐지 도구 부재). 최대 리스크: 회귀 자동검증 부재 — 코드리뷰 62건 수정 후 회귀 발생해도 사전 차단 불가. **MeowBeat — 부분 합격에서 회귀**: known_bugs.json 6건 유지(RT_SIZE_ZERO·YAML_DUP_FILE_ID·YAML_HEADER_REF_MISMATCH·YAML_INDENT_M_FATHER·MANIFEST_MISSING_AUDIO·NOTE_OUT_OF_LANE). **qa_static.py 2 ERROR FAIL — manifest 깨짐+scene_buttons 깨짐**(어제 0E PASS에서 회귀, 4/30 manifest +10라인 노트 추가가 무결성 깬 것으로 추정). unity_validate.py 0E/1W 통과지만 manifest 경고. **run_regression.py FAIL — make_fixtures.py가 잘못된 절대경로(`C:\\Users\\LIMMM\\Tools\\`) 참조**(상대경로 미사용). 곡 수 manifest 10곡(어제 11곡 표기 오기 정정). bak_btn 23일째 잔존. **iOS 26.4.2(4/22) — LiquidGlass "Reduce Bright Effects" 옵트아웃 추가, 모션 민감 유저 대응**(9to5mac). **Android 16 ≥600dp 화면 orientation/aspect 강제 무시 — MeowBeat 세로 고정 영향 가능**(unity discussions·unity roadmap support-android-16). **Unity Test Framework 2.0.1-exp.2 유지·4~5월 신규 패치 없음**. 모바일 크래시 톱: JNI 락 컨텐션·셰이더 컴파일·OOM·백그라운드 동기화(android developers 권고). 어제 다룬 known_bugs 7→6·qa_static PASS·NumLink Test Runner 단독 의존 중복 회피 — 이번 축은 **"NumLink Tools 16일/MeowBeat qa_static 회귀 2 ERROR/run_regression 경로 버그/iOS Reduce Bright Effects/Android 16 ≥600dp"**. **오늘 결정 제안**: P0 **NumLink Tools 파이프라인 즉시 복원**(CLAUDE.md 규칙 위반 16일째) — 오늘 세션에서 4종(unity_validate·qa_static·run_regression·known_bugs) `cp -r C:/Unity/_ProjectTemplate/Tools C:/Unity/NumLink/Tools`+씬 경로 상수 NumLink용 갱신+baseline 0E 확보까지 1시간 내 완료. **MeowBeat make_fixtures.py 경로 버그 패치** — `Path(__file__).parent` 기반 상대경로 변환으로 회귀 자동화 부활.',
+      },
+      {
+        title: '📢 Content Writer — Apple SearchAds 2026다중슬롯자동도입(상단+하단CPT동일관련성낮으면노출제외)·Threads광고1월글로벌정식CPM$5-10 X대비참여+73.6%(median 6.25%)Advantage+CPA-11.7%·나노인플루언서D0 ROAS60-100%/D7 retention+20%/$2 CPI크리에이터LTV $0.50페이드대비10배·X세로9:16광고동일대비참여7배·5/5어린이날·5/8어버이날가정의달캠페인',
+        description:
+          '**Apple Search Ads 2026 다중 슬롯 자동 도입 — 검색 결과 상단+하단 추가 노출, 자동 등록·CPT 동일, 관련성 낮으면 노출 제외**(9to5Mac 2025-12-17). 노출량 증가하나 관련성 낮은 키워드는 자동 차단. **Threads 광고 1월 글로벌 정식 오픈 — CPM $5~10·X 대비 참여율 +73.6%(median 6.25%)·Advantage+ CPA -11.7%, 초기 진입자 유리**(ALM Corp 2026). **나노 인플루언서 동시 활용 시 D0 ROAS 60~100%·D7 retention +20%·$2 CPI 크리에이터가 $0.50 페이드 대비 LTV 10배 — 다음 단계 "수십 명 동시 활성화"**(Playio 2026·Envisioner). **X 세로형 9:16 광고는 타임라인 동일 광고 대비 참여 7배**(X Business). **5월 1주 일·한 ASO — "장문형 자연어"(예: "혼자 즐기는 힐링게임") 강세, 한국·일본은 자국 IP 우위 지속**(Phiture 2026). **Unity Ads Legacy 패키지 4/1부 성능 저하·비더 통합 전환 권장**(unity docs levelplay applovin). 어제 다룬 Google Play A/B 50%·TikTok 후킹 3초·일본 癒し·サクサク·Reels 33%·마이크로 CPI -60%·Apple 6월 ASO 캡션·Lite ASO MCP·CTR 13.72%·BrushJjaemu 중복 회피 — 이번 축은 **"Apple SearchAds 다중 슬롯 자동/Threads 1월 글로벌 +73.6%/나노 인플루언서 LTV 10배/X 9:16 7배 / 5/5·5/8 가정의달"**. **오늘 결정 제안**: P1 **NumLink "어버이날 5/8 함께 푸는 두뇌 퍼즐" 캠페인 5/5~5/8 4일** — ASO 일본 키워드 "親子で 数字パズル/母の日 暇つぶし"+Threads 세로 영상+나노 5명($150×5=$750)+D0 ROAS 60%/D7 25% 목표. **MeowBeat "냥파파·냥마마와 함께 두드리는 5월"** — 어린이날 5/5 무료 신곡 1곡+어버이날 5/8 "엄마가 좋아하는 동요 리듬팩" 임시 무료 해제+X 세로 9:16 15초 영상(아이+부모 박자 맞추는 컷·참여 7배)+신규 설치 +30%·일본 가족 키워드 ASO 1주 진입 목표.',
+      },
+      {
+        title: '⚙️ DevOps — agent-office Pages5/5success(4/26~4/29 deploy-pages·Weekly Insights conclusion=success회귀무)·GHActions 4월말Service컨테이너entrypoint/command오버라이드추가+Azure private networking VNET failover퍼블릭프리뷰·Unity DevOps 5/1과금발효후속Egress면제3·4월한정오늘부종료GB당비용시작(무료티어25GB Storage/100GB Egress)·DailyStandup267009 4일연속(4/28-5/1)본응답이정상발화증거',
+        description:
+          '운영 상태: **agent-office deploy-pages.yml + Weekly Insights 4/26~4/29 5건 conclusion=success — 회귀 없음**(`gh run list` 직접 확인). 5/1 신규 트리거는 본 회의 commit이 첫 push. **NumLink/MeowBeat .github 부재 변동 없음·CI 부재 지속**(NumLink 4/29 b6d7a73 push 빌드 검증 없이 7일째 정체). **GitHub Actions 4월말 변경 — Service container entrypoint/command 오버라이드 추가·Azure private networking VNET failover 퍼블릭 프리뷰**(github blog changelog 2026-04-02) — 자체 호스팅·Azure 러너 사용처 즉시 영향. **Unity DevOps 5/1 과금 발효 후속 — Egress 면제(3·4월 한정)가 오늘부 종료, 5월부터 GB당 Egress 비용 발생 시작·Storage 월평균 GB 기준·무료 티어 25GB Storage/100GB Egress**(unity support 34748492914964). **DailyStandup_ClaudeCode 267009 4일 연속**(4/28·29·30·5/1) — schtasks 인코딩+PowerShell 동기 출력 미수신으로 정확 LastRun 확인 불가, 본 응답 자체가 정상 발화 증거(메모리상 04:00 자동 트리거). 어제 다룬 Pages 5연속 success(이번엔 동일 +0)·.github 부재(변동 없음)·DailyStandup 267009 3일(이번엔 4일)·Vercel Hobby·OIDC GA·Unity DevOps 5/1(이번엔 발효 후 Egress 면제 종료) 중복 회피 — 이번 축은 **"GHActions Service entrypoint+VNET failover/Unity DevOps Egress 면제 오늘 종료/DailyStandup 267009 4일 연속"**. **오늘 결정 제안**: P1 **Unity 프로젝트 5월 Egress 베이스라인 측정** — 무료 면제 종료 첫날, 이번 주 내 MeowBeat·NumLink·CatMergeCafe 각 Build Automation 빌드 산출물 다운로드량(GB/주) 1회 측정+100GB 무료 티어 마진 계산+빌드 캐시·아티팩트 보존 정책 점검. **DailyStandup 267009 PID 추적**(어제 P1·오늘 4일 연속이라 P0 격상)+Get-ScheduledTaskInfo+필요시 unregister/register-ScheduledTask 재설치.',
+      },
+      {
+        title: '🎨 Art Director — Pantone CloudDancer(2026화이트)+Phthalo Green(Threads커뮤니티)양극대비5월부상WGSN·Coloro Damson자두/Transformative Teal동반푸시·Tubik 2026 AI=Copilot패러다임모션은스토리텔링스크롤+작은디테일이인간미·Galileo→Stitch(Google인수Gemini기반텍스트→Tailwind HTML)+Figma Make+Code Connect+MCP서버디자인↔코드경계해체·APAC게임DL 0.8% vs IAP 10.6% 수익화정교화첫진입화면밀도/신뢰시그널이ROI결정',
+        description:
+          '**Pantone 2026 화이트 "Cloud Dancer"가 5월 들어 미니멀 베이스로 자리잡고, Threads 커뮤니티 선택 Phthalo Green이 액션 컬러로 양극 대비 짝**(pantone 2026·adobe express). WGSN·Coloro도 Damson(자두)·Transformative Teal 동반 푸시. **Tubik 2026 트렌드 보고서 핵심: AI를 "전지전능 autopilot"이 아닌 "선택 가능 copilot"으로 후퇴, UI 모션은 스토리텔링 스크롤+작은 디테일이 인간미를 만든다**(blog.tubikstudio). **Galileo AI는 2025년 Google 인수 후 "Stitch"로 리브랜딩 — Gemini 기반 텍스트→Tailwind HTML 직출력**(banani galileo-ai-features-and-alternatives). **Figma는 Make+Code Connect+MCP 서버로 디자인↔코드 경계 해체**(figma release notes). **APAC 게임: 다운로드 0.8% vs IAP 10.6%**(Sensor Tower 2026) — 신규 유저 확보 둔화·기존 유저 수익화 +10.6%·한·일 콘텐츠 퀄리티·프리미엄 IAP 중심·**첫 진입 화면 밀도/신뢰 시그널이 ROI 결정 요소**(airbridge 2026 APAC). 어제 다룬 Bento+네비바·Refined Jewel Tones·ledger numerals·Mobbin AI Agent Scope·Polestar·glassmorphism·Liquid Glass·뉴모피즘·클레이모피즘·엘리베이티드 뉴트럴·Material 3 Expressive·Variable Font 중복 회피 — 이번 축은 **"Cloud Dancer+Phthalo Green 양극대비/Tubik AI Copilot 모션/Galileo→Stitch+Figma Make MCP/APAC IAP +10.6%"**. **오늘 결정 제안**: P2 **NumLink 3테마 중 1개를 "Cloud Dancer 베이스(#FAF9F5)+Phthalo Green 단일 액센트(#123524)"로 리브랜딩** — 기존 엘리베이티드 뉴트럴 오트밀과 차별화, 숫자 연결선만 Phthalo Green으로 강조 → "조용한 명상+한 점의 에너지". 타이포 ledger monospaced numerals 유지. **MeowBeat 첫 진입 5초 박자 모션** — 고양이 1마리가 박자에 맞춰 까딱이는 무한루프를 농장 씬 중앙 배치(AI Copilot 원칙: 유저 액션 없어도 "리듬 게임임"이 5초 안에 전달)+Pantone Damson(자두)을 밤 농장 배경 그라데이션 끝점 차용 → AI 슬롭 민트+다크 회피.',
+      },
+    ],
+    meetingTitle: '5/1 종합 회의 — NumLink 7일째 동결 재진입(b6d7a73 1건 후 0커밋)·MeowBeat 19일째 신기록·bak_btn 23일·4/30 16건 0/16 누적 6일째 악화·Royal Match Q1 -21%·Gossip Harbor +172% 머지2·Block Blast 21일 시즌·VS2026 4월(.NET10/C#14)·Unity 6.7 SCGI+Burst URP -45%·NumLink Tools 16일 부재·MeowBeat qa_static 회귀 2 ERROR·run_regression 경로버그·iOS26.4.2 Reduce Bright Effects·Android16 ≥600dp·Apple SearchAds 다중 슬롯·Threads +73.6%·나노 LTV 10배·5/5 어린이날·5/8 어버이날·Pages 5/5 success·GHActions Service entrypoint·Unity DevOps Egress 면제 오늘 종료·DailyStandup 267009 4일·Cloud Dancer+Phthalo Green·Tubik AI Copilot·Galileo→Stitch·APAC IAP +10.6%',
+    meetingSummary:
+      '7명이 brief room에서 종합. **NumLink 7일째 재진입(b6d7a73 1건 후 0커밋), MeowBeat 19일째 신기록, bak_btn 23일째**. **4/30 결정 16건 중 완료 0·이월 16 — 누적 6일째 악화**(어제 1완료에서 오늘 0완료 회귀, "Y/N 강제 슬롯" 도덕도입 무력화 입증). 오늘 합의 = **회의 종료 직후 단일 강제 슬롯 "✅ Y/N" 출력 후 즉시 3건 일괄 30분 컷**. **Game Designer**: Royal Match Q1 1위 YoY -21% / Gossip Harbor +172% 머지2 급성장 / Block Blast 21일 시즌 / 하이브리드 D1 50% D0 25분 → 양 프로젝트 21일 시즌형 콜렉터블 GDD 명문화, NumLink 숫자별자리, MeowBeat 머지2 메커닉 곡 클리어→고양이 머지→곡 언락. **Developer**: VS2026 4월 .NET 10/C# 14 통합 / Unity 6.7 SCGI+Burst URP -45% / Asset Store 5/7 Publisher of the Week → MeowBeat 19일 누적을 3개 분할 커밋(ads/audio/repo)+NumLink .gitignore 추가+theme uss.meta 후속 커밋. **QA Tester**: NumLink Tools 16일째 부재 / MeowBeat qa_static 2 ERROR 회귀 / run_regression 경로 버그 → P0 NumLink Tools 즉시 복원+MeowBeat make_fixtures.py 상대경로 패치. **Content Writer**: Apple SearchAds 다중 슬롯 / Threads +73.6% / 나노 LTV 10배 / X 9:16 7배 / 5/8 어버이날 → NumLink "함께 푸는 두뇌 퍼즐" 캠페인+MeowBeat "냥파파·냥마마와 함께" 어린이날 무료 신곡+동요 리듬팩. **DevOps**: Pages 5/5 success / GHActions Service entrypoint+VNET failover / Unity DevOps Egress 면제 오늘 종료 → 5월 Egress 베이스라인 측정+DailyStandup 267009 4일 P0 격상. **Art Director**: Cloud Dancer+Phthalo Green 양극대비 / Tubik AI Copilot 모션 / Galileo→Stitch+Figma MCP / APAC IAP +10.6% → NumLink 3테마 중 1개 Cloud Dancer 베이스 리브랜딩, MeowBeat 첫 진입 5초 박자 까딱 모션+Damson 자두 그라데이션.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'NumLink 동결 7일째 재진입(b6d7a73 1건 후 5/1 0커밋)·미커밋 12+미추적 17 누수 그대로. MeowBeat 19일째 신기록(4/12 657032c)·bak_btn 23일째·_Recovery 잔존. 4/30 16건 추적 = 완료 0·이월 16 = 누적 6일째 악화(어제 1→오늘 0 회귀). "Y/N 강제 슬롯" 도덕도입 자체로는 무력화 입증. → 회의 종료 직후 단일 강제 슬롯 "✅ Y/N" 출력 후 즉시 3건 일괄 30분 컷(NumLink AutoGenTests rm+Tools 복사·MeowBeat 4 atomic·DailyStandup 267009 PID 추적), 미실행 시 7일째→8일째 자동 진입 차단.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: 'Royal Match Q1 2026 1위 유지 YoY -21% 매출 하락(매치3 성숙기). Microfun "Gossip Harbor" +172% 매출·22M DL — 머지2(머지+스토리) 카테고리 급성장. Block Blast 21일 우주로켓 시즌형 라이브이벤트 표준화. 하이브리드 캐주얼 D1 50%·D0 25분·시뮬레이션 루프가 retention 핵심. → P1 양 프로젝트 21일 시즌형 콜렉터블 GDD 명문화: NumLink "숫자별자리(Number Constellation)" 21일 매일 1조각→한정 보드/모드, MeowBeat 머지2 결합 — 곡 클리어→고양이 카드 2마리 머지→새 종 해금→새 곡 언락(Gossip Harbor +172% 공식 적용).',
+      },
+      {
+        speaker: 'Developer',
+        note: 'Visual Studio 2026 4월 업데이트(2026-04-28) .NET 10/C# 14 정식 통합+AI 솔루션 인식 빌트인. Unity 6.7 LTS Surface Cache GI(SCGI) 광범위 제공+Burst 1.8.25 크로스 CPU 결정성+URP 셰이더 컴파일 -45% 단축. Asset Store 5/7 Publisher of the Week 재개(95→70→60→50%). NumLink 12파일 +190/-2501·MeowBeat 20파일 +1189/-1089 미커밋 잔존. → P1 MeowBeat 19일 누적을 3개 커밋 분할(chore(ads) placeholder 노이즈/feat(audio) 옵션 로직/chore(repo) .editorconfig+.gitignore)+NumLink .gitignore 7줄(Library/Logs/Temp/UserSettings/.omc/state/Screenshots)+theme uss.meta 후속 fix(ui)+AutoGenTests chore(test) 분리.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'NumLink Tools/ 16일째 부재(known_bugs/unity_validate/qa_static/run_regression 4종 모두 부재·CLAUDE.md "Unity AI 자율화 파이프라인" 규칙 직접 위반). MeowBeat qa_static.py 2 ERROR FAIL — manifest+scene_buttons 깨짐(어제 PASS에서 회귀, 4/30 manifest +10라인이 무결성 깬 것 추정). run_regression.py FAIL — make_fixtures.py 잘못된 절대경로(C:\\Users\\LIMMM\\Tools\\). 곡 수 manifest 10곡(어제 11곡 표기 오기 정정). iOS 26.4.2 Reduce Bright Effects, Android 16 ≥600dp orientation 강제 무시. → P0 NumLink Tools 1시간 내 _ProjectTemplate 복사+씬 경로 갱신+baseline 0E 확보, MeowBeat make_fixtures.py 상대경로(Path(__file__).parent) 패치+manifest 재검증.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'Apple Search Ads 2026 다중 슬롯 자동 도입(상단+하단 추가 노출, 자동 등록 CPT 동일, 관련성 낮으면 노출 제외). Threads 광고 1월 글로벌 정식 — CPM $5~10·X 대비 참여율 +73.6%(median 6.25%)·Advantage+ CPA -11.7%. 나노 인플루언서 D0 ROAS 60~100%·D7 retention +20%·LTV 10배. X 세로 9:16 광고 동일 대비 참여 7배. → P1 NumLink "어버이날 5/8 함께 푸는 두뇌 퍼즐" 5/5~5/8 4일(일본 키워드 "親子で 数字パズル"+Threads 세로 영상+나노 5명 $750+D0 ROAS 60%/D7 25%). MeowBeat "냥파파·냥마마와 함께 두드리는 5월" — 5/5 무료 신곡+5/8 "엄마가 좋아하는 동요 리듬팩"+X 9:16 15초(부모-자녀 박자 컷)+신규 +30%.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'agent-office deploy-pages+Weekly Insights 5/5 success(4/26~4/29 conclusion=success, 회귀 무). NumLink/MeowBeat .github 부재 변동 없음·CI 부재 지속. GitHub Actions 4월말 — Service container entrypoint/command 오버라이드+Azure private networking VNET failover 퍼블릭 프리뷰. Unity DevOps 5/1 과금 발효 후속 — Egress 면제(3·4월 한정)가 **오늘부 종료**, GB당 비용 발생 시작·무료 25GB Storage/100GB Egress. DailyStandup 267009 4일 연속(4/28·29·30·5/1) — 본 응답이 정상 발화 증거. → P1 Unity 3프로젝트 5월 Egress 베이스라인 측정(주간 GB 측정+100GB 마진 계산), P0 격상 DailyStandup 267009 PID 추적+필요시 unregister/register 재설치.',
+      },
+      {
+        speaker: 'Art Director',
+        note: 'Pantone 2026 화이트 "Cloud Dancer"(미니멀 베이스)+Threads 커뮤니티 선택 Phthalo Green(액션 컬러) 양극 대비 5월 부상. WGSN·Coloro Damson(자두)·Transformative Teal 동반. Tubik 2026 — AI를 autopilot 아닌 "선택 가능 copilot"으로 후퇴, 모션은 스토리텔링 스크롤+작은 디테일이 인간미. Galileo→Stitch(Google 인수, Gemini 기반 텍스트→Tailwind HTML)+Figma Make+Code Connect+MCP 서버. APAC 게임 DL 0.8% vs IAP +10.6%, 첫 진입 화면 밀도/신뢰 시그널이 ROI 결정. → P2 NumLink 3테마 중 1개 Cloud Dancer(#FAF9F5)+Phthalo Green(#123524) 단일 액센트 리브랜딩(연결선만 강조), MeowBeat 첫 진입 5초 박자 까딱 무한루프(고양이 1마리·농장 중앙)+Damson 자두 밤 그라데이션 → AI 슬롭 민트+다크 회피.',
+      },
+    ],
+    decisions: [
+      {
+        title: 'P0 [회의 직후 30분 컷 3건 일괄 강제 실행 — 누적 6일째 악화 종결]',
+        description:
+          '회의 종료 직후 단일 메시지 "✅ Y/N" 슬롯 출력 후 사용자 응답 즉시 (1) NumLink AutoGenTests git rm + chore(test) (2) NumLink Tools _ProjectTemplate 복사 + .gitignore 7줄(Library/Logs/Temp/UserSettings/.omc/state/Screenshots) + chore(qa) (3) MeowBeat 미커밋 4 atomic 분할 — 30분 컷. 미실행 시 누적 7일째 자동 진입 차단.',
+      },
+      {
+        title: 'P0 NumLink Tools/ 1시간 내 _ProjectTemplate 복사 + baseline 0E — CLAUDE.md 규칙 위반 16일째',
+        description:
+          '`cp -r C:/Unity/_ProjectTemplate/Tools C:/Unity/NumLink/Tools` + 씬 경로 상수 NumLink 메인씬으로 갱신 + .gitignore 7줄 추가 + chore(qa) 단일 커밋 + python3 unity_validate.py 0E 확인. MeowBeat 검증 0E 입증된 동일 파이프라인 부재 16일이면 회귀 무방비, CLAUDE.md "Unity AI 자율화 파이프라인" 직접 위반.',
+      },
+      {
+        title: 'P0 DailyStandup_ClaudeCode 267009 4일 연속 종결 — 즉시 PID 추적+트리거 재설치',
+        description:
+          '4/28·4/29·4/30·5/1 4일 연속 LastTaskResult=267009 재현. 즉시 schtasks /query /tn "DailyStandup_ClaudeCode" /v + Get-ScheduledTaskInfo PID 확인 + 필요시 unregister-ScheduledTask → register-ScheduledTask 재설치. [reference_automation_schedule.md] 트리거 ID 확정 후 진단.',
+      },
+      {
+        title: 'P1 MeowBeat qa_static 2 ERROR 회귀 즉시 패치 + run_regression make_fixtures.py 상대경로화',
+        description:
+          'MeowBeat qa_static.py manifest+scene_buttons 깨짐(어제 PASS→오늘 회귀, 4/30 manifest +10라인 노트 추가가 원인 추정) — 즉시 manifest 재검증·scene_buttons 누락 버튼 추가. run_regression.py 안의 make_fixtures.py 호출이 잘못된 절대경로(C:\\Users\\LIMMM\\Tools\\) 참조 → Path(__file__).parent 기반 상대경로로 패치하여 회귀 자동화 부활.',
+      },
+      {
+        title: 'P1 MeowBeat 19일 누적 미커밋 3개 분할 즉시 커밋·푸시',
+        description:
+          'feat(audio) SongManager·OptionManager·GameManager 옵션 로직 / chore(ads) GoogleMobileAds Placeholder prefab 3종 재직렬화 노이즈 격리 / chore(repo) .editorconfig·.vsconfig·.gitignore(_Recovery·AutoQATests·.bak_btn·__pycache__) 추가. .bak_btn(23일째)는 _Recovery/로 이동하고 추적 제외. GMA v11 업그레이드는 별도 Sprint 분리.',
+      },
+      {
+        title: 'P1 NumLink .gitignore 7줄 추가 + theme uss.meta 후속 fix(ui) + AutoGenTests chore(test) 분리',
+        description:
+          'Library/·Logs/·Temp/·UserSettings/·.omc/·state/·Screenshots/ — 미추적 17건 누수 일괄 제거. theme-{kawaii,premium,retro}.uss.meta 3종+UIThemeSwitcher.cs.meta는 b6d7a73 후속 fix(ui) 커밋으로 분리. AutoGenTests 414줄 삭제는 chore(test) 별도 커밋으로 폰트 SDF 노이즈 분리.',
+      },
+      {
+        title: 'P1 양 프로젝트 21일 시즌형 콜렉터블 라이브이벤트 GDD 5월 안에 명문화',
+        description:
+          'Royal Match Q1 -21% 매출 하락 시그널 + Block Blast 21일 우주로켓 모델 표준화. NumLink "숫자별자리(Number Constellation)" 21일 매일 1조각→한정 보드 스킨. MeowBeat 머지2 메커닉(Gossip Harbor +172% 공식) — 곡 클리어→고양이 카드 2마리 머지→새 종 해금→새 곡 언락. 단순 레벨 진행만으로는 retention 한계, 콜렉터블 메타 레이어 필수.',
+      },
+      {
+        title: 'P1 가정의달 5/5~5/8 양 프로젝트 캠페인 — 어린이날·어버이날',
+        description:
+          'NumLink "어버이날 5/8 함께 푸는 두뇌 퍼즐" 4일 캠페인 — 일본 ASO "親子で 数字パズル/母の日 暇つぶし"+Threads 세로 영상+나노 5명($750)+D0 ROAS 60%/D7 25% 목표. MeowBeat "냥파파·냥마마와 함께 두드리는 5월" — 5/5 무료 신곡 1곡+5/8 "엄마가 좋아하는 동요 리듬팩" 임시 무료+X 세로 9:16 15초 영상(참여 7배)+신규 +30%·일본 가족 키워드 ASO 1주 진입.',
+      },
+      {
+        title: 'P1 Unity 3프로젝트(MeowBeat·NumLink·CatMergeCafe) 5월 Egress 베이스라인 측정',
+        description:
+          'Unity DevOps Egress 면제 오늘부 종료, GB당 비용 발생 시작. 이번 주 내 각 Build Automation 빌드 산출물 다운로드량(GB/주) 1회 측정+100GB 무료 티어 마진 계산+빌드 캐시·아티팩트 보존 정책 점검 트리거 여부 판단.',
+      },
+      {
+        title: 'P2 MeowBeat 첫 진입 5초 박자 까딱 무한루프 + Cloud Dancer/Phthalo Green/Damson 적용',
+        description:
+          'Tubik AI Copilot 원칙 — 유저 액션 없어도 "리듬 게임임"이 5초 안에 전달, 농장 씬 중앙 고양이 1마리 박자 까딱이는 무한루프. Pantone Damson(자두) 밤 농장 배경 그라데이션 끝점 차용으로 AI 슬롭 민트+다크 회피. APAC IAP +10.6% 흐름상 첫 진입 화면 밀도/신뢰 시그널 ROI 결정.',
+      },
+      {
+        title: 'P2 NumLink 3테마 중 1개를 Cloud Dancer + Phthalo Green 단일 액센트 리브랜딩',
+        description:
+          'Pantone 2026 화이트 Cloud Dancer(#FAF9F5) 베이스 + Threads 커뮤니티 Phthalo Green(#123524) 단일 액센트(연결선만 강조) → "조용한 명상+한 점의 에너지" 컨셉. 기존 엘리베이티드 뉴트럴 오트밀과 차별화. ledger monospaced numerals 유지.',
+      },
+      {
+        title: 'P2 MeowBeat 캐릭터 카드 컬렉션 + 머지2 메타 — Gossip Harbor +172% 공식',
+        description:
+          'PEGG·Hololive Dreams·Gossip Harbor 모두 "리듬/퍼즐+카드+머지" 하이브리드로 D7 retention. 곡 클리어→고양이 카드 드롭→2마리 머지→새 종 해금→새 곡 언락 루프. LDH 카드 300종 벤치 대비 자체 IP 자력으로 30종 출발.',
+      },
+      {
+        title: 'P2 .NET 10 C# 14 field 키워드 활용 — MeowBeat OptionManager Volume 프로퍼티 boilerplate 제거',
+        description:
+          'VS2026 4월 .NET 10/C# 14 정식 통합 후속. OptionManager Volume·BgmVolume·SfxVolume 프로퍼티 자동 backing field 직접 참조로 코드 단축. GetComponent 캐싱 부분에 Span 활용 검토.',
+      },
+      {
+        title: 'P2 Asset Store 5/7 Publisher of the Week 재개 대비 — DOTween Pro·Odin Inspector 후보 점검',
+        description:
+          '95→70→60→50% 단계 할인 시작일에 NumLink 트윈 라이브러리·MeowBeat Inspector 확장 후보 가격 추적, 50% 단계에서 라이선스 갱신 검토.',
+      },
+      {
+        title: 'P2 잔여 — 21일 골든벨 마라톤·#1F3A5F 액센트·NumLink reduced-motion 토글·MeowBeat 햅틱 stick/thrum 2단·MeowBeat 일본 부제 "癒しの猫リズム"·Bento 네비바 통합 메인 메뉴·NumLink 1번 슬롯 0.5초 컷 인트로·MeowBeat near-fail 0.5초 인트로·MeowBeat 7일 출석·냥友 길드·판정 Post-Feedback·첫 3곡 진행바·GetComponent 810건 캐싱·Debug.Log [Conditional("DEV")]',
+        description:
+          '4/30까지 누적된 P2 잔존 결정사항 일괄 캐리오버. 5월 1주 안에 우선순위 재평가 필요.',
+      },
+    ],
+  },
+  {
     id: '2026-04-30T04:00:00-daily-standup',
     date: '2026-04-30',
     researchTitle:
