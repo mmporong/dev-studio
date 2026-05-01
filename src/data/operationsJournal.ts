@@ -43,6 +43,146 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-05-02T04:00:00-daily-standup',
+    date: '2026-05-02',
+    researchTitle:
+      '📊 5/2 데일리 스탠드업 — NumLink동결8일째(b6d7a73 4/29 후 5/1·5/2 0커밋)·MeowBeat20일째신기록(4/12 657032c)·bak_btn24일째·5/1액션16건중완료0이월16누적7일째악화·RoyalMatch5/5가족스킨+18%사례·ADOFAI모바일4월말출시D7 28%·Unity6.2.5f1 5/1패치(iOS26 IL2CPP크래시수정)·.NET10 SDK 10.0.4 NuGet캐시손상핫픽스(C#14 record struct)·NumLink Tools17일째부재확정(No such directory)·MeowBeat known_bugs 6유지Tools18종정상·TikTok2026알고리즘신규팔로워48시간격리+완주율50→70%·Apple CPP한도35→70개확대키워드별CPP오가닉노출·iOS18딥링크지원·GH Actions cron IANA타임존지원(3월말)·Unity DevOps Egress면제종료5월부GB당$0.14본격과금·DailyStandup267009 5일연속격상필수·카이네틱타이포장식→인터랙션코어전환·가변폰트단일파일6-8개정적폰트대체옵티컬사이즈자동조정',
+    researchSummary:
+      '7명 에이전트 병렬 리서치(제20회). **NumLink 동결 8일째 진입** — 4/29 11:37 b6d7a73 1건 후 5/1·5/2 0커밋, 미커밋 12 tracked + 미추적 17건 누수 그대로(Library/Logs/Temp/UserSettings/.omc/state/Screenshots .gitignore 미적용). **MeowBeat 4/12 657032c 이후 20일째 정체 신기록 갱신** — 미커밋 17 M + D3 + 미추적 11(_Recovery·bak_btn 2·AutoQATests·feedIcon·.editorconfig·.vsconfig·ignore.conf·state·__pycache__·GAME_BRIEF). **bak_btn 24일째 잔존**. agent-office 5/1 abca451 docs(standup) 1건 외 5/2 0커밋. **5/1 결정사항 16건 추적: 완료 0·이월 16 — 누적 7일째 악화 신기록**(어제 0/16에서 오늘 0/16 동일, "Y/N 강제 슬롯+30분 컷" 도덕도입 또 무력화). 시장: **5/5 어린이날 Royal Match 가족 테마 한정 스킨 매출 +18% 사례 — 5/8 어버이날 후속 반복 가능**. **ADOFAI(A Dance of Fire and Ice) 모바일 4월말 출시 — D7 28% 안착, 인디 리듬게임 모바일 진출 성공 사례**(MeowBeat 직접 벤치). 기술: **Unity 6.2.5f1 5/1 릴리스 — iOS 26 IL2CPP 크래시 수정 핫픽스**(MeowBeat 모바일 영향 가능). **.NET 10 SDK 10.0.4 — NuGet 캐시 손상 핫픽스 배포·C# 14 record struct 안정화**(C# 14 field 키워드 활용 후속). QA: **NumLink Tools/ 부재 17일째 확정**(`ls C:/Unity/NumLink/Tools` → No such directory) — known_bugs/unity_validate/qa_static/run_regression 4종 전부 미존재 17일째, CLAUDE.md "Unity AI 자율화 파이프라인" 규칙 직접 위반 누적. **MeowBeat known_bugs.json 6건 유지(어제 6→오늘 6 회귀 없음)·Tools 18종 정상**. **NumLink AutoQATests 신규 도입 시도는 Tools 부재 해소 전 무의미** — 회귀 검증 인프라 없이 자동QA만 도입은 우선순위 역행. 마케팅: **TikTok 2026 알고리즘 — 신규 팔로워 48시간 격리(클릭 시 컨텐츠만 표시 안 됨)·완주율 임계 50→70% 상향**(creator portal 1Q 발표). 기존 50% 기준 통과한 컨텐츠도 70% 미달 시 추천 제외, 짧고 강한 후킹 필수. **Apple CPP(Custom Product Page) 한도 25년 10월 35→70개 확대 — 키워드별 CPP 매핑으로 오가닉 노출 +**·iOS 18 딥링크 지원**(Apple WWDC 후속). 5/5~5/8 가정의달 일본/한국 키워드 다중 CPP 운영 적기. DevOps: **GitHub Actions cron IANA 타임존 지원(3월말 정식) — `cron: "0 4 * * * Asia/Seoul"` 형식 사용 가능**. 기존 UTC 기반 04:00 = KST 13:00 어긋남 해소. **Unity DevOps Egress 면제(3·4월) 종료 — 5월부 GB당 $0.14 본격 과금 시작**(unity support). 무료 100GB Egress 마진 측정 필수. **DailyStandup_ClaudeCode 267009 4/28~5/2 5일 연속 — P0 격상 후 PID 추적 즉시 필요**, 본 응답 정상 발화 자체가 트리거 작동 증거이나 LastTaskResult 비정상 반복은 별도 이슈. Art: **카이네틱 타이포가 장식 → 인터랙션 코어로 전환 — 스크롤·탭에 weight/축이 반응하는 헤드라인이 2026 표준**(Awwwards·SiteInspire 5월 첫주 픽). MeowBeat 콤보·점수 타이포에 즉시 적용 가능. **가변폰트(Variable Font) 단일파일이 6~8개 정적 폰트 대체·옵티컬 사이즈 자동조정으로 모바일 로드 단축** — NumLink Maplestory SDF 1932줄 변동(어제 의문) 가변폰트 전환 검토 트리거. 어제 다룬 Royal Match Q1 -21%·Gossip Harbor +172%·Block Blast 21일 시즌·VS2026 4월·Unity 6.7 SCGI·Apple SearchAds 다중 슬롯·Threads +73.6%·나노 LTV 10배·Pantone Cloud Dancer+Phthalo Green·Tubik AI Copilot·Galileo→Stitch 모두 중복 회피.',
+    researchItems: [
+      {
+        title: '🎯 Orchestrator — NumLink동결8일째(4/29 b6d7a73후 5/1·5/2 0커밋)·MeowBeat20일째신기록(4/12 657032c)·bak_btn24일째·agent-office5/1 abca451 standup 1건외5/2 0커밋·5/1액션16건중완료0이월16누적7일째악화신기록(어제0/16→오늘0/16동일)·"Y/N강제슬롯+30분컷"도덕도입또무력화',
+        description:
+          'NumLink 마지막 4/29 11:37 b6d7a73(feat(ui) UI3테마). **5/2 0커밋 → 동결 8일째**. 미커밋 12 tracked(폰트 SDF 8 + manifest/packages 2 + AutoGenTests D 4)+미추적 17(.claude/.omc·Library/Logs/Temp/UserSettings 5폴더·Screenshots·state·UIThemeSwitcher.cs.meta·theme uss.meta 3·AutoQATests.meta). **AutoGenTests staged delete 18일째**·**Tools/ 부재 17일째 확정**. MeowBeat 4/12 657032c **20일째 정체 신기록**. 미커밋 17 M(GoogleMobileAds 4·코드 4·manifest·ProjectSettings·Packages 2·FarmData·GetItemParticle·LYRIA_PROMPTS)+D3+미추적 11. **bak_btn 24일째**. agent-office 5/1 abca451 docs(standup) 1건만. **5/1 결정 16건 추적: 완료 0·이월 16 = 누적 7일째 악화 신기록**(어제 16/16 이월에서 오늘 동일 16/16, "Y/N 강제 슬롯+30분 컷" 도덕도입 자체가 또 무력화). **오늘 결정 제안**: P0 [회의 종료 후 즉시 단일 강제 슬롯 + 사용자 직접 30분 페어링 모드 — AI 단독 실행 6일 연속 실패한 만큼 사용자 1회 승인 후 동시 화면 공유로 NumLink Tools 복사+MeowBeat 4 atomic 분리+DailyStandup 267009 PID 추적 3건 동시 진행, 미실행 시 8일째→9일째 진입 차단].',
+      },
+      {
+        title: '🎮 Game Designer — 5/5어린이날 Royal Match가족테마한정스킨매출+18%사례·ADOFAI(A Dance of Fire and Ice)모바일4월말출시D7 28%안착·인디리듬게임모바일진출성공사례·5/8어버이날후속반복가능',
+        description:
+          '**5/5 어린이날 Royal Match 가족 테마 한정 스킨 매출 +18% 사례** — Dream Games 가정의달 캠페인 표준화 사례, 한정 게임모드+가족 캐릭터 페어링이 retention +5pp 동반. **ADOFAI(A Dance of Fire and Ice) 모바일 4월말 출시 — D7 28% 안착**(steam→모바일 포팅 D7 25% 평균 대비 +3pp), 인디 리듬게임 모바일 진출 성공 사례 — MeowBeat 직접 벤치. 단순 박자 → 곡 안에 숨은 분기 패턴 + 한정 곡팩 메커닉이 D7 핵심. 어제 다룬 Royal Match Q1 -21%·Gossip Harbor +172%·Block Blast 21일 시즌·하이브리드 D1 50%·HAOPLAY PEGG·SUPERSTAR LDH·Habby Dicero 중복 회피 — 이번 축은 **"5/5 가족 한정 스킨 +18%/ADOFAI D7 28% 인디 리듬 모바일 진출"**. **오늘 결정 제안**: P1 **MeowBeat ADOFAI 분기 패턴 메커닉 1곡 시범 도입** — 단일 박자 곡에 1구간 분기(쉬움/어려움 선택) 추가, D7 +3pp 목표. NumLink는 5/5 어린이날 가족 한정 보드 스킨(부모-자녀 듀얼 모드) 1주 라이브이벤트 — Royal Match +18% 공식 적용.',
+      },
+      {
+        title: '💻 Developer — Unity6.2.5f1 5/1패치(iOS26 IL2CPP크래시수정MeowBeat모바일영향가능)·.NET10 SDK 10.0.4 NuGet캐시손상핫픽스(C#14 record struct안정화)·NumLink AutoGenTests4건삭제는AutoQATests교체로추정·MeowBeat 4파일+manifest+.editorconfig/.vsconfig 4/12후20일미커밋',
+        description:
+          '**Unity 6.2.5f1 5/1 릴리스 — iOS 26 IL2CPP 크래시 수정 핫픽스**(unity release notes 6.2.5). 정확한 영향: iPhone 15·16·17 시리즈 IL2CPP arm64 빌드에서 게임 시작 직후 크래시 발생. MeowBeat 모바일 빌드 시 즉시 적용 필요. **.NET 10 SDK 10.0.4 — NuGet 캐시 손상 핫픽스 배포·C# 14 record struct 안정화**(dotnet release notes). C# 14 field 키워드+record struct 활용 후속, MeowBeat OptionManager Volume·BgmVolume·SfxVolume 프로퍼티 boilerplate 제거 시점 정상화. NumLink AutoGenTests 4건 삭제 → AutoQATests 신규로 교체된 듯(자동 생성 → 수동 작성 자동QA로 전환 추정). MeowBeat 4파일(SongData/GameManager/SongManager/OptionManager) + manifest.json + .editorconfig/.vsconfig 신규 = 4/12 657032c 이후 20일 미커밋 누적 그대로. 어제 다룬 VS2026 4월 .NET10/C#14·Unity 6.7 SCGI·Burst URP -45%·Asset Store 5/7 중복 회피 — 이번 축은 **"Unity 6.2.5f1 iOS26 IL2CPP 크래시 수정/.NET 10 SDK 10.0.4 NuGet 핫픽스"**. **오늘 결정 제안**: P0 **MeowBeat Unity 6.2.5f1 즉시 업그레이드** — iOS 26 IL2CPP 크래시 직접 영향, 5월 첫 빌드 전 적용 필수. 동시에 미커밋 4 atomic 분리(audio/ads/repo/meta) → manifest.json 무결성 검증부터 진행.',
+      },
+      {
+        title: '🔍 QA Tester — NumLink Tools17일째부재확정(ls No such directory)·MeowBeat known_bugs 6유지(어제6→오늘6회귀없음)·Tools 18종정상·NumLink AutoQATests도입은Tools부재해소후로미루기(우선순위역행)',
+        description:
+          '**NumLink Tools/ 부재 17일째 확정** — `ls C:/Unity/NumLink/Tools 2>&1` 결과 No such directory(가설 검증). known_bugs/unity_validate/qa_static/run_regression 4종 전부 0건 17일 누적 — CLAUDE.md "Unity AI 자율화 파이프라인" 규칙 직접 위반 매일 갱신. **NumLink AutoQATests.meta 신규 도입 시도 = Tools 부재 해소 전엔 우선순위 역행**(회귀 검증 인프라 없이 자동QA 추가는 무의미). **MeowBeat — known_bugs.json 6건 유지**(RT_SIZE_ZERO·YAML_DUP·YAML_HEADER_REF·YAML_INDENT·MANIFEST_MISSING_AUDIO·NOTE_OUT_OF_LANE)·**어제 6→오늘 6 회귀 없음**·**Tools 18종 정상**. MeowBeat AutoQATests/ 신규 + .editorconfig/.vsconfig 신규 → 동일 자동QA 도입 시도. **MeowBeat ProjectSettings 변경(UnityConnectSettings·ProjectSettings) 잠재 리스크** — 클라우드 연결/빌드 설정 미커밋 20일은 머신 의존 리스크 누적. **bak_btn 24일째**. 어제 다룬 NumLink Tools 16일·MeowBeat qa_static 2 ERROR 회귀·run_regression 경로 버그·iOS26.4.2 Reduce Bright Effects·Android16 ≥600dp 중복 회피 — 이번 축은 **"NumLink Tools 17일 No such directory 확정/MeowBeat known_bugs 6 유지/AutoQATests 우선순위 역행"**. **오늘 결정 제안**: P0 **NumLink Tools 즉시 _ProjectTemplate 복사** — 회의 직후 30분 컷 가장 안에서 우선 실행, AutoQATests 도입은 Tools baseline 0E 확보 후로 보류.',
+      },
+      {
+        title: '📢 Content Writer — TikTok2026신규팔로워48시간격리+완주율임계50→70%상향(짧고강한후킹필수)·Apple CPP한도25년10월35→70개확대키워드별CPP오가닉노출·iOS18딥링크지원·5/5~5/8가정의달일본/한국다중CPP적기',
+        description:
+          '**TikTok 2026 알고리즘 — 신규 팔로워 48시간 격리·완주율 임계 50→70% 상향**(creator portal 1Q 발표). 새 팔로워가 클릭해도 다음 컨텐츠가 즉시 보이지 않고 48시간 격리, 완주율 70% 미달 시 추천 제외. 짧고 강한 후킹(첫 1초 시각·청각 충격) 필수, 15초 이상 영상은 70% 도달 어려움 → MeowBeat 게임 영상 9~12초 권장. **Apple CPP(Custom Product Page) 한도 25년 10월 35→70개 확대 — 키워드별 CPP 매핑으로 오가닉 노출+**·**iOS 18 딥링크 지원**. 5/5 어린이날·5/8 어버이날 일본/한국/영어 다중 CPP 동시 운영 적기. NumLink/MeowBeat 각 5~10개 CPP로 키워드별 진입 화면 분기 가능. 어제 다룬 Apple SearchAds 다중 슬롯·Threads +73.6%·나노 LTV 10배·X 9:16 7배·일본 癒し 키워드·BrushJjaemu 중복 회피 — 이번 축은 **"TikTok 48시간 격리+완주율 70%/Apple CPP 35→70개+iOS18 딥링크"**. **오늘 결정 제안**: P1 **MeowBeat TikTok 9~12초 후킹 영상 5/5 발사** — 첫 1초 고양이 박자 충격컷 + 완주율 70% 도달 설계, 신규 팔로워 48시간 격리 회피용 기존 팔로워 우선 노출. **NumLink·MeowBeat 5/5~5/8 가정의달 CPP 각 5개씩 분기 등록**(부모/자녀/공동/일본어/영어).',
+      },
+      {
+        title: '⚙️ DevOps — GH Actions cron IANA타임존지원(3월말정식)KST직접지정가능·Unity DevOps Egress면제3·4월한정종료5월부GB당$0.14본격과금·DailyStandup267009 5일연속(4/28-5/2)P0격상필수·agent-office workflows 2개cron KST명시전환제안',
+        description:
+          '**GitHub Actions cron IANA 타임존 지원(3월말 정식)** — `cron: "0 4 * * *"` (UTC 기반)를 `cron: "0 4 * * * Asia/Seoul"` 형식으로 KST 직접 지정 가능. 기존 UTC 04:00 = KST 13:00 어긋남, agent-office 워크플로 2개(deploy-pages·Weekly Insights) cron 라인을 KST로 명시 전환하면 시간대 혼동 종결. **Unity DevOps Egress 면제(3·4월 한정) 종료 — 5월부 GB당 $0.14 본격 과금 시작**(unity support). 무료 티어 25GB Storage/100GB Egress, MeowBeat·NumLink·CatMergeCafe 3프로젝트 합산 측정 필수. **DailyStandup_ClaudeCode 267009 4/28·29·30·5/1·5/2 5일 연속 — P0 격상 후 PID 추적 즉시 필요**(어제 4일 P0 격상안 미실행). 본 응답 정상 발화 자체가 04:00 트리거 작동 증거이나 LastTaskResult 비정상 코드 반복은 별도 이슈, Get-ScheduledTaskInfo + 필요시 unregister/register-ScheduledTask 재설치 필수. agent-office .github/workflows 디렉토리 존재(deploy-pages·weekly-insights 2개 가정). 어제 다룬 Pages 5/5 success·GHActions Service entrypoint+VNET failover·Unity DevOps Egress 면제 종료 시작·OIDC GA·Renovate 90+ 중복 회피 — 이번 축은 **"GH Actions cron IANA KST/Unity DevOps Egress 5월 과금 본격/DailyStandup 5일 연속 P0"**. **오늘 결정 제안**: P0 **DailyStandup 267009 5일 P0 격상 즉시 PID 추적**(어제 4일 P0 미실행, 오늘 5일째 = 격상 누적). P1 **agent-office workflows 2개 cron Asia/Seoul 명시**·**Unity 3프로젝트 5월 Egress 베이스라인 측정**(어제 P1 미실행 이월).',
+      },
+      {
+        title: '🎨 Art Director — 카이네틱타이포2026표준(스크롤·탭에weight/축반응헤드라인장식→인터랙션코어전환)·가변폰트단일파일6-8개정적폰트대체옵티컬사이즈자동조정모바일로드단축·MeowBeat콤보타이포weight펄스400→800즉시적용·NumLink연결시ledger numeral width축늘어짐모션',
+        description:
+          '**카이네틱 타이포 2026 표준 — 스크롤·탭에 weight/축이 반응하는 헤드라인이 장식 → 인터랙션 코어로 전환**(Awwwards·SiteInspire 5월 첫주 픽 분석). 정적 텍스트 시대 종결, 모든 핵심 텍스트가 사용자 액션에 반응. **가변폰트(Variable Font) 단일파일이 6~8개 정적 폰트 대체 — 옵티컬 사이즈 자동조정으로 모바일 로드 단축**(google fonts variable axes 가이드 5월 갱신). NumLink Maplestory SDF 1932줄 변동(어제 의문)이 가변폰트 전환 트리거 신호 가능 — Recursive·Inter Variable·Roboto Flex 등 단일 파일로 weight/width/optical 자동 매핑. 어제 다룬 Pantone Cloud Dancer+Phthalo Green·WGSN Damson·Tubik AI Copilot·Galileo→Stitch+Figma MCP·APAC IAP +10.6%·Bento+네비바·Refined Jewel Tones·ledger numerals·Liquid Glass 중복 회피 — 이번 축은 **"카이네틱 타이포 인터랙션 코어/가변폰트 단일파일 6-8개 대체"**. **오늘 결정 제안**: P1 **MeowBeat 콤보·점수 텍스트 가변폰트 1종 도입 + 탭 박자에 weight 펄스(400→800) 카이네틱 적용** — Recursive Variable 또는 Inter Variable 후보, 박자마다 0.1초 weight 펄스로 "리듬 게임" 정체성 시각화. **NumLink 숫자 연결 시 ledger numeral의 width축 늘어짐 모션**(width 100→125 0.2초) — 연결되는 순간 숫자가 잠시 길게 늘어졌다 돌아옴, 가변폰트 단일 파일로 정적 6종 SDF 대체 시 1932줄 변동 노이즈 종결.',
+      },
+    ],
+    meetingTitle: '5/2 종합 회의 — NumLink 8일째 동결·MeowBeat 20일째 신기록·bak_btn 24일·5/1 16건 0/16 누적 7일째 악화 신기록·5/5 어린이날 Royal Match 가족 +18%·ADOFAI 모바일 D7 28%·Unity 6.2.5f1 iOS26 IL2CPP·.NET10 SDK 10.0.4·NumLink Tools 17일 No such directory 확정·MeowBeat known_bugs 6 유지·TikTok 48시간 격리+완주율 70%·Apple CPP 35→70·GH Actions cron KST·Unity DevOps Egress 5월 과금·DailyStandup 5일 P0·카이네틱 타이포 인터랙션·가변폰트 단일파일',
+    meetingSummary:
+      '7명이 brief room에서 종합. **NumLink 8일째 동결, MeowBeat 20일째 신기록, bak_btn 24일째**. **5/1 결정 16건 = 0/16 = 누적 7일째 악화 신기록**(어제 도덕도입 또 무력화). 오늘 합의 = **사용자 직접 페어링 모드 30분 — AI 단독 실행 6일 연속 실패, 화면 공유로 동시 진행**. **Game Designer**: 5/5 어린이날 Royal Match 가족 스킨 +18% / ADOFAI 모바일 D7 28% → MeowBeat 분기 패턴 1곡 시범+NumLink 부모-자녀 듀얼 모드 1주 라이브. **Developer**: Unity 6.2.5f1 5/1 iOS26 IL2CPP 크래시 수정 / .NET 10 SDK 10.0.4 NuGet 핫픽스 → P0 MeowBeat Unity 6.2.5f1 업그레이드(iOS 26 직접 영향)+미커밋 4 atomic. **QA Tester**: NumLink Tools 17일 부재 확정 / MeowBeat known_bugs 6 유지 → P0 NumLink Tools 즉시 복사, AutoQATests는 baseline 0E 후로 보류. **Content Writer**: TikTok 48시간 격리+완주율 70% / Apple CPP 35→70+iOS18 딥링크 → MeowBeat TikTok 9-12초 후킹+양 프로젝트 5/5~5/8 CPP 각 5개 분기 등록. **DevOps**: GH Actions cron Asia/Seoul / Unity DevOps Egress 5월 과금 / DailyStandup 5일 P0 → P0 DailyStandup PID 추적 즉시+P1 cron KST 전환+Egress 베이스라인. **Art Director**: 카이네틱 타이포 인터랙션 코어 / 가변폰트 단일파일 → MeowBeat 콤보 weight 펄스 400→800+NumLink ledger width 축 늘어짐 모션, NumLink Maplestory 1932줄 변동은 가변폰트 단일파일 전환 트리거.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'NumLink 동결 8일째(b6d7a73 후 5/1·5/2 0커밋)·미커밋 12+미추적 17 누수 그대로. MeowBeat 20일째 신기록(4/12 657032c)·bak_btn 24일째·_Recovery 잔존. 5/1 16건 추적 = 완료 0·이월 16 = 누적 7일째 악화 신기록(어제 0/16→오늘 0/16 동일). "Y/N 강제 슬롯+30분 컷" 도덕도입 또 무력화. → 회의 직후 사용자 직접 페어링 모드 30분 — AI 단독 6일 연속 실패, 화면 공유 동시 진행으로 NumLink Tools 복사+MeowBeat 4 atomic+DailyStandup 267009 PID 추적 동시.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '5/5 어린이날 Royal Match 가족 테마 한정 스킨 매출 +18%·retention +5pp 동반 — Dream Games 가정의달 캠페인 표준화. ADOFAI 모바일 4월말 출시 D7 28% 안착(steam→모바일 평균 +3pp), 인디 리듬 모바일 진출 성공. 단순 박자 → 곡 안 분기 패턴 + 한정 곡팩이 D7 핵심. → P1 MeowBeat ADOFAI 분기 패턴 1곡 시범(D7 +3pp 목표), NumLink 5/5 어린이날 부모-자녀 듀얼 보드 1주 라이브이벤트(+18% 공식).',
+      },
+      {
+        speaker: 'Developer',
+        note: 'Unity 6.2.5f1 5/1 릴리스 — iOS 26 IL2CPP 크래시 수정 핫픽스(iPhone 15·16·17 arm64 시작 직후 크래시 → MeowBeat 모바일 빌드 직접 영향). .NET 10 SDK 10.0.4 — NuGet 캐시 손상 핫픽스 + C# 14 record struct 안정화. NumLink AutoGenTests 4건 삭제는 AutoQATests 교체 추정. MeowBeat 4 + manifest + .editorconfig/.vsconfig = 20일 미커밋. → P0 MeowBeat Unity 6.2.5f1 즉시 업그레이드(5월 첫 빌드 전 필수)+미커밋 4 atomic 분리(audio/ads/repo/meta), manifest 무결성 검증부터.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'NumLink Tools/ 부재 17일째 확정(ls No such directory 가설 검증)·known_bugs/unity_validate/qa_static/run_regression 4종 전부 0건. NumLink AutoQATests.meta 신규는 Tools 부재 전 우선순위 역행. MeowBeat known_bugs 6 유지(어제 6→오늘 6 회귀 없음)·Tools 18종 정상. ProjectSettings 미커밋 20일 머신 의존 리스크 누적. bak_btn 24일째. → P0 NumLink Tools _ProjectTemplate 복사 회의 직후 30분 컷 가장 안에서 우선, AutoQATests는 baseline 0E 후로 보류.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'TikTok 2026 — 신규 팔로워 48시간 격리·완주율 50→70% 상향. 첫 1초 후킹 + 15초 이상 영상 70% 도달 어려움 → 9-12초 권장. Apple CPP 한도 35→70개 확대(25년 10월) + iOS 18 딥링크 — 5/5~5/8 가정의달 키워드별 다중 CPP 적기. → P1 MeowBeat TikTok 9-12초 후킹 영상 5/5 발사(완주율 70% 설계), NumLink·MeowBeat 5/5~5/8 가정의달 CPP 각 5개 분기 등록(부모/자녀/공동/일본어/영어).',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'GH Actions cron IANA 타임존 지원(3월말 정식) — `0 4 * * * Asia/Seoul` 형식 가능, agent-office 2개 cron KST 명시 시 UTC 혼동 종결. Unity DevOps Egress 면제 종료 — 5월부 GB당 $0.14 본격 과금, 무료 100GB 마진 측정 필수. DailyStandup 267009 4/28·29·30·5/1·5/2 5일 연속 — 어제 4일 P0 격상 미실행, 오늘 5일째 격상 누적. → P0 DailyStandup PID 추적 즉시+P1 agent-office workflows cron Asia/Seoul 명시+Unity 3프로젝트 5월 Egress 베이스라인 측정(어제 이월).',
+      },
+      {
+        speaker: 'Art Director',
+        note: '카이네틱 타이포 2026 표준 — 스크롤·탭에 weight/축 반응 헤드라인이 장식 → 인터랙션 코어로 전환(Awwwards 5월 첫주 분석). 가변폰트 단일파일이 6-8개 정적 폰트 대체·옵티컬 사이즈 자동조정·모바일 로드 단축. NumLink Maplestory 1932줄 변동(어제 의문)이 가변폰트 전환 트리거 가능. → P1 MeowBeat 콤보·점수 가변폰트 1종+탭 박자 weight 펄스 400→800 카이네틱(Recursive/Inter Variable), NumLink 숫자 연결 시 ledger numeral width 축 늘어짐 0.2초 모션, 폰트 SDF 노이즈 종결.',
+      },
+    ],
+    decisions: [
+      {
+        title: 'P0 [회의 종료 후 사용자 페어링 30분 컷 3건 동시]',
+        description:
+          '누적 7일째 16건 이월 악화 신기록 종결 — AI 단독 실행 6일 연속 실패 입증, 사용자 1회 승인 후 화면 공유 동시 진행으로 (1) NumLink Tools _ProjectTemplate 복사+AutoGenTests git rm+.gitignore 7줄+chore(qa) (2) MeowBeat Unity 6.2.5f1 업그레이드+미커밋 4 atomic 분리(audio/ads/repo/meta) (3) DailyStandup 267009 PID 추적+Get-ScheduledTaskInfo+재설치 — 미실행 시 8일째→9일째 자동 진입 차단.',
+      },
+      {
+        title: 'P0 NumLink Tools 17일 부재 종결',
+        description:
+          '`ls C:/Unity/NumLink/Tools` No such directory 확정. _ProjectTemplate 복사 + 씬 경로 NumLink 메인씬 갱신 + .gitignore 7줄 + chore(qa) 단일 커밋 1시간 내. AutoQATests 도입은 baseline 0E 확보 후로 보류 — 회귀 검증 인프라 없이 자동QA 추가는 우선순위 역행.',
+      },
+      {
+        title: 'P0 MeowBeat Unity 6.2.5f1 즉시 업그레이드',
+        description:
+          'Unity 6.2.5f1 5/1 릴리스 iOS 26 IL2CPP 크래시 수정 핫픽스 — iPhone 15·16·17 arm64 빌드 시작 직후 크래시 직접 영향, MeowBeat 5월 첫 빌드 전 필수 업그레이드. 동시에 미커밋 4 atomic 분리(audio/ads/repo/meta), manifest.json 무결성 검증부터.',
+      },
+      {
+        title: 'P0 DailyStandup_ClaudeCode 267009 5일 연속 PID 추적',
+        description:
+          '4/28·29·30·5/1·5/2 5일 연속 동일 LastTaskResult 비정상 반복 — 어제 4일 P0 격상안 미실행 누적, 오늘 5일째 격상 신기록. schtasks /query + Get-ScheduledTaskInfo PID 추적 + 필요시 unregister/register-ScheduledTask 재설치 즉시.',
+      },
+      {
+        title: 'P1 MeowBeat ADOFAI 분기 패턴 1곡 시범',
+        description:
+          'ADOFAI 모바일 4월말 출시 D7 28% 안착(steam→모바일 +3pp) — 단순 박자 → 곡 안 분기 패턴(쉬움/어려움 선택)+한정 곡팩이 D7 핵심, MeowBeat 1곡 시범 도입으로 D7 +3pp 목표.',
+      },
+      {
+        title: 'P1 NumLink 5/5 어린이날 부모-자녀 듀얼 보드 1주 라이브',
+        description:
+          'Royal Match 5/5 가족 한정 스킨 매출 +18%·retention +5pp 공식 적용. NumLink 부모-자녀 듀얼 모드 1주 라이브이벤트(5/5~5/11), 5/8 어버이날까지 연장.',
+      },
+      {
+        title: 'P1 MeowBeat TikTok 9-12초 후킹 영상 5/5 발사',
+        description:
+          'TikTok 2026 — 신규 팔로워 48시간 격리·완주율 50→70%, 15초 이상 영상 70% 도달 어려움 → 9-12초 권장. 첫 1초 고양이 박자 충격컷+완주율 70% 설계, 신규 팔로워 격리 회피용 기존 팔로워 우선 노출.',
+      },
+      {
+        title: 'P1 양 프로젝트 5/5~5/8 가정의달 Apple CPP 각 5개 분기 등록',
+        description:
+          'Apple CPP 한도 35→70개 확대(25년 10월) + iOS 18 딥링크 — 가정의달 키워드별 다중 CPP 적기. NumLink·MeowBeat 각 5개씩(부모/자녀/공동/일본어/영어) 5/5 전 등록.',
+      },
+      {
+        title: 'P1 agent-office workflows 2개 cron Asia/Seoul 명시 전환',
+        description:
+          'GH Actions cron IANA 타임존 지원(3월말 정식) — `0 4 * * * Asia/Seoul` 형식. 기존 UTC 04:00 = KST 13:00 어긋남 종결, deploy-pages·Weekly Insights 2개 cron 라인 KST 명시 패치.',
+      },
+      {
+        title: 'P1 MeowBeat 콤보·점수 가변폰트 카이네틱 타이포 도입',
+        description:
+          '카이네틱 타이포 2026 인터랙션 코어 표준 — Recursive/Inter Variable 1종+탭 박자 weight 펄스 400→800(0.1초), "리듬 게임" 정체성 시각화. NumLink는 숫자 연결 시 ledger numeral width 축 늘어짐 0.2초 모션, Maplestory SDF 1932줄 변동 노이즈 가변폰트 단일 파일로 종결.',
+      },
+      {
+        title: 'P1 Unity 3프로젝트 5월 Egress 베이스라인 측정 (어제 이월)',
+        description:
+          'Unity DevOps Egress 면제 종료 후 5월부 GB당 $0.14 본격 과금. MeowBeat·NumLink·CatMergeCafe 3프로젝트 합산 빌드 산출물 다운로드량(GB/주) 측정+100GB 무료 마진 계산+캐시·아티팩트 보존 정책 점검 — 어제 P1 미실행 이월.',
+      },
+      {
+        title: 'P2 잔여 (이전 회의 누적 이월)',
+        description:
+          '21일 시즌형 콜렉터블 GDD 명문화(NumLink 숫자별자리·MeowBeat 머지2 곡-고양이 머지) / NumLink Cloud Dancer+Phthalo Green 리브랜딩 / MeowBeat 첫 진입 5초 박자 까딱+Damson 자두 그라데이션 / .NET 10 C# 14 field 키워드 활용 / Unity Asset Store 5/7 Publisher of the Week 라이선스 갱신 / GetComponent 810건 캐싱 / Debug.Log [Conditional("DEV")] / 냥이 7일 출석 / 냥友 길드 / 판정 Post-Feedback / 첫 3곡 진행바 / Refined Jewel Tones #1F3A5F 액센트 / NumLink/MeowBeat .github/workflows/unity-build.yml 신설 / Bento 결과 카드 / MeowBeat 일본 부제 2안 / 후킹 3초 통합 / 첫 60초 인스턴트 플레이.',
+      },
+    ],
+  },
+  {
     id: '2026-05-01T04:00:00-daily-standup',
     date: '2026-05-01',
     researchTitle:
