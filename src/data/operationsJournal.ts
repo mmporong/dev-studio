@@ -43,6 +43,134 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-05-08T04:00:00-daily-standup',
+    date: '2026-05-08',
+    researchTitle:
+      '🌷 5/8 어버이날 당일 데일리 스탠드업 — NumLink 동결 14일째(2자릿수+4·신기록 갱신)·MeowBeat 26일째 정체 신기록·5/7 결정 9건 0건 완료·어버이날 D-day 골든 윈도우 마지막·Unity 6.3 LTS 출시·Rhythm Heaven Groove 7/2 콘솔 vs 모바일 리듬 공백·AppTweak AI Agents·Discord Social Commerce 41% 선물·Calm Design+Bento Grid 트렌드',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제26회 — 어버이날 D-day. **NumLink 동결 14일째**(2자릿수+4·신기록 갱신·4/29 b6d7a73 후 5/1~5/8 8일 연속 0커밋), **MeowBeat 26일째 정체 신기록 갱신**(4/12 657032c·미커밋 21 modified+미추적 11). **5/7 결정 9건 전수 추적 = 완료 0·이월 9건**(P0 5건+P1 4건 전원 미실행+5/8 어버이날 D-day 페어링 컷도 미실행). 시장: Unity 6.3 LTS 출시·**모바일 퍼즐 시장 $6.66B(2026)→$14.45B(2035) CAGR 9%**·하이브리드캐주얼이 하이퍼캐주얼 대비 LTV 우위·**Rhythm Heaven Groove 7/2 닌텐도 10년만 콘솔 시리즈+Stage Tour 하반기**(콘솔만)·**모바일 리듬게임 공백 상태 확인 = MeowBeat 골든 윈도우**·VGW Monopoly Match 4/10 북미(IP×Match-3 표준화). 기술: **Unity 6.3 LTS 정식**(셰이더 변형 축소·VFX 병렬화·Project Auditor) + JetBrains Rider 2026.1.1 핫픽스(Unity Profiler 직접 열기) + DOTween Pro 1.0.410 Unity 6 호환 + UniTask Awaitable 병행. 코드: NumLink 최근 5커밋 +636/-44 라인(UI 테마 3종)·MeowBeat +55/-88 (Farm 흔들기 반복 fix). TODO/FIXME — NumLink 자체 5건·Feedme 4건. QA: **NumLink Tools/ 미설치 23일째**(known_bugs.json·unity_validate.py·qa_static.py·run_regression.py 4종 전부 부재 — CLAUDE.md "Unity AI 자율화 파이프라인" 규칙 매일 위반)·**MeowBeat known_bugs.json 7개 패턴 정의**(미해결 자동수정 5건: RT_SIZE_ZERO·YAML_DUPLICATE_FILE_ID 등)·**양 프로젝트 Assets/Tests 폴더 부재·.cs 테스트 0개**. 마케팅: **AppTweak AI Agents 3종 정식**(ASO/Reviews/Reporting+AI Visibility ChatGPT 추적)·**Discord GDC 2026 Social Commerce**(Marvel Rivals **구매의 41%가 선물·25%는 미플레이 신규 = 커뮤니티 UA 채널화**)·Instant Play Quest 첫경험 4배·계정 연동 활동+25%/세션+16%·**docs/marketing/ 0건·스토어 메타데이터 파일 0건**. DevOps: **NumLink/MeowBeat .github/workflows/ 부재**(GameCI 미설정)·agent-office만 deploy-pages.yml + weekly-insights.yml·Unity 빌드 자동화 0·2026년 GameCI+Fastlane+AI 테스트 통합 표준화 가속. 디자인: **Bento Grid(비대칭 카드 레이아웃) + Liquid Glass(반응형 투명 레이어) 2026 주류**·Calm Design 부상·Personality-Driven Illustration 부상·**NumLink Art/Sprites 폴더 부재(0%)**·MeowBeat Art 폴더 약 60%(Background/Note/Effect/Icon/UI). **어버이날 D-day = 카네이션 듀얼톤+꽃잎 파티클 마지막 발사 기회**(미발사 시 골든 윈도우 종결).',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — NumLink 14일 동결(2자릿수+4·신기록)·MeowBeat 26일 신기록·5/7 결정 9건 0건 완료·어버이날 D-day 페어링 컷 미실행 회수 압박 매일 갱신',
+        description:
+          'NumLink 마지막 4/29 11:37 b6d7a73(feat(ui) 3 UI 테마 + 런타임 스위처). **5/1~5/8 8일 연속 0커밋 → 동결 14일째(2자릿수+4·신기록 갱신)**. 미커밋 32+ 그대로(staged delete 4 + theme uss 3 + UIThemeSwitcher.cs.meta 신규 + 미추적 다수). MeowBeat 4/12 657032c **26일째 정체 신기록 갱신**, 미커밋 24(21 modified + 미추적 다수). agent-office 5/7 1471e2c push 후 0커밋(.omc/project-memory.json M 1건만). **5/7 결정 9건 전수 추적: 완료 0·이월 9 = 누적 13일째 악화 신기록**(어제 P0 5건 + P1 4건 전원 미실행 + 5/8 어버이날 D-day 페어링 컷 미실행). **오늘 결정 제안**: P0 [어버이날 D-day 마지막 발사 강제 모드] (1) NumLink Tools _ProjectTemplate 복사 + .gitignore /.omc/ 1줄 (23일째 종결) (2) MeowBeat 26일 atomic 분할 커밋 — feat(song)+chore(deps)+chore(project) 3분기 (3) MainScene.unity.bak_btn 2개 즉시 삭제(30일째) (4) NumLink AutoGenTests 4 git rm + theme uss 3 + UIThemeSwitcher.cs.meta 분리 커밋 (5) daily_standup.bat 강제 kill 래퍼 적용. 미실행 시 15일째 진입 + 어버이날 골든 윈도우 자동 종결.',
+      },
+      {
+        title:
+          '🎮 Game Designer — 모바일 퍼즐 $6.66B→$14.45B(2035) CAGR 9%·하이브리드캐주얼 LTV 우위·Animal Busters 첫달 25만+ DL=MeowBeat 톤 적중·Rhythm Heaven 7/2 콘솔 vs 모바일 리듬 공백 = MeowBeat 골든 윈도우·라이브옵스 73→89건/월',
+        description:
+          '**모바일 퍼즐 시장 $6.66B(2026) → $14.45B(2035) CAGR 9%**·매칭/논리퍼즐 다운로드 YoY +19% — NumLink 카테고리 성장세 확인. **하이브리드캐주얼이 하이퍼캐주얼 대비 리텐션·LTV 우위**(단순 코어 + 딥 프로그레션 결합)·**동물 IP 캐주얼+리듬 융합 사례 증가**(Animal Busters 첫달 25만+ DL = MeowBeat 고양이 IP + 코지 톤 적중). **Rhythm Heaven Groove 7/2 닌텐도 10년만 시리즈 + Stage Tour 하반기**(콘솔만) — 신규 리듬 모바일 타이틀 공백 상태 직접 확인(MeowBeat 시장 진입 골든 윈도우). **라이브옵스 이벤트 케이던스 73 → 89건/월**(2026)·GDD 차별화는 "니치 고리텐션 커뮤니티 + 자체 웹스토어"로 이동. **오늘 결정 제안**: P0 NumLink/MeowBeat GDD에 "하이브리드캐주얼 메타레이어"(데일리 미션 + 시즌패스 골격) 명시 + 어버이날 우편 보상 패턴(엔씨 모델). P1 MeowBeat 고양이 컬렉션 IP를 코어 리텐션 훅으로 승격(곡 클리어 → 고양이 해금). P2 월 8~12 라이브옵스 이벤트 슬롯 GDD 사전 예약.',
+      },
+      {
+        title:
+          '💻 Developer — Unity 6.3 LTS 정식 출시(셰이더 변형 축소·VFX 병렬화·Project Auditor)·NumLink +636/-44 라인·Feedme +55/-88 라인·TODO 9건·DOTween Pro 1.0.410 Unity 6 호환·UniTask Awaitable 병행',
+        description:
+          '**Unity 6.3 LTS 정식 출시**(2026.05) — Unity 6.1부터 셰이더 변형 축소(빌드/메모리 절감) + VFX 병렬화 + Project Auditor 강화 → 모바일 빌드시간 단축 즉시 활용 가능. **JetBrains Rider 2026.1.1 핫픽스 4/27**(Unity Profiler 스냅샷 Rider 직접 열기). **코드 변경**: NumLink 최근 5커밋 +636/-44 라인(UI 테마 3종+힌트 즉시공개)·Feedme +55/-88 라인(먹기 애니 흔들기·foodScale 0.1). **TODO/FIXME**: NumLink 자체 5건(EndlessModeProvider/AchievementManager/ObjectManager/UIManager·PackageCache 제외) + Feedme 4건. **DOTween Pro 1.0.410**(2026.02) Unity 6 호환·UniTask는 Unity 6 Awaitable과 병행 가능. **오늘 결정 제안**: P1 Feedme `FarmFoodManager` 흔들기 애니메이션을 UniTask + DOTween으로 통일(2건 fix 커밋이 같은 파일 반복 수정 → 안정화 필요). P2 NumLink 자체 TODO 5건 정리.',
+      },
+      {
+        title:
+          '🔍 QA Tester — NumLink Tools/ 23일 부재(CLAUDE.md 위반 매일 갱신)·MeowBeat known_bugs.json 7패턴 정의(미해결 5건)·양 프로젝트 Assets/Tests 부재·.cs 테스트 0개·Domain 단위테스트 전무',
+        description:
+          '**NumLink Tools/ 미설치 23일째 직접 확인** — `known_bugs.json/unity_validate.py/qa_static.py/run_regression.py` 4종 전부 부재(CLAUDE.md "Unity AI 자율화 파이프라인 — Tools 없으면 즉시 복사" 규칙 위반 매일 갱신). 최근 fix 10건 중 input/UI/arch 다발(패널티 드래그·boardParent 오버플로우 등). **MeowBeat known_bugs.json 7개 패턴 정의**(미해결 자동수정 불가 5건: RT_SIZE_ZERO·YAML_DUPLICATE_FILE_ID·MANIFEST_MISSING_AUDIO·NOTE_OUT_OF_LANE 등)·최근 fix는 farm 음식/스프라이트 회귀 다수. **양 프로젝트 모두 Assets/Tests 폴더 부재·.cs 테스트 0개·Domain 순수 C# 단위테스트 전무**. **오늘 결정 제안**: P0 NumLink에 _ProjectTemplate/Tools/ 복사 + known_bugs.json 시드(템플릿 규약상 자동복사 대상). P1 MeowBeat farm 회귀 픽스처(test_fixtures) 추가 → run_regression.py로 음식 sortingLayer/스프라이트 패턴 락인. P2 NumLink Domain 레이어 EditMode 테스트 스캐폴드(드래그 패널티 로직 우선).',
+      },
+      {
+        title:
+          '📢 Content Writer — AppTweak AI Agents 3/4 정식+AI Visibility(ChatGPT 추적 신규 퍼널)·Discord GDC2026 Social Commerce 구매 41% 선물·25% 미플레이=커뮤니티 UA·Instant Play 첫경험 4배·docs/marketing/ 0건·스토어 메타데이터 파일 0건',
+        description:
+          '**ASO 트렌드**: 롱테일 키워드("fun puzzle game", "relaxing mobile game")·D7 리텐션·스크린샷 캡션 인덱싱(2025.6~) 가중치 상승·4~6주 주기 키워드 갱신. **SNS 트렌드**: TikTok 오가닉 붕괴(800K → 300~800뷰)·YouTube Shorts 피벗 + Discord 리텐션·"Paid Organic"($200 부스트)·주 7~14클립·#ScreenshotSaturday는 X/Reddit에서 유효. **AppTweak AI Agents 3/4 정식**(ASO/Reviews/Reporting + AI Visibility 애드온). **Discord GDC 2026 Social Commerce**(Marvel Rivals 구매의 41% 선물·25% 미플레이 신규 = 커뮤니티 UA 채널화) + Instant Play Quest 첫경험 4배 + 계정 연동 활동+25%·세션+16%. **콘텐츠 준비**: NumLink·MeowBeat·Feedme 모두 docs/marketing/ 부재·스토어 description/keywords 파일 0건(GAME_BRIEF·COMPETITIVE_ANALYSIS만 존재). **오늘 결정 제안**: P0 NumLink `docs/marketing/store_metadata.md` 신규 작성(롱테일 키워드 20개 + 한/영 description + 스크린샷 캡션). P1 YouTube Shorts용 NumLink 30초 클립 스크립트 3종 초안. P2 MeowBeat #ScreenshotSaturday 포스트 템플릿 5종.',
+      },
+      {
+        title:
+          '⚙️ DevOps — NumLink/MeowBeat .github/workflows/ 부재(GameCI 미설정)·agent-office만 deploy-pages.yml+weekly-insights.yml·Unity 자동화 0·2026 GameCI+Fastlane+AI 테스트 표준화',
+        description:
+          '**CI/CD 상태**: NumLink/MeowBeat 워크플로우 부재(GameCI 미설정)·agent-office만 deploy-pages.yml + weekly-insights.yml 운영. **배포 파이프라인**: agent-office는 GitHub Pages·Unity 프로젝트 2종은 수동 빌드(자동화 0). **자동화 동향**: 2026년 Unity는 GameCI + Fastlane 표준화 + AI 테스트 통합 가속. **자동화 스케줄**(reference_automation_schedule): DailyStandup_ClaudeCode 매일 04:00 정상 실행 중. **오늘 결정 제안**: P0 NumLink에 GameCI Android 빌드 워크플로우 추가(우선 빌드만, 서명 후속). P1 MeowBeat WebGL Pages 자동배포 워크플로우 작성. P2 agent-office weekly-insights 실패 알림 텔레그램 연동.',
+      },
+      {
+        title:
+          '🎨 Art Director — 2026 Bento Grid+Liquid Glass 주류·Calm Design 부상·Personality-Driven Illustration·3D Iridescent Glow·NumLink Art/Sprites 부재 0%·MeowBeat Art 약 60%·민트+다크 회피',
+        description:
+          '**2026 모바일 게임 UI/UX 트렌드**: Bento Grid(비대칭 카드 레이아웃) + Liquid Glass(반응형 투명 레이어, 고대비 텍스트) 주류·캐주얼/퍼즐엔 Bento Grid·리듬엔 Liquid Glass 적합. **Calm Design 부상**(여백 극대화 + 저채도 + 최소 모션·게임 UI는 보상 연출만 화려) + **Personality-Driven Illustration**(AI 슬럽 방지 브랜드 커스텀) + **3D Iridescent Glow**(Clay Render 진화). **참고 사례**: Monument Valley(미니멀 HUD 제거)·Alto\'s Odyssey(환경 통합형 UI). **에셋 작업 상태**: NumLink Art/Sprites 폴더 미생성(0%)·Feedme(MeowBeat) Background/Note/Effect/Icon/UI 다수 보유(약 60%). **오늘 결정 제안**: P0 NumLink Art 폴더 신설 + Bento Grid 기반 메인메뉴 목업 1장(민트+다크 금지·따뜻한 크림+코랄 추천). P1 MeowBeat Note 스프라이트 Liquid Glass 스타일 v2 검토(현재 PERFECT/NICE/MISS만 존재). P2 양 프로젝트 공용 디자인 토큰(컬러/타이포) DESIGN.md 초안.',
+      },
+    ],
+    meetingTitle:
+      '🌷 5/8 어버이날 종합 회의 — 14일 동결+26일 정체 동시 신기록·5/7 결정 9건 0건 완료·D-day 마지막 발사 골든 윈도우·Unity 6.3 LTS·Rhythm Heaven 콘솔 vs 모바일 리듬 공백·AI Agents+Social Commerce·Bento+Liquid Glass·Tools 23일·테스트 0개·CI/CD 0건',
+    meetingSummary:
+      '7명 에이전트가 어버이날 당일 회의를 진행. 핵심 합의: ① **5/7 P0 5건 + P1 4건 = 9건 미실행 누적 13일째 이월** — 14일째 동결 진입 + 26일째 정체 + 어버이날 D-day 골든 윈도우 마지막 발사 기회 동시 종결 위험. ② **NumLink Tools/ 23일째 부재**가 CLAUDE.md 위반 매일 갱신 — 본 회의에서 즉시 강제 복사 결정(2분 작업). ③ **MeowBeat 26일 미커밋 21파일** atomic 분할 커밋 강제 모드(MANIFEST_MISSING_AUDIO·NOTE_OUT_OF_LANE 직격 트리거 위험). ④ Unity 6.3 LTS 정식 + Rider 2026.1.1 + DOTween 1.0.410 → MeowBeat 안정화 후 도입 검토. ⑤ 양 프로젝트 **테스트 0개·CI/CD 워크플로우 부재** = 품질/배포 리스크. ⑥ **모바일 리듬게임 공백 = MeowBeat 골든 윈도우** + **Discord Social Commerce 41% 선물 = 커뮤니티 UA 채널** 신규 마케팅 축. ⑦ **Bento Grid + Liquid Glass + Calm Design** 2026 디자인 베이스라인 — NumLink Art 0% 즉시 시동.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'NumLink 14일·MeowBeat 26일 동시 신기록. 어제 결정 9건 0건 완료. 어버이날 D-day = 마지막 발사. 오늘 P0는 Tools 복사 + atomic 분할 + bak_btn 정리 + .gitignore 추가 5건 강제 모드.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '모바일 퍼즐 9% CAGR + 하이브리드캐주얼 LTV 우위 + 모바일 리듬게임 공백 확인. 오늘 GDD에 메타레이어(데일리미션+시즌패스) 명시. 엔씨 우편 보상 패턴 어버이날 마지막 차용.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'Unity 6.3 LTS 정식 출시 — 셰이더 변형 축소+Project Auditor로 모바일 빌드 단축. Feedme FarmFoodManager 반복 fix 안정화 필요(UniTask+DOTween 통일). NumLink TODO 5건 정리.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'NumLink Tools 23일 부재 = CLAUDE.md 매일 위반. 본 회의 즉시 _ProjectTemplate/Tools 복사 P0. 양 프로젝트 Assets/Tests 0개·Domain 단위테스트 전무. MeowBeat farm 회귀 픽스처 P1.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'AppTweak AI Agents 3종 정식 + Discord 구매 41% 선물 신규 UA 채널. docs/marketing/ 0건이 가장 큰 공백 — store_metadata.md 신규 작성 P0(롱테일 키워드 20개+한/영 description).',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'Unity 2종 GameCI 0건. NumLink Android 빌드 워크플로우 추가 P0(우선 빌드만 서명 후속). MeowBeat WebGL Pages 자동배포 P1. agent-office weekly-insights 텔레그램 알림 P2.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '2026 Bento Grid+Liquid Glass+Calm Design 베이스라인. NumLink Art 0% — 폴더 신설+Bento 메인메뉴 목업 1장 P0(민트+다크 금지·크림+코랄). MeowBeat Note Liquid Glass v2 P1.',
+      },
+    ],
+    decisions: [
+      {
+        title: 'P0: NumLink Tools/ 23일 부재 종결 + .gitignore /.omc/ 추가',
+        description:
+          '_ProjectTemplate/Tools/를 NumLink/Tools/로 복사 + 씬 경로 상수 갱신 + .gitignore에 /.omc/ 1줄 추가. CLAUDE.md "Unity AI 자율화 파이프라인" 규칙 위반 23일째 매일 갱신 종결. 단일 chore(qa) 커밋 30분 내 처리 → unity_validate+qa_static+run_regression 1회 PASS 확인.',
+      },
+      {
+        title: 'P0: MeowBeat 26일 미커밋 atomic 분할 커밋',
+        description:
+          '4/12 657032c 후 26일 누적 21 modified · MANIFEST_MISSING_AUDIO·NOTE_OUT_OF_LANE 직격 트리거 위험. 3분기 atomic: (a) feat(song): Manager 4(GameManager+59/OptionManager+42/SongManager+16)+SongData+manifest (b) chore(deps): AdMob 3 prefab+AndroidManifest+Resolver (c) chore(project): ProjectSettings 머신 의존분. 사전 검증 PASS 확인.',
+      },
+      {
+        title: 'P0: 어버이날 D-day 마지막 발사 — 카네이션 듀얼톤 + 꽃잎 파티클',
+        description:
+          'NumLink theme-kawaii.uss 카네이션 듀얼톤(--accent: #FFE5E5 크림 + --accent-event: #D72660 레드) + MeowBeat GetItemParticle.prefab 카네이션 꽃잎 파티클 텍스처 교체 + 우편 메일 1통(엔씨 블소2 모델 차용). 5/8 23:59 자동 비활성. 미발사 시 골든 윈도우 자동 종결.',
+      },
+      {
+        title: 'P0: NumLink store_metadata.md 신규 작성 + GameCI Android 빌드 워크플로우',
+        description:
+          'docs/marketing/store_metadata.md 작성(롱테일 키워드 20개+한/영 description+스크린샷 캡션 Apple 인덱싱 대응) + .github/workflows/ Android 빌드 워크플로우 추가(GameCI 우선 빌드만 서명 후속). 양 프로젝트 모두 docs/marketing/ 부재·CI/CD 0건 동시 종결.',
+      },
+      {
+        title: 'P1: NumLink Art/ 폴더 신설 + Bento Grid 메인메뉴 목업 1장',
+        description:
+          'NumLink Art/Sprites 폴더 미생성(0%)·2026 Bento Grid 트렌드 베이스라인 진입. 따뜻한 크림+코랄 컬러(민트+다크 금지) 기반 Bento 메인메뉴 목업 1장 작성. MeowBeat Note Liquid Glass v2 검토 후속.',
+      },
+      {
+        title: 'P1: Feedme FarmFoodManager 흔들기 UniTask+DOTween 통일',
+        description:
+          '먹기 애니메이션 흔들기 2건 fix 커밋이 같은 파일 반복 수정 → 안정화 필요. UniTask+DOTween 통일 + farm 회귀 픽스처(test_fixtures) 추가 → run_regression.py로 음식 sortingLayer/스프라이트 패턴 락인.',
+      },
+      {
+        title: 'P1: MeowBeat 고양이 컬렉션 IP 코어 리텐션 훅 승격',
+        description:
+          'Animal Busters 첫달 25만+ DL 사례 차용 — 곡 클리어 → 고양이 해금 메커니즘. GDD 메타레이어(데일리 미션+시즌패스 골격) 명시 + 월 8~12 라이브옵스 이벤트 슬롯 사전 예약.',
+      },
+      {
+        title: 'P2: Unity 6.3 LTS + Rider 2026.1.1 업그레이드 + 잔여 이월',
+        description:
+          'Unity 6.3 LTS 셰이더 변형 축소+Project Auditor + Rider 2026.1.1 Unity Profiler 직접 열기 도입(MeowBeat 26일 안정화 후). NumLink TODO 5건 정리 + DESIGN.md 공용 디자인 토큰 초안 + agent-office weekly-insights 텔레그램 알림.',
+      },
+    ],
+  },
+  {
     id: '2026-05-07T04:00:00-daily-standup',
     date: '2026-05-07',
     researchTitle:
