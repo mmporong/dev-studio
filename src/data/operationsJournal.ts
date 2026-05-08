@@ -43,6 +43,139 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-05-09T04:00:00-daily-standup',
+    date: '2026-05-09',
+    researchTitle:
+      '🌧 5/9 토요일 데일리 스탠드업 — 어버이날 D-day 미발사 후 첫날·NumLink 동결 15일째(2자릿수+5·신기록)·MeowBeat 27일째 신기록·5/8 결정 9건 0건 완료(14일 연속 실패 신기록)·.NET 10.0.7 OOB 보안패치+5/12 패치튜즈데이 D-3·5월 50+ 신작 출시 공세·스승의날 D-6 진입·Marvell Tile&Stone SOTD 럭셔리 미니멀·runner v2.332 Node20 경고',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제27회 — **어버이날 D-day 5/8 마지막 발사 미실행 = 카네이션 골든 윈도우 자동 종결**, 시점 회수 영구 불가. **NumLink 동결 15일째 신기록**(2자릿수+5·4/29 b6d7a73 후 5/1~5/9 9일 연속 0커밋), **MeowBeat 27일째 정체 신기록**(4/12 657032c 후 27일 미커밋·21 modified+미추적 누적). **5/8 결정 9건 전수 추적 = 완료 0·이월 9건 = 누적 14일째 악화 신기록**(13일→14일 연속 결정 실패). 시장: **5월 50+ 신작 글로벌 동시 출시**(ASO World·시장 포화·키워드 압축 가속)·Project Sekai 일본 리듬 1위 유지(이벤트 캘린더 메트로놈)·**Co-op이 미드코어 솔로 이탈 방어 핵심**·Sensor Tower 하이브리드캐주얼 IAP 37%↑(메타깊이 차용 사례). 기술: **.NET 10.0.7 OOB 보안패치 4/21 발표**(WPF/Razor 보안)·**5/12 패치튜즈데이 D-3 진입**·Unity 6.4 .NET10 호환성 점검 필요. 코드: NumLink 미커밋 누적(_Recovery/0 (4).unity 회귀 등장·UI 테마 3종 미연결·Tools 23일 부재 매일 갱신·.omc/ 인공물 다수 미게이트), MeowBeat GameManager.cs 등 핵심 매니저 4종 미커밋 = 27일 누적 회귀 위험 최고조. QA: **NumLink Tools 부재 23일째 1자릿수+13**(파이프라인 죽음 매일 갱신)·_Recovery 폴더 NumLink/MeowBeat 양쪽 잔존(정리 사이클 무효화·NumLink는 신규 (4) 추가까지)·MeowBeat bak_btn 31일째 잔존. 마케팅: **스승의날 D-6 한국 로컬 키워드창 진입**(어버이날 직후 시즌 전환)·**부처님오신날 D-15**·하이브리드캐주얼 IAP 37%↑ 메타깊이 차용. DevOps: **GitHub Actions runner v2.332 dotnet/Node20 경고 등장**(향후 deprecation 신호)·**VS2026 windows-2025 5/4 GA**·**DailyStandup 12일 연속**(4/28~5/9)·**daily_standup.bat taskkill 래퍼 14일째 미적용·claude.exe PID 23개 누적 예상**(22→23 +1)·5/19 D-10 rate_limit code_scanning_upload 삭제 카운트다운. 디자인: **Awwwards Marvell Tile&Stone SOTD #E8E5DF 베이지+#35311F 다크브라운 7.26점**(럭셔리 미니멀+빅BG이미지+React/Next 제스처·자연석 질감 톤)·자연석 질감 + 럭셔리 카테고리 부상.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — NumLink 15일·MeowBeat 27일 동시 신기록·어버이날 D-day 미발사 후 첫날·5/8 결정 9건 0건 완료 14일 연속 실패 신기록·bak_btn 31일·_Recovery NumLink 신규 (4) 추가',
+        description:
+          'NumLink 마지막 4/29 11:37 b6d7a73(feat(ui) 3 UI 테마 + 런타임 스위처). **5/1~5/9 9일 연속 0커밋 → 동결 15일째(2자릿수+5·신기록 갱신)**. 미커밋 다수(_Recovery/0 (4).unity 회귀 추가·UIThemeSwitcher.cs.meta·theme uss 3개·.omc/ 인공물 다수). MeowBeat 4/12 657032c **27일째 정체 신기록 갱신**, 미커밋 누적(GameManager.cs·OptionManager.cs·SongManager.cs·SongData.cs·manifest.json·GoogleMobileAds 3 prefab+AndroidManifest 등). agent-office 5/8 a0b025d push 후 .omc/project-memory.json M 1건만. **5/8 결정 9건 전수 추적: 완료 0·이월 9 = 누적 14일째 악화 신기록**(P0 어버이날 D-day 발사 포함 전원 미실행 → 골든 윈도우 영구 종결). **오늘 결정 제안**: P0 [어버이날 종결 후 첫날 일괄 회수 모드] (1) NumLink _Recovery/0 (4).unity 즉시 정리(회귀 첫 등장 차단) (2) NumLink Tools _ProjectTemplate 복사+.gitignore /.omc/ 1줄(23일째 종결·2분) (3) MeowBeat 27일 atomic 분할 feat(song)+chore(deps)+chore(project) 3분기 (4) MainScene.unity.bak_btn(.meta) 2개 즉시 삭제(31일째) (5) daily_standup.bat 강제 kill 래퍼 진짜 적용(14일째 누적 종결). 미실행 시 16일째 진입 + 28일 신기록 + 15일 연속 결정 실패.',
+      },
+      {
+        title:
+          '🎮 Game Designer — 5월 50+ 신작 동시 출시 글로벌 시장 포화·Project Sekai 일본 리듬 1위 유지(이벤트 메트로놈)·Co-op이 미드코어 솔로 이탈 방어 핵심·하이브리드캐주얼 IAP 37%↑',
+        description:
+          '**5월 50+ 신작 글로벌 동시 출시 공세**(ASO World 보고서·시장 포화·키워드 압축 가속·신작 광고 노출 비용 상승) — NumLink/MeowBeat ASO 키워드 갱신 시점 임박. **Project Sekai 일본 리듬 1위 유지**(이벤트 캘린더 메트로놈 = 라이브옵스 케이던스 표준화) — MeowBeat 시장 진입 골든 윈도우 + 라이브옵스 사전 예약 필수. **Co-op이 미드코어 솔로 이탈 방어 핵심 메커니즘 부상**(Sensor Tower 4월 보고서) — NumLink는 비동기 친구 챌린지 + MeowBeat는 듀엣 모드 사전 검토. **하이브리드캐주얼 IAP 37%↑**(메타깊이 차용·시즌패스+컬렉션). **오늘 결정 제안**: P2 MeowBeat 주말 한정 데일리 미션(토·일 2배 보상)으로 D7 견인 사전 검토(이번 주말부터 케이던스 락인 필요).',
+      },
+      {
+        title:
+          '💻 Developer — .NET 10.0.7 OOB 보안패치 4/21·5/12 패치튜즈데이 D-3 임박·Unity 6.4 .NET10 호환성 점검 필요·NumLink 15일 동결+_Recovery (4) 회귀 등장·MeowBeat GameManager 27일 미커밋',
+        description:
+          '**.NET 10.0.7 OOB 보안패치 4/21 발표**(Microsoft DevBlogs·WPF/Razor 보안 핫픽스·Out-of-Band) → 다음 정기 패치튜즈데이 **5/12 D-3 진입** 후속 패치 가능성. **Unity 6.4 .NET10 호환성 점검 필요**(IL2CPP·Mono 양쪽 영향)·MeowBeat 27일 미커밋 GameManager.cs 등 핵심 매니저 변경분 + .NET10 패치 동시 충돌 위험. **NumLink 15일 동결 + _Recovery/0 (4).unity 회귀 첫 등장**(어제 정리 사이클 깨졌음 → 오늘 신규 (4) 추가까지·악화). **오늘 결정 제안**: P0 NumLink _Recovery/0 (4).unity 정리 우선(회귀 차단) + P2 5/12 패치튜즈데이 .NET10 후속 패치 사전 점검.',
+      },
+      {
+        title:
+          '🔍 QA Tester — NumLink Tools 부재 23일째 검증 파이프라인 죽음 매일 갱신·MeowBeat GameManager.cs 등 미커밋 누적 회귀 위험·_Recovery 폴더 NumLink/MeowBeat 양쪽 잔존 정리 사이클 완전 무효화',
+        description:
+          '**NumLink Tools/ 부재 23일째 직접 확인**(`known_bugs.json`·`unity_validate.py`·`qa_static.py`·`run_regression.py` 4종 전부 부재 매일 갱신·CLAUDE.md "Unity AI 자율화 파이프라인" 위반 매일 갱신) — 15일 동결+23일 Tools 부재+_Recovery 회귀 누적. **MeowBeat 미커밋 변경 누적 검증 회귀 위험**(특히 GameManager.cs·OptionManager.cs·SongManager.cs·SongData.cs·manifest.json·AdMob 3 prefab 27일 누적·MANIFEST_MISSING_AUDIO·NOTE_OUT_OF_LANE 직격 트리거 위험). **_Recovery 폴더 NumLink/MeowBeat 양쪽 잔존**(정리 사이클 완전 무효화·NumLink는 어제까지 깔끔 → 오늘 (4) 신규 추가 회귀). **오늘 결정 제안**: P0 MeowBeat unity_validate 즉시 실행(27일 누적 회귀 사전 검증) + P0 NumLink Tools 복사 후 동일 검증 강제.',
+      },
+      {
+        title:
+          '📢 Content Writer — 5월 50+ 게임 동시출시 키워드 압축 가속·스승의날 D-6 한국 로컬 키워드창 진입(어버이날 직후 시즌 전환)·하이브리드캐주얼 IAP 37%↑ 메타깊이 차용·docs/marketing/ 0건 매일 갱신',
+        description:
+          '**5월 50+ 게임 동시 출시 = 글로벌 ASO 키워드 압축 가속**(롱테일 대신 카테고리 키워드 가중치 상승). **스승의날 5/15 D-6 한국 로컬 키워드창 진입**(어버이날 5/8 직후 시즌 전환·"선생님께 감사"·"감사 메시지"·"스승의 날 게임" 등 한국 한정 ASO 슬롯). **부처님오신날 5/24 D-15**(공휴일·라이브옵스 사전 검토). **Sensor Tower 하이브리드캐주얼 IAP 37%↑**(메타깊이 차용 사례 가속). 양 프로젝트 docs/marketing/ 부재 매일 갱신. **오늘 결정 제안**: P1 스승의날 D-6 한국 로컬 키워드 + 메타진행 후크 라이브옵스 사전 메타데이터 갱신 1건(NumLink 한국 ASO 키워드 5종 + MeowBeat 카드 1통 카피 초안·발사일은 5/14 D-1 사전 푸시).',
+      },
+      {
+        title:
+          '⚙️ DevOps — runner v2.332 dotnet/Node20 경고(향후 deprecation 신호)·VS2026 windows-2025 5/4 GA·DailyStandup 12일 연속·daily_standup.bat 14일째 미적용·claude.exe PID 23개 누적 예상',
+        description:
+          '**GitHub Actions runner v2.332 dotnet/Node20 경고 등장**(향후 deprecation 신호·NumLink/MeowBeat GameCI 도입 시 Node22 마이그레이션 사전 점검 필요). **VS2026 windows-2025 5/4 GA**(GitHub Actions 호스티드 러너 OS 베이스라인 갱신). **DailyStandup_ClaudeCode 12일 연속 STILL_ACTIVE**(4/28~5/9·트리거 ID 267009·정상 실행 매일 갱신). **claude.exe PID 22→23개 누적 예상**(오늘 본 세션 +1·증가 멈춤 깨짐). **daily_standup.bat 첫줄 @echo off만**·taskkill 래퍼 14일째 미적용. agent-office Pages 5/9 deploy 진행 예정·5/19 D-10 rate_limit code_scanning_upload 삭제 카운트다운. **오늘 결정 제안**: P0 daily_standup.bat 첫줄 `taskkill /F /IM claude.exe /T 2>NUL` + 끝줄 `exit /b 0` 강제 kill 래퍼 진짜 적용(14일째 누적 종결·claude.exe 23개 차단).',
+      },
+      {
+        title:
+          '🎨 Art Director — Awwwards Marvell Tile&Stone SOTD 7.26점(#E8E5DF 베이지+#35311F 다크브라운 럭셔리 미니멀·자연석 질감)·럭셔리 카테고리 부상·NumLink Art 0%·5월 둘째주 자연석 톤 진입',
+        description:
+          '**Awwwards Marvell Tile&Stone SOTD 7.26점**(#E8E5DF 베이지+#35311F 다크브라운·럭셔리 미니멀+빅BG이미지+React/Next 제스처·자연석 질감 표면 질감 부상)·**자연석 질감 톤 = 럭셔리 카테고리 5월 둘째주 부상 패턴**(Studio Carnage 5/5 anti-corporate brutal grid 직후 톤 전환). NumLink Art 0% 매일 갱신. **오늘 결정 제안**: P1 NumLink 별점 화면에 #E8E5DF 카드+#35311F 숫자 럭셔리 톤 적용(5점 만점 별점 카드·고대비 미니멀·기존 카네이션/Bento와 톤 분리·별점 = 프리미엄 인지 강화).',
+      },
+    ],
+    meetingTitle:
+      '🌧 5/9 토요일 종합 회의 — 어버이날 미발사 후 첫날·15일 동결+27일 정체 동시 신기록·14일 연속 결정 실패 신기록·5/12 패치튜즈데이 D-3·스승의날 D-6 진입·Marvell SOTD 자연석 럭셔리·runner v2.332 Node20 경고·_Recovery NumLink 회귀 첫 등장',
+    meetingSummary:
+      '7명 에이전트가 어버이날 D-day 미발사 후 첫날 회의 진행. 핵심 합의: ① **어버이날 5/8 마지막 발사 미실행 = 카네이션 골든 윈도우 영구 종결**(시점 회수 불가) — 14일 연속 결정 실패 신기록 갱신. ② **NumLink 15일·MeowBeat 27일 동시 신기록 갱신** + NumLink _Recovery/0 (4).unity 회귀 첫 등장(정리 사이클 깨짐 직접 확인). ③ **5/8 P0 5건+P1 4건=9건 전원 미실행 14일째 이월** — 어제까지 13일 연속 실패에서 14일 연속 신기록 갱신. ④ **5/12 패치튜즈데이 D-3 진입**(.NET 10.0.7 OOB 보안패치 4/21 후속) → MeowBeat 27일 미커밋 GameManager.cs 핵심 매니저 + .NET10 패치 충돌 위험. ⑤ **스승의날 5/15 D-6 한국 로컬 ASO 키워드창 진입**(어버이날 직후 시즌 전환) — 발사일 5/14 D-1 사전 푸시 시점 락인. ⑥ **GitHub Actions runner v2.332 dotnet/Node20 경고 등장**(향후 deprecation 신호) → NumLink GameCI 도입 시 Node22 마이그레이션 사전 점검. ⑦ **Awwwards Marvell Tile&Stone SOTD 자연석 럭셔리 톤 부상** → NumLink 별점 화면 #E8E5DF+#35311F 적용으로 프리미엄 인지 강화. ⑧ **daily_standup.bat 14일째 미적용·claude.exe PID 23개 누적 예상**(증가 멈춤 깨짐) → 오늘 강제 kill 래퍼 진짜 적용 P0 격상.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'NumLink 동결 15일째(2자릿수+5·신기록)·MeowBeat 27일째 정체 신기록 동시 갱신. 어버이날 D-day 5/8 마지막 발사 미실행 = 카네이션 골든 윈도우 영구 종결. 5/8 결정 9건 전수 미실행 = 14일 연속 결정 실패 신기록(13일→14일). NumLink _Recovery/0 (4).unity 회귀 첫 등장(어제까지 깔끔 → 오늘 신규 추가). 오늘 결정 일괄 회수 모드 = 16일째/28일째/15일 연속 실패 진입 차단 마지막 기회.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '5월 50+ 신작 글로벌 동시 출시 공세 = 시장 포화·키워드 압축 가속(ASO World). Project Sekai 일본 리듬 1위 유지(이벤트 캘린더 메트로놈 = 라이브옵스 케이던스 표준화)·MeowBeat 골든 윈도우 + 라이브옵스 사전 예약 필수. Co-op이 미드코어 솔로 이탈 방어 핵심 메커니즘 부상(Sensor Tower 4월). 하이브리드캐주얼 IAP 37%↑(메타깊이 차용 가속). MeowBeat 주말 한정 데일리 미션(토·일 2배 보상)으로 D7 견인 사전 검토 P2.',
+      },
+      {
+        speaker: 'Developer',
+        note: '.NET 10.0.7 OOB 보안패치 4/21 발표(WPF/Razor)·5/12 패치튜즈데이 D-3 임박 → MeowBeat 27일 미커밋 GameManager.cs 핵심 매니저 + .NET10 패치 동시 충돌 위험. Unity 6.4 .NET10 호환성 점검 필요(IL2CPP·Mono 양쪽). NumLink _Recovery/0 (4).unity 회귀 첫 등장 = 정리 사이클 완전 깨짐. P0 NumLink _Recovery/0 (4).unity 정리 우선(회귀 차단).',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'NumLink Tools 부재 23일째 검증 파이프라인 죽음 매일 갱신(1자릿수+13일). MeowBeat GameManager.cs·OptionManager.cs·SongManager.cs·SongData.cs·manifest.json 등 미커밋 누적 27일 회귀 위험 최고조(MANIFEST_MISSING_AUDIO·NOTE_OUT_OF_LANE 직격 트리거 위험). _Recovery 폴더 NumLink/MeowBeat 양쪽 잔존 정리 사이클 완전 무효화. P0 MeowBeat unity_validate 즉시 실행(27일 누적 회귀 사전 검증).',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '5월 50+ 게임 동시출시 ASO 키워드 압축 가속(롱테일→카테고리 가중치). 스승의날 5/15 D-6 한국 로컬 키워드창 진입(어버이날 직후 시즌 전환·"선생님께 감사"·"감사 메시지"). 부처님오신날 5/24 D-15. Sensor Tower 하이브리드캐주얼 IAP 37%↑ 메타깊이 차용. P1 NumLink 한국 ASO 키워드 5종 + MeowBeat 카드 1통 카피 초안(발사일 5/14 D-1 사전 푸시).',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'GitHub Actions runner v2.332 dotnet/Node20 경고 등장(향후 deprecation 신호) → NumLink GameCI 도입 시 Node22 마이그레이션 사전 점검. VS2026 windows-2025 5/4 GA. DailyStandup 12일 연속(4/28~5/9 트리거 267009 STILL_ACTIVE). claude.exe PID 22→23 +1 누적 예상(증가 멈춤 깨짐). daily_standup.bat 14일째 미적용. P0 taskkill 강제 kill 래퍼 진짜 적용(14일째 누적 종결).',
+      },
+      {
+        speaker: 'Art Director',
+        note: 'Awwwards Marvell Tile&Stone SOTD 7.26점(#E8E5DF 베이지+#35311F 다크브라운 럭셔리 미니멀+빅BG+React/Next 제스처·자연석 질감 표면). 자연석 럭셔리 5월 둘째주 카테고리 부상 패턴(5/5 Studio Carnage anti-corporate 직후 톤 전환). P1 NumLink 별점 화면 #E8E5DF 카드+#35311F 숫자 럭셔리 톤 적용(5점 만점 별점 카드·고대비 미니멀·프리미엄 인지 강화).',
+      },
+    ],
+    decisions: [
+      {
+        title: 'P0: 어버이날 종결 후 첫날 일괄 회수 모드 = 14일 누적 9건+오늘 P0 동시 처리',
+        description:
+          '14일 연속 결정 실패 신기록 갱신·15일 동결·27일 정체·_Recovery NumLink 회귀 첫 등장 동시 종결 차단. (1) NumLink _Recovery/0 (4).unity 즉시 정리(회귀 첫 등장 차단·오늘만 가능) (2) NumLink Tools _ProjectTemplate 복사+.gitignore /.omc/ 1줄(23일째 종결·2분) (3) MeowBeat 27일 atomic 분할 feat(song)+chore(deps)+chore(project) 3분기(5/12 패치튜즈데이 D-3 전 안전화) (4) MainScene.unity.bak_btn(.meta) 2개 즉시 삭제(31일째) (5) daily_standup.bat 강제 kill 래퍼 진짜 적용(14일째 누적 종결·PID 23개 차단). 미실행 시 16일째/28일째/15일 연속 실패 진입.',
+      },
+      {
+        title: 'P0: NumLink _Recovery/0 (4).unity 정리 — 회귀 첫 등장 즉시 차단',
+        description:
+          '어제까지 NumLink _Recovery 폴더는 깔끔했으나 오늘 _Recovery/0 (4).unity + .meta 신규 등장 = 정리 사이클 완전 깨짐 첫 관측. MeowBeat _Recovery 30일+ 잔존과 결합되면 양 프로젝트 회귀 동시 진행. 오늘 즉시 git rm 하지 않으면 내일부터는 "둘 다 회귀"로 카테고리 전환되어 정리 비용 2배. Unity Editor에서 처리하지 말고 직접 git rm 후 chore(qa) 단일 커밋.',
+      },
+      {
+        title: 'P0: MeowBeat 27일 미커밋 atomic 분할 — 5/12 패치튜즈데이 D-3 전 안전화',
+        description:
+          '4/12 657032c 후 27일 누적·GameManager.cs+OptionManager.cs+SongManager.cs+SongData.cs+manifest.json+AdMob 3 prefab+AndroidManifest+ProjectSettings 등 다수. 5/12 패치튜즈데이 D-3 전 안전화 필수(.NET10 후속 패치+Unity 6.4 호환성 충돌 위험). 3분기 atomic: (a) feat(song): Manager 4+SongData+manifest (b) chore(deps): AdMob 3 prefab+AndroidManifest+Resolver (c) chore(project): ProjectSettings 머신 의존분. 사전 unity_validate+qa_static+run_regression PASS 확인.',
+      },
+      {
+        title: 'P0: daily_standup.bat 강제 kill 래퍼 진짜 적용 — 14일째 누적 종결',
+        description:
+          'DailyStandup 12일 연속 STILL_ACTIVE(4/28~5/9)·claude.exe PID 22→23 +1 누적 예상(어제 +0 멈춤 → 오늘 깨짐). 14일째 미적용 매일 갱신. C:/Unity/_ProjectTemplate/Tools/daily_standup.bat 첫줄 `taskkill /F /IM claude.exe /T 2>NUL` + 끝줄 `exit /b 0` 강제 kill 래퍼 직접 적용·ASCII 인코딩 유지(BOM 금지). claude.exe 누적 23개 + DailyStandup 미종료 13일째 진입 차단.',
+      },
+      {
+        title: 'P1: 스승의날 D-6 한국 로컬 ASO + MeowBeat 카드 1통 사전 메타데이터',
+        description:
+          '5/15 스승의날 D-6 한국 로컬 키워드창 진입(어버이날 직후 시즌 전환). NumLink 한국 ASO 키워드 5종("선생님께 감사"·"감사 메시지"·"스승의 날 게임"·"감사 인사"·"학생 추천") + MeowBeat 카드 1통 카피("스승의 날, 한 곡으로 감사를 전하세요") 초안. 발사일 5/14 D-1 사전 푸시 시점 락인(어버이날처럼 D-day 마지막 발사 회피·미리 발사). 부처님오신날 5/24 D-15 후속 슬롯 사전 예약.',
+      },
+      {
+        title: 'P1: NumLink 별점 화면 자연석 럭셔리 톤 — Marvell SOTD 적용',
+        description:
+          'Awwwards Marvell Tile&Stone SOTD 7.26점(#E8E5DF 베이지+#35311F 다크브라운 럭셔리 미니멀·자연석 질감)·자연석 럭셔리 5월 둘째주 카테고리 부상 패턴 직접 차용. NumLink 5점 만점 별점 카드 = 프리미엄 인지 핵심 화면 → #E8E5DF 카드 배경+#35311F 숫자/별 고대비 미니멀 적용. 기존 Kawaii(카네이션 폐기)+Premium+Retro 3 테마와 별점 카드 분리 토큰으로 운영(테마 무관 공통 적용).',
+      },
+      {
+        title: 'P2: MeowBeat 주말 한정 데일리 미션(토·일 2배 보상) D7 견인 검토',
+        description:
+          'Co-op 미드코어 솔로 이탈 방어·하이브리드캐주얼 IAP 37%↑ 메타깊이 차용·Project Sekai 이벤트 캘린더 메트로놈 사례. 토·일 2배 보상 데일리 미션 GDD 골격 1장 작성·이번 주말부터 케이던스 락인(매주 토 0시 자동 활성·일 23:59 비활성). 추후 시즌패스/컬렉션 메타로 확장.',
+      },
+      {
+        title: 'P2: 5/12 패치튜즈데이 .NET10 후속 패치 사전 점검',
+        description:
+          '.NET 10.0.7 OOB 보안패치 4/21(WPF/Razor) 후속·5/12 D-3 진입. Unity 6.4 .NET10 호환성(IL2CPP·Mono 양쪽) 사전 점검·MeowBeat 27일 분할 커밋 PASS 후 패치튜즈데이 직후 검증. NumLink는 Tools 복사 후 동일 점검 강제.',
+      },
+      {
+        title: 'P2: NumLink/MeowBeat 양 프로젝트 _Recovery·bak_btn 회귀 사이클 락인',
+        description:
+          '오늘 NumLink _Recovery 회귀 첫 등장 = 정리 사이클 운영 실패 직접 관측. .gitignore에 `_Recovery/` 1줄 추가(Unity 자동 생성 방지)·MainScene.unity.bak_btn류 *.bak_btn 패턴 .gitignore 추가·양 프로젝트 동일 적용. Unity Recovery 자동 생성은 Editor 동작이므로 .gitignore가 단일 차단 수단.',
+      },
+    ],
+  },
+  {
     id: '2026-05-08T04:00:00-daily-standup',
     date: '2026-05-08',
     researchTitle:
