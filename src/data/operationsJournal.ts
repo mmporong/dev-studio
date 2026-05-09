@@ -43,6 +43,142 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-05-10T04:00:00-daily-standup',
+    date: '2026-05-10',
+    researchTitle:
+      '🌸 5/10 일요일 데일리 스탠드업 — 미국 모성절(어머니날 D-day)·NumLink 동결 16일+정체 28일+Tools 부재 19일+_Recovery 15일·MeowBeat 정체 29일 신기록·15일 연속 결정 실패 임박·Hello Kitty Island v2.16 5/13 출시·Unity 6000.3.15f1 5/8·Gradle 9.5.0 5/7·Studio Namma SOTD·Apple 스크린샷 캡션 키워드 신규',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제28회 — **미국 모성절 5/10 D-day**(어버이날 직후 잔여 트래픽 흡수 마지막 골든 윈도우). **NumLink 동결 16일째 신기록**(4/29 b6d7a73 후 5/1~5/10 10일 연속 0커밋 = 2자릿수 진입), **MeowBeat 정체 29일 신기록 갱신**(4/12 657032c 후 핵심 매니저 4종 미커밋 = 5/12 패치튜즈데이 D-2 코앞에서 안전화 불가 위기). **5/9 결정 9건 전수 미실행 = 15일 연속 결정 실패 임박**(15일 연속 = 보름 풀스코어 미실행 신기록). 시장: **Hello Kitty Island Adventure v2.16 5/13 Apple Arcade 출시**(코지 IP+퀘스트·MeowBeat 직접 경쟁), **미드코어 D30 5.35%·ROAS 39.5% 최고효율**(GameAnalytics 4월), **컴투스 5/15 스승의날 쿠폰 이벤트** 사전 발표(국내 라이브옵스 표준 케이던스). 기술: **Unity 6000.3.15f1 5/8 출시**(HDRP/iOS 픽스), **Gradle 9.5.0 5/7**(Settings 플러그인 Kotlin 타입세이프), **Google Mobile Ads Unity 플러그인 문서 5/8 업데이트**(_GoogleMobileAdsInit.prefab 통합 가이드 — MeowBeat AdMob 변경분 직격), Xcode 26 후속 RC 임박. QA: NumLink Tools/ 19일째 부재 매일 갱신·_ProjectTemplate에 복사 가능 상태 유지·MeowBeat known_bugs.json 6종 8일째 동결(auto_fix는 INDENT_M_FATHER 1종뿐)·MeowBeat GameManager+SongManager 100줄 변경분 33일째 미커밋(작업 손실 임박). 마케팅: **Apple App Store 스크린샷 캡션이 검색 랭킹 키워드 필드 신규 포함**(yellowHEAD ASO Update 5/5)·**Google Play "Ask Play" Gemini 챗봇 스토어 임베드**(메타데이터·리뷰 기반 자동 응답·AppTweak)·**Unity Ads 워터폴 미디에이션 1/31 종료+AdMob TCF v2.3 3/1 강제** = 가정의달 캠페인 송출 전 SDK 점검 필수·BAT 2026 마이크로 인플루언서(1만~10만) 진정성 콘텐츠가 메가보다 전환율 높음. DevOps: agent-office Pages 5건 모두 success(36~47s·5/5~5/9 연속)·DailyStandup_ClaudeCode 16일 연속 STILL_ACTIVE(267009)·Node20 GH Actions deprecation **2026/6 마이그레이션 확정**(애초 4월 → 6월로 연기)·셀프호스트 v2.329 미만 3/16 차단 시행 중. 디자인: **Awwwards Studio Namma SOTD 5/9**(PRO+DEV+Developer Award·에이전시 아카이브 톤), **Behance 2026 키네틱 타이포가 메인 캐릭터화**(프로그레시브 블러+스프링 모션·M3 Expressive 동조), 어버이날 카네이션 분홍·살구·복합색 다채화 빈티지 케이크+돈케이크 SNS 인증 트렌드.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — NumLink 16일·MeowBeat 29일 신기록·Tools 19일·_Recovery 15일·15일 연속 결정 실패 임박·5/9 결정 9건 0건 완료',
+        description:
+          'NumLink 마지막 4/29 11:37 b6d7a73 후 **10일 연속 0커밋 → 동결 16일째**(2자릿수+6·정체 28일 누적). 미커밋: TextMeshPro/Maplestory SDF 폰트 7개·_Recovery/0 (4).unity 잔존(15일째)·.omc/ 인공물 다수·UIThemeSwitcher.cs.meta. MeowBeat 4/12 657032c 후 **정체 29일 신기록**·핵심 매니저 4종(GameManager/SongManager/SongData/OptionManager) 미커밋·manifest.json·GoogleMobileAds 3 prefab+AndroidManifest. agent-office 5/9 1e8ae1c push(스탠드업 1건만)·.omc/project-memory.json M 1건. **5/9 결정 9건 전수 추적 = 완료 0·이월 9 = 15일 연속 결정 실패 임박**(보름 풀스코어). **오늘 결정 제안**: P0 [최소 단위 1건 사슬 끊기] NumLink `_Recovery/0 (4).unity` 단일 파일 git rm + chore(qa) 단일 커밋(5분 미만 = 다중파일 액션 모두 미실행되어도 사슬 끊기 단일 단위). 미실행 시 17일째/30일째/16일 연속 실패 진입.',
+      },
+      {
+        title:
+          '🎮 Game Designer — Hello Kitty Island Adventure v2.16 5/13 Apple Arcade 출시(코지 IP+퀘스트·직접경쟁)·미드코어 D30 5.35%·ROAS 39.5% 최고효율·컴투스 5/15 스승의날 쿠폰',
+        description:
+          '**Hello Kitty Island Adventure v2.16 5/13 Apple Arcade 출시**(코지 IP+퀘스트 — MeowBeat 고양이 IP 코지 톤 직접 경쟁 등장)·**미드코어 게임 일일 세션 6~7회·D30 5.35%·ROAS 39.5% 최고효율**(GameAnalytics 2026 4월 보고서) — NumLink 짧은(1~3분) 챌린지 모드 도입 시 D30 벤치마크 도달 근거. **컴투스 5/15 스승의날 쿠폰 이벤트** 사전 공지 = 국내 라이브옵스 표준 케이던스 확립(MeowBeat 사전 예약). **오늘 결정 제안**: P2 NumLink 1~3분 챌린지 모드 GDD 골격 1장(D30 5.35% 벤치마크 도달 근거 — 일일 세션 빈도 견인 핵심).',
+      },
+      {
+        title:
+          '💻 Developer — Unity 6000.3.15f1 5/8(HDRP/iOS 픽스)·Gradle 9.5.0 5/7·Google Mobile Ads Unity 5/8 통합 가이드(_GoogleMobileAdsInit.prefab)·MeowBeat AdMob 변경분 직격',
+        description:
+          '**Unity 6000.3.15f1 5/8 출시**(HDRP/iOS 픽스 포함). **Gradle 9.5.0 5/7**(Settings 플러그인 Kotlin 타입세이프 액세서). **Google Mobile Ads Unity 플러그인 문서 5/8 업데이트**(_GoogleMobileAdsInit.prefab 통합 가이드·Splash Scene 배치 + Android/iOS 광고 단위 ID 분리·AGP 9.2.0 + Gradle 9.5.0 호환성 매트릭스). MeowBeat 미커밋 GoogleMobileAds 3 prefab + AndroidManifest 변경분 = 5/8 가이드 직격 영향. **오늘 결정 제안**: P0 MeowBeat AdMob 변경분 커밋 전 5/8 공식 가이드 기준 _GoogleMobileAdsInit.prefab 패턴 점검 + AGP/Gradle 호환성 빌드 검증 후 커밋.',
+      },
+      {
+        title:
+          '🔍 QA Tester — NumLink Tools 부재 19일째·MeowBeat known_bugs6 8일째 동결(auto_fix 1종뿐)·MeowBeat GameManager+SongManager 100줄 33일째 미커밋(작업 손실 임박)',
+        description:
+          '**NumLink Tools/ 폴더 19일째 부재**(`_ProjectTemplate`에 즉시 복사 가능 상태 유지·CLAUDE.md "Unity AI 자율화 파이프라인" 매일 위반). **MeowBeat known_bugs.json 6종(RT_SIZE_ZERO/YAML_DUPLICATE_FILE_ID/YAML_HEADER_REF_MISMATCH/YAML_INDENT_M_FATHER/MANIFEST_MISSING_AUDIO/NOTE_OUT_OF_LANE) 8일째 동결**·auto_fix는 INDENT_M_FATHER 1종뿐. **MeowBeat 핵심 매니저 4개(GameManager+59줄·SongManager-16줄·OptionManager+42줄·SongData+1줄) 마지막 관련 커밋 4/7 → 33일 경과**(작업 손실 리스크 임박). **오늘 결정 제안**: P0 MeowBeat 매니저 4종 오늘 안에 분할 커밋·푸시 + NumLink Tools 템플릿 복사로 검증 파이프라인 복구.',
+      },
+      {
+        title:
+          '📢 Content Writer — Apple 스크린샷 캡션 검색 랭킹 키워드 신규 포함(yellowHEAD 5/5)·Google Play "Ask Play" Gemini 임베드(리뷰 품질 급증)·Unity Ads 워터폴 1/31 종료+AdMob TCF v2.3 3/1 강제',
+        description:
+          '**Apple App Store 스크린샷 캡션 텍스트가 검색 랭킹 키워드 필드 신규 포함**(yellowHEAD ASO Update 5/5) — NumLink/MeowBeat 스토어 페이지 작성 시 캡션 카피 자연 키워드 삽입 필수. **Google Play "Ask Play" Gemini 챗봇 스토어 리스팅 임베드**(메타데이터·리뷰 기반 자동 응답·AppTweak) — 리뷰 품질 중요도 급증. **Unity Ads 워터폴 미디에이션 1/31 종료 + AdMob TCF v2.3 3/1 강제**(이미 시행) → MeowBeat 가정의달 캠페인 송출 전 SDK 점검 필수. **오늘 결정 제안**: P1 NumLink 한국 스토어 캡션 카피에 "숫자 연결 퍼즐 가족과 함께" 키워드 자연 삽입 + MeowBeat "엄마 고양이와 아기 고양이" 듀엣 노트맵 1개 5/11(월) 제작 → 미국 모성절(5/10) + 스승의날(5/16) 잔여 트래픽 흡수.',
+      },
+      {
+        title:
+          '⚙️ DevOps — agent-office Pages 5건 모두 success(36~47s·5/5~5/9)·DailyStandup 16일 연속 STILL_ACTIVE(267009)·Node20 GH Actions 2026/6 마이그레이션 확정(4월→6월 연기)',
+        description:
+          '**agent-office Pages 최근 5건 모두 success**(36~47s·5/5~5/9 연속·6일 연속 SUCCESS 누적). **DailyStandup_ClaudeCode 5/10 04:00 정시 실행**·결과 267009 STILL_ACTIVE **16일 연속**(자동화 정상이지만 코드 의미상 "여전히 실행 중" 반환·종료 코드 0 미반환). **Node20 GH Actions deprecation 2026/6 마이그레이션 확정**(애초 4월에서 6월로 연기)·**셀프호스트 v2.329 미만 3/16 차단 시행 중**. **오늘 결정 제안**: P1 DailyStandup 작업 완료 후 정상 종료(0)로 떨어지도록 task action 종료 코드 처리 점검 1건(자동화 정상 인지·코드 의미 정상화).',
+      },
+      {
+        title:
+          '🎨 Art Director — Awwwards Studio Namma SOTD 5/9(PRO+DEV+Developer Award·에이전시 아카이브)·Behance 2026 키네틱 타이포 메인 캐릭터화(M3 Expressive 동조)·어버이날 카네이션 다채화',
+        description:
+          '**Awwwards Studio Namma SOTD 5/9 선정**(PRO+DEV+Developer Award·에이전시 아카이브 톤). **Behance 2026 키네틱 타이포 = 메인 캐릭터화 트렌드**(프로그레시브 블러+스프링 모션 → M3 Expressive 동조). 어버이날 카네이션 분홍·살구·복합색 다채화·빈티지 케이크+돈케이크 SNS 인증 패턴 후속. **오늘 결정 제안**: P1 NumLink 카와이 테마에 어버이날 한정 "카네이션 듀얼톤(분홍 #FFB7C5 + 살구 #FFCBA4)" 스킨 변형 .uss 추가 + 숫자 연결선에 M3 Expressive식 스프링 모션(살짝 출렁이는 dismiss 잔향) 적용 — 5/8~5/10 한정 노출로 SNS 인증 친화적 비주얼 확보(미국 모성절 5/10 잔여 흡수).',
+      },
+    ],
+    meetingTitle:
+      '🌸 5/10 일요일 종합 회의 — 미국 모성절 D-day·NumLink 16일·MeowBeat 29일 신기록·15일 연속 결정 실패 임박·5/12 패치튜즈데이 D-2·Hello Kitty Island 5/13 직접경쟁·Unity 6000.3.15f1·AdMob 5/8 가이드·Studio Namma SOTD',
+    meetingSummary:
+      '7명 에이전트가 미국 모성절 D-day 회의 진행. 핵심 합의: ① **NumLink 16일·MeowBeat 29일 동시 신기록** + **15일 연속 결정 실패 임박**(보름 풀스코어 미실행 진입 직전) — 사슬 끊기 위해 "단일 파일·단일 명령" 수준 최소 결정 1건 우선. ② **Hello Kitty Island Adventure v2.16 5/13 Apple Arcade 출시 = MeowBeat 직접 경쟁 등장**(코지 IP+퀘스트 톤). ③ **5/12 패치튜즈데이 D-2 진입** + **Unity 6000.3.15f1 5/8 + Gradle 9.5.0 5/7 + Google Mobile Ads Unity 5/8 가이드 업데이트** = MeowBeat 미커밋 매니저 4종+AdMob 변경분이 D-2 코앞에서 안전화 불가 위기. ④ **MeowBeat GameManager+SongManager 100줄 33일째 미커밋** → 작업 손실 리스크 임박, 오늘 안에 분할 커밋 P0. ⑤ **Apple 스크린샷 캡션 검색 랭킹 키워드 신규 포함**(yellowHEAD 5/5) + **Google Play "Ask Play" Gemini 임베드** → ASO 카피·리뷰 품질 동시 가중치 상승. ⑥ **Awwwards Studio Namma SOTD 5/9 + Behance 키네틱 타이포 캐릭터화** → NumLink 카와이 테마 카네이션 듀얼톤+M3 Expressive 스프링 모션 P1. ⑦ **agent-office Pages 6일 연속 SUCCESS·DailyStandup 16일 연속 STILL_ACTIVE 267009** = 자동화 정상이지만 종료 코드 0 미반환 점검 P1. ⑧ **미국 모성절 5/10 + 스승의날 5/16 + 부처님오신날 5/25** 잔여 트래픽 흡수 위해 NumLink 캡션 카피 + MeowBeat 듀엣 노트맵 5/11(월) 제작.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'NumLink 동결 16일·MeowBeat 정체 29일 동시 신기록 갱신. 5/9 결정 9건 전수 미실행 = 15일 연속 결정 실패 임박(보름 풀스코어). 다중파일·다중단계 결정은 16일째에도 다시 미실행될 가능성 높음 → "한 파일·한 명령" 최소 단위로 사슬 끊기 우선. 오늘 결정 제안: NumLink _Recovery/0 (4).unity 단일 파일 git rm + 단일 커밋(5분 미만).',
+      },
+      {
+        speaker: 'Game Designer',
+        note: 'Hello Kitty Island Adventure v2.16 5/13 Apple Arcade 출시 = MeowBeat 코지 IP 직접 경쟁(퀘스트 메타). 미드코어 D30 5.35%·ROAS 39.5%(GameAnalytics 4월) — NumLink 1~3분 챌린지 모드 도입 시 일일 세션 빈도 견인 근거. 컴투스 5/15 스승의날 쿠폰 = 국내 라이브옵스 표준 케이던스. P2 NumLink 1~3분 챌린지 모드 GDD 골격 1장.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'Unity 6000.3.15f1 5/8(HDRP/iOS 픽스)·Gradle 9.5.0 5/7(Kotlin 타입세이프)·Google Mobile Ads Unity 5/8 통합 가이드 업데이트(_GoogleMobileAdsInit.prefab·AGP 9.2.0 + Gradle 9.5.0 호환성 매트릭스). MeowBeat 미커밋 AdMob 3 prefab + AndroidManifest = 5/8 가이드 직격. P0 MeowBeat AdMob 변경분 커밋 전 _GoogleMobileAdsInit.prefab 패턴 점검 후 커밋.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'NumLink Tools/ 19일째 부재(_ProjectTemplate 복사 가능 상태)·MeowBeat known_bugs 6종 8일째 동결(auto_fix INDENT_M_FATHER 1종뿐). MeowBeat GameManager+SongManager+OptionManager+SongData 4파일 100줄 변경분 마지막 관련 커밋 4/7 → 33일 경과 작업 손실 임박. P0 MeowBeat 매니저 4종 오늘 안에 분할 커밋 + NumLink Tools 템플릿 복사 검증 파이프라인 복구.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'Apple App Store 스크린샷 캡션 검색 랭킹 키워드 필드 신규 포함(yellowHEAD ASO 5/5)·Google Play "Ask Play" Gemini 챗봇 스토어 임베드(리뷰 품질 가중치 급증·AppTweak). Unity Ads 워터폴 1/31 종료 + AdMob TCF v2.3 3/1 강제 시행 — MeowBeat 캠페인 송출 전 SDK 점검 필수. P1 NumLink 한국 캡션 "숫자 연결 퍼즐 가족과 함께" 자연 삽입 + MeowBeat "엄마/아기 고양이" 듀엣 노트맵 5/11(월) 제작.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'agent-office Pages 5건 모두 success(36~47s·5/5~5/9·6일 누적 SUCCESS). DailyStandup_ClaudeCode 5/10 04:00 정시 실행·267009 STILL_ACTIVE 16일 연속(자동화 정상이지만 종료 코드 0 미반환). Node20 GH Actions 2026/6 마이그레이션 확정(4월→6월 연기)·셀프호스트 v2.329 미만 3/16 차단 시행 중. P1 DailyStandup task action 종료 코드 0 정상화 1건.',
+      },
+      {
+        speaker: 'Art Director',
+        note: 'Awwwards Studio Namma SOTD 5/9 선정(PRO+DEV+Developer Award·에이전시 아카이브 톤). Behance 2026 키네틱 타이포 메인 캐릭터화(프로그레시브 블러+스프링 모션·M3 Expressive 동조). 어버이날 카네이션 분홍·살구·복합색 다채화 후속. P1 NumLink 카와이 테마 카네이션 듀얼톤(#FFB7C5+#FFCBA4) .uss 변형 + 숫자 연결선 M3 Expressive 스프링 모션 dismiss 잔향(5/8~5/10 한정).',
+      },
+    ],
+    decisions: [
+      {
+        title:
+          'P0: NumLink _Recovery/0 (4).unity 단일 파일 git rm + 단일 커밋 [사슬 끊기 최소 단위]',
+        description:
+          '15일 연속 결정 실패 사슬 끊기 위한 "한 파일·한 명령" 최소 단위. `git rm "Assets/_Recovery/0 (4).unity" "Assets/_Recovery/0 (4).unity.meta"` + `git commit -m "chore(qa): remove _Recovery regression file"` + push. 5분 미만·다중 단계 액션 모두 미실행되어도 단일 단위로 사슬 끊기 가능. 미실행 시 16일 연속 결정 실패 신기록(보름 풀스코어) 진입.',
+      },
+      {
+        title:
+          'P0: MeowBeat 핵심 매니저 4종 atomic 분할 커밋 [5/12 패치튜즈데이 D-2 안전화]',
+        description:
+          'GameManager.cs(+59)·SongManager.cs(-16)·OptionManager.cs(+42)·SongData.cs(+1) 4파일 100줄 변경분 마지막 관련 커밋 4/7 → 33일 경과 작업 손실 임박. 5/8 Google Mobile Ads Unity 통합 가이드(_GoogleMobileAdsInit.prefab) 기준 AdMob 변경분 점검 후 atomic 분할: (a) feat(song): 매니저 4 + manifest.json (b) chore(deps): GoogleMobileAds 3 prefab + AndroidManifest + Resolver (c) chore(project): ProjectSettings. 사전 빌드 검증 PASS 후 커밋.',
+      },
+      {
+        title:
+          'P0: NumLink Tools/ 19일째 부재 종결 + .gitignore /.omc/ 1줄 [검증 파이프라인 복구]',
+        description:
+          '`cp -r C:/Unity/_ProjectTemplate/Tools C:/Unity/NumLink/Tools` + 씬 경로 갱신 + .gitignore에 `/.omc/` 1줄 추가 + chore(qa) 단일 커밋. 복사 후 unity_validate + qa_static + run_regression 1회 실행 PASS 확인. 19일째 부재로 CLAUDE.md "Unity AI 자율화 파이프라인" 위반 매일 갱신 종결.',
+      },
+      {
+        title:
+          'P1: NumLink 한국 캡션 카피 + MeowBeat 듀엣 노트맵 5/11(월) [모성절+스승의날+부처님오신날 잔여 흡수]',
+        description:
+          'Apple 스크린샷 캡션 키워드 필드 신규 포함(yellowHEAD 5/5) 활용. NumLink 한국 캡션에 "숫자 연결 퍼즐 가족과 함께"·"두뇌 퍼즐 게임" 등 자연 키워드 5종 삽입(35세 이상 60% Sensor Tower 타겟). MeowBeat "엄마 고양이와 아기 고양이" 듀엣 노트맵 1개 5/11(월) 제작 → 미국 모성절 5/10 + 스승의날 5/16 + 부처님오신날 5/25 잔여 트래픽 흡수. 마이크로 인플루언서(1만~10만) 진정성 콘텐츠 후속(BAT 2026).',
+      },
+      {
+        title:
+          'P1: NumLink 카와이 테마 카네이션 듀얼톤 + M3 Expressive 스프링 모션 [Studio Namma SOTD/Behance 키네틱]',
+        description:
+          'theme-kawaii.uss에 어버이날·모성절 한정 "카네이션 듀얼톤(분홍 #FFB7C5 + 살구 #FFCBA4)" 스킨 변형 추가 + 숫자 연결선에 M3 Expressive식 스프링 모션(살짝 출렁이는 dismiss 잔향) 적용. 5/8~5/10 한정 노출 토큰으로 SNS 인증 친화적 비주얼 확보. Awwwards Studio Namma SOTD 5/9 + Behance 2026 키네틱 타이포 메인 캐릭터화 트렌드 동조.',
+      },
+      {
+        title:
+          'P1: DailyStandup task action 종료 코드 0 정상화 [16일 STILL_ACTIVE 매일 갱신 차단]',
+        description:
+          'DailyStandup_ClaudeCode 16일 연속 STILL_ACTIVE 반환(267009·코드 의미상 "여전히 실행 중") → 자동화는 정상이지만 종료 코드 0 미반환. daily_standup.bat 끝줄 `exit /b 0` 강제 + claude.exe 후처리 정리(taskkill 14일째 미적용 분 포함) 진짜 적용. ASCII 인코딩 유지·BOM 금지.',
+      },
+      {
+        title:
+          'P2: NumLink 1~3분 챌린지 모드 GDD 골격 1장 [D30 5.35% 벤치마크 도달 근거]',
+        description:
+          'GameAnalytics 2026 4월 보고서 미드코어 D30 5.35%·ROAS 39.5% 최고효율 + 일일 세션 6~7회 벤치마크. NumLink 1~3분 짧은 챌린지 모드 도입 = 일일 세션 빈도 견인 직접 근거. GDD 골격 1장(타이머·스코어·보상 흐름) 작성. Hello Kitty Island Adventure v2.16 5/13 출시 직후 ASO 흡수 윈도우 활용.',
+      },
+      {
+        title:
+          'P2: 부처님오신날 5/25 D-15 한국 라이브옵스 사전 슬롯 + 컴투스 케이던스 벤치 [5/15 쿠폰 이벤트 패턴]',
+        description:
+          '컴투스 5/15 스승의날 쿠폰 이벤트 사전 공지 = 국내 라이브옵스 표준 케이던스. NumLink/MeowBeat 부처님오신날 5/25 D-15 슬롯 사전 예약·"한 박자 쉬어가는 휴일" 콘셉트 카피 초안 1통. 차주 작업 큐.',
+      },
+    ],
+  },
+  {
     id: '2026-05-09T04:00:00-daily-standup',
     date: '2026-05-09',
     researchTitle:
