@@ -43,6 +43,118 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-05-11T04:00:00-daily-standup',
+    date: '2026-05-11',
+    researchTitle:
+      '🌿 5/11 월요일 데일리 스탠드업 — 5/12 패치튜즈데이 D-1·스승의날 D-4·Hello Kitty Island D-2·NumLink 동결 12일+Tools 22일+_Recovery 16일·MeowBeat 미커밋 30일(3자릿수 임박)·17일 연속 결정 실패 신기록·claude.exe PID 26개(+3 누적)·NEOWIZ Cats&Soup Magic Recipe 4/29 글로벌·Next.js CVE-2026-23870/44575·Awwwards Simonholm.studio SOTD',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제29회 — **5/12 패치튜즈데이 D-1 진입**(6/26 Secure Boot 인증서 만료 직전 마지막 안전 배포창·Bluehammer/RedSun/UnDefend 픽스 예상). **스승의날 5/15 D-4**·**Hello Kitty Island 5/13 D-2 직접경쟁 임박**·**부처님오신날 5/25 D-14**. 핵심 위기: **NumLink 동결 12일째 + Tools 부재 22일(매일 갱신) + _Recovery 16일째 회귀**, **MeowBeat 미커밋 30일째**(4/12 → 5/11 한 달 임계 돌파·3자릿수 진입 임박)+bak_btn 30일 누적·핵심 매니저 4종 drift, **0/3 액션 이월 = 17일 연속 결정 실패 신기록 갱신 확정**(보름 풀스코어 초과). **agent-office Pages 10일 연속 success**(인프라만 살아있고 게임 코드 전부 정지 = 역설적 안정). 시장: **NEOWIZ Cats&Soup: Magic Recipe 4/29 글로벌 런칭**(원작 80M DL+ 머지 시퀄·MeowBeat 코지+머지 동시 압박)·**Spirit Crossing+Wibby Buddy** 동시 압박 중·**Hagin 2026 프로야구 GO 사전예약 2,026젬+2,026소환권**(숫자 앵커 패턴). 기술: **5/12 Patch Tuesday Bluehammer 후속**·**Google Play News/Magazine 자가신고+개발자계정 이전 7일 지연 5/27 마감**·**4/15 Contacts/Location 정책 30일 유예 만료 임박**·**Unity Hub 독립 CLI 5월 신규 배포**·**Unity 6.3 툴바 커스터마이즈+LMDB 검색+UI Toolkit 씬 하이러키 로드맵 공개**. QA: **MeowBeat Tools 4종+부가 9종 정상**(unity_validate/qa_static/known_bugs/run_regression+scene_analyzer/note_generator)·**NumLink Tools 22일 부재**(_ProjectTemplate 복사 가능 상태 매일 갱신)·**NumLink AutoGenTests.* 4파일 D상태**(working tree만·복원 필요)·**MeowBeat Input/Item/SaveLoad.meta 3건 D**(폴더 메타=import 트리 붕괴 위험)·**5개 코어 파일 M 30일 drift**(rollback 불가 영역 확대). 마케팅: **Apple iOS26 SDK 4/28 의무**·**CPP 35→70 슬롯 확장**·**Inazuma Eleven Cross 4/10 사전예약 6월 출시 등록자 누적 보상**·**Instagram Reels 게임 cozy/horror share 3월 4,400만 뷰**. DevOps: **claude.exe PID 26개 누적**(5/9 23 → 5/11 26 = +3 추세, taskkill 래퍼 13일째 미적용·RAM 임계 7일 후)·**DailyStandup 5/11 04:00 정상 실행 Running(267009 = 0x41301 TASK_RUNNING 정상)**·**Next.js 13개 보안 advisory 일괄 패치 CVE-2026-23870 RSC + CVE-2026-44575 App Router middleware bypass 5/9~5/11**·**runner v2.333.1 = 2026-03-18 출시**(cutoff 이전·v2.334 미확인). 디자인: **Awwwards 5/10 SOTD Simonholm.studio**(미니멀 모노톤)·**Hello Kitty Island v2.16 Apple Arcade 5/13 산리오 파스텔+코너 미니맵**·**스승의날 5/15 칠판 청록 #2D5F4E + 분필 화이트 #FAFAFA + 한글 ㄱㅅ 자모 모티프**(카네이션 종결 후 차별화 다크톤).',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — NumLink 12일+Tools 22일+_Recovery 16일·MeowBeat 30일 임계(3자릿수 임박)·bak_btn 30일·_Recovery 양쪽 동시 발생·Pages 10일 success·0/3 액션 이월 = 17일 연속 결정 실패 신기록',
+        description:
+          'NumLink 마지막 4/29 b6d7a73 후 **12일 미커밋**(회의 #61 시점 11일 → +1 누적)·UIThemeSwitcher.cs.meta·theme-kawaii/premium/retro.uss.meta 미커밋·_Recovery/0 (4).unity 16일째·AutoGenTests.* 4파일 D상태. MeowBeat 4/12 657032c 후 **30일 임계 돌파**(3자릿수 진입 임박)·핵심 매니저 4종+manifest+AdMob 3 prefab+AndroidManifest 30일 drift·bak_btn 30일 잔존·_Recovery/ 신규(NumLink와 양쪽 동시 발생 = Unity 자동복구 트리거 동시). agent-office 5/10 708876b push 후 5/11 미커밋(앞으로 push 예정). Pages 5/1~5/10 **10일 연속 success**(역설적 안정 — 게임 코드 정지/인프라만 가동). **5/10 결정 미실행 = 17일 연속 결정 실패 신기록 갱신 확정**. PID 어제 23 → 오늘 26개(+3). **오늘 결정 제안**: P0 [최소 단위 1건 사슬 끊기 강제] NumLink `_Recovery/0 (4).unity` git rm + chore(qa) 단일 커밋(5분 미만). 17일 연속 실패가 18일로 진입하면 의사결정 시스템 자체 마비 = #62 회의 격상 신호.',
+      },
+      {
+        title:
+          '🎮 Game Designer — NEOWIZ Cats&Soup: Magic Recipe 4/29 글로벌(80M DL+ 머지 시퀄·직접 경쟁)·Hello Kitty Gudetama "Month of Meh" 4/30~6/1·Hagin 2026 프로야구 GO 숫자 앵커 사전예약',
+        description:
+          '**NEOWIZ Cats&Soup: Magic Recipe 4/29 글로벌 런칭**(원작 80M DL+ 머지 시퀄·MeowBeat 직접 경쟁군 = 코지+머지 결합 트렌드)·**Hello Kitty Island Adventure 5/13 D-2 Gudetama "Month of Meh" 4/30~6/1 무료 이벤트**·**Hagin 2026 프로야구 GO 사전예약 = 2,026젬+2,026소환권 숫자 앵커 보상 패턴**(digitaltoday). **MeowBeat 농장 파트 동시 압박**: Cats&Soup Magic Recipe(머지) + Spirit Crossing(코지) + Wibby Buddy(친구 야드) = 농장 깊이 추가보다 **리듬↔농장 인과 루프 차별화**(노트 클리어 → 농장 자원)가 우선. **오늘 결정 제안**: P1 **"숫자-앵커 사전예약 보상" NumLink 5/15 스승의날 라이브옵스 이식** — 일일 챌린지에 "5월 15일 = 515 골드 + 5x5 보드 한정 스테이지" 캘린더 이벤트(NumLink 본질=숫자 게임 = 날짜 숫자 직결·DailyChallenge 매핑 1개 추가·1일 이내 구현·신규 에셋 0).',
+      },
+      {
+        title:
+          '💻 Developer — 5/12 Patch Tuesday Bluehammer/RedSun/UnDefend D-1·Google Play 5/27 마감 다수·4/15 Contacts/Location 30일 유예 임박·Unity Hub CLI 5월 신규·Unity 6.3 툴바/LMDB/UI Toolkit 씬 로드맵',
+        description:
+          '**5/12 Patch Tuesday D-1**(6/26 Secure Boot 인증서 만료 직전 마지막 안전 배포창·Bluehammer 후속 RedSun/UnDefend 픽스 예상·Help Net 5/8). **Google Play News/Magazine 자가신고 + 개발자계정 이전 7일 지연 모두 5/27 마감**·**4/15 Contacts/Location 정책 30일 유예 만료 임박**. **Unity Hub 독립 CLI 5월 신규 배포**·**Unity 6.3 툴바 커스터마이즈+LMDB 검색+UI Toolkit 씬 하이러키 로드맵 공개**(Unity blog). **D-1 리스크**: 5/12 .NET/VS 보안 패치 자동 적용으로 IDE 재시작 시 .meta 불일치+테스트 누락 동시 폭발 = 오늘 수술적 수정 1건이 내일 디버깅 3시간 차단. **오늘 결정 제안**: P0 **NumLink Tests/Editor D 즉시 복구 + .meta 누락 동시 처리(D-1 우선순위 1)** — (a) `git restore Assets/Tests/Editor/AutoGenTests.*` (b) UIThemeSwitcher.cs.meta + 3개 .uss.meta Unity 재import (c) `python3 Tools/unity_validate.py` 0 error 확인 → fix(numlink): 테스트 복원·메타 동기화 단일 PR. MeowBeat Input/Item/SaveLoad.meta 복구는 별도 PR(폴더 메타 = import 트리 붕괴 위험).',
+      },
+      {
+        title:
+          '🔍 QA Tester — MeowBeat Tools 4+9종 정상·NumLink Tools 22일 부재·NumLink AutoGenTests 4파일 D + _Recovery 16일·MeowBeat .meta 3건 D + 5코어 30일 drift = rollback 불가 영역 확대',
+        description:
+          '**MeowBeat Tools 4종**(unity_validate.py/qa_static.py/known_bugs.json/run_regression.py) + **부가 9종**(scene_analyzer/note_generator 등) 모두 정상. **NumLink Tools 22일 부재**(매일 갱신·_ProjectTemplate 복사 가능). **NumLink working tree**: AutoGenTests.asmdef/.cs + .meta 4건 D·_Recovery/0 (4).unity + .meta 16일 회귀(Unity 자동복구가 정리 사이클 무력화). **MeowBeat working tree**: Input.meta/Item.meta/SaveLoad.meta 3건 D(폴더 메타=GUID 손실 위험)·SongData.cs/GameManager.cs/SongManager.cs/OptionManager.cs/manifest.json 5개 코어 30일 M(rollback 불가 영역 확대). **리스크**: HIGH NumLink Tools 부재 22일=회귀 검증 도구 0건·HIGH MeowBeat .meta D 3건=Unity 재import 시 GUID 손실·MED _Recovery 양쪽 회귀=정리 자동화 부재. **오늘 결정 제안**: P0 **NumLink Tools 부트스트랩 1건 실행** — `_ProjectTemplate/Tools → NumLink/Tools` 복사 + 씬 경로 상수 갱신 + `python3 Tools/unity_validate.py` 1회 baseline 0E 확보(22일 누적 부채 즉시 종료).',
+      },
+      {
+        title:
+          '📢 Content Writer — Apple iOS26 SDK 4/28 의무·CPP 35→70 슬롯 확장·Inazuma Eleven Cross 4/10 사전예약 6월(등록자 누적 보상)·Instagram Reels 게임 cozy/horror share 3월 4,400만 뷰',
+        description:
+          '**Apple iOS26 SDK 4/28부터 필수**·**CPP 35→70 keyword 매핑 슬롯 직접 확장**·**Inazuma Eleven Cross 4/10 사전예약 6월 출시 = 등록자 수 기반 누적 보상 캠페인**·**Instagram Reels 게임 카테고리 cozy/horror 장르 share 최적화 3월 4,400만 뷰 기록**(IndieGames). **오늘 결정 제안**: P1 **NumLink 인앱 메일 콘텐츠 5/13~5/17 "스승의날 감사 이벤트"** — 카피 "선생님께 감사 인사를 숫자로 연결해 보세요" + 한정 레벨팩(난이도 별5 3종) + 3일 연속 접속 시 힌트 5개(Inazuma Cross식 등록자 누적 보상 메커니즘 미니 적용) + 5/15 푸시 1회 + Instagram Reels용 15초 cozy ASMR(레벨 클리어) 동시 발행 + iOS CPP "Teacher\'s Day Special" 키워드 매핑 슬롯 1개 임시 할당.',
+      },
+      {
+        title:
+          '⚙️ DevOps — claude.exe PID 26개(+3 누적·taskkill 13일째 미적용)·DailyStandup 5/11 04:00 정상 Running 267009·Pages 10일 success·Next.js CVE-2026-23870 RSC + CVE-2026-44575 App Router middleware bypass 5/9~5/11',
+        description:
+          '**claude.exe PID 26개 누적**(5/9 23 → 5/11 26 = +3 추세·**taskkill 래퍼 13일째 미적용**·RAM 압박 임계점 7일 후 도달 예상). **DailyStandup_ClaudeCode 5/11 04:00 정시 실행 Status Running** 결과 **267009 = 0x41301 TASK_RUNNING 정상 진행 코드**(비정상 아님 확정). **agent-office Pages 5/1~5/10 10일 연속 success**(5/9 19:14 UTC 마지막)·5/11 미푸시. **runner v2.333.1 = 2026-03-18 출시**(cutoff 이전·v2.334 미확인). **Next.js 13개 보안 advisory 일괄 패치**: **CVE-2026-23870 RSC** + **CVE-2026-44575 App Router middleware bypass** 5/9~5/11 발표(Vercel changelog). **오늘 결정 제안**: P1 **`daily_standup.bat` 사전 taskkill 래퍼 즉시 적용**(13일째 미적용 종결) — 첫 줄 `taskkill /F /IM claude.exe /T 2>nul & timeout /t 2 >nul` 1줄 추가(ASCII 인코딩 유지·BOM 금지·5/12 04:00 실행분부터 검증·구현 시간 2분·회귀 위험 0).',
+      },
+      {
+        title:
+          '🎨 Art Director — Awwwards 5/10 SOTD Simonholm.studio(미니멀 모노톤)·Hello Kitty Island v2.16 Apple Arcade 5/13 산리오 파스텔+코너 미니맵·스승의날 5/15 칠판 청록 #2D5F4E + 분필 화이트 #FAFAFA + 한글 ㄱㅅ 자모',
+        description:
+          '**Awwwards 5/10 SOTD: Simonholm.studio**(스튜디오 포트폴리오 미니멀 모노톤). **Hello Kitty Island Adventure v2.16 Apple Arcade 5/13 출시 = 산리오 파스telles+코너 미니맵 UI 표준화 임박** → NumLink 카와이 테마와 톤 겹침 리스크(파스텔 폭발 예상). **스승의날 5/15 모티프 확장**: **칠판 청록 #2D5F4E + 분필 화이트 #FAFAFA + 한글 자모 ㄱㅅ(감사)** 활용(카네이션 5/8 종결 후 차별화 다크톤). **오늘 결정 제안**: P1 **NumLink theme-kawaii.uss 한정판 "감사의 칠판" 변형 추가 5/13~5/16 4일간** — 배경 #2D5F4E + 텍스트/숫자 #FAFAFA(분필 텍스처 약간) + 액센트 ㄱㅅ 자모 도형 파티클(산리오 파스텔 회피·AI slop #88A4FF 민트 금지 원칙 준수) + 레벨 클리어 분필 wipe 0.4s 트랜지션 + Maplestory SDF 유지(한정 타이틀만 손글씨 가중치). 리스크: Hello Kitty 산리오 파스텔 폭발 → 칠판 다크톤으로 의도적 차별화 안전.',
+      },
+    ],
+    meetingTitle:
+      '🌿 5/11 월요일 종합 회의 — 5/12 패치튜즈데이 D-1·스승의날 D-4·Hello Kitty Island D-2·NumLink 12일/Tools 22일/_Recovery 16일·MeowBeat 30일 임계·17일 연속 결정 실패 신기록 갱신·PID 26개·Next.js CVE 일괄·Awwwards Simonholm·NEOWIZ Cats&Soup Magic Recipe 직접 경쟁',
+    meetingSummary:
+      '7명 에이전트가 5/12 패치튜즈데이 D-1·스승의날 D-4 회의 진행. 핵심 합의: ① **17일 연속 결정 실패 신기록 갱신 확정**(보름 풀스코어 초과·#62 회의를 PID-26 비상 회의로 격상할 신호 임박) → "단일 파일·단일 명령" 최소 단위 사슬 끊기 P0. ② **MeowBeat 30일 임계 돌파**(3자릿수 진입 임박) + 5개 코어 파일 30일 drift = rollback 불가 영역 확대. ③ **5/12 D-1 우선순위 1 = NumLink Tests/Editor D 복구 + .meta 누락 동시 처리** — 5/12 IDE 재시작 시 .meta 불일치+테스트 누락 동시 폭발 차단(오늘 수술 1건 = 내일 디버깅 3시간 차단). ④ **NumLink Tools 22일 부재 종결** _ProjectTemplate 복사 + unity_validate baseline 0E. ⑤ **NEOWIZ Cats&Soup: Magic Recipe 4/29 글로벌(80M DL+ 머지 시퀄) = MeowBeat 직접 경쟁군 추가** → 농장 깊이 대신 리듬↔농장 인과 루프 차별화. ⑥ **숫자-앵커 사전예약 보상**(Hagin 2026=2,026젬) → NumLink "5/15=515 골드+5×5 보드" 캘린더 이벤트 1일 구현. ⑦ **스승의날 5/15 D-4**: NumLink theme-kawaii "감사의 칠판"(#2D5F4E+#FAFAFA+ㄱㅅ 자모) 4일 한정 변형 + 인앱 메일 "감사 이벤트" 한정 레벨팩 3종 + 3일 누적 보상 + Reels 15초 cozy ASMR. ⑧ **claude.exe PID 26개 + taskkill 13일째 미적용** → `daily_standup.bat` 첫 줄 taskkill 래퍼 즉시 적용(2분·회귀 0). ⑨ **Next.js CVE-2026-23870 RSC + CVE-2026-44575 App Router 5/9~5/11** — agent-office는 Vite 기반이므로 직접 영향 없음(인지 차원). ⑩ **Awwwards Simonholm.studio SOTD 5/10**(미니멀 모노톤) + Hello Kitty 산리오 파스텔 폭발 임박 → NumLink 칠판 다크톤으로 의도적 차별화.',
+    meetingItems: [
+      { speaker: 'Orchestrator', note: 'NumLink 동결 12일+Tools 22일+_Recovery 16일·MeowBeat 30일 임계 돌파(3자릿수 임박)·bak_btn 30일·_Recovery 양쪽 동시 발생·Pages 10일 연속 success(역설적 안정)·**0/3 액션 이월 = 17일 연속 결정 실패 신기록 갱신 확정**·PID 23→26 +3 누적. 18일 진입 시 의사결정 시스템 마비 = #62 PID-26 비상 회의 격상 신호.' },
+      { speaker: 'Game Designer', note: '**NEOWIZ Cats&Soup: Magic Recipe 4/29 글로벌**(원작 80M DL+ 머지 시퀄·MeowBeat 직접 경쟁군 추가)·Hello Kitty 5/13 D-2 Gudetama "Month of Meh" 4/30~6/1·**Hagin 2026 프로야구 GO 사전예약 = 2,026젬+2,026소환권 숫자 앵커 보상 패턴**. 농장 깊이보다 리듬↔농장 인과 루프 차별화 우선. NumLink "5/15=515 골드+5×5 보드 한정 스테이지" 캘린더 이벤트 P1.' },
+      { speaker: 'Developer', note: '**5/12 Patch Tuesday D-1**(Bluehammer 후속 RedSun/UnDefend 픽스 예상·6/26 Secure Boot 만료 직전 마지막 안전 배포창)·**Google Play News/Magazine 자가신고+개발자계정 7일 지연 5/27 마감**·**4/15 Contacts/Location 30일 유예 임박**·**Unity Hub CLI 5월 신규**·**Unity 6.3 툴바/LMDB/UI Toolkit 씬 하이러키 로드맵**. P0 NumLink Tests/Editor D 복구+.meta 누락 동시 처리(D-1 우선순위 1).' },
+      { speaker: 'QA Tester', note: 'MeowBeat Tools 4종+부가 9종 정상·**NumLink Tools 22일 부재**·NumLink AutoGenTests 4파일 D + _Recovery 16일·**MeowBeat .meta 3건 D**(폴더 메타=GUID 손실 위험)+5개 코어 30일 drift(rollback 불가 영역 확대). P0 **NumLink Tools 부트스트랩**(_ProjectTemplate 복사 + unity_validate baseline 0E).' },
+      { speaker: 'Content Writer', note: '**Apple iOS26 SDK 4/28 의무**·**CPP 35→70 슬롯 확장 keyword 매핑**·**Inazuma Eleven Cross 4/10 사전예약 6월 등록자 누적 보상**·**Instagram Reels 게임 cozy/horror 3월 4,400만 뷰**. P1 NumLink 인앱 메일 "스승의날 감사 이벤트" 5/13~5/17(한정 레벨팩 3종+3일 누적 보상+Reels 15초 cozy ASMR+iOS CPP "Teacher\'s Day" 슬롯 임시).' },
+      { speaker: 'DevOps', note: '**claude.exe PID 26개 누적**(5/9 23→5/11 26 +3·taskkill 래퍼 13일째 미적용·RAM 임계 7일 후)·DailyStandup 5/11 04:00 정상 Running 267009(TASK_RUNNING 정상)·Pages 10일 연속 success·**Next.js CVE-2026-23870 RSC + CVE-2026-44575 App Router middleware bypass 5/9~5/11**(agent-office Vite 기반 직접 영향 없음)·runner v2.333.1 cutoff 이전. P1 `daily_standup.bat` 첫 줄 taskkill 래퍼 즉시 적용(2분·회귀 0).' },
+      { speaker: 'Art Director', note: '**Awwwards 5/10 SOTD Simonholm.studio**(미니멀 모노톤)·**Hello Kitty v2.16 Apple Arcade 5/13 산리오 파스텔+코너 미니맵 UI 표준화 임박**·**스승의날 5/15 칠판 청록 #2D5F4E + 분필 화이트 #FAFAFA + 한글 ㄱㅅ 자모**. P1 NumLink theme-kawaii.uss 한정판 "감사의 칠판" 5/13~5/16 4일(분필 wipe 0.4s+ㄱㅅ 파티클·산리오 파스텔과 의도적 다크톤 차별화·AI slop 민트 금지 원칙 준수).' },
+    ],
+    decisions: [
+      {
+        title: 'P0 [최소 단위 1건 사슬 끊기 = 17일 연속 결정 실패 18일 진입 차단]',
+        description:
+          'NumLink `_Recovery/0 (4).unity` 단일 파일 git rm + chore(qa) 단일 커밋(5분 미만). `git rm "Assets/_Recovery/0 (4).unity" "Assets/_Recovery/0 (4).unity.meta"` + `git commit -m "chore(qa): remove _Recovery regression file"` + push. 다중파일·다중단계 결정은 18일째에도 미실행될 가능성 → "한 파일·한 명령" 사슬 끊기 우선. 미실행 시 18일 연속 결정 실패 + #62 PID-26 비상 회의 격상.',
+      },
+      {
+        title: 'P0 NumLink Tests/Editor D 복구 + .meta 누락 동시 처리 (5/12 D-1 우선순위 1)',
+        description:
+          '(a) `git restore Assets/Tests/Editor/AutoGenTests.*` (b) UIThemeSwitcher.cs.meta + theme-kawaii/premium/retro.uss.meta Unity 재import 자동 생성 (c) `python3 Tools/unity_validate.py` 0 error 확인 → fix(numlink): 테스트 복원·메타 동기화 단일 PR. 5/12 IDE 재시작 시 .meta 불일치+테스트 누락 동시 폭발 차단(오늘 수술 1건 = 내일 디버깅 3시간 차단).',
+      },
+      {
+        title: 'P0 NumLink Tools 부트스트랩 (22일 부재 종결)',
+        description:
+          '`cp -r C:/Unity/_ProjectTemplate/Tools C:/Unity/NumLink/Tools` + 씬 경로 상수 NumLink 메인씬으로 갱신 + `python3 Tools/unity_validate.py` 1회 실행하여 baseline 0E 확보 + chore(qa) 단일 커밋. CLAUDE.md "Unity AI 자율화 파이프라인" 위반 22일 누적 부채 즉시 종결.',
+      },
+      {
+        title: 'P0 MeowBeat .meta 3건 + 코어 파일 30일 drift 복구 (별도 PR)',
+        description:
+          'Input.meta/Item.meta/SaveLoad.meta 3건 D 복구(폴더 메타=GUID 손실 위험·import 트리 붕괴 위험)는 NumLink와 분리 PR. 5/12 패치튜즈데이 IDE 재기동 전 처리 필수. 5개 코어 파일(SongData/GameManager/SongManager/OptionManager/manifest) atomic 분할 커밋 — (a) feat(song): 매니저 4+manifest (b) chore(deps): GoogleMobileAds 3 prefab+AndroidManifest (c) chore(project): ProjectSettings. 3자릿수 진입 차단.',
+      },
+      {
+        title: 'P1 NumLink theme-kawaii.uss 한정판 "감사의 칠판" 변형 (5/13~5/16 4일)',
+        description:
+          '배경 #2D5F4E(칠판 청록) + 텍스트/숫자 #FAFAFA(분필 화이트, 텍스처 약간) + ㄱㅅ 자모 도형 파티클 + 레벨 클리어 분필 wipe 0.4s 트랜지션 + Maplestory SDF 유지(한정 타이틀만 손글씨 가중치). Hello Kitty 5/13 산리오 파스텔 폭발 회피 위한 의도적 다크톤 차별화·AI slop 민트 #88A4FF 금지 원칙 준수.',
+      },
+      {
+        title: 'P1 NumLink "5/15 = 515 골드 + 5×5 보드 한정 스테이지" 캘린더 이벤트',
+        description:
+          'Hagin 2026 프로야구 GO "2,026젬+2,026소환권" 숫자 앵커 패턴 이식. NumLink 본질=숫자 게임=날짜 숫자 직결로 컨셉 적합도 최고. 기존 DailyChallenge 시스템에 날짜→스테이지 매핑 1개 추가(1일 이내 구현·신규 에셋 0).',
+      },
+      {
+        title: 'P1 NumLink 인앱 메일 "스승의날 감사 이벤트" 5/13~5/17',
+        description:
+          '카피 "선생님께 감사 인사를 숫자로 연결해 보세요" + 한정 레벨팩(난이도 별5 3종) + 3일 연속 접속 시 힌트 5개(Inazuma Cross식 등록자 누적 보상 미니 적용) + 5/15 푸시 1회 + Instagram Reels용 15초 cozy ASMR(레벨 클리어 사운드) 동시 발행 + iOS CPP "Teacher\'s Day Special" 키워드 매핑 슬롯 1개 임시 할당.',
+      },
+      {
+        title: 'P1 `daily_standup.bat` 사전 taskkill 래퍼 즉시 적용 (13일째 미적용 종결)',
+        description:
+          'PID 26개 누적(7일 후 RAM 임계 도달 예상). 첫 줄 `taskkill /F /IM claude.exe /T 2>nul & timeout /t 2 >nul` 1줄 추가(ASCII 인코딩 유지·BOM 금지·Edit/Write 도구 금지). 5/12 04:00 실행분부터 검증. 구현 시간 2분·회귀 위험 0·추가 비용 0.',
+      },
+      {
+        title: 'P2 NumLink 1~3분 챌린지 모드 GDD 골격 1장 (D30 5.35% 벤치마크)',
+        description:
+          'GameAnalytics 미드코어 D30 5.35%·ROAS 39.5% 최고효율·일일 세션 6~7회 벤치마크 도달 근거. 타이머·스코어·보상 흐름 GDD 1장(차주 작업 큐).',
+      },
+    ],
+  },
+  {
     id: '2026-05-10T04:00:00-daily-standup',
     date: '2026-05-10',
     researchTitle:
