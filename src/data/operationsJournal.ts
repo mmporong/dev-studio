@@ -43,6 +43,155 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-05-12T04:00:00-daily-standup',
+    date: '2026-05-12',
+    researchTitle:
+      '🌧 5/12 화요일 데일리 스탠드업 — 5/12 패치튜즈데이 D-day·스승의날 D-3·Hello Kitty Island D-1·NumLink 13일+Tools 23일+_Recovery 17일·MeowBeat 4주 임계 돌파(31일째·3자릿수 진입 가속)·18일 연속 결정 실패 신기록 갱신·claude.exe PID 24개(26→24 -2 미세 개선)·SharpCompress CVE-2026-44788 zip-slip 5/8·ClearIt Crystal 5/8 가장자리 발사형 매치3·Apple Arcade 5/7 4종(Good Pizza+/Nick Jr.)·Cloudflare WAF Next.js 미들웨어 우회 긴급 룰·Node.js 5월 침묵·GitHub 5/8 Commit Comments REST/GraphQL 차단+Copilot Agents 전용 시크릿 신설·Awwwards SOTD 미발표(23시 KST 예정)',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제30회 — **5/12 패치튜즈데이 D-day 진입**(6/26 Secure Boot 인증서 만료 직전 마지막 안전 배포창 가동 당일·Bluehammer 후속 RedSun/UnDefend 픽스 KB 공개 D-day). **스승의날 5/15 D-3**·**Hello Kitty Island Adventure 5/13 D-1 직접경쟁 임박**·**부처님오신날 5/25 D-13**. **3대 동결 모두 +1 갱신**: NumLink 13일째(5/11 12일→5/12 13일·**18일 연속 결정 실패 신기록**)·NumLink Tools 23일 부재·_Recovery 17일째(`0 (4).unity` 16일째 + 신규 회귀)·**MeowBeat 4주 임계 돌파(31일째·3자릿수 진입 가속)**·bak_btn 31일·5코어 파일 30일+ M drift. **agent-office Pages 11일 연속 success**(인프라만 가동 패턴 지속). 시장: **ClearIt Crystal Collection 5/8 글로벌 = 가장자리 발사형 매치3**(그리드 스왑 탈피·NumLink 입력 변형 후보)·**Apple Arcade 5/7 4종 추가**(Good Pizza+/Nick Jr.·가족 캐주얼 강화·iOS 무광고 모델 강세)·**캐주얼 BM은 IAP 40~60% + 짧고 게이미파이드 광고 + 시즌패스 표준화**(StudioKrew). 기술: **5/12 Patch Tuesday Bluehammer/RedSun/UnDefend 픽스 KB 공개 D-day**·**SharpCompress CVE-2026-44788 zip-slip 5/8 발표**(NuGet 의존 점검 필요)·**Unity 6000.3 LTS 5/9 빌드 정체**(5월 둘째주 신규 패치 없음)·**Node.js 5월 패치튜즈데이 침묵**(3/24 이후 신규 보안 릴리스 없음·조용한 5월). QA: **MeowBeat Tools 19개 파일 풀세트 정상**·**NumLink Tools 23일 부재**(매일 갱신·_ProjectTemplate 복사 가능 상태 유지)·**NumLink _Recovery 5건 누적**(`0 (1)~(4).unity` 16일째+신규 추가 회귀 신호)·**MeowBeat _Recovery `0.unity` 1건만 잔존**(관리 양호 비교군)·**MainScene.unity.bak_btn 25일째**·**MeowBeat farm 음식 애니메이션 4연쇄 .meta YAML 수동 편집 야크쉐이빙 누적**(CLAUDE.md 원칙 충돌 경계). 마케팅: **Apple Search Ads 5/4 신규 데일리버짓+추천 페이지 가동**(캐주얼 UA 적기)·**플레이어블 광고 CTR 30~40% 우위**(캐주얼 1초 훅 핵심 KPI)·**NumLink/MeowBeat 둘 다 MARKETING.md·STORE_LISTING.md 부재**(docs/엔 GAME_BRIEF만)·**카카오 5월 가정의 달 행사 진행 중**. DevOps: **Cloudflare WAF 긴급 룰 5/7 Next.js 미들웨어 우회 CVE-2026-44575 + ActiveMQ RCE 탐지 추가**·**GitHub 5/8 Commit Comments REST/GraphQL 차단 + Copilot Agents 전용 시크릿/변수 신설**·**agent-office Pages 11일 연속 success**·**claude.exe PID 24개**(5/11 26개→5/12 24개 -2·누적 증가세 일단 멈춤·taskkill 미적용 14일째)·**DailyStandup_ClaudeCode Running 5/13 04:00 정상**·**Cloudflare 5/12 YUL 데이터센터 점검**(05:00~13:00 UTC·직접 영향 없음). 디자인: **Awwwards 5/12 SOTD 미발표**(KST 23시 발표 예정·내일 회의 분석)·**2026 트렌드 텍스처+질감 레이어/타이포 그래픽화/컬러 회귀**·**모바일 UI 촉각적 미니멀리즘/하단 시트/모션이 명령어**·**한글 폰트 신작 눈누 6월 등록 위주**(5월 빅뉴스 없음)·**스승의날 5/15 = 세종대왕 생일 동일**(한글 캘리그라피·붓터치·먹 번짐 차별화 모티프 발굴).',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — NumLink 13일+Tools 23일+_Recovery 17일·MeowBeat 4주 임계 돌파(31일째·3자릿수 진입 가속)·5/11 액션 0/N 미실행·18일 연속 결정 실패 신기록 갱신·PID 26→24 -2 미세 개선·Pages 11일 success',
+        description:
+          'NumLink 마지막 4/29 b6d7a73 후 **13일 미커밋 갱신**(회의 #62 12일 → +1 누적·미커밋 41개)·UIThemeSwitcher.cs.meta·theme-kawaii/premium/retro.uss.meta 미커밋·_Recovery 17일째. MeowBeat 4/12 657032c 후 **4주 임계 돌파 31일째**(3자릿수 진입 가속·미커밋 36개)·핵심 매니저 4종+manifest+AdMob 3 prefab+AndroidManifest 31일 drift·bak_btn 31일. agent-office 5/11 3ebbcb0 정상 push(미커밋 1개 = .omc/project-memory.json만). Pages 5/1~5/11 **11일 연속 success**(역설적 안정 — 게임 코드 정지/인프라만 가동 패턴 지속). **5/11 P0 4건 액션 미실행 = 18일 연속 결정 실패 신기록 갱신 확정**(보름+3일). PID 어제 26 → 오늘 24개(**-2 미세 개선**·taskkill 14일째 미적용·자연 감소). **오늘 결정 제안**: P0 [최소 단위 1건 사슬 끊기 강제·19일 진입 차단] NumLink 미커밋 _Recovery `0 (4).unity` git rm + chore(qa) 단일 커밋(5분 미만). 다중 파일 결정은 19일째에도 미실행 가능 → "한 파일·한 명령" 사슬 끊기 우선.',
+      },
+      {
+        title:
+          '🎮 Game Designer — ClearIt Crystal Collection 5/8 가장자리 발사형 매치3(그리드 스왑 탈피·NumLink 입력 변형 후보)·Apple Arcade 5/7 4종(Good Pizza+/Nick Jr.·가족 캐주얼 강화)·캐주얼 BM IAP 40~60%+짧고 게이미파이드 광고+시즌패스 표준화',
+        description:
+          '**ClearIt Crystal Collection 5/8 글로벌 = 가장자리 발사형 매치3**(그리드 스왑 탈피·한 손 조작 기반·NumLink 입력 변형 후보 1순위)·**Apple Arcade 5/7 4종 추가**(Good Pizza, Great Pizza+/Nick Jr./기타 2종·가족·캐주얼 강화·iOS 무광고 모델 강세)·**캐주얼 BM 표준화 = IAP 40~60% + 짧고 게이미파이드 보상 광고 + 시즌패스(월 단위)**(StudioKrew/Audiencelab). **MeowBeat 압박 지속**: Dead as Disco 5/5 + Rhythm Heaven Groove 7/2 + Cats&Soup Magic Recipe 4/29 글로벌 트라이앵글 = 농장 깊이 추가보다 **리듬↔농장 인과 루프 차별화** 우선. **오늘 결정 제안**: P1 **NumLink "가장자리 발사형" 보너스 모드 1주 프로토타입화** — 라인드로우와 차별되는 한 손 조작 컷·시즌패스 트랙(월 단위·광고 제거+레벨팩) MVP 직후 도입 검토. MeowBeat은 5월 업데이트 훅으로 **"짧고 스킵 가능한 게이미파이드 광고 보상"**(고양이 코스튬 1회권) 적용 → 캐주얼 광고 트렌드 정렬.',
+      },
+      {
+        title:
+          '💻 Developer — 5/12 Patch Tuesday Bluehammer/RedSun/UnDefend D-day·SharpCompress CVE-2026-44788 zip-slip 5/8·Unity 6000.3 5/9 빌드 정체·NumLink 13일 전 UI 테마 +402 LOC 추상화 양호·MeowBeat farm 4연쇄 .meta YAML 야크쉐이빙(CLAUDE.md 충돌)',
+        description:
+          '**5/12 Patch Tuesday Bluehammer 후속 RedSun/UnDefend 픽스 KB 공개 D-day**(zecurit/helpnet)·**SharpCompress CVE-2026-44788 zip-slip 5/8 공개**(NuGet 의존 점검 필요·NumLink/MeowBeat 매니페스트 확인 권장)·**Unity 6000.3.14f1 5/9 빌드 정체**(5월 둘째주 신규 패치 없음). **NumLink 4/29 커밋 평가**(13일 전 = 동결 기간 직전 마지막 작업): b6d7a73 UI 테마 3종 USS 런타임 스위처는 +402 LOC 단일 커밋으로 무거우나 USS 격리로 부채 낮음·SaveSystem 테마 ID 마이그레이션 코드 필요·HintManager 신설 책임 분리 양호·시각 정돈 surgical(부채 없음). **MeowBeat 4/12 커밋 평가**: catfood 스프라이트 fileID 디버깅 4연쇄(a5229db→6cd1c2b→36c5400→657032c·revert 후 재수정 = .meta YAML 수동 편집 리스크 누적 = CLAUDE.md "씬 YAML 직접 편집 최소화" 원칙 충돌 경계 사례)·FarmFoodManager 17건 수정 핫스팟화(다음 스프린트 책임 분할 권장). **오늘 결정 제안**: P0 **NumLink/MeowBeat NuGet 매니페스트 SharpCompress 의존 즉시 검증**(zip-slip CVE-2026-44788 영향 여부 확인 1분)·**5/12 보안 업데이트 빌드머신 자동 적용 1주 보류**(IDE 재시작 시 .meta 불일치 동시 폭발 차단·KB 공개 후 안정성 관찰)·FarmFoodManager는 차주 리팩터 후보 등록.',
+      },
+      {
+        title:
+          '🔍 QA Tester — NumLink Tools 23일 부재(매일 갱신·검증 도구 0종)·_Recovery 5건 누적(NumLink `0 (1)~(4).unity` 16일+신규 회귀)·MeowBeat Tools 19파일 정상·MeowBeat _Recovery 1건만 잔존(관리 양호 비교군)·bak_btn 25일',
+        description:
+          '**NumLink/Tools 폴더 없음 확정**(23일 부재·검증 도구 0건·매일 갱신). **NumLink/_Recovery**: `0.unity`, `0 (1)~(4).unity` 총 5개·`0 (4).unity` 신규 추가는 farm 작업과 무관한 NumLink 측 회귀 신호로 씬 충돌 백업 또 발생 가능성. **MeowBeat/Tools**: 19개 파일 풀세트 정상(unity_validate.py/qa_static.py/known_bugs.json/run_regression.py 외 부가 15종). **MeowBeat/_Recovery**: `0.unity` 1건만 잔존(관리 양호 비교군 = NumLink와 격차 명확). **MeowBeat/AutoQATests/Editor 정상 + NumLink/AutoQATests 폴더 자체 없음**. **MainScene.unity.bak_btn 25일째 잔존**(정리 필요). **리스크**: HIGH NumLink Tools 23일=회귀 검증 도구 부재 누적·HIGH NumLink _Recovery 5건=Unity 자동복구가 정리 사이클 무력화 패턴 고착·MED MeowBeat farm 음식 애니메이션(657032c/36c5400/a5229db) 잠재 회귀(`run_regression.py` 미실행). **오늘 결정 제안**: P0 **NumLink에 `C:/Unity/_ProjectTemplate/Tools/` 풀세트 즉시 복사** + 씬 경로 상수 NumLink 메인씬으로 갱신 + `unity_validate.py` 1회 baseline 0E 확보(23일 누적 부채 즉시 종료·CLAUDE.md "Unity AI 자율화 파이프라인" 위반 종결). MeowBeat은 `MainScene.unity.bak_btn` 삭제 후 farm 음식 애니메이션 기준 `run_regression.py` 1회 실행으로 회귀 확인.',
+      },
+      {
+        title:
+          '📢 Content Writer — Apple Search Ads 5/4 신규 데일리버짓·플레이어블 광고 CTR 30~40% 우위·NumLink/MeowBeat MARKETING.md·STORE_LISTING.md 모두 부재(docs/엔 GAME_BRIEF만)·카카오 5월 가정의 달 행사 진행·스승의날 D-3',
+        description:
+          '**Apple Search Ads 5/4 신규 데일리버짓 + 추천 페이지 가동**(캐주얼 UA 적기·Apple Ads news)·**플레이어블 광고 CTR 30~40% 우위 = 캐주얼 1초 훅 영상 핵심 KPI**(Udonis/iLogos)·**NumLink와 MeowBeat 둘 다 MARKETING.md·STORE_LISTING.md 부재**(docs/엔 GAME_BRIEF.md/REDESIGN.md만 = 출시 자산 0)·**카카오 5월 가정의 달 행사 진행 중**(스승의날 인접 트래픽 흡수 윈도우 가동)·**Stepico 2026 모바일 게임 마케팅 전략 = 짧은 훅+1초 결정 + 게이미파이드 광고 + 시즌패스 표준화**. **오늘 결정 제안**: P1 **NumLink "선생님께 숫자로 ㄱㅅ" 6초 세로 훅 즉시 제작**(첫 1초 칠판에 ㄱㅅ 등장 → 숫자 연결 플레이 3초 → CTA 2초·TikTok/Reels용 1편) + **NumLink/MeowBeat docs/STORE_LISTING.md 골격 오늘 안에 신설**(타이틀/숏디스크립션/스크린샷 5컷 카피·출시 자산 부재 종결).',
+      },
+      {
+        title:
+          '⚙️ DevOps — Cloudflare WAF 5/7 Next.js 미들웨어 우회 CVE-2026-44575 + ActiveMQ RCE 긴급 룰·GitHub 5/8 Commit Comments REST/GraphQL 차단+Copilot Agents 전용 시크릿·Node.js 5월 침묵·Pages 11일 success·claude.exe PID 24개(26→24 -2)·DailyStandup Running 5/13 04:00 정상',
+        description:
+          '**Cloudflare WAF 5/7 긴급 릴리스 = Next.js 미들웨어 우회 CVE-2026-44575 + ActiveMQ RCE 탐지 룰 추가**(community.cloudflare)·**GitHub 5/8 Commit Comments REST/GraphQL API 차단 + Copilot Agents 전용 시크릿/변수 신설**(github changelog)·**Node.js 5월 패치튜즈데이 침묵**(3/24 이후 신규 보안 릴리스 없음·조용한 5월)·**Docker Hub 5월 변경사항 없음**. **agent-office Pages 5/1~5/11 11일 연속 success**(Deploy Pages 5/7~5/10 4회 + Weekly Insights 5/11). **DailyStandup_ClaudeCode Running**(다음 5/13 04:00 정상). **claude.exe PID 24개**(5/11 26→5/12 24 = **-2 미세 개선**·누적 증가세 일단 멈춤·taskkill 14일째 미적용 자연 감소). **Cloudflare 5/12 YUL 데이터센터 점검** 05:00~13:00 UTC(직접 영향 없음). **오늘 결정 제안**: P1 **agent-office Cloudflare 미사용 확정**(직접 영향 무) + **`daily_standup.bat` 사전 taskkill 래퍼 14일째 미적용 종결**(첫 줄 `taskkill /F /IM claude.exe /T 2>nul & timeout /t 2 >nul` 추가·ASCII 인코딩·BOM 금지·5/13 04:00 검증·구현 2분·회귀 0)·PID 24개 모니터링만 유지(5/13 자동화 직후 재카운트).',
+      },
+      {
+        title:
+          '🎨 Art Director — Awwwards 5/12 SOTD 미발표(23시 KST 예정·내일 분석)·2026 트렌드 텍스처/타이포 그래픽화/컬러 회귀·모바일 UI 촉각적 미니멀리즘+하단 시트+모션이 명령어·스승의날=세종대왕 생일 한글 캘리그라피 모티프·NumLink 테마 3종 QA 비용 경고·MeowBeat 1초 흔들기 길다',
+        description:
+          '**Awwwards 5/12 SOTD 미발표**(KST 23시 발표 예정·5/11 Outfit by ++hellohello 최신 = 내일 회의 분석)·**2026 UI 트렌드: 텍스처+질감 레이어 / 타이포 그래픽화 / 컬러 회귀**(Tubik)·**모바일 UI 핵심 = 촉각적 미니멀리즘+하단 시트+모션이 명령어 역할**(Muzli)·**한글 폰트 신작 눈누 6월 등록 위주 = 5월 빅뉴스 없음**(noonnu.cc)·**스승의날 5/15 = 세종대왕 생일 동일**(한글 캘리그라피·붓터치·먹 번짐 차별화 모티프 발굴·AI slop 회피 적합). **NumLink 4/29 작업 평가**(13일 전 동결 기간 직전 마지막 작업): 테마 3종 + 런타임 스위처는 2026 "시스템은 사용자를 기억한다" 트렌드 정합·**단 3종 동시 운영은 QA 비용 폭증 경고**(Kawaii 디폴트 + Premium/Retro 잠금해제식 권장)·크림 톤 셀+HUD 버튼 확대는 "소프트 라떼 크림" 2026 정석 + 모바일 햅틱 어포던스 강화 정답. **MeowBeat 4/12 작업 평가**: foodSprite 왕복 교체(feedIcon_0327↔catfood) + **1초 흔들기는 리듬게임 타이밍 윈도우 대비 길다 → 0.4~0.5초 단축 권장**(애니메이션이 명령어 트렌드 일치). **오늘 결정 제안**: P1 **NumLink Kawaii 테마 디폴트 락인 + Premium/Retro 일정 레벨 클리어 후 잠금해제 보상 전환**(동시 3종 QA·일관성 부담을 메타 진행감으로 치환·다음 스프린트 우선순위 1).',
+      },
+    ],
+    meetingTitle:
+      '🌧 5/12 화요일 종합 회의 — 5/12 패치튜즈데이 D-day·스승의날 D-3·Hello Kitty Island D-1·NumLink 13일/Tools 23일/_Recovery 17일·MeowBeat 4주 임계 돌파(31일·3자릿수 가속)·18일 연속 결정 실패 신기록 갱신·PID 26→24 -2·SharpCompress CVE 5/8·ClearIt 가장자리 발사형·Cloudflare WAF 긴급·GitHub Copilot Agents 시크릿',
+    meetingSummary:
+      '7명 에이전트가 5/12 패치튜즈데이 D-day·스승의날 D-3·Hello Kitty Island D-1 회의 진행. 핵심 합의: ① **18일 연속 결정 실패 신기록 갱신 확정**(보름+3일·5/11 P0 4건 액션 0/4 미실행 = #62 PID-26 비상 회의 격상 임박) → "단일 파일·단일 명령" 사슬 끊기 P0 19일 진입 차단. ② **MeowBeat 4주 임계 돌파 31일째 = 3자릿수 진입 가속**(rollback 불가 영역 확대 = 5코어 30일+ M drift). ③ **5/12 D-day 우선순위 1 = SharpCompress CVE-2026-44788 zip-slip 즉시 NuGet 매니페스트 검증**(영향 여부 1분 확인) + **5/12 보안 패치 자동 적용 1주 보류**(IDE 재시작 시 .meta 폭발 차단). ④ **NumLink Tools 23일 부재 종결** `_ProjectTemplate` 풀세트 복사 + unity_validate baseline 0E(23일 누적 부채 즉시 종료). ⑤ **ClearIt Crystal 5/8 가장자리 발사형 매치3 = NumLink 입력 변형 후보 1순위**(보너스 모드 1주 프로토타입·라인드로우 차별화). ⑥ **NumLink Kawaii 디폴트 락인 + Premium/Retro 잠금해제식**(동시 3종 QA 부담 → 메타 진행감 치환). ⑦ **MeowBeat 1초 흔들기 → 0.4~0.5초 단축**(리듬 타이밍 윈도우 정렬). ⑧ **NumLink/MeowBeat 둘 다 MARKETING.md·STORE_LISTING.md 부재**(출시 자산 0) → docs/STORE_LISTING.md 골격 오늘 신설 + "선생님께 숫자로 ㄱㅅ" 6초 세로 훅 즉시 제작. ⑨ **claude.exe PID 26→24개 -2 미세 개선**(taskkill 14일째 미적용·자연 감소·`daily_standup.bat` 첫 줄 taskkill 래퍼 즉시 적용 종결). ⑩ **Awwwards 5/12 SOTD KST 23시 발표 예정**(내일 회의 분석)·**스승의날=세종대왕 생일 한글 캘리그라피 모티프**(AI slop 회피 적합)·**Cloudflare WAF 긴급 룰**(agent-office Vite·Cloudflare 미사용 직접 영향 없음 확정).',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note:
+          'NumLink 13일+Tools 23일+_Recovery 17일·MeowBeat 4주 임계 돌파 31일째(3자릿수 진입 가속)·미커밋 합계 77개. 5/11 P0 4건 액션 0/4 미실행 → **18일 연속 결정 실패 신기록 갱신 확정**(보름+3일). PID 26→24 -2 미세 개선(taskkill 14일째 미적용·자연 감소). 오늘 P0 = "단일 파일·단일 명령" 사슬 끊기 = NumLink `_Recovery/0 (4).unity` git rm + chore(qa) 단일 커밋(5분 미만·19일 진입 차단).',
+      },
+      {
+        speaker: 'Game Designer',
+        note:
+          'ClearIt Crystal Collection 5/8 글로벌 = 가장자리 발사형 매치3(그리드 스왑 탈피·한 손 조작). Apple Arcade 5/7 Good Pizza+/Nick Jr. 4종 추가(가족 캐주얼 강화). 캐주얼 BM 표준화 = IAP 40~60% + 게이미파이드 광고 + 시즌패스. NumLink: 가장자리 발사형 보너스 모드 1주 프로토타입화·시즌패스 트랙 MVP 직후. MeowBeat: 스킵 가능 게이미파이드 광고(코스튬 1회권) 적용.',
+      },
+      {
+        speaker: 'Developer',
+        note:
+          '5/12 Patch Tuesday Bluehammer/RedSun/UnDefend 픽스 KB D-day. SharpCompress CVE-2026-44788 zip-slip 5/8(NuGet 의존 즉시 검증). Unity 6000.3 5/9 빌드 정체. NumLink 4/29 UI 테마 +402 LOC = USS 격리로 부채 낮음. MeowBeat 4/12 farm 4연쇄 .meta YAML 야크쉐이빙 = CLAUDE.md 충돌 경계 + FarmFoodManager 17건 핫스팟 = 차주 리팩터.',
+      },
+      {
+        speaker: 'QA Tester',
+        note:
+          'NumLink Tools 23일 부재(매일 갱신·검증 도구 0종). NumLink _Recovery 5건 누적(`0 (4).unity` 16일째+신규 회귀 = Unity 자동복구가 정리 사이클 무력화). MeowBeat Tools 19파일 정상·_Recovery `0.unity` 1건만(관리 양호 비교군). bak_btn 25일째. P0 = NumLink `_ProjectTemplate/Tools` 복사 + unity_validate baseline 0E.',
+      },
+      {
+        speaker: 'Content Writer',
+        note:
+          'Apple Search Ads 5/4 신규 데일리버짓 + 추천 페이지 가동(캐주얼 UA 적기). 플레이어블 광고 CTR 30~40% 우위(1초 훅 KPI). NumLink/MeowBeat 둘 다 MARKETING.md·STORE_LISTING.md 부재(출시 자산 0). 카카오 5월 가정의 달 진행. P1 = "선생님께 숫자로 ㄱㅅ" 6초 세로 훅 + docs/STORE_LISTING.md 골격 오늘 신설.',
+      },
+      {
+        speaker: 'DevOps',
+        note:
+          'Cloudflare WAF 5/7 긴급 = Next.js 미들웨어 우회 CVE-2026-44575 + ActiveMQ RCE 룰 추가(agent-office Vite·Cloudflare 미사용 = 직접 영향 없음). GitHub 5/8 Commit Comments REST/GraphQL 차단 + Copilot Agents 전용 시크릿/변수 신설. Node.js 5월 침묵. Pages 11일 success. PID 26→24 -2. DailyStandup Running 5/13 04:00 정상. P1 = taskkill 래퍼 14일째 종결.',
+      },
+      {
+        speaker: 'Art Director',
+        note:
+          'Awwwards 5/12 SOTD 미발표(KST 23시·내일 분석). 2026 트렌드 = 텍스처+질감 레이어/타이포 그래픽화/컬러 회귀. 모바일 UI = 촉각적 미니멀리즘+하단 시트+모션이 명령어. 스승의날=세종대왕 생일 한글 캘리그라피 모티프(AI slop 회피). NumLink Kawaii 디폴트 락인+Premium/Retro 잠금해제 권장(3종 QA 부담→메타 진행감 치환). MeowBeat 1초 흔들기→0.4~0.5초 단축.',
+      },
+    ],
+    decisions: [
+      {
+        title:
+          'P0 [최소 단위 1건 사슬 끊기 = 18일→19일 진입 차단·#62 PID-26 비상 회의 격상 임박]',
+        description:
+          'NumLink `Assets/_Recovery/0 (4).unity` 단일 파일 git rm + chore(qa) 단일 커밋(5분 미만). `git rm "Assets/_Recovery/0 (4).unity" "Assets/_Recovery/0 (4).unity.meta"` + `git commit -m "chore(qa): remove _Recovery regression file"` + push. 다중파일·다중단계 결정은 19일째에도 미실행될 가능성 → "한 파일·한 명령" 사슬 끊기 우선. 미실행 시 19일 연속 결정 실패 + 의사결정 시스템 자체 마비 신호 확정.',
+      },
+      {
+        title:
+          'P0 [5/12 D-day 우선순위 1 = SharpCompress CVE-2026-44788 zip-slip 의존 즉시 검증]',
+        description:
+          'NumLink/MeowBeat NuGet 매니페스트(`Packages/manifest.json`) SharpCompress 의존 1분 확인. 영향 시 즉시 안전 버전 업데이트 + `5/12 보안 패치 자동 적용 1주 보류`(IDE 재시작 .meta 불일치+테스트 누락 동시 폭발 차단·KB 공개 안정성 관찰). 영향 없을 시 인지 처리 후 종결.',
+      },
+      {
+        title:
+          'P0 [NumLink Tools 23일 부재 종결 · CLAUDE.md "Unity AI 자율화 파이프라인" 위반 부채 즉시 종결]',
+        description:
+          '`cp -r C:/Unity/_ProjectTemplate/Tools C:/Unity/NumLink/Tools` + 씬 경로 상수 NumLink 메인씬으로 갱신 + `python3 Tools/unity_validate.py` 1회 실행 baseline 0E 확보 + chore(qa) 단일 커밋. 23일 누적 부채 즉시 종료. 동시에 NumLink `Assets/Tests/Editor/AutoGenTests.*` 4파일 D 복구 별도 PR.',
+      },
+      {
+        title:
+          'P0 [MeowBeat .meta 3건 + 5코어 31일 drift 복구 별도 PR · 3자릿수 진입 가속 차단]',
+        description:
+          'Input.meta/Item.meta/SaveLoad.meta 3건 D 복구(폴더 메타=GUID 손실 위험·import 트리 붕괴 위험). 5/12 패치튜즈데이 IDE 재기동 전 처리 필수. SongData/GameManager/SongManager/OptionManager/manifest atomic 분할 — (a) feat(song): 매니저 4+manifest (b) chore(deps): GoogleMobileAds 3 prefab+AndroidManifest (c) chore(project): ProjectSettings. NumLink와 분리 PR(스코프 충돌 차단).',
+      },
+      {
+        title:
+          'P1 [NumLink 가장자리 발사형 보너스 모드 1주 프로토타입 + Kawaii 디폴트 락인]',
+        description:
+          'ClearIt Crystal 5/8 입력 변형(가장자리 발사형) 라인드로우 차별화 컷으로 1주 프로토타입화. 동시 NumLink Kawaii 테마 디폴트 락인 + Premium/Retro 일정 레벨 클리어 후 잠금해제 보상 전환(동시 3종 QA·일관성 부담을 메타 진행감으로 치환·다음 스프린트 우선순위 1). 시즌패스 트랙(월 단위 광고 제거+레벨팩) MVP 직후 도입 검토.',
+      },
+      {
+        title:
+          'P1 [NumLink/MeowBeat docs/STORE_LISTING.md 골격 오늘 신설 + "선생님께 숫자로 ㄱㅅ" 6초 세로 훅 즉시 제작]',
+        description:
+          '두 프로젝트 docs/STORE_LISTING.md 골격(타이틀/숏디스크립션/스크린샷 5컷 카피) 신설 → 출시 자산 0 종결. NumLink 스승의날 D-3 "선생님께 숫자로 ㄱㅅ" 6초 세로 훅 1편 제작(첫 1초 칠판 ㄱㅅ → 숫자 연결 플레이 3초 → CTA 2초·TikTok/Reels). 한글 캘리그라피(세종대왕 생일 5/15 동일) 차별화 모티프 활용·AI slop #88A4FF 민트 금지 원칙 준수.',
+      },
+      {
+        title:
+          'P1 [MeowBeat 1초 흔들기 → 0.4~0.5초 단축 · 스킵 가능 게이미파이드 광고 적용]',
+        description:
+          'MeowBeat farm 음식 1초 흔들기를 0.4~0.5초로 단축(리듬게임 타이밍 윈도우 정렬·애니메이션이 명령어 트렌드). 동시 5월 업데이트 훅으로 "짧고 스킵 가능한 게이미파이드 광고 보상"(고양이 코스튬 1회권) 적용 → 캐주얼 광고 CTR 30~40% 우위 트렌드 정렬.',
+      },
+      {
+        title:
+          'P1 [`daily_standup.bat` 사전 taskkill 래퍼 14일째 미적용 종결]',
+        description:
+          '첫 줄 `taskkill /F /IM claude.exe /T 2>nul & timeout /t 2 >nul` 1줄 추가(ASCII 인코딩 유지·BOM 금지·Edit/Write 도구 금지·notepad 직접 편집). 5/13 04:00 실행분부터 검증. 구현 시간 2분·회귀 위험 0·추가 비용 0. PID 24개(어제 -2 미세 개선)·5/13 자동화 직후 재카운트.',
+      },
+      {
+        title:
+          'P2 [FarmFoodManager 17건 핫스팟 차주 리팩터 등록 · MainScene.unity.bak_btn 25일 정리]',
+        description:
+          'MeowBeat FarmFoodManager 17건 수정 핫스팟 = 차주 책임 분할 리팩터 후보 등록(MeowBeat known_bugs.json에 패턴 추가 검토). MainScene.unity.bak_btn 25일 잔존 삭제 후 `run_regression.py` 1회 실행 회귀 확인.',
+      },
+    ],
+  },
+  {
     id: '2026-05-11T04:00:00-daily-standup',
     date: '2026-05-11',
     researchTitle:
