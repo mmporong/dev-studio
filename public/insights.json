@@ -1,6 +1,66 @@
 {
-  "lastUpdated": "2026-05-04T01:58:01.947Z",
+  "lastUpdated": "2026-05-11T02:09:58.488Z",
   "weeks": [
+    {
+      "weekOf": "2026-W20",
+      "articles": [
+        {
+          "id": "baec0be2f091530e",
+          "title": "MySQL 3분 vs ClickHouse 0.3초 — 같은 쿼리입니다",
+          "url": "https://meetup.nhncloud.com/posts/414",
+          "company": "NHN Cloud Meetup",
+          "category": "infra",
+          "summary": "MySQL 3분 vs ClickHouse 0.3초 — 같은 쿼리입니다",
+          "publishedAt": "2026-05-11T00:12:36.000Z",
+          "collectedAt": "2026-05-11T02:09:58.488Z"
+        }
+      ]
+    },
+    {
+      "weekOf": "2026-W19",
+      "articles": [
+        {
+          "id": "c19b3c77f1507069",
+          "title": "음성 AI 모델을 프로덕션에 올리기까지: Kanana-O 서빙 최적화 여정",
+          "url": "https://tech.kakao.com/posts/821",
+          "company": "카카오테크",
+          "category": "general",
+          "summary": "음성 AI 모델을 프로덕션에 올리기까지: Kanana-O 서빙 최적화 여정",
+          "publishedAt": "2026-05-05T15:00:00.000Z",
+          "collectedAt": "2026-05-11T02:09:58.488Z"
+        },
+        {
+          "id": "52847689941590ef",
+          "title": "How We Protect Karrot’s Internal PyPI Proxy from Supply Chain Attacks",
+          "url": "https://medium.com/daangn/how-we-protect-karrots-internal-pypi-proxy-from-supply-chain-attacks-0cf197205915?source=rss----4505f82a2dbd---4",
+          "company": "당근 테크",
+          "category": "general",
+          "summary": "How We Protect Karrot’s Internal PyPI Proxy from Supply Chain Attacks",
+          "publishedAt": "2026-05-06T12:33:01.000Z",
+          "collectedAt": "2026-05-11T02:09:58.488Z"
+        },
+        {
+          "id": "7500169df4ddcad9",
+          "title": "당근이 파이썬 공급망 공격에 대응하는 방법",
+          "url": "https://medium.com/daangn/%EB%8B%B9%EA%B7%BC%EC%9D%B4-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EA%B3%B5%EA%B8%89%EB%A7%9D-%EA%B3%B5%EA%B2%A9%EC%97%90-%EB%8C%80%EC%9D%91%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-e0b4f483b574?source=rss----4505f82a2dbd---4",
+          "company": "당근 테크",
+          "category": "general",
+          "summary": "당근이 파이썬 공급망 공격에 대응하는 방법",
+          "publishedAt": "2026-05-06T12:31:54.000Z",
+          "collectedAt": "2026-05-11T02:09:58.488Z"
+        },
+        {
+          "id": "958b193561df6be4",
+          "title": "인증서 톺아보기 시리즈 3: 제로 트러스트와 mTLS",
+          "url": "https://meetup.nhncloud.com/posts/413",
+          "company": "NHN Cloud Meetup",
+          "category": "infra",
+          "summary": "인증서 톺아보기 시리즈 3: 제로 트러스트와 mTLS",
+          "publishedAt": "2026-05-06T04:15:55.000Z",
+          "collectedAt": "2026-05-11T02:09:58.488Z"
+        }
+      ]
+    },
     {
       "weekOf": "2026-W18",
       "articles": [
