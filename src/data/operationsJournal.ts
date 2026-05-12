@@ -43,6 +43,155 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-05-13T04:00:00-daily-standup',
+    date: '2026-05-13',
+    researchTitle:
+      '🌙 5/13 수요일 데일리 스탠드업 — 스승의날 D-2·Hello Kitty Island 출시 후 D+1·부처님오신날 D-11·BitSummit PUNCH D-9·NumLink 14일+Tools 24일+_Recovery 18일·MeowBeat 31일 신기록 갱신(4주+3일)·19일 연속 결정 실패 신기록 갱신(보름+4일)·claude.exe PID 24개 정체(어제와 동일·자연 감소 멈춤)·DailyStandup LastResult 267009 비정상 종료(17일째 트리거 정상이나 종료 코드 비정상)·KB5089549 5/12 118 CVE(Netlogon RCE CVE-2026-41089 CVSS 9.8)·CVE-2026-45321 @tanstack 42개 공급망 OIDC 탈취·GMA Android 25.0.0/iOS 13.0.0/UMP iOS 3.1.0·Firebase 11.15.0·Apple Ads 멀티슬롯 전마켓·iOS26 Games 앱·Racing Master 10일 1위·블루아카 아로나 5/12~7/7·니케 5/14 복각·BitSummit PUNCH 교토 5/22~24·actions/runner v2.334.0(Node20 6/2)·Cloudflare 5/7 20% 감원·Awwwards 5/12 Outfit ++hellohello #985C44+#DFB494+#6C3C24·Claymorphic Hybrid+AI-Native Copilot+디지털 텍스처·Academic Sage 잉크워시 #6B8E5A+#6C4E32+#C89B5A',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제31회 — **스승의날 5/15 D-2**·**Hello Kitty Island Adventure 5/13 출시 후 D+0/D+1**·**부처님오신날 5/24 D-11**·**BitSummit PUNCH(교토) 5/22~24 D-9**·**5/19 code_scanning_upload 삭제 D-6**·**5/27 Google Play Console 마감 D-14**·**6/2 Node20 deprecation D-20**. **3대 동결 모두 +1 갱신**: NumLink 14일째(5/12 13일→5/13 14일·**19일 연속 결정 실패 신기록 갱신 확정**·보름+4일)·NumLink Tools 24일 부재·_Recovery 18일째(`0 (4).unity` 17일째 + 누적 5건 = 0.unity/0(1)/0(2)/0(3)/0(4))·**MeowBeat 31일째 신기록 갱신(4주+3일·3자릿수 진입 가속 14일째)**·bak_btn 36일째 잔존. **agent-office Pages 11일+ 연속 success**(어제 5/12 0744ee7 정상 push·인프라만 가동 패턴 32일째 고착). 시장: **Racing Master(NetEase×Codemasters) 5/8 글로벌 후 iOS 무료 차트 10일 연속 1위**(라이선스 100대 차량+실차 1:1 스캔·카테고리 진입장벽 상향·NumLink 무료차트 동시 진입 사실상 어려움·서브차트 노려야)·**Cozy+Narrative+Adaptive Difficulty 트렌드**(MAF 보고서 모바일 유저 60%가 경쟁보다 정서적 안식 선호·NumLink 스토리 챕터 래퍼 후보)·**블루아카 5/12~7/7 아로나 특별 미션 + 니케 5/14 코스튬 복각+7일 누적 로그인**(공통 패턴 = 카네이션 직접지급 X · 미션 클리어 → 감사 메시지 + 누적 로그인 조합으로 D-2 발사)·**Tiles Hop aespa/BABYMONSTER K-POP 라이선스**(하이브리드 캐주얼 매출 +20% 라이트 훅+메타 진행). 기술: **Microsoft 5/12 KB5089549 Patch Tuesday 118 CVE(critical 16·제로데이 0건)**·**CVE-2026-41089 Windows Netlogon RCE CVSS 9.8 가장 위험**·**Unity 6000.3.15f1(5/8) 여전히 최신·6000.3.16 미공개**·**Asset Store Toon Shaders Pro for URP DANIELILETT 쿠폰 5/14 만료**(D-1)·**Google Mobile Ads Unity 플러그인 의존성 GMA Android 25.0.0 / iOS 13.0.0 / UMP iOS 3.1.0 업데이트**(MeowBeat 영향)·**Firebase Apple SDK 11.15.0·google-services 4.4.3 신규**·**CVE-2026-45321 @tanstack 42개 패키지 공급망 공격**(GitHub Actions pull_request_target 오설정·OIDC 토큰 탈취 사례·5/11~12)·**Apple CVE-2026-28953 iOS 26.5 충돌 패치 5/12 갱신**·**.NET 10.0.7(4/21) 여전히 최신**(5월 신규 패치 없음). QA: **MeowBeat unity_validate 0E/0W(6.4s) + qa_static 0E/0W + run_regression 2/2 PASS**(RT_SIZE_ZERO + YAML_INDENT_M_FATHER)·**known_bugs 6종 안정 8일째**(신규 패턴 추가 없음)·**NumLink Tools 24일 부재 매일 갱신**(검증 도구 0건·_ProjectTemplate 복사 가능 상태 유지)·**NumLink _Recovery 5건 누적 18일째**(0.unity 3/18 + 0(1) 3/19 + 0(2)/0(3) 3/25 + 0(4) 5/7·5/7자 최신 손상 18일 방치)·**test_fixtures 폴더 부재**(make_fixtures.py 런타임 생성 추정·PASS 사실은 정상). 마케팅: **Apple Ads 멀티슬롯 전마켓 가동**(쿼리당 최대 2개·자동 자격편입·포지션 입찰 불가·CPP 의도별 분기 필요)·**iOS26 신설 Games 앱 ↔ Game Center 가교 역할**(NumLink/MeowBeat 메타데이터 게임 카테고리 시그널 강화 필요)·**5/15 스승의날 = 세종대왕 탄신일**(훈민정음·한글·스승=지혜의 등불 라인)·**BitSummit PUNCH 5/22~24 D-9**(5/13~21 인디 X·Reddit 노출 골든윈도우·r/IndieGaming 390K + r/indiegames 235K·14,000개/년 신작 홍수·"하이퍼리얼 vs 의도적 스타일라이제이션" 양분 트렌드 후자 라인업 권장). DevOps: **agent-office Pages 5/7~5/12 6일 연속 success**(Deploy GitHub Pages = 워크플로 이름 정정·Weekly Insights Collection 5/11/5/4/4/27 정상)·**Dependabot Updates active 256388680 신규 발견**·**actions/runner v2.334.0(4/21·v2.332→2단계 점프 가능·Node.js 20 deprecation 6/2 확정 명시·DAP 서버 + Bearer token + composite 배치)**·**Next.js May 2026 보안 릴리스 13개 advisory 일괄 패치**(DoS·미들웨어/프록시 우회·SSRF·캐시 포이즈닝·XSS·CVE-2026-23870 포함·agent-office Vite 미사용 영향 없음)·**Cloudflare Workers↔Workers 서비스바인딩/Durable Object subrequest 통합 trace 출시**(disconnected trace 해소)·**Cloudflare 5/7 1,100명(~20%) 감원**(agentic AI-first 재편·서비스 안정성 모니터링 권고)·**Task Scheduler DailyStandup_ClaudeCode NextRun 2026-05-14 04:00 Status Running LastRun 2026-05-13 04:00:01 LastResult 267009**(비정상 종료 의심·17일 연속 트리거 정상이나 종료 코드 점검 필요). 디자인: **Awwwards 5/12 SOTD = Outfit by ++hellohello**(머치 이커머스 PRO+DEV·디자인드리븐 인터랙티브 쇼핑·시그니처 톤 #985C44 테라코타 + #DFB494 샌드 + #6C3C24 에스프레소·5/13은 미발표)·**2026 트렌드 = Claymorphic Hybrid**(뉴모피즘 진화형·내부 글로우+촉각질감)+ **AI-Native Copilot UI**(올패스→옵셔널 카피일럿) + **디지털 텍스처**(jelly·chrome·clay 버튼·Tubik/Midrocket 공통 지목)·**스승의날 신규 모티프 = Academic Sage 잉크워시**(Stampin\' Up 2026 Peaceful Pine #6B8E5A 그라운디드 가든그린 + Scholarly Brown #6C4E32 텍스처 + Vintage Amber #C89B5A 포컬·만년필 잉크 번짐 + 종이비행기 fold·SVG filter feTurbulence 경량 구현·이전 칠판 #2D5F4E·카네이션 듀얼톤과 완전 차별).',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — NumLink 14일+Tools 24일+_Recovery 18일·MeowBeat 31일 신기록 갱신(4주+3일·3자릿수 가속 14일째)·5/12 액션 미실행 = 19일 연속 결정 실패 신기록 갱신(보름+4일)·PID 24개 정체(어제와 동일·자연 감소 멈춤)·DailyStandup LastResult 267009 비정상·Pages 11일+ success',
+        description:
+          'NumLink 마지막 4/29 b6d7a73 후 **14일 미커밋 갱신**(회의 #63 13일 → +1 누적·미커밋 41개+신규)·UIThemeSwitcher.cs.meta + theme-kawaii/premium/retro.uss.meta + 폰트 SDF 7건 미커밋·_Recovery 18일째. MeowBeat 4/12 657032c 후 **31일째 신기록 갱신**(4주+3일·3자릿수 진입 가속 14일째·미커밋 36개+신규)·핵심 매니저 4종+manifest+AdMob 3 prefab+AndroidManifest+ProjectSettings 31일 drift·bak_btn 36일. agent-office 5/12 0744ee7 정상 push(미커밋 .omc/project-memory.json 1개). Pages 5/1~5/12 **11일+ 연속 success**(역설적 안정 32일째 고착). **5/12 P0 4건 액션 미실행 = 19일 연속 결정 실패 신기록 갱신 확정**(보름+4일). PID 어제 24 → 오늘 24개(**정체·자연 감소 멈춤**·taskkill 15일째 미적용). **DailyStandup_ClaudeCode LastResult 267009 비정상**(트리거 정상 17일째이나 종료 코드 비정상 = 자동화 표면 정상·실제 결과 비정상 패턴). **오늘 결정 제안**: P0 [최소 단위 1건 사슬 끊기 강제·20일 진입 차단] MeowBeat 31일 동결 해소 = bak_btn 단일 git rm + chore(qa) 단일 커밋(5분 미만). NumLink·Tools는 후순위. 20일 진입 시 의사결정 시스템 자체 마비 확정.',
+      },
+      {
+        title:
+          '🎮 Game Designer — Racing Master 10일 1위(NumLink 무료차트 진입 어려움·서브차트 노려야)·Cozy+Narrative+Adaptive Difficulty MAF 60%·블루아카 5/12~7/7 아로나 미션+니케 5/14 복각·Tiles Hop K-POP·"선생님께 드리는 숫자 카네이션" 5스테이지 팩',
+        description:
+          '**Racing Master(NetEase×Codemasters) 5/8 글로벌 후 iOS 무료 차트 10일 연속 1위**(라이선스 100대 차량+실차 1:1 스캔·카테고리 진입장벽 상향·NumLink 무료차트 동시 진입 사실상 어려움 = **서브차트 퍼즐 신작 노려야**). **트렌드 키워드 "Cozy+Narrative+Adaptive Difficulty"**(MAF 보고서 모바일 유저 60%가 경쟁보다 정서적 안식 선호·NumLink → 스토리 챕터 래퍼(고양이가 숫자선 따라 산책) + AI 난이도 자동조정 = 코지퍼즐 시장 흡수 가능·MeowBeat → Tiles Hop aespa/BABYMONSTER K-POP 라이선스 업데이트가 정답·하이브리드 캐주얼 +20% 성장 라이트 훅+메타 진행 구조 모방). **블루아카 5/12~7/7 아로나 특별 미션 웹뷰**(미션형 보상)·**니케 5/14 점검 후 코스튬 복각+7일 누적 로그인**·공통 패턴 = **카네이션 직접지급 X / 미션 클리어 → 감사 메시지 + 누적 로그인 조합으로 D-2 발사**(NumLink/MeowBeat 즉시 이식 가능한 저비용 포맷). **오늘 결정 제안**: P0 **NumLink 스승의날 D-2 "선생님께 드리는 숫자 카네이션" 5스테이지 팩**(1~5 라인이 카네이션 모양으로 완성·클리어 시 감사 메시지 카드 공유 기능·14일 동결 해제 없이 manifest.json 레벨 데이터 5개+공유 카드 PNG 1장만 추가로 발사 가능·5/15 0시 활성화). P1 **MeowBeat 31일 동결 해제 후 "냥냥 선생님 감사곡" 1곡 추가**(Easy/Normal 노트만·Hard 생략·Tiles Hop K-POP 콜라보 트렌드 반영).',
+      },
+      {
+        title:
+          '💻 Developer — KB5089549 5/12 118 CVE(CVE-2026-41089 Netlogon RCE CVSS 9.8 제로데이 0건)·GMA Android 25.0.0/iOS 13.0.0/UMP 3.1.0·Firebase 11.15.0·CVE-2026-45321 @tanstack 42개 공급망 OIDC 탈취·Apple CVE-2026-28953 iOS 26.5·NumLink UIManager 빈 OnEvent 부채',
+        description:
+          '**Microsoft 5/12 KB5089549 Patch Tuesday 118 CVE(critical 16·제로데이 0건)**·**CVE-2026-41089 Windows Netlogon RCE CVSS 9.8 가장 위험**·**Unity 6000.3.15f1(5/8) 여전히 최신**(6000.3.16 미공개)·**Asset Store Toon Shaders Pro for URP DANIELILETT 쿠폰 5/14 만료 D-1**·**Google Mobile Ads Unity 플러그인 의존성 GMA Android 25.0.0 / iOS 13.0.0 / UMP iOS 3.1.0 업데이트**(MeowBeat 영향)·**Firebase Apple SDK 11.15.0·google-services 4.4.3 신규**·**.NET 10.0.7(4/21) 여전히 최신**(5월 신규 패치 없음)·**CVE-2026-45321 @tanstack 42개 패키지 공급망 공격**(GitHub Actions pull_request_target 오설정·OIDC 토큰 탈취·5/11~12 발생)·**Apple CVE-2026-28953 iOS 26.5 충돌 패치 5/12 갱신**. **NumLink 부채 1건 식별**: `UIManager.cs:177-180` `OnEvent(HBGameEvent)` 빈 구현 + HBGameEvent 리스너 등록만 유지(이벤트 처리 없는 빈 핸들러·EventStartListening/EventStopListening 비용은 발생하나 동작 0). **NumLink b6d7a73 이후 폰트 SDF 7건과 신규 UIThemeSwitcher.cs.meta 미커밋**·**MeowBeat feature/song-ownership-migration 브랜치에서 GoogleMobileAds 플레이스홀더 프리팹 3종, GetItemParticle, GameManager/SongManager/OptionManager.cs까지 미커밋**(어버이날 미발사 변경분 누적). **오늘 결정 제안**: P1 **Google Mobile Ads Unity 플러그인 Android 25.0.0/iOS 13.0.0 정합 확인 후 MeowBeat External Dependency Manager 재해결 + 미커밋 14건 커밋 정리**. P2 NumLink UIManager 빈 OnEvent 핸들러 정리 + 3 UI 테마 작업 커밋. **P0는 없음** — Windows 패치튜즈데이 제로데이 0건·Unity/.NET 신규 CVE 0건·MeowBeat/NumLink 운영 중단 위험 없음.',
+      },
+      {
+        title:
+          '🔍 QA Tester — MeowBeat 3종 검증 정상(unity_validate 6.4s + qa_static + regression 2/2 PASS)·known_bugs 6종 안정 8일·NumLink Tools 24일 부재·_Recovery 5건 누적 18일(0.unity 3/18 + 0(1) 3/19 + 0(2)/0(3) 3/25 + 0(4) 5/7)·test_fixtures 폴더 부재(make_fixtures.py 런타임)',
+        description:
+          '**MeowBeat 검증 3종 정상**: unity_validate.py 0E/0W(**6.4s**) + qa_static.py 0E/0W + run_regression.py **2/2 PASS**(RT_SIZE_ZERO + YAML_INDENT_M_FATHER). **known_bugs 6종 그대로 유지**(ID 수 6개 = RT_SIZE_ZERO/YAML_DUP/HEADER_REF/INDENT_M_FATHER/MANIFEST_AUDIO/NOTE_LANE·신규 패턴 추가 없음·안정 8일째). **NumLink 검증 부재 24일째 + _Recovery 누적 18일**: C:/Unity/NumLink/Tools 폴더 여전히 부재·_Recovery 폴더에 `0.unity + 0(1)~0(4).unity` 총 5개(3/18, 3/19, 3/25, 5/7 자동 백업 = 손상 신호 5건)·5/7자 0(4).unity가 가장 최근·18일째 방치. **test_fixtures 폴더 부재**(회귀는 make_fixtures.py로 런타임 생성 추정·PASS 사실은 정상). **리스크**: HIGH NumLink Tools 24일=회귀 검증 도구 부재 누적·HIGH NumLink _Recovery 5건=Unity 자동복구가 정리 사이클 무력화 패턴 고착 15일째. **오늘 결정 제안**: P0 **NumLink Tools 복사 즉시 실행**(`cp -r C:/Unity/_ProjectTemplate/Tools C:/Unity/NumLink/Tools` + 씬 경로 상수 NumLink 메인씬으로 갱신·24일 누적 부채 즉시 종결). P1 NumLink _Recovery 5건 원인 진단(5/7 0(4).unity가 최신 손상·24일 부재 누적 위험). P2 MeowBeat test_fixtures 폴더 실재 확인(make_fixtures.py 런타임 의존 → 명시적 디렉토리 권장).',
+      },
+      {
+        title:
+          '📢 Content Writer — Apple Ads 멀티슬롯 전마켓(쿼리당 2개·자동 자격편입·CPP 분기 필요)·iOS26 Games 앱 ↔ Game Center 가교(메타 게임 시그널 강화)·스승의날=세종대왕 탄신일 훈민정음 라인·BitSummit PUNCH 5/22 D-9 인디 골든윈도우·r/IndieGaming 390K',
+        description:
+          '**Apple Ads 검색결과 슬롯 확장이 3/3 영국·일본 선행 → 3월 말 글로벌 완료**(즉 5/13 현재 한국 포함 전 마켓에서 단일 슬롯이 아닌 "쿼리당 최대 2개" 체제가 풀가동·자동 자격편입·별도 옵트인 없음·포지션 입찰도 불가). 핵심 액션 = (1) 키워드 포트폴리오 재점검 (2) Custom Product Page를 슬롯별 의도에 맞춰 다양화. **iOS26 신설 Games 앱이 App Store ↔ Game Center 가교 역할**(NumLink·MeowBeat 메타데이터에 게임 카테고리 시그널·장르·무드·메커닉 키워드 강화 필요). **스승의날 5/15 = 세종대왕 탄신일 유래**(카네이션 외 차별 모티프로 "훈민정음·한글·스승=지혜의 등불" 라인이 게임잡과 결이 잘 맞음·푸시 카피 베스트프랙티스 Udonis "지금 돌아와야 할 구체적 이유" 제시형). 추천 카피 시안: ① "스승님께 점수를 바치세요"(점수 2배 24h) ② "오늘은 한 수 배워가는 날"(튜토리얼 재플레이 보상) ③ "분필+칠판 스킨, 5/15만 무료". 키워드(한국 ASO): "스승의날", "감사", "선물", "카네이션 게임"(가족 키워드와 묶어 미피처 우회). **5월 = 인디 시즌**: **BitSummit PUNCH(교토 5/22~24) 직전이라 5/13~21 구간이 인디 게임 X·Reddit 노출 골든윈도우**·**r/IndieGaming(390K), r/indiegames(235K) 트래픽 핵심**·"하이퍼리얼리즘 vs 의도적 스타일라이제이션" 양분 트렌드에서 NumLink·MeowBeat = **후자 라인업 포지셔닝**(14,000개/년 신작 홍수 시대 Paid Organic 혼합 모델 필수). **오늘 결정 제안**: P0 **5/15 스승의날 D-2 푸시·ASO 동시 발사**(NumLink·MeowBeat 양 타이틀에 "스승님께 점수를 바치세요" 카피 + "분필/칠판" 임시 컬러 스킨 토글·한국 키워드 필드에 "스승의날, 감사, 선물" 3종 일괄 삽입). P1 **5/22 BitSummit 윈도우 진입용 인디 콘텐츠**(5/13~17 사이 r/IndieGaming·r/indiegames에 NumLink 개발기 1편 + X 짧은 클립 1개 예약). P2 **Apple Ads 멀티슬롯 대응 CPP 분기**(의도 키워드군별 코어/롱테일 2종 분기·5월 말까지 셋업).',
+      },
+      {
+        title:
+          '⚙️ DevOps — Pages 11일+ 연속 success(워크플로 이름 정정: Deploy GitHub Pages·Weekly Insights Collection)·Dependabot Updates active 신규 발견·actions/runner v2.334.0(4/21 Node20 deprecation 6/2 확정)·Cloudflare 5/7 1,100명(20%) 감원·Task Scheduler LastResult 267009 비정상',
+        description:
+          '**Deploy GitHub Pages 최근 5건 5/7~5/12 전부 success**(main·매일 19:1x UTC = 새벽 4시 KST)·**Weekly Insights Collection 5/11, 5/4, 4/27 매주 월요일 02:0x UTC 전부 success**·**Pages 11일+ 연속 success**(5/1~5/12 무중단)·**워크플로 이름 정정**: "pages-build-deployment" 아님 → **Deploy GitHub Pages** / "Weekly Insights Update" 아님 → **Weekly Insights Collection**·**Dependabot Updates active(256388680) 신규 발견**. **5/12~5/13 신규 발표**: **actions/runner v2.334.0(4/21 릴리스·어제 점검의 v2.332 → 2단계 점프 가능)** 주요 변경 = Node.js 20 deprecation 일정 **6/2로 확정 명시**·DAP 서버 추가·flatted 3.2.7→3.4.2·action archive Bearer token 지원·composite 액션 해석 배치/중복제거. **Vercel: Next.js May 2026 보안 릴리스 13개 advisory 일괄 패치**(DoS·미들웨어/프록시 우회·SSRF·캐시 포이즈닝·XSS·RSC 관련 CVE-2026-23870 포함·**agent-office가 Next.js 미사용**이라 영향 없음 = Vite 빌드 + static Pages 배포). **Cloudflare**: Workers↔Workers 서비스바인딩/Durable Object subrequest 통합 trace 출시(disconnected trace 해소)·Media→Stream 신규 Workers binding·**5/7 1,100명(~20%) 감원**(agentic AI-first 재편 명목·서비스 안정성 모니터링 권고). **5/19 D-6/5/27 D-14 영향**: code_scanning_upload 삭제 D-6 = agent-office workflows(deploy-pages.yml·weekly-insights.yml) **모두 미사용 영향 없음 확정**·5/27 Google Play Console D-14 = MeowBeat 뉴스 매거진 아니고 Contact Picker/위치 권한도 미사용 → **직접 영향 없음**(폰 권한 manifest는 출시 전 재검증). **Task Scheduler DailyStandup_ClaudeCode**: NextRun 2026-05-14 04:00·Status Running·LastRun 2026-05-13 04:00:01·**LastResult 267009**(0이 아님·자동화 매일 정상 트리거되나 "마지막 실행 결과 코드"가 비정상·17일 연속 트리거 유지 중이나 내부 종료코드 점검 필요). **오늘 결정 제안**: P1 **Task Scheduler LastResult=267009 원인 조사**(schtasks 로그/이벤트뷰어 확인·Claude Code 종료코드 매핑 점검·5/13~5/14 사이 1회 재실행 후 0 복귀 여부 확인). P1 **actions/runner v2.332 → v2.334 업그레이드**(Node20 경고 + 6/2 deprecation 카운트다운 시작·self-hosted 미사용 확인 후 hosted runner 자동 갱신·deploy-pages.yml의 actions/setup-node@v4 SHA 핀 Node22 사용 중 안전). P2 Vercel CVE-2026-23870 = 포트폴리오 단일 HTML이라 Next.js 미사용·영향 없음 종결. P2 5/19 D-6 rate_limit 삭제 = agent-office 영향 없음 확정·모니터링 종료.',
+      },
+      {
+        title:
+          '🎨 Art Director — Awwwards 5/12 Outfit by ++hellohello(#985C44+#DFB494+#6C3C24 테라코타 트리오)·Claymorphic Hybrid+AI-Native Copilot+디지털 텍스처(jelly·chrome·clay)·Academic Sage 잉크워시 #6B8E5A+#6C4E32+#C89B5A(Stampin\' Up Peaceful Pine)·만년필 잉크번짐+종이비행기 fold',
+        description:
+          '**Awwwards 5/12 SOTD = Outfit**(++hellohello 머치 이커머스·PRO+DEV·디자인드리븐 인터랙티브 쇼핑·hellohello 시그니처 톤 **#985C44 테라코타 + #DFB494 샌드 + #6C3C24 에스프레소**)·5/11은 XOX·**5/13은 미발표**. **5/12 트렌드 키워드 = Claymorphic Hybrid**(뉴모피즘 진화형·내부 글로우+촉각질감) + **AI-Native Copilot UI**(올패스→옵셔널 카피일럿) + **디지털 텍스처**(jelly·chrome·clay 버튼·Tubik/Midrocket 2026 리포트가 공통 지목). **스승의날 신규 모티프 = "Academic Sage 잉크워시"**(Stampin\' Up 2026 신팔레트 Peaceful Pine 계열 **#6B8E5A 그라운디드 가든그린 + Scholarly Brown #6C4E32 텍스처 + Vintage Amber #C89B5A 포컬**·카네이션·분필 톤(5/7~5/11 기다룸)과 차별·종이비행기/책갈피 모티프와 결합 가능). **오늘 결정 제안**: P0 **스승의날 D-2 시각 발사 = "Academic Sage 잉크워시" 팔레트(#6B8E5A + #6C4E32 + #C89B5A + #FAFAFA)로 NumLink/MeowBeat 5/15 한정 인트로 카드 제작**(모티프 = 만년필 잉크 번짐 + 종이비행기 fold·잉크워시는 SVG filter feTurbulence로 경량 구현·이전 칠판 #2D5F4E·카네이션 듀얼톤과 완전 차별). P1 **Claymorphic Hybrid 채택**(NumLink theme-premium USS에 내부 글로우 box-shadow(inset 2px 4px rgba) + 외부 soft drop-shadow로 jelly 버튼·theme-retro는 디지털 텍스처 chrome 톤으로 분기). P2 hellohello 테라코타 트리오(#985C44/#DFB494/#6C3C24)는 이후 가을 시즌 컬러 리저브.',
+      },
+    ],
+    meetingTitle:
+      '🌙 5/13 수요일 종합 회의 — 스승의날 D-2·Hello Kitty Island D+0/D+1·부처님오신날 D-11·BitSummit D-9·NumLink 14일/Tools 24일/_Recovery 18일·MeowBeat 31일 신기록 갱신(4주+3일)·19일 연속 결정 실패 신기록(보름+4일)·PID 24 정체·LastResult 267009 비정상·KB5089549 Netlogon RCE 9.8·GMA 25.0.0·Apple Ads 멀티슬롯·Awwwards Outfit·Academic Sage 잉크워시',
+    meetingSummary:
+      '7명 에이전트가 5/13 수요일 스승의날 D-2·Hello Kitty Island 출시 후·BitSummit PUNCH D-9 회의 진행. 핵심 합의: ① **19일 연속 결정 실패 신기록 갱신 확정**(보름+4일·5/12 P0 4건 액션 0/N 미실행) → 20일 진입 시 의사결정 시스템 자체 마비 확정 → "단일 파일·단일 명령" 사슬 끊기 P0 즉시 실행. ② **MeowBeat 31일 신기록 갱신**(4주+3일·3자릿수 진입 가속 14일째·롤백 불가 영역 확대) → bak_btn 36일 단일 git rm 우선. ③ **5/12 D-day는 제로데이 0건으로 안전 통과**(118 CVE 중 critical 16·Netlogon RCE CVSS 9.8이지만 빌드머신 영향 없음·**P0 없음 확정**). ④ **GMA Android 25.0.0/iOS 13.0.0/UMP 3.1.0 + Firebase 11.15.0 정합 확인**(MeowBeat External Dependency Manager 재해결 P1). ⑤ **CVE-2026-45321 @tanstack 42개 공급망 OIDC 탈취**(agent-office 영향 없음 확정·tax-mcp-web Next.js 사용 시 패치 권장). ⑥ **NumLink Tools 24일 부재 종결**(`_ProjectTemplate/Tools` 풀세트 복사 + unity_validate baseline 0E·CLAUDE.md "Unity AI 자율화 파이프라인" 위반 24일 누적 부채 즉시 종결). ⑦ **스승의날 D-2 P0 동시 발사 = NumLink "선생님께 드리는 숫자 카네이션" 5스테이지 팩**(1~5 라인이 카네이네 모양 완성·manifest.json 5레벨+공유 카드 PNG 1장·14일 동결 해제 없이 발사 가능·5/15 0시 활성화)·**Academic Sage 잉크워시 팔레트**(#6B8E5A + #6C4E32 + #C89B5A·만년필 잉크번짐+종이비행기 fold·SVG feTurbulence 경량)·**푸시·ASO 동시 발사**(스승님께 점수를 바치세요·분필/칠판 임시 스킨·"스승의날/감사/선물" 키워드). ⑧ **블루아카 5/12~7/7 아로나 + 니케 5/14 복각 패턴 이식**(미션 클리어 → 감사 메시지 + 누적 로그인 조합으로 저비용 라이브옵스). ⑨ **Apple Ads 멀티슬롯 전마켓 가동**(CPP 의도별 분기 P2·iOS26 Games 앱 메타 카테고리 시그널 강화). ⑩ **DailyStandup_ClaudeCode LastResult 267009 비정상**(17일 트리거 정상이나 종료 코드 비정상 = 자동화 표면 정상·실제 결과 비정상 패턴·이벤트뷰어 1회 점검 P1). ⑪ **actions/runner v2.334.0**(Node20 deprecation 6/2 D-20 카운트다운 시작). ⑫ **BitSummit PUNCH 5/22 D-9 인디 골든윈도우**(5/13~17 NumLink 개발기 1편 + X 클립 1개 예약 P1).',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note:
+          'NumLink 14일+Tools 24일+_Recovery 18일·MeowBeat 31일 신기록 갱신(4주+3일·3자릿수 가속 14일째)·미커밋 합계 약 80개. 5/12 P0 4건 액션 0/4 미실행 → **19일 연속 결정 실패 신기록 갱신 확정**(보름+4일). PID 24개 정체(어제와 동일·자연 감소 멈춤·taskkill 15일째 미적용). DailyStandup_ClaudeCode LastResult 267009 비정상(17일 트리거 정상이나 종료 코드 비정상). 오늘 P0 = "단일 파일·단일 명령" 사슬 끊기 = MeowBeat bak_btn 36일 단일 git rm + chore(qa) 단일 커밋(5분 미만·20일 진입 차단).',
+      },
+      {
+        speaker: 'Game Designer',
+        note:
+          'Racing Master(NetEase×Codemasters) 5/8 글로벌 후 iOS 무료 차트 10일 연속 1위 = NumLink 무료차트 동시 진입 어려움·서브차트 퍼즐 노려야. Cozy+Narrative+Adaptive Difficulty MAF 60%·블루아카 5/12~7/7 아로나 미션+니케 5/14 복각 = 미션 클리어 → 감사 메시지 + 누적 로그인 패턴. 스승의날 D-2 P0 = NumLink "선생님께 드리는 숫자 카네이션" 5스테이지 팩(manifest.json 5레벨+공유 카드 PNG·5/15 0시 활성화). P1 MeowBeat "냥냥 선생님 감사곡" 1곡 추가.',
+      },
+      {
+        speaker: 'Developer',
+        note:
+          'Microsoft 5/12 KB5089549 118 CVE(critical 16·제로데이 0건·CVE-2026-41089 Netlogon RCE CVSS 9.8 가장 위험). Unity 6000.3.15f1 여전히 최신. GMA Android 25.0.0/iOS 13.0.0/UMP iOS 3.1.0 업데이트(MeowBeat 영향). Firebase Apple SDK 11.15.0. CVE-2026-45321 @tanstack 42개 공급망 OIDC 탈취(GitHub Actions pull_request_target 오설정). NumLink UIManager.cs:177-180 빈 OnEvent 부채. P0 없음 — 빌드머신 영향 없음. P1 = GMA 정합 확인 + 미커밋 14건 커밋.',
+      },
+      {
+        speaker: 'QA Tester',
+        note:
+          'MeowBeat 3종 검증 정상(unity_validate 0E/0W 6.4s + qa_static 0E/0W + run_regression 2/2 PASS RT_SIZE_ZERO+YAML_INDENT_M_FATHER). known_bugs 6종 안정 8일째(신규 패턴 없음). NumLink Tools 24일 부재(매일 갱신·검증 도구 0건). NumLink _Recovery 5건 누적 18일(0.unity 3/18 + 0(1) 3/19 + 0(2)/0(3) 3/25 + 0(4) 5/7·최신 손상 18일 방치). test_fixtures 폴더 부재(런타임 생성·정상). P0 = NumLink _ProjectTemplate/Tools 풀세트 복사 + unity_validate baseline 0E.',
+      },
+      {
+        speaker: 'Content Writer',
+        note:
+          'Apple Ads 검색결과 슬롯 확장 글로벌 완료(쿼리당 최대 2개·자동 자격편입·포지션 입찰 불가·CPP 의도별 분기 필요). iOS26 Games 앱 ↔ Game Center 가교(메타 게임 카테고리 시그널 강화). 스승의날 = 세종대왕 탄신일(훈민정음·한글·스승=지혜의 등불 라인). BitSummit PUNCH(교토 5/22~24) D-9 인디 골든윈도우 = 5/13~21 r/IndieGaming 390K + r/indiegames 235K 노출. P0 = 5/15 푸시·ASO 동시 발사("스승님께 점수를 바치세요" + "분필/칠판" 임시 스킨 + "스승의날/감사/선물" 키워드).',
+      },
+      {
+        speaker: 'DevOps',
+        note:
+          'Deploy GitHub Pages 11일+ 연속 success(워크플로 이름 정정)·Weekly Insights Collection 5/11/5/4/4/27 정상·Dependabot Updates active 신규 발견. actions/runner v2.334.0(4/21 Node20 deprecation 6/2 D-20 확정 명시·v2.332→2단계 점프). Next.js May 2026 보안 13개 advisory(CVE-2026-23870·agent-office Vite 미사용 영향 없음). Cloudflare 5/7 1,100명(20%) 감원(agentic AI-first 재편). Task Scheduler LastResult 267009 비정상(17일 트리거 정상이나 종료 코드 비정상). P1 = LastResult 원인 조사 + runner v2.334 업그레이드.',
+      },
+      {
+        speaker: 'Art Director',
+        note:
+          'Awwwards 5/12 SOTD = Outfit by ++hellohello(머치 이커머스·#985C44 테라코타 + #DFB494 샌드 + #6C3C24 에스프레소·5/13 미발표). 2026 트렌드 = Claymorphic Hybrid(뉴모피즘 진화·내부 글로우+촉각질감) + AI-Native Copilot UI + 디지털 텍스처(jelly·chrome·clay). 스승의날 신규 모티프 = Academic Sage 잉크워시(Stampin\' Up Peaceful Pine #6B8E5A + Scholarly Brown #6C4E32 + Vintage Amber #C89B5A·만년필 잉크 번짐 + 종이비행기 fold·이전 칠판·카네이션과 완전 차별). P0 = NumLink/MeowBeat 5/15 한정 인트로 카드.',
+      },
+    ],
+    decisions: [
+      {
+        title:
+          'P0 [최소 단위 1건 사슬 끊기 = 19일→20일 진입 차단·의사결정 시스템 마비 임박]',
+        description:
+          'MeowBeat `Assets/Scenes/MainScene.unity.bak_btn` 36일 잔존 단일 git rm + chore(qa) 단일 커밋(5분 미만). `git rm Assets/Scenes/MainScene.unity.bak_btn Assets/Scenes/MainScene.unity.bak_btn.meta` + `git commit -m "chore(qa): MeowBeat bak_btn 36일 잔존 정리"` + push. 다중파일·다중단계 결정은 20일째에도 미실행될 가능성 → "한 파일·한 명령" 사슬 끊기 우선. 미실행 시 20일 연속 결정 실패 + 의사결정 시스템 자체 마비 신호 확정. MeowBeat 31일 신기록 갱신(3자릿수 가속 14일째) 사슬도 동시에 끊김.',
+      },
+      {
+        title:
+          'P0 [스승의날 D-2 동시 발사 = NumLink "선생님께 드리는 숫자 카네이션" 5스테이지 팩 + Academic Sage 잉크워시 팔레트 + 푸시·ASO]',
+        description:
+          'NumLink: ① manifest.json 5스테이지 추가(1~5 라인이 카네이션 모양으로 완성·클리어 시 감사 메시지 카드 공유 기능·14일 동결 해제 없이 데이터만 발사 가능) ② Academic Sage 잉크워시 팔레트(#6B8E5A + #6C4E32 + #C89B5A + #FAFAFA·만년필 잉크 번짐 + 종이비행기 fold·SVG filter feTurbulence 경량 구현) ③ "스승님께 점수를 바치세요" 푸시 카피 + "스승의날/감사/선물" 한국 키워드 일괄 삽입 + "분필/칠판" 임시 컬러 스킨 토글 ④ 5/15 0시 활성화. MeowBeat: 같은 팔레트로 인트로 카드 1장만(31일 동결 해제 없이도 가능).',
+      },
+      {
+        title:
+          'P0 [NumLink Tools 24일 부재 종결 · CLAUDE.md "Unity AI 자율화 파이프라인" 위반 부채 즉시 종결]',
+        description:
+          '`cp -r C:/Unity/_ProjectTemplate/Tools C:/Unity/NumLink/Tools` + 씬 경로 상수 NumLink 메인씬으로 갱신 + `python3 Tools/unity_validate.py` 1회 실행 baseline 0E 확보 + chore(qa) 단일 커밋. 24일 누적 부채 즉시 종료. _Recovery 5건(0.unity 3/18 + 0(1) 3/19 + 0(2)/0(3) 3/25 + 0(4) 5/7)도 동시에 git rm 후 unity_validate 재실행으로 회귀 확인.',
+      },
+      {
+        title:
+          'P1 [GMA Android 25.0.0/iOS 13.0.0/UMP iOS 3.1.0 정합 확인 + Firebase 11.15.0 + 미커밋 14건 커밋]',
+        description:
+          'MeowBeat External Dependency Manager Force Resolve 재실행 + GoogleMobileAds Android 25.0.0/iOS 13.0.0/UMP iOS 3.1.0 의존성 정합 확인. Firebase Apple SDK 11.15.0/google-services 4.4.3 업데이트 검토. NumLink b6d7a73 이후 미커밋 14건(폰트 SDF 7건 + UIThemeSwitcher.cs.meta + theme USS .meta 3건 외) 정리 커밋. MeowBeat feature/song-ownership-migration 브랜치 미커밋(GoogleMobileAds 프리팹 3종 + GetItemParticle + GameManager/SongManager/OptionManager) atomic 분할 커밋.',
+      },
+      {
+        title:
+          'P1 [Task Scheduler LastResult=267009 원인 조사 + actions/runner v2.334.0 업그레이드 카운트다운]',
+        description:
+          'DailyStandup_ClaudeCode LastResult=267009 원인 조사(schtasks 로그/이벤트뷰어 확인·Claude Code 종료코드 매핑·17일 트리거 정상이나 종료 코드 비정상). 5/13~5/14 사이 1회 재실행 후 0 복귀 여부 확인. 동시 actions/runner v2.334.0 인지(Node.js 20 deprecation 6/2 D-20 확정 명시·hosted runner는 GitHub가 자동 갱신·deploy-pages.yml의 actions/setup-node@v4 Node22 사용 중 안전).',
+      },
+      {
+        title:
+          'P1 [BitSummit PUNCH 5/22 D-9 인디 골든윈도우 진입 + 블루아카·니케 패턴 이식]',
+        description:
+          'BitSummit PUNCH(교토 5/22~24) D-9 = 5/13~21 인디 X·Reddit 노출 골든윈도우. r/IndieGaming(390K)·r/indiegames(235K)에 NumLink 개발기 1편(스타일라이제이션 각도) + X 짧은 클립 1개 5/13~17 예약. 블루아카 5/12~7/7 아로나 + 니케 5/14 복각 패턴 이식(미션 클리어 → 감사 메시지 + 누적 로그인 조합으로 저비용 라이브옵스 검증).',
+      },
+      {
+        title:
+          'P2 [Apple Ads 멀티슬롯 대응 CPP 분기 + iOS26 Games 앱 메타 카테고리 시그널 강화]',
+        description:
+          'Apple Ads 검색결과 쿼리당 최대 2개 슬롯 전마켓 풀가동(자동 자격편입·포지션 입찰 불가) → 현재 단일 CPP만 운용 중이면 의도 키워드군별(코어/롱테일) CPP 2종으로 분기. iOS26 신설 Games 앱이 App Store↔Game Center 가교 역할 = NumLink·MeowBeat 메타데이터에 게임 카테고리 시그널(장르·무드·메커닉 키워드) 강화. 5월 말까지 셋업.',
+      },
+      {
+        title:
+          'P2 [Claymorphic Hybrid 채택 검토 + hellohello 테라코타 트리오 가을 시즌 리저브]',
+        description:
+          'NumLink theme-premium USS에 내부 글로우 box-shadow(inset 2px 4px rgba) + 외부 soft drop-shadow로 jelly 버튼 표현(Claymorphic Hybrid 채택). theme-retro는 디지털 텍스처 chrome 톤으로 분기. Awwwards 5/12 Outfit hellohello 테라코타 트리오(#985C44/#DFB494/#6C3C24)는 이후 가을 시즌 컬러 리저브.',
+      },
+      {
+        title:
+          'P2 [FarmFoodManager 17건 핫스팟 차주 리팩터 등록 · NumLink UIManager 빈 OnEvent 정리]',
+        description:
+          'MeowBeat FarmFoodManager 17건 수정 핫스팟 = 차주 책임 분할 리팩터 후보 등록(MeowBeat known_bugs.json에 패턴 추가 검토). NumLink UIManager.cs:177-180 `OnEvent(HBGameEvent)` 빈 구현 정리(이벤트 처리 없는 빈 핸들러·EventStartListening/EventStopListening 비용 발생하나 동작 0). 3 UI 테마 작업 커밋과 함께 처리.',
+      },
+    ],
+  },
+  {
     id: '2026-05-12T04:00:00-daily-standup',
     date: '2026-05-12',
     researchTitle:
