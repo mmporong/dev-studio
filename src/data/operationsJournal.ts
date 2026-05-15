@@ -43,6 +43,124 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-05-16T04:00:00-daily-standup',
+    date: '2026-05-16',
+    researchTitle:
+      '🌤️ 5/16 토요일 데일리 스탠드업 — 주말 첫날(저녁 트래픽 골든타임)·BitSummit PUNCH D-6(한국팀 4종 확정)·**NumLink 재동결 1일째 시작**(어제 4커밋 발사 후 미커밋 재누적·_Recovery/0(4).unity 또 발생 반복 패턴)·MeowBeat **34일 신기록(4주+6일·5/17 5주 임계 돌파 D-1)**+bak_btn 39일·**22일 연속 결정 실패(3주+1일·5/14 P0 3건 중 NumLink UI만 실행·MeowBeat P0 미실행 누적)**·PID 14개(어제 2→14·점진 회복 후 재증가)·**Plug & Pulse·SyncArc 직접 경쟁작 추적 2일차**·**Arrows – Puzzle Escape 미니멀 논리 퍼즐 Google Play 캐주얼 상위**(NumLink 신규 벤치마크)·**Block Blast! 글로벌 캐주얼 1위 유지**·BitSummit 한국팀 4종 셀렉션 재확정(Room 502·Light Odyssey·Rhythm Hotel·Kitchen of Abyss)·라스트워 4월 매출 356억 1위·**Unity 6.3 LTS 6000.3.15f1 5/9 출시**·**Firebase Unity 13.10.0 + GMA UMP Android 4.0.0 승격 5/8**·NumLink Tools/ 검증도구 27일째 부재·MeowBeat unity_validate 정상 작동 확인(18종)·**카카오게임즈 가정의달 캠페인 5/27 연장·오딘 6/3 신성소환권 156장**·**인디크래프트 지원 417개사 역대 최다(전년+90)**·**2026 게임 마케팅 키워드 = 팬덤 서사+UGC 공모전**·Pages 14일째 무중단·DailyStandup LastResult 267009 여전히 미해결(2일 차)·**Behance 2026 Sunwashed Soft 토요무드 팔레트**(더스티핑크 #E8B4A8+초키블루 #B4C5D1+뮤티드올리브 #8A8B5C+페일테라코타 #C97B5C)·**Tactile Minimalism 모바일 퍼즐 압도적**·Royal Match·MONOPOLY Match 5월 신규 메커닉',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제34회 — **5/16 토요일 주말 첫날(저녁 트래픽 골든타임)·BitSummit PUNCH D-6(한국팀 4종 확정·Shuhei Yoshida 심사위원)·6/2 Node20 deprecation D-17**. **카운트 갱신 3종 + 신규 패턴 1종**: ① **NumLink 재동결 1일째 시작**(어제 b6d7a73 4커밋 발사 종결 후 24시간만에 미커밋 재누적·_Recovery/0(4).unity 또 발생 = 발사→재동결 사이클이 반복 패턴화) ② **MeowBeat 34일 신기록**(+1·4주+6일·5/17이면 5주 임계 돌파·3자릿수 가속 17일째·bak_btn 39일 +1) ③ **22일 연속 결정 실패**(3주+1일·5/15 P0 3건 중 MeowBeat meta 3개+QA 디버깅+bak_btn git rm 모두 미실행) ④ **PID 회귀 재발**(5/14 2→5/15 미측정→5/16 14개·점진 회복 후 재증가 = 자연 감소 패턴 깨짐). **부분 회복 시그널 잔존**: NumLink 동결 종결 1차 사슬 끊기는 유효하나 24시간만에 재동결 진입·_Recovery 0건도 5/15에 다시 1건 발생 = 회복 모멘텀 약화. **MeowBeat QA 회귀 3일 차 미해결**(5/14 P0·5/15 P0 연속 미실행·manifest 손상 + scene_buttons 2E 누적·unity_validate 1W). **agent-office Pages 14일째 무중단 success**(5/15 5aacc3e 정상 배포·인프라 가동 35일째). 시장: **Arrows – Puzzle Escape 미니멀 논리 퍼즐 Google Play 캐주얼 추천 상위 등장**(NumLink 신규 직접 벤치마크·첫 30초 룰 학습 무텍스트 UX)·**Block Blast! 글로벌 캐주얼 1위 유지**·**BitSummit 한국팀 4종 셀렉션 재확정 공식 발표**(Room 502/LOTS·Light Odyssey/SSUN·Rhythm Hotel/SyncArc·Kitchen of Abyss/Pico)·**라스트워 4월 한국 모바일 매출 356억 1위 / WOS 346억 / 메이플 키우기 256억**(5/15~16 일간 변동 없음). 기술: **Unity 6.3 LTS 6000.3.15f1 5/9 정식 출시**(NumLink·MeowBeat 모두 적용 검토 대상·docs 5/14 갱신)·**Firebase Unity 13.10.0 신규 + Google Mobile Ads UMP Android 4.0.0 GA 승격 5/8**(MeowBeat GMA 통합 영향)·**5/15~16 신규 CVE는 Unity 직접 영향 없음**. QA: **NumLink Tools/ 검증도구 27일째 부재 확인(+1)**(scientist agent로 ls 시도 결과 디렉토리 없음 재확인)·**MeowBeat Tools/ 18종 정상 작동**(unity_validate/qa_static/run_regression 18종 모두 존재·하지만 실행 후 회귀 미해결)·**잔재파일 2건 누적**: bak_btn 39일 + _Recovery/0(4).unity 신규 1건. 마케팅: **카카오게임즈 가정의달 캠페인 5/27까지 연장·오딘 6/3까지 출석 이벤트 신성소환권 156장 살포**(5월 잔향이 6월 첫주까지)·**2026 게임 마케팅 키워드 = 팬덤 서사+UGC 공모전**·**인디크래프트 지원 417개사 역대 최다(전년+90)**·**미드마켓·짧고 다듬어진 싱글 인디가 ASO 핵심 카피**·**토요일 트래픽 골든타임 = 저녁 8시 X·스레드**. DevOps: **agent-office Pages 14일째 무중단 success**(5/15 5aacc3e 19:13 KST 스탠드업 커밋 정상·35~42s 배포 시간)·**DailyStandup_ClaudeCode 5/16 04:00 실행됐으나 LastTaskResult 여전히 267009(비정상)** 이전 회의 후에도 미해결 2일 차·**Win VS2026 이미지 마이그레이션 6/8~6/15·Cloudflare WAW 5/15 정기점검**(D-day 영향 없음). 디자인: **Behance 2026 Sunwashed Soft 토요무드 팔레트 부상**(더스티핑크 #E8B4A8 + 초키블루 #B4C5D1 + 뮤티드올리브 #8A8B5C + 페일테라코타 #C97B5C·데시추레이션 강조)·**모바일 퍼즐 게임 Tactile Minimalism 압도적**(물리적 무게감 표면 + 공간적 명료성)·**Royal Match·MONOPOLY Match 5월 신규 메커닉 출시**·**NumLink Premium 테마 Sunwashed Soft 오버레이 변형 시안 가치**(토요무드 차별화·기존 UI 테마 3종 발사 후 스토어 스크린샷·미리보기 GIF 미작성 공백 상태).',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — **NumLink 재동결 1일째 시작**(어제 4커밋 발사 종결 후 24시간 만에 재누적·_Recovery 1건 또 발생 반복 패턴)·MeowBeat 34일(+1·5/17 5주 임계 D-1)+bak_btn 39일(+1)·**22일 연속 결정 실패**(5/15 P0 3건 모두 미실행)·PID 14개(2→14 재증가·자연 감소 패턴 깨짐)·agent-office 5/15 5aacc3e 정상',
+        description:
+          'NumLink 어제 b6d7a73 4커밋 발사 종결 후 24시간만에 폰트 .asset 8개·AutoGenTests 4개 삭제·manifest.json 등 미커밋 재누적·_Recovery/0(4).unity 또 발생 = 발사→재동결 사이클이 반복 패턴화. MeowBeat 4/12 657032c 후 **34일째 신기록(+1·4주+6일·5/17이면 5주 임계 돌파)**·미커밋 FarmData·SongData·4 Manager + bak_btn 39일(+1) + Tools/__pycache__ 신규. agent-office는 5/15 5aacc3e 스탠드업 docs 정상·.omc/project-memory.json 1건만 미커밋. **22일 연속 결정 실패**(3주+1일·5/15 P0 3건 = MeowBeat meta 3개 결정+QA 회귀 디버깅+bak_btn git rm 모두 미실행). **PID 회귀**: 5/13 24→5/14 2(-22 회복)→5/16 14개(재증가·자연 감소 패턴 깨짐). **부분 회복 시그널 잔존**: NumLink 동결 종결 1차 사슬 끊기는 유효하나 24시간만에 재진입. **오늘 결정 제안**: P0 단 1건만 결정 — MeowBeat bak_btn 39일 + meta 3개 + 미커밋 정리를 단일 chore(qa) 커밋으로 묶음 발사(5주 임계 D-1 차단 + 23일 연속 결정 실패 진입 차단).',
+      },
+      {
+        title:
+          '🎮 Game Designer — **Arrows – Puzzle Escape 미니멀 논리 퍼즐 Google Play 캐주얼 상위 첫 등장**(NumLink 신규 직접 벤치마크·무텍스트 30초 룰 학습)·**Block Blast! 글로벌 캐주얼 1위 유지**·**BitSummit 한국팀 4종 셀렉션 재확정**(Room 502·Light Odyssey·Rhythm Hotel·Kitchen of Abyss)·**라스트워 4월 매출 356억 1위 WOS 346억 메이플 키우기 256억**',
+        description:
+          '**Arrows – Puzzle Escape 미니멀 논리 퍼즐 Google Play 캐주얼 추천 상위 등장**(AppBrain 5월 데이터) = NumLink 직접 벤치마크 신규 등장·**텍스트 없이 시각만으로 첫 30초 룰 학습 가능한 무텍스트 UX**가 핵심 차별점. **Block Blast! 글로벌 캐주얼 1위 유지** = 단순 메커닉·즉각 보상 룰 검증된 표준. **BitSummit PUNCH 한국팀 4종 셀렉션 재확정**(invenglobal 5/15 공식 발표): Room 502/LOTS·Light Odyssey/SSUN GAMES·Rhythm Hotel/SyncArc·Kitchen of Abyss/Pico·Shuhei Yoshida 심사위원. **라스트워 4월 한국 모바일 매출 356억 1위 / WOS 346억 / 메이플 키우기 256억**(모바일인덱스·5/15~16 일간 차트 변동 없음). **오늘 결정 제안**: P1 **NumLink GDD에 "Arrows – Puzzle Escape식 미니멀 논리 한 화면 룰" 벤치마크 추가** — 튜토리얼 0~5레벨을 텍스트 없이 시각만으로 규칙 학습 가능하도록 재설계(첫 30초 이탈률 타깃 -15%·NumLink 차별화 키워드 "무텍스트 한글 숫자 모드"로 강화).\n\nSources: [BitSummit PUNCH 2026 공식 일정](https://bitsummit.org/en/submissions-now-open-bitsummit-punch-may-22-24-2026-at-miyako-messe-kyoto/) / [BitSummit 한국 인디 셀렉션(Inven Global)](https://www.invenglobal.com/articles/21864/bitsummit-punch-award-nominees-announced-in-kyoto-shuhei-yoshida-joins-jury) / [모바일인덱스 4월 매출 리포트](https://bbs.ruliweb.com/amp/news/read/224245) / [AppBrain May 2026 Popular Puzzle](https://www.appbrain.com/apps/popular/puzzle)',
+      },
+      {
+        title:
+          '💻 Developer — **Unity 6.3 LTS 6000.3.15f1 5/9 정식 출시**(NumLink·MeowBeat 적용 검토)·**Firebase Unity 13.10.0 신규 + GMA UMP Android 4.0.0 GA 승격 5/8**(MeowBeat GMA 영향)·**5/15~16 신규 Unity 직접 CVE 없음**·NumLink _Recovery/0(4).unity 반복 생성 = 에디터 크래시/자동저장 무한 누적 리스크',
+        description:
+          '**Unity 6.3 LTS 6000.3.15f1 5/9 정식 출시 — docs 5/14 갱신**(NumLink·MeowBeat 모두 적용 검토 대상·후속 6.4 미공개). **Firebase Unity 13.10.0 신규 + Google Mobile Ads UMP Android 4.0.0 GA 승격 5/8**(MeowBeat GMA 통합 영향·developers.google.com docs). **5/15~16 신규 CVE 중 Unity·.NET·GameDev SDK 직접 영향 0건**. **NumLink 미커밋 분석**: ① 폰트 .asset 8개 수정(Maplestory+TextMesh Pro) → UI 테마 작업 부산물 추정·의도된 변경만 선별 커밋 필요 ② AutoGenTests 4개 삭제 → 자동 생성 테스트 제거(코드 정리 의도?·회귀 안전망 손실) ③ `_Recovery/0 (4).unity` 신규 → 에디터 크래시/자동저장 무한 누적 패턴(어제 회의 후 24시간만에 또 발생). **오늘 결정 제안**: P1 **NumLink `_Recovery/` 폴더를 `.gitignore`에 즉시 추가 + 기존 백업 .unity 4개 일괄 삭제 + 폰트 .asset 8개 diff 확인 후 의도된 변경만 선별 커밋(나머지 revert)**. P2 Unity 6.3 LTS 6000.3.15f1 적용 검토는 두 프로젝트 모두 다음 주.',
+      },
+      {
+        title:
+          '🔍 QA Tester — **MeowBeat manifest.json 변경 + Songs 미커밋 동시 발생 = 노트 데이터-매니페스트 불일치 회귀 최우선 리스크**·**NumLink Tools/ 27일째 부재 확인**(+1·MeowBeat는 unity_validate 등 18종 정상)·**잔재파일 2건 누적**(bak_btn 39일+_Recovery 1건)·MeowBeat QA 회귀 3일 차 미해결',
+        description:
+          '**MeowBeat 최우선 리스크**: manifest.json 변경 + Songs/ 미커밋 동시 발생 → **노트 데이터-매니페스트 불일치 회귀 가능성**(빌드 후 노트 로딩 실패 위험). **NumLink Tools 검증도구 27일째 부재**(+1·확인됨·MeowBeat는 unity_validate/qa_static/run_regression 18종 모두 정상). **잔재파일 2건 누적**: MainScene.unity.bak_btn 39일(+1·5/14 38→오늘 39) + NumLink _Recovery/0(4).unity 신규(어제 0건 후 또 발생). **MeowBeat QA 회귀 3일 차 미해결**: unity_validate 1W(manifest 손상) + qa_static 2E(manifest_load + scene_buttons 실패) + run_regression FAIL(make_fixtures.py 경로 오류) — 5/14·5/15·5/16 연속 P0 미실행 누적. **NumLink 신규 리스크**: AutoGenTests 4개 삭제(회귀 안전망 손실 누적)·SDF 폰트 8개 동시 수정(어제 6개에서 +2)·_Recovery 또 재발 = 반복 패턴 고착. **오늘 결정 제안**: P0 **NumLink에 `C:/Unity/_ProjectTemplate/Tools/` 즉시 복사 + MeowBeat manifest-Songs 정합성 검증부터 회귀 실행**(qa_static.py로 manifest_load 통과 회복 우선).',
+      },
+      {
+        title:
+          '📢 Content Writer — **카카오게임즈 가정의달 캠페인 5/27 연장**(5월 잔향 6월 첫주까지)·**오딘 6/3 출석 이벤트 신성소환권 156장**·**2026 게임 마케팅 키워드 = 팬덤 서사+UGC 공모전**·**인디크래프트 지원 417개사 역대 최다(전년+90)**·**NumLink UI 3종 발사 D+1 SNS 0건·MeowBeat 34일째 콘텐츠 0건**·**토요일 트래픽 골든타임 저녁 8시**',
+        description:
+          '**카카오게임즈 가정의달 캠페인 5/27까지 연장**(gametoc 5/15 보도) + **오딘 6/3까지 출석 이벤트 신성소환권 156장 살포** = 5월 잔향이 6월 첫 주까지 이어짐(스승의날 단발 종료 X). **2026 게임 마케팅 키워드 = 팬덤 서사·UGC 공모전**(openads 18607)·**인디크래프트 지원 417개사 역대 최다(전년 +90)**·**미드마켓·짧고 다듬어진 싱글 인디가 ASO 핵심 카피**. **NumLink UI 3종 발사 D+1**: 스토어 스크린샷 0건·SNS 게시 0건 = 마케팅 자산 공백 상태 / **MeowBeat 34일째 콘텐츠 발행 0건 누적**. **토요일 트래픽 골든타임 = 저녁 8시 X·스레드**(주말 첫날 가벼운 콘텐츠 소비). **오늘 결정 제안**: P1 **NumLink Kawaii/Premium/Retro 3장 비교 카드뉴스 1건을 오늘 저녁 8시 X·스레드에 "내 취향 골라줘" UGC 투표 포맷으로 발행** — 팬덤 서사·UGC 공모전 트렌드 직결·제작 30분 이내 완료 가능·D+1 발사 자산 공백 해소.\n\nSources: [2026 게임 마케팅 트렌드](https://openads.co.kr/content/contentDetail?contsId=18607) / [카카오게임즈 가정의 달 이벤트](https://www.gametoc.co.kr/news/articleView.html?idxno=108309) / [2026 ASO 동향](https://indeedseo.com/blog/top-aso-trends-shaping-the-gaming-industry/) / [Mobile Game Marketing 2026](https://megadigital.ai/en/blog/mobile-game-marketing-in-2026/)',
+      },
+      {
+        title:
+          '⚙️ DevOps — **agent-office Pages 14일째 무중단 success**(5/15 5aacc3e 19:13 KST 정상·35~42s)·**5/15~16 신규 CI/CD 변경 사실상 없음**(VS2026 이미지 마이그레이션 6/8~6/15·Cloudflare 5/15 정기점검만)·**DailyStandup LastResult 267009 2일 차 미해결**(이전 회의 후에도 그대로)·PID 14개 재증가',
+        description:
+          '**agent-office Pages 최근 5건 전부 success(35~42s)** — 5/15 5aacc3e 19:13 KST 스탠드업 커밋이 마지막 정상 배포·**Pages 14일째 무중단**. **5/15~16 신규 CI/CD 발표 사실상 없음**: Win VS2026 이미지 마이그레이션 6/8~6/15(D-day 영향 없음)·Cloudflare WAW 5/15 정기점검(영향 없음). **DailyStandup_ClaudeCode 5/16 04:00 실행됐으나 LastTaskResult 여전히 267009(비정상) 2일 차 미해결** — 이전 회의에서 지적된 후에도 그대로. **PID 14개 재증가**(5/14 2→5/16 14·자연 감소 패턴 깨짐). **Node20 actions/runner deprecation 6/2 D-17**(어제 D-18·5/18 D-15 dry-run 예약 유지). **오늘 결정 제안**: P2 **DailyStandup_ClaudeCode 267009 근본원인 진단 — Task Scheduler 액션의 Start in 경로·로그파일 권한·exit code 출처(0x41301=Running 잔재 vs 실제 종료코드) 확인 후 수정**(2일 차 미해결 = 진단 우선순위 상향).',
+      },
+      {
+        title:
+          '🎨 Art Director — **Behance 2026 Sunwashed Soft 토요무드 팔레트 부상**(더스티핑크 #E8B4A8+초키블루 #B4C5D1+뮤티드올리브 #8A8B5C+페일테라코타 #C97B5C·데시추레이션)·**모바일 퍼즐 Tactile Minimalism 압도적**·**Royal Match·MONOPOLY Match 5월 신규 메커닉**·**NumLink 테마 3종 발사 후 스토어 스크린샷·미리보기 GIF 미작성 공백**',
+        description:
+          '**Behance 2026 Sunwashed Soft 토요무드 팔레트 부상**: 더스티핑크 #E8B4A8 + 초키블루 #B4C5D1 + 뮤티드올리브 #8A8B5C + 페일테라코타 #C97B5C·데시추레이션 강조·주말 무드 활용 차별화. **모바일 퍼즐 게임 Tactile Minimalism 압도적**: 물리적 무게감 있는 표면 + 공간적 명료성. **Royal Match·MONOPOLY Match 5월 신규 메커닉 출시**(Sensor Tower 리포트). **Awwwards 5/16 SOTD 미발견**(주말 발행 지연). **NumLink UI 테마 3종(Kawaii/Premium/Retro) 발사 후 잔여 작업**: 스토어 스크린샷 0건·테마 미리보기 GIF 0건 = 마케팅 자산 공백 상태. **오늘 결정 제안**: P1 **NumLink Premium 테마에 Sunwashed Soft 팔레트(#E8B4A8/#B4C5D1/#C97B5C) 오버레이 변형 1종 시안 제작 + Premium 테마 스토어 스크린샷 3장 우선 캡처**(주말 무드 활용 차별화·Content Writer P1 카드뉴스와 자산 공유).\n\nSources: [Awwwards Sites Of The Day](https://www.awwwards.com/websites/sites_of_the_day/) / [Design Trends 2026 - Behance](https://www.behance.net/gallery/239027109/Design-Trends-2026) / [Mobile Game Art Trends 2026](https://aaagameartstudio.com/blog/mobile-games-art) / [Puzzle Games Creative Trends - Sensor Tower](https://sensortower.com/blog/puzzle-games-creative-trends)',
+      },
+    ],
+    meetingTitle:
+      '🌤️ 5/16 토요일 종합 회의 — 주말 첫날(저녁 8시 트래픽 골든타임)·BitSummit PUNCH D-6·**NumLink 재동결 1일째 시작**(어제 4커밋 발사 종결 후 24시간 만에 재진입 반복 패턴)·MeowBeat 34일+bak_btn 39일·**22일 연속 결정 실패(5/15 P0 3건 모두 미실행)**·PID 2→14 재증가·**Arrows – Puzzle Escape NumLink 신규 직접 벤치마크**·**Unity 6.3 LTS 6000.3.15f1·Firebase 13.10.0·GMA UMP Android 4.0.0**·NumLink Tools 27일째 부재·MeowBeat unity_validate 18종 정상·**카카오게임즈 가정의달 5/27 연장**·**팬덤+UGC 마케팅 표준**·**Behance Sunwashed Soft 토요무드 팔레트**·**Tactile Minimalism 압도적**·DailyStandup 267009 2일 차 미해결',
+    meetingSummary:
+      '7명 에이전트가 5/16 토요일 주말 첫날 회의 진행. 핵심 합의: ① **NumLink 재동결 1일째 시작 = 어제 b6d7a73 4커밋 발사 종결 후 24시간 만에 미커밋 재누적·_Recovery 또 1건 발생** → 발사→재동결 사이클이 반복 패턴화 = 회복 모멘텀 약화. ② **MeowBeat 34일 신기록 갱신**(+1·4주+6일·5/17이면 5주 임계 돌파 D-1·3자릿수 가속 17일째)·**bak_btn 39일**(+1)·미커밋 광범위(FarmData·SongData·4 Manager·manifest·AndroidManifest + Tools/__pycache__ 신규). ③ **22일 연속 결정 실패**(3주+1일·5/15 P0 3건 = MeowBeat meta 3개 결정+QA 회귀 디버깅+bak_btn git rm **모두 미실행**) → 결정 실패 지속 = 즉시 단일 결정 P0 1건으로 축약 필요. ④ **PID 회귀**: 5/13 24→5/14 2→5/16 14개 재증가(자연 감소 패턴 깨짐). ⑤ **Arrows – Puzzle Escape 미니멀 논리 퍼즐 Google Play 캐주얼 상위 첫 등장**(NumLink 신규 직접 벤치마크·무텍스트 30초 룰 학습 UX) + **Block Blast! 글로벌 1위 유지** + **BitSummit 한국팀 4종 셀렉션 재확정** + **라스트워 4월 매출 356억 1위**. ⑥ **MeowBeat QA 회귀 3일 차 미해결**(5/14·5/15·5/16 연속 P0 미실행 누적 = manifest 손상+scene_buttons 2E 누적). ⑦ **Unity 6.3 LTS 6000.3.15f1 5/9 정식 출시 + Firebase Unity 13.10.0 + GMA UMP Android 4.0.0 GA 5/8** → 두 프로젝트 적용 검토는 다음 주. ⑧ **NumLink _Recovery 반복 패턴 = 에디터 크래시/자동저장 무한 누적 리스크** → P1 `.gitignore`에 `_Recovery/` 추가 + 기존 4개 일괄 삭제 + 폰트 .asset 8개 selective revert. ⑨ **MeowBeat manifest.json 변경 + Songs 미커밋 동시 = 노트 데이터-매니페스트 불일치 회귀 최우선 리스크**(빌드 후 노트 로딩 실패 가능) → P0 MeowBeat manifest-Songs 정합성 검증 우선. ⑩ **NumLink Tools 검증도구 27일째 부재**(+1) → P0 `C:/Unity/_ProjectTemplate/Tools/` 즉시 복사 + baseline 측정. ⑪ **카카오게임즈 가정의달 5/27 연장 + 오딘 6/3 출석 이벤트** = 5월 잔향 6월 첫주까지·**2026 게임 마케팅 = 팬덤 서사+UGC 공모전 표준**·**인디크래프트 417개사 역대 최다**. ⑫ **NumLink UI 3종 발사 D+1 SNS 0건·MeowBeat 34일째 콘텐츠 0건** → P1 **Kawaii/Premium/Retro 비교 카드뉴스 오늘 저녁 8시 X·스레드 "내 취향 골라줘" UGC 투표 발행**(토요일 트래픽 골든타임 활용·제작 30분). ⑬ **agent-office Pages 14일째 무중단·5/15~16 CI/CD 신규 변경 없음 = 이상 없음**, 그러나 **DailyStandup LastResult 267009 2일 차 미해결**(어제 지적 후에도 그대로) → P2 Task Scheduler Start in 경로·로그파일 권한·exit code 출처 진단. ⑭ **Behance 2026 Sunwashed Soft 토요무드 팔레트 부상**(더스티핑크 #E8B4A8+초키블루 #B4C5D1+뮤티드올리브 #8A8B5C+페일테라코타 #C97B5C) + **모바일 퍼즐 Tactile Minimalism 압도적**(Royal Match·MONOPOLY Match 5월 신규 메커닉) → P1 **NumLink Premium 테마에 Sunwashed Soft 오버레이 변형 1종 시안 + Premium 스토어 스크린샷 3장 우선 캡처**(주말 무드 차별화·Content Writer 카드뉴스와 자산 공유). ⑮ **오늘의 핵심 결정**: 결정 실패 22일 차단을 위해 **P0 단 1건만 결정** — MeowBeat bak_btn 39일 + meta 3개 + 미커밋 정리를 단일 chore(qa) 커밋 묶음 발사(5주 임계 D-1 차단).',
+    meetingItems: [
+      {
+        speaker: '🎯 Orchestrator',
+        note: 'NumLink 어제 4커밋 발사 종결 후 24시간 만에 재동결 진입(_Recovery 또 발생)·MeowBeat 34일+bak_btn 39일·**22일 연속 결정 실패(5/15 P0 3건 모두 미실행)**·PID 14개 재증가. 오늘은 **P0 단 1건만 결정** — MeowBeat bak_btn 39일 + meta 3개 + 미커밋을 단일 chore(qa) 커밋 묶음 발사(5주 임계 D-1·5/17 차단 + 23일 진입 차단·15분 이내).',
+      },
+      {
+        speaker: '🎮 Game Designer',
+        note: '**Arrows – Puzzle Escape 미니멀 논리 퍼즐 Google Play 캐주얼 상위 첫 등장**(NumLink 신규 직접 벤치마크·텍스트 없이 30초 룰 학습 UX) + Block Blast! 1위 유지. BitSummit 한국팀 4종 셀렉션 재확정·라스트워 4월 356억 1위. **P1 NumLink GDD에 무텍스트 한 화면 룰 벤치마크 추가**(첫 30초 이탈률 -15% 타깃).',
+      },
+      {
+        speaker: '💻 Developer',
+        note: '**Unity 6.3 LTS 6000.3.15f1 5/9 정식 출시 + Firebase Unity 13.10.0 + GMA UMP Android 4.0.0 GA 5/8**(다음 주 적용 검토)·5/15~16 신규 Unity 직접 CVE 없음. NumLink _Recovery 반복 생성 = 에디터 크래시/자동저장 누적 리스크. **P1 `.gitignore`에 `_Recovery/` 추가 + 4개 일괄 삭제 + 폰트 .asset 8개 selective revert**.',
+      },
+      {
+        speaker: '🔍 QA Tester',
+        note: '**MeowBeat manifest.json 변경+Songs 미커밋 동시 = 노트 데이터-매니페스트 불일치 회귀 최우선 리스크**(빌드 후 노트 로딩 실패). NumLink Tools 27일째 부재(+1·MeowBeat unity_validate 18종 정상). 잔재파일 2건 누적(bak_btn 39일+_Recovery 1건). **P0 NumLink에 _ProjectTemplate Tools 즉시 복사 + MeowBeat manifest 정합성 회귀 우선**.',
+      },
+      {
+        speaker: '📢 Content Writer',
+        note: '**카카오게임즈 가정의달 5/27 연장+오딘 6/3 신성소환권 156장** = 5월 잔향 6월 첫주까지·**2026 마케팅 키워드 = 팬덤 서사+UGC 공모전**·**인디크래프트 417개사 역대 최다**. NumLink UI 3종 D+1 SNS 0건·MeowBeat 34일째 콘텐츠 0건. **P1 Kawaii/Premium/Retro 비교 카드뉴스 오늘 저녁 8시 X·스레드 "내 취향 골라줘" UGC 투표 발행**(30분 제작·골든타임).',
+      },
+      {
+        speaker: '⚙️ DevOps',
+        note: 'agent-office Pages 14일째 무중단(5/15 5aacc3e 정상 35~42s)·5/15~16 신규 CI/CD 발표 없음(VS2026 6/8~6/15·Cloudflare 5/15 정기점검만)·**DailyStandup LastResult 267009 2일 차 미해결**(이전 회의 후에도 그대로). PID 14개 재증가. **P2 Task Scheduler Start in 경로·로그파일 권한·exit code 출처 진단 우선순위 상향**.',
+      },
+      {
+        speaker: '🎨 Art Director',
+        note: '**Behance 2026 Sunwashed Soft 토요무드 팔레트 부상**(#E8B4A8+#B4C5D1+#8A8B5C+#C97B5C·데시추레이션)·**모바일 퍼즐 Tactile Minimalism 압도적**·Royal Match·MONOPOLY Match 5월 신규 메커닉. NumLink 테마 3종 발사 후 스토어 스크린샷·미리보기 GIF 미작성 공백. **P1 NumLink Premium 테마에 Sunwashed Soft 오버레이 변형 1종 시안 + Premium 스토어 스크린샷 3장 우선 캡처**(Content Writer 카드뉴스와 자산 공유).',
+      },
+    ],
+    decisions: [
+      {
+        title:
+          '[P0] **MeowBeat 5주 임계 D-1 차단 = bak_btn 39일 + meta 3개 + 미커밋 정리 단일 chore(qa) 커밋 묶음 발사**(15분 이내·22일 연속 결정 실패 차단)',
+        description:
+          'MeowBeat 4/12 657032c 후 34일째 동결·5/17이면 5주 임계 돌파(역대 최장 기록)·bak_btn 39일+meta 3개 삭제+manifest 손상+scene_buttons 2E 누적 = QA 회귀 3일 차 미해결. **22일 연속 결정 실패(5/15 P0 3건 모두 미실행)을 차단하려면 결정 항목을 1건으로 축약**: ① `git rm Assets/Scenes/MainScene.unity.bak_btn` ② Input/Item/SaveLoad.meta 3개 = `git checkout HEAD -- Assets/Scripts/Input.meta Item.meta SaveLoad.meta`로 일단 복원 ③ FarmData·SongData·manifest·AndroidManifest·4 Manager 미커밋은 git stash 후 단계별 검증 ④ 단일 `chore(qa): bak_btn+meta 복원+미커밋 정리(5주 임계 차단)` 커밋·15분 이내. **5/17 5주 임계 돌파 차단 + 23일 진입 차단**.',
+      },
+      {
+        title:
+          '[P1] **NumLink _Recovery `.gitignore` 추가 + 백업 4개 일괄 삭제 + 폰트 .asset 8개 selective revert**(반복 패턴 차단)',
+        description:
+          'NumLink 어제 b6d7a73 4커밋 발사 후 24시간 만에 `_Recovery/0(4).unity` 또 발생 = 발사→재동결 사이클 반복 패턴. **`.gitignore`에 `_Recovery/` 즉시 추가 + 기존 4개 백업 .unity 일괄 삭제**·폰트 .asset 8개(Maplestory + TextMesh Pro)는 diff 확인 후 의도된 변경(UI 테마 부산물)만 선별 커밋, 나머지 revert. AutoGenTests 4개 삭제는 의도성 확인 후 결정. **NumLink 재동결 1일째 진입 차단**.',
+      },
+      {
+        title:
+          '[P1] **NumLink 비교 카드뉴스 + Premium 스토어 스크린샷 3장 동시 발행**(Content×Art 자산 공유·토요일 저녁 8시 골든타임)',
+        description:
+          'NumLink UI 3종(Kawaii/Premium/Retro) 발사 D+1 SNS 0건·MeowBeat 34일째 콘텐츠 0건 = 마케팅 자산 공백. **Art Director: Premium 테마에 Sunwashed Soft(#E8B4A8/#B4C5D1/#C97B5C) 오버레이 변형 1종 시안 + Premium 스토어 스크린샷 3장 우선 캡처**·**Content Writer: 3장 비교 카드뉴스 1건을 오늘 저녁 8시 X·스레드에 "내 취향 골라줘" UGC 투표 포맷으로 발행** — 팬덤 서사+UGC 공모전 트렌드 직결·제작 30분 이내·토요일 트래픽 골든타임.',
+      },
+      {
+        title:
+          '[P2] **NumLink에 `C:/Unity/_ProjectTemplate/Tools/` 즉시 복사 + MeowBeat manifest 정합성 회귀**(검증도구 27일째 부재 종결)',
+        description:
+          'NumLink Tools 검증도구 27일째 부재(+1) = baseline 측정 불가능 누적·MeowBeat unity_validate 18종은 정상 작동. **NumLink에 `_ProjectTemplate/Tools/` 통째 복사 + 씬 경로 상수 업데이트 + `python3 Tools/unity_validate.py` baseline 측정**·**MeowBeat는 manifest.json + Songs/ 정합성 검증 우선**(qa_static.py로 manifest_load 통과 회복) — 4일 차 회귀 누적 차단.',
+      },
+      {
+        title:
+          '[P2] **DailyStandup_ClaudeCode 267009 근본원인 진단**(2일 차 미해결·진단 우선순위 상향)',
+        description:
+          'LastResult 267009(0x41301 = ERROR_TASK_RUNNING) 어제 회의 지적 후에도 그대로·2일 차 미해결. Task Scheduler 액션의 ① Start in 경로 정확성 ② 로그파일 권한(쓰기 가능 여부) ③ exit code 출처가 Task Scheduler 잔재(Running 상태로 인식)인지 실제 종료코드인지 식별·**진단 후 수정 PR로 한번에 처리**(매일 재발 차단).',
+      },
+    ],
+  },
+  {
     id: '2026-05-15T04:00:00-daily-standup',
     date: '2026-05-15',
     researchTitle:
