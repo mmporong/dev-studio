@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-11T02:09:58.488Z",
+  "lastUpdated": "2026-05-18T02:28:33.806Z",
   "weeks": [
     {
       "weekOf": "2026-W20",
@@ -13,6 +13,26 @@
           "summary": "MySQL 3분 vs ClickHouse 0.3초 — 같은 쿼리입니다",
           "publishedAt": "2026-05-11T00:12:36.000Z",
           "collectedAt": "2026-05-11T02:09:58.488Z"
+        },
+        {
+          "id": "76f1f4d3ae7938ff",
+          "title": "AI 시대, 성과 내는 조직일수록 토스식 TPM이 필요한 이유",
+          "url": "https://toss.tech/article/toss-tpm",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "AI 시대, 성과 내는 조직일수록 토스식 TPM이 필요한 이유",
+          "publishedAt": "2026-05-14T00:00:00.000Z",
+          "collectedAt": "2026-05-18T02:28:33.806Z"
+        },
+        {
+          "id": "1d810734338642f7",
+          "title": "누구나 찾아볼 수 있는 중고거래 서버 LLM 릴리즈 노트 도입기",
+          "url": "https://medium.com/daangn/%EB%88%84%EA%B5%AC%EB%82%98-%EC%B0%BE%EC%95%84%EB%B3%BC-%EC%88%98-%EC%9E%88%EB%8A%94-%EC%A4%91%EA%B3%A0%EA%B1%B0%EB%9E%98-%EC%84%9C%EB%B2%84-llm-%EB%A6%B4%EB%A6%AC%EC%A6%88-%EB%85%B8%ED%8A%B8-%EB%8F%84%EC%9E%85%EA%B8%B0-93afe203d766?source=rss----4505f82a2dbd---4",
+          "company": "당근 테크",
+          "category": "general",
+          "summary": "누구나 찾아볼 수 있는 중고거래 서버 LLM 릴리즈 노트 도입기",
+          "publishedAt": "2026-05-14T09:05:19.000Z",
+          "collectedAt": "2026-05-18T02:28:33.806Z"
         }
       ]
     },
