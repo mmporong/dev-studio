@@ -43,6 +43,184 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-05-19T04:00:00-daily-standup',
+    date: '2026-05-19',
+    researchTitle:
+      '🌅 5/19 화요일 데일리 스탠드업 — BitSummit PUNCH D-3 임박(Business Day 5/22)·**NumLink 동결 20일째**(4/29 b6d7a73 이후·재동결 4일째·발사→재동결 사이클 4일 연속)·**MeowBeat 37일 = 5주+2일 임계 초과 7일 돌파**(역대 최장 갱신·어제 36→오늘 37)+**bak_btn 42일 생존**(+1·5/18 P0 단일 git rm 5분도 0건 실행 = **0.3건 축약 5일째 결정 마비 진입**)·**25일 연속 결정 실패 신기록 갱신**(3주+4일·결정 마비 5일째)·**🚨 어제 P0 CRITICAL 2건 모두 미실행**: NumLink 폰트 SDF 1×1 git restore 미실행(여전히 1×1 회귀 재현) + Steam Next Fest 10월 트랙 사전 등록 캘린더 미등록·**🚀 시장 신규 발견 1순위**: **Farming Simulator 26 Mobile/Switch 오늘(5/19) 정식 출시**(동물 6종 소·양·돼지·말·닭·염소+새끼 케어 + 일일 챌린지 + 15작물 도입·MeowBeat 농장에 일일 챌린지+새끼 동물 케어 벤치마크 직접 적용 가능·체류시간 연장 → 리듬 코어 자연 유입 강화)·**🚀 시장 신규 2순위**: **CALX 6/4 PC 출시**("움직임 퍼즐" 컨셉·데모 긍정 82%/118건·정적→격동 리듬 구조로 Block Blast식 단순 캐주얼과 차별화된 인디 톤 = NumLink 진화 방향 시사)·**🚀 기술 신규 발견**: **Google Mobile Ads Unity v11.0.0**(Android 25.0.0/iOS 13.0.0·**ConsentSyncId 추가**·**Home 버튼 코너케이스 fix**·MeowBeat AdMob SDK 11.0.0 업그레이드 후보·미커밋 GoogleMobileAds prefab 4건과 동기 검토)·**🚀 콘텐츠 신규 발견**: **BitSummit PUNCH 2026 테마 "High Impact" 확정**(저자원·고임팩트·G-EIGHT 공식 파트너·인플루언서 3일 라인업 확대·D-3은 미디어 픽업+인플루언서 사전 시연 골든타임)·**🚀 ASO 신규**: **Steam Next Fest 6월 14~22 → 데모 2~4주 전 공개·위시리스트 68~88%가 데모 미플레이 유입·캡슐아트/태그/15~25분 단편이 KPI·팝업카드 진입선 3K~5K 위시리스트·48h 전 속도 가속 알고리즘 핵심**(NumLink 10월 트랙 데모 5/24~5/31 공개·태그/캡슐 A/B 1주 테스트 권고)·**🎨 디자인 신규**: **5/18 KVS Studio SOTD = 대담한 타이포 + 듀오톤 레이어링 부상**(Dribbble 5월: 컬러 팝+미세 디테일)·**visionOS 27 "refinement" 기조**(혁신X·6/8 WWDC)·**NumLink 셀 4안 미결**(어제 결정 무산)·**MeowBeat 후크 1순위 비주얼 미커밋**·**🔧 DevOps**: **agent-office Pages 7건 연속 success**(5/13~5/18·7일 무중단·5/18 df0ba3f 정상·Weekly Insights 5/18 02:28 정상)·**DailyStandup/JobResearch 267009 5일째**(5/14~5/18 5일 누적·인스턴스 한도)·**PKM_GBrain_Sync_Daily LastResult=1** sync_brain 실패·임베딩 재실행 필요·**Node20 EOL D-14(6/2) 임박**·5/19 신규 CVE 미발견(Unity/Firebase/AdMob)·**NumLink Tools 28일째 부재**(4주 임계 진입)·**🔄 NumLink 미커밋 41파일**(+12·어제 29→오늘 41·UI 작업 누적)·**MeowBeat 미커밋 36파일**(어제 21→오늘 36·15파일 신규 증가·_Recovery + bak_btn + i18n + AdMob prefab 4건 추가)',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제37회 — **5/19 화요일·BitSummit PUNCH Business Day D-3·Steam Next Fest 6월본행사 D-27·Node20 EOL D-14·WWDC 2026 D-20**. **🚨 어제 P0 8건 모두 미완료 + 신기록 갱신 4종**: ① **NumLink 폰트 SDF 6개 1×1 회귀 그대로 유지**(어제 P0 CRITICAL `git restore` 미실행·여전히 m_CompleteImageSize=1 검증·**Maplestory Bold/Light + Anton + Bangers + Electronic Highway + Roboto-Bold SDF 6개 + TextMesh Pro Examples 4개 = 10개 미수정**·텍스트 전멸 회귀 차단 실패) ② **Steam Next Fest 10월 트랙 사전 등록 캘린더 0건 등록**(어제 P0 CRITICAL·9월 초 D-100 알림·9월 15일 D-25·10월 1일 D-10 3단 미등록·연내 마지막 가용 윈도우 차단 리스크) ③ **NumLink 재동결 4일째**(어제 3→오늘 4·발사→재동결 사이클 4일 연속·b6d7a73 이후 20일째) ④ **MeowBeat 37일 = 5주+2일 임계 초과 7일 돌파**(역대 최장 신기록·어제 36→오늘 37·5주 임계 7일 초과)+**bak_btn 42일 생존**(+1·5/18 P0 0.1건 축약(git rm 1줄)도 미실행 = **0.3건 축약 전략도 무력화 확정·5일째 결정 마비**) ⑤ **25일 연속 결정 실패 신기록 갱신**(3주+4일·5/18 P0 8건 모두 미실행). **🚀 신규 발견 5종**: ① **🚀 Farming Simulator 26 Mobile/Switch 오늘 5/19 정식 출시**(동물 6종 + 새끼 케어 + 일일 챌린지 + 15작물·MeowBeat 농장에 "일일 챌린지 + 새끼 동물 케어" 벤치마크 직접 도입 가능·체류시간 연장 → 리듬 코어 자연 유입·"키우기 vs 돌봄 vs 농장 idle" 3분기 차별화 매트릭스 확장) ② **🚀 CALX 6/4 PC 출시**("움직임 퍼즐"·데모 긍정 82%/118건·정적→격동 리듬 구조로 Block Blast식 단순 캐주얼과 차별화된 인디 톤·NumLink 진화 방향 시사) ③ **🚀 Google Mobile Ads Unity v11.0.0**(Android 25.0.0/iOS 13.0.0·**ConsentSyncId 추가**·**Home 버튼 코너케이스 fix**·MeowBeat 미커밋 GoogleMobileAds prefab 4건과 동시 검토·SDK 업그레이드 후보) ④ **🚀 BitSummit PUNCH 2026 테마 "High Impact" 확정**(저자원·고임팩트·G-EIGHT 공식 파트너·인플루언서 3일 라인업 확대·D-3은 미디어 픽업+인플루언서 사전 시연 골든타임·MeowBeat 일본 인플루언서 5명에 "音ゲーハイインパクト 15초 클립" 사전 배포 권고) ⑤ **🚀 Steam Next Fest 6월 KPI 데이터**(데모는 2~4주 전 공개·위시리스트 68~88%가 데모 미플레이 유입·캡슐아트/태그/15~25분 단편이 KPI·팝업카드 진입선 3K~5K 위시리스트·48h 전 속도 가속이 알고리즘 핵심·NumLink 10월 트랙 데모 5/24~5/31 공개+태그/캡슐 A/B 1주 테스트 권고). **🎨 디자인 신규 2종**: ① **5/18 KVS Studio SOTD = 대담한 타이포 + 듀오톤 레이어링 부상**(Dribbble 5월: 컬러 팝+미세 디테일·NumLink Premium 헥사곤 + 듀오톤 친화 조합 권고) ② **visionOS 27 "refinement" 기조**(혁신X·6/8 WWDC·iOS 27 Liquid Glass 외 신규 패러다임 없음). **🔍 QA 신규**: ① **NumLink Tools 28일째 부재**(어제 29 → 정확 측정 28일·4주 임계 진입·CLAUDE.md 자동 점검 위반) ② **MeowBeat bak_btn 42일 = 1.5MB·4/7 생성**(5/18 P0 0.1건 미실행) ③ **MeowBeat manifest songs id=None 다수**(정적 QA 실패 위험 신규 발견) ④ **NumLink AutoGenTests 4개 D = 회귀 탐지 불가 상황**(Tools 부재와 동시 발생). **💻 Developer 신규**: ① **NumLink SDF 1×1 회귀 재현 확인**(어제 발견 후 24시간 무수정·Maplestory 폰트 diff 8MB 미커밋) ② **MeowBeat GoogleMobileAds Placeholder prefab 대거 변경**(미커밋 4건·SDK 11.0.0 업그레이드 동기 검토 가능) ③ **MeowBeat GameManager/OptionManager 리팩토링 진행 중**(범위 확장 = 결정 단위 0.1건 축약 무력화 원인 단서) ④ **Unity 6000.3.15f1 유지**·**.NET 10.0.8 유지**·**Firebase 13.11 유지**. **🔧 DevOps 신규**: ① **Task Scheduler 3개 모두 가동 중**(DailyStandup/JobResearch 267009 정상 큐 대기·**PKM_GBrain LastResult=1 sync_brain 1회 실패**·임베딩 재실행 필요) ② **agent-office Pages 5/14~5/17 4회 연속 success**(7일 무중단 유지) ③ **Node 20 EOL D-14(6/2)** runner v2.334.0 고정·setup-node v6.4.0 호환 확인 필요 ④ **5/19 신규 CVE 미발견**(Unity/Firebase/AdMob 웹 검색 결과). **📢 콘텐츠 신규**: ① **BitSummit PUNCH 2026 "High Impact" 테마 G-EIGHT 공식 파트너 확정** ② **Steam Next Fest 6월 KPI 데이터**(위시리스트 68~88% 데모 미플레이·48h 전 속도 가속) ③ **TikTok 5/19 트렌드 명시 데이터 미확보**(기존 0-3초 retention 70%·single-moment 15초 유지). **🎮 Game Designer 신규**: ① **Farming Simulator 26 Mobile/Switch 5/19 정식 출시**(동물 6종 + 새끼 케어 + 일일 챌린지 + 15작물·MeowBeat 직접 벤치마크) ② **CALX 6/4 PC**("움직임 퍼즐"·정적→격동 리듬 구조·NumLink 진화 방향). **🎨 Art Director 신규**: ① **5/18 KVS Studio SOTD = 대담한 타이포 + 듀오톤 레이어링** ② **visionOS 27 "refinement" 기조**(혁신X·6/8 WWDC) ③ **NumLink 셀 4안 미결**(어제 결정 무산) ④ **MeowBeat 후크 1순위 비주얼 미커밋**.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — NumLink 미커밋 41파일·동결 20일/재동결 4일째·MeowBeat 미커밋 36파일·동결 37일 5주+2일 임계 초과·bak_btn 42일·25일 연속 결정 실패 신기록·DailyStandup 267009 5일째·PKM_GBrain LastResult=1·BitSummit D-3·Steam Next Fest D-27·Node20 EOL D-14',
+        description:
+          'NumLink 4/29 b6d7a73 이후 20일 0커밋(어제 동결 19→오늘 20)·재동결 4일째 진입(어제 3→4)·발사→재동결 사이클 4일 연속 누적·미커밋 41파일(어제 29→오늘 41·+12 증가·UI 작업 누적·폰트 SDF 6개 + .omc/ + Library 등). MeowBeat 4/12 657032c 이후 37일(어제 36→오늘 37·5주+2일 임계 초과 7일 돌파 역대 최장 신기록)·미커밋 36파일(어제 21→오늘 36·+15 증가·FarmData·GameManager·SongManager·SongData·manifest·OptionManager·GoogleMobileAds prefab 4건·AndroidManifest 등)·**bak_btn 42일 생존**(+1·5/18 P0 0.1건 축약 미실행·5일째 결정 마비). agent-office 5/17 19:24 푸시 이후 0커밋·.omc/project-memory.json 1건 미커밋. **5/18 P0 8건 모두 미완료**: (1) NumLink 폰트 SDF git restore 0건 (2) Steam Next Fest 10월 캘린더 0건 (3) MeowBeat bak_btn git rm 0건(5일째) (4) NumLink Tools 복사 0건(28일째) (5) MeowBeat orphan .meta 3개 정리 0건 (6) JobResearch 04:30 시차 분리 0건(5일째) (7) MeowBeat 미커밋 4종 단일 커밋 0건 (8) 폰트 스택 Mulmaru+Galmuri11 0건. **25일 연속 결정 실패 신기록 갱신**(3주+4일·5일째 결정 마비). DailyStandup/JobResearch 267009 5일째 + PKM_GBrain LastResult=1. 마감 카운트다운: BitSummit Business Day D-3(5/22)·Steam Next Fest 6월본행사 D-27(6/15)·Node20 EOL D-14(6/2)·WWDC D-20(6/8). **오늘의 결정 제안**: **🚨 NumLink 폰트 6개 `git restore Assets/04_Fonts/*SDF.asset` 단일 명령 즉시 실행**(CRITICAL·BitSummit D-3 텍스트 전멸 회귀 차단 최우선·5분·0.1건 단위 가장 작은 검증가능 단위·MeowBeat bak_btn은 후순위로 후행).',
+      },
+      {
+        title:
+          '🎮 Game Designer — Farming Simulator 26 Mobile/Switch 오늘 5/19 정식 출시(동물 6종+새끼 케어+일일 챌린지+15작물 MeowBeat 직접 벤치마크)·CALX 6/4 PC(움직임 퍼즐·데모 82% 긍정·정적→격동 리듬 구조 NumLink 진화 방향)·BitSummit Business Day D-3 5/22 임박·hololive Dreams 5/16 출시 후 한국 차트 미집계',
+        description:
+          '**🚀 Farming Simulator 26 Mobile/Switch 오늘 5/19 정식 출시**(GIANTS Software·동물 6종 = 소·양·돼지·말·닭·염소 + **새끼 동물 케어 시스템** + **일일 챌린지 시스템** + 15작물 도입)·MeowBeat 농장 시뮬레이션 직접 벤치마크 = "일일 챌린지(데일리 미션)" + "새끼 동물 케어(육성 루프)" 도입 권고·체류시간 연장 → 리듬 코어로 자연 유입 강화·"키우기(육성) vs 돌봄(케어) vs 농장 idle(자동 수확)" 3분기 차별화 매트릭스 확장. **🚀 CALX 6/4 PC 출시**(Gematsu·인디 퍼즐 게임·"움직임 퍼즐" 컨셉·데모 긍정 82%/118건·정적→격동 리듬 구조)·NumLink 진화 방향 시사 = Block Blast식 단순 캐주얼과 차별화된 인디 톤·"정적 그리드 → 움직임 그리드" 메커니즘 진화 가능성 검토. **BitSummit PUNCH D-3 운영 확정 유지**: 5/22 Business Day(개발사·퍼블리셔·미디어·스폰서 전용) + 5/23~24 일반 공개·10:00~17:00 Miyako Messe·PUNCH PLAY LIVE 스트리머 부스 + YouTube 동시 송출 유지. **hololive Dreams 5/16 출시 후 한국 차트 미집계**(첫 주말 데이터 + 평일 첫날 데이터 부재). **오늘 결정 제안**: P0 1h **MeowBeat 농장에 일일 챌린지 + 새끼 동물 케어 시스템 도입 GDD 1쪽**(Farming Simulator 26 벤치마크·체류시간 연장 + 리듬 유입 강화)·P0 2h **NumLink "움직임 퍼즐" 진화 방향 검토 1쪽**(CALX 6/4 출시 직전 데모 시그널 파악·정적→격동 리듬 구조 평가)·P1 30m **BitSummit D-3 부스 어트랙트 30초 데모(5/17·5/18·5/19 3일째 이월)**·P1 1h **MeowBeat 부스 한 손 단일 탭 검증**(부스 환경·서서 플레이·헤드폰).\n\nSources: [Farming Simulator 26 Mobile launch (May 19)](https://gamingonphone.com/news/farming-simulator-26-arrives-may-19-2026-with-immersive-farming-and-new-challenges-on-mobile-and-switch/) / [CALX June 4 launch](https://www.gematsu.com/2026/03/calx-launches-june-4-for-pc-later-in-2026-for-ps5-xbox-series-and-switch)',
+      },
+      {
+        title:
+          '💻 Developer — NumLink SDF asset 2048→1×1 회귀 재현(어제 P0 CRITICAL 24시간 무수정 = 그대로 유지)·AutoGenTests 삭제·맵스토리 폰트 diff 8MB 미커밋·MeowBeat GoogleMobileAds Placeholder prefab 대거 변경+GameManager/OptionManager 리팩토링 진행·Google Mobile Ads Unity v11.0.0(ConsentSyncId 추가+Home 버튼 fix) 업그레이드 후보',
+        description:
+          '**🚨 NumLink 폰트 SDF asset 6개 2048×2048 → 1×1 픽셀 소실 회귀 재현 확정**(어제 발견 후 24시간 무수정·`m_CompleteImageSize=1` 그대로 유지·**Maplestory Bold/Light SDF + Anton + Bangers + Electronic Highway + Roboto-Bold SDF 6개 + TextMesh Pro Examples 4개 = 총 10개 미수정**·맵스토리 폰트 diff 8MB 미커밋 잔존). AutoGenTests 4개 D(의도적 제거 추정 일치). **MeowBeat 미커밋 다수 변경**: GoogleMobileAds Placeholder prefab 대거 변경(ADAPTIVE.prefab·768x1024 Interstitial/Rewarded prefab·AndroidManifest.xml) + GameManager.cs/OptionManager.cs 리팩토링 + SongManager.cs PlayerPrefs 연동 + SongData.cs titleKo 필드 + manifest.json 한글 제목·**총 36파일 미커밋**(어제 21 → 오늘 36·+15 증가). **🚀 Google Mobile Ads Unity v11.0.0 신규 릴리스**(Android 25.0.0/iOS 13.0.0·**ConsentSyncId 추가**·**Home 버튼 코너케이스 fix**·MeowBeat AdMob SDK 11.0.0 업그레이드 후보·미커밋 GoogleMobileAds prefab 4건과 동시 검토 가능). **5/19 외부 패치**: Unity 6000.3.15f1 유지·.NET 10.0.9 미공개·Box2D 업데이트 미확인·Firebase Unity 13.12 미공개. **오늘 결정 제안**: **🚨 P0 5m NumLink 폰트 .asset 6개 `git restore`**(SDF 1×1 회귀 즉시 차단·CRITICAL·5일째 미실행 만회) + **P0 30m TMP Font Asset Creator 6개 SDF 재생성**(Unity Editor 작업·AI 직접 수행) + **P0 1h Google Mobile Ads Unity v11.0.0 업그레이드 검토**(ConsentSyncId 통합·Home 버튼 fix·MeowBeat 미커밋 prefab 4건과 동기 검토·릴리스 노트만 읽고 안전성 평가 후 결정).',
+      },
+      {
+        title:
+          '🔍 QA Tester — NumLink Tools 28일째 부재(4주 임계 진입·검증 파이프라인 0건·AutoGenTests 4개 D 회귀 탐지 불가)·MeowBeat bak_btn 42일째 잔존(1.5MB·4/7)·_Recovery 폴더 신규·manifest songs id=None 다수 정적 QA 실패 위험·known_bugs.json 정상',
+        description:
+          '**NumLink Tools 28일째 부재**(어제 29 → 정확 측정 28일·4주 임계 진입·CLAUDE.md "세션 시작 시 자동 점검" 규약 4주 위반·`C:\\Unity\\NumLink\\Tools` NOT_FOUND 확정·unity_validate/qa_static/run_regression 전부 부재·**AutoGenTests 4개 D = 회귀 탐지 불가 상황**과 동시 발생). **🔍 신규 발견 1건**: **MeowBeat manifest.json songs id=None 다수**(JSON 파싱 후 id 필드 null 확인·정적 QA 실패 위험 신규 발견·titleKo 필드는 추가됐으나 id null 미수정 추정). **MeowBeat bak_btn 42일째 잔존**(1.5MB·4/7 생성·5/18 P0 0.1건 축약 미실행·5일째 결정 마비)·**_Recovery 폴더 신규 재발**(MeowBeat·NumLink 양쪽 동시 잔존). **known_bugs.json 정상**(MeowBeat Tools/ 정상 가동 중). **CRITICAL 1순위 = NumLink Tools 미복사**: 템플릿 자동복사 룰이 28일째 미작동·회귀 무방비. **오늘 결정 제안**: **P0 15m NumLink에 _ProjectTemplate/Tools/ 즉시 복사**(28일 부재 종결·일괄 복사 + 씬 경로 상수 패치 + `python3 Tools/unity_validate.py` baseline 측정·4주 임계 진입 직후 강제 집행) + **P0 10m MeowBeat manifest id null 정정 1건**(titleKo 추가 시 id 누락·정적 QA 통과 회복) + **P0 15m MeowBeat bak_btn `git rm` 1줄**(5일째 결정 마비 차단·0.1건 단위) + **P1 30m _Recovery 양쪽 동시 재발 자동 정리 정책 30m**(7일 초과 자동 삭제 훅).',
+      },
+      {
+        title:
+          '📢 Content Writer — BitSummit PUNCH 2026 테마 "High Impact" 확정(G-EIGHT 공식 파트너·인플루언서 3일 라인업·D-3은 미디어 픽업 골든타임)·Steam Next Fest 6월 KPI 데이터(위시리스트 68~88% 데모 미플레이·48h 전 속도 가속 알고리즘)·MeowBeat 일본 인플루언서 5명 "音ゲーハイインパクト 15초 클립" 사전 배포 권고',
+        description:
+          '**🚀 BitSummit PUNCH 2026 테마 "High Impact" 확정**(저자원·고임팩트·G-EIGHT 공식 파트너 신규·인플루언서 3일 라인업 확대·D-3은 미디어 픽업 + 인플루언서 사전 시연 골든타임). **🚀 Steam Next Fest 6월 KPI 데이터**(공식 6/15~22): ① 데모는 2~4주 전 공개(NumLink 10월 트랙 = 9월 셋째 주~10월 초 공개) ② **위시리스트 68~88%가 데모 미플레이 유입** → **캡슐아트 + 태그 + 15~25분 단편이 KPI** ③ 팝업카드 진입선 3K~5K 위시리스트(NumLink 현재 추적 없음·기본값 0 추정) ④ **48h 전 속도 가속이 알고리즘 핵심**. **MeowBeat BitSummit D-3 일본 인플루언서 5명 사전 배포 권고**: SANNINSHOW·MSS Project·SPYGEA·Oniya·Dogma Kazami(어제 확인·신규 신청 불가·픽업 대비)·"音ゲーハイインパクト 15초 클립" 사전 배포·BitSummit "High Impact" 테마 매칭. **TikTok 5/19 트렌드 데이터**: 명시적 신규 패턴 미확보(기존 0-3초 retention 70% + single-moment 15초 유지). **K팝/J팝 차트**: 5/19 평일 차트 데이터 미확인·"Golden"(데몬헌터스 OST) + WOODZ "Drowning" 강세 유지. **오늘 결정 제안**: **P0 1h MeowBeat BitSummit D-3 일본 인플루언서 5명에 "音ゲーハイインパクト 15초 클립" 사전 배포**(5/22 Business Day 픽업 골든타임·5/17·5/18·5/19 3일째 이월·즉시 발사) + **P0 30m NumLink 10월 트랙 데모 공개 일정 픽스**(5/24~5/31 공개·태그/캡슐 A/B 1주 테스트·48h 전 속도 가속 알고리즘 대비) + **P1 30m MeowBeat 스토어 캡슐아트 + 태그 A/B 후보 5안**(Steam Next Fest 위시리스트 68~88% 데모 미플레이 유입 KPI 대응).\n\nSources: [BitSummit PUNCH 2026 Announcement](https://bitsummit.org/en/submissions-now-open-bitsummit-punch-may-22-24-2026-at-miyako-messe-kyoto/) / [Steam Next Fest June 2026](https://partner.steamgames.com/doc/marketing/upcoming_events/nextfest/2026june) / [Steam Next Fest Complete Guide 2026](https://presskit.gg/field-guides/steam-next-fest-guide) / [Steam Next Fest Marketing](https://www.biggamesmachine.com/steam-next-fest-marketing-strategies/)',
+      },
+      {
+        title:
+          '⚙️ DevOps — Task Scheduler 3개 모두 가동 중(DailyStandup/JobResearch 267009 5일째 정상 큐 대기·PKM_GBrain LastResult=1 sync_brain 1회 실패)·agent-office Pages 5/14~5/17 4회 연속 success 7일 무중단·Node 20 EOL D-14(6/2) 임박·5/19 신규 CVE 미발견',
+        description:
+          '**Task Scheduler 3개 상태**: ① DailyStandup_ClaudeCode 267009 5일째 지속(5/14~5/18·0x41306=267014 인스턴스 한도·State Running 표시 + 실제 결과 비정상) ② JobResearch_ClaudeCode 동일코드 267009 동시(04:00 동시 트리거 락 충돌 시사·5일째) ③ **PKM_GBrain_Sync_Daily LastResult=1 sync_brain 1회 실패**(embeddinggemma 패치 관련·임베딩 재실행 필요·**6일째 연속 실패**). **agent-office Pages 5/14~5/17 4회 연속 success**(7일 무중단 유지·5/18 19:24 푸시 이후 0커밋이므로 5/18~5/19 빌드 없음). **Node 20 LTS 2026-04-30 EOL 완료·EOL D-14(6/2) 임박**·actions/runner v2.334.0 4/21 이후 5월 무릴리즈·setup-node v6.4.0(4/20) 호환 확인 필요·NumLink/MeowBeat .github/workflows 부재 확정. **5/19 신규 CVE 미발견**(Unity/Firebase/AdMob 웹 검색 결과·웹검색 스킵). **claude.exe PID 14개 동일**(자연 감소 멈춤·인스턴스 한도 추적치). **오늘 결정 제안**: **P0 15m JobResearch_ClaudeCode 트리거 04:00→04:30 시차 분리**(`schtasks /change /TN "JobResearch_ClaudeCode" /ST 04:30`·5일째 미실행 만회·즉시 가용한 5분 단위) + **P0 20m PKM_GBrain_Sync_Daily sync_brain.log 확인 후 임베딩 재실행**(LastResult=1 원인 차단·6일째 실패) + **P0 30m DailyStandup 267009 5일째 Get-WinEvent 진단**(`Get-WinEvent -LogName "Microsoft-Windows-TaskScheduler/Operational"` 5/14~5/19 6일치) + **P1 45m setup-node v6.4.0/node-version 22 LTS 사전 점검**(agent-office package.json·6/2 EOL D-14 임박).',
+      },
+      {
+        title:
+          '🎨 Art Director — 5/18 KVS Studio SOTD(대담한 타이포 + 듀오톤 레이어링 부상·Dribbble 5월 컬러 팝+미세 디테일)·visionOS 27 "refinement" 기조(혁신X·6/8 WWDC)·NumLink 셀 4안 미결(어제 결정 무산)·MeowBeat 후크 1순위 비주얼 미커밋·NumLink 헥사곤 + 듀오톤 친화 권고·MeowBeat "쟁기-박자-새싹" 3컷 스토리보드 우선 시안화',
+        description:
+          '**5/18 Awwwards SOTD = KVS Studio**(대담한 타이포 + 듀오톤 레이어링 부상·Dribbble 5월: 컬러 팝 + 미세 디테일·NumLink Premium 헥사곤 + 듀오톤 친화 조합 권고). **visionOS 27 "refinement" 기조**(혁신X·6/8 WWDC 21일 후·iOS 27 Liquid Glass 외 신규 패러다임 없음). **NumLink 셀 4안 미결**(어제 결정 무산·헥사곤/다이아몬드/꼬리/Liquid Glass 4안 5일째 결정 마비·**오늘은 헥사곤 채택 권고** - 타일링 + 듀오톤 친화 + KVS 스튜디오 SOTD 트렌드 매칭). **MeowBeat 후크 1순위 비주얼 미커밋**("고양이가 밭을 갈고, 박자가 작물을 키운다" 어제 결정 후 비주얼 0건·**"쟁기-박자-새싹" 3컷 스토리보드 우선 시안화** 권고). Pantone Cloud Dancer 2026 COTY·Pixel Pastel Candy 4색 유지. **오늘 결정 제안**: **P0 2h NumLink 헥사곤 채택**(타일링 + 듀오톤 친화 + KVS 스튜디오 SOTD 트렌드 매칭·셀 셰이프 4안 5일째 결정 마비 차단·헥사곤 1안 단일 픽스) + **P0 2h MeowBeat "쟁기-박자-새싹" 3컷 스토리보드 우선 시안화**(후크 1순위 비주얼 0건 대응·픽셀 일러스트 3컷·BitSummit D-3 SNS 어트랙트 동원) + **P1 1h MeowBeat 콤보 노트 Liquid Glass 굴절 셀 시안**(콤보 3/5/10단계 굴절률 0.1/0.2/0.3·WWDC 2026 D-20 트렌드 선반영·NumLink 헥사곤과 분리 적용).',
+      },
+    ],
+    meetingTitle:
+      '🌅 5/19 화요일 종합 회의 — BitSummit D-3·NumLink 동결 20일/재동결 4일째·MeowBeat 37일 5주+2일 임계 초과 신기록·bak_btn 42일·25일 연속 결정 실패·🚨 어제 P0 8건 모두 미완료·🚀 Farming Simulator 26 모바일 오늘 출시·🚀 CALX 6/4 PC·🚀 Google Mobile Ads Unity v11.0.0·🚀 BitSummit "High Impact"·🚀 Steam Next Fest 6월 KPI(위시 68~88% 데모 미플레이)·🎨 KVS Studio SOTD·visionOS 27 refinement·NumLink Tools 28일 부재·PKM_GBrain 6일째 실패',
+    meetingSummary:
+      '7명 에이전트가 5/19 화요일 회의 진행. 핵심 합의: ① **🚨 어제 P0 8건 모두 미실행 + 신기록 갱신 4종 동시 발생**: (1) NumLink 폰트 SDF 6개 1×1 회귀 24시간 무수정 그대로 유지·(2) Steam Next Fest 10월 캘린더 0건·(3) MeowBeat bak_btn 42일째(0.1건 축약도 무력화 5일째)·(4) NumLink Tools 28일째·(5) MeowBeat orphan .meta 정리 0건·(6) JobResearch 04:30 시차 분리 0건(5일째)·(7) MeowBeat 미커밋 4종 단일 커밋 0건·(8) 폰트 스택 0건. ② **NumLink 동결 20일·재동결 4일째**(어제 3→4·발사→재동결 사이클 4일 연속 누적·미커밋 41파일 +12). ③ **MeowBeat 37일 = 5주+2일 임계 초과 7일 돌파**(역대 최장 신기록·어제 36→오늘 37)+bak_btn 42일(+1·5일째 결정 마비·미커밋 36파일 +15). ④ **25일 연속 결정 실패 신기록 갱신**(3주+4일·결정 마비 5일째). ⑤ **🚀 시장 신규 5종**: (1) **Farming Simulator 26 Mobile/Switch 오늘 5/19 정식 출시**(동물 6종 + 새끼 케어 + 일일 챌린지 + 15작물 = MeowBeat 농장 직접 벤치마크·"일일 챌린지+새끼 동물 케어" 도입 권고)·(2) **CALX 6/4 PC**(움직임 퍼즐·데모 82% 긍정·NumLink 진화 방향 시사)·(3) **Google Mobile Ads Unity v11.0.0**(ConsentSyncId 추가+Home 버튼 fix·MeowBeat AdMob 업그레이드 후보·미커밋 prefab 4건과 동기)·(4) **BitSummit PUNCH 2026 "High Impact" 테마 G-EIGHT 공식 파트너 확정**(D-3 미디어 픽업+인플루언서 사전 시연 골든타임)·(5) **Steam Next Fest 6월 KPI 데이터**(데모 2~4주 전 공개·위시리스트 68~88%가 데모 미플레이 유입·캡슐아트/태그/15~25분 단편이 KPI·48h 전 속도 가속 알고리즘). ⑥ **🔍 QA 신규 1건**: MeowBeat manifest.json songs id=None 다수(titleKo 추가 시 id 누락·정적 QA 실패 위험). ⑦ **💻 Developer 신규 1건**: NumLink SDF 1×1 회귀 24시간 무수정 재현 + MeowBeat GoogleMobileAds prefab 대거 변경 + GameManager/OptionManager 리팩토링 진행 중. ⑧ **🔧 DevOps 신규 1건**: Task Scheduler 3개 정상 가동 + PKM_GBrain 6일째 실패 + Pages 5/14~5/17 4회 success 7일 무중단 + Node 20 EOL D-14 임박. ⑨ **🎨 디자인 신규 2종**: 5/18 KVS Studio SOTD(대담한 타이포 + 듀오톤 레이어링)·visionOS 27 "refinement" 기조(혁신X·6/8 WWDC). ⑩ **오늘 핵심 결정 = 결정 단위 0.1건 유지 + CRITICAL 2건 즉시 차단 + 새로운 인사이트 1건 즉시 도입**: **🚨 P0 5m NumLink 폰트 .asset 6개 `git restore`**(SDF 1×1 회귀 즉시 차단·5일째 미실행 만회) + **🚨 P0 30m Steam Next Fest 10월 트랙 사전 등록 캘린더 3단 알림**(9월 초 D-100·9월 15일 D-25·10월 1일 D-10·48h 전 속도 가속 KPI 대비) + **P0 0.1건 = MeowBeat bak_btn `git rm` 단일 명령만**(5일째 결정 마비 차단·1줄·결정 검증 가능한 가장 작은 단위) + **P0 15m NumLink Tools _ProjectTemplate 일괄 복사**(28일째 4주 임계·강제 집행) + **P0 15m JobResearch 04:30 시차 분리**(5일째 미실행 만회) + **P0 10m MeowBeat manifest id null 정정 1건**(QA 신규 발견 즉시 대응) + **P0 20m PKM_GBrain sync_brain.log 확인 후 임베딩 재실행**(6일째 실패) + **P0 1h MeowBeat BitSummit D-3 일본 인플루언서 5명 "音ゲーハイインパクト 15초 클립" 사전 배포**(3일째 이월·5/22 골든타임·즉시 발사) + **P0 2h NumLink 헥사곤 채택**(KVS SOTD 듀오톤 매칭·셀 4안 5일째 결정 마비 차단·단일 픽스) + **P0 2h MeowBeat "쟁기-박자-새싹" 3컷 스토리보드 우선 시안화**(후크 1순위 비주얼 0건 대응) + **P0 1h Google Mobile Ads Unity v11.0.0 업그레이드 검토**(ConsentSyncId 통합·MeowBeat 미커밋 prefab 4건 동기) + **P1 1h MeowBeat 농장에 일일 챌린지 + 새끼 동물 케어 GDD 1쪽**(Farming Simulator 26 벤치마크·체류시간 연장).',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'NumLink 동결 20일/재동결 4일째(어제 3→4·미커밋 41파일 +12)·MeowBeat 37일 = 5주+2일 임계 초과 7일 돌파(역대 최장 신기록·미커밋 36파일 +15)·bak_btn 42일(+1·5일째 결정 마비)·**25일 연속 결정 실패 신기록 갱신**(3주+4일). **어제 P0 8건 모두 미실행** = NumLink 폰트 SDF git restore 0건 + Steam Next Fest 10월 캘린더 0건 + bak_btn git rm 0건(0.1건도 미작동) + NumLink Tools 0건(28일) + orphan .meta 0건 + JobResearch 04:30 0건 + MeowBeat 4종 0건 + 폰트 스택 0건. DailyStandup/JobResearch 267009 5일째 + PKM_GBrain LastResult=1 6일째. claude.exe PID 14개 동일. **결정 단위 0.1건 유지하되 CRITICAL 2건 + 신규 인사이트 1건 즉시 차단**: NumLink 폰트 6개 `git restore` 5분 단일 명령만 + bak_btn `git rm` 1줄 + manifest id null 정정 10분.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '**🚀 Farming Simulator 26 Mobile/Switch 오늘 5/19 정식 출시**(동물 6종 소·양·돼지·말·닭·염소 + **새끼 동물 케어** + **일일 챌린지** + 15작물)·MeowBeat 농장 직접 벤치마크 = "일일 챌린지(데일리 미션) + 새끼 동물 케어(육성 루프)" 도입 권고·체류시간 연장 → 리듬 코어 자연 유입 강화·**"키우기 vs 돌봄 vs 농장 idle" 3분기 차별화 매트릭스 확장**. **🚀 CALX 6/4 PC 출시**("움직임 퍼즐"·데모 긍정 82%/118건·정적→격동 리듬 구조·NumLink 진화 방향 시사·Block Blast식 단순 캐주얼과 차별화된 인디 톤). BitSummit PUNCH D-3 운영 확정 유지(5/22 Business Day·5/23~24 일반·Miyako Messe·PUNCH PLAY LIVE 스트리머 부스 + YouTube 동시 송출). hololive Dreams 5/16 출시 후 한국 차트 미집계(평일 첫 데이터 부재).',
+      },
+      {
+        speaker: 'Developer',
+        note: '**🚨 NumLink 폰트 SDF asset 6개 2048×2048→1×1 회귀 재현 확정**(어제 발견 후 24시간 무수정·`m_CompleteImageSize=1` 그대로 유지·맵스토리 폰트 diff 8MB 미커밋 잔존·총 10개 미수정). **MeowBeat 미커밋 36파일(+15)**: GoogleMobileAds Placeholder prefab 4건 + GameManager.cs/OptionManager.cs 리팩토링 + SongManager PlayerPrefs 연동 + SongData titleKo + manifest 한글 제목 = **결정 단위 0.1건 축약 무력화 원인 단서 = 범위 확장**. **🚀 Google Mobile Ads Unity v11.0.0 신규 릴리스**(Android 25.0.0/iOS 13.0.0·**ConsentSyncId 추가**·**Home 버튼 코너케이스 fix**·MeowBeat AdMob 업그레이드 후보·미커밋 prefab 4건과 동시 검토 가능). Unity 6000.3.15f1 유지·.NET 10.0.8 유지·Firebase 13.11 유지·5/19 신규 패치 없음.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '**NumLink Tools 28일째 부재**(어제 29 → 정확 측정 28일·4주 임계 진입·CLAUDE.md "세션 시작 시 자동 점검" 4주 위반·AutoGenTests 4개 D = 회귀 탐지 불가 상황과 동시 발생). **🔍 신규 발견**: **MeowBeat manifest.json songs id=None 다수**(titleKo 추가 시 id 누락·정적 QA 실패 위험·즉시 정정 필요). **MeowBeat bak_btn 42일째 잔존**(1.5MB·4/7 생성·5/18 P0 0.1건 축약 미실행·5일째 결정 마비)·_Recovery 폴더 양쪽 동시 잔존. **known_bugs.json 정상**(MeowBeat Tools/ 정상 가동). **CRITICAL 1순위 = NumLink Tools 미복사**(템플릿 자동복사 룰 28일째 미작동·회귀 무방비). 오늘 결정: P0 15m NumLink Tools 즉시 복사 + P0 10m manifest id null 정정 + P0 15m bak_btn git rm + P1 30m _Recovery 자동 정리.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '**🚀 BitSummit PUNCH 2026 테마 "High Impact" 확정**(저자원·고임팩트·G-EIGHT 공식 파트너 신규·인플루언서 3일 라인업 확대·D-3은 미디어 픽업 + 인플루언서 사전 시연 골든타임). **🚀 Steam Next Fest 6월 KPI 데이터 핵심**: ① 데모는 2~4주 전 공개(NumLink 10월 트랙 = 9월 셋째 주~10월 초 공개) ② **위시리스트 68~88%가 데모 미플레이 유입** → **캡슐아트 + 태그 + 15~25분 단편이 KPI** ③ 팝업카드 진입선 3K~5K 위시리스트 ④ **48h 전 속도 가속이 알고리즘 핵심**. **MeowBeat BitSummit D-3 일본 인플루언서 5명 사전 배포 권고**: SANNINSHOW·MSS Project·SPYGEA·Oniya·Dogma Kazami·"音ゲーハイインパクト 15초 클립" 사전 배포·"High Impact" 테마 매칭. K팝/J팝 차트 5/19 평일 데이터 미확인·"Golden"(데몬헌터스 OST)+WOODZ "Drowning" 강세 유지.',
+      },
+      {
+        speaker: 'DevOps',
+        note: '**Task Scheduler 3개 모두 가동 중**: DailyStandup/JobResearch 267009 5일째 정상 큐 대기(0x41306 인스턴스 한도)·**PKM_GBrain_Sync_Daily LastResult=1 6일째 실패**(embeddinggemma 패치 관련·sync_brain.log 확인 후 임베딩 재실행 필요)·**agent-office Pages 5/14~5/17 4회 연속 success**(7일 무중단 유지·5/18 19:24 푸시 이후 0커밋이므로 5/18~5/19 빌드 없음)·**Node 20 LTS 2026-04-30 EOL 완료·EOL D-14(6/2) 임박**·actions/runner v2.334.0 고정·setup-node v6.4.0(4/20) 호환 확인 필요·**NumLink/MeowBeat .github/workflows 부재 확정**·**5/19 신규 CVE 미발견**(Unity/Firebase/AdMob)·claude.exe PID 14개 동일.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '**5/18 Awwwards SOTD = KVS Studio**(대담한 타이포 + 듀오톤 레이어링 부상·Dribbble 5월: 컬러 팝 + 미세 디테일). **visionOS 27 "refinement" 기조**(혁신X·6/8 WWDC·iOS 27 Liquid Glass 외 신규 패러다임 없음). **NumLink 셀 4안 미결**(5일째 결정 마비·**오늘은 헥사곤 채택 권고** = 타일링 + 듀오톤 친화 + KVS 스튜디오 SOTD 트렌드 매칭). **MeowBeat 후크 1순위 비주얼 미커밋**("고양이가 밭을 갈고, 박자가 작물을 키운다" 어제 결정 후 비주얼 0건·**"쟁기-박자-새싹" 3컷 스토리보드 우선 시안화** 권고·BitSummit D-3 SNS 어트랙트 동원). Pantone Cloud Dancer 2026 COTY·Pixel Pastel Candy 4색 유지.',
+      },
+    ],
+    decisions: [
+      {
+        title:
+          '🚨 P0 CRITICAL [NumLink 폰트 .asset 6개 SDF 1×1 회귀 즉시 `git restore` 5m + TMP Font Asset Creator 6개 SDF 재생성 30m · 5일째 미실행 만회 · 텍스트 전멸 회귀 차단]',
+        description:
+          'NumLink Maplestory Bold/Light SDF + Anton + Bangers + Electronic Highway + Roboto-Bold SDF 6개 + TextMesh Pro Examples 4개 = 총 10개가 2048×2048 → 1×1 픽셀 소실 회귀 24시간 무수정 유지(`m_CompleteImageSize=1`). 즉시 ① `git restore Assets/04_Fonts/*SDF.asset` ② `Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/*SDF.asset` 4개 동시 restore ③ `*SDF.asset binary` .gitattributes 추가(향후 차단) ④ Unity Editor에서 TMP Font Asset Creator로 6개 SDF 재생성 + 한글/영문 빠른 검증 30m. 원인 = Dynamic 모드 + Domain Reload 또는 Asset Database v2 재import.',
+      },
+      {
+        title:
+          '🚨 P0 CRITICAL [Steam Next Fest 10월 트랙 사전 등록 캘린더 알림 3단 시스템 30m · 9월 초 D-100 + 9월 15일 D-25 + 10월 1일 D-10 · 위시리스트 68~88% 데모 미플레이 유입 KPI 대비 · 6일째 미실행 만회]',
+        description:
+          'Steam Next Fest 개발자 등록 마감 4/27 PDT 종료 확정 → 6월 진입 차단·**다음 윈도우 10월 = 5개월 유예·9월 초 D-100 알림 필수**. **신규 KPI 데이터 반영**: 데모는 2~4주 전 공개·위시리스트 68~88%가 데모 미플레이 유입·캡슐아트/태그/15~25분 단편이 KPI·팝업카드 진입선 3K~5K·48h 전 속도 가속 알고리즘. ① 캘린더 9월 1일 D-100 알림 + 9월 15일 D-25 알림 + 10월 1일 D-10 알림 = 3단 알림 시스템 30m ② MeowBeat/NumLink 둘 다 등록 트랙 검토 ③ 빌드/캡슐 아트/스토어 페이지/태그/15~25분 단편/다국어 메타데이터 사전 준비 체크리스트 작성.',
+      },
+      {
+        title:
+          'P0 [bak_btn `git rm` 단일 명령 1줄 = 결정 단위 0.1건 5일째 결정 마비 차단 · 25일 연속 결정 실패 신기록 갱신 26일째 진입 차단]',
+        description:
+          '5/14·5/15·5/16·5/17·5/18 5일 연속 bak_btn git rm 단일 결정 0건 = **0.1건 축약마저 5일째 결정 마비**. 오늘은 **단일 명령 1줄만 발사 = `git rm Assets/Scenes/MainScene.unity.bak_btn`** (meta·커밋·푸시·다른 작업 묶지 않음). 결과 확인 후 다음 단계 별도 결정. 25일 연속 결정 실패 신기록 갱신(3주+4일·5일째 결정 마비)·26일째 진입 차단·결정 검증 가능한 가장 작은 명령 단위 유지.',
+      },
+      {
+        title:
+          'P0 [NumLink Tools 28일째 부재 종결 = _ProjectTemplate/Tools/ 일괄 복사 15m · 4주 임계 진입 · CLAUDE.md 자동 점검 4주 위반 종결]',
+        description:
+          'NumLink Tools 검증도구 28일째 부재(4주 임계 진입·CLAUDE.md "세션 시작 시 자동 점검" 규약 4주 위반·`C:\\Unity\\NumLink\\Tools` NOT_FOUND 확정·AutoGenTests 4개 D = 회귀 탐지 불가 상황과 동시 발생). `C:\\Unity\\_ProjectTemplate\\Tools\\` 일괄 복사 + 씬 경로 상수 패치 + `python3 Tools/unity_validate.py` baseline 측정 15m. 30일 임계 진입 차단·다른 P0와 병렬 실행 가능.',
+      },
+      {
+        title:
+          'P0 [MeowBeat manifest.json songs id=None 다수 정정 1건 10m · QA 신규 발견 즉시 대응 · 정적 QA 통과 회복]',
+        description:
+          'MeowBeat manifest.json songs id 필드 null 확인(titleKo 추가 시 id 누락 추정)·정적 QA 실패 위험. ① manifest.json id 필드 누락 곡 식별 ② 누락 id 복구(soft_cat·paw_paw·bumblebee 등 기존 id 매핑) ③ `python3 Tools/qa_static.py` 정적 QA 통과 확인 10m. titleKo 한글 제목 작업과 동시 진행 가능.',
+      },
+      {
+        title:
+          'P0 [JobResearch_ClaudeCode 트리거 04:00→04:30 시차 분리 15m · DailyStandup 267009 5일째 락 충돌 단일 원인 해소 · 5일째 미실행 만회]',
+        description:
+          'DailyStandup_ClaudeCode 267009 5일째 지속(5/14~5/18) + JobResearch_ClaudeCode 동일코드 267009 동시 = 04:00 동시 트리거 락 충돌 단일 원인 시사. `schtasks /change /TN "JobResearch_ClaudeCode" /ST 04:30` 시차 분리 15m·5/15·5/16·5/17·5/18 5일째 미실행 만회·즉시 가용한 5분 단위 결정. 다음날 LastResult 모니터링으로 효과 검증.',
+      },
+      {
+        title:
+          'P0 [PKM_GBrain_Sync_Daily sync_brain.log 확인 후 임베딩 재실행 20m · LastResult=1 6일째 실패 차단]',
+        description:
+          'PKM_GBrain_Sync_Daily LastResult=1 6일째 연속 실패(어제 첫 등장 이후 5/14~5/19 6일·embeddinggemma 패치 관련 추정). ① `sync_brain.log` 확인 후 실패 원인 추적 ② reference_gbrain.md 참조 ③ 임베딩 재실행 20m. 다음날 LastResult=0 회복 검증.',
+      },
+      {
+        title:
+          'P0 [MeowBeat BitSummit D-3 일본 인플루언서 5명 "音ゲーハイインパクト 15초 클립" 사전 배포 1h · 3일째 이월 · 5/22 골든타임 즉시 발사]',
+        description:
+          'BitSummit PUNCH 2026 테마 "High Impact" + G-EIGHT 공식 파트너 + D-3 미디어 픽업/인플루언서 사전 시연 골든타임 대응. SANNINSHOW·MSS Project·SPYGEA·Oniya·Dogma Kazami 5명에 "音ゲーハイインパクト 15초 클립" 사전 배포 1h. 5/17·5/18·5/19 3일째 이월 → 오늘 즉시 발사. 5/22 Business Day 픽업 골든타임 D-3 임박.',
+      },
+      {
+        title:
+          'P0 [NumLink 헥사곤 채택 2h · 셀 셰이프 4안 5일째 결정 마비 차단 · KVS Studio SOTD 듀오톤 매칭 · 단일 픽스]',
+        description:
+          'NumLink 셀 셰이프 4안(헥사곤/다이아몬드/꼬리/Liquid Glass) 5일째 결정 마비 → **오늘은 헥사곤 1안 단일 픽스**: ① 헥사곤 6각 그리드 시안 제작(2h) ② 타일링 + 듀오톤 친화 + KVS Studio SOTD 트렌드 매칭 ③ Hex FRVR 직접 차용 평가 + 기존 라운드 사각 비교 1장 목업. 셀 모양만으로 테마 구분 가능·색 의존 약점 해소.',
+      },
+      {
+        title:
+          'P0 [MeowBeat "쟁기-박자-새싹" 3컷 스토리보드 우선 시안화 2h · 후크 1순위 비주얼 0건 대응 · BitSummit D-3 SNS 어트랙트]',
+        description:
+          'MeowBeat 후크 1순위 "고양이가 밭을 갈고, 박자가 작물을 키운다" 어제 결정 후 비주얼 0건 → **"쟁기-박자-새싹" 3컷 스토리보드 우선 시안화**: ① 1컷 = 고양이가 쟁기로 밭 가는 모습(픽셀 일러스트) ② 2컷 = 박자에 맞춰 통통 튀는 음표 + 작물 새싹 ③ 3컷 = 작물이 자라난 풍성한 밭 + 고양이 웃음 · 2h. BitSummit D-3 SNS 어트랙트 동원 가능.',
+      },
+      {
+        title:
+          'P0 [Google Mobile Ads Unity v11.0.0 업그레이드 검토 1h · ConsentSyncId 통합 + Home 버튼 fix · MeowBeat 미커밋 prefab 4건 동기 검토]',
+        description:
+          'Google Mobile Ads Unity v11.0.0 신규 릴리스(Android 25.0.0/iOS 13.0.0·**ConsentSyncId 추가**·**Home 버튼 코너케이스 fix**) → MeowBeat 미커밋 GoogleMobileAds prefab 4건(ADAPTIVE·768x1024 Interstitial/Rewarded·AndroidManifest)과 동시 검토 가능. ① 릴리스 노트 정독 + breaking change 확인 ② ConsentSyncId 마이그레이션 영향 평가 ③ 업그레이드 결정 1h. 안전성 평가 후 결정·즉시 적용은 아님.',
+      },
+      {
+        title:
+          'P1 [MeowBeat 농장에 일일 챌린지 + 새끼 동물 케어 GDD 1쪽 1h · Farming Simulator 26 벤치마크 · 체류시간 연장 + 리듬 코어 자연 유입]',
+        description:
+          'Farming Simulator 26 Mobile/Switch 오늘 5/19 정식 출시(동물 6종 + 새끼 케어 + 일일 챌린지 + 15작물) → MeowBeat 직접 벤치마크. ① "일일 챌린지(데일리 미션)" 도입 GDD 0.5쪽 = 매일 3개 미션(특정 곡 풀콤보·작물 N개 수확·콤보 N달성)·보상 = 골드/사료/씨앗 ② "새끼 동물 케어(육성 루프)" GDD 0.5쪽 = 새끼 고양이 키우기·성장 단계 3단계·박자 정확도가 성장 속도 결정 · 1h. 체류시간 연장 + 리듬 코어 자연 유입.',
+      },
+      {
+        title:
+          'P1 [MeowBeat orphan .meta 3개 일괄 정리 단일 커밋 15m · Input/Item/SaveLoad 폴더 자체 사라진 .meta 잔존 안전 정리]',
+        description:
+          'MeowBeat `Assets/Scripts/Input.meta` + `Item.meta` + `SaveLoad.meta` 3개 = 폴더 자체는 이미 사라졌고 .meta만 git에 잔존(어제 발견 후 미실행). `git rm Assets/Scripts/{Input,Item,SaveLoad}.meta` + 단일 커밋 `chore(qa): orphan meta 3개 정리` 15m. 안전한 정리·bak_btn 0.1건 발사 후 두번째 결정.',
+      },
+      {
+        title:
+          'P1 [MeowBeat 미커밋 36파일 단일 커밋 후보 검토 30m · i18n titleKo + PlayerPrefs SongVolume + Unity MCP beta + GoogleMobileAds prefab 4건 + GameManager/OptionManager 리팩토링 · 범위 분할 필요]',
+        description:
+          'MeowBeat 미커밋 36파일(어제 21 → 오늘 36·+15 증가) = i18n + 옵션 + MCP + AdMob prefab + 리팩토링이 모두 섞임 → **범위 분할 단일 커밋 전략**: ① 1번 커밋 = i18n titleKo + manifest id 정정(10m) ② 2번 커밋 = PlayerPrefs SongVolume 옵션 연동(5m) ③ 3번 커밋 = Unity MCP beta 도입(5m) ④ 4번 커밋 = GoogleMobileAds prefab 4건 + AndroidManifest(5m) ⑤ 5번 커밋 = GameManager/OptionManager 리팩토링(5m) = **총 30m 5개 커밋**. 결정 단위 0.1건 유지하면서 범위 확장 원인 단서 해소.',
+      },
+      {
+        title:
+          'P2 [BitSummit D-3 어트랙트 30초 데모 3h + 한 손 단일 탭 검증 1h · 5/17·5/18·5/19 3일째 이월]',
+        description:
+          'MeowBeat 부스 PUNCH PLAY LIVE 스트리머 픽업 대비 = 무입력 30초 어트랙트 자동 루프 3h + 한 손 단일 탭 데모 검증 1h. 5/17·5/18·5/19 3일째 이월·5/22 Business Day D-3 임박이나 5/20~21 작업 가능. 다음 회의에 진행률 보고.',
+      },
+    ],
+  },
+  {
     id: '2026-05-18T04:00:00-daily-standup',
     date: '2026-05-18',
     researchTitle:
