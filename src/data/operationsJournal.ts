@@ -43,6 +43,190 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-05-20T04:00:00-daily-standup',
+    date: '2026-05-20',
+    researchTitle:
+      '🌅 5/20 수요일 데일리 스탠드업 — BitSummit PUNCH D-2 임박(Business Day 5/22)·**NumLink 동결 21일째**(4/29 b6d7a73 이후·재동결 5일째·발사→재동결 사이클 5일 연속)·**MeowBeat 38일 = 5주+3일 임계 초과 8일 돌파**(역대 최장 갱신·어제 37→오늘 38)+**bak_btn 43일 생존**(+1·5/19 P0 0.1건 축약(git rm 1줄)도 미실행 = **0.3건 축약 6일째 결정 마비 진입**)·**26일 연속 결정 실패 신기록 갱신**(3주+5일·결정 마비 6일째)·**🚨 어제 P0 5건 모두 미실행**(font/sdf/bak_btn/hex/influencer/storyboard 커밋 0건)·**🚀 시장 신규 발견 1순위**: **RogueSlide(슬라이드+로그라이크)·Perchang World(물리퍼즐 8존 + James Acaster 내레이션)·Stip(Sixtyfour 후속 숫자 룰 추론) 5월 출시**(NumLink 직접 경쟁권에 Stip 추가 주시 필요)·**🚀 시장 신규 2순위**: **소셜 카지노 시장 2026년 87.6억 달러→2035년 168.5억 달러 CAGR 7.54%**("캐주얼+카지노 단일 지갑·앱" 통합 트렌드 키 신호)·**🚀 콘텐츠 신규 1순위**: **BitSummit PUNCH 公式 스트리머 7팀 확정**(SANNINSHOW·MSS Project·SPYGEA 등·대만 Mibin 등 해외 인플루언서 3일 풀가동·**사전 키 배포 골든타임 D-2 오늘**)·**🚀 콘텐츠 신규 2순위**: **2026 5월 ASO 大전환**(설치량 < 30일 리텐션 가중치 역전·Apple LLM 자동생성 "App Store Tags"가 신규 디스커버리 레이어·Paramount+ 사례 +45위 급등)·**🚀 콘텐츠 신규 3순위**: **한국 시장 4X 전략 장르 월 7,000만 달러로 MMORPG 9년 1위 추월**(월 광고소재 58% 신규 교체 압박·게임 이용률 50.2%로 하락·"팬덤 서사" 시대 본격화)·**🚀 기술 신규**: **CVE-2026-0073 Android adbd RCE 크리티컬**(5/1 패치·Unity 모바일 빌드 영향 가능)·**Node 20 LTS 이미 EOL 도과(D+20)**(4/30 종료·즉시 22/24 이관 필요·5/19 회의는 D-14로 보고하던 오인 정정)·**🎨 디자인 신규 1순위**: **5/19 Awwwards SOTD Capitolium**(PRO+Developer 수상·정보 밀도+개발자 감성 UI 참조)·**🎨 디자인 신규 2순위**: **Material 3 Expressive 1.5.0-alpha19(5월) 신규 35셰이프 + 모션피직스**(헥사 셀 모핑 직결·NumLink 헥사→원 모핑 인터랙션 = 클리어 피드백 직접 차용 가능)·**🎨 디자인 신규 3순위**: **모바일 게임 UI 트렌드 = 3D 몰입+"I drew this" 수작업 강조**(AI 슬롭 회피 정확히 일치)·**🔍 QA 정정 2건**: ① NumLink SDF 1×1 회귀는 **실제 파일 크기 정상**(Maplestory Bold 192,950 / Light 178,851 bytes·1KB 미만 SDF 없음·"24시간 무수정" 오인 가능성·추가 차원 검증 필요) ② MeowBeat manifest id=null은 **실제 키가 songId**(10곡 모두 정상 값·5/19 "id=None 다수"는 manifest 파싱 실패에 의한 잘못된 보고)·**🔧 DevOps 신규**: **agent-office Pages 8일 무중단**(5/18 19:17 success·5/19~20 빌드 가능)·**Task Scheduler 3종 정체**: DailyStandup 267009 6일째 / JobResearch 267009 4일째 / **PKM_GBrain LastResult=1 7일째**(embeddinggemma 패치 재적용 또는 비활성화 결정 필요).',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제38회 — **5/20 수요일·BitSummit PUNCH Business Day D-2·Steam Next Fest 6월본행사 D-26·Node20 EOL D+20(이미 종료)·WWDC 2026 D-19**. **🚨 어제 P0 5건 모두 미실행 + 신기록 갱신 3종**: ① **NumLink 동결 21일째**(재동결 5일째·미커밋 41파일 동일) ② **MeowBeat 38일 = 5주+3일 임계 초과 8일 돌파**(역대 최장 신기록·어제 37→오늘 38) ③ **bak_btn 43일 생존**(+1·5/19 P0 0.1건 축약도 무력화 6일째 결정 마비) ④ **26일 연속 결정 실패 신기록 갱신**(3주+5일·결정 마비 6일째). **🚀 시장 신규 5종**: ① **RogueSlide·Perchang World·Stip 5월 출시**(NumLink 직접 경쟁권에 Stip 추가) ② **소셜 카지노 시장 87.6억→168.5억 달러 CAGR 7.54%**(캐주얼+카지노 통합 트렌드) ③ **BitSummit 公式 스트리머 7팀 확정**(SANNINSHOW·MSS Project·SPYGEA·대만 Mibin·D-2 사전 키 골든타임) ④ **2026 5월 ASO 大전환**(설치량 < 30일 리텐션 가중치 역전·Apple App Store Tags LLM 자동생성·Paramount+ +45위) ⑤ **한국 4X 전략 월 7,000만 달러로 MMORPG 9년 1위 추월**(광고소재 58% 교체 압박·게임 이용률 50.2% 하락·팬덤 서사 시대). **🚀 기술 신규 2종**: ① **CVE-2026-0073 Android adbd RCE 크리티컬**(5/1 패치) ② **Node 20 LTS 이미 EOL 도과(D+20)**(5/19 D-14 오인 정정·즉시 Node 22/24 이관 필요·GitHub Actions setup-node@v4 matrix 22.x 픽스). **🎨 디자인 신규 4종**: ① **5/19 Awwwards SOTD Capitolium** ② **M3 Expressive 1.5.0-alpha19 35셰이프 + 모션피직스**(NumLink 헥사→원 모핑 = 클리어 피드백 직접 차용) ③ **모바일 UI 트렌드 = 3D 몰입+"I drew this" 수작업**(AI 슬롭 회피 일치) ④ **BitSummit D-2 일본 인디 트레일러 곧 폭증**(MeowBeat 3컷 스토리보드는 5/22 이후 재리서치 권고). **🔍 QA 정정 2건 + 신규 1건**: ① **NumLink SDF 1×1 회귀 실제 파일 크기 정상**(Maplestory Bold 192,950 bytes·"24h 무수정 회귀"는 오인 가능성 — 추가 텍스처 차원 검증 필요) ② **MeowBeat manifest "id=None"은 실제 키가 songId**(10곡 모두 정상 값·잘못된 보고 정정) ③ **NumLink Tools 29일째 부재**(4주+1일·30일 임계 D-1·CLAUDE.md 자동 점검 위반 신기록) ④ **MeowBeat qa_static.py 2 error**(manifest_load + scene_buttons·경로 이슈 추정) ⑤ **MeowBeat bak_btn 43일째 1.6MB**(0.1건 축약 5일째 미실행). **💻 Developer 신규**: ① NumLink UI 테마 3종(Kawaii/Premium/Retro) USS + AutoGenTests asmdef 삭제 진행 중 ② MeowBeat GoogleMobileAds prefab 3건 + GameManager/SongManager/OptionManager + manifest 변경 ③ **CVE-2026-0073 Android adbd RCE 크리티컬**(5/1 패치) ④ **Node 20 EOL 이미 도과 D+20**(즉시 22/24 이관 필요·Firebase Unity 13.10.0이 최신 확인분·13.11.0과 상이·다음 회의 재검증) ⑤ **Google Mobile Ads Unity v11.1.0 GitHub 릴리스 존재**(어제 v11.0.0 보고에서 +0.1 마이너). **🔧 DevOps 신규**: ① **agent-office Pages 8일 무중단**(5/18 19:17 success 마지막) ② **NumLink·MeowBeat .github/workflows 부재**(5/18 확정 이후 2일째) ③ **DailyStandup 267009 6일째 / JobResearch 267009 4일째 / PKM_GBrain LastResult=1 7일째**(embeddinggemma 패치 재적용 또는 비활성화 결정 필요). **📢 콘텐츠 신규**: ① **BitSummit 公式 스트리머 7팀**(SANNINSHOW·MSS Project·SPYGEA·대만 Mibin·D-2 사전 키 배포 골든타임) ② **2026 5월 ASO 大전환**(설치량 < 30일 리텐션 가중치 역전·Apple LLM App Store Tags 신규 디스커버리 레이어·Paramount+ +45위 사례) ③ **숏폼 게임 마케팅**(TikTok 유기 도달 급락·Shorts·Reels가 85~90% 우위·상위 광고주 분기당 2,400~2,600 크리에이티브 변형 YoY +25~30%) ④ **한국 4X 전략 월 7,000만 달러로 MMORPG 9년 1위 추월** ⑤ **MeowBeat 일본 ASO 보강 키워드 7종**(ネコ·猫·癒し·かわいい·無料 音ゲー·リズムゲームアプリ ランキング·新作 音ゲー). **🎮 Game Designer 신규**: ① **RogueSlide·Perchang World·Stip 5월 출시**(Stip = NumLink 직접 경쟁권) ② **소셜 카지노 시장 87.6억→168.5억 달러 CAGR 7.54%**(캐주얼+카지노 통합) ③ **BitSummit Creators Talk 10:30-11:30 토·일** + **ANTONBLAST·City of None·한국 K-Indie 6작 라인업**(NumLink/MeowBeat 비참가지만 mediakit D-2 미디어 픽업 최적). **🎨 Art Director 신규**: ① **Awwwards Capitolium SOTD**(정보 밀도+개발자 감성) ② **M3 Expressive 1.5.0-alpha19 35셰이프 + 모션피직스**(헥사→원 모핑 직접 차용) ③ **모바일 UI 3D 몰입+I drew this 수작업** ④ **NumLink 헥사곤 채택 시 Hex FRVR/Hexagonium 검증 사례 충분 = 변경 없이 채택 확정** ⑤ **MeowBeat 3컷 스토리보드 5/22 일본 인디 트레일러 신작 공개 후 재리서치 권고**.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — NumLink 동결 21일/재동결 5일째·MeowBeat 38일 5주+3일 임계 초과 신기록·bak_btn 43일·26일 연속 결정 실패 신기록·어제 P0 5건 모두 미실행(font/sdf/bak_btn/hex/influencer/storyboard 커밋 0건)·agent-office 정상 가동·BitSummit D-2',
+        description:
+          'NumLink 4/29 b6d7a73 이후 21일 0커밋(어제 동결 20→오늘 21)·재동결 5일째 진입(어제 4→5)·발사→재동결 사이클 5일 연속 누적·미커밋 41파일(전일 동일). MeowBeat 4/12 657032c 이후 38일(어제 37→오늘 38·5주+3일 임계 초과 8일 돌파 역대 최장 신기록)·미커밋 36파일(전일 동일)·**bak_btn 43일 생존**(+1·5/19 P0 0.1건 축약 미실행·6일째 결정 마비). agent-office 5/19 04:15 97a3f79 정상 가동·0일 동결. **5/19 P0 5건 모두 미실행 grep 확인**: (1) NumLink 폰트 SDF git restore 0건 (2) MeowBeat bak_btn git rm 0건(6일째) (3) NumLink 헥사곤 채택 0건 (4) MeowBeat 인플루언서 사전 배포 0건 (5) MeowBeat 3컷 스토리보드 0건·키워드 font/sdf/bak_btn/hex/influencer/storyboard 양쪽 커밋 모두 0건. **26일 연속 결정 실패 신기록 갱신**(3주+5일·6일째 결정 마비). 마감 카운트다운: BitSummit Business Day D-2(5/22)·Steam Next Fest 6월본행사 D-26(6/15)·Node20 EOL D+20(이미 종료)·WWDC D-19(6/8). **오늘의 결정 제안**: **🚨 결정 단위 0.1건도 실패한 상황 — P0 단 1건만 발사**: **MeowBeat `bak_btn` git rm 5분**(43일째 누적·BitSummit D-2 출품 전 정리 위생 최우선·결정 검증 가능한 가장 작은 단위·27일째 진입 차단).',
+      },
+      {
+        title:
+          '🎮 Game Designer — RogueSlide·Perchang World·Stip 5월 출시(NumLink 직접 경쟁권 Stip 추가)·소셜 카지노 87.6억→168.5억$ CAGR 7.54%·BitSummit Creators Talk 토일 10:30+ANTONBLAST·City of None·한국 K-Indie 6작·D-2 미디어 픽업 최적·MeowBeat 3컷 스토리보드 D-1(5/21) 완성 권고',
+        description:
+          '**🚀 5월 신작 3종**: ① **RogueSlide**(슬라이드+로그라이크 결합) ② **Perchang World**(물리퍼즐 8존 + James Acaster 내레이션) ③ **Stip**(Sixtyfour 후속·숫자 룰 추론·NumLink 직접 경쟁권 추가 주시 필요). **🚀 하이브리드 캐주얼 신규 데이터**: Sensor Tower 기준 LTV·리텐션 우위 재확인·소셜 카지노 시장 2026년 87.6억 달러→2035년 168.5억 달러(CAGR 7.54%)·**"캐주얼+카지노 단일 지갑·앱" 통합 트렌드가 키 신호**. **BitSummit PUNCH 5/22-24 미야코메세 운영 확정**: Creators Talk 10:30-11:30 토·일 진행·ANTONBLAST·City of None·**한국 K-Indie 6작 라인업**·NumLink/MeowBeat은 비참가지만 mediakit 타이밍 **D-2가 인디 미디어 픽업 최적**. **NumLink 헥사곤 권고 추가 검증**: Hex FRVR·Hexagonium 모바일 검증 사례 충분 → 변경 없이 채택 확정. **MeowBeat 후크 시각화 방법**: Boords 가이드대로 (1) 고양이 호미 박자, (2) 작물 성장 비트, (3) 수확·점프 클라이맥스 3패널로 단순화. **오늘 결정 제안**: **🚀 P0 2h MeowBeat 후크 3컷 스토리보드를 BitSummit 개막(5/22) 전 D-1(5/21)까지 완성**(BitSummit 미디어 픽업 트래픽 5/22-24 피크·D-2 오늘 콘티 확정·D-1 GIF 1컷 트위터 사전 티저 게시) + **P0 30m NumLink 헥사곤 채택 확정 1장 목업**(Hex FRVR·Hexagonium 검증 충분·변경 없이 채택) + **P1 1h Stip 직접 비교 분석**(NumLink 차별화 1줄 후크 갱신) + **P2 30m 소셜 카지노 통합 트렌드 반영 GDD 1쪽**(MeowBeat 농장+리듬에 카지노 톤 IAP 후보 검토).',
+      },
+      {
+        title:
+          '💻 Developer — NumLink UI 테마 3종(Kawaii/Premium/Retro) USS 진행·MeowBeat GoogleMobileAds prefab 3건+GameManager/SongManager/OptionManager 변경·CVE-2026-0073 Android adbd RCE 크리티컬(5/1 패치)·Node 20 LTS 이미 EOL 도과 D+20·Google Mobile Ads Unity v11.1.0 GitHub 릴리스 확인',
+        description:
+          '**NumLink 미커밋 패턴**: UI 테마 3종(Kawaii/Premium/Retro) USS 신규 + AutoGenTests asmdef 삭제 진행 중. **MeowBeat 미커밋 패턴**: GoogleMobileAds prefab 3건 + GameManager/SongManager/OptionManager + manifest.json 변경(어제와 동일·범위 확장 정체). **MeowBeat manifest id=None 실제 = songId가 정상 키** = 5/19 회의 잘못된 보고 정정. **🚨 신규 CVE**: **CVE-2026-0073 Android adbd RCE 크리티컬**(5/1 패치·Unity 모바일 빌드 영향 가능). **🚨 Node 20 LTS 이미 EOL 도과 정정**: 4/30 종료·오늘 5/20 = D+20·**5/19 회의 D-14는 오인 보고**·즉시 Node 22(Active LTS) 또는 24(LTS) 이관 필요·**GitHub Actions setup-node@v4 matrix 22.x 픽스 즉시 실행 권고**. **Google Mobile Ads Unity v11.1.0 GitHub 릴리스 존재 확인**(어제 v11.0.0 보고 +0.1 마이너·다음 회의 정확 버전 재검증 권고). **Firebase Unity 13.10.0이 최신 확인분**(13.11.0 가정과 상이·다음 회의 재검증). Unity 6000.3.15f1 유지·후속없음·.NET 10.0.8 유지. **오늘 결정 제안**: **🚨 P0 30m GitHub Actions setup-node@v4 matrix Node 22 LTS 픽스**(EOL D+20·MeowBeat·NumLink CI 스크립트는 부재이므로 agent-office package.json 우선·workflow 추가 권장) + **P0 10m CVE-2026-0073 Android adbd 패치 영향도 분석**(MeowBeat Android 빌드 Gradle plugin 확인) + **P1 30m Google Mobile Ads Unity v11.1.0 릴리스 노트 확인**(어제 v11.0.0 +0.1·MeowBeat AdMob 업그레이드 검토) + **P1 15m Firebase Unity 13.10.0 vs 13.11.0 버전 재확인**.',
+      },
+      {
+        title:
+          '🔍 QA Tester — NumLink Tools 29일째 부재(30일 임계 D-1)·NumLink SDF 1×1 회귀 실제 파일 크기 정상 정정(추가 차원 검증 필요)·MeowBeat manifest id=null은 songId가 정상키 정정·MeowBeat qa_static.py 2 error(manifest_load+scene_buttons 경로 이슈)·bak_btn 43일째 1.6MB',
+        description:
+          '**🔍 정정 2건**: ① **NumLink SDF 1×1 회귀는 실제 파일 크기 정상**(Maplestory Bold SDF 192,950 bytes / Light 178,851 bytes·1KB 미만 SDF 0건·"24h 무수정 회귀"는 m_CompleteImageSize 메타데이터 필드만의 문제일 가능성·실제 텍스처 차원 추가 검증 필요·5/18부터 오인 가능성) ② **MeowBeat manifest "id=None 다수"는 실제 키가 songId**(10곡 모두 정상 값 보유·5/19 회의 잘못된 보고). **NumLink Tools 29일째 부재**(어제 28→오늘 29·4주+1일·**30일 임계 D-1**·CLAUDE.md "세션 시작 시 자동 점검" 4주+1일 위반 신기록 갱신·`C:\\Unity\\NumLink\\Tools` NOT_FOUND 확정·unity_validate/qa_static/run_regression 전부 부재). **MeowBeat qa_static.py 2 error**: manifest_load + scene_buttons·**실제 manifest 경로는 Songs/manifest.json 하위**(파싱 실패는 경로 이슈로 추정·즉시 정정 가능). **MeowBeat unity_validate.py 0 error / 1 warning**(known_bugs.json 부재 경고 + manifest 경고). **MeowBeat bak_btn 43일째 잔존**(MainScene.unity.bak_btn 1,598,524 bytes·4/7 12:30 생성·6일째 결정 마비). **NumLink CLAUDE.md ServiceLocator 패턴 명시되어 있으나 Tools/ 구축 누락**(템플릿 동기화 필요). **오늘 결정 제안**: **🚨 P0 15m NumLink Tools _ProjectTemplate 일괄 복사 + baseline 측정**(29일째 4주+1일·30일 임계 D-1·강제 집행) + **P0 5m MeowBeat bak_btn `git rm` 1줄**(43일째·6일째 결정 마비 차단·0.1건 단위·결정 검증 가능한 가장 작은 명령) + **P0 10m MeowBeat qa_static.py manifest 경로 정정**(Songs/manifest.json·즉시 정정) + **P1 30m NumLink SDF 실제 텍스처 차원 추가 검증**(m_TextureWidth/m_TextureHeight 직접 확인·1×1 회귀 실재성 재판단) + **P1 20m AutoQATests NumLink→MeowBeat 이전 ADR 1줄 기록**.',
+      },
+      {
+        title:
+          '📢 Content Writer — BitSummit 公式 스트리머 7팀 확정(SANNINSHOW·MSS Project·SPYGEA·대만 Mibin)·D-2 사전 키 배포 골든타임·2026 5월 ASO 大전환(설치량<30일 리텐션 가중치 역전·Apple LLM App Store Tags)·한국 4X 7000만$ MMORPG 9년 1위 추월·MeowBeat 일본 ASO 보강 7종(ネコ·猫·癒し·かわいい·無料 音ゲー)',
+        description:
+          '**🚀 BitSummit PUNCH 公式 스트리머 7팀 확정**(SANNINSHOW·MSS Project·SPYGEA 등·대만 Mibin 등 해외 인플루언서 3일 풀가동·**사전 키 배포 골든타임 D-2 오늘**). **🚀 2026 5월 ASO 大전환**: ① **설치량 < 30일 리텐션 가중치 역전**(랭킹 알고리즘 변동) ② **Apple LLM 자동생성 "App Store Tags"가 신규 디스커버리 레이어**(Paramount+ 사례 +45위 급등) ③ 메타데이터에 키워드 자연 문장 삽입이 LLM 자동 태그 픽업 핵심. **🚀 숏폼 게임 마케팅**: TikTok 유기 도달 급락·**Shorts·Reels가 동일 크리에이터 기준 85~90% 우위**·상위 광고주 분기당 2,400~2,600 크리에이티브 변형(YoY +25~30%)·**풀게임플레이 영상 < 15초 single-moment clip**. **🚀 한국 시장 5월**: **4X 전략 장르 월 7,000만 달러로 MMORPG 9년 1위 추월**·월 광고소재 58% 신규 교체 압박·게임 이용률 50.2%로 하락하며 **"팬덤 서사" 시대 본격화**. **🚀 MeowBeat 일본 ASO 보강 키워드 7종**: 기존 3종(音ゲー/音楽ゲーム/リズム) 외에 **"ネコ", "猫", "癒し"(힐링), "かわいい", "無料 音ゲー", "リズムゲームアプリ ランキング", "新作 音ゲー"** 추가 가치 확인. **오늘 결정 제안**: **🚀 P0 1h MeowBeat BitSummit D-2 公式 스트리머 7팀 + 대만 Mibin 일괄 사전 배포**(일본어 프레스킷 + 빌드키 + **15초 single-moment clip 3종**·콤보 임팩트 순간 추출) + **P0 30m Famitsu/IGN Japan/4Gamer/Dengeki/Game*Spark 5개 매체 5/21 오전 엠바고 보도자료 동시 송부** + **P0 30m Apple App Store Tags 대비 메타데이터 자연 문장 삽입**("ネコ/猫/癒し/かわいい/無料 音ゲー" 5개 키워드·LLM 자동 태그 픽업 노림) + **P1 1h 한국 시장 팬덤 서사 메시지 정립**(NumLink·MeowBeat 차별화 카피 1줄).',
+      },
+      {
+        title:
+          '⚙️ DevOps — agent-office Pages 8일 무중단(5/18 19:17 success 마지막)·NumLink·MeowBeat .github/workflows 부재 2일째·DailyStandup 267009 6일째·JobResearch 267009 4일째·PKM_GBrain LastResult=1 7일째(embeddinggemma 재적용/비활성화 결정 필요)',
+        description:
+          '**agent-office Pages 8일 무중단**: 5/18 19:17 success 마지막·5/19~20 build 가능·5/13~5/18 8건 연속 success 누적. **NumLink·MeowBeat .github/workflows 부재 2일째**(5/18 확정 이후 무변동). **Task Scheduler 3종 정체 상태**: ① **DailyStandup_ClaudeCode 267009 6일째**(5/14~5/19·0x41306=267014 인스턴스 한도) ② **JobResearch_ClaudeCode 267009 4일째**(04:00 동시 트리거 락 충돌) ③ **PKM_GBrain_Sync_Daily LastResult=1 7일째**(embeddinggemma 패치 관련·sync_brain 실패·reference_gbrain.md 패치 파일 3개 재적용 또는 작업 비활성화 결정 필요·7일 연속 실패는 결정 시점). **WebSearch 신규 인프라**: ① Vercel/Cloudflare 5월 셋째 주 신규 변경 미발견(어제 대비 변동 없음). **오늘 결정 제안**: **🚨 P0 20m PKM_GBrain_Sync_Daily 비활성화 또는 embeddinggemma 패치 재적용 결정 1건**(7일 연속 실패는 결정 시점·reference_gbrain.md 패치 파일 3개 재적용 시도 후 실패 시 비활성화) + **P0 15m JobResearch_ClaudeCode 트리거 04:00→04:30 시차 분리**(4일째 미실행 만회) + **P0 30m GitHub Actions setup-node@v4 matrix Node 22 LTS 픽스**(Node 20 EOL D+20·agent-office 우선) + **P1 30m DailyStandup 267009 6일째 Get-WinEvent 진단**(6일치 누적).',
+      },
+      {
+        title:
+          '🎨 Art Director — 5/19 Awwwards SOTD Capitolium(PRO+Developer·정보 밀도+개발자 감성)·M3 Expressive 1.5.0-alpha19 35셰이프+모션피직스(헥사→원 모핑 직접 차용)·모바일 UI 3D 몰입+I drew this 수작업·BitSummit D-2 일본 인디 트레일러 폭증 예상·MeowBeat 3컷 스토리보드 5/24 회의 이월 권고',
+        description:
+          '**🎨 5/19 Awwwards SOTD Capitolium**(PRO+Developer 수상·정보 밀도+개발자 감성 UI 참조·NumLink Premium 테마 친화). **🎨 Material 3 Expressive 1.5.0-alpha19(5월) 신규**: ① **35셰이프 Material Shapes Library** ② **모션피직스 시스템**(헥사→원 모핑 인터랙션 = 클리어 피드백 직접 차용) ③ **헥사 셀 모핑 직결**(NumLink 헥사곤 채택 시 즉시 적용 가능). **🎨 모바일 게임 UI 트렌드**: ① **3D 몰입**(2D 그리드에서 3D 카메라 워크) ② **"I drew this" 수작업 강조**(AI 슬롭 회피 정확히 일치·NumLink·MeowBeat 톤가이드 일치). **WWDC 2026 D-19(6/8)**: iOS 27 Liquid Glass·visionOS 27 refinement·신규 게임 UI 디자인 시스템 단서는 6/8 발표 후 평가. **NumLink 헥사곤 권고 추가 검증**: ① **Hex FRVR**·**Hexagonium** 모바일 검증 사례 충분 ② **Hex FRVR/Block!Hexa "한 셀=한 색상" 미니멀 원칙**(브랜드 컬러 1개 + 회색 빈셀)·**AI 슬롭 회피**. **MeowBeat 3컷 스토리보드**: **BitSummit 5/22 개막 후 일본 인디 트레일러 신작 공개 시점에 재리서치 권고**(5/24 회의로 이월). **오늘 결정 제안**: **🚀 P0 2h NumLink 헥사곤 셀 채택 + M3 Expressive 35셰이프 모핑 시스템 차용**(헥사→원 모핑 = 클리어 피드백·Hex FRVR/Block!Hexa "한 셀=한 색상" 미니멀 원칙 유지·브랜드 컬러 1개 + 회색 빈셀·AI 슬롭 회피·6일째 결정 마비 차단·단일 픽스) + **P0 1h MeowBeat 3컷 스토리보드 콘티 D-1(5/21)까지 완성**(Game Designer 권고와 동기·BitSummit 5/22 픽업 트래픽 직전·1컷 쟁기/2컷 음표+새싹/3컷 수확) + **P1 1h MeowBeat "I drew this" 수작업 톤 적용**(픽셀 일러스트 3컷 + 손맛 보존·AI 슬롭 회피).',
+      },
+    ],
+    meetingTitle:
+      '🌅 5/20 수요일 종합 회의 — BitSummit D-2·NumLink 동결 21일/재동결 5일째·MeowBeat 38일 5주+3일 임계 초과 신기록·bak_btn 43일·26일 연속 결정 실패·🚨 어제 P0 5건 모두 미실행·🚀 RogueSlide·Perchang·Stip·🚀 소셜 카지노 87→168억$·🚀 BitSummit 公式 스트리머 7팀·🚀 ASO 大전환 설치<리텐션 역전·🚀 한국 4X 7000만$·🚀 CVE-2026-0073·🚀 Node20 EOL D+20·🎨 Capitolium·🎨 M3 35셰이프·QA 정정 2건(SDF·songId)',
+    meetingSummary:
+      '7명 에이전트가 5/20 수요일 회의 진행. 핵심 합의: ① **🚨 어제 P0 5건 모두 미실행 + 신기록 갱신 3종 동시 발생**: (1) NumLink 폰트 SDF git restore 0건 (2) MeowBeat bak_btn git rm 0건(6일째 결정 마비) (3) NumLink 헥사곤 채택 0건 (4) MeowBeat 인플루언서 사전 배포 0건 (5) MeowBeat 3컷 스토리보드 0건. ② **NumLink 동결 21일·재동결 5일째**(어제 4→5·발사→재동결 사이클 5일 연속 누적). ③ **MeowBeat 38일 = 5주+3일 임계 초과 8일 돌파**(역대 최장 신기록·어제 37→오늘 38)+bak_btn 43일(+1·6일째 결정 마비). ④ **26일 연속 결정 실패 신기록 갱신**(3주+5일·결정 마비 6일째). ⑤ **🚀 시장 신규 5종**: (1) **RogueSlide·Perchang World·Stip 5월 출시**(Stip = NumLink 직접 경쟁권 추가)·(2) **소셜 카지노 87.6억→168.5억$ CAGR 7.54%**(캐주얼+카지노 통합)·(3) **BitSummit 公式 스트리머 7팀 + 대만 Mibin 확정**(SANNINSHOW·MSS Project·SPYGEA·D-2 사전 키 골든타임)·(4) **2026 5월 ASO 大전환**(설치량<30일 리텐션 가중치 역전·Apple LLM App Store Tags 신규 디스커버리·Paramount+ +45위)·(5) **한국 4X 월 7000만$ MMORPG 9년 1위 추월**(광고소재 58% 교체·이용률 50.2% 하락·팬덤 서사). ⑥ **🚀 기술 신규 2건**: (1) **CVE-2026-0073 Android adbd RCE 크리티컬**(5/1 패치·Unity 모바일 빌드 영향)·(2) **Node 20 LTS 이미 EOL 도과 D+20**(4/30 종료·5/19 D-14 오인 정정·즉시 Node 22/24 이관 + setup-node@v4 matrix 22.x). ⑦ **🔍 QA 정정 2건**: (1) **NumLink SDF 1×1은 실제 파일 크기 정상**(Maplestory Bold 192,950 bytes·m_CompleteImageSize 메타데이터 필드만의 문제 가능·추가 차원 검증 필요)·(2) **MeowBeat manifest "id=None"은 실제 키가 songId**(10곡 모두 정상·잘못된 보고 정정)·**NumLink Tools 29일째 부재(30일 임계 D-1)·MeowBeat bak_btn 43일째 1.6MB**. ⑧ **🎨 디자인 신규 3건**: (1) **5/19 Awwwards SOTD Capitolium**(PRO+Developer·정보 밀도+개발자 감성)·(2) **M3 Expressive 1.5.0-alpha19 35셰이프+모션피직스**(헥사→원 모핑 = 클리어 피드백 직접 차용)·(3) **모바일 UI 3D 몰입+I drew this 수작업**(AI 슬롭 회피 일치). ⑨ **오늘 핵심 결정 = 결정 단위 0.1건도 실패한 상황 — P0 단 1건만 발사 + 신규 인사이트 5건 즉시 도입**: **🚨 P0 5m MeowBeat `bak_btn` git rm 단일 명령 1줄**(43일째·6일째 결정 마비 차단·결정 검증 가능한 가장 작은 단위·BitSummit D-2 출품 전 정리 위생 최우선·27일째 진입 차단) + **🚨 P0 15m NumLink Tools _ProjectTemplate 일괄 복사**(29일·30일 임계 D-1) + **🚨 P0 1h MeowBeat BitSummit D-2 公式 스트리머 7팀 + 대만 Mibin 일괄 사전 배포**(15초 single-moment clip 3종·일본어 프레스킷·빌드키·5/22 골든타임 마지막) + **P0 2h NumLink 헥사곤 채택 + M3 Expressive 35셰이프 모핑**(Hex FRVR·Block!Hexa "한 셀=한 색상" 미니멀·6일째 결정 마비 차단) + **P0 1h MeowBeat 3컷 스토리보드 D-1(5/21) 완성**(쟁기-박자-새싹·"I drew this" 수작업 톤·픽업 트래픽 직전) + **P0 30m Famitsu/IGN Japan/4Gamer/Dengeki/Game*Spark 5개 매체 5/21 엠바고 보도자료** + **P0 30m Apple App Store Tags 대비 메타데이터 자연 문장 삽입**("ネコ/猫/癒し/かわいい/無料 音ゲー" 5종) + **P0 20m PKM_GBrain 비활성화 또는 embeddinggemma 재적용 결정 1건**(7일 연속 실패·결정 시점) + **P0 30m setup-node@v4 matrix Node 22 LTS 픽스**(Node 20 EOL D+20) + **P0 15m JobResearch 04:30 시차 분리**(4일째) + **P0 10m MeowBeat qa_static.py manifest 경로 정정**(Songs/manifest.json) + **P0 10m CVE-2026-0073 Android adbd 영향도 분석** + **P1 30m NumLink SDF 실제 텍스처 차원 추가 검증**(m_TextureWidth/Height) + **P1 1h Google Mobile Ads Unity v11.1.0 릴리스 노트 확인** + **P1 1h Stip 직접 비교 분석 + 한국 4X "팬덤 서사" 메시지 정립** + **P2 30m 소셜 카지노 통합 트렌드 GDD 1쪽**.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'NumLink 동결 21일/재동결 5일째(어제 4→5·미커밋 41파일 동일)·MeowBeat 38일 = 5주+3일 임계 초과 8일 돌파(역대 최장 신기록·미커밋 36파일 동일)·bak_btn 43일(+1·6일째 결정 마비)·**26일 연속 결정 실패 신기록 갱신**(3주+5일). **어제 P0 5건 모두 미실행 grep 확인** = NumLink 폰트 SDF git restore 0건 + bak_btn git rm 0건(0.1건도 미작동·6일째) + NumLink 헥사곤 채택 0건 + MeowBeat 인플루언서 사전 배포 0건 + MeowBeat 3컷 스토리보드 0건. agent-office 5/19 04:15 97a3f79 정상 가동·0일 동결. **결정 단위 0.1건도 실패한 상황 — P0 단 1건만 발사**: **MeowBeat `bak_btn` git rm 5분 단일 명령**(43일째·BitSummit D-2 출품 전 정리 위생 최우선·27일째 진입 차단).',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '**🚀 5월 신작 3종 출시**: RogueSlide(슬라이드+로그라이크)·Perchang World(물리퍼즐 8존+James Acaster 내레이션)·**Stip(Sixtyfour 후속·숫자 룰 추론·NumLink 직접 경쟁권 추가 주시 필요)**. **🚀 소셜 카지노 시장 2026년 87.6억 달러→2035년 168.5억 달러 CAGR 7.54%**·"캐주얼+카지노 단일 지갑·앱" 통합 트렌드 키 신호. **BitSummit PUNCH 5/22-24 Creators Talk 10:30-11:30 토·일**+ANTONBLAST·City of None·**한국 K-Indie 6작 라인업**·**NumLink/MeowBeat 비참가지만 mediakit D-2가 인디 미디어 픽업 최적**. NumLink 헥사곤 Hex FRVR/Hexagonium 검증 사례 충분 = 변경 없이 채택 확정. **오늘 결정**: P0 2h MeowBeat 3컷 스토리보드 D-1(5/21)까지 완성(쟁기/음표+새싹/수확)·P0 30m NumLink 헥사곤 채택 확정 1장 목업·P1 1h Stip 직접 비교 분석.',
+      },
+      {
+        speaker: 'Developer',
+        note: '**🚨 CVE-2026-0073 Android adbd RCE 크리티컬 5/1 패치**(Unity 모바일 빌드 영향 가능·MeowBeat Android 빌드 Gradle plugin 확인 필요). **🚨 Node 20 LTS 이미 EOL 도과 D+20 정정**(5/19 D-14 오인 보고 정정·4/30 종료·즉시 Node 22/24 이관·**GitHub Actions setup-node@v4 matrix 22.x 픽스 즉시 실행**). **Google Mobile Ads Unity v11.1.0 GitHub 릴리스 존재**(어제 v11.0.0 +0.1 마이너·다음 회의 재검증). **Firebase Unity 13.10.0이 최신 확인분**(13.11.0 가정과 상이·재검증 필요). NumLink UI 테마 3종(Kawaii/Premium/Retro) USS + AutoGenTests asmdef 삭제 진행 중. MeowBeat GoogleMobileAds prefab 3건 + GameManager/SongManager/OptionManager + manifest 변경(어제 대비 변동 없음·범위 확장 정체). Unity 6000.3.15f1 유지·.NET 10.0.8 유지.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '**🔍 정정 2건**: ① **NumLink SDF 1×1 회귀는 실제 파일 크기 정상**(Maplestory Bold SDF 192,950 bytes·1KB 미만 SDF 0건·m_CompleteImageSize 메타데이터 필드만의 문제 가능·5/18부터 오인 가능성·추가 텍스처 차원 검증 필요) ② **MeowBeat manifest "id=None 다수"는 실제 키가 songId**(10곡 모두 정상 값·5/19 회의 잘못된 보고 정정). **NumLink Tools 29일째 부재**(어제 28→오늘 29·4주+1일·**30일 임계 D-1**·CLAUDE.md "세션 시작 시 자동 점검" 4주+1일 위반 신기록). **MeowBeat qa_static.py 2 error**(manifest_load + scene_buttons·실제 manifest 경로 Songs/manifest.json 하위·경로 이슈로 추정). **MeowBeat bak_btn 43일째 1.6MB**(4/7 12:30·6일째 결정 마비). **오늘 결정**: P0 15m NumLink Tools 즉시 복사(30일 임계 D-1·강제 집행) + P0 5m bak_btn git rm 1줄(43일째·0.1건 단위) + P0 10m MeowBeat qa_static.py manifest 경로 정정 + P1 30m NumLink SDF 실제 텍스처 차원 추가 검증.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '**🚀 BitSummit PUNCH 公式 스트리머 7팀 확정**(SANNINSHOW·MSS Project·SPYGEA 등·대만 Mibin 등 해외 인플루언서 3일 풀가동·**사전 키 배포 골든타임 D-2 오늘**). **🚀 2026 5월 ASO 大전환**: ① 설치량 < 30일 리텐션 가중치 역전 ② **Apple LLM 자동생성 "App Store Tags" 신규 디스커버리 레이어**(Paramount+ +45위 사례) ③ 메타데이터 키워드 자연 문장 삽입 핵심. **🚀 숏폼**: TikTok 유기 도달 급락·**Shorts·Reels 85~90% 우위**·상위 광고주 분기당 2,400~2,600 크리에이티브(YoY +25~30%)·**< 15초 single-moment clip**. **🚀 한국 4X 월 7000만$ MMORPG 9년 1위 추월**(광고소재 58% 교체·이용률 50.2% 하락·"팬덤 서사" 시대). **MeowBeat 일본 ASO 보강 7종**: ネコ·猫·癒し·かわいい·無料 音ゲー·リズムゲームアプリ ランキング·新作 音ゲー. **오늘 결정**: P0 1h BitSummit D-2 公式 스트리머 7팀+대만 Mibin 일괄 사전 배포(15초 single-moment clip 3종) + P0 30m Famitsu/IGN Japan/4Gamer/Dengeki/Game*Spark 5/21 엠바고 보도자료 + P0 30m Apple App Store Tags 메타데이터 자연 문장 삽입.',
+      },
+      {
+        speaker: 'DevOps',
+        note: '**agent-office Pages 8일 무중단**(5/18 19:17 success 마지막·5/19~20 빌드 가능). **NumLink·MeowBeat .github/workflows 부재 2일째**. **Task Scheduler 3종 정체**: ① **DailyStandup_ClaudeCode 267009 6일째**(0x41306 인스턴스 한도) ② **JobResearch_ClaudeCode 267009 4일째**(04:00 락 충돌) ③ **PKM_GBrain LastResult=1 7일째**(embeddinggemma 패치 관련·**reference_gbrain.md 패치 파일 3개 재적용 또는 작업 비활성화 결정 필요·7일 연속 실패는 결정 시점**). **오늘 결정**: P0 20m PKM_GBrain 비활성화 또는 embeddinggemma 재적용 결정 1건(7일 연속 실패) + P0 15m JobResearch 04:30 시차 분리(4일째) + P0 30m setup-node@v4 matrix Node 22 LTS 픽스(EOL D+20) + P1 30m DailyStandup 267009 6일째 Get-WinEvent 진단.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '**5/19 Awwwards SOTD = Capitolium**(PRO+Developer 수상·정보 밀도+개발자 감성 UI 참조). **🎨 Material 3 Expressive 1.5.0-alpha19(5월) 신규 35셰이프 + 모션피직스**(**헥사 셀 모핑 직결·NumLink 헥사→원 모핑 = 클리어 피드백 직접 차용**). **🎨 모바일 UI 트렌드**: 3D 몰입+**"I drew this" 수작업 강조**(AI 슬롭 회피 정확히 일치·NumLink·MeowBeat 톤가이드 일치). **NumLink 헥사곤 권고 추가 검증**: **Hex FRVR·Hexagonium 모바일 검증 사례 충분 = 변경 없이 채택 확정**·**Hex FRVR/Block!Hexa "한 셀=한 색상" 미니멀 원칙**(브랜드 컬러 1개+회색 빈셀·AI 슬롭 회피). **MeowBeat 3컷 스토리보드 5/22 일본 인디 트레일러 신작 공개 후 재리서치 권고**(5/24 회의 이월). **오늘 결정**: P0 2h NumLink 헥사곤 셀 채택 + M3 Expressive 35셰이프 모핑 시스템 차용 + P0 1h MeowBeat 3컷 스토리보드 콘티 D-1(5/21) 완성 + P1 1h "I drew this" 수작업 톤 적용.',
+      },
+    ],
+    decisions: [
+      {
+        title:
+          '🚨 P0 5m [MeowBeat `bak_btn` git rm 단일 명령 1줄 = 결정 단위 0.1건도 실패한 상황 — P0 단 1건만 발사 · 43일째 잔존 1.6MB · 6일째 결정 마비 차단 · BitSummit D-2 출품 전 정리 위생 최우선 · 27일째 진입 차단]',
+        description:
+          '5/19 P0 0.1건 축약(bak_btn git rm 1줄)도 미실행·**6일째 결정 마비 진입 = 결정 단위 0.1건도 실패한 상황**. Orchestrator·QA Tester 양쪽 모두 "P0 단 1건만 발사"로 합의·오늘은 진짜 1줄만: `git rm Assets/Scenes/MainScene.unity.bak_btn` 단일 명령(meta·커밋·푸시 묶지 않음). 결과 확인 후 다음 단계 별도 결정. **27일 연속 결정 실패 진입 차단**. BitSummit Business Day D-2(5/22)·출품 전 정리 위생 최우선·연내 마지막 가용 윈도우 차단 리스크. **MainScene.unity.bak_btn 1,598,524 bytes·4/7 12:30 생성·43일 잔존**.',
+      },
+      {
+        title:
+          '🚨 P0 15m [NumLink Tools _ProjectTemplate 일괄 복사 · 29일째 4주+1일 · 30일 임계 D-1 · CLAUDE.md "세션 시작 시 자동 점검" 4주+1일 위반 신기록 종결]',
+        description:
+          'NumLink Tools 29일째 부재(어제 28→오늘 29·4주+1일·30일 임계 D-1)·**CLAUDE.md "세션 시작 시 자동 점검" 4주+1일 위반 신기록 갱신**. `C:\\Unity\\_ProjectTemplate\\Tools\\` 일괄 복사 + 씬 경로 상수 패치 + `python3 Tools/unity_validate.py` baseline 측정. 30일 임계 진입 전 강제 집행. AutoGenTests 4개 D = 회귀 탐지 불가 상황과 동시 발생 = 검증 무방비 28일째.',
+      },
+      {
+        title:
+          '🚨 P0 1h [MeowBeat BitSummit D-2 公式 스트리머 7팀 + 대만 Mibin 일괄 사전 배포 · SANNINSHOW·MSS Project·SPYGEA + 일본어 프레스킷 + 빌드키 + 15초 single-moment clip 3종 · 5/22 골든타임 마지막]',
+        description:
+          'BitSummit PUNCH 公式 스트리머 7팀 + 대만 Mibin 등 해외 인플루언서 3일 풀가동 확정·**사전 키 배포 골든타임 D-2 오늘**. 일본어 프레스킷 + 빌드키 + **15초 single-moment clip 3종**(콤보 임팩트 순간 추출·풀게임플레이 < 15초 표준). 5/17·5/18·5/19 4일째 이월·5/22 골든타임 마지막. **"音ゲーハイインパクト" 매칭**(어제 회의 BitSummit "High Impact" 테마와 일치).',
+      },
+      {
+        title:
+          'P0 30m [Famitsu/IGN Japan/4Gamer/Dengeki/Game*Spark 5개 매체 5/21 오전 엠바고 보도자료 동시 송부 · 일본 5개 공식 파트너 매체]',
+        description:
+          'BitSummit 공식 파트너 5개 매체(Famitsu·IGN Japan·4Gamer·Dengeki·Game*Spark)에 5/21 오전 엠바고 보도자료 동시 송부. **D-2 사전 픽업 골든타임**·일본 시장 표준 패턴.',
+      },
+      {
+        title:
+          'P0 2h [NumLink 헥사곤 셀 채택 + M3 Expressive 1.5.0-alpha19 35셰이프 모핑 시스템 차용 · Hex FRVR·Block!Hexa "한 셀=한 색상" 미니멀 · 6일째 결정 마비 차단 · 단일 픽스]',
+        description:
+          '셀 셰이프 4안(헥사곤/다이아몬드/꼬리/Liquid Glass) **5일째 결정 마비** → 6일째 진입 차단 = **헥사곤 1안 단일 픽스**. **Material 3 Expressive 1.5.0-alpha19(5월) 신규 35셰이프 + 모션피직스 시스템 차용**(**헥사→원 모핑 = 클리어 피드백**). **Hex FRVR·Hexagonium 모바일 검증 사례 충분 = 변경 없이 채택 확정**. **Hex FRVR/Block!Hexa "한 셀=한 색상" 미니멀 원칙 유지**(브랜드 컬러 1개 + 회색 빈셀·**AI 슬롭 회피**·NumLink 톤가이드 일치).',
+      },
+      {
+        title:
+          'P0 1h [MeowBeat "쟁기-박자-새싹" 3컷 스토리보드 콘티 D-1(5/21) 완성 · "I drew this" 수작업 톤 · BitSummit 5/22 픽업 트래픽 직전 · D-1 GIF 1컷 트위터 사전 티저 게시]',
+        description:
+          'Boords 가이드 단순화: ① 고양이 호미 박자 ② 작물 성장 비트 ③ 수확·점프 클라이맥스. **"I drew this" 수작업 톤 적용**(픽셀 일러스트·AI 슬롭 회피·NumLink·MeowBeat 톤가이드 일치). **BitSummit 5/22 픽업 트래픽 5/22-24 피크**·**D-2 오늘 콘티 확정 → D-1(5/21) GIF 1컷 트위터 사전 티저 게시**.',
+      },
+      {
+        title:
+          'P0 30m [Apple App Store Tags 대비 메타데이터 자연 문장 삽입 · "ネコ/猫/癒し/かわいい/無料 音ゲー" 5종 · LLM 자동 태그 픽업]',
+        description:
+          '**2026 5월 ASO 大전환**: Apple LLM 자동생성 "App Store Tags"가 신규 디스커버리 레이어·**Paramount+ 사례 +45위 급등**. MeowBeat 일본 ASO 보강 7종 중 핵심 5종(ネコ·猫·癒し·かわいい·無料 音ゲー)을 메타데이터에 **자연 문장으로 삽입**(LLM 자동 태그 픽업 노림).',
+      },
+      {
+        title:
+          'P0 20m [PKM_GBrain_Sync_Daily 비활성화 또는 embeddinggemma 패치 재적용 결정 1건 · 7일 연속 실패는 결정 시점 · reference_gbrain.md 패치 파일 3개]',
+        description:
+          'PKM_GBrain_Sync_Daily LastResult=1 7일째(embeddinggemma 패치 관련·sync_brain 실패). **7일 연속 실패는 결정 시점**. ① reference_gbrain.md 패치 파일 3개 재적용 시도 → ② 실패 시 작업 비활성화 결정. 더 이상 이월 금지.',
+      },
+      {
+        title:
+          'P0 30m [GitHub Actions setup-node@v4 matrix Node 22 LTS 픽스 · Node 20 EOL D+20 도과 정정 · agent-office package.json 우선]',
+        description:
+          '**Node 20 LTS 이미 EOL 도과 D+20**(4/30 종료·5/19 D-14 오인 정정). 즉시 Node 22(Active LTS) 또는 24(LTS) 이관·**GitHub Actions setup-node@v4 matrix 22.x 픽스 즉시 실행**·agent-office package.json 우선·MeowBeat·NumLink는 .github/workflows 부재이므로 후순위.',
+      },
+      {
+        title:
+          'P0 15m [JobResearch_ClaudeCode 트리거 04:00→04:30 시차 분리 · DailyStandup 267009 6일째 락 충돌 단일 원인 해소 · 5/19 P0 미실행 만회]',
+        description:
+          'DailyStandup 267009 6일째 + JobResearch 동일코드 267009 4일째 = 04:00 동시 트리거 락 충돌. `schtasks /change /TN "JobResearch_ClaudeCode" /ST 04:30` 시차 분리. 다음날 LastResult 모니터링으로 효과 검증. **5일째 미실행 만회**.',
+      },
+      {
+        title:
+          'P0 10m [MeowBeat qa_static.py manifest 경로 정정 · Songs/manifest.json 하위 · 즉시 정정 가능]',
+        description:
+          'MeowBeat qa_static.py 2 error 중 manifest_load는 **실제 manifest 경로가 Songs/manifest.json 하위**인데 도구가 다른 경로를 찾아서 발생한 경로 이슈. 즉시 정정 가능·정적 QA 통과 회복.',
+      },
+      {
+        title:
+          'P0 10m [CVE-2026-0073 Android adbd RCE 크리티컬 영향도 분석 · MeowBeat Android 빌드 Gradle plugin 확인]',
+        description:
+          '**CVE-2026-0073 Android adbd RCE 크리티컬 5/1 패치**(Unity 모바일 빌드 영향 가능). MeowBeat Android 빌드 Gradle plugin 버전 확인 + 영향 받는 ADB 버전 사용 여부 점검 10m.',
+      },
+      {
+        title:
+          'P1 30m [NumLink SDF 실제 텍스처 차원 추가 검증 · m_TextureWidth/m_TextureHeight 직접 확인 · 1×1 회귀 실재성 재판단]',
+        description:
+          '**🔍 QA 정정**: NumLink SDF asset 실제 파일 크기는 정상(Maplestory Bold 192,950 bytes·1KB 미만 SDF 0건)이나 **m_CompleteImageSize=1 메타데이터 필드만의 문제일 가능성**. **m_TextureWidth·m_TextureHeight 필드 직접 확인**으로 1×1 회귀 실재성 재판단·5/18부터 오인 보고 가능성 확정 또는 부인.',
+      },
+      {
+        title:
+          'P1 1h [Google Mobile Ads Unity v11.1.0 GitHub 릴리스 노트 확인 · 어제 v11.0.0 +0.1 마이너 · MeowBeat AdMob 업그레이드 검토]',
+        description:
+          'Google Mobile Ads Unity **v11.1.0 GitHub 릴리스 존재 확인**(어제 v11.0.0 보고에서 +0.1 마이너 정정). 릴리스 노트 안전성 평가·MeowBeat AdMob 11.x 업그레이드 검토. Firebase Unity 13.10.0 vs 13.11.0 버전 재확인 15m 동시 진행.',
+      },
+      {
+        title:
+          'P1 1h [Stip 직접 비교 분석 1쪽 + 한국 4X "팬덤 서사" 메시지 정립 · NumLink 차별화 1줄 후크 갱신]',
+        description:
+          '**Stip(Sixtyfour 후속·숫자 룰 추론)** = NumLink 직접 경쟁권 신규 진입. 메커니즘·UX·차별점 분석 1쪽 + NumLink 차별화 1줄 후크 갱신. 동시에 **한국 4X 월 7000만$ MMORPG 9년 1위 추월**·**팬덤 서사 시대 본격화** 트렌드 반영 메시지 정립.',
+      },
+      {
+        title:
+          'P2 30m [소셜 카지노 87.6억→168.5억$ 통합 트렌드 GDD 1쪽 · 캐주얼+카지노 단일 지갑·앱 트렌드]',
+        description:
+          '**소셜 카지노 시장 2026년 87.6억 달러→2035년 168.5억 달러 CAGR 7.54%**·**"캐주얼+카지노 단일 지갑·앱" 통합 트렌드**. MeowBeat 농장+리듬에 카지노 톤 IAP 후보(슬롯 머신식 작물 뽑기·등급별 작물 카드) 검토 GDD 1쪽. 위험 평가 동시 진행(연령 등급·라이선스).',
+      },
+    ],
+  },
+  {
     id: '2026-05-19T04:00:00-daily-standup',
     date: '2026-05-19',
     researchTitle:
