@@ -43,6 +43,184 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-05-21T04:00:00-daily-standup',
+    date: '2026-05-21',
+    researchTitle:
+      '🌅 5/21 목요일 데일리 스탠드업 — **BitSummit PUNCH Business Day D-1 진짜 임박**(5/22 교토 Miyako Messe Business Day·5/23-24 공개일·테마 "High Impact"·2025년 58,000명 방문 기준)·**NumLink 동결 22일째**(4/29 b6d7a73 이후·재동결 6일째·5/20 UI 테마 3종 4커밋 후 24h 무커밋)·**MeowBeat 39일 = 5주+4일 임계 초과 9일 돌파**(역대 최장 신기록 갱신·어제 38→오늘 39)+**bak_btn 44일 생존**(+1·D+14 임계 초과·5/20 P0 14건 중 0건 실행)·**🚨 어제 P0 14건 모두 미실행 grep 확인**(font/sdf/bak_btn/hex/influencer/storyboard/tools/node22 양쪽 커밋 0건)·**27일 연속 결정 실패 신기록 갱신**(3주+6일·결정 마비 7일째)·**🚀 시장 신규 1순위**: **Pictonico**(Nintendo iOS/Android 5/28 출시·사용자 사진 얼굴 80개 미니게임 자동 삽입·WarioWare식 free-to-start·MeowBeat 90초 완주 패턴 + Score Attack/Sudden Death 모드 직접 차용 후보)·**🚀 시장 신규 2순위**: **Number Connect: Merge Puzzle**(2026 신메커닉 "Swap 1회 부스터" + "Combo Merge"·NumLink 차별화 신규 검토)·**🚀 시장 정정**: **BitSummit PUNCH 2026 = 5/22-24 진행 확정**(어제까지 7월 추정 오인 → 진짜 D-1 임박)·**🚀 시장 신규 3순위**: **Sensor Tower 2025 결산** — 퍼즐 장르 $14.4B 성장·iOS D30 리텐션 6.69% / Android 4.14%(NumLink KPI 목표 기준선)·미국 광고비 56% Lifestyle+Puzzle 쏠림(UA 과열·오가닉 리텐션 ROI 핵심)·**🚀 기술 신규 1순위**: **Unity 6000.3.16f1 출시**(어제 6000.3.15f1 → +1 패치·Android/Animation/Audio/Build Pipeline/Editor 광역 버그픽스·**Android 픽스 다수로 MeowBeat/NumLink 직접 영향**·채택 검토 필요)·**🚀 기술 정정**: **CVE-2026-20034 Cisco Unity Connection != 게임엔진 Unity**(명칭 충돌 주의·게임엔진 Unity는 5/21 신규 CVE 없음)·**🎨 디자인 신규 1순위**: **5/20 Awwwards SOTD Thorgal**(Franco-Belgian 사가 인터랙티브 사이트·Developer Award 동시 수상·페이지 전환+패럴랙스 코믹 패널 키 기법)·**🎨 디자인 신규 2순위**: **Android 17 QPR1 Beta 3**(5/18 Gboard M3E 광범위 롤아웃·노티 드래그 시 인접 카드 spring 미세 반응·NumLink M3E 1.5.0-alpha19 35셰이프 + 모션피직스 연계)·**🎨 디자인 신규 3순위**: **NumLink 3 테마 USS 분석 완료** — Kawaii(#FFB5C5 핑크·12/22/32/40px·heart #FF7AA0) / Premium(#1F1F1F 다크차콜·6/10/14/20px·메탈릭골드 #C8A05A) / Retro(#E89B72 빈티지피치·8/16/22/28px·머스타드 #D4A030+sage #8FAB85)·시맨틱 변수 cascade override만으로 스왑·UIThemeSwitcher.Apply() 단일 동작 전체 전환·**4번째 "Liquid Glass" 테마 신설 후보**·**🚀 콘텐츠 신규 1순위**: **Apple App Store Tags + Google Play I/O 2026 Gemini Custom Store Listing** — Apple은 스크린샷 캡션·메타데이터 AI 인덱싱(CPP 35→70개 2배·출시 시즌 설치율 +38%)·Google은 Gemini 자동 Custom Store Listing 생성(키워드 클릭 1회 → 배포)·Play Games Sidekick 출시·**🚀 콘텐츠 신규 2순위**: **MeowBeat LYRIA_PROMPTS.md 곡 12·13(Zoomies!, Fishbone Frenzy) Hard 난이도 신규 활성화**(1~11 주석·5/20 어제 변경의 본질)·**🚀 콘텐츠 신규 3순위**: **MeowBeat GAME_BRIEF.md 40일 미갱신**(2026-04-11 마지막·5킥/5곡/Sprint 기록 충실·BM·곡 20개 등 미결 5건·갱신 필수)·**🔍 QA 정정**: **DevOps agent-office Node 22 이미 적용 완료**(deploy-pages.yml + weekly-insights.yml setup-node@v4 + node-version: 22·5/20 P0 30m "Node 22 픽스" 이미 적용 완료 상태였음 = 액션아이템 자체가 오인)·**🔧 DevOps 신규**: **claude.exe PID 12개 누적**(장시간 세션+자동화 누적·DailyStandup 267009 7일째 + JobResearch 4일째 + PKM_GBrain LastResult=1 7일째·메모리 점유 위험·정리 권장)·**NumLink Tools 30일째 D-day 도달**(어제 29→오늘 30·CLAUDE.md "세션 시작 자동 점검" 한 달 위반 임계 진입).',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제39회 — **5/21 목요일·BitSummit PUNCH Business Day D-1 진짜 임박**(어제까지 7월 추정 오인 → 5/22-24 교토 Miyako Messe 확정·테마 "High Impact"·D-1 사전 키 골든타임 마지막)·Steam Next Fest D-25·WWDC D-18·Node20 EOL D+21. **🚨 어제 P0 14건 모두 미실행 + 신기록 갱신 3종**: ① **NumLink 동결 22일/재동결 6일째**(5/20 UI 테마 4커밋 후 24h 무커밋) ② **MeowBeat 39일 = 5주+4일 임계 초과 9일 돌파**(역대 최장 신기록·어제 38→오늘 39) ③ **bak_btn 44일 생존**(D+14·5/20 P0 0.1건 축약 7일째 미실행·결정 마비 7일째) ④ **27일 연속 결정 실패 신기록 갱신**(3주+6일). **🚀 시장 신규 3종**: ① **Pictonico**(Nintendo 5/28 출시·WarioWare식 사진 얼굴 80개 미니게임·MeowBeat Score Attack/Sudden Death 모드 직접 차용 후보) ② **Number Connect: Merge Puzzle**(Swap 1회 부스터+Combo Merge·NumLink 신메커닉) ③ **Sensor Tower 2025 결산 퍼즐 $14.4B**(iOS D30 6.69%·Android 4.14% NumLink KPI 기준선·UA 과열). **🚀 기술 신규 1종 + 정정 1종**: ① **Unity 6000.3.16f1 출시**(어제 6000.3.15f1에서 +1 패치·Android 광역 픽스·채택 검토 필요) ② **CVE-2026-20034 Cisco Unity Connection != 게임엔진 Unity 명칭 충돌 정정**. **🎨 디자인 신규 3종**: ① **5/20 Awwwards SOTD Thorgal**(Developer Award 동시 수상·페이지 전환+패럴랙스 코믹 패널) ② **Android 17 QPR1 Beta 3 Blur+M3E 5/18 광범위 롤아웃**(노티 드래그 spring 반응) ③ **NumLink 3 테마 USS 분석 완료**(Kawaii/Premium/Retro 시맨틱 변수 cascade·4번째 Liquid Glass 후보). **🚀 콘텐츠 신규 3종**: ① **Apple App Store Tags + Google Play I/O 2026 Gemini Custom Store Listing**(CPP 35→70·출시 시즌 +38%·키워드 클릭 1회 배포·Play Games Sidekick) ② **MeowBeat LYRIA_PROMPTS Hard 곡 12·13 신규 활성화** ③ **MeowBeat GAME_BRIEF.md 40일 미갱신**(곡 5→7 카운트 수정 필요). **🔍 QA 정정 1건 + 신규 1건**: ① **DevOps agent-office Node 22 이미 적용**(5/20 P0 "Node 22 픽스" 액션아이템 오인) ② **NumLink Tools 30일 D-day**(어제 29→오늘 30·CLAUDE.md 한 달 위반 임계 진입). **🔧 DevOps 신규**: ① **claude.exe PID 12개 누적**(메모리 점유·정리 권장·DailyStandup/JobResearch 267009 누적의 직접 원인 추정) ② **PKM_GBrain_Sync_Daily LastResult=1 8일째**(7→8·embeddinggemma 재적용 또는 비활성화 즉시 결정) ③ **DailyStandup 267009 7일째**(6→7·JobResearch 4일째 동일코드). **💻 Developer 신규**: ① **NumLink UIThemeSwitcher.cs(80줄) 정적 클래스**(Kawaii/Premium/Retro enum·`_currentSheet` 정적 상태 도메인 리로드 stale 가능성 검증 필요) ② **MeowBeat GameManager.cs(+58줄)**(GameEvents.OnLanguageChanged 구독+OnDestroy 해제·GetSongDisplayTitle 영/한 분기·databaseManager.ownedSongs 색상 분기·RectTransform 앵커 통일 0.05~0.95·Lock 컨테이너 앵커 Score 동일화·미커밋 36파일) ③ **DOTween UI Toolkit VisualElement 단축키 추가**(DOMove/DOScale·Unity 6.3 호환). **🎨 Art Director 신규 결정**: NumLink Kawaii 테마 `--whisker` 0.12→0.18 잉크 윤곽 추가(5분 USS 한 줄)·4번째 Liquid Glass 테마 변수셋 신설(15분)·MeowBeat catfood 1초 흔들기는 BPM 대비 길다 → 0.35~0.5초 ease-out-back 단축 권고·neighbor spring(M3E 1.5.0-alpha19 모션피직스 차용).',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — NumLink 동결 22일/재동결 6일째·MeowBeat 39일 5주+4일 임계 초과 9일 돌파 역대 최장 신기록·bak_btn 44일·27일 연속 결정 실패 신기록·어제 P0 14건 모두 미실행·claude.exe PID 12개·NumLink Tools 30일 D-day·DailyStandup 267009 7일째·BitSummit Business Day D-1 진짜 임박',
+        description:
+          'NumLink 4/29 b6d7a73 이후 22일 0커밋(어제 21→오늘 22)·재동결 6일째 진입(어제 5→6·5/20 UI 테마 3종 4커밋 발사 후 24h 무커밋)·미커밋 41파일(전일 동일·폰트 SDF 6개 + Tests asmdef 4건 D). MeowBeat 4/12 657032c 이후 39일(어제 38→오늘 39·5주+4일 임계 초과 9일 돌파·역대 최장 신기록 갱신)·미커밋 36파일(전일 동일)·**bak_btn 44일 생존**(D+14·4/7 12:30 생성·5/21 = +44d·7일째 결정 마비·5/20 P0 0.1건 축약 0건 실행). **5/20 P0 14건 모두 미실행 grep 확인**: (1) MeowBeat bak_btn git rm 0건(7일째) (2) NumLink Tools 일괄 복사 0건(폴더 자체 부재 유지) (3) BitSummit 公式 스트리머 7팀 사전 배포 0건 (4) 5/21 엠바고 보도자료 송부 0건 (5) Apple App Store Tags 메타데이터 0건 (6) PKM_GBrain 비활성화/재적용 결정 0건 (7) setup-node@v4 Node 22 픽스 = **이미 적용된 상태**(액션아이템 자체 오인) (8) JobResearch 04:30 시차 분리 0건 (9) NumLink 헥사곤 채택 0건 (10) MeowBeat 3컷 스토리보드 0건 (11) MeowBeat qa_static.py manifest 경로 정정 0건 (12) CVE-2026-0073 영향도 분석 0건 (13) SDF 차원 검증 0건 (14) Stip 분석 0건. **27일 연속 결정 실패 신기록 갱신**(3주+6일·결정 마비 7일째). agent-office 5/20 ced1485 정상 가동·Pages 9일 무중단(weekly-insights 4/14 이후 무변경). **🚨 claude.exe PID 12개 누적**(장시간 세션+자동화·DailyStandup/JobResearch 267009 누적 직접 원인 추정). 마감 카운트다운: **BitSummit Business Day D-1**(어제까지 7월 추정 오인 → 5/22 진짜 D-1)·Steam Next Fest D-25·Node20 EOL D+21·WWDC D-18. **오늘의 결정 제안**: **🚨 P0 1m claude.exe 12개 PID 정리**(`Get-Process claude | Stop-Process -Force` 또는 선택적·267009 누적 직접 원인 차단·결정 검증 가능한 가장 빠른 단위) + **🚨 P0 5m MeowBeat bak_btn git rm 단일 명령 1줄**(44일째·7일째 결정 마비 차단·28일째 진입 차단).',
+      },
+      {
+        title:
+          '🎮 Game Designer — Pictonico Nintendo 5/28 출시(WarioWare식 사진 얼굴 80 미니게임)·Number Connect: Merge Puzzle Swap+Combo Merge·BitSummit PUNCH 5/22-24 정정(진짜 D-1)·Sensor Tower 2025 퍼즐 $14.4B·iOS D30 6.69% Android 4.14%·미국 광고비 56% 쏠림 UA 과열',
+        description:
+          '**🚀 5월 신작 2종 + 정정 1종**: ① **Pictonico**(Nintendo iOS/Android 5/28 출시·사용자 사진 얼굴을 80개 미니게임에 자동 삽입·WarioWare식 free-to-start 마이크로 챌린지·MeowBeat의 "짧은 세션 × 미니게임 콜렉션" 구조와 유사·**한 곡당 90초 완주 패턴 + Score Attack/Sudden Death 모드 직접 차용 후보**) ② **Number Connect: Merge Puzzle**(2026 신메커닉 "Swap 1회 부스터" + "Combo Merge"·NumLink 순차 연결에 추가 검토 가치) ③ **BitSummit PUNCH 2026 = 5/22-24 진행 확정**(어제까지 7월 추정 오인 → 진짜 D-1 임박·교토 Miyako Messe·테마 "High Impact"·2025 58,000명 방문). **🚀 시장 데이터**: Sensor Tower 2025 결산 퍼즐 장르 **$14.4B 성장**(IAP 1위급)·**iOS D30 리텐션 6.69% / Android 4.14%**(NumLink KPI 목표 기준선)·미국 광고비 **56%가 Lifestyle+Puzzle**에 쏠리나 IAP 점유는 그보다 낮음 = UA 비용 과열·**오가닉/리텐션 강화가 ROI 핵심**. NumLink/MeowBeat 미출품 = 미디어 인터뷰·B2B 미팅 슬롯 이미 마감, 일반 관람일(5/23~24)에 경쟁작 라이브 플레이로 노트 패턴/UI 벤치마킹 기회. **오늘 결정 제안**: **P1 1d 스파이크 NumLink Swap 부스터 1회/스테이지 메커닉 프로토타입**(Sprint 1-4 위 단일 ScriptableObject 토글)·**P1 30m MeowBeat Pictonico Sudden Death 벤치마크**(곡당 미스 3회 즉시 종료 모드 manifest.json difficulty 플래그)·**P2 1h BitSummit 5/23-24 공개일 출품작 리스트 사전 캡처**(bitsummit.org 공식·design-review 자료).',
+      },
+      {
+        title:
+          '💻 Developer — Unity 6000.3.16f1 출시(어제 6000.3.15f1 +1 패치·Android 광역 버그픽스)·.NET 10.0.8 유지·CVE-2026-20034 Cisco Unity Connection != 게임엔진 정정·NumLink UIThemeSwitcher.cs(80줄) 정적 클래스 stale 위험·MeowBeat GameManager.cs(+58줄) i18n+소유 잠금 시각 분리·DOTween UI Toolkit 단축키 신규',
+        description:
+          '**🚀 Unity 6000.3.16f1 신규 출시**(어제 6000.3.15f1 → +1 패치)·Android/Animation/Audio/Build Pipeline/Editor 광역 버그픽스·**MeowBeat·NumLink Android 빌드 직접 영향 가능**. **DOTween UI Toolkit VisualElement 단축키 추가**(DOMove/DOScale·Unity 6.3 호환). **.NET 10.0.8(5/12)이 5월 마지막 servicing**·10.0.9 미공개(D+9). **🔍 정정**: **CVE-2026-20034 Cisco Unity Connection 인증 API RCE != 게임엔진 Unity**(명칭 충돌 주의·5/21 신규 게임엔진 Unity CVE 없음·CVE-2026-0073 Android adbd는 5/1 패치 진행 중). **NumLink UIThemeSwitcher.cs(신규 80줄) 분석**: 정적 클래스 + Kawaii/Premium/Retro enum 3테마·`Resources/UIToolkit/Styles/themes/theme-{name}.uss` 동적 로드·모든 UIDocument의 `root.styleSheets`에 add/remove(이전 시트 정리 포함)로 cascade override·`ApplyFromSave`(부팅) + `Apply(theme, persist)` API·SaveData.uiTheme 영속화. **⚠️ 잠재 이슈**: **`_currentSheet` 정적 상태가 씬 전환·도메인 리로드 후 stale 가능성** — 회귀 테스트 필요. **MeowBeat GameManager.cs(+58줄) 분석**: (1) `GameEvents.OnLanguageChanged` 구독 → `OnDestroy` 해제·언어 변경 시 곡 버튼·결과창 텍스트 재갱신 (2) `GetSongDisplayTitle()` 추가 — 영어면 `title`, 한국어면 `titleKo`(fallback `title`) (3) `databaseManager.ownedSongs` 기반 소유 여부 색상 분기(소유=짙은 갈색 1.0α, 미소유=옅은 갈색 0.7α) (4) RectTransform 앵커 통일(0.05~0.95)·alignment=MiddleLeft·Overflow/Truncate (5) Lock 컨테이너 앵커 Score(하단 5~45%) 동일화·미커밋 — **곡 카드 i18n + 잠금 시각 분리**. **오늘 결정 제안**: **P0 10m Unity 6000.3.16f1 릴리스 노트 검토**(Android 픽스 영향도 + 채택 여부 결정)·**P1 20m NumLink UIThemeSwitcher 도메인 리로드/씬 전환 회귀 테스트 작성 후 커밋**·**P1 15m MeowBeat GameManager.cs diff 단위 커밋**(feat(meowbeat): 곡 카드 다국어/소유 잠금 시각 분리)·**P1 10m MainScene.unity.bak_btn .gitignore 배제**.',
+      },
+      {
+        title:
+          '🔍 QA Tester — NumLink Tools 30일째 D-day 도달(CLAUDE.md 한 달 위반 임계 진입)·_Recovery 5개 누적 0(1)~0(4).unity·SDF asset 마지막 수정 4/12 = 40일 무수정·SDF meta 4/6 = 6일 시차 메타 의심 부합·bak_btn 44일 D+14·MeowBeat qa_static 한글 깨짐으로 detector 자체 진단 불가',
+        description:
+          '**NumLink Tools 30일째 D-day 도달**(어제 29→오늘 30·CLAUDE.md "세션 시작 자동 점검" 한 달 위반 임계 진입·`C:\\Unity\\NumLink\\Tools` NOT_FOUND 30일 누적·unity_validate/qa_static/run_regression 전부 부재). **NumLink _Recovery 5개 파일 누적**: 0.unity·0 (1).unity·0 (2).unity·0 (3).unity·0 (4).unity — 검증 도구 없는 상태로 씬 손상 회복본만 증식 중. **NumLink SDF 마지막 수정 4/12**(어제 39일 → 오늘 40일 무수정)·meta 4/6(asset과 6일 시차·m_CompleteImageSize 메타 필드 의심점 부합·실제 텍스처 차원 미검증). **MeowBeat bak_btn 생성 후 44일**(D+14·4/7 12:30 시각·7일째 결정 마비). **MeowBeat qa_static.py 2 error 동결**: manifest_load + scene_buttons·**한글 깨짐 메시지로 detector 로직 자체가 manifest 신스키마(songId 키) 미인식** — 5/20 회의 "manifest 경로 정정 10m" 액션아이템은 실제로 detector 코드 패치 필요(30분 슬롯). **가장 심각한 품질 리스크**: **NumLink Tools 30일 D-day + _Recovery 5개 누적** — 검증 도구가 없는 상태로 씬 손상 회복본만 증식 (CLAUDE.md 한 달 위반 임계). **오늘 결정 제안**: **🚨 P0 15m NumLink Tools _ProjectTemplate 일괄 복사 + 씬 경로 상수 패치 + unity_validate.py baseline 0 error 확보**·**P0 5m _Recovery 5개 중 최신본 외 보존/삭제 정책 결정**·**P1 30m MeowBeat qa_static.py manifest 신스키마(songId 키) 인식 패치**(detector 코드 직접 수정).',
+      },
+      {
+        title:
+          '📢 Content Writer — Apple App Store Tags AI 인덱싱(CPP 35→70 2배·출시 시즌 +38%)·Google Play I/O 2026 Gemini Custom Store Listing 키워드 클릭 1회 배포·Play Games Sidekick·BitSummit 公式 프레스킷 다운로드 가능·MeowBeat LYRIA Hard 곡 12·13 활성화·GAME_BRIEF.md 40일 미갱신 5킥/5곡',
+        description:
+          '**🚀 ASO 신규 1순위**: **Apple App Store Tags**(WWDC 2025 발표)가 스크린샷 캡션·메타데이터까지 AI 인덱싱 — **스크린샷에 키워드 포함 텍스트 필수**·CPP 한도 **35→70개 2배 확대**·출시 시즌 설치율 **+38%**. **🚀 ASO 신규 2순위**: **Google Play I/O 2026** — Gemini 자동 Custom Store Listing 생성(키워드 클릭 1회 → 배포)·**Play Games Sidekick 출시**(게임 내 친구 추적·라이브 스트리밍 통합). **🚀 BitSummit Business Day D-1(5/22)**: 테마 "High Impact"·**공식 프레스킷(로고·일러스트) 다운로드 가능**·부스 촬영 시 개별 출품사 허가 필수·**NumLink/MeowBeat 트레일러·스크린샷 키워드 캡션화 작업 0건 — 즉시 보강 필요**. **MeowBeat 콘텐츠 상태**: ① **GAME_BRIEF.md** 2026-04-11 마지막 = **40일 미갱신**·5킥/5곡/Sprint 기록 충실하나 BM·곡 20개 등 **미결 5건 누적** ② **LYRIA_PROMPTS.md(어제 수정)** 곡 12·13(**Zoomies!, Fishbone Frenzy**) 활성화·1~11 주석·**Hard 난이도 곡 2개 신규 추가가 어제 변경의 본질** ③ **NumLink docs/에 TRAILER.md·ASO.md 신규 생성 필요**(현재 0건). **오늘 결정 제안**: **P0 30m MeowBeat·NumLink 양쪽 1분 트레일러 썸네일에 키워드 캡션 삽입**(Apple App Store Tags AI 인덱싱 대응)·**P1 30m NumLink docs/TRAILER.md + ASO.md 신규 생성**·**P1 20m MeowBeat GAME_BRIEF.md 갱신**(곡 5→7곡 카운트 수정·신규 Hard 2곡 반영·BM·미결 5건 정리).',
+      },
+      {
+        title:
+          '⚙️ DevOps — agent-office Pages 9일 무중단·workflows Node 22 이미 적용(5/20 P0 액션아이템 오인)·DailyStandup 267009 7일째·JobResearch 4일째·PKM_GBrain LastResult=1 8일째·claude.exe PID 12개 누적·PKM_Daily_Digest LastResult=0 정상·dependabot.yml 존재',
+        description:
+          '**agent-office Pages 9일 무중단**(5/20 04:15 빌드 success·5/19 19:22 UTC). **🔍 5/20 P0 정정**: **agent-office .github/workflows 2개(deploy-pages.yml + weekly-insights.yml) setup-node@v4 + node-version: 22 픽스 이미 완료 상태** — 어제 P0 30m "Node 22 픽스" 액션아이템은 **이미 적용된 상태**(액션아이템 자체 오인). **Task Scheduler 4종 자동화**: ① **DailyStandup_ClaudeCode LastResult=267009 7일째**(6→7·실행 중/타임아웃 코드·5/15~5/21) ② **JobResearch_ClaudeCode LastResult=267009 4일째**(04:00 동시 트리거 락 충돌 의심) ③ **PKM_GBrain_Sync_Daily LastResult=1 8일째**(7→8·reference_gbrain.md 패치 미적용·결정 시점 도과) ④ **PKM_Daily_Digest LastResult=0 정상**. **🚨 claude.exe PID 12개 누적**(장시간 세션+자동화·메모리 점유 위험·DailyStandup/JobResearch 267009 누적 직접 원인 추정). **dependabot.yml 존재 확인**(.github/dependabot.yml). **GitHub Actions setup-node@v5 미공개**(v4 SHA 핀 고정 유지). **오늘 결정 제안**: **🚨 P0 1m claude.exe 12개 PID 정리**(`Get-Process claude | Stop-Process`·267009 누적 직접 원인·DailyStandup/JobResearch 복구 1순위)·**🚨 P0 20m PKM_GBrain_Sync_Daily 비활성화 또는 embeddinggemma 재적용 결정 1건**(8일 연속 실패·결정 시점 도과)·**P0 15m JobResearch 04:00→04:30 시차 분리**(`schtasks /change /TN "JobResearch_ClaudeCode" /ST 04:30`)·**P2 30m setup-node@v5 출시 모니터링** + dependabot.yml 검토.',
+      },
+      {
+        title:
+          '🎨 Art Director — 5/20 Awwwards SOTD Thorgal Developer Award 동시 수상(Franco-Belgian 사가 인터랙티브·패럴랙스 코믹 패널)·Android 17 QPR1 Beta 3 Blur+M3E 5/18 Gboard 광범위 롤아웃(노티 드래그 spring)·Apple HIG Liquid Glass 2025-2026 정착·NumLink 3 테마 USS 분석 완료·MeowBeat catfood 1초→0.35~0.5초 단축 권고',
+        description:
+          '**🎨 5/20 Awwwards SOTD Thorgal**(Franco-Belgian 사가 인터랙티브 사이트·**Developer Award 동시 수상**·일러스트레이션 만화 IP를 웹 인터랙션으로 옮긴 케이스·**페이지 전환 + 패럴랙스 코믹 패널** 기법이 키워드). **Behance "Lineage M X J-EIGHT — Every Day, Every Knight (2026)"** 다크 판타지 모바일 RPG UI 컨셉 노출(블랙+골드+에칭 일러스트·다이아몬드형 HUD 프레임). **🎨 Android 17 QPR1 Beta 3**(5/18 Gboard M3E 광범위 롤아웃) — UI 전반 Blur 효과 확장·노티 드래그 시 인접 카드 spring 미세 반응. **Apple HIG visionOS 공간 컴퓨팅 + Liquid Glass 디자인 언어 + AI 기능 통합** 가이드 2025-2026 정착. **🎨 NumLink 3 테마 USS 분석 완료**: ① **Kawaii** — 베이비핑크 `#FFB5C5` 배경·radius 12/22/32/40px "통통한 라운드"·강조색 heart `#FF7AA0` — 발랄/만화 톤 ② **Premium** — 다크차콜 `#1F1F1F`·메탈릭골드 `#C8A05A`·radius 6/10/14/20px "샤프 모서리"·coral=heart `#C84F4F` — 절제된 럭셔리 ③ **Retro** — 빈티지피치 `#E89B72` 배경·머스타드 `#D4A030`·dusty sage `#8FAB85`·코코아 텍스트 `#4A2818`·radius 8/16/22/28px — 70s 따뜻한 흙톤. **차별점 핵심**: 세 테마 모두 동일한 시맨틱 변수명(`--easy-bg`, `--timer-warning` 등)을 **cascade override만으로 스왑** — `UIThemeSwitcher.Apply()`가 `root.styleSheets.Remove/Add` 단일 동작으로 전체 UI 전환·`SaveData.uiTheme` string 영속. **MeowBeat catfood 1초 흔들기 + foodScale 0.1 평가**: M3 Expressive spring 가이드 기준 **0.1 진폭은 적정하나 1초는 BPM 대비 길다 → 0.35~0.5초 + ease-out-back 단축 권고**·**neighbor spring**(인접 catfood 미세 따라 흔들기) 추가 시 M3E 1.5.0-alpha19 모션피직스 시그니처 차용. **오늘 결정 제안**: **5분 NumLink Kawaii `--whisker` 0.12→0.18 잉크 윤곽**(USS 한 줄 수정·Thorgal 코믹 패널 차용)·**15분 4번째 "Liquid Glass" 테마 변수셋 신설**(--surface-low rgba 반투명+blur 흉내·UIThemeSwitcher enum Glass 추가)·**30분 MeowBeat catfood 1초→0.35~0.5초 단축 + neighbor spring 추가**.',
+      },
+    ],
+    meetingTitle:
+      '🌅 5/21 목요일 종합 회의 — BitSummit Business Day D-1 진짜 임박·NumLink 동결 22일/재동결 6일째·MeowBeat 39일 5주+4일 임계 초과 9일 돌파 역대 최장 신기록·bak_btn 44일·27일 연속 결정 실패·🚨 어제 P0 14건 모두 미실행·🚀 Pictonico Nintendo 5/28·Number Connect Merge·Sensor Tower $14.4B·🚀 Unity 6000.3.16f1 신규·🚀 Awwwards Thorgal·Android 17 QPR1 Beta 3 Blur+M3E·NumLink 3 테마 USS 완료·🚀 Apple App Store Tags+Google Play Gemini Custom Listing·claude.exe PID 12개·DailyStandup 267009 7일째·PKM_GBrain 8일째·NumLink Tools 30일 D-day·MeowBeat qa_static 한글 깨짐 detector 한계',
+    meetingSummary:
+      '7명 에이전트가 5/21 목요일 회의 진행. 핵심 합의: ① **🚨 어제 P0 14건 모두 미실행 + 신기록 갱신 3종 동시 발생**: (1) MeowBeat bak_btn git rm 0건(7일째 결정 마비) (2) NumLink Tools 일괄 복사 0건(30일 D-day) (3) BitSummit 公式 스트리머 7팀 사전 배포 0건 (4) 5/21 엠바고 보도자료 송부 0건 (5) Apple App Store Tags 메타데이터 0건 (6) PKM_GBrain 결정 0건 (7) **setup-node Node 22 = 이미 적용 상태**(액션아이템 자체 오인) (8) JobResearch 04:30 시차 분리 0건 (9~14) 헥사곤·스토리보드·manifest·CVE·SDF·Stip 모두 0건. ② **NumLink 동결 22일·재동결 6일째**(어제 5/20 UI 테마 4커밋 후 24h 무커밋). ③ **MeowBeat 39일 = 5주+4일 임계 초과 9일 돌파**(역대 최장 신기록·어제 38→39)+bak_btn 44일(D+14·7일째 결정 마비). ④ **27일 연속 결정 실패 신기록 갱신**(3주+6일·결정 마비 7일째). ⑤ **🚀 시장 신규 3종**: (1) **Pictonico**(Nintendo 5/28 출시·WarioWare식 사진 얼굴 80 미니게임·MeowBeat Score Attack/Sudden Death 직접 차용 후보)·(2) **Number Connect: Merge Puzzle**(Swap 1회 부스터+Combo Merge·NumLink 신메커닉)·(3) **Sensor Tower 2025 결산 퍼즐 $14.4B**(iOS D30 6.69%·Android 4.14% KPI 기준선·미국 광고비 56% 쏠림 UA 과열). ⑥ **🚀 시장 정정**: **BitSummit PUNCH 2026 = 5/22-24 진행 확정**(어제까지 7월 추정 오인 → 진짜 D-1 임박·교토 Miyako Messe·테마 "High Impact"·2025 58,000명 방문). ⑦ **🚀 기술 신규 1종 + 정정 1종**: (1) **Unity 6000.3.16f1 출시**(어제 6000.3.15f1 +1 패치·Android 광역 픽스·채택 검토)·(2) **CVE-2026-20034 Cisco Unity Connection != 게임엔진 Unity 명칭 충돌 정정**. ⑧ **🎨 디자인 신규 3종**: (1) **5/20 Awwwards SOTD Thorgal**(Developer Award 동시 수상·패럴랙스 코믹 패널)·(2) **Android 17 QPR1 Beta 3 Blur+M3E 5/18 광범위 롤아웃**·(3) **NumLink 3 테마 USS 분석 완료**(Kawaii #FFB5C5·Premium #1F1F1F·Retro #E89B72·시맨틱 변수 cascade override·4번째 Liquid Glass 후보). ⑨ **🚀 콘텐츠 신규 3종**: (1) **Apple App Store Tags AI 인덱싱**(CPP 35→70·출시 시즌 +38%)·(2) **Google Play I/O 2026 Gemini 자동 Custom Store Listing**(키워드 클릭 1회 배포·Play Games Sidekick)·(3) **MeowBeat LYRIA Hard 곡 12·13 신규 활성화**. ⑩ **🔍 QA 정정 1건 + 신규 1건**: (1) **DevOps agent-office Node 22 이미 적용**(액션아이템 오인)·(2) **NumLink Tools 30일 D-day**(CLAUDE.md 한 달 위반 임계). ⑪ **🔧 DevOps 신규**: (1) **claude.exe PID 12개 누적**(메모리 점유·267009 누적 직접 원인 추정)·(2) **PKM_GBrain 8일째 실패**(결정 시점 도과)·(3) **DailyStandup 267009 7일째**. ⑫ **오늘 핵심 결정 = 결정 단위 0.1건도 7일째 실패 — P0 단 2건만 발사**: **🚨 P0 1m claude.exe 12개 PID 정리 단일 명령**(`Get-Process claude | Stop-Process -Force`·267009 누적 직접 원인 차단·결정 검증 가장 빠른 단위·1분) + **🚨 P0 5m MeowBeat bak_btn git rm 단일 명령 1줄**(44일째·7일째 결정 마비 차단·28일 진입 차단) + **🚨 P0 15m NumLink Tools _ProjectTemplate 일괄 복사 + unity_validate.py baseline**(30일 D-day·CLAUDE.md 한 달 위반 임계 진입) + **P0 10m Unity 6000.3.16f1 릴리스 노트 검토 + 채택 결정** + **P0 20m PKM_GBrain 비활성화 또는 embeddinggemma 재적용 결정 1건**(8일째·결정 시점 도과) + **P1 30m MeowBeat qa_static.py detector 코드 패치**(manifest 신스키마 songId 키 인식) + **P1 30m BitSummit D-1 양쪽 트레일러 키워드 캡션 삽입**(Apple App Store Tags AI 인덱싱 대응) + **P1 20m NumLink UIThemeSwitcher 회귀 테스트 + 도메인 리로드 stale 검증** + **P1 15m MeowBeat GameManager.cs diff 단위 커밋**(곡 카드 i18n + 잠금 시각 분리) + **P1 20m MeowBeat GAME_BRIEF.md 갱신**(곡 5→7곡·신규 Hard 2곡·미결 5건 정리) + **P2 5m NumLink Kawaii --whisker 0.12→0.18 USS 한 줄**(Thorgal 코믹 패널 차용) + **P2 15m 4번째 Liquid Glass 테마 변수셋 신설** + **P2 30m MeowBeat catfood 1초→0.35~0.5초 + neighbor spring 추가**(M3E 모션피직스 차용) + **P2 1d 스파이크 NumLink Swap 부스터 1회/스테이지 메커닉 프로토타입**(Pictonico Number Connect Merge 차용).',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'NumLink 동결 22일/재동결 6일째(5/20 UI 테마 4커밋 후 24h 무커밋)·MeowBeat 39일 = 5주+4일 임계 초과 9일 돌파(역대 최장 신기록)+bak_btn 44일 D+14·5/20 P0 14건 모두 미실행 grep 확인(setup-node Node 22는 이미 적용 상태로 액션아이템 자체 오인 정정)·27일 연속 결정 실패 신기록 갱신(3주+6일·결정 마비 7일째)·🚨 claude.exe PID 12개 누적이 DailyStandup 267009 7일째·JobResearch 4일째 누적의 직접 원인으로 추정·BitSummit Business Day D-1 진짜 임박(어제까지 7월 오인). 오늘은 결정 단위 0.1건도 7일째 실패한 상황 — P0 단 2건만 발사: claude.exe PID 정리 1분 + bak_btn git rm 5분.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: 'BitSummit PUNCH 2026 정정 = 5/22-24 교토 Miyako Messe 진행 확정(어제까지 7월 추정 오인 → 진짜 D-1 임박·테마 "High Impact"·2025 58,000명 방문)·NumLink/MeowBeat 미참가지만 5/23-24 공개일 라이브 플레이 노트 패턴/UI 벤치마킹 기회. 🚀 신작 2종: Pictonico(Nintendo 5/28·WarioWare식 사진 얼굴 80 미니게임·MeowBeat 90초 완주+Score Attack/Sudden Death 직접 차용)·Number Connect: Merge Puzzle(Swap 1회 부스터+Combo Merge·NumLink 신메커닉). Sensor Tower 2025 퍼즐 $14.4B 성장·iOS D30 6.69%/Android 4.14%(NumLink KPI 기준선)·미국 광고비 56% Lifestyle+Puzzle 쏠림(UA 과열·오가닉 리텐션 ROI 핵심). 권고: P1 1d 스파이크 NumLink Swap 부스터 프로토타입 + P1 30m MeowBeat Sudden Death 모드 manifest difficulty 플래그.',
+      },
+      {
+        speaker: 'Developer',
+        note: '🚀 Unity 6000.3.16f1 신규 출시(어제 6000.3.15f1 +1 패치·Android/Animation/Audio/Build Pipeline/Editor 광역 버그픽스·MeowBeat·NumLink Android 빌드 직접 영향). DOTween UI Toolkit VisualElement DOMove/DOScale 단축키 신규(Unity 6.3 호환). 🔍 정정: CVE-2026-20034 Cisco Unity Connection != 게임엔진 Unity 명칭 충돌 주의·게임엔진 5/21 신규 CVE 없음. NumLink UIThemeSwitcher.cs(신규 80줄) 정적 클래스 + 3테마 cascade override·⚠️ _currentSheet 정적 상태 도메인 리로드 stale 위험 — 회귀 테스트 필요. MeowBeat GameManager.cs(+58줄) i18n 곡 카드 + 소유 잠금 시각 분리·미커밋 36파일. 권고: P0 10m 6000.3.16f1 검토 + P1 20m UIThemeSwitcher 회귀 테스트 + P1 15m GameManager.cs diff 단위 커밋.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '🚨 NumLink Tools 30일째 D-day 도달(어제 29→오늘 30·CLAUDE.md "세션 시작 자동 점검" 한 달 위반 임계 진입)·_Recovery 5개 누적(0.unity·0(1)~0(4).unity)·SDF asset 마지막 수정 4/12 = 40일 무수정·SDF meta 4/6 6일 시차(m_CompleteImageSize 메타 의심점 부합). MeowBeat bak_btn 44일 D+14(4/7 12:30·7일째 결정 마비). MeowBeat qa_static.py 2 error 동결 - **한글 깨짐 메시지로 detector 로직 자체가 manifest 신스키마(songId 키) 미인식** → 5/20 회의 "manifest 경로 정정 10m"는 실제로 detector 코드 패치(30분 슬롯). 권고: P0 15m Tools 일괄 복사+baseline + P0 5m _Recovery 보존/삭제 정책 + P1 30m qa_static detector songId 키 인식 패치.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '🚀 Apple App Store Tags(WWDC 2025) 스크린샷 캡션·메타데이터 AI 인덱싱·CPP 35→70 2배·출시 시즌 +38%. 🚀 Google Play I/O 2026 Gemini 자동 Custom Store Listing(키워드 클릭 1회 배포)·Play Games Sidekick 출시. BitSummit Business Day D-1(5/22) 공식 프레스킷 다운로드 가능·테마 "High Impact"·NumLink/MeowBeat 트레일러·스크린샷 키워드 캡션화 0건 즉시 보강 필요. MeowBeat GAME_BRIEF.md 40일 미갱신(2026-04-11·곡 5→7곡 카운트 수정)·LYRIA_PROMPTS.md(어제 수정) 곡 12·13(Zoomies!, Fishbone Frenzy) Hard 신규 활성화·1~11 주석. 권고: P0 30m 양쪽 1분 트레일러 썸네일 키워드 캡션 삽입 + P1 20m GAME_BRIEF.md 갱신 + P1 30m NumLink TRAILER.md+ASO.md 신규.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'agent-office Pages 9일 무중단(5/19 19:22 UTC 빌드 success). 🔍 정정: workflows 2개 setup-node@v4 + node-version: 22 이미 적용 완료(5/20 P0 30m "Node 22 픽스" 액션아이템 자체 오인). Task Scheduler: DailyStandup 267009 7일째(5/15~5/21)·JobResearch 267009 4일째·PKM_GBrain LastResult=1 8일째(결정 시점 도과)·PKM_Daily_Digest LastResult=0 정상. 🚨 claude.exe PID 12개 누적(장시간 세션+자동화)이 267009 누적의 직접 원인 추정. dependabot.yml 존재·setup-node@v5 미공개. 권고: P0 1m claude.exe PID 정리(Get-Process claude | Stop-Process)·P0 20m PKM_GBrain 비활성화 또는 재적용 결정·P0 15m JobResearch 04:30 시차 분리·P2 30m setup-node@v5 모니터링.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '🎨 5/20 Awwwards SOTD Thorgal(Franco-Belgian 사가·Developer Award 동시 수상·패럴랙스 코믹 패널 키 기법)·Behance Lineage M X J-EIGHT 다크 판타지(블랙+골드+에칭). Android 17 QPR1 Beta 3 Blur+M3E(5/18 Gboard 광범위 롤아웃·노티 드래그 spring). Apple HIG Liquid Glass 2025-2026 정착. 🎨 NumLink 3 테마 USS 분석 완료: Kawaii(#FFB5C5+#FF7AA0·radius 12/22/32/40)/Premium(#1F1F1F+#C8A05A·6/10/14/20)/Retro(#E89B72+#D4A030+#8FAB85·8/16/22/28)·시맨틱 변수 cascade override 단일 스왑·4번째 Liquid Glass 변수셋 신설 후보. MeowBeat catfood 1초→0.35~0.5초 ease-out-back 단축 권고(M3E 모션피직스 BPM 대비 길다)+neighbor spring 추가. 권고: P2 5m Kawaii --whisker 0.12→0.18+P2 15m Liquid Glass 변수셋+P2 30m catfood 단축.',
+      },
+    ],
+    decisions: [
+      {
+        title:
+          '🚨 P0 CRITICAL [claude.exe 12개 PID 정리 1m · DailyStandup 267009 7일째·JobResearch 4일째 누적의 직접 원인 차단 · 결정 검증 가능한 가장 빠른 단위]',
+        description:
+          '오늘 결정 단위 0.1건도 7일째 실패 = P0 단 2건만 발사. 첫 번째: `Get-Process claude | Where-Object { $_.Id -ne (Get-Process -Id $PID).Id } | Stop-Process -Force`(현재 세션 제외·267009 누적 직접 원인 차단). 1분 안에 완료 + 즉시 검증(`tasklist /FI "IMAGENAME eq claude.exe" | find /C "claude"`).',
+      },
+      {
+        title:
+          '🚨 P0 CRITICAL [MeowBeat bak_btn git rm 단일 명령 1줄 5m · 44일째 D+14 · 7일째 결정 마비 차단 · 28일째 진입 차단]',
+        description:
+          '두 번째 P0. `git -C C:/Unity/Feedme rm Assets/Scenes/MainScene.unity.bak_btn && git -C C:/Unity/Feedme rm Assets/Scenes/MainScene.unity.bak_btn.meta && git -C C:/Unity/Feedme commit -m "chore: remove 44d stale bak_btn"`. 44일·1,598,524 bytes·4/7 12:30 생성·BitSummit D-1 출품 위생 + 28일 연속 결정 실패 진입 차단·결정 검증 가능한 최소 단위.',
+      },
+      {
+        title:
+          '🚨 P0 CRITICAL [NumLink Tools _ProjectTemplate 일괄 복사 15m · 30일 D-day · CLAUDE.md "세션 시작 자동 점검" 한 달 위반 임계 진입]',
+        description:
+          'NumLink Tools 30일째 D-day 도달(어제 29→오늘 30·CLAUDE.md 한 달 위반 임계 진입). `C:\\Unity\\_ProjectTemplate\\Tools\\` 일괄 복사 + 씬 경로 상수 패치 + `python3 Tools/unity_validate.py` baseline 0 error 확보. _Recovery 5개 파일(0.unity·0(1)~0(4).unity) 중 최신본 외 보존/삭제 정책 5분 추가 결정.',
+      },
+      {
+        title:
+          '🚨 P0 [Unity 6000.3.16f1 릴리스 노트 검토 + 채택 여부 결정 10m · 어제 6000.3.15f1 +1 패치 · Android 광역 버그픽스]',
+        description:
+          'Unity 6000.3.16f1 신규 출시(Android/Animation/Audio/Build Pipeline/Editor 광역 버그픽스·MeowBeat·NumLink Android 빌드 직접 영향 가능). 릴리스 노트 검토 후 채택 여부 즉시 결정(이월 금지).',
+      },
+      {
+        title:
+          '🚨 P0 [PKM_GBrain_Sync_Daily 비활성화 또는 embeddinggemma 패치 재적용 결정 1건 20m · 8일 연속 실패 · 결정 시점 도과]',
+        description:
+          'PKM_GBrain_Sync_Daily LastResult=1 8일째(어제 7→오늘 8·결정 시점 도과). ① reference_gbrain.md 패치 파일 3개 재적용 시도 → ② 실패 시 작업 비활성화 결정. 더 이상 이월 절대 금지.',
+      },
+      {
+        title:
+          '🚨 P0 [JobResearch_ClaudeCode 트리거 04:00→04:30 시차 분리 15m · DailyStandup 락 충돌 단일 원인 해소 · 5일째 미실행 만회]',
+        description:
+          'DailyStandup 267009 7일째 + JobResearch 동일코드 5일째 = 04:00 동시 트리거 락 충돌 의심. `schtasks /change /TN "JobResearch_ClaudeCode" /ST 04:30` 시차 분리. claude.exe PID 정리(P0 1m)와 병행 효과 검증.',
+      },
+      {
+        title:
+          'P1 [MeowBeat qa_static.py detector 코드 패치 30m · manifest 신스키마(songId 키) 인식 · 한글 깨짐 메시지로 detector 자체 진단 불가]',
+        description:
+          'MeowBeat qa_static.py 2 error 동결 = manifest 신스키마(songId 키) detector 미인식·한글 깨짐 메시지로 자체 진단 불가. detector 코드 직접 수정으로 songId 키 매핑·정적 QA 통과 회복.',
+      },
+      {
+        title:
+          'P1 [BitSummit D-1 양쪽 1분 트레일러 키워드 캡션 삽입 30m · Apple App Store Tags AI 인덱싱 대응 · CPP 35→70 2배·출시 시즌 +38%]',
+        description:
+          'Apple App Store Tags(WWDC 2025) 스크린샷 캡션·메타데이터 AI 인덱싱 대응. NumLink/MeowBeat 양쪽 1분 트레일러 썸네일에 키워드 자연 문장 캡션 삽입(LLM 자동 태그 픽업 노림). BitSummit Business Day D-1 미디어 픽업 골든타임 마지막.',
+      },
+      {
+        title:
+          'P1 [NumLink UIThemeSwitcher 회귀 테스트 + 도메인 리로드 stale 검증 20m · _currentSheet 정적 상태 위험]',
+        description:
+          'UIThemeSwitcher.cs(신규 80줄) `_currentSheet` 정적 상태가 씬 전환·도메인 리로드 후 stale 가능성. 회귀 테스트 작성 후 커밋 + theme-kawaii/premium/retro.uss 3개 빌드 포함 검증.',
+      },
+      {
+        title:
+          'P1 [MeowBeat GameManager.cs diff 단위 커밋 15m · feat(meowbeat): 곡 카드 i18n + 잠금 시각 분리]',
+        description:
+          'MeowBeat GameManager.cs(+58줄) 곡 카드 i18n(GameEvents.OnLanguageChanged·GetSongDisplayTitle 영/한 분기)+소유 잠금 시각 분리(databaseManager.ownedSongs 색상 분기·RectTransform 앵커 통일 0.05~0.95·Lock 컨테이너 Score 동일화) 단위 커밋. MainScene.unity.bak_btn .gitignore 배제 10m 동시.',
+      },
+      {
+        title:
+          'P1 [MeowBeat GAME_BRIEF.md 갱신 20m · 40일 미갱신 · 곡 5→7곡·신규 Hard 2곡·미결 5건 정리]',
+        description:
+          'GAME_BRIEF.md 2026-04-11 마지막 = 40일 미갱신. LYRIA_PROMPTS 곡 12·13(Zoomies!, Fishbone Frenzy) Hard 활성화 반영해 곡 5→7곡 카운트 수정·BM·곡 20개 등 미결 5건 정리·NumLink docs/TRAILER.md+ASO.md 신규 생성 30분 추가.',
+      },
+      {
+        title:
+          'P2 [NumLink Kawaii --whisker 0.12→0.18 USS 한 줄 5m · Thorgal 코믹 패널 차용]',
+        description:
+          '5/20 Awwwards SOTD Thorgal(Developer Award 동시 수상·패럴랙스 코믹 패널) 스타일을 NumLink Kawaii 테마에 차용 — `--whisker` 라인 굵기를 0.12→0.18로 올려 약한 잉크 윤곽 추가(USS 한 줄 수정).',
+      },
+      {
+        title:
+          'P2 [4번째 Liquid Glass 테마 변수셋 신설 15m · UIThemeSwitcher enum Glass 추가 · Apple HIG 2025-2026 정착]',
+        description:
+          'Apple HIG Liquid Glass 디자인 언어 2025-2026 정착. NumLink 4번째 테마 골격으로 Liquid Glass 변수셋 신설(`--surface-low`를 rgba 반투명+blur SDF 흉내·border-muted alpha 0.4) + UIThemeSwitcher enum에 `Glass` 추가.',
+      },
+      {
+        title:
+          'P2 [MeowBeat catfood 1초→0.35~0.5초 ease-out-back 단축 + neighbor spring 추가 30m · M3 Expressive 모션피직스 차용]',
+        description:
+          'MeowBeat catfood 1초 흔들기 + foodScale 0.1은 BPM 대비 길다 → 0.35~0.5초 + ease-out-back 단축 권고. 인접 catfood 미세 따라 흔들리는 neighbor spring 추가 시 M3E 1.5.0-alpha19 모션피직스 시그니처 차용.',
+      },
+      {
+        title:
+          'P2 [NumLink Swap 부스터 1회/스테이지 프로토타입 1d 스파이크 · Pictonico+Number Connect: Merge Puzzle 차용 검토]',
+        description:
+          'Pictonico(WarioWare식 80 미니게임 모드 다양화) + Number Connect: Merge Puzzle(Swap 1회 부스터+Combo Merge) 차용 검토. NumLink Sprint 1-4 위 단일 ScriptableObject로 토글 가능하게 프로토타입(1일 스파이크). 동시에 MeowBeat Sudden Death(미스 3회 종료) manifest difficulty 플래그 30m 검토.',
+      },
+    ],
+  },
+  {
     id: '2026-05-20T04:00:00-daily-standup',
     date: '2026-05-20',
     researchTitle:
