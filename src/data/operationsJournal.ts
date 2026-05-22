@@ -43,6 +43,160 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-05-23T04:00:00-daily-standup',
+    date: '2026-05-23',
+    researchTitle:
+      '🌅 5/23 토요일 데일리 스탠드업 — **BitSummit Business Day D+1 공개일**(5/22~24 교토 Miyako Messe 진행 중·Antonblast·Dungeon Clawler·TCG Card Shop Sim "게임성 독창성" 라인업 부각·일반 관객 반응 집계 중)·**NumLink 동결 24일째**(4/29 b6d7a73 이후·재동결 8일째·주간 커밋 0건·미커밋 41파일 전일 동일)·**MeowBeat 41일 = 5주+6일 임계 초과 11일 돌파**(역대 최장 신기록 갱신·어제 40→41·주간 커밋 0건)+**bak_btn 46일 생존**(+1·D+16 임계·5/22 P0 12건 중 0건 실행)·**🚨 어제 P0 12건 모두 미실행 9일 연속**(bak_btn git rm·Tools 부트스트랩·PKM_GBrain 결정·Art Director 묶음·MeowBeat 후크 픽 모두 0건·docs/journal 단일 커밋 5/22 이후 추가 커밋 0건·BitSummit Business Day D-day 미디어 골든타임 통째 실종)·**29일 연속 결정 실패 신기록 갱신**(4주+1일·결정 마비 9일째·주말 첫날 진입)·**🚀 게임 시장 신규 1순위**: **퍼즐 장르 다운로드 -3% 역성장 vs IAP +14% 매출 성장**(Sensor Tower 2026 최신·Block Puzzle·Merge 세부장르 수익 선두·NumLink 광고 모델 대신 레벨팩 판매 검토 근거)·**🚀 게임 시장 신규 2순위**: **BitSummit Business Day D+1 공개일 라인업** — Antonblast(레트로 폭발 액션)·Dungeon Clawler(클로 머신+로그라이크 융합)·TCG Card Shop Sim(상점 시뮬)이 "게임성 독창성" 중심 노출 점유(우리 장르 직접 충돌 없음·픽업 윈도우 잔존)·**🚀 게임 시장 신규 3순위**: **모바일 리듬게임 5월 신규 출시 데이터 없음**(Hololive Dreams 출시 대기·MeowBeat 글로벌 캐주얼 리듬 출시 틈새 공백 6일 연속 유지)·**🚀 기술 신규 1순위**: **Unity 6000.5.0b8 5/14 출시**(그래픽·UI·플랫폼 다수 픽스·beta 단계·6.3 LTS 6000.3.16f1 대비 정식 채택 보류 권고)·**🚀 기술 신규 2순위**: **Firebase Unity SDK 13.10.0** — AutoFunctionDeclaration + GenerateObjectAsync 추가(Imagen 모델 6/24 완전 종료 확정 D-32·Gemini Image 마이그레이션 경로 공식 제공)·**🚀 기술 신규 3순위**: **GoogleMobileAds Android 5/14 업데이트**(릴리스 노트 확인·5/22~23 추가 신규 버전 없음)·**🎨 디자인 신규 1순위**: **Awwwards SOTM May 수상작 C2 Montréal(KOKI-KIKO)** — 캐나다 컨퍼런스 브랜드 사이트·유기적 타이포그래피 + 비정형 레이아웃·**키워드: Organic Grid Break**(격자를 의도적으로 무너뜨린 레이아웃·NumLink 셀 셰이프 헥사곤+M3 35셰이프 모핑과 정합)·**🎨 디자인 신규 2순위**: **모바일 게임 UI 2026 핵심 흐름 = Invisible HUD + Diegetic UI**(HUD 시각 노이즈 제거·게임 월드와 UI 경계 해소·NumLink처럼 퍼즐 중심 게임에서 UI가 "없는 것처럼" 느껴지는 방향 주류 이동)·**🎨 디자인 신규 3순위**: **Mobbin 2026 패턴 = Thumb Zone First**(썸 프렌들리 바텀시트 + 텍스트 기반 검색 UI·터치 영역 하단 1/3 집중·NumLink/MeowBeat 메뉴 재배치 근거)·**🚀 콘텐츠 신규 1순위**: **Fortnite iOS 5/19 전세계 복귀** — 게임 카테고리 랭킹 대규모 요동·리전별 크리에이티브 대응 필수(우리 픽업 윈도우는 BitSummit 풀로 일시 유지)·**🚀 콘텐츠 신규 2순위**: **Lemon8 MAU 2,340만 +56% YoY** — 라이프스타일 스토리텔링 채널로 부상·여성/디자인 감도 높은 유저층 집중·MeowBeat "고양이+힐링" 콘텐츠 타깃 적합(Threads보다 모멘텀 우위)·**🚀 콘텐츠 신규 3순위**: **리워드형 UA(RUA)가 모바일 게임 광고 표준 정착** — 오퍼월 + 리워드 영상 + 플레이어블 하이브리드 주도(어제 결정한 플레이어블 광고 큐 진입 정합)·**🔍 QA 신규**: **NumLink Tools 32일째 D+2 위반**(어제 31→오늘 32·CLAUDE.md 한 달 임계 2일 초과)·_Recovery 10건 동일·MeowBeat AutoGenTests 4065 bytes 동결·qa_static.py 2 error 동결(manifest_load+scene_buttons)·**🔧 DevOps 신규 1순위**: **Docker CVE-2026-34040 CVSS 8.8** — AuthZ 플러그인 우회·1MB 이상 패딩으로 차단 우회 → privileged 컨테이너 생성·host 파일시스템 마운트·클라우드 자격증명 탈취 가능(OPA/Prisma Cloud 환경 직접 타격·LIM Studio AuthZ 미사용 시 직접 노출 없으나 점검 5분 권장)·**🔧 DevOps 신규 2순위**: **runC CVE 3종**(CVE-2025-31133·CVE-2025-52565·CVE-2025-52881·SUSE 연구자 공개·Docker+Kubernetes 전체 영향·runc 1.1.12+ 업그레이드 필요)·**🔧 DevOps 신규 3순위**: **GitHub Actions 요금 인하 확정 2026년 1월 적용** — Linux -25%·Windows -37.5%·macOS -40%(단 3월부터 private 레포 self-hosted runner $0.002/분 플랫폼 요금 신설·self-hosted 비용 절감 가정 재검토)·**DailyStandup LastResult 267009 9일째**·JobResearch 6일째·**PKM_GBrain LastResult=1 10일째**(어제 9→오늘 10·결정 시점 도과 2일·이월 절대 금지)·claude.exe PID 12개 유지 안정.',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제41회 — **5/23 토요일·BitSummit Business Day D+1 공개일**(5/22~24 교토 Miyako Messe 진행 중·Antonblast·Dungeon Clawler·TCG Card Shop Sim 라인업 부각). **🚨 어제 P0 12건 모두 미실행 9일 연속 + 신기록 갱신 3종 동시 발생**: ① **NumLink 동결 24일/재동결 8일째**(주간 커밋 0건) ② **MeowBeat 41일 = 5주+6일 임계 초과 11일 돌파**(역대 최장 신기록 갱신·어제 40→41·주간 커밋 0건) ③ **bak_btn 46일 생존**(D+16·9일째 결정 마비) ④ **29일 연속 결정 실패 신기록 갱신**(4주+1일·결정 마비 9일째·주말 첫날 진입). **🚀 시장 신규 3종**: ① **퍼즐 장르 다운로드 -3% 역성장 vs IAP +14% 성장**(Block Puzzle·Merge 세부장르 수익 선두·NumLink 광고 대신 레벨팩 판매 모델 검토) ② **BitSummit D+1 공개일 Antonblast/Dungeon Clawler/TCG Card Shop Sim 라인업**(우리 장르 직접 충돌 없음·픽업 윈도우 잔존) ③ **모바일 리듬게임 5월 신규 출시 없음**(Hololive Dreams 대기·MeowBeat 6일 연속 틈새 공백). **🚀 기술 신규 3종**: ① **Unity 6000.5.0b8 5/14**(beta·6.3 LTS 정식 채택 보류) ② **Firebase Unity SDK 13.10.0**(AutoFunctionDeclaration·GenerateObjectAsync·Imagen EOL 6/24 D-32) ③ **GoogleMobileAds Android 5/14 업데이트**. **🎨 디자인 신규 3종**: ① **Awwwards SOTM May C2 Montréal(KOKI-KIKO) Organic Grid Break**(NumLink 셀 셰이프 정합) ② **모바일 게임 UI 2026 = Invisible HUD + Diegetic UI**(NumLink Diegetic Score Display 적용 검토) ③ **Mobbin 2026 = Thumb Zone First**(메뉴 하단 1/3 집중). **🚀 콘텐츠 신규 3종**: ① **Fortnite iOS 5/19 전세계 복귀**(게임 카테고리 랭킹 요동·리전별 크리에이티브 대응) ② **Lemon8 MAU 2,340만 +56% YoY**(MeowBeat "고양이+힐링" 콘텐츠 타깃·Threads보다 모멘텀 우위) ③ **리워드형 UA(RUA) 모바일 게임 광고 표준 정착**(오퍼월+리워드 영상+플레이어블 하이브리드). **🔍 QA 신규**: NumLink Tools 32일째 D+2·_Recovery 10건 동일·MeowBeat AutoGenTests 4065 bytes 동결·qa_static.py 2 error 동결. **🔧 DevOps 신규 3종**: ① **Docker CVE-2026-34040 CVSS 8.8 AuthZ 우회**(LIM Studio 직접 노출 없으나 점검 5분 권장) ② **runC CVE 3종 컨테이너 탈출**(runc 1.1.12+ 업그레이드 필요) ③ **GitHub Actions 요금 인하 2026.1 적용**(Linux -25%·Windows -37.5%·macOS -40%·단 self-hosted $0.002/분 신설). ④ DailyStandup 267009 9일째·JobResearch 6일째·**PKM_GBrain LastResult=1 10일째 결정 시점 2일 도과**·claude.exe PID 12개 안정.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — NumLink 동결 24일/재동결 8일째 주간 커밋 0·MeowBeat 41일 5주+6일 임계 초과 11일 돌파 역대 최장 신기록·bak_btn 46일 D+16·29일 연속 결정 실패 4주+1일·어제 P0 12건 9일 연속 미실행·NumLink Tools 32일 D+2·DailyStandup 267009 9일째·BitSummit Business Day D+1 공개일',
+        description:
+          'NumLink 4/29 b6d7a73 이후 24일 0커밋(어제 23→오늘 24)·재동결 8일째(어제 7→8·주간 커밋 0건)·미커밋 41파일(전일 동일). MeowBeat 4/12 657032c 이후 41일(어제 40→오늘 41·**5주+6일 임계 초과 11일 돌파·역대 최장 신기록 갱신·주간 커밋 0건**)·미커밋 36파일(전일 동일)·**bak_btn 46일 생존**(D+16·9일째 결정 마비). **5/22 P0 12건 미실행 grep 확인**: bak_btn git rm 0건(9일째)·NumLink Tools 부트스트랩 0건(32일 D+2)·PKM_GBrain 결정 0건(10일째 LastResult=1·결정 시점 2일 도과)·Art Director 묶음 결정 0건·MeowBeat 후크 5안→1안 0건·Daily Puzzle MVP 0건·농장-리듬 결합 0건·코어 4파일 분리 PR 0건·플레이어블 광고 큐 진입 0건·NumLink 통합 카피 0건·GAME_BRIEF 갱신 0건·Imagen 마이그레이션 계획 0건. **29일 연속 결정 실패 신기록 갱신**(4주+1일·결정 마비 9일째·주말 첫날 진입). agent-office 5/22 6103f31 정상 가동·Pages 11일 무중단(weekly-insights 4/14 이후 무변경). **claude.exe PID 12개 유지**(전일 동일·안정). **NumLink Tools 32일째 D+2 위반**(어제 31→오늘 32·CLAUDE.md 한 달 임계 2일 초과). 마감 카운트다운: **BitSummit Business Day D+1 공개일**·Steam Next Fest D-23·Node20 EOL D+23·WWDC D-16. **오늘의 결정 제안**: **🚨 P0 5m MeowBeat bak_btn git rm 단일 명령 1줄**(46일째·9일째 결정 마비 차단·30일째 진입 차단·**토요일 주말 첫날 = 결정 부담 최저 = 가장 작은 단위 실행 가장 안전한 날**) — 29일 연속 결정 실패 4주+1일 사이클을 깨는 단 1줄.',
+      },
+      {
+        title:
+          '🎮 Game Designer — 퍼즐 장르 다운로드 -3% 역성장 vs IAP +14% 매출 성장(Block Puzzle·Merge 세부장르 수익 선두)·BitSummit D+1 공개일 Antonblast/Dungeon Clawler/TCG Card Shop Sim 게임성 독창성 라인업·모바일 리듬게임 5월 신규 출시 없음(Hololive Dreams 대기·MeowBeat 6일 연속 틈새 공백)',
+        description:
+          '**🚀 시장 데이터**: **퍼즐 장르 글로벌 다운로드 -3% YoY 역성장**이나 **IAP 매출 +14% 성장 구조 확정**(Sensor Tower 2026 최신·**Block Puzzle·Merge 세부장르 수익 성장 선두**·Sort/Logic 모델 = 무료 다운로드 + 레벨팩 판매 구조 우위). **NumLink 광고 모델 대신 레벨팩 판매 우선 검토 권고**: 다운로드는 줄지만 결제 의향 유저가 늘어나는 구조이므로 한정 광고 + 레벨팩 50개 단위 판매가 D30 LTV 우위. MeowBeat는 곡 클리어 보상이 농장 진척과 결합되는 모델 유지(어제 P1 결정 = Hololive Dreams 차용)와 정합. **🚀 BitSummit Business Day D+1 공개일 라인업**(5/23 일반 관객 반응 집계 중): **Antonblast**(레트로 폭발 액션·일본 인디 핵심)·**Dungeon Clawler**(클로 머신+로그라이크 융합·신선한 메카닉)·**TCG Card Shop Sim**(상점 시뮬·매출 페이스 차분 그러나 안정). 모두 "게임성 독창성" 중심 노출 점유·**우리 장르 직격 충돌 없음 = 픽업 윈도우 잔존**. **🚀 모바일 리듬게임 5월 신규 출시 데이터 없음**(Hololive Dreams 출시 대기 + Rhythm Hotel BitSummit 부스 빌드만 잔존·**MeowBeat 글로벌 캐주얼 리듬 출시 틈새 공백 6일 연속 유지**·"고양이가 박자 틀리면 화내는" 후크 차별점 BitSummit 끝나기 전 발사 윈도우 잔존). **오늘 결정 제안**: **P1 30m NumLink 레벨팩 판매 모델 영향도 메모 작성** — Sort/Logic 매출 +14% 데이터를 근거로 광고 모델 vs 레벨팩 판매 D30 LTV 비교 1페이지 메모·이번 주 결정 안건으로 격상.',
+      },
+      {
+        title:
+          '💻 Developer — Unity 6000.5.0b8 5/14 출시(beta·6.3 LTS 정식 채택 보류 권고)·Firebase Unity SDK 13.10.0 AutoFunctionDeclaration+GenerateObjectAsync 추가(Imagen EOL 2026-06-24 D-32 Gemini Image 마이그레이션 경로 공식)·GoogleMobileAds Android 5/14 업데이트·NumLink 미커밋 41파일 폰트 SDF 6개·MeowBeat 코어 4파일 리팩토링 미커밋 동일',
+        description:
+          '**🚀 Unity 6000.5.0b8 5/14 출시**(그래픽·UI·플랫폼 다수 픽스·beta 단계·6.3 LTS 6000.3.16f1 대비 정식 채택 보류·차기 LTS 후보 트랙 모니터링 항목 추가). **🚀 Firebase Unity SDK 13.10.0** — **AutoFunctionDeclaration**(함수 시그니처 자동 선언·LLM 통합 단순화)·**GenerateObjectAsync**(타입 안전 객체 생성)·**Imagen 모델 EOL 2026-06-24 완전 종료 확정 D-32**·**Gemini Image 마이그레이션 경로 공식 제공** — Feedme/MeowBeat AI 자산 생성 파이프라인이 있다면 **이번 주 마이그레이션 계획 수립 권장**. **🚀 GoogleMobileAds Android 5/14 릴리스 노트 업데이트 확인**(구체 버전 공개 전·5/22~23 신규 버전 없음). **🔍 정정**: 5/22~23 단독 신규 CVE 없음(전일 정정 유지·CVE-2026-0073 Android adbd 5/1 패치 미적용 단말 잔존 모니터링 지속). **NumLink 미커밋 상태 동일**: 폰트 SDF 6개 머티리얼 변경 + AutoGenTests asmdef 완전 삭제(폐기 완료) + `.omc/`·`.claude/` untracked 누적. **MeowBeat 미커밋 상태 동일**: SongData.cs(+1)/SongManager.cs(±16)/GameManager.cs(±59)/OptionManager.cs(±42) 4-파일 리듬게임 코어 리팩토링 미커밋 + Input/Item/SaveLoad meta 3개 삭제 + manifest.json 변경 묶임. **오늘 결정 제안**: **P2 30m Firebase Imagen → Gemini Image 마이그레이션 영향도 1페이지 메모**(D-32·AutoFunctionDeclaration 호환성·MeowBeat AI 자산 의존 코드 grep)·**P0 1h MeowBeat 코어 4파일 분리 PR 단일 트랜잭션** 어제와 동일 이월(주말 첫날 = 코드 리팩토링 적정 시점).',
+      },
+      {
+        title:
+          '🔍 QA Tester — NumLink Tools 32일째 D+2 위반(CLAUDE.md 한 달 임계 2일 초과)·NumLink _Recovery 10건 동일·MeowBeat AutoGenTests.cs 4065 bytes 동결·MeowBeat qa_static.py 2 error 동결(manifest_load+scene_buttons 한글 깨짐)·MeowBeat bak_btn 46일 D+16·MeowBeat manifest.json 302KB 정상 검증',
+        description:
+          '**🚨 NumLink Tools 32일째 부재**(어제 31→오늘 32·CLAUDE.md "세션 시작 자동 점검" D+2 위반 진입·`C:/Unity/NumLink/Tools/` NOT_FOUND 32일 누적·unity_validate/qa_static/run_regression 전부 부재·정적 QA·회귀 자동화 0%). **NumLink _Recovery 10건 동일**(어제 10→오늘 10·증가 정지·Tools 부재로 회귀 탐지 0 상태 지속). **MeowBeat qa_static.py 실행 결과 2 error 동결**(manifest_load + scene_buttons·한글 인코딩 깨짐 출력·5/20 이후 동일 진척 없음). **MeowBeat manifest.json 302,309 bytes 정상 검증**(`StreamingAssets/Songs/manifest.json` 파일 시스템 상 무손상). **MeowBeat AutoGenTests.cs(4065 bytes) 존재 재확인**·NumLink 폴더 자체 없음(Tools 부재 후속). MeowBeat _Recovery 2건(소규모 유지). **MeowBeat bak_btn 46일 D+16** 잔존(파일 시스템 상 검색 안 됨·git tracked 상태로만 잔존 가능성·확인 필요). **미해결 버그 우선순위 1건**: **P0 NumLink Tools 부재 32일** → 정적 QA·회귀 픽스처 모두 막혀 폰트/씬/매니페스트 회귀 탐지 불가·**MeowBeat Tools 그대로 복사 + 경로 상수만 NumLink 씬으로 교체하면 1시간 내 해결**. **오늘 결정 제안**: **🚨 P0 1h NumLink Tools 강제 부트스트랩 9일 연속 이월** — 32일 D+2 진입은 어제와 동일 결정·**주말 첫날 = 1시간 작업 가장 적정 시점**·MeowBeat 템플릿 복사 + 씬 경로 교체 + `unity_validate.py` baseline 0 error 확보.',
+      },
+      {
+        title:
+          '📢 Content Writer — Fortnite iOS 5/19 전세계 복귀(게임 카테고리 랭킹 대규모 요동 리전별 크리에이티브 대응)·Lemon8 MAU 2,340만 +56% YoY 라이프스타일 스토리텔링 채널 부상(여성/디자인 감도 유저층·MeowBeat 고양이+힐링 타깃 적합 Threads 대비 모멘텀 우위)·리워드형 UA(RUA) 오퍼월+리워드 영상+플레이어블 하이브리드 표준 정착',
+        description:
+          '**🚀 ASO 1순위**: **Fortnite iOS 5/19 전세계 복귀 = 게임 카테고리 랭킹 대규모 요동** — 신작/인디는 키워드 픽업 윈도우 일시 협소·**리전별 크리에이티브 대응 필수**(미국·일본·한국 별도 스크린샷/카피 분리)·우리 픽업 윈도우는 BitSummit 5/22~24 매체 풀로 일시 유지 가능. **🚀 ASO 2순위**: **Lemon8 MAU 2,340만 +56% YoY** — 라이프스타일 스토리텔링 채널로 부상·**여성/디자인 감도 높은 유저층 집중**·MeowBeat "고양이+힐링" 콘텐츠 타깃 적합·**Threads 대비 현재 모멘텀 우위**·5/23 토요일 가정의달 마지막 주말 + Lemon8 라이프스타일 포맷 = 짧은 "고양이+힐링" 컨셉 게임 소개 1건 제작 테스트 권고. **🚀 ASO 3순위**: **리워드형 UA(RUA)가 모바일 게임 광고 표준 정착** — 오퍼월 + 리워드 영상 + 플레이어블 하이브리드 주도·**플레이어블 광고 전환률 35% 우위**(어제 결정한 양 프로젝트 플레이어블 광고 큐 진입과 정합·UA 크리에이티브를 RUA 플레이어블 포맷으로 우선 검토). **🚀 BitSummit Business Day D+1 공개일 진행 중**(미디어 픽업 윈도우 잔존·Antonblast/Dungeon Clawler/TCG Card Shop Sim "게임성 독창성" 라인업이 노출 점유하나 우리 장르 직격 충돌 없음·캐주얼 인디 픽업 윈도우 5/24까지 유지). **NumLink/MeowBeat 어제 결정사항 이월 동일**: NumLink 통합 카피 "하나의 게임, 세 개의 무드"·Apple Tags 4개 픽스·MeowBeat 후크 "고양이가 박자 틀리면 화내는" 5안→1안 강제 픽 모두 0건·9일째 결정 마비. **오늘 결정 제안**: **P1 1h Lemon8 라이프스타일 포맷 "고양이+힐링" 컨셉 콘텐츠 1건 제작 테스트**(5/23 토요일 가정의달 마지막 주말 타임프레임 활용·30초+첫 1초 후크·니치 가중치)·**P1 30m UA 크리에이티브 RUA 플레이어블 포맷 픽스**(전환률 35% 우위 데이터 근거).',
+      },
+      {
+        title:
+          '⚙️ DevOps — Docker CVE-2026-34040 CVSS 8.8 AuthZ 우회(1MB 패딩으로 차단 우회·LIM Studio 직접 노출 없으나 점검 5분 권장)·runC CVE 3종 컨테이너 탈출(runc 1.1.12+ 업그레이드 필요)·GitHub Actions 요금 인하 2026.1 적용(Linux -25%·Windows -37.5%·macOS -40%·self-hosted $0.002/분 신설)·agent-office Pages 11일 무중단·DailyStandup 267009 9일째·PKM_GBrain LastResult=1 10일째 결정 시점 2일 도과·claude.exe PID 12개 유지 안정',
+        description:
+          '**🚀 5/23 신규 인프라 이슈 3건**: ① **Docker CVE-2026-34040 (CVSS 8.8) AuthZ 플러그인 우회**(요청을 1MB 이상으로 패딩하면 플러그인이 차단·privileged 컨테이너 생성·host 파일시스템 마운트·클라우드 자격증명 탈취 가능·OPA/Prisma Cloud 등 엔터프라이즈 환경 직접 타격·**LIM Studio 로컬 개발 환경은 AuthZ 미사용 시 직접 노출 없음·단 5분 점검 권장**) ② **runC CVE 3종**(CVE-2025-31133·CVE-2025-52565·CVE-2025-52881·SUSE 연구자 공개·Docker+Kubernetes 전체 영향·**runc 1.1.12 이상 업그레이드 필요**·LIM Studio Docker 기반 CI/CD 사용 시 runner 이미지 버전 점검 필요) ③ **GitHub Actions 요금 인하 확정 2026년 1월 적용**(Linux -25%·Windows -37.5%·macOS -40%·단 3월부터 private 레포 self-hosted runner $0.002/분 플랫폼 요금 신설·**self-hosted 비용 절감 가정 재검토 필요**·NumLink/MeowBeat 향후 CI 도입 시 호스팅 전략 재검토). **agent-office 배포 파이프라인 점검**: 브랜치 `main` `origin/main`과 동기 확인·변경 파일 `.omc/project-memory.json` 1건만 수정(미스테이지·커밋 불필요)·최근 커밋 5/22 스탠드업 정상 커밋 `6103f31`·GitHub Pages 11일 무중단 유지 중·**파이프라인 이상 없음**. **Task Scheduler 자동화 3종 (5/23 결과)**: ① **DailyStandup_ClaudeCode** 04:00 LastResult **267009(9일째 동일·session 충돌 추정)** ② **JobResearch_ClaudeCode** 04:00 LastResult **267009(6일째)** ③ **PKM_GBrain_Sync_Daily** 03:00 LastResult **1(10일째 실패·결정 시점 2일 도과·이월 절대 금지)**·PKM_Daily_Digest 정상. **claude.exe PID 12개 유지**(전일 동일·안정·누적 증가 없음). NumLink/MeowBeat `.github/workflows` 부재 재확인. **오늘 결정 제안**: **🚨 P0 5m Docker AuthZ 환경 점검**(`docker --version` 및 runc 버전 확인 후 1.1.12 이상인지 점검·AuthZ 플러그인 미사용 시 직접 노출 없음 결론·5분 이내·기록만 남김)·**🚨 P0 20m PKM_GBrain_Sync_Daily 10일째 결정 강제** — embeddinggemma 패치 재적용 시도 → 실패 시 작업 비활성화 결정·**결정 시점 2일 도과 = 오늘 절대 이월 금지**.',
+      },
+      {
+        title:
+          '🎨 Art Director — Awwwards SOTM May 수상작 C2 Montréal(KOKI-KIKO) 캐나다 컨퍼런스 브랜드 유기적 타이포그래피+비정형 레이아웃 키워드 Organic Grid Break·모바일 게임 UI 2026 = Invisible HUD+Diegetic UI(HUD 시각 노이즈 제거·게임 월드와 UI 경계 해소·NumLink Diegetic Score Display 적용 검토)·Mobbin 2026 = Thumb Zone First(썸 프렌들리 바텀시트·터치 영역 하단 1/3 집중)',
+        description:
+          '**🎨 신규 디자인 트렌드 3건**: ① **Awwwards SOTM May 수상작 C2 Montréal(by KOKI-KIKO)** — 캐나다 컨퍼런스 브랜드 사이트·**유기적 타이포그래피 + 비정형 레이아웃**·**키워드: Organic Grid Break**(격자를 의도적으로 무너뜨린 레이아웃·전일 La Revoltosa 2색 하이콘트라스트와 별도 트랙·NumLink 셀 셰이프 헥사곤+M3 35셰이프 모핑과 정합·Premium 테마 grid 미세 비대칭 적용 검토) ② **모바일 게임 UI 2026 핵심 흐름 = Invisible HUD + Diegetic UI**(Tubik Blog·Pixune 2026 분석) — HUD 시각 노이즈 제거·게임 월드와 UI 경계 해소·**NumLink처럼 퍼즐 중심 게임에서 UI가 "없는 것처럼" 느껴지는 방향 주류 이동**·**NumLink Diegetic Score Display 적용 검토**: 현재 상단 분리형 점수 UI를 퍼즐 보드 내부에 녹이는 방식(번호 셀 투명도/색온도로 점수 표현)·Invisible HUD 트렌드와 정확히 맞닿으며 기존 Kawaii/Premium/Retro 3테마 위에 공통 레이어로 올릴 수 있어 추가 작업량 최소화 ③ **Mobbin 2026 패턴 = Thumb Zone First**(썸 프렌들리 바텀시트 + 텍스트 기반 검색 UI 모바일 게임 메뉴 확산·**터치 영역 하단 1/3 집중**·NumLink/MeowBeat 메뉴 재배치 근거). **NumLink 셀 셰이프 7일째 정체** + **MeowBeat 후크 11일째 무결정** = 어제와 동일 이월 = 결정 적체 9일째 = 결정 마비 9일째. **오늘 결정 제안**: **🚨 P0 30m Art Director 묶음 결정 9일 연속 이월** — NumLink 셀=헥사곤+M3 35셰이프 모핑 + Diegetic Score Display 공통 레이어 픽스 + MeowBeat 후크="손맛 일러스트+Neural Expressive 옴브레 텍스트" 1안 픽 + 18:00까지 1컷 손그림 러프 산출·**주말 첫날 = 그림 작업 가장 적정 시점**.',
+      },
+    ],
+    meetingTitle:
+      '🌅 5/23 토요일 종합 회의 — BitSummit Business Day D+1 공개일·NumLink 동결 24일/재동결 8일째·MeowBeat 41일 5주+6일 임계 초과 11일 돌파 역대 최장 신기록·bak_btn 46일 D+16·29일 연속 결정 실패 4주+1일·🚨 어제 P0 12건 9일 연속 미실행·🚀 퍼즐 다운로드 -3% IAP +14%·BitSummit D+1 Antonblast/Dungeon Clawler/TCG Card Shop Sim·모바일 리듬게임 5월 신규 없음·🚀 Unity 6000.5.0b8·Firebase 13.10.0 AutoFunctionDeclaration·Imagen D-32·🎨 Awwwards SOTM C2 Montréal Organic Grid Break·Invisible HUD+Diegetic UI·Mobbin Thumb Zone First·🚀 Fortnite iOS 5/19 복귀·Lemon8 +56% YoY·RUA 표준·🔧 Docker CVE-2026-34040 CVSS 8.8·runC CVE 3종·GHA 요금 인하 2026.1·NumLink Tools 32일 D+2·PKM_GBrain 10일째 결정 시점 도과',
+    meetingSummary:
+      '7명 에이전트가 5/23 토요일 회의 진행. 핵심 합의: ① **🚨 어제 P0 12건 9일 연속 미실행 + 신기록 갱신 3종 동시 발생**(bak_btn·Tools·PKM_GBrain·Art Director 묶음·MeowBeat 후크·Daily Puzzle·농장-리듬·코어 4파일·플레이어블 광고·통합 카피·GAME_BRIEF·Imagen 마이그레이션 모두 0건). ② **NumLink 동결 24일/재동결 8일째**(주간 커밋 0건). ③ **MeowBeat 41일 = 5주+6일 임계 초과 11일 돌파**(역대 최장 신기록·어제 40→41·주간 커밋 0건)+bak_btn 46일(D+16·9일째 결정 마비). ④ **29일 연속 결정 실패 신기록 갱신**(4주+1일·결정 마비 9일째·주말 첫날 진입). ⑤ **🚀 시장 신규 3종**: (1) **퍼즐 장르 다운로드 -3% vs IAP +14%**(Block Puzzle·Merge 수익 선두·NumLink 레벨팩 판매 모델 검토 근거) (2) **BitSummit D+1 공개일 Antonblast/Dungeon Clawler/TCG Card Shop Sim**(우리 장르 직격 충돌 없음·픽업 윈도우 잔존) (3) **모바일 리듬게임 5월 신규 출시 없음**(MeowBeat 글로벌 캐주얼 리듬 출시 틈새 공백 6일 연속). ⑥ **🚀 기술 신규 3종**: (1) **Unity 6000.5.0b8 5/14**(beta·6.3 LTS 정식 보류) (2) **Firebase Unity SDK 13.10.0**(AutoFunctionDeclaration·GenerateObjectAsync·Imagen EOL D-32 마이그레이션 경로 공식) (3) **GoogleMobileAds Android 5/14 업데이트**. ⑦ **🎨 디자인 신규 3종**: (1) **Awwwards SOTM May C2 Montréal Organic Grid Break**(NumLink Premium 테마 grid 미세 비대칭) (2) **Invisible HUD + Diegetic UI**(NumLink Diegetic Score Display 적용 검토·번호 셀 투명도/색온도로 점수 표현) (3) **Mobbin Thumb Zone First**(메뉴 하단 1/3 집중). ⑧ **🚀 콘텐츠 신규 3종**: (1) **Fortnite iOS 5/19 전세계 복귀**(게임 카테고리 랭킹 요동·리전별 크리에이티브 대응 필수) (2) **Lemon8 MAU 2,340만 +56% YoY**(MeowBeat "고양이+힐링" 타깃·Threads 대비 모멘텀 우위·5/23 가정의달 마지막 주말 콘텐츠 1건 제작 테스트) (3) **RUA 모바일 게임 광고 표준 정착**(오퍼월+리워드 영상+플레이어블 하이브리드·전환률 35% 우위). ⑨ **🔍 QA 신규**: NumLink Tools 32일째 D+2·_Recovery 10건 동일·MeowBeat manifest.json 302KB 정상·qa_static.py 2 error 동결·bak_btn 46일 D+16. ⑩ **🔧 DevOps 신규 3종**: (1) **Docker CVE-2026-34040 CVSS 8.8 AuthZ 우회**(LIM Studio 직접 노출 없으나 점검 5분 권장) (2) **runC CVE 3종 컨테이너 탈출**(runc 1.1.12+ 업그레이드) (3) **GitHub Actions 요금 인하 2026.1**(Linux -25%·Windows -37.5%·macOS -40%·self-hosted $0.002/분 신설). (4) **PKM_GBrain 10일째 LastResult=1**(결정 시점 2일 도과·이월 절대 금지)·DailyStandup 267009 9일째·JobResearch 6일째·claude.exe PID 12개 안정. ⑪ **오늘 핵심 결정 = 주말 첫날·결정 부담 최저·9일째 결정 마비 = P0 단 1건 강제**: **🚨 P0 5m MeowBeat bak_btn git rm 단일 명령**(46일째·9일째 결정 마비 차단·30일째 진입 차단·**29일 연속 결정 실패 4주+1일 사이클을 깨는 가장 작은 단위**) + **🚨 P0 1h NumLink Tools 강제 부트스트랩 9일 이월**(32일 D+2·주말 첫날 = 1시간 작업 적정 시점) + **🚨 P0 20m PKM_GBrain 10일째 결정 강제**(embeddinggemma 재적용 → 실패 시 비활성화·결정 시점 2일 도과 = 오늘 절대 이월 금지) + **🚨 P0 30m Art Director 묶음 결정 9일 이월**(NumLink 셀 헥사곤+M3+Diegetic Score Display 공통 레이어 + MeowBeat 후크 "손맛+옴브레" 1안 + 1컷 손그림 러프 18:00까지·주말 첫날 = 그림 작업 적정 시점) + **🚨 P0 5m Docker AuthZ 환경 점검**(docker version·runc 1.1.12+ 확인·기록만) + **P1 1h MeowBeat 코어 4파일 분리 PR 단일 트랜잭션**(refactor(rhythm)+chore: 분리) + **P1 30m NumLink 레벨팩 판매 영향도 메모**(IAP +14%·Sort/Logic 모델·D30 LTV 비교) + **P1 1h Lemon8 "고양이+힐링" 콘텐츠 1건 제작 테스트**(가정의달 마지막 주말 타임프레임) + **P1 30m UA 크리에이티브 RUA 플레이어블 포맷 픽스**(전환률 35% 우위) + **P2 30m Firebase Imagen → Gemini Image 마이그레이션 영향도 메모**(D-32) + **P2 15m NumLink Diegetic Score Display 공통 레이어 USS 프로토타입**(번호 셀 투명도/색온도 1줄).',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'NumLink 동결 24일/재동결 8일째(주간 커밋 0건)·MeowBeat 41일 = 5주+6일 임계 초과 11일 돌파(역대 최장 신기록·어제 40→41)+bak_btn 46일 D+16·5/22 P0 12건 모두 미실행 9일 연속·29일 연속 결정 실패 신기록(4주+1일·결정 마비 9일째·주말 첫날 진입)·NumLink Tools 32일 D+2·DailyStandup 267009 9일째·JobResearch 6일째·PKM_GBrain LastResult=1 10일째(결정 시점 2일 도과)·claude.exe PID 12개 유지(안정)·BitSummit Business Day D+1 공개일 진행 중. 오늘은 주말 첫날 = 결정 부담 최저 = P0 단 1건 강제: bak_btn git rm 5m(46일째·30일째 진입 차단).',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '🚀 퍼즐 장르 다운로드 -3% 역성장 vs IAP +14% 매출 성장(Block Puzzle·Merge 세부장르 수익 선두)·NumLink 광고 모델 대신 레벨팩 판매(Sort/Logic 모델) 우선 검토 권고·🚀 BitSummit D+1 공개일 Antonblast(레트로 폭발 액션)·Dungeon Clawler(클로 머신+로그라이크)·TCG Card Shop Sim(상점 시뮬) "게임성 독창성" 라인업(우리 장르 직격 충돌 없음·픽업 윈도우 잔존)·🚀 모바일 리듬게임 5월 신규 출시 없음(Hololive Dreams 대기·MeowBeat 글로벌 캐주얼 리듬 출시 틈새 공백 6일 연속·"고양이가 박자 틀리면 화내는" 후크 차별점 BitSummit 끝나기 전 발사 윈도우 잔존). 권고: P1 30m NumLink 레벨팩 판매 모델 영향도 메모 작성(IAP +14% 근거·D30 LTV 비교·이번 주 결정 안건 격상).',
+      },
+      {
+        speaker: 'Developer',
+        note: '🚀 Unity 6000.5.0b8 5/14 출시(그래픽·UI·플랫폼 다수 픽스·beta·6.3 LTS 6000.3.16f1 대비 정식 채택 보류 권고)·🚀 Firebase Unity SDK 13.10.0: AutoFunctionDeclaration(함수 시그니처 자동)+GenerateObjectAsync(타입 안전 객체 생성)+Imagen 모델 EOL 2026-06-24 D-32 완전 종료 확정·Gemini Image 마이그레이션 경로 공식 제공·🚀 GoogleMobileAds Android 5/14 릴리스 노트 업데이트(5/22~23 신규 버전 없음). NumLink 미커밋 41파일 폰트 SDF 6개 머티리얼+AutoGenTests asmdef 완전 삭제+.omc/.claude untracked 누적 동일. MeowBeat SongData/SongManager/GameManager/OptionManager 4-파일 리듬게임 코어 리팩토링 미커밋+Input/Item/SaveLoad meta 3개 삭제+manifest.json 변경 단일 트랜잭션 분할 필요 동일. 권고: P2 30m Firebase Imagen → Gemini Image 마이그레이션 영향도 1페이지 메모(D-32·AutoFunctionDeclaration 호환성)·P1 1h MeowBeat 코어 4파일 분리 PR 단일 트랜잭션(refactor(rhythm)+chore: 분리·주말 첫날 적정 시점).',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '🚨 NumLink Tools 32일째 D+2 위반(어제 31→오늘 32·CLAUDE.md 한 달 임계 2일 초과·`C:/Unity/NumLink/Tools/` NOT_FOUND 32일·정적 QA·회귀 자동화 0%)·NumLink _Recovery 10건 동일(증가 정지)·MeowBeat qa_static.py 2 error 동결(manifest_load+scene_buttons·한글 깨짐·5/20 이후 진척 없음)·MeowBeat manifest.json 302,309 bytes 정상 검증(파일 시스템 무손상)·MeowBeat AutoGenTests.cs(4065 bytes) 동결·NumLink 폴더 자체 없음·MeowBeat _Recovery 2건 유지·MeowBeat bak_btn 46일 D+16(파일 시스템 검색 안 됨·git tracked 잔존 가능성). 권고: 🚨 P0 1h NumLink Tools 강제 부트스트랩 9일 연속 이월(MeowBeat Tools 복사+씬 경로 NumLink 교체+_Recovery 10건 일괄 검수+unity_validate baseline 0 error·주말 첫날 = 1시간 작업 가장 적정 시점).',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '🚀 Fortnite iOS 5/19 전세계 복귀 = 게임 카테고리 랭킹 대규모 요동(신작/인디 키워드 픽업 윈도우 일시 협소·리전별 크리에이티브 대응 필수·우리 픽업 윈도우는 BitSummit 5/22~24 매체 풀로 일시 유지). 🚀 Lemon8 MAU 2,340만 +56% YoY 라이프스타일 스토리텔링 채널 부상(여성/디자인 감도 유저층·MeowBeat "고양이+힐링" 콘텐츠 타깃 적합·Threads 대비 현재 모멘텀 우위·5/23 토요일 가정의달 마지막 주말 + Lemon8 라이프스타일 포맷 "고양이+힐링" 컨셉 게임 소개 1건 제작 테스트). 🚀 리워드형 UA(RUA) 모바일 게임 광고 표준 정착(오퍼월+리워드 영상+플레이어블 하이브리드·플레이어블 광고 전환률 35% 우위·어제 결정한 양 프로젝트 플레이어블 광고 큐 진입과 정합). NumLink "하나의 게임, 세 개의 무드" 통합 카피·Apple Tags 4개·MeowBeat "고양이가 박자 틀리면 화내는" 후크 5안→1안 강제 픽 9일째 결정 마비. 권고: P1 1h Lemon8 "고양이+힐링" 콘텐츠 1건 제작 테스트(5/23 가정의달 마지막 주말 타임프레임)·P1 30m UA 크리에이티브 RUA 플레이어블 포맷 픽스(전환률 35% 우위).',
+      },
+      {
+        speaker: 'DevOps',
+        note: '🚀 Docker CVE-2026-34040 (CVSS 8.8) AuthZ 플러그인 우회(1MB 이상 패딩으로 차단 우회·privileged 컨테이너 생성·host 파일시스템 마운트·클라우드 자격증명 탈취 가능·OPA/Prisma Cloud 환경 직접 타격·LIM Studio AuthZ 미사용 시 직접 노출 없으나 점검 5분 권장)·🚀 runC CVE 3종(CVE-2025-31133/52565/52881·SUSE 연구자 공개·Docker+Kubernetes 전체 영향·runc 1.1.12+ 업그레이드 필요)·🚀 GitHub Actions 요금 인하 확정 2026.1 적용(Linux -25%·Windows -37.5%·macOS -40%·단 3월부터 private 레포 self-hosted runner $0.002/분 플랫폼 요금 신설·self-hosted 비용 절감 가정 재검토). agent-office Pages 11일 무중단·main `origin/main` 동기·.omc/project-memory.json 1건 미스테이지(커밋 불필요)·6103f31 정상 가동. Task Scheduler: DailyStandup 267009 9일째·JobResearch 267009 6일째·PKM_GBrain LastResult=1 10일째(결정 시점 2일 도과·이월 절대 금지)·PKM_Daily_Digest 정상·claude.exe PID 12개 유지 안정. 권고: 🚨 P0 5m Docker AuthZ 환경 점검(docker version·runc 1.1.12+ 확인·기록만)·🚨 P0 20m PKM_GBrain 10일째 결정 강제(embeddinggemma 재적용 시도 → 실패 시 작업 비활성화·오늘 절대 이월 금지).',
+      },
+      {
+        speaker: 'Art Director',
+        note: '🎨 Awwwards SOTM May 수상작 C2 Montréal(by KOKI-KIKO·캐나다 컨퍼런스 브랜드 사이트·유기적 타이포그래피+비정형 레이아웃·키워드 Organic Grid Break = 격자를 의도적으로 무너뜨린 레이아웃·전일 La Revoltosa 2색 하이콘트라스트와 별도 트랙·NumLink 셀 셰이프 헥사곤+M3 35셰이프 모핑과 정합·Premium 테마 grid 미세 비대칭 적용 검토). 🎨 모바일 게임 UI 2026 핵심 흐름 = Invisible HUD + Diegetic UI(HUD 시각 노이즈 제거·게임 월드와 UI 경계 해소·NumLink처럼 퍼즐 중심 게임에서 UI가 "없는 것처럼" 느껴지는 방향 주류 이동·NumLink Diegetic Score Display 적용 검토: 상단 분리형 점수 UI를 퍼즐 보드 내부에 녹이는 방식·번호 셀 투명도/색온도로 점수 표현·Kawaii/Premium/Retro 3테마 위에 공통 레이어로 추가 작업량 최소화). 🎨 Mobbin 2026 = Thumb Zone First(썸 프렌들리 바텀시트+텍스트 검색 UI 모바일 게임 메뉴 확산·터치 영역 하단 1/3 집중). NumLink 셀 셰이프 7일째 정체+MeowBeat 후크 11일째 무결정 = 어제와 동일 이월 9일째. 권고: 🚨 P0 30m 묶음 결정 9일 연속 이월(NumLink 셀=헥사곤+M3 35셰이프 모핑 + Diegetic Score Display 공통 레이어 픽스 + MeowBeat 후크="손맛 일러스트+Neural Expressive 옴브레 텍스트" 1안 + 18:00까지 1컷 손그림 러프·주말 첫날 = 그림 작업 가장 적정 시점).',
+      },
+    ],
+    decisions: [
+      {
+        title:
+          '🚨 P0 CRITICAL [MeowBeat bak_btn git rm 단일 명령 1줄 5m · 46일째 D+16 · 9일째 결정 마비 차단 · 30일째 진입 차단 · 토요일 주말 첫날 결정 부담 최저 = 가장 작은 단위 실행 가장 안전한 날]',
+        description:
+          '오늘 결정 단위 0.1건도 9일째 실패 = P0 단 1건 강제 발사. `git -C C:/Unity/Feedme rm Assets/Scenes/MainScene.unity.bak_btn && git -C C:/Unity/Feedme rm Assets/Scenes/MainScene.unity.bak_btn.meta && git -C C:/Unity/Feedme commit -m "chore(meowbeat): bak_btn 46일 잔존 제거"`. 46일·4/7 12:30 생성·9일째 결정 마비 차단·30일째 진입 차단·**29일 연속 결정 실패 4주+1일 사이클을 깨는 가장 작은 단위**. 파일이 git tracked 상태로만 잔존 가능성 있으면 `git ls-files | findstr bak_btn`으로 1차 확인 후 실행. 토요일 주말 첫날 = 결정 부담 최저 = 검증 가능한 최소 단위 실행 가장 안전한 날.',
+      },
+      {
+        title:
+          '🚨 P0 CRITICAL [NumLink Tools 강제 부트스트랩 1h · 32일 D+2 · CLAUDE.md "세션 시작 자동 점검" 한 달 임계 2일 초과 진입 종결 · 9일 연속 이월 종결]',
+        description:
+          'NumLink Tools 32일째 부재(어제 31→오늘 32·D+2 위반)·_Recovery 10건 동일(증가 정지). `C:/Unity/Feedme/Tools/` → `C:/Unity/NumLink/Tools/` 일괄 복사·`unity_validate.py` 씬 경로 NumLink로 교체·`known_bugs.json`에서 MeowBeat 전용 패턴 제거·`_Recovery/` 10건 일괄 검수 후 정리·baseline 0 error 확보. **주말 첫날 = 1시간 작업 가장 적정 시점**·9일 연속 이월 종결.',
+      },
+      {
+        title:
+          '🚨 P0 [PKM_GBrain_Sync_Daily 비활성화 또는 embeddinggemma 재적용 결정 1건 20m · 10일 연속 LastResult=1 실패 · 결정 시점 2일 도과 · 오늘 절대 이월 금지]',
+        description:
+          'PKM_GBrain_Sync_Daily LastResult=1 10일째(어제 9→오늘 10·결정 시점 2일 도과·명확한 에러). ① `reference_gbrain.md` 패치 파일 3개 재적용 + GBrain MCP 30개 도구 연결 검증 시도 → ② 실패 시 작업 비활성화 결정. **10일 연속 실패 + 결정 시점 2일 도과 = 오늘 절대 이월 금지**.',
+      },
+      {
+        title:
+          '🚨 P0 [Art Director 묶음 결정 30m · NumLink 셀=헥사곤+M3 35셰이프 모핑 확정 + Diegetic Score Display 공통 레이어 픽스 · MeowBeat 후크="손맛 일러스트+Neural Expressive 옴브레 텍스트" 1안 픽 · 18:00까지 1컷 손그림 러프 산출 · 9일 연속 이월 종결]',
+        description:
+          'NumLink 셀 셰이프 7일째 정체+MeowBeat 후크 11일째 무결정 = 9일 연속 동시 이월 종결. NumLink = **헥사곤+M3 35셰이프 모핑 + Diegetic Score Display 공통 레이어**(번호 셀 투명도/색온도로 점수 표현·Invisible HUD 트렌드 정합·Kawaii/Premium/Retro 3테마 위 공통 레이어 추가 작업량 최소화·La Revoltosa 2색 + C2 Montréal Organic Grid Break 두 트렌드 정합)·MeowBeat = **"손맛 일러스트 1컷+Neural Expressive 옴브레 텍스트" 1안** 강제 픽·18:00까지 1컷 손그림 러프 산출. **주말 첫날 = 그림 작업 가장 적정 시점**.',
+      },
+      {
+        title:
+          '🚨 P0 [Docker AuthZ 환경 점검 5m · CVE-2026-34040 CVSS 8.8 · LIM Studio 직접 노출 여부 확인 · 기록만 남김]',
+        description:
+          'Docker CVE-2026-34040(CVSS 8.8·AuthZ 플러그인 우회) — `docker --version` 및 `docker info | findstr runc` 확인 후 runc 1.1.12 이상인지·AuthZ 플러그인 사용 여부 점검. **LIM Studio AuthZ 미사용 시 직접 노출 없음 결론**·5분 이내·문서에 기록만 남김(action 없음 결론도 결정).',
+      },
+      {
+        title:
+          'P1 [MeowBeat 코어 4파일 리팩토링 단일 PR 분리 커밋 1h · refactor(rhythm) + chore: 분리 · 주말 첫날 적정 시점]',
+        description:
+          'SongData.cs(+1)·SongManager.cs(±16)·GameManager.cs(±59)·OptionManager.cs(±42) 4-파일 리듬게임 코어 리팩토링 미커밋. `refactor(rhythm): 곡 카드 i18n + 잠금 시각 분리 + 옵션 매니저 정리` 단일 커밋 + 폰트·광고 프리팹·meta 삭제(Input/Item/SaveLoad 3개)는 별도 `chore:` 커밋. MainScene.unity.bak_btn .gitignore 배제 동시. 주말 첫날 = 코드 리팩토링 적정 시점.',
+      },
+      {
+        title:
+          'P1 [NumLink 레벨팩 판매 모델 영향도 메모 30m · IAP +14% 근거 · Sort/Logic 모델 · D30 LTV 비교 · 이번 주 결정 안건 격상]',
+        description:
+          '퍼즐 장르 다운로드 -3% 역성장이나 IAP 매출 +14% 성장 구조 확정(Block Puzzle·Merge 수익 선두). NumLink 광고 모델 대신 무료 다운로드 + 레벨팩 50개 단위 판매가 D30 LTV 우위 가능성. 1페이지 메모: ① 광고 모델 D30 LTV 추정 ② 레벨팩 판매 D30 LTV 추정 ③ 두 모델 혼합 시 시뮬레이션 ④ 이번 주 결정 안건 격상 권고.',
+      },
+      {
+        title:
+          'P1 [Lemon8 "고양이+힐링" 콘텐츠 1건 제작 테스트 1h · 가정의달 마지막 주말 타임프레임 · Lemon8 MAU 2,340만 +56% YoY]',
+        description:
+          'Lemon8 라이프스타일 스토리텔링 채널로 부상(MAU 2,340만·+56% YoY·여성/디자인 감도 유저층). 5/23 토요일 가정의달 마지막 주말 + Lemon8 라이프스타일 포맷 "고양이+힐링" 컨셉 게임 소개 콘텐츠 1건 제작 테스트. 30초+첫 1초 후크+니치 가중치·MeowBeat 캐릭터 라인 활용·Threads 대비 모멘텀 우위.',
+      },
+      {
+        title:
+          'P1 [UA 크리에이티브 RUA 플레이어블 포맷 픽스 30m · 전환률 35% 우위 · 어제 결정한 플레이어블 광고 큐 진입 정합]',
+        description:
+          '리워드형 UA(RUA) 모바일 게임 광고 표준 정착(오퍼월+리워드 영상+플레이어블 하이브리드). 플레이어블 광고 전환률 35% 우위 데이터 근거. NumLink/MeowBeat 양쪽 UA 크리에이티브 다음 라운드를 RUA 플레이어블 포맷으로 우선 검토 픽스(외주 견적 + 내부 프로토 분기).',
+      },
+      {
+        title:
+          'P2 [Firebase Imagen → Gemini Image 마이그레이션 영향도 메모 30m · D-32 EOL 2026-06-24 · AutoFunctionDeclaration 호환성]',
+        description:
+          'Firebase Unity SDK 13.10.0 AutoFunctionDeclaration + GenerateObjectAsync 추가·Imagen 모델 EOL 2026-06-24 D-32 완전 종료 확정·Gemini Image 마이그레이션 경로 공식 제공. 1페이지 영향도 메모: ① MeowBeat AI 자산 의존 코드 grep ② AutoFunctionDeclaration 호환성 ③ 마이그레이션 작업량 추정 ④ 6/24 이전 실행 일정.',
+      },
+      {
+        title:
+          'P2 [NumLink Diegetic Score Display 공통 레이어 USS 프로토타입 15m · 번호 셀 투명도/색온도 1줄 · Invisible HUD 트렌드 정합]',
+        description:
+          '모바일 게임 UI 2026 = Invisible HUD + Diegetic UI 흐름. NumLink 상단 분리형 점수 UI를 퍼즐 보드 내부에 녹이는 방식 = 번호 셀 투명도/색온도로 점수 표현. Kawaii/Premium/Retro 3테마 위에 공통 레이어로 USS 변수 1줄(`--score-tint-opacity`·`--score-tint-hue-shift`) 프로토타입 추가·실제 적용은 별도 PR.',
+      },
+    ],
+  },
+  {
     id: '2026-05-22T04:00:00-daily-standup',
     date: '2026-05-22',
     researchTitle:
