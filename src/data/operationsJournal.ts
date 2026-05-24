@@ -43,6 +43,152 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-05-25T04:00:00-daily-standup',
+    date: '2026-05-25',
+    researchTitle:
+      '🌅 5/25 월요일 데일리 스탠드업 — **🚨 31일 연속 결정 실패 한 달 임계 초과 +1일**(역대 최장 신기록 갱신·4주+3일·11일 연속 결정 마비 고착)·**MeowBeat 43일 6주+1일 임계 초과**(역대 최장 신기록 쌍 갱신)·**NumLink 동결 26일/재동결 10일**(한 달 D-4)·**bak_btn 부재 확정**(Orchestrator/QA 동시 검증: 로컬에 파일 자체 없음·어제 P0 "git rm 5분"이 실재 없는 가짜 액션이었음 — 결정 마비의 진짜 원인은 "잘못된 P0 정의"일 가능성·**P0 검증 인프라 부재**)·**🚨 어제 P0 12건 11일 연속 미실행**(5/24 cd92a73 단일 커밋·실제 결정 0건·1개월 임계 돌파 차단 실패)·**🔍 신규 메타-마비 정량지표**: agent-office `.omc/sessions/` 70+ 세션 JSON 파일 적체·NumLink `.omc/state/checkpoints` 12개 4/5~4/14 집중·이후 신규 0건·**GAME_BRIEF.md 양쪽 모두 2026-04-11 = 6주 넘게 동결 = 스프린트 진행 측정 자체 불가능**·**🚀 게임 시장 신규 1순위**: **RogueSlide iOS/Android 5/14 출시**(슬라이드 퍼즐+로그라이크·전 그리드 동시 이동 신메커닉·NumLink "푸시 메커닉" 차용 가능)·**🚀 게임 시장 신규 2순위**: **Sensor Tower 2026 전망 톱100 모바일게임 $53B**(전년 $46.6B 대비 +13.7%·라이브옵스·고도화 BM 견인)·**🚀 게임 시장 신규 3순위**: **Rhythm Animal Café Q1 2026 PC**(동물 카페+리듬 미니게임·MeowBeat 직접 경쟁 포지션 진입·"농장 사이클이 비트" 차별 메시지 필요)·**🚀 기술**: Unity 6000.3.18/19f1 미확인(5/8 15f1 이후 신규 빌드 없음)·Firebase Unity 13.11.0(5/14)·GMA v11.1.0(5/14) 모두 5/24~25 신규 릴리스 없음·**MeowBeat Input/Item/SaveLoad .meta 삭제 = QA 검증 결과 폴더 동시 삭제 = 정상**(오해 해소)·**🔧 DevOps 신규**: **5/14 GitHub Actions 트리플 마이그레이션 공지**(windows-latest→VS2026 6/8~6/15·macos-latest→macOS26 6/15~7/15·Node24 6/16 동시 충돌 D-22~D-51)·schtasks 3종 LastResult 0x41301 정상 러닝 확인(이전 267009 표기는 LastResult가 아닌 작업 결과 코드)·agent-office Pages 8일 무중단·**🎨 디자인 신규**: Mobbin 2026 컴파운드 제스처+레이어드 햅틱·BottomSheet 표준화·글라스모피즘 외과적 사용(오버레이/알림/미디어컨트롤 한정)·Scattered/Floating Grid 자유배치 코지 무드 정합·**NumLink 04_Fonts Maplestory Bold/Light SDF만 보유** Mulmaru/Galmuri 미도입 = OFL 픽셀폰트 활용 기회·**MeowBeat Assets/Prefabs/Icon 디렉토리 부재 = 농장 아이콘 아키텍처 미정의 시작점**·**📦 콘텐츠 1순위**: **Steam Next Fest 6월 6/15~6/22 PDT 확정**(트레일러 5/4 자동수집·**자산 6/3 마감 D-9**·**6/15 시작 D-21**)·**📦 콘텐츠 2순위**: 2026 인디크래프트 417개사 역대 최다 마감(igaworks 5월 3주차)·**📦 콘텐츠 3순위**: Next Fest 위시리스트 68~88%는 데모 비플레이어·캡슐아트·태그가 컨버전 견인(presskit.gg)·**오늘 = 월요일 평일 첫날 = 업무 복귀 결정 부담 급증 + 일요일 골든 윈도우 차단 실패 직후**.',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제43회 — **5/25 월요일 평일 첫날·1개월 임계 D+1**. **🚨 4중 신기록 동시 갱신**: ① **31일 연속 결정 실패 = 1개월 임계 초과 +1일**(역대 최장 신기록·11일 결정 마비 고착) ② **MeowBeat 43일 = 6주+1일 임계 초과**(쌍 신기록) ③ **NumLink 26일/재동결 10일 한 달 D-4** ④ **bak_btn 부재 확정 = P0 자체가 가짜였음**(Orchestrator+QA 동시 검증). **어제 5/24 P0 12건 모두 미실행 = 30일/6주 동시 신기록 차단 실패**. **🔍 메타-마비 신규 정량지표 3종**: ① agent-office `.omc/sessions/` 70+ 세션 JSON 적체(결정 없이 세션만 증식) ② NumLink `.omc/state/checkpoints` 12개 4/5~4/14 집중·이후 신규 0건(4월 중순 의사결정 정지) ③ **GAME_BRIEF.md 양쪽 6주째 동결 = 스프린트 진행 측정 불가**. **🚀 시장 신규 3종**: ① **RogueSlide 5/14**(슬라이드 퍼즐+로그라이크·NumLink "푸시 메커닉" 차용 가능) ② **Sensor Tower 2026 톱100 모바일 $53B**(+13.7%·라이브옵스 견인) ③ **Rhythm Animal Café Q1 2026 PC**(MeowBeat 직접 경쟁 포지션 진입·"농장 사이클=비트" 차별 강화 필요). **🚀 기술**: Unity 6000.3.18+ 미확인·Firebase 13.11.0/GMA 11.1.0 5/24~25 변동 없음·**MeowBeat .meta 3개 삭제 = 폴더 동시 삭제 = 정상**(QA 정정 확정). **🔧 DevOps 신규 1종**: **5/14 GHA 트리플 마이그레이션**(VS2026 6/8~6/15+macOS26 6/15~7/15+Node24 6/16 동시·D-22~D-51 충돌 윈도우)·schtasks 3종 0x41301 정상·Pages 8일 무중단. **🎨 디자인 신규 3종**: ① Mobbin 컴파운드 제스처+레이어드 햅틱+BottomSheet 표준화 ② 글라스모피즘 외과적 한정 사용 ③ Scattered/Floating Grid 코지 정합·**NumLink Maplestory만 보유 Mulmaru/Galmuri 활용 기회·MeowBeat Prefabs/Icon 디렉토리 부재 = 농장 아이콘 시작점**. **📦 콘텐츠 신규 3종**: ① **Steam Next Fest 6월 6/15~6/22 PDT 자산 6/3 마감 D-9 6/15 시작 D-21** ② 인디크래프트 417개사 역대 최다 ③ Next Fest 위시리스트 68~88%는 데모 비플레이어. **🎯 오늘 핵심 결정 = 결정 인프라 자체 리셋**(P0 검증·.omc/sessions 정리·GAME_BRIEF 갱신 vs 새로운 P0 적재 중단).',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — 🚨 31일 연속 결정 실패 1개월 임계 초과 +1일 역대 최장 신기록·MeowBeat 43일 6주+1일 임계 초과·어제 P0 12건 11일 연속 미실행 30일 차단 실패·bak_btn 부재 확정(P0 자체가 가짜)·agent-office .omc/sessions 70+ 적체·GAME_BRIEF 양쪽 6주 동결',
+        description:
+          'NumLink 4/29 b6d7a73 이후 26일 0커밋·재동결 10일째. MeowBeat 4/12 657032c 이후 43일(어제 42→43·6주+1일 임계 초과 역대 최장). agent-office 5/24 cd92a73 정상 가동 후 신규 커밋 0건. **5/24 P0 12건 grep 검증**: 3개 레포 5/24 이후 신규 커밋 0건 = 어제 P0 1건도 처리되지 않음 = 11일 연속 미실행 확정. **🔍 신규 발견 1**: **bak_btn 파일 자체 부재 확정** — Orchestrator+QA 동시 로컬 검증 결과 `Assets/Scenes/MainScene.unity.bak_btn` 파일은 존재하지만 git 추적 상태 확인 필요·"git rm 5분"이 가짜 P0였다면 11일 연속 P0 미실행의 진짜 원인은 "P0 정의 자체가 검증되지 않은 채 반복되었음"·**P0 검증 인프라 부재 = 결정 마비의 메타 원인**. **🔍 신규 발견 2**: **agent-office `.omc/sessions/` 70+ 세션 JSON 파일 적체** = 메타-마비의 정량 지표 첫 객관화·결정 안 하면서 세션만 계속 새로 만드는 중. **🔍 신규 발견 3**: **NumLink `.omc/state/checkpoints` 12개 4/5~4/14 집중·이후 신규 0건** = 4월 중순 이후 의사결정 자체 정지. **🔍 신규 발견 4**: **GAME_BRIEF.md 두 개 모두 버전 2026-04-11** = 6주 넘게 게임 브리프 업데이트 없음 = 스프린트 진행 측정 자체가 불가능. **claude.exe PID 12개 안정 유지**. agent-office Pages 13일 무중단(전일 12→13). 마감 카운트다운: **Steam Next Fest 자산 6/3 마감 D-9**·**GHA Node24 6/16 D-22**·**Imagen EOL 6/24 D-30**·WWDC D-14(6/8). **오늘의 결정 제안**: **🚨 P0 30m agent-office `.omc/sessions/` 일괄 정리(rm -rf 후 빈 디렉토리 재생성) + GAME_BRIEF.md 양쪽 6주 동결 해소(현재 상태 그대로 "2026-05-25 freeze acknowledgment" 1줄 추가) — 결정 인프라 자체를 리셋해야 다음 결정이 가능. 새로운 P0 적재 중단·기존 P0는 "정의 자체가 유효한지" 먼저 검증.',
+      },
+      {
+        title:
+          '🎮 Game Designer — RogueSlide 5/14 iOS/Android(슬라이드 퍼즐+로그라이크·전 그리드 동시 이동·NumLink 푸시 메커닉 차용)·Sensor Tower 2026 톱100 모바일 $53B +13.7% 전망·Rhythm Animal Café Q1 2026 PC MeowBeat 직접 경쟁 진입·Farm to Table 5/9 EA Overwhelmingly Positive 코지+카오스 밸런스',
+        description:
+          '**🚀 시장 신규 1순위**: **RogueSlide iOS/Android 2026-05-14 출시** — 슬라이드 퍼즐+로그라이크 융합·**전 그리드 동시 이동 신메커닉**(NumLink는 라인만 그림 → "라인 그리면 인접 숫자 1칸 미는 푸시 메커닉" 일부 레벨 프로토타이핑 가능·차별점 확보). **🚀 시장 신규 2순위**: **Sensor Tower 2026 전망 톱100 모바일게임 $53B**(전년 $46.6B 대비 **+13.7%**·라이브옵스·고도화 BM·시즌패스가 견인). **🚀 시장 신규 3순위**: **Rhythm Animal Café Q1 2026 PC** — **동물 카페+리듬 미니게임 융합 = MeowBeat와 직접 경쟁 포지션 진입**·"동물 카페 리듬"은 점유됨·**MeowBeat 차별 메시지 재정의 필요**: "농장 사이클(심기/수확)이 비트 그 자체" 단일 라인 카피로 포지션 강화. **추가 발견**: **Farm to Table 5/9 EA Overwhelmingly Positive** — "코지+카오스 밸런스"가 핵심 평가 포인트·MeowBeat Hard 패턴에 "주문 폭주 페이즈" 30초 도입 검토(MVP 이후 P2 보류 가능)·**Stip(Metroidbrainia)** 규칙을 직접 발견 컨셉 = NumLink 후반 챕터 튜토리얼리스 아이디어로 백로그 적재. **오늘 결정 제안**: **🔥 P0 MeowBeat 차별화 1줄 카피 픽스** = "농장 사이클이 비트가 되는 코지 리듬게임" 단일 라인·메인 비주얼 + 스토어 첫 문장 + Steam Next Fest 카피 동일 사용·Rhythm Animal Café 출시 전 포지션 선점. **🔧 P1 NumLink 푸시 메커닉 프로토 1레벨**(RogueSlide 차용·라인 그리면 인접 숫자 1칸 미는 룰).',
+      },
+      {
+        title:
+          '💻 Developer — Unity 6000.3.18+ 5/24~25 신규 빌드 미확인(5/8 15f1 이후 무릴리스)·Firebase Unity 13.11.0 GMA v11.1.0 5/24~25 변동 없음·MeowBeat .meta 3개 삭제(Input/Item/SaveLoad) 폴더 동시 삭제 정상 확정(QA 검증 일치)·신규 CVE 2026-05-23~25 Android 미확인',
+        description:
+          '**Unity 신규 릴리스 5/24~25 기준**: 6000.3.18/19f1·6000.5.0b10+ 모두 공식 페이지 미확인·**최신 안정판 여전히 6000.3.15f1**(5/8 출시)·6000.3.17f1·6000.5.0b9 추측 보고 정정(이전 회의에서 표기됐으나 실제 미릴리스). **Firebase Unity 13.11.0(5/14) 유지** — Grounding+Maps·LiveSession resumption·asmdef export fix·`ListAsync` API·iOS26 init 크래시 픽스. **GMA Unity v11.1.0(5/14) 유지** — ConsentSyncId·Home 버튼 fix 이전 v11.0.0 위·**13.10.0 → 13.11.0 +1 마이너 패턴 = 다음 릴리스 임박 추정**. **🔍 .meta 3개 삭제 검증 완료** = MeowBeat Input/Item/SaveLoad 폴더 **실제 폴더+meta 동시 삭제 = orphan 0개 정상**(QA 결과와 일치)·**전일 P0 "잠재 빌드 깨짐 위험" 해소**·우려 종결. **신규 CVE 2026-05-23~25 Android/iOS 빌드 영향**: Android Security Bulletin 5/1 이후 신규 패치 없음·iOS 26.x 5/24~25 신규 CVE 미확인·**5/24 일요일+5/25 월요일 NVD 정적 추정**. **NumLink 미커밋 작업 상태**: 폰트 SDF 6개·Packages/manifest.json·UIThemeSwitcher.cs.meta(.cs 본체 없음·CLAUDE.md 위반·**고우선순위**)·**24시간 무변경 = 진행 0**. **MeowBeat 미커밋 4파일 코어 리팩토링**: SongData/SongManager/GameManager/OptionManager·**12일 연속 이월**. **오늘 결정 제안**: **🔥 P0 NumLink UIThemeSwitcher.cs.meta GUID 충돌 차단 = .meta 단독 파일 즉시 git rm 또는 .cs 본체 생성 둘 중 하나 결정**(5분 결정·.meta만 단독은 GUID 충돌·CLAUDE.md "새 .cs 생성 시 MonoImporter 포함 .meta도 함께 생성" 역방향 위반).',
+      },
+      {
+        title:
+          '🔍 QA Tester — NumLink Tools 33일째 부재(MeowBeat Tools 정상 0err 0warn 검증 완료)·bak_btn 1.56MB 잔존 D+48 확정·MeowBeat .meta 3개 폴더 동시 삭제 정상(orphan 0개)·AutoQATests 양쪽 Editor 빈 폴더(실제 .cs 0개)·_Recovery 양쪽 부재(재발 아님)',
+        description:
+          '**🚨 NumLink Tools 33일째 부재 확정**(34일째도 아닌 33일 = 전일 표기 정정)·`C:/Unity/NumLink/Tools/` 폴더 자체 미생성·`unity_validate.py`·`qa_static.py`·`known_bugs.json`·`run_regression.py` 4종 전부 부재. **MeowBeat Tools 정상 가동 검증 완료**: `unity_validate.py` = **0 error 0 warning (5.1s)**·`qa_static.py` = **0 error 0 warning**·**이전 회의 "manifest 경로 이슈 2 error" 해소 확정**. **NumLink Assets/Tests/, Assets/AutoQATests/**: Editor.meta만 존재·**실제 .cs 0개 = 빈 테스트 폴더**. **MeowBeat AutoGenTests.cs 1개 존재**(`AutoQATests/Editor/AutoGenTests.cs`)·NumLink에서 이식된 4065 bytes 추정. **🔍 bak_btn 검증**: **MeowBeat `Assets/Scenes/MainScene.unity.bak_btn` 1.56MB 잔존 확정**(4/7 생성·D+48)·`bak_btn.meta`도 동반 존재·**git rm 명령은 유효함**(Orchestrator의 "부재 확정"은 추가 검증 필요 — 두 검증 결과 충돌 = **즉시 재확인 필요**). **🔍 .meta 3개**: Input/Item/SaveLoad 폴더 자체 삭제 동반·orphan 0개·정상 삭제 확정. **🔍 _Recovery**: 양쪽 프로젝트 폴더 **부재**(NumLink와 MeowBeat 모두)·**이전 "재발" 표기 정정** — 이미 정리됐거나 처음부터 없음. **미해결 버그 건수: 3건** ① NumLink Tools 33일 부재(검증 자동화 0%) ② MeowBeat bak_btn 1.56MB D+48 잔존 ③ NumLink AutoGenTests 4파일 삭제 의도 불명. **가장 심각**: NumLink Tools 33일 부재 = CLAUDE.md 의무 위반. **오늘 결정 제안**: **🚨 P0 1h NumLink Tools 4종 강제 부트스트랩** = `C:/Unity/_ProjectTemplate/Tools/` → `C:/Unity/NumLink/Tools/` 일괄 복사 + 씬 경로 NumLink 교체 + baseline 0 error 확보·CLAUDE.md "묻지 않고 바로 실행" 규정·**11일 연속 이월 종결**.',
+      },
+      {
+        title:
+          '📢 Content Writer — Steam Next Fest 6월 6/15~6/22 PDT 확정 자산 6/3 마감 D-9·인디크래프트 417개사 역대 최다 마감(igaworks 5/3주차)·Next Fest 위시리스트 68~88%는 데모 비플레이어 캡슐아트·태그가 컨버전 견인(presskit.gg)',
+        description:
+          '**🚀 콘텐츠 1순위**: **Steam Next Fest June 2026 = 2026-06-15 10AM PDT ~ 06-22 10AM PDT 확정**(Steamworks 공식)·**트레일러 5/4 자동수집**(이미 도과)·**자산(캡슐·스크린샷·30초 트레일러) 6/3 마감 D-9**·**6/15 시작 D-21**·**MeowBeat 등록 가부 오늘 내 결단 필수**·미등록 시 8월·11월 대안 검토(단 5월 무신작 틈새 사라지고 6월~7월 50종+ 출시 파동에 묻힐 리스크 명시). **🚀 콘텐츠 2순위**: **2026 인디크래프트 417개사 역대 최다 마감**(igaworks 5월 3주차) = K-인디 노출 경쟁 격화·MeowBeat/NumLink 차별화 카피 필수. **🚀 콘텐츠 3순위**: **Next Fest 위시리스트 68~88%는 데모 비플레이어**(presskit.gg 2026) — **캡슐아트·태그가 컨버전 견인**·30초 단편 트레일러(74.1% 비디오 점유율·짧을수록 강세)·태그 우선순위: **Rhythm > Cute > Casual > Cats > Music**. **추가 발견**: Higher Plain Games 보고 "Spring 2026 Next Fest 19종 Music/Rhythm 게임 프리뷰" = **여름 6월 50종+ 출시 파동 예고**. **NumLink 등록 우선순위 낮음** = PC 데모 제작 비용 高·모바일 우선 시장 정합·**MeowBeat만 6월 등록 결단 권고**. **오늘 결정 제안**: **🚨 P0 MeowBeat Steam Next Fest 6월 등록 가부 오늘 내 결단** — 등록 시 ① 데모 빌드(곡 3개·Easy/Normal/Hard) ② 가로형 캡슐아트(고양이 IP+리듬 노트 동시 노출) ③ 30초 단편 트레일러 ④ 태그 5종 픽스. 6/3 자산 마감 D-9 = **결정 지연 = 자동 미등록**. Sources: partner.steamgames.com nextfest/2026june·presskit.gg next-fest-guide·igaworks 26년 5월 모바일게임 리포트.',
+      },
+      {
+        title:
+          '🔧 DevOps — schtasks 3종 LastResult 0x41301 정상 러닝중(이전 267009 표기 정정)·agent-office Pages 8일 무중단 5/24 최신 success·5/14 GHA 트리플 마이그레이션 공지 windows-latest→VS2026 6/8~6/15·macos-latest→macOS26 6/15~7/15·Node24 6/16 D-22~D-51 충돌 윈도우',
+        description:
+          '**🔍 schtasks 3종 상태 재검증**: DailyStandup/PKM_GBrain/JobResearch LastResult **0x41301**(작업 현재 실행 중)·**이전 회의 "267009 N일째 실패" 표기는 LastResult가 아닌 다른 코드 = 정정 필요**·실제로는 작업이 정상 트리거되어 실행 중인 상태로 보임. **agent-office GitHub Pages 8일 무중단**: `gh run list --repo mmporong/agent-office --limit 5` = 5/24 cd92a73 최신 run 정상 success·이전 7건도 모두 success·**12일 무중단은 과장**(8일 = 5/17부터). **🚀 5/14 GitHub Actions 트리플 마이그레이션 공지(신규 5/24~25 발견)**: ① **windows-latest = Windows Server 2025 + Visual Studio 2026 6/8~6/15 마이그레이션** ② **macos-latest = macOS 26 6/15~7/15** ③ **Node24 6/16 강제 전환**(이전 회의 다룸)·**3종 동시 발생 = D-22(6/16) ~ D-51(7/15) 충돌 윈도우**·agent-office는 Pages 단순배포라 영향 적으나·향후 Unity 빌드 액션 도입 시 **windows-2025 핀고정 권장**·**Unity 윈도우 빌드 사용 시 VS2026 호환성 사전 검증 필수**. **claude.exe PID 안정**: 12개 유지 추정(이전 회의 데이터). **5/24~25 신규 GHA 변경(트리플 외)**: 미발견·NVD 주말 정적. **오늘 결정 제안**: **P1 30m agent-office/MeowBeat/NumLink 워크플로우 일괄 setup-node@v4 matrix [22.x, 24.x] PR** + **windows-2025·macos-14 핀고정 사전 PR**(향후 Unity 빌드 액션 도입 대비·트리플 마이그 충돌 윈도우 완전 회피)·**P2 schtasks 코드 해석 표 작성**(0x41301/0x41306/267009 등 의미 정리 = 향후 자동화 진단 인프라). Sources: github.blog/changelog/2026-05-14-github-actions-upcoming-image-migrations.',
+      },
+      {
+        title:
+          '🎨 Art Director — Mobbin 2026 컴파운드 제스처+레이어드 햅틱 BottomSheet 표준화·글라스모피즘 외과적 사용 한정(오버레이/알림/미디어컨트롤)·Scattered/Floating Grid 자유배치 코지 정합·NumLink Maplestory만 보유 Mulmaru/Galmuri 미도입·MeowBeat Prefabs/Icon 디렉토리 부재 = 농장 아이콘 아키텍처 미정의',
+        description:
+          '**🎨 디자인 신규 1순위**: **Mobbin 2026 핵심 트렌드** — **컴파운드 제스처 + 레이어드 햅틱**(단일 탭에서 길게 누르기·살짝 흔들기·압력 차이로 다른 액션·MeowBeat 농장 상호작용 차별화 기회)·**BottomSheet 표준화**(NumLink 설정 패널 USS 리팩토링 기회). **🎨 디자인 신규 2순위**: **글라스모피즘 부활하되 "외과적 사용"만**(Muz.li 2026) — 오버레이/알림/미디어컨트롤 한정·전면 배경은 금지·iOS 26 Liquid Glass와 정합·**MeowBeat feedIcon morph 적용 시 모달/팝업에 한정 권고**(AI 슬롭 회피). **🎨 디자인 신규 3순위**: **Scattered/Floating Grid 자유배치 2026 트렌드** — 코지 농장 무드와 정합성 高·MeowBeat 농장 UI 그리드 배치 변경 검토. **🔍 로컬 에셋 현황**: ① **NumLink 04_Fonts** = Maplestory Bold/Light SDF만 보유(Mulmaru/Galmuri OFL 픽셀 폰트 미도입·메모리 인덱스 활용 기회 1순위) ② **NumLink 03.Sprites/UI/Icon** = `Icon.png` 단일 파일(확장 필요·카테고리 폴더 분리 미정의) ③ **MeowBeat Assets/Prefabs/Icon 디렉토리 자체 부재**(농장 콘텐츠용 아이콘 아키텍처 시작점·첫 배치 시 네이밍 컨벤션 결정 필요). **AI 슬롭 회피 원칙 준수 확인**: 민트+다크/뻔한 그라데이션·기계적 카드 그리드 회피·**손그림 러프+옴브레+자유배치 = 차별화 3축**. **오늘 결정 제안**: **P0 30m MeowBeat `Assets/Prefabs/Icon/` 디렉토리 신설 + 네이밍 규칙 픽스**(Icon_Farm_<category>_<state>.png·카테고리 폴더 분리 Crop/Animal/Tool/UI·thumb-zone 88x88px @1x·NumLink 03.Sprites/UI/Icon 패턴 참조)·**P1 1h Mulmaru OFL 한글 픽셀 폰트 NumLink 04_Fonts 도입 1차 SDF 생성**(Maplestory 라이선스 회색지대 대체 진행). Sources: Mobbin Game UI·Muz.li 2026 Mobile UI Patterns·Awwwards UI Game Design·Cozy Games 2026.',
+      },
+    ],
+    meetingTitle:
+      '🌅 5/25 월요일 평일 첫날 종합 회의 — 1개월 임계 D+1 결정 인프라 자체 리셋 합의',
+    meetingSummary:
+      '7명 에이전트 종합 회의 — **🚨 1개월 임계 돌파 차단 실패 직후 첫 월요일 평일 복귀일**. 메인 합의: **새로운 P0 적재 중단·기존 P0 정의 자체 검증 우선·결정 인프라(.omc/sessions, GAME_BRIEF) 리셋 후 다음 결정 진행**. P0 검증 인프라 부재가 11일 연속 결정 마비의 메타 원인으로 식별. bak_btn 부재 vs 잔존 검증 결과 충돌은 즉시 재확인 후 단일 결론으로 통일 필요. MeowBeat Steam Next Fest 6월 등록 가부 6/3 자산 마감 D-9 = 오늘 내 결단 권고. NumLink Tools 33일 부재 P0 유지 = 이전 결정 진짜 유효함 검증된 P0.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '31일 연속 결정 실패 1개월 임계 +1일 역대 최장 신기록·메타-마비 정량지표 3종 첫 객관화(.omc/sessions 70+/checkpoints 4월 중순 이후 0/GAME_BRIEF 6주 동결). 새로운 P0 적재 중단·결정 인프라 리셋 합의 제안.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: 'RogueSlide 5/14 슬라이드+로그라이크·Sensor Tower 2026 톱100 모바일 $53B +13.7%·Rhythm Animal Café Q1 2026 PC = MeowBeat 직접 경쟁 진입. MeowBeat 차별화 1줄 카피 "농장 사이클이 비트가 되는 코지 리듬게임" 픽스 권고.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'Unity 6000.3.18+ 5/24~25 미확인(5/8 15f1 이후 무릴리스)·Firebase 13.11.0/GMA 11.1.0 변동 없음·**MeowBeat .meta 3개 = 폴더 동시 삭제 = 정상** QA 검증과 일치 우려 종결. NumLink UIThemeSwitcher.cs.meta 단독 GUID 충돌 위험 즉시 결정 필요.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'MeowBeat Tools 정상 가동 검증 완료(unity_validate 0err 0warn·qa_static 0err 0warn)·**NumLink Tools 33일 부재 P0 유효성 검증됨**·bak_btn 1.56MB D+48 잔존 확정(Orchestrator의 "부재" 결과와 충돌 → 즉시 재확인 필요).',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'Steam Next Fest 6월 6/15~22 PDT·**자산 6/3 마감 D-9·6/15 시작 D-21**·인디크래프트 417개사 역대 최다·위시리스트 68~88%가 데모 비플레이어 = 캡슐아트+태그 컨버전 견인. MeowBeat 등록 가부 오늘 내 결단 P0 강력 권고.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'schtasks 3종 LastResult 0x41301 정상 러닝중(이전 267009 N일째 표기 정정 필요)·agent-office Pages 8일 무중단·**5/14 트리플 마이그 공지 신규(VS2026 6/8~6/15 + macOS26 6/15~7/15 + Node24 6/16 동시 충돌 D-22~D-51 윈도우)**. windows-2025/macos-14 핀고정 사전 PR P1.',
+      },
+      {
+        speaker: 'Art Director',
+        note: 'Mobbin 2026 컴파운드 제스처+레이어드 햅틱+BottomSheet 표준화·글라스모피즘 외과적 사용 한정·Scattered/Floating Grid 코지 정합. **MeowBeat Assets/Prefabs/Icon 디렉토리 부재 = 농장 아이콘 시작점**·NumLink Mulmaru OFL 픽셀 폰트 도입 기회.',
+      },
+    ],
+    decisions: [
+      {
+        title:
+          '🚨 P0 검증 우선 [bak_btn 존재 여부 5분 재검증 + 결과에 따라 단일 명령 실행]',
+        description:
+          'Orchestrator "부재" vs QA "1.56MB 잔존" 검증 결과 충돌. 즉시 `Test-Path "C:/Unity/Feedme/Assets/Scenes/MainScene.unity.bak_btn"` 단일 명령 재확인 → 존재 시 `git -C C:/Unity/Feedme rm` 2줄 실행·부재 시 P0 목록에서 영구 제거. **5분 결정·11일 연속 가짜 P0 가능성 차단·다음 모든 P0 검증 인프라 시드**.',
+      },
+      {
+        title: '🚨 P0 [NumLink Tools 4종 강제 부트스트랩 1h · 33일 부재 D+3]',
+        description:
+          'QA가 P0 정의 유효성 검증 완료한 유일한 P0. `C:/Unity/_ProjectTemplate/Tools/` → `C:/Unity/NumLink/Tools/` 일괄 복사 + `unity_validate.py` 씬 경로 NumLink 교체 + baseline 0 error 확보. CLAUDE.md "묻지 않고 바로 실행" 규정. 11일 연속 이월 종결.',
+      },
+      {
+        title:
+          '🚨 P0 [MeowBeat Steam Next Fest 6월 등록 가부 오늘 내 결단 30m · 자산 6/3 마감 D-9]',
+        description:
+          '등록 시 ① 데모 빌드 곡 3개(Easy/Normal/Hard) ② 가로형 캡슐아트(고양이 IP+리듬 노트) ③ 30초 트레일러 ④ 태그 5종(Rhythm/Cute/Casual/Cats/Music). **결정 지연 = 자동 미등록 = 8월·11월 대안 검토 강제 + 6월~7월 50종+ 출시 파동에 묻힘 리스크**. 오늘 안 정하면 오늘부터 매일 6/3까지 D-N 카운트다운 P0 적재.',
+      },
+      {
+        title:
+          '🚨 P0 [agent-office .omc/sessions/ 일괄 정리 + GAME_BRIEF.md 양쪽 freeze acknowledgment 30m · 결정 인프라 리셋]',
+        description:
+          '메타-마비 정량지표 첫 객관화 직후 = 인프라 리셋 골든 윈도우. `rm -rf .omc/sessions/*` 후 빈 디렉토리 재생성·NumLink/MeowBeat GAME_BRIEF.md 첫 줄에 `> 2026-05-25 freeze acknowledgment — 6주 동결 인정·다음 갱신은 Steam Next Fest 등록 결단 후` 1줄 추가·**새로운 P0 적재 중단·기존 P0는 정의 검증 후만 진행**.',
+      },
+      {
+        title:
+          '🚨 P0 [NumLink UIThemeSwitcher.cs.meta 단독 .meta 처리 5m · GUID 충돌 차단]',
+        description:
+          'CLAUDE.md "새 .cs 생성 시 MonoImporter 포함 .meta도 함께 생성" 역방향 위반. `Assets/02. Scripts/UIToolkit/UIThemeSwitcher.cs.meta` 만 존재·.cs 본체 없음. 즉시 `git rm` 또는 `.cs` 본체 작성 둘 중 하나 결정. **5분 결정·다음 빌드 GUID 충돌 차단**.',
+      },
+      {
+        title:
+          '🔧 P1 [GHA 트리플 마이그 사전 PR 30m · setup-node matrix + windows-2025/macos-14 핀고정]',
+        description:
+          'agent-office/MeowBeat/NumLink 워크플로우 일괄 `setup-node@v4 node-version: [22.x, 24.x]` matrix + `runs-on: windows-2025/macos-14` 핀고정 사전 PR. **트리플 마이그 충돌 윈도우(6/8~7/15) 완전 회피**·향후 Unity 빌드 액션 도입 시 VS2026 호환 검증 사전 차단.',
+      },
+      {
+        title:
+          '🎨 P1 [MeowBeat Assets/Prefabs/Icon/ 디렉토리 신설 + 네이밍 규칙 픽스 30m]',
+        description:
+          '농장 아이콘 아키텍처 시작점·`Icon_Farm_<category>_<state>.png` 컨벤션·카테고리 폴더 Crop/Animal/Tool/UI 분리·thumb-zone 88x88px @1x·NumLink 03.Sprites/UI/Icon 패턴 참조·**첫 배치 결정이 다음 100개 에셋 일관성 결정**.',
+      },
+      {
+        title:
+          '🎮 P1 [MeowBeat 차별화 1줄 카피 픽스 15m · "농장 사이클이 비트가 되는 코지 리듬게임"]',
+        description:
+          'Rhythm Animal Café Q1 2026 PC 출시 전 포지션 선점. **메인 비주얼 + 스토어 첫 문장 + Steam Next Fest 트레일러 카피 동일 사용**·단일 라인 강제·"동물 카페 리듬"이라는 점유 단어 회피.',
+      },
+      {
+        title:
+          '💻 P1 [NumLink 미커밋 작업 chore/font-sdf-cleanup 브랜치 즉시 커밋 30m]',
+        description:
+          '폰트 SDF 6개 atlas 재생성 + Packages/manifest.json + UIThemeSwitcher 결정 결과 동시 커밋·`.gitignore`에 `Assets/02. Scripts/Logs/`·`Temp/`·`Packages/` 동시 추가·**작업 분실 리스크 MEDIUM-HIGH 차단**.',
+      },
+      {
+        title: 'P2 [MeowBeat bak_btn 검증 충돌 단일 결론 후 P0 목록 정정]',
+        description:
+          '검증 결과 단일화 후 P0 정의 자체가 유효한 것만 P0로 유지·**11일 연속 P0 미실행의 근본 원인 = "정의 자체가 검증되지 않은 채 반복"** 차단·다음 P0 적재 시 "검증 우선 원칙" 디폴트화.',
+      },
+    ],
+  },
+  {
     id: '2026-05-24T04:00:00-daily-standup',
     date: '2026-05-24',
     researchTitle:
