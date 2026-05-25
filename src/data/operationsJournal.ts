@@ -43,6 +43,130 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-05-26T04:00:00-daily-standup',
+    date: '2026-05-26',
+    researchTitle:
+      '🌅 5/26 화요일 데일리 스탠드업 — **🚨 32일 연속 결정 실패 1개월 +2일 역대 최장 신기록 갱신**(4주+4일·12일 결정 마비 고착)·**MeowBeat 44일 6주+2일 임계 초과**(쌍 신기록 갱신)·**NumLink 동결 27일/재동결 11일**(한 달 D-3)·**bak_btn 단일 결론 확정 1.52MB D+49 잔존**(어제 충돌 해소·메인 PowerShell 직접 검증 = QA 1.56MB와 거의 일치·서브에이전트 "부재" 결론은 잘못된 글로브 폴백·**P0 정의 유효성 확정**)·**🚨 어제 5/25 P0 5건 12일 연속 모두 미실행 = 인프라 리셋 합의도 실행 0건**(1개월 +2일 임계 차단 실패)·**🚀 게임 시장 신규 1순위**: **Dead As Disco 5/5 EA**(Beat Kune Do 리듬연동전투 + **Fever 게이지 메커닉**·MeowBeat Perfect 노트 연속→Fever 점수 1.5배+고양이 표정 변화 직접 적용)·**🚀 게임 시장 신규 2순위**: **Snacko 1.0 5월**(고양이농장+**엘리멘탈 룬 농작물 강화** 시스템·MeowBeat 농장 사이클 BM 모델 직접 참조)·**🚀 게임 시장 신규 3순위**: **Association/Semantic Pairing 매치-3 급부상**(꿀-벌·망치-못 의미 페어링·NumLink 한국어 학습 "1-하나" 변형 PoC 가능)·**🚀 기술 신규 1순위**: **Unity 6.2(6000.4 라인) 5/14 빌드 출시 확정**(LOD 자동생성+Quest LTO·5/8 6000.3.15f1 이후 차기 라인 정식 진입·**메인은 6000.3 LTS 유지 권고**)·**🚀 기술 신규 2순위**: **GMA Unity Android SDK 25.0.0/iOS 13.0.0 메이저 점프 예고**(docs 5/22 갱신·다음 릴리스 호환성 사전 검증 필수)·**🚨 보안 신규**: **Android CVE-2026-0073**(원격코드실행·**무상호작용**·5/01 패치) + **CVE-2026-21385 Qualcomm GPU 표적 공격 정황** = 모바일 빌드 minSdk 점검 필요·**🔍 QA 신규 발견**: **NumLink Scenes 폴더명 "01. Scenes/" 공백 포함**(템플릿 기본 "Assets/Scenes/" 경로 수정 필수·`unity_validate.py:22`·`qa_static.py:22` 단 1줄·**Tools 부트스트랩 실제 견적 1h → 10분 이내 단축 확정**)·**📦 콘텐츠 신규 1순위**: **Apple App Store OCR 도입 2026**(스크린샷 캡션 텍스트가 키워드 색인 대상·MeowBeat 모든 스크린샷 상단 "냥냥 리듬 / Cat Rhythm Tap"·"Easy 모드" 캡션 박기 필수)·**📦 콘텐츠 신규 2순위**: **TikTok 5월 알고리즘**(완주율 70%+ 진입선·60~180초가 15초 추월·MeowBeat Shorts 첫 3초 캡션 동일 노출)·**📦 콘텐츠 신규 3순위**: **Dead As Disco 300M 뷰 98% Steam 평가**(인디 리듬게임 흥행 증명·Steam Next Fest 등록 가치 신호)·**🔧 DevOps**: **GitHub Actions changelog 5/25~26 신규 0건**(마지막 5/22·트리플 마이그 D-22~D-51 그대로)·**Cloudflare NRT 점검 5/26 15-23 UTC = KST 5/27 00-08 = DailyStandup 04:00 트리거 윈도우 정확히 겹침**(다음 04:00 직후 gh run list 1회 명시 검증 필수)·**agent-office Pages 9일 무중단 검증 완료**(8→9·과장 아님)·**🎨 디자인 신규 1순위**: **Awwwards 5/24 SOTD Aimee\'s Papercraft World**(2D 일러를 3D 지오메트리에 베이크·R3F+Blender+Krita·**MeowBeat 캡슐 "종이공예 베이크 룩" 전환 권고**·Rhythm Animal Café 손그림+파스텔 정면 충돌 회피)·**🎨 디자인 신규 2순위**: **Mobbin MCP 서버 5/13 런칭**(621,500 실앱 화면 AI 직조회·BottomSheet 다음 진짜 무기·gstack/Claude MCP 연계 시드)·**Steam Next Fest 자산 6/3 마감 D-8**(어제 D-9·1일 진행)·**Imagen EOL 6/24 D-29**(전일 D-30→D-29)·**WWDC D-13**(6/8).',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제44회 — **5/26 화요일 평일 둘째날·1개월 임계 D+2**. **🚨 4중 신기록 갱신**: ① **32일 연속 결정 실패 = 1개월 임계 초과 +2일**(역대 최장·12일 결정 마비 고착) ② **MeowBeat 44일 = 6주+2일**(쌍 신기록) ③ **NumLink 27일/재동결 11일 한 달 D-3** ④ **bak_btn 단일 결론 확정 = 1.52MB D+49 잔존**(어제 검증 충돌 해소·메인 PowerShell 직접 검증 결과 정답·서브에이전트 "부재" 결론은 잘못된 글로브 폴백·**P0 정의 유효성 확정·11일 연속 가짜 P0 의심 차단**). **어제 5/25 P0 5건 모두 미실행 = 인프라 리셋 합의 0/4**. **🚀 시장 신규 3종**: ① **Dead As Disco 5/5 EA Fever 게이지**(MeowBeat 직접 적용 가능) ② **Snacko 1.0 고양이농장+엘리멘탈 룬**(농작물 강화 BM 모델 참조) ③ **Association/Semantic Pairing 매치-3**(NumLink 한국어 변형 PoC). **🚀 기술 2종**: ① **Unity 6.2(6000.4) 5/14 출시**(LOD 자동생성+Quest LTO·메인 6000.3 LTS 유지) ② **GMA Android SDK 25.0/iOS 13.0 메이저 점프 예고**(호환성 사전 검증). **🚨 보안**: Android CVE-2026-0073 무상호작용 RCE + CVE-2026-21385 Qualcomm GPU 표적 공격. **🔍 QA 신규**: NumLink Scenes "01. Scenes/" 공백 경로 발견 = Tools 부트스트랩 견적 1h → 10분 이내 단축 확정. **📦 콘텐츠 3종**: ① Apple App Store OCR 도입(스크린샷 캡션 색인) ② TikTok 완주율 70%+ 진입선 ③ Dead As Disco 300M 뷰 98% Steam 평가. **🔧 DevOps**: GHA 5/25~26 0건·**Cloudflare NRT 점검 5/27 KST 00-08 = DailyStandup 04:00 정확히 겹침**(다음 04:00 직후 gh run list 1회 검증) + Pages 9일 무중단. **🎨 디자인 2종**: ① **Awwwards 5/24 SOTD Papercraft World**(MeowBeat 캡슐 종이공예 베이크 룩 전환 권고) ② **Mobbin MCP 서버 5/13 런칭**(621,500 실앱 화면·MCP 연계 시드). **🎯 오늘 핵심 결정 = 어제 인프라 리셋 합의 0/4 실행 → 가장 작은 단위 1건만 강제**(bak_btn git rm 5분 또는 NumLink Tools 10분 단축 부트스트랩 둘 중 1건 강제 실행 = 인프라 리셋 출발점).',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — 🚨 32일 연속 결정 실패 1개월 +2일 역대 최장 신기록·MeowBeat 44일 6주+2일 임계 초과·NumLink 27일/재동결 11일 한 달 D-3·어제 P0 5건 12일 연속 미실행·인프라 리셋 합의 0/4·bak_btn 단일 결론 확정 1.52MB D+49',
+        description:
+          'NumLink 4/29 b6d7a73 이후 27일 0커밋·재동결 11일째. MeowBeat 4/12 657032c 이후 44일(어제 43→44·6주+2일 임계 초과 신기록 갱신). agent-office 5/25 02cf998 정상 가동 후 신규 커밋 0건. **5/25 P0 5건 grep 검증**: 3개 레포 5/25 이후 신규 커밋 0건 = 어제 P0 1건도 처리되지 않음 = **12일 연속 미실행 확정·인프라 리셋 합의도 실행 0건**. **🔍 bak_btn 단일 결론 확정**: 메인 에이전트 `Get-Item "C:/Unity/Feedme/Assets/Scenes/MainScene.unity.bak_btn"` PowerShell 직접 검증 = **1.52MB 잔존 확정**(LastWriteTime 2026-04-07·D+49)·**QA 서브에이전트 "부재" 결론은 잘못된 글로브 폴백**·어제 검증 충돌 해소·**P0 정의 유효성 확정·11일 연속 가짜 P0 의심 차단**. **claude.exe PID 12개 안정 유지 추정**. **DailyStandup 스케줄러 정상**: 다음 실행 5/27 04:00·Status=Running·LastResult=267009(0x41301과 동일 "현재 실행 중" 코드). **마감 카운트다운 진행**: **Steam Next Fest 자산 6/3 마감 D-8**(어제 D-9·1일 진행)·**Imagen EOL 6/24 D-29**·**GHA Node24 6/16 D-21**·**WWDC D-13**(6/8). **오늘의 결정 제안**: **🚨 P0 5m bak_btn git rm 1줄 강제 실행**(`git -C C:/Unity/Feedme rm "Assets/Scenes/MainScene.unity.bak_btn" "Assets/Scenes/MainScene.unity.bak_btn.meta"` + commit·**12일 연속 미실행 차단 가장 작은 단위 1건만 강제 = 인프라 리셋 출발점**)·**🚨 P0 10m NumLink Tools 단축 부트스트랩**(QA 발견 "01. Scenes/" 공백 경로 적용·기존 1h 견적 → 10분 이내 단축·`SCENE_PATH = Path("Assets/01. Scenes/MainScene.unity")` 1줄만 수정 + baseline 0 error·둘 중 1건 또는 2건 모두 강제). **인프라 리셋 합의 유지**: 새로운 P0 적재 중단·기존 5건 외 신규 P0 금지.',
+      },
+      {
+        title:
+          '🎮 Game Designer — Dead As Disco 5/5 EA Beat Kune Do Fever 게이지(MeowBeat Perfect 콤보→점수 1.5배+고양이 표정 변화 직접 적용)·Snacko 1.0 5월 고양이농장+엘리멘탈 룬 농작물 강화(MeowBeat 농장 BM 모델 참조)·Association/Semantic Pairing 매치-3 급부상(꿀-벌·망치-못·NumLink 한국어 "1-하나" PoC 가능)',
+        description:
+          '**🚀 시장 신규 1순위**: **Dead As Disco iOS/Android 2026-05-05 EA 출시** — **Beat Kune Do 리듬연동전투** + **Fever 게이지 메커닉**(Perfect 노트 연속 시 Fever 발동 → 일정 시간 데미지/점수 1.5배·시각적 보상 강화)·**MeowBeat 직접 적용 가능**: Perfect 콤보 → Fever 게이지 → 점수 1.5배 + 고양이 표정 변화 = MVP 이후 즉시 실험 가능. **🚀 시장 신규 2순위**: **Snacko 1.0 2026-05 출시** — **고양이농장 + 엘리멘탈 룬 농작물 강화 시스템**(MeowBeat 농장 사이클 BM 모델 직접 참조 = 곡 클리어 보상 → 룬 → 농작물 강화 결정적 드롭). **🚀 시장 신규 3순위**: **Association/Semantic Pairing 매치-3 급부상**(AppSamurai 5월 트렌드) — 꿀-벌·망치-못 등 **의미 페어링** 메커닉·**NumLink 한국어 학습 "1-하나/2-둘" 변형 모드 PoC** 가능·교육 카테고리 진입 차별화 여지. **추가 발견**: **Mobile Movers April 2026 게이밍** — 인디·라이트한 카지노 게임 캘리포니아 합법화·라이브옵스 BM 견인. **GDD 핵심 통합 메시지**: **MeowBeat = Fever 게이지(Dead As Disco) + 엘리멘탈 룬 농장(Snacko) + "농장 사이클이 비트" 카피 = Rhythm Animal Café 정면 충돌 회피 3축 차별화**. **오늘 결정 제안**: **🔥 P0 15m MeowBeat 차별화 1줄 카피 픽스 유지**("농장 사이클이 비트가 되는 코지 리듬게임"·어제 합의 유지) + **P1 30m Fever 게이지 ScriptableObject 1차 설계**(Perfect 콤보 5/10/15 → Fever 활성 3초·점수 1.5배·고양이 idle→excite 애니메이션 트리거·MVP 이후 실험) + **P2 30m Snacko 룬 농작물 강화 BM 모델 학습**(곡 클리어 → 룬 → 농작물 결정적 드롭 단방향 강화). Sources: Dead As Disco EA 5/5·Snacko 1.0 5월·AppSamurai Game Mechanics 2026·PCGamer May 2026 Cozy Games·Gamigion Movers April 2026.',
+      },
+      {
+        title:
+          '💻 Developer — Unity 6.2(6000.4) 2026-05-14 빌드 출시 확정 LOD 자동생성+Quest LTO·GMA Android SDK 25.0/iOS 13.0 메이저 점프 예고(docs 5/22 갱신)·🚨 Android CVE-2026-0073 원격코드실행 무상호작용+CVE-2026-21385 Qualcomm GPU 표적 공격 5/01 패치·.NET 5월 서비싱 업데이트',
+        description:
+          '**🚀 Unity 신규 1순위**: **Unity 6.2(6000.4 라인) 2026-05-14 빌드 출시 확정** — **LOD 자동생성**(모바일 리소스 절감 직결)·**Quest LTO 추가**(VR 빌드 최적화)·**메인 6000.3 LTS 유지 권고**(MeowBeat/NumLink 모두 6000.3.15f1 안정판 유지·6000.4는 별도 브랜치 실험만). **🚀 SDK 신규**: **GMA Unity Plugin Android SDK 25.0.0 / iOS 13.0.0 메이저 점프 예고**(docs 페이지 5/22 갱신)·**다음 릴리스 호환성 사전 검증 필수**(MeowBeat 광고 코드 마이그레이션 영향도 메모 P2 적재). **🚨 보안 신규 2종**: ① **Android CVE-2026-0073 원격코드실행 무상호작용**(5/01 패치·MeowBeat minSdk·targetSdk 점검 필수) ② **CVE-2026-21385 Qualcomm GPU 표적 공격 정황**(SocPrime 분석·Android 디바이스 영향). **.NET 5월 서비싱 업데이트** 적용 권고(Microsoft DevBlogs). **Firebase Unity 13.11.0 유지**(5/15 노트 갱신만·실제 릴리스 변동 없음). **5/25~26 자체 신규 릴리스 미확인**(추측 금지 원칙 준수). **NumLink 미커밋 작업 상태**: 폰트 SDF 6개·Packages/manifest.json·UIThemeSwitcher.cs.meta(.cs 본체 없음·CLAUDE.md 위반·**13일 연속 무변경 = 진행 0**). **MeowBeat 미커밋 4파일 코어 리팩토링**: SongData/SongManager/GameManager/OptionManager + FarmData/manifest·**13일 연속 이월**. **오늘 결정 제안**: **🚨 P0 5m NumLink UIThemeSwitcher.cs.meta 단독 처리**(GUID 충돌 차단·즉시 `git rm` 또는 `.cs` 본체 작성 둘 중 하나·CLAUDE.md 위반·어제 합의 유지) + **P1 1h MeowBeat 코어 4파일 리팩토링 단일 PR 분리 커밋**(13일 이월 종결·`refactor(rhythm): 곡 카드+옵션 매니저 정리`) + **P2 30m Unity 6.2 6000.4 라인 마이그레이션 영향 평가**(별도 브랜치·LOD 자동생성·Developer Data 옵트아웃 분석만 선행). Sources: Unity 6.2 What\'s New·Firebase Unity 13.11.0·GMA Unity Releases·Android Security Bulletin May 2026·SocPrime CVE-2026-21385·.NET DevBlogs May 2026.',
+      },
+      {
+        title:
+          '🔍 QA Tester — MeowBeat Tools 재실측 unity_validate/qa_static/regression 0err 0warn·🔍 NumLink Scenes 폴더명 "01. Scenes/" 공백 포함 발견(Tools 부트스트랩 견적 1h → 10분 이내 단축 확정)·bak_btn 단일 결론 확정 1.52MB 잔존(메인 PowerShell 검증 정답·서브에이전트 "부재"는 잘못된 글로브 폴백)·_Recovery·AutoQATests 양쪽 상태 동일',
+        description:
+          '**🚨 NumLink Tools 34일째 부재 확정**(33→34·`C:/Unity/NumLink/Tools/` 폴더 자체 미생성·4종 전부 부재). **MeowBeat Tools 재실측 정상 가동**: `unity_validate.py`·`qa_static.py`·`run_regression.py` 모두 **0 error 0 warning** 재확인. **🔍 신규 발견**: **NumLink Scenes 폴더명은 `Assets/01. Scenes/` 공백 포함**(템플릿 기본 `Assets/Scenes/`와 다름)·`_ProjectTemplate/Tools/`에서 NumLink로 복사 시 **`unity_validate.py:22`·`qa_static.py:22` `SCENE_PATH = Path("Assets/01. Scenes/MainScene.unity")` 단 1줄만 수정**·**Tools 부트스트랩 실제 견적 1h → 10분 이내 단축 확정**. **_ProjectTemplate/Tools 21개 파일 정상**: unity_validate/qa_static/known_bugs/run_regression + add_song/beat_extractor/gen_notes/note_generator 등. **🔍 bak_btn 단일 결론 확정**: 메인 에이전트 `Get-Item` PowerShell 직접 검증 = **1.52MB 잔존**(LastWriteTime 2026-04-07 12:30:30·D+49)·**서브에이전트 "Feedme 글로브 0건" 결론은 잘못된 검색**(서브에이전트가 다른 디렉토리 검색했거나 글로브 패턴 오류)·**메인 검증 1.52MB가 정답**·**bak_btn 잔존 확정·git rm 명령 유효성 확정**. **_Recovery 양쪽 부재 유지**·**AutoQATests 양쪽 Editor.meta만 빈 폴더 유지**. **미해결 버그 건수: 3건 유지**: ① NumLink Tools 34일 부재 ② MeowBeat bak_btn 1.52MB D+49 잔존 ③ NumLink AutoGenTests 4파일 삭제 의도 불명. **가장 심각**: **NumLink Tools 34일 부재** = CLAUDE.md "Unity AI 자율화 파이프라인 묻지 않고 바로 실행" 의무 위반 + 검증 자동화 0%. **오늘 결정 제안**: **🚨 P0 10m NumLink Tools 단축 부트스트랩 12일 이월 종결 강도 "최상"**(QA 발견 "01. Scenes/" 공백 경로 적용·`_ProjectTemplate/Tools/` → `NumLink/Tools/` 일괄 복사 + `unity_validate.py:22`·`qa_static.py:22` 1줄 수정 + baseline 0 error 확보·**기존 1h 견적 → 10분 단축 확정**) + **🚨 P0 5m bak_btn git rm 1줄 강제 실행**(메인 검증 결과 = 잔존 확정·12일 미실행 차단). Sources: PowerShell Get-Item 직접 검증·MeowBeat Tools 재실측 0err 0warn·`_ProjectTemplate/Tools` 21개 파일 확정.',
+      },
+      {
+        title:
+          '📢 Content Writer — Apple App Store OCR 도입 2026 스크린샷 캡션 텍스트 키워드 색인(MeowBeat 모든 스크린샷 상단 "냥냥 리듬 / Cat Rhythm Tap" 캡션 박기 필수)·TikTok 5월 알고리즘 완주율 70%+ 진입선 60~180초가 15초 추월·Dead As Disco 300M 뷰 98% Steam 평가 인디 리듬게임 흥행 증명',
+        description:
+          '**🚀 콘텐츠 1순위**: **Apple App Store OCR 도입 2026**(ASO World 5월 리포트 + Stormy AI Semantic Search 2026) — **스크린샷 캡션 텍스트가 키워드 색인 대상**·**기존 키워드 100자 외 추가 색인 트래픽 +α**·**MeowBeat 모든 스크린샷 상단 "냥냥 리듬 / Cat Rhythm Tap"·"초보용 Easy 모드"·"고양이 IP" 등 의도 키워드 묶음 텍스트 레이어 박기 필수**·Steam Next Fest 자산 6/3 마감 D-8 직전 ROI 최대. **🚀 콘텐츠 2순위**: **TikTok 5월 알고리즘 변경**(Socialync + Darkroom Agency 2026) — **완주율 70%+ 진입선**(이전 50% → 상향)·**60~180초 콘텐츠가 15초 추월**(어제 다룬 Reels 20분과 정합)·**MeowBeat Shorts 첫 3초 캡션 동일 노출**로 완주율 견인. **🚀 콘텐츠 3순위**: **Dead As Disco 300M 뷰 98% Steam 평가**(Games Press 5월) — 인디 리듬게임 흥행 증명·Steam Next Fest 등록 가치 신호 강화·**MeowBeat 6/3 자산 마감 결단 P0 가속 근거**. **추가 발견**: **Korean Game Studios Build Globally**(KoreaTechDesk) — 한국 인디 글로벌 플랫폼 수익 모델 케이스. **통합 결정 제안**: **🚨 P0 1h MeowBeat OCR-검색 친화 스크린샷 5종 제작**(모든 스크린샷 상단 한글+영문 캡션 텍스트 레이어 박기·"냥냥 리듬 / Cat Rhythm Tap"·"고양이 농장 / Cat Farm"·"Easy 모드 / Easy Mode" 의도 키워드 묶음·**Steam Next Fest 자산 6/3 마감 D-8 ROI 최대 한 수**·동일 캡션 TikTok/Shorts 첫 3초 노출로 완주율 70%+ 동시 노림) + **P1 30m MeowBeat Steam Next Fest 6월 등록 가부 오늘 내 결단**(어제 합의 유지·D-8 가속·미결정 시 자동 미등록). Sources: ASO World May 2026·Stormy AI App Store 2026·Socialync TikTok 2026·Darkroom Agency TikTok 2026·Steam Forecast Wishlist·Games Press Dead As Disco·KoreaTechDesk Korean Studios.',
+      },
+      {
+        title:
+          '🔧 DevOps — GitHub Actions changelog 5/25~26 신규 0건(마지막 5/22·트리플 마이그 D-22~D-51 그대로)·🚨 Cloudflare NRT 점검 5/26 15-23 UTC = KST 5/27 00-08 = DailyStandup 04:00 트리거 윈도우 정확히 겹침·agent-office Pages 9일 무중단 검증 완료 8→9·DailyStandup LastResult 267009=Running 정상',
+        description:
+          '**🔍 GitHub Actions changelog 5/25~26 신규 0건 확정**(마지막 변경 5/22 = 어제 다룬 5/14 GHA 트리플 마이그 공지 그대로)·**windows-latest VS2026 6/8~6/15·macos-latest macOS26 6/15~7/15·Node24 6/16 D-22~D-51 충돌 윈도우 그대로 유지**. **🚨 Cloudflare 5/26 NRT 점검 윈도우 발견**: **5/26 15:00~23:00 UTC = KST 5/27 00:00~08:00**·**DailyStandup_ClaudeCode 다음 실행 5/27 04:00 KST = 점검 윈도우 정확히 겹침**·**다음 04:00 트리거 직후 `gh run list --repo mmporong/agent-office --limit 3` 1회 명시 검증 후 10일차 무중단 카운트 갱신 필수**(점검 영향 시 Pages 배포 지연 가능성)·**LHR 점검 00-06 UTC는 KST 09-15 영향 미미**. **agent-office Pages 9일 무중단 검증 완료**: `gh run list --repo mmporong/agent-office --limit 3` 최근 3건 모두 success(어제 8→오늘 9·과장 아님). **DailyStandup 스케줄러 정상**: 다음 실행 5/27 04:00·Status=Running·LastResult=267009(0x41301과 동일 "현재 실행 중" 코드·이전 회의 "N일째 실패" 표기는 잘못된 해석). **5/25~26 신규 CVE 인프라**: Docker/Node.js/GitHub 빌드 관련 신규 0건. **claude.exe PID 12개 안정 추정**. **오늘 결정 제안**: **🔥 P0 1m 5/27 04:00 트리거 직후 gh run list 1회 명시 검증**(Cloudflare NRT 점검 윈도우 KST 00-08 영향 평가·실패 시 Pages 재배포·9일 무중단 카운트 유지 또는 0 리셋) + **P1 30m GHA 트리플 마이그 사전 PR 유지**(어제 결정·setup-node matrix + windows-2025/macos-14 핀고정 + D-22~D-51 충돌 윈도우 완전 회피) + **P2 Mobbin MCP 서버 5/13 런칭 검토**(621,500 실앱 화면 AI 직조회·OMC MCP 연계 기회 시드·Art Director 발견 공유). Sources: GitHub changelog·Cloudflare Status NRT 5/26·`gh run list mmporong/agent-office`·`schtasks /query DailyStandup_ClaudeCode /v`.',
+      },
+      {
+        title:
+          '🎨 Art Director — 🚀 Awwwards 5/24 SOTD Aimee Papercraft World 2D 일러→3D 베이크 종이공예 룩(MeowBeat 캡슐 전환 권고·Rhythm Animal Café 손그림+파스텔 정면 충돌 회피)·Mobbin MCP 서버 5/13 런칭 621,500 실앱 화면 AI 직조회 BottomSheet 다음 진짜 무기·Steam Next Fest D-8 캡슐만 선제작 가능',
+        description:
+          '**🎨 디자인 신규 1순위**: **Awwwards 5/24 SOTD "Aimee\'s Papercraft World"** — **2D 일러스트를 3D 지오메트리에 베이크한 종이공예 룩**(R3F+Blender+Krita 워크플로우)·**MeowBeat 캡슐아트 방향성 "파스텔 손그림 동물 카페"(Rhythm Animal Café Q1 2026 직접 경쟁작과 동일 레드오션) 대신 "종이공예 베이크 룩" 전환 권고**·**2D 고양이 일러를 3D 농장 박스에 텍스처 베이크 → 캡슐 썸네일 1장에서 "수제 디오라마" 인상 2초 내 전달**·**Steam Next Fest D-8 마감 직전 MeowBeat Prefabs 부재 상태를 역이용해 캡슐만 1장 디오라마식 선제작 가능**(전체 인게임 리소스 재작업 불필요). **🎨 디자인 신규 2순위**: **Mobbin MCP 서버 2026-05-13 런칭** — **621,500 실앱 화면 AI 직조회**·**BottomSheet 표준화 다음 진짜 무기**(어제 다룬 BottomSheet에서 한 단계 진화)·**OMC Claude MCP 연계 시드**(gstack/Claude → Mobbin 실시간 패턴 검색). **🎨 디자인 신규 3순위**: **Rhythm Animal Café 손그림+파스텔+동물 일상 = MeowBeat 직접 경쟁 비주얼**(Q1 2026 PC 출시 전 비주얼 차별화 결단 필수). **AI 슬롭 회피 원칙 준수**: 종이공예 디오라마 = 손그림과는 다른 차별축·민트+다크/뻔한 그라데이션·기계적 카드 그리드 회피·**손그림 vs 종이공예 베이크 vs 옴브레 = 차별화 3축**. **NumLink Mulmaru OFL 픽셀 폰트 도입 P1 유지**(어제 결정·Maplestory 라이선스 회색지대 대체). **오늘 결정 제안**: **🔥 P0 1h MeowBeat 캡슐아트 종이공예 베이크 룩 1차 컨셉 스케치**(고양이 일러 1종 + 농장 박스 3D 베이크 + 디오라마 배치·**Steam Next Fest D-8 마감 직전·캡슐만 선제작·전체 리소스 재작업 불필요**·Rhythm Animal Café Q1 2026 정면 충돌 회피) + **P1 30m Mobbin MCP 서버 OMC 연계 시드 평가**(Art Director 패턴 검색 자동화 기회·차후 design-shotgun 통합). Sources: Awwwards SOTD 5/24 Aimee Papercraft·Mobbin MCP 5/13·Steam Animal Café Rhythm Q1 2026·Steam Next Fest 6월 자산 6/3 D-8.',
+      },
+    ],
+    meetingTitle:
+      '🌅 5/26 화요일 평일 둘째날 종합 회의 — 1개월 +2일 임계 / 인프라 리셋 합의 0/4 실행 / 가장 작은 단위 1건만 강제 합의',
+    meetingSummary:
+      '7명 에이전트 종합 회의 — **🚨 32일 연속 결정 실패 + 어제 인프라 리셋 합의 0/4 실행 직후**. 메인 합의: **bak_btn 단일 결론 확정 1.52MB D+49 잔존(메인 검증 정답)·P0 정의 유효성 확정·가장 작은 단위 1건(bak_btn git rm 5분 또는 Tools 부트스트랩 10분)만 강제 실행 = 인프라 리셋 출발점**. QA 신규 발견(NumLink "01. Scenes/" 공백 경로) 적용으로 Tools 부트스트랩 견적 1h → 10분 단축 확정. Dead As Disco Fever 게이지/Snacko 룬 농장 BM/Awwwards Papercraft 베이크 룩 3종 신규 적용 가능. Apple OCR + TikTok 완주율 70%+ = MeowBeat 스크린샷 캡션 박기 ROI 최대. Cloudflare NRT 점검 5/27 KST 00-08 = DailyStandup 04:00 정확히 겹침 = gh run list 1회 명시 검증 필수.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '32일 연속 결정 실패 1개월 +2일 역대 최장 신기록 갱신·MeowBeat 44일 6주+2일 임계 초과·NumLink 27일/재동결 11일 한 달 D-3·**어제 인프라 리셋 합의 0/4 실행**. bak_btn 단일 결론 확정 1.52MB D+49 잔존(메인 PowerShell 검증 정답). 가장 작은 단위 1건만 강제 합의.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: 'Dead As Disco 5/5 EA Fever 게이지(MeowBeat Perfect 콤보→점수 1.5배 직접 적용)·Snacko 1.0 5월 고양이농장+엘리멘탈 룬(농장 BM 모델 참조)·Association/Semantic Pairing 매치-3(NumLink 한국어 "1-하나" PoC). Fever 게이지 ScriptableObject 1차 설계 P1.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'Unity 6.2(6000.4) 5/14 출시 LOD 자동생성+Quest LTO(메인 6000.3 LTS 유지)·GMA Android SDK 25.0/iOS 13.0 메이저 점프 예고·🚨 Android CVE-2026-0073 원격코드실행 무상호작용+CVE-2026-21385 Qualcomm GPU 표적 공격. minSdk·targetSdk 점검 필수.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'MeowBeat Tools 재실측 0err 0warn·🔍 **NumLink Scenes "01. Scenes/" 공백 경로 발견 = Tools 부트스트랩 견적 1h → 10분 단축 확정**·bak_btn 1.52MB D+49 잔존 확정(메인 검증 정답·서브에이전트 "부재"는 잘못된 글로브). NumLink Tools P0 강도 "최상".',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'Apple App Store OCR 도입 2026 스크린샷 캡션 텍스트 키워드 색인·TikTok 5월 완주율 70%+ 진입선·60~180초가 15초 추월·Dead As Disco 300M 뷰 98% Steam 평가. MeowBeat 스크린샷 5종 OCR-친화 캡션 박기 P0 = Next Fest D-8 ROI 최대.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'GHA changelog 5/25~26 신규 0건(트리플 마이그 D-22~D-51 그대로)·🚨 **Cloudflare NRT 점검 5/27 KST 00-08 = DailyStandup 04:00 정확히 겹침**·agent-office Pages 9일 무중단 검증 완료. 다음 04:00 직후 gh run list 1회 명시 검증 P0.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '🚀 **Awwwards 5/24 SOTD Aimee Papercraft World 2D→3D 베이크 종이공예 룩**(MeowBeat 캡슐 전환 권고·Rhythm Animal Café 정면 충돌 회피·캡슐만 선제작 가능)·Mobbin MCP 서버 5/13 런칭(621,500 실앱 화면 AI 직조회). MeowBeat 캡슐 종이공예 1차 컨셉 P0.',
+      },
+    ],
+    decisions: [
+      {
+        title:
+          '🚨 P0 [bak_btn git rm 1줄 5m · 12일 연속 미실행 차단 가장 작은 단위 강제 실행]',
+        description:
+          '메인 에이전트 PowerShell 직접 검증 = **1.52MB 잔존 확정**(D+49). `git -C C:/Unity/Feedme rm "Assets/Scenes/MainScene.unity.bak_btn" "Assets/Scenes/MainScene.unity.bak_btn.meta"` + `git commit -m "chore: bak_btn D+49 정리"`. **12일 연속 미실행 차단 가장 작은 단위 1건 = 인프라 리셋 출발점**. 새로운 P0 적재 중단·기존 5건 외 신규 금지 합의 유지.',
+      },
+      {
+        title:
+          '🚨 P0 [NumLink Tools 단축 부트스트랩 10m · 견적 1h → 10분 단축 확정]',
+        description:
+          'QA 신규 발견: **NumLink Scenes 폴더명 "01. Scenes/" 공백 포함** = `_ProjectTemplate/Tools/` → `NumLink/Tools/` 일괄 복사 + `unity_validate.py:22`·`qa_static.py:22` `SCENE_PATH = Path("Assets/01. Scenes/MainScene.unity")` 1줄만 수정 + baseline 0 error 확보. **34일 부재 12일 이월 종결**. **둘 중 1건 또는 2건 모두 강제** (인프라 리셋 출발점 = 신규 P0 적재 금지 유지).',
+      },
+      {
+        title:
+          '🚨 P0 [Cloudflare NRT 점검 5/27 KST 00-08 = DailyStandup 04:00 정확히 겹침 직후 gh run list 1회 명시 검증 1m]',
+        description:
+          'CF NRT 점검 윈도우와 DailyStandup_ClaudeCode 04:00 트리거가 정확히 겹침. **5/27 04:00 직후 `gh run list --repo mmporong/agent-office --limit 3` 1회 명시 검증** = Pages 배포 실패 시 즉시 재배포·9일 무중단 카운트 유지 또는 0 리셋 판정·점검 영향 평가 데이터 확보.',
+      },
+      {
+        title:
+          '🔥 P1 [MeowBeat OCR-친화 스크린샷 5종 + 캡슐 종이공예 1차 컨셉 1~2h · Steam Next Fest D-8 ROI 최대]',
+        description:
+          'Apple OCR 도입 = 스크린샷 캡션 텍스트가 키워드 색인 대상. 모든 스크린샷 상단에 "냥냥 리듬 / Cat Rhythm Tap"·"고양이 농장"·"Easy 모드" 등 의도 키워드 박기·동일 캡션 TikTok/Shorts 첫 3초로 완주율 70%+ 동시 노림. Awwwards Papercraft 베이크 룩 캡슐 1장 선제작(Rhythm Animal Café Q1 2026 정면 충돌 회피·전체 인게임 리소스 재작업 불필요). **D-8 마감 직전 ROI 최대 한 수**.',
+      },
+      {
+        title:
+          '🔧 P1 [Fever 게이지 ScriptableObject 1차 설계 + 코어 4파일 리팩토링 분리 커밋 1~1.5h · 13일 이월 종결]',
+        description:
+          'Dead As Disco Fever 메커닉 차용: Perfect 콤보 5/10/15 → Fever 활성 3초·점수 1.5배·고양이 idle→excite 애니메이션 트리거. MeowBeat 미커밋 4파일(SongData/SongManager/GameManager/OptionManager) 단일 PR 분리 커밋으로 13일 이월 종결.',
+      },
+      {
+        title:
+          '🔍 P2 [어제 인프라 리셋 합의 잔여 3건 보류 · 새로운 P0 적재 중단 유지]',
+        description:
+          'agent-office `.omc/sessions/` 일괄 정리·GAME_BRIEF freeze acknowledgment·NumLink UIThemeSwitcher.cs.meta 단독 처리 3건 = **오늘 강제 1건 성공 검증 후 내일 1건씩 단계적 진행**·새로운 P0 적재 절대 금지·기존 5건 외 신규 금지·결정 단위 0.1건도 12일째 실패 차단 = "가장 작은 1건 강제" 원칙 유지.',
+      },
+    ],
+  },
+  {
     id: '2026-05-25T04:00:00-daily-standup',
     date: '2026-05-25',
     researchTitle:
