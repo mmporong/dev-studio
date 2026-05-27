@@ -43,6 +43,119 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-05-28T04:00:00-daily-standup',
+    date: '2026-05-28',
+    researchTitle:
+      '🌅 5/28 목요일 데일리 스탠드업 — **✅ 결정 마비 33일 만에 균열 — 2일 연속 P0 실행 성공**(어제 bak_btn 삭제 + 오늘 UIThemeSwitcher.cs.meta 커밋 27d67fe = 14일 만에 첫 실행 흐름)·**🔧 NumLink GUID 휘발 위험 해소 완료**(UIThemeSwitcher.cs.meta 단독 커밋 = 어제 결정 P0 메인이 직접 실행·미실행 악순환 차단)·**MeowBeat 동결 46일 6주+4일**(곡 10개 = MVP 컷라인 충족·Sprint2 디자인/Sprint3 먹이주기 blocker)·**NumLink 재동결·미커밋 40파일**(bak_btn·UIThemeSwitcher.meta 2건 처리로 41→40)·**🔍 PKM 태스크명 정정**: 실제 이름 = **PKM_GBrain_Sync_Daily**(이전 회의 PKM_GBrain_Sync 오기·`_Daily` 접미사 누락이 쿼리 실패 원인)·**근본원인 확정 = gbrain CLI WASM `Aborted()` 즉사**(embeddinggemma 임베딩 모듈·3일 연속 동일 패턴·재시도 무의미·자동복구 불가)·**🚀 게임 시장 신규**: **Arrows 화살표 퍼즐 4월 급부상**(Arrows–Puzzle Escape 2,090만 DL 전체 3위·Arrows GO! 1,610만·타이머 없이 하트 3개 실수 제한 = 코지 무압박+긴장감 양립·NumLink 연결 순서 의존성과 동일 계열)·퍼즐 리텐션 벤치 D1 31.85%/D30 5.35%·**🚀 기술 신규**: **Unity 6.3 LTS(6000.3.0f1) 25.12 정식 출시**(지원~27.12·2D URP Box2D v3·Sprite Atlas Analyser·Bloom Dual/Kawase 모바일 최적·NumLink/MeowBeat 2D 직접 수혜) + **Unity Hub 독립 CLI 26.4.21**(시작 5초→100ms·`unity upgrade` 자체 업데이트·CI 자동화 최적)·**🚨 보안 신규**: **Megalodon 5/18 6시간 내 5,561개 레포 악성 CI 주입·시크릿 탈취**(감염 33%가 인포스틸러 PAT 유출 진입점·agent-office는 actions SHA 핀으로 견고·단 weekly-insights.yml `contents:write` 토큰 회전 권고)·**📦 콘텐츠 신규**: **구글플레이 "Ask Play" 제미나이 챗봇 + 인앱 콘텐츠 AI 색인**(키워드→시맨틱 색인 전환)·양 스토어 리텐션/7일 잔존율 기반 랭킹 전환·플레이어블 광고 CTR 11.34%(배너 18배)·wake lock 5% 신규 코어바이탈(3/1~)·**🎨 디자인 신규**: **듀오톤(2색 split-tone) 컬러 시그니처 + 보석톤 부상**(썸네일 장르 식별=리텐션 핵심)·시간대 적응형 컬러 무드·하이퍼새츄레이트 1포인트 악센트.',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제46회 — **5/28 목요일·1개월 임계 D+4**. **✅ 메타-마비 균열 신호**: **33일 결정 실패 → 2일 연속 P0 실행 성공**(어제 bak_btn 삭제 + 오늘 메인이 UIThemeSwitcher.cs.meta 단독 커밋 27d67fe로 직접 실행 = GUID 휘발 위험 해소·14일 만에 첫 실행 흐름 형성). **NumLink 미커밋 41→40파일**(2건 P0 처리). **MeowBeat 46일 동결**(곡 10개 = MVP 컷라인 충족·Sprint2 디자인/Sprint3 먹이주기 FarmScene 파란화면이 blocker). **🔍 PKM 정정 2건**: ① 태스크 실제명 = **PKM_GBrain_Sync_Daily**(이전 회의 `_Daily` 누락 오기 = 쿼리 실패 유발) ② 근본원인 = **gbrain CLI WASM `Aborted()` 즉사**(embeddinggemma 임베딩·3일 연속·자동복구 불가 = 일시 비활성화 또는 로그캡처 결단 필요). **🚀 시장**: **Arrows 화살표 퍼즐 4월 급부상**(Arrows–Puzzle Escape 2,090만 DL 3위·하트 3개 무압박 모델·NumLink 순서 의존성과 동일 계열). **🚀 기술**: **Unity 6.3 LTS(6000.3.0f1) 정식 + Hub 독립 CLI**(2D 모바일 직접 수혜·CI 자동화). **🚨 보안**: **Megalodon 5,561개 레포 공격**(PAT 유출 진입·agent-office SHA 핀 견고·토큰 회전 권고). **📦 콘텐츠**: 구글플레이 Ask Play AI 색인·리텐션 기반 랭킹 전환·플레이어블 CTR 11.34%. **🎨 디자인**: 듀오톤 컬러 시그니처 + 보석톤(NumLink 3테마 split-tone 재정의). **🎯 오늘 핵심 결정 = ① PKM_GBrain_Sync_Daily 일시 비활성화 + WASM Aborted() 패치 P1 등록(무의미한 매일 실패 누적 차단) ② NumLink Tools 부트스트랩 10분(자동 회귀 검증 확보) ③ 2일 연속 P0 실행 흐름 유지 = MeowBeat 코어 4파일 커밋 또는 NumLink 40파일 정리**.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — ✅ 2일 연속 P0 실행 성공(어제 bak_btn 삭제 + 오늘 UIThemeSwitcher.cs.meta 커밋 27d67fe)·MeowBeat 46일 곡 10개 MVP 충족·NumLink 미커밋 41→40·PKM_GBrain_Sync_Daily 근본원인 gbrain WASM Aborted() 자동복구 불가',
+        description:
+          '**✅ 결정 마비 균열**: 어제 bak_btn 파일 완전 삭제 확인(find 결과 0건) + 오늘 메인이 UIThemeSwitcher.cs.meta 단독 커밋 27d67fe 직접 실행 = **33일 결정 실패 → 14일 만에 첫 실행 흐름**·GUID 휘발 위험 해소. **MeowBeat(feature/song-ownership-migration 브랜치 체류)**: manifest 곡 10개 = MVP 컷라인 충족·SongData/GameManager/SongManager/manifest 미커밋·Sprint2 디자인·Sprint3 먹이주기(FarmScene 파란화면)가 P0-005 blocker. **NumLink(feature/uitoolkit 브랜치)**: Phase 4·5 거의 완료·Phase 6(킥) 미착수·미커밋 41→40파일(2건 P0 처리). **🔍 PKM 근본원인 확정**: 태스크 실제명 = PKM_GBrain_Sync_Daily(이전 회의 `_Daily` 누락 오기)·gbrain CLI가 WASM 레벨 `Aborted()`로 매회 즉사(embeddinggemma 임베딩 모듈·MEMORY reference_gbrain.md 패치 언급)·3일 연속 동일·재시도 무의미·**자동복구 불가 확정**. **오늘의 결정 제안**: **🚨 P0 PKM_GBrain_Sync_Daily 일시 비활성화(또는 알림만) + WASM Aborted() 패치 별도 P1 등록**(매일 03:00 무의미한 실패 누적 차단) + **P1 2일 연속 실행 흐름 유지**. (참고: SPRINT.md·progress.txt·sync_brain.log)',
+      },
+      {
+        title:
+          '🎮 Game Designer — Arrows 화살표 퍼즐 4월 급부상 Arrows–Puzzle Escape 2,090만 DL 전체 3위·Arrows GO! 1,610만·타이머 없이 하트 3개 실수 제한 코지 무압박+긴장감 양립·퍼즐 리텐션 벤치 D1 31.85% D30 5.35%·Royal Match $1.3B 여전 1위 스트릭 손실회피 습관화',
+        description:
+          '**🚀 시장 신규 1순위**: **Arrows 화살표 퍼즐 2026-04 급부상** — Miniclip의 **Arrows–Puzzle Escape 2,090만 DL(전체 3위)**·**Arrows GO! 1,610만**·핵심 메커닉 = **방향+순서 의존**(막힌 화살표는 경로 먼저 비워야 이동)으로 **NumLink의 연결 순서 의존성과 동일 계열**. **무압박+긴장 양립**: 타이머 없이 **하트 3개 실수 제한**만 사용·코지 분위기 유지하며 실수에 무게 부여. **리텐션 벤치마크**: 퍼즐 장르 **D1 31.85%/D30 5.35%**·하이브리드캐주얼 목표 D1 35~45/D7 20. **매출 동력**: Royal Match $1.3B(2025) 여전 1위·신규 동력은 콘텐츠 업데이트 + **스트릭(연속 출석) 손실회피 습관화**. **오늘 결정 제안**: **P1 NumLink "하트 3개 실수 제한 + 순서 힌트" 모드 도입**(타이머 대신 하트로 무압박 유지·"막힌 노드는 선행 연결 먼저 풀어야" 시각 힌트·기존 별점과 충돌 없이 추가·4월 화살표 퍼즐 흥행 수요에 정렬). Sources: Miniclip Arrows·Sensor Tower April 2026·하이브리드캐주얼 리텐션 벤치마크.',
+      },
+      {
+        title:
+          '💻 Developer — Unity 6.3 LTS(6000.3.0f1) 25.12 정식 출시 지원~27.12·2D URP Box2D v3+Sprite Atlas Analyser+Bloom Dual/Kawase 모바일 최적·Unity Hub 독립 CLI 26.4.21 시작 5초→100ms CI 자동화 최적·NumLink 40파일 6.3 검증 전 커밋·태깅 롤백 안전망',
+        description:
+          '**🚀 기술 신규 1순위**: **Unity 6.3 LTS(6000.3.0f1) 2025-12 정식 출시**(지원 종료 2027-12·신규 프로젝트 권장)·모바일 관련: **2D URP Box2D v3 저수준 물리**(멀티스레드·결정성)·**Bloom Dual/Kawase 필터**(모바일 저해상도 최적)·**Sprite Atlas Analyser**·Tile 기반 GameObject 인스턴스화 성능 개선·**NumLink/MeowBeat 모두 2D 모바일 = 직접 수혜**. **🚀 기술 신규 2순위**: **Unity Hub 독립 CLI 2026-04-21 출시**(별도 바이너리·`unity upgrade` 자체 업데이트·시작 **5초→100ms 미만(10배)**·JSON/TSV 구조화 출력 = CI/빌드 자동화 + AI 자율화 파이프라인 직결). **오늘 결정 제안**: **P1 NumLink 미커밋 40파일을 6.3 LTS 업그레이드 검증 전 커밋·태깅하여 롤백 안전망 확보** 후 6.3 시험 브랜치에서 **Sprite Atlas Analyser로 2D 아틀라스 효율 점검**(둘 다 2D 모바일 직접 수혜) + **P2 Hub CLI 도입으로 빌드 자동화**. Sources: Unity 6.3 LTS 릴리스 노트·Unity Hub CLI 26.4.21 공지.',
+      },
+      {
+        title:
+          '🔍 QA Tester — NumLink Tools 폴더 부재 자동 검증 0건 지속(MeowBeat만 보유)·UIThemeSwitcher.cs.meta 오늘 커밋으로 GUID 휘발 위험 해소(메인 직접 실행 검증)·MeowBeat validate/qa_static 0 error 곡 10개 오디오·난이도·default 4곡 무결·MeowBeat Tools는 반드시 루트에서 실행',
+        description:
+          '**✅ UIThemeSwitcher.cs.meta 해소 검증**: 같은 폴더 다른 .cs는 .meta 짝 추적·UIThemeSwitcher만 미추적이었으나 **오늘 메인이 단독 커밋 27d67fe로 git 추적 전환 완료**(`git ls-files` 확인)·GUID 재생성→씬/uxml 참조 깨짐 리스크 제거. **🚨 NumLink Tools 부재 지속**: `C:/Unity/NumLink/Tools/` 폴더 자체 없음 = **자동 회귀 검증 0건 = 최대 리스크**(MeowBeat만 보유). **MeowBeat 무결**: 루트 실행 시 unity_validate.py·qa_static.py 모두 **0 error**·곡 10개 전부 오디오 실재·빈 난이도 없음·default 곡 4개 정상. **⚠️ 실행 주의**: MeowBeat qa_static/unity_validate는 상대경로 기반 → 반드시 프로젝트 루트 `C:/Unity/Feedme`에서 실행(Tools 폴더에서 돌리면 manifest 미발견 오탐). **오늘 결정 제안**: **🚨 P0 10m NumLink Tools 부트스트랩**(MeowBeat Tools를 NumLink에 복사 + 경로 상수만 수정 + baseline 0 error·자동 회귀 검증 확보) + **P1 .meta git 추적 점검 룰 qa_static 추가**. Sources: NumLink/MeowBeat Tools 재실측·git ls-files 검증.',
+      },
+      {
+        title:
+          '📢 Content Writer — 구글플레이 Ask Play 제미나이 챗봇+인앱 콘텐츠 AI 색인(키워드→시맨틱 전환)·양 스토어 리텐션/7일 잔존율 기반 랭킹 전환·플레이어블 광고 CTR 11.34% 배너 18배 보상광고 완료율 95%·wake lock 5% 신규 코어바이탈 3/1부터 미준수 노출 제외',
+        description:
+          '**📦 콘텐츠 신규 1순위**: **구글플레이 "Ask Play"(제미나이 챗봇) + 인앱 콘텐츠 색인화** — AI 추천이 기존 순위 위에 노출·**키워드 나열 → AI 시맨틱 색인 대응으로 ASO 전환 필요**. **📦 신규 2순위**: **양 스토어 모두 설치량 → 리텐션/7일 잔존율 기반 랭킹 전환**·**플레이어블 광고 CTR 11.34%**(정적 배너 18배·완주형 보상광고 완료율 95%). **📦 신규 3순위**: **구글플레이 wake lock 5% 임계 신규 코어바이탈**(3/1부터 미준수 앱 노출 제외). **오늘 결정 제안**: **P1 NumLink 스토어 등록정보를 AI 시맨틱 색인 대응으로 재작성** — ① 난이도/모드를 인앱 콘텐츠 deep link로 노출(Play 검색 색인) ② 스크린샷 캡션을 자연어 문장("숫자 연결 퍼즐, 두뇌 트레이닝")으로 ③ Ask Play 예상 질문("쉬운 퍼즐?", "오프라인 두뇌게임?")에 답하는 Q&A형 설명 첫 2줄 + **7일 잔존율을 마케팅 KPI 1순위 설정** + **P2 NumLink 한 판 미니 데모 플레이어블 광고 제작**. Sources: ASO World May 2026·App Store Ranking 2026 Retention·CTR Benchmark 2026·Playio Rewarded Ad 2026.',
+      },
+      {
+        title:
+          '🚀 DevOps — Megalodon 5/18 6시간 5,561개 레포 악성 CI 주입·시크릿 탈취(감염 33% 인포스틸러 PAT 유출 진입)·agent-office 배포 정상 최근 5건 success(5/27 47초)·actions SHA 핀으로 견고·weekly-insights.yml contents:write 토큰 회전 권고·PKM_GBrain_Sync_Daily 3일 연속 실패 로그 캡처 필요',
+        description:
+          '**🚨 보안 신규**: **Megalodon 공격(5/18)** — 6시간 내 **5,561개 GitHub 저장소에 악성 CI 워크플로우 주입·시크릿 탈취**·**감염 33%가 인포스틸러로 탈취된 PAT 유출이 진입점**. **agent-office 배포 정상**: 최근 GitHub Pages 배포 5건 전부 success(마지막 5/27 04:17 KST 47초)·Weekly Insights 5/25 success·**두 워크플로우 모두 actions를 commit SHA로 핀 = 워크플로우 주입에 견고**. **⚠️ 잔여 리스크**: weekly-insights.yml `permissions: contents:write` 보유(Pages는 contents:read)·토큰 탈취 시 푸시 가능 → **이번 주 토큰 회전 권고** + GitHub 5/22 staged publishing(npm 2FA 게이트) 검토. **오늘 결정 제안**: **🚨 P0 PKM_GBrain_Sync_Daily 다음 1회 실행을 stdout/stderr 리다이렉트(`>> sync.log 2>&1`)로 감싸 종료코드·에러 메시지 확보** → OBSERVE→ROOT→FIX(추측 수정 금지·Orchestrator의 WASM Aborted() 가설 교차 검증) + **P1 weekly-insights.yml 토큰 회전**. Sources: The Hacker News·StepSecurity·SecurityWeek Megalodon.',
+      },
+      {
+        title:
+          '🎨 Art Director — 2026 듀오톤(2색 split-tone)+보석톤 컬러 시그니처 부상(썸네일 장르 식별=리텐션 핵심)·시간대 적응형 컬러 무드(아침 라이트/집중 저대비/저녁 웜톤)·하이퍼새츄레이트 1포인트 악센트(근-블랙 #09090B에 일렉트릭블루)·NumLink 3테마 듀오톤 재정의 제안',
+        description:
+          '**🎨 디자인 신규 1순위**: **듀오톤(2색 split-tone) + 보석톤 컬러 시그니처 부상** — 썸네일에서 장르 식별되는 컬러 시그니처가 **리텐션 핵심**. **🎨 신규 2순위**: **시간대 적응형 컬러 무드**(아침=라이트+활기·집중=저대비·저녁=웜톤+느린 전환·AI 레이아웃 아닌 순수 컬러축). **🎨 신규 3순위**: **하이퍼새츄레이트 1포인트 악센트**(근-블랙 #09090B에 일렉트릭블루·네온그린·코랄 1포인트만). **오늘 결정 제안**: **P1 NumLink 3테마를 듀오톤 컬러 시그니처로 재정의** — Kawaii = 코랄핑크 #FF7AA2 ↔ 크림 #FFF3E6 / Premium = 사파이어 #1E3A8A ↔ 샴페인골드 #E8C97A(근-블랙 #09090B 배경) / Retro = 머스타드 #E0A526 ↔ 틸 #1F7A6E·연결선·완성 숫자만 일렉트릭블루 #2D6BFF 1포인트 강조(민트+다크/뻔한 그라데이션 회피·테마별 단일 시그니처로 광고 썸네일 인지도↑) + **P2 MeowBeat 시간대 적응형 컬러 무드**(낮 농장=라이트/저녁=웜톤). Sources: 2026 컬러 트렌드 듀오톤·보석톤·Awwwards/Mobbin 2026.',
+      },
+    ],
+    meetingTitle:
+      '🤝 5/28 종합 회의 — ✅ 결정 마비 33일 만에 균열(2일 연속 P0 실행)·PKM_GBrain_Sync_Daily 자동복구 불가 확정 일시 비활성화 결단·NumLink Tools 부트스트랩으로 자동 회귀 검증 확보',
+    meetingSummary:
+      '제46회 종합 회의. **핵심 = 33일 결정 마비가 2일 연속 P0 실행(어제 bak_btn + 오늘 UIThemeSwitcher.cs.meta 커밋 27d67fe)으로 균열**. 어제 결정 2건 중 1건(bak_btn)은 어제 실행·나머지 1건(.meta git add)은 오늘 회의에서 메인이 직접 실행 완료로 종결 = "결정만 하고 실행 안 함"의 악순환 차단. PKM_GBrain_Sync_Daily는 이름 정정(_Daily 누락이 쿼리 실패 원인) + 근본원인 gbrain WASM Aborted() 확정으로 자동복구 불가 = 일시 비활성화 + 패치 P1 등록 결단. 신규 리서치는 Arrows 화살표 퍼즐(NumLink 순서 의존성 정렬)·Unity 6.3 LTS+Hub CLI·Megalodon 공격·Ask Play AI 색인·듀오톤 컬러 시그니처로 중복 없이 수집.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '✅ 33일 결정 마비 균열 — 어제 bak_btn 삭제 + 오늘 UIThemeSwitcher.cs.meta 커밋 27d67fe 직접 실행으로 2일 연속 P0 실행. MeowBeat 46일 곡 10개 MVP 충족이나 Sprint2/3 blocker. NumLink 41→40파일. PKM_GBrain_Sync_Daily 근본원인 gbrain WASM Aborted() = 자동복구 불가, 일시 비활성화 결단 필요.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: 'Arrows 화살표 퍼즐 4월 급부상(Arrows–Puzzle Escape 2,090만 DL 3위·하트 3개 무압박 모델)이 NumLink 연결 순서 의존성과 동일 계열. NumLink에 하트 3개 실수 제한 + 순서 힌트 모드 도입 제안 — 타이머 없이 코지 유지하며 흥행 수요에 정렬.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'Unity 6.3 LTS(6000.3.0f1) 25.12 정식 + Hub 독립 CLI 26.4.21(5초→100ms). 둘 다 2D 모바일 직접 수혜. NumLink 40파일을 6.3 검증 전 커밋·태깅으로 롤백 안전망 확보 후 Sprite Atlas Analyser로 아틀라스 효율 점검 권고.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'UIThemeSwitcher.cs.meta 오늘 커밋으로 GUID 휘발 위험 해소 검증 완료. 단 NumLink Tools 폴더 부재로 자동 회귀 검증 0건이 최대 리스크 지속. MeowBeat는 0 error 무결. NumLink Tools 부트스트랩 10분이 최우선.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '구글플레이 Ask Play(제미나이) AI 색인으로 키워드→시맨틱 전환·리텐션 기반 랭킹 전환. NumLink 스토어 등록정보를 자연어 캡션+Q&A 설명으로 재작성하고 7일 잔존율을 KPI 1순위로. 플레이어블 광고 CTR 11.34%(배너 18배) 미니 데모 제작 권고.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'Megalodon 5/18 5,561개 레포 공격(PAT 유출 진입)이나 agent-office는 actions SHA 핀으로 견고·배포 5건 success. PKM_GBrain_Sync_Daily 다음 실행을 로그 리다이렉트로 감싸 에러 캡처 후 근거 기반 수정(추측 금지). weekly-insights.yml contents:write 토큰 회전 권고.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '2026 듀오톤+보석톤 컬러 시그니처 부상(썸네일 장르 식별=리텐션). NumLink 3테마를 split-tone으로 재정의(Kawaii 코랄핑크↔크림·Premium 사파이어↔골드·Retro 머스타드↔틸), 연결선만 일렉트릭블루 1포인트. 민트+다크/뻔한 그라데이션 회피.',
+      },
+    ],
+    decisions: [
+      {
+        title: '✅ [완료] NumLink UIThemeSwitcher.cs.meta 단독 커밋 — GUID 휘발 위험 해소',
+        description:
+          '어제 미실행 P0를 오늘 회의에서 메인이 직접 실행. git add 후 단독 커밋 27d67fe(fix(meta): UIThemeSwitcher.cs.meta 추적 추가). git ls-files로 추적 전환 확인 = 재클론 시 GUID 재생성→씬/uxml 참조 깨짐 리스크 제거. 어제 bak_btn 삭제에 이어 2일 연속 P0 실행으로 33일 결정 마비 균열.',
+      },
+      {
+        title: '[P0] PKM_GBrain_Sync_Daily 일시 비활성화 + WASM Aborted() 패치 P1 등록',
+        description:
+          '근본원인 = gbrain CLI가 WASM 레벨 Aborted()로 매회 즉사(embeddinggemma 임베딩)·3일 연속 동일·재시도 무의미 = 자동복구 불가. 매일 03:00 무의미한 실패 누적을 차단하기 위해 태스크 일시 비활성화(또는 알림만) 후, 다음 1회는 stdout/stderr 리다이렉트(>> sync.log 2>&1)로 감싸 에러 메시지 확보 → OBSERVE→ROOT→FIX. 패치는 별도 P1.',
+      },
+      {
+        title: '[P0] NumLink Tools 부트스트랩 10분 — 자동 회귀 검증 0건 해소',
+        description:
+          'NumLink는 Tools 폴더 자체가 없어 자동 회귀 검증 0건 = 최대 리스크. _ProjectTemplate/Tools(또는 MeowBeat Tools)를 NumLink에 복사하고 씬 경로 상수("01. Scenes/" 공백 경로 포함)만 수정 후 baseline 0 error 확인. 2일 연속 실행 흐름을 잇는 최소·검증된 작업.',
+      },
+      {
+        title: '[P1] 2일 연속 P0 실행 흐름 유지 — MeowBeat 코어 커밋 또는 NumLink 40파일 정리',
+        description:
+          'MeowBeat 코어 4파일(SongData/GameManager/SongManager/manifest)을 단일 PR로 분리 커밋(이월 종결) 또는 NumLink 미커밋 40파일을 6.3 LTS 검증 전 커밋·태깅(롤백 안전망). 결정 마비 균열 흐름을 사흘째로 잇는 것이 핵심.',
+      },
+      {
+        title: '[P2] 신규 리서치 적용 — Arrows 하트 모드·듀오톤 테마·Ask Play ASO',
+        description:
+          'Game Designer: NumLink 하트 3개 실수 제한+순서 힌트 모드 검토. Art Director: NumLink 3테마 듀오톤 컬러 시그니처 재정의. Content Writer: 스토어 등록정보 AI 시맨틱 색인(Ask Play) 대응 + 7일 잔존율 KPI화. 모두 여유 있을 때 컨셉 메모부터.',
+      },
+    ],
+  },
+  {
     id: '2026-05-27T04:00:00-daily-standup',
     date: '2026-05-27',
     researchTitle:
