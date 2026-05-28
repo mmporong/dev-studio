@@ -43,6 +43,119 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-05-29T04:00:00-daily-standup',
+    date: '2026-05-29',
+    researchTitle:
+      '🌅 5/29 금요일 데일리 스탠드업 — **✅ 3일 연속 P0 실행 — PKM_GBrain_Sync_Daily 비활성화 메인 직접 실행 완료**(어제 결정 P0 종결·State=Disabled·매일 03:00 4일 연속 무의미한 실패 누적 차단·균열 흐름 사흘째 연장)·**⚠️ 단 게임 코드 신규 커밋 0건**(어제 33일 균열 후 오늘 NumLink/MeowBeat 코어 커밋 미실행 = 코드 실행 흐름은 사흘째 끊김 위기)·**MeowBeat 동결 47일 6주+5일**(36파일 미커밋·코어 4파일 SongData/GameManager/SongManager/manifest 변경 잔존)·**NumLink 미커밋 40파일 유지**(origin보다 5커밋 앞섬·푸시 미실행)·**🚨 NumLink Tools 부재 지속**(자동 회귀 검증 0건 = 최대 리스크·어제 P0 이월)·**🚀 게임 시장 신규 1순위**: **Pixel Flow!(소트 슈팅 퍼즐) 출시 4개월 누적 1,170만 DL·미국 매출 톱20**(2026-02 Scopely가 10억$ 밸류로 인수 = 캐주얼 소트 장르 검증)·**2026 IAP 매출 84%가 라이브옵스 운영 게임에서 발생**(평탄한 일일보상 사망·지수형 연속 출석 곡선이 표준)·**🚀 기술 신규 1순위**: **Unity Platform Toolkit + 네이티브 IAP 대시보드 얼리액세스 공개**(멀티플랫폼 출시 간소화)·**UI Toolkit 런타임 데이터바인딩(Unity.Properties) 6.3서 성숙**(UI Builder서 C# 속성 직접 바인딩 = 글루코드 제거)·**🚨 보안 신규**: **gh CLI CVE-2026-45803 5/19**(`gh run view --log` 터미널 이스케이프 시퀀스 주입·v2.92.0 패치)·**TeamCity CVE-2026-44413**(On-Prem ~2025.11.4 API 노출·2026.1 수정)·**📦 콘텐츠 신규 1순위**: **iOS 서구권 캐주얼 CPI 전년比 38%↑(퍼즐 iOS $3.00)**·**솔로 토너먼트가 캐주얼 필수 라이브이벤트로 주류화**(리텐션·과금 동반 상승)·**Dead As Disco 플레이어 자작클립 TikTok 3억뷰로 120만 유저 달성**(UGC 무료 바이럴)·**🎨 디자인 신규 1순위**: **Gimme Gummy/Squishy UI 촉각 맥시멀리즘**(젤리·고무 질감 버튼·누르면 변형 후 바운스)·**Kid Core(키드코어)**(크레용·스티커·삐뚤빼뚤 손맛 도형의 의도적 불완전미).',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제47회 — **5/29 금요일·1개월 임계 D+5**. **✅ 3일 연속 P0 실행 = PKM_GBrain_Sync_Daily 비활성화를 이 회의에서 메인이 직접 실행(State=Disabled)** — 어제 결정 P0를 종결·gbrain WASM Aborted() 자동복구 불가로 매일 03:00 4일 연속(5/26~29) 무의미한 실패 누적을 차단·결정 마비 균열 흐름을 사흘째로 연장. **⚠️ 단 게임 코드 신규 커밋 0건**: NumLink/MeowBeat 모두 오늘 코어 커밋 미실행 = 코드 실행 흐름은 사흘째 끊길 위기(인프라 P0는 실행됨). **MeowBeat 47일 동결(6주+5일·36파일·코어 4파일 잔존)·NumLink 40파일 미커밋·origin보다 5커밋 앞섬(푸시 미실행)·NumLink Tools 부재 지속(자동 회귀 0건·어제 P0 이월).** **🚀 시장**: Pixel Flow! 소트 슈팅 4개월 1,170만 DL·Scopely 10억$ 인수·IAP 84% 라이브옵스·지수형 출석 곡선 표준. **🚀 기술**: Unity Platform Toolkit + 네이티브 IAP 대시보드·UI Toolkit 런타임 데이터바인딩(Unity.Properties) 성숙(글루코드 제거)·MeowBeat AudioSource.PlayScheduled+dspTime 동기화. **🚨 보안**: gh CLI CVE-2026-45803(v2.92.0 패치)·TeamCity CVE-2026-44413·GameCI Library 캐시 빌드 50%↑. **📦 콘텐츠**: iOS 퍼즐 CPI $3.00(38%↑)·솔로 토너먼트 주류화·Dead As Disco UGC TikTok 3억뷰→120만 유저. **🎨 디자인**: Gimme Gummy/Squishy UI 촉각 맥시멀리즘·Kid Core 손맛 불완전미. **🎯 오늘 핵심 결정 = ① PKM 비활성화 실행 완료(P0 종결) ② NumLink Tools 부트스트랩 10분(어제 이월·자동 회귀 확보) ③ 사흘째 코드 P0 흐름 유지 = MeowBeat 코어 커밋 또는 NumLink 40파일 커밋·태깅 ④ gh CLI v2.92.0+ 업그레이드(CVE 대응)**.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — ✅ PKM_GBrain_Sync_Daily 비활성화 메인 직접 실행(State=Disabled·3일 연속 P0)·단 게임 코드 신규 커밋 0건(코드 흐름 사흘째 끊김 위기)·MeowBeat 47일 36파일·NumLink 40파일 origin+5커밋 미푸시·NumLink Tools 부재 지속',
+        description:
+          '**✅ 3일 연속 P0 실행**: 어제 결정 #2(PKM_GBrain_Sync_Daily 일시 비활성화)를 오늘 회의에서 메인이 직접 실행(`Disable-ScheduledTask` → State=Disabled). gbrain CLI WASM Aborted()(embeddinggemma 임베딩)로 자동복구 불가 = 매일 03:00 4일 연속(5/26~29 LastResult=1) 무의미한 실패 누적을 차단 = 어제 P0 종결. **⚠️ 단 게임 코드 신규 커밋 0건**: NumLink(feature/uitoolkit·27d67fe 어제 커밋이 마지막·오늘 0)·MeowBeat(feature/song-ownership-migration·657032c 마지막·오늘 0) = 코드 실행 흐름은 사흘째 끊길 위기(인프라 P0만 실행됨). **MeowBeat 47일 동결(6주+5일)**: 36파일 미커밋·코어 4파일(SongData.cs·GameManager.cs·SongManager.cs·manifest.json) 변경 잔존·Sprint2/3 blocker 지속. **NumLink 40파일 미커밋**: origin/feature/uitoolkit보다 5커밋 앞섬(로컬 커밋 미푸시)·Tools 폴더 부재로 자동 회귀 검증 0건 = 최대 리스크 지속(어제 P0 이월). **agent-office**: 어제 회의록 ba616e4 커밋·Pages 배포 5건 success. **DailyStandup_ClaudeCode** 정상 Running(오늘 04:00 실행 = 이 회의). **오늘의 결정 제안**: **🚨 P0 NumLink Tools 부트스트랩 10분(어제 이월·MeowBeat Tools 복사) + 🚨 P0 사흘째 코드 흐름 유지 = MeowBeat 코어 커밋 또는 NumLink 40파일 커밋·태깅**. (참고: git log/status·schtasks 실측)',
+      },
+      {
+        title:
+          '🎮 Game Designer — Pixel Flow!(소트 슈팅 퍼즐) 4개월 1,170만 DL 미국 매출 톱20·2026-02 Scopely 10억$ 밸류 인수(캐주얼 소트 장르 검증)·2026 IAP 매출 84%가 라이브옵스서 발생 평탄 일일보상 사망 지수형 연속 출석 곡선 표준·Rhythm Hive 다이어리+스티커 꾸미기 리듬+수집',
+        description:
+          '**🚀 시장 신규 1순위**: **Pixel Flow!(소트 슈팅 퍼즐)** — 출시 4개월 누적 **1,170만 다운로드·미국 매출 톱20**·2026-02 **Scopely가 10억$ 밸류로 인수** = 단순 룰의 캐주얼 소트 장르가 메이저 인수 대상으로 검증·**NumLink 같은 룰 기반 캐주얼 퍼즐의 시장 잠재력 시사**. **🚀 시장 신규 2순위**: **2026 IAP 매출의 84%가 라이브옵스 운영 게임에서 발생** — 평탄한 일일보상은 사망·**지수형 연속 출석(스트릭) 보상 곡선이 표준**·**Rhythm Hive**는 다이어리 테마+스티커 꾸미기로 리듬게임에 수집/커스텀 결합(MeowBeat 농장↔리듬 융합 참고). **오늘 결정 제안**: **P1 NumLink "데일리 잭팟" 도입**(하루 첫 세션 1분 내 풀리는 고보상 한정 퍼즐 = D1 출석 유도·평탄 출석보상 대신 지수형 연속 보상 곡선으로 설계·기존 별점/난이도와 충돌 없이 추가). Sources: Tech.eu Scopely Pixel Flow $1B·Deconstructor of Fun·Naavik Live Ops Puzzle·Game Growth Advisor Retention 2026·Cozy Game Reviews.',
+      },
+      {
+        title:
+          '💻 Developer — Unity Platform Toolkit + 네이티브 IAP 대시보드 얼리액세스 공개(멀티플랫폼 출시 간소화)·UI Toolkit 런타임 데이터바인딩(Unity.Properties) 6.3서 성숙 UI Builder C# 속성 직접 바인딩 글루코드 제거·UI Toolkit 문서 4/28 갱신 ListView 키보드/컨트롤러 내비·MeowBeat dspTime PlayScheduled 1초 윈도우 동기화',
+        description:
+          '**🚀 기술 신규 1순위**: **Unity Platform Toolkit + 네이티브 IAP 대시보드 얼리액세스 공개(2026)** — 멀티플랫폼 출시 간소화·인앱결제 통합 대시보드(MeowBeat 수익화 시 직접 영향). **🚀 기술 신규 2순위**: **UI Toolkit 런타임 데이터바인딩(Unity.Properties 기반) 6.3서 성숙** — UI Builder에서 C# 속성을 직접 바인딩 = uGUI식 글루코드 제거·문서 4/28 갱신(ListView 키보드/컨트롤러 내비게이션·Addressables UI 로딩 추가)·**NumLink feature/uitoolkit 직접 수혜**. **오디오 동기화**: MeowBeat는 **AudioSource.PlayScheduled + AudioSettings.dspTime 1초 스케줄링 윈도우**로 노트 동기화 정밀도 점검(DSP 버퍼는 기본값 유지·변경 시 안드로이드 성능 저하 주의). **오늘 결정 제안**: **P2 NumLink HUD(점수·레벨)를 Unity 6.3 런타임 데이터바인딩으로 바인딩 검토**(글루코드 제거) + **P2 MeowBeat 노트 스케줄링을 PlayScheduled+dspTime으로 점검**(현 동기화 정밀도 베이스라인 측정 후 결정). Sources: Game Developer Unity Platform Toolkit·Unity Manual Runtime data binding 6000.3·Medium UI Toolkit in Unity 6(Mar 2026)·Native Audio dspTime sync.',
+      },
+      {
+        title:
+          '🔍 QA Tester — 🚨 NumLink Tools 폴더 부재 지속 자동 회귀 검증 0건 최대 리스크(MeowBeat만 보유 add_song/beat_extractor/known_bugs 6건)·PKM_GBrain_Sync_Daily 4일 연속 실패(5/26~29 LastResult=1) 오늘 비활성화 실행으로 차단·MeowBeat Tools 루트 실행 시 무결',
+        description:
+          '**🚨 NumLink Tools 부재 지속**: `C:/Unity/NumLink/Tools/` 폴더 자체 부재 재확인 = **자동 회귀 검증 0건 = 최대 리스크**(어제 P0 이월·여전히 미해결). **MeowBeat Tools 정상**: add_song.py·beat_extractor.py·gen_notes.py·hierarchy_dump.py·known_bugs.json(버그 패턴 **6건**) 보유·루트 `C:/Unity/Feedme`에서 실행 시 무결(상대경로 기반·Tools에서 돌리면 manifest 미발견 오탐). **✅ PKM 4일 연속 실패→비활성화 검증**: PKM_GBrain_Sync_Daily 5/26~29 03:00 모두 LastResult=1·오늘 회의에서 비활성화 실행 확인(State=Disabled)·PKM_Daily_Digest·PKM_StudyPush는 LastResult=0 정상 가동. **오늘 결정 제안**: **🚨 P0 NumLink Tools 부트스트랩 10분**(MeowBeat Tools를 NumLink에 복사 + 경로 상수만 "01. Scenes/" 공백 경로 포함 수정 + baseline 0 error 확인 = 자동 회귀 검증 확보·3번째 회의째 이월 = 가장 오래된 P0·즉시 처리 권고). Sources: NumLink/MeowBeat Tools 재실측·schtasks LastResult 실측·known_bugs.json 카운트.',
+      },
+      {
+        title:
+          '📢 Content Writer — iOS 서구권 캐주얼 CPI 전년比 38%↑(퍼즐 iOS $3.00)·솔로 토너먼트가 캐주얼 필수 라이브이벤트로 주류화 리텐션·과금 동반 상승·Dead As Disco 플레이어 자작클립 TikTok 3억뷰로 120만 유저 달성(UGC 무료 바이럴)',
+        description:
+          '**📦 콘텐츠 신규 1순위**: **iOS 서구권 캐주얼 CPI 전년比 38%↑(퍼즐 iOS $3.00)** — UA 광고비 급등으로 유료 획득 비효율화·오가닉/UGC 의존도 상승 압력. **📦 신규 2순위**: **솔로(개인) 토너먼트가 캐주얼 필수 라이브이벤트로 주류화** — 타 유저와 비동기 경쟁·리텐션과 과금 동반 상승. **📦 신규 3순위**: **Dead As Disco가 플레이어 자작클립 TikTok 3억뷰로 120만 유저 달성** = 리듬게임 UGC 무료 바이럴의 정점 사례. **오늘 결정 제안**: **P1 MeowBeat "쉐어 가능한 순간" 훅 1개 우선 구현**(연주 클립 자동 녹화·1탭 공유 = CPI 38%↑ 대응·Dead As Disco式 UGC 무료 바이럴 확보) + **P2 NumLink "주간 솔로 토너먼트" 라이브이벤트**(비동기 랭킹 경쟁으로 리텐션 강화). Sources: 모바일 게임 UA CPI 2026·솔로 토너먼트 라이브옵스 트렌드·Dead As Disco UGC 사례.',
+      },
+      {
+        title:
+          '🚀 DevOps — gh CLI CVE-2026-45803 5/19 run view --log 터미널 이스케이프 시퀀스 주입 v2.92.0 패치·TeamCity CVE-2026-44413 On-Prem ~2025.11.4 API 노출 2026.1 수정·GameCI 빌드 Library actions/cache 적용 시 빌드 50%+ 단축·agent-office Pages 배포 5건 success SHA 핀 견고',
+        description:
+          '**🚨 보안 신규 1순위**: **gh CLI CVE-2026-45803(5/19)** — `gh run view --log` 출력에 터미널 이스케이프 시퀀스 주입 가능(악성 로그가 터미널 제어)·**v2.92.0에서 패치**·agent-office 워크플로 로그를 다루는 로컬/CI 환경 영향. **🚨 신규 2순위**: **TeamCity CVE-2026-44413** — On-Prem ~2025.11.4 API 노출·2026.1 수정(우리는 GHA 사용이나 CI 보안 동향 참고). **빌드 최적화**: **GameCI 빌드는 Library 폴더 actions/cache 적용 시 빌드 50%+ 단축 가능**(Unity CI 도입 시 직접 효과). **agent-office 정상**: GitHub Pages 배포 5건 success·actions SHA 핀으로 워크플로우 주입에 견고. **오늘 결정 제안**: **P1 agent-office 워크플로 로그를 다루는 로컬/CI 환경의 gh CLI를 v2.92.0+로 즉시 업그레이드**(CVE-2026-45803 대응) + **P2 향후 Unity GHA 도입 시 Library actions/cache 스텝을 SHA 핀 형태로 추가**(빌드 50%↑). Sources: GitLab Advisories CVE-2026-45803·GitHub CLI v2.92.0 릴리스·JetBrains TeamCity CVE-2026-44413·GameCI Builder docs.',
+      },
+      {
+        title:
+          '🎨 Art Director — Gimme Gummy/Squishy UI 촉각 맥시멀리즘 젤리·고무 질감 버튼 누르면 변형 후 바운스·Kid Core(키드코어) 크레용·스티커·삐뚤빼뚤 손맛 도형의 의도적 불완전미·NumLink 크림톤에 Gummy 광택+바운스 MeowBeat에 키드코어 스티커 모티프',
+        description:
+          '**🎨 디자인 신규 1순위**: **Gimme Gummy/Squishy UI 촉각 맥시멀리즘** — 젤리·고무 질감 버튼이 눌리면 변형 후 바운스로 복귀(촉각감 강화)·2026 부상 트렌드·캐주얼 게임 인터랙션과 정합. **🎨 신규 2순위**: **Kid Core(키드코어)** — 크레용·스티커·삐뚤빼뚤 손맛 도형의 의도적 불완전미(완벽한 벡터 대신 손맛)·MeowBeat 고양이/농장 코지 톤과 정합. **연결 적용**: NumLink 크림톤에 Gummy 광택+바운스·MeowBeat에 키드코어 스티커 모티프 결합. **오늘 결정 제안**: **P2 NumLink 숫자 타일을 Gimme Gummy 스타일로 전환**(연결 성공 시 젤리 변형+바운스 피드백 = 촉각감 강화·Kawaii 테마부터 프로토타입 적용·민트+다크/뻔한 그라데이션 회피). Sources: Daily AI World Squishy-Uishy UI 2026·Medium Gummy Aesthetic 2026·Krumzi/Kittl 그래픽 디자인 트렌드 2026 Kid Core.',
+      },
+    ],
+    meetingTitle:
+      '🤝 5/29 종합 회의 — ✅ PKM_GBrain_Sync_Daily 비활성화 메인 직접 실행으로 3일 연속 P0 실행·단 게임 코드 신규 커밋 0건 사흘째 흐름 위기·NumLink Tools 부트스트랩 3회째 이월 즉시 처리 권고',
+    meetingSummary:
+      '제47회 종합 회의. **핵심 = 어제 결정 P0(PKM_GBrain_Sync_Daily 비활성화)를 이 회의에서 메인이 직접 실행(State=Disabled) = 3일 연속 P0 실행으로 결정 마비 균열 흐름 사흘째 연장**. gbrain WASM Aborted() 자동복구 불가로 매일 03:00 4일 연속(5/26~29 LastResult=1) 무의미한 실패 누적을 차단해 어제 P0 종결. **단 게임 코드 신규 커밋은 0건 = NumLink/MeowBeat 코어 커밋 미실행으로 코드 실행 흐름은 사흘째 끊길 위기**(인프라 P0만 실행됨). NumLink Tools 부재는 3번째 회의째 이월된 가장 오래된 P0 = 즉시 처리 권고. 신규 리서치는 Pixel Flow! Scopely 10억$ 인수·Unity Platform Toolkit/런타임 데이터바인딩·gh CLI CVE-2026-45803·솔로 토너먼트/UGC 바이럴·Gimme Gummy UI로 중복 없이 수집.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '✅ PKM_GBrain_Sync_Daily 비활성화를 이 회의에서 메인 직접 실행(State=Disabled) = 3일 연속 P0 실행. 단 게임 코드 신규 커밋 0건으로 코드 흐름은 사흘째 끊길 위기. MeowBeat 47일 36파일·NumLink 40파일 origin+5커밋 미푸시·NumLink Tools 부재 지속. 사흘째 코드 P0(코어 커밋 또는 40파일 태깅) 필요.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: 'Pixel Flow! 소트 슈팅 퍼즐 4개월 1,170만 DL·Scopely 10억$ 인수로 캐주얼 소트 장르 검증. 2026 IAP 84%가 라이브옵스서 발생·지수형 연속 출석 곡선이 표준. NumLink에 데일리 잭팟(첫 세션 고보상 한정 퍼즐) 도입으로 D1 출석 유도 제안.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'Unity Platform Toolkit + 네이티브 IAP 대시보드 공개·UI Toolkit 런타임 데이터바인딩(Unity.Properties) 6.3서 성숙으로 글루코드 제거. NumLink HUD를 런타임 데이터바인딩으로 검토, MeowBeat 노트를 PlayScheduled+dspTime으로 동기화 정밀도 점검 권고.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'NumLink Tools 폴더 부재 지속으로 자동 회귀 검증 0건이 최대 리스크 = 3번째 회의째 이월된 가장 오래된 P0. MeowBeat Tools는 known_bugs 6건 무결. PKM 4일 연속 실패는 오늘 비활성화 실행으로 차단 검증. NumLink Tools 부트스트랩 10분 즉시 처리 최우선.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'iOS 서구권 퍼즐 CPI $3.00(전년 38%↑)로 UA 비효율화·솔로 토너먼트 라이브이벤트 주류화·Dead As Disco 자작클립 TikTok 3억뷰로 120만 유저. MeowBeat 연주클립 1탭 공유 훅으로 UGC 무료 바이럴 확보, NumLink 주간 솔로 토너먼트 권고.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'gh CLI CVE-2026-45803(5/19, run view --log 이스케이프 주입) v2.92.0 패치·TeamCity CVE-2026-44413. GameCI Library actions/cache로 빌드 50%↑. agent-office Pages 배포 5건 success·SHA 핀 견고. gh CLI를 v2.92.0+로 즉시 업그레이드 권고.',
+      },
+      {
+        speaker: 'Art Director',
+        note: 'Gimme Gummy/Squishy UI 촉각 맥시멀리즘(젤리 버튼 변형+바운스)·Kid Core 크레용/스티커 손맛 불완전미. NumLink 숫자 타일을 Gummy 스타일로 전환(연결 성공 시 젤리 바운스 피드백, Kawaii 테마부터 프로토타입). 민트+다크/뻔한 그라데이션 회피.',
+      },
+    ],
+    decisions: [
+      {
+        title: '✅ [완료] PKM_GBrain_Sync_Daily 비활성화 — 메인 직접 실행(State=Disabled)',
+        description:
+          '어제 결정 P0를 오늘 회의에서 메인이 직접 실행(Disable-ScheduledTask → State=Disabled). 근본원인 = gbrain CLI WASM Aborted()(embeddinggemma 임베딩)로 자동복구 불가·매일 03:00 4일 연속(5/26~29 LastResult=1) 무의미한 실패 누적을 차단. 어제 bak_btn 삭제·UIThemeSwitcher.cs.meta 커밋에 이어 3일 연속 P0 실행으로 결정 마비 균열 흐름을 사흘째 연장. WASM Aborted() 코드 패치는 별도 P1으로 잔존(자동화 비활성 상태이므로 긴급도 하락).',
+      },
+      {
+        title: '[P0] NumLink Tools 부트스트랩 10분 — 자동 회귀 검증 0건 해소(3회째 이월)',
+        description:
+          'NumLink는 Tools 폴더 자체가 없어 자동 회귀 검증 0건 = 최대 리스크·3번째 회의째 이월된 가장 오래된 P0. MeowBeat Tools(add_song/beat_extractor/gen_notes/known_bugs)를 NumLink에 복사하고 씬 경로 상수("01. Scenes/" 공백 경로 포함)만 수정 후 baseline 0 error 확인. 코드 실행 흐름을 사흘째로 잇는 최소·검증된 작업 = 즉시 처리 권고.',
+      },
+      {
+        title: '[P0] 사흘째 코드 P0 흐름 유지 — MeowBeat 코어 커밋 또는 NumLink 40파일 커밋·태깅',
+        description:
+          'PKM 비활성화로 인프라 P0는 실행됐으나 게임 코드 신규 커밋 0건 = 코드 흐름 사흘째 끊길 위기. MeowBeat 코어 4파일(SongData/GameManager/SongManager/manifest)을 단일 PR로 분리 커밋(47일 동결 종결 착수) 또는 NumLink 미커밋 40파일을 커밋·태깅(롤백 안전망·origin에 푸시까지). 둘 중 하나만 실행해도 균열 흐름이 코드 레벨까지 연장.',
+      },
+      {
+        title: '[P1] gh CLI v2.92.0+ 업그레이드 — CVE-2026-45803 대응',
+        description:
+          'gh CLI CVE-2026-45803(5/19·gh run view --log 터미널 이스케이프 시퀀스 주입)이 v2.92.0에서 패치됨. agent-office 워크플로 로그를 다루는 로컬/CI 환경의 gh CLI를 v2.92.0 이상으로 즉시 업그레이드. 데일리 스탠드업이 gh issue/run을 매일 사용하므로 직접 노출 영역.',
+      },
+      {
+        title: '[P2] 신규 리서치 적용 — NumLink 젤리 바운스·데일리 잭팟·주간 토너먼트, MeowBeat 연주클립 공유',
+        description:
+          'Art Director: NumLink 숫자 타일 Gimme Gummy 젤리 바운스(Kawaii 테마부터). Game Designer: NumLink 데일리 잭팟(첫 세션 고보상 한정 퍼즐). Content Writer: MeowBeat 연주클립 1탭 공유 훅(UGC 바이럴)·NumLink 주간 솔로 토너먼트. Developer: NumLink HUD 런타임 데이터바인딩·MeowBeat PlayScheduled+dspTime 점검. 모두 여유 있을 때 컨셉 메모부터.',
+      },
+    ],
+  },
+  {
     id: '2026-05-28T04:00:00-daily-standup',
     date: '2026-05-28',
     researchTitle:
