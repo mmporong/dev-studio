@@ -43,6 +43,119 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-05-30T04:00:00-daily-standup',
+    date: '2026-05-30',
+    researchTitle:
+      '🌅 5/30 토요일 데일리 스탠드업 — **🚨 게임 코드 단절 신기록: NumLink 31일·MeowBeat 48일째**(어제 PKM 비활성화로 인프라 P0는 실행했으나 코어 커밋 0건 = 코드 흐름 나흘째 끊길 위기)·**🆕 최대 리스크 갱신: MeowBeat `song-ownership-migration` 브랜치 upstream 미설정 = push 원천 불가**(37~42파일 미커밋이 로컬 브랜치에 갇혀 유실 위험 최고·CI 부재로 백업 0)·**🆕 NumLink AutoGenTests 4파일 삭제 = 사고 의심**(직전 1358503 커밋서 빌드 수정한 테스트를 곧바로 워킹트리서 삭제·`git checkout` 5분 복구 가능·회귀 안전망 손실)·**🚨 NumLink Tools 부재 4회째 이월**(가장 오래된 P0·폴더 자체 부재 재확인)·**🚀 시장 신규**: **하이브리드캐주얼 IAP 2026 상반기 3.45억$ 전년比 100% 성장**(순수 광고형 하이퍼캐주얼 단독 히트 소멸)·**리듬게임 D30 리텐션 35%로 캐주얼 평균 21% 압도·세션 25분**(MeowBeat 강점 영역)·**DAU 유지에 월 89개 라이브옵스 이벤트 필요**(2023년 73개서 증가)·**🚀 기술 신규**: **Play Billing Library 8.0 마이그레이션 의무화 마감 2026-02 경과**(v7 신규 빌드 업로드 8/31까지·IAP 사용 시 즉시 점검)·**Unity CoreCLR 전환 본격화 6.7 기술프리뷰·6.8서 Mono 완전 제거(.NET 10/C# 14·도메인 리로드 소멸)**·**URP 2026 on-tile 포스트프로세싱·실시간 GI 모바일 지원 예고**·**📦 콘텐츠 신규**: **애플 App Store Tags — 스크린샷·설명을 AI가 라벨화해 브라우즈 노출 좌우**(키워드 스터핑 무력화)·**Meta 소셜게임 노출점유 54%→69% 급등·TikTok 21%→12.7% 반토막**(UA 채널 재편)·**리워드 광고 유저 D7 리텐션 +15~30%·IAP 전환 4배·결제액 +326%**·**🎨 디자인 신규**: **모션이 장식 아닌 "안내 언어"로 — 스포트라이트 온보딩(블러+포커스 분리)**·**어시 컬러(테라코타·클레이·오커)+보석톤 액센트(그라데이션 탈피)**·**햅틱/감각 피드백이 리텐션 무기**.',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제48회 — **5/30 토요일·1개월 임계 D+6**. **🚨 핵심 = 게임 코드 단절이 신기록을 경신: NumLink 31일(마지막 게임코드 커밋 4/29·이후는 .meta 인프라 커밋만)·MeowBeat 48일(마지막 커밋 4/12).** 어제 PKM_GBrain_Sync_Daily 비활성화로 인프라 P0는 실행됐으나 양 프로젝트 코어 커밋 0건 = 코드 흐름 나흘째 끊길 위기. **🆕 QA·Orchestrator 일치 신규 발견 2건: ① MeowBeat `song-ownership-migration` 브랜치가 upstream 미설정 = push 자체가 원천 불가·37~42파일이 로컬에 갇혀 유실 위험 최고(CI 부재로 백업 0) ② NumLink AutoGenTests 4파일이 직전 1358503 커밋서 빌드 수정 직후 워킹트리서 삭제됨 = 사고 의심·`git checkout`으로 5분 복구 가능.** NumLink Tools 부재는 4회째 이월된 가장 오래된 P0. **🚀 시장**: 하이브리드캐주얼 IAP 상반기 3.45억$(전년比 +100%)·리듬게임 D30 35% vs 캐주얼 21%·세션 25분·DAU 유지 월 89개 이벤트. **🚀 기술**: Play Billing Library 8.0 의무화 마감 경과(v7 8/31까지)·Unity CoreCLR 6.7 프리뷰/6.8 Mono 제거·URP 2026 on-tile 포스트프로세싱. **📦 콘텐츠**: 애플 App Store Tags AI 라벨화(키워드 스터핑 무력화)·Meta 노출점유 54%→69%/TikTok 21%→12.7%·리워드 광고 D7 +15~30%·결제액 +326%. **🎨 디자인**: 스포트라이트 온보딩(모션=안내 언어)·어시 컬러+보석톤·햅틱 피드백. **🎯 오늘 핵심 결정 = ① [P0] MeowBeat 브랜치 upstream 설정+커밋·푸시(유실 위험 최고 차단) ② [P0] NumLink AutoGenTests git checkout 복구(5분·회귀 안전망) ③ [P0] NumLink Tools 부트스트랩(4회째 이월) ④ [P1] Play Billing Library 8.0 점검(마감 경과)**. 메타 통찰: 한 달 넘게 5분짜리 P0(테스트 복구·upstream 설정)조차 미실행 = 회의가 분석을 추가하는 단계는 끝났고 가장 작은 실행 1건이 필요.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — 🚨 게임 코드 단절 신기록 NumLink 31일·MeowBeat 48일(어제 인프라 P0만 실행 코어 커밋 0건 나흘째 위기)·NumLink Tools 부재 4회째 이월 확정(폴더 없음)·MeowBeat Tools 완비 양 프로젝트 검증 격차 심화',
+        description:
+          '**🚨 게임 코드 단절 신기록**: NumLink 마지막 게임코드 커밋 2026-04-29 → **31일째 단절**(27d67fe 05-28은 .meta 추적 인프라 커밋이라 코드 흐름 아님)·MeowBeat 마지막 커밋 2026-04-12 → **48일째 단절**(어제 47일서 +1). 어제 PKM 비활성화로 인프라 P0는 실행됐으나 양 프로젝트 코어 신규 커밋 0건 = 코드 흐름 나흘째 끊길 위기. **NumLink Tools 부재 4회째 이월 확정**: `C:/Unity/NumLink/Tools/` 폴더 자체 부재 재확인 = 가장 오래된 P0. **MeowBeat Tools 완비**: unity_validate.py·qa_static.py·known_bugs.json·run_regression.py 등 18개 보유 = CLAUDE.md 표준 워크플로우 충족·**NumLink는 이 폴더를 바로 복사하면 P0 해소**(양 프로젝트 검증 격차 심화). NumLink feature/uitoolkit 5커밋 중 최신 27d67fe만 05-28자(미푸시 2일째)·나머지 4커밋은 04-23~29자로 묶음 자체 한 달+ 미정리. MeowBeat song-ownership-migration 최근 5커밋 전부 04-12 동일자 = 4/12 이후 이 브랜치 작업 0. **오늘 결정 제안**: NumLink Tools를 MeowBeat에서 복사·이식 + 미푸시 5커밋 즉시 푸시를 단일 P0로 못박아 다른 작업 착수 전 선행. (참고: git log --date=short·ls Tools 실측)',
+      },
+      {
+        title:
+          '🎮 Game Designer — 하이브리드캐주얼 IAP 2026 상반기 3.45억$ 전년比 +100% 성장(순수 광고형 하이퍼캐주얼 단독 히트 소멸)·리듬게임 D30 리텐션 35%로 캐주얼 평균 21% 압도 세션 25분·DAU 유지 월 89개 라이브옵스 이벤트(2023년 73개서 증가)',
+        description:
+          '**🚀 시장 신규 1순위**: **하이브리드캐주얼 IAP가 2026 상반기 3.45억$·전년比 100% 성장** — 순수 광고형 하이퍼캐주얼은 단독 히트 소멸·**IAP+광고 혼합 모델이 표준**(NumLink/MeowBeat 양쪽 수익화 설계 시사). **🚀 신규 2순위**: **리듬게임 D30 리텐션 35%로 캐주얼 평균 21%를 압도·평균 세션 25분** = MeowBeat가 속한 장르가 장기 리텐션·롱세션 강점 영역. **🚀 신규 3순위**: **DAU 유지에 월 89개 라이브옵스 이벤트 필요**(2023년 73개서 증가)·D7 리텐션 업계 10%·상위권 20%+·Day7 보상을 Day1~6 합보다 크게 주는 지수형 곡선이 최고 성과. **오늘 결정 제안**: **P1 MeowBeat "지수형 7일 출석 스트릭" 적용**(Day7 보상=고양이 스킨/농장 프리미엄 작물을 Day1~6 누적보다 크게 설계·노트 플레이 보상을 농장 성장 자원으로 연결하는 데일리 루프를 핵심 메타로) = D7 20%+ 상위권 목표·리듬+농장 조합의 25분 롱세션·D30 35% 장르 강점과 정합. Sources: 하이브리드캐주얼 IAP 2026 H1·리듬게임 리텐션 벤치마크·라이브옵스 이벤트 빈도 2026.',
+      },
+      {
+        title:
+          '💻 Developer — Play Billing Library 8.0 마이그레이션 의무화 마감 2026-02 경과(v7 신규 빌드 8/31까지·IAP 시 즉시 점검)·Unity CoreCLR 전환 6.7 기술프리뷰·6.8 Mono 완전 제거(.NET 10/C# 14 도메인 리로드 소멸)·URP 2026 on-tile 포스트프로세싱·실시간 GI 모바일·NumLink AutoGenTests 삭제 회귀 안전망 손실',
+        description:
+          '**🚀 기술 신규 1순위**: **Play Billing Library 8.0 마이그레이션 — 기존 앱 의무화 마감 2026-02 종료**(v7 신규 빌드 업로드는 8/31까지)·**IAP를 쓰면 즉시 점검 필요**(마감 이미 경과). **🚀 신규 2순위**: **Unity CoreCLR 전환 본격화** — 6.7 기술프리뷰 백엔드·**6.8서 Mono 완전 제거(.NET 10/C# 14·도메인 리로드 소멸)** = 중장기 마이그레이션 로드맵 영향. **🚀 신규 3순위**: **URP 2026 전략 — on-tile 포스트프로세싱·실시간 GI 모바일 지원 예고**·SRP Batcher+Store Action Discard가 NumLink 드로우콜 핵심. **기술부채 코멘트**: NumLink feature/uitoolkit의 AutoGenTests 4파일 삭제는 UI Toolkit 전환 중 회귀 안전망 손실 위험 = 푸시 전 커버리지 복구 또는 사유 명시 필요. **오늘 결정 제안**: **P1 NumLink IAP 사용 여부 확인 후 Billing Library 8.0 적용 상태 이번 주 내 점검**(마감 경과) + **P1 feature/uitoolkit 5커밋 푸시 전 삭제된 AutoGenTests 복구 여부 결정**. Sources: unity.com/blog Unity 6.3 LTS·unity.com URP 2026 전략·digitalproduction.com Unity 2026 로드맵 CoreCLR·developer.android.com Billing deprecation FAQ.',
+      },
+      {
+        title:
+          '🔍 QA Tester — 🆕 NumLink AutoGenTests 4파일 D상태=직전 1358503 빌드수정 직후 삭제 사고 의심(checkout 복구 가능)·🆕 MeowBeat song-ownership-migration 브랜치 upstream 미설정 push 원천 불가 37파일 갇힘 유실 위험 최고·NumLink QA인프라(Tools/known_bugs) 전무 미해결 리스크 3건',
+        description:
+          '**🆕 신규 리스크 1 (최고 심각도)**: **MeowBeat `feature/song-ownership-migration` 브랜치가 upstream 미설정 = push 자체가 원천 불가**(원격 추적 없음)·37파일 미커밋이 로컬에만 존재 = **유실 위험 최고**(CI 부재로 백업 0). **🆕 신규 리스크 2**: **NumLink AutoGenTests 4파일이 워킹트리서 D(deleted) 상태** — 직전 커밋 1358503/4debe05에서 asmdef를 정성껏 빌드 수정/추적 추가한 직후 곧바로 삭제 = **의도적 삭제로 보기 어려움·사고 가능성 높음**(uitoolkit 작업 중 충돌 정리 추정)·커밋 안 된 삭제라 `git checkout`으로 복구 가능. **신규 리스크 3**: NumLink `Assets/AutoQATests/`는 빈 폴더(.meta만)·Tools/known_bugs 부재 = QA 자동화 미구축. **MeowBeat 대조**: Tools+known_bugs.json 정상(버그 패턴 6종·미해결 5종). **미해결 리스크 3건 / 가장 심각 = MeowBeat 36파일이 upstream 없는 로컬 브랜치에 갇혀 유실.** **오늘 결정 제안**: **🚨 P0 MeowBeat 브랜치 `--set-upstream` 지정 후 커밋·푸시**(유실 차단) + **P0 NumLink AutoGenTests `git checkout` 즉시 복구 여부 확정**(5분·회귀 안전망). Sources: NumLink/MeowBeat git 워킹트리·branch -vv·Tools 폴더 실측.',
+      },
+      {
+        title:
+          '📢 Content Writer — 애플 App Store Tags 스크린샷·설명 AI 라벨화로 브라우즈 노출 좌우(키워드 스터핑 무력화)·Meta 소셜게임 노출점유 54%→69% 급등 TikTok 21%→12.7% 반토막(UA 채널 재편)·리워드 광고 유저 D7 리텐션 +15~30% IAP 전환 4배 결제액 +326%',
+        description:
+          '**📦 콘텐츠 신규 1순위**: **애플 App Store Tags** — 스크린샷·설명을 AI가 라벨화해 브라우즈 노출을 좌우·**키워드 스터핑 무력화**·캡션 텍스트가 메타데이터로 색인되므로 출시 전 캡션 카피 리라이트가 ASO 핵심. **📦 신규 2순위**: **Meta 소셜게임 노출점유 54%→69% 급등·TikTok 21%→12.7% 반토막** = UA 채널 재편·출시 초기 Meta 비중 확대 권장. **📦 신규 3순위**: **리워드 광고 유저는 D7 리텐션 +15~30%·IAP 전환 4배·결제액 평균 +326%** = 리텐션 주도 성장의 핵심 레버. **오늘 결정 제안**: **P1 NumLink·MeowBeat 스토어 스크린샷 캡션에 핵심 검색어 의도적 삽입**(App Store Tags 대응·출시 체크리스트에 캡션 리라이트 추가) + **P1 출시 초기 UA는 Meta 비중 확대 + 리워드 광고(오퍼월)를 1차 테스트 채널로 편성**. Sources: phiture.com ASO Trends 2026·cas.ai ASO 2026·businessofapps 모바일 게이밍 마케팅 2026·maf.ad 리워드 광고 통계·gamelight.io 리워드 UA 2026.',
+      },
+      {
+        title:
+          '🚀 DevOps — NumLink/MeowBeat 둘 다 GitHub Actions 워크플로우 없음(Unity 빌드 CI 부재)·agent-office deploy-pages.yml 정상 미푸시 0·미푸시 적체 NumLink 5커밋 MeowBeat 42커밋(meowbeat/main) 백업·협업 리스크·DailyStandup Running PKM Disabled 유지',
+        description:
+          '**CI/CD 상태**: **NumLink/MeowBeat 둘 다 GitHub Actions 워크플로우 없음**(`.github/workflows` 부재) = Unity 빌드 CI 자체가 없어 "장애"는 아니나 자동화 공백. **agent-office 정상**: deploy-pages.yml(push→main 자동 Pages 배포) 이상 없음·미푸시 0. **미푸시 적체**: NumLink 5커밋·**MeowBeat 42커밋(meowbeat/main이 원격 대비 ahead 42)** — CI 부재라 배포 영향은 없으나 백업·협업 리스크 최대 단일 항목. **스케줄**: DailyStandup_ClaudeCode=Running(오늘 04:00=이 회의 정상)·PKM_GBrain_Sync_Daily=Disabled(어제 비활성화대로 유지). **오늘 결정 제안**: **P0 MeowBeat 42커밋 적체가 가장 큰 단일 리스크 — 오늘 중 `git push meowbeat`로 미푸시 해소(또는 백업 확보) 우선 처리** + **P2 CI 신설은 별도 안건으로 분리**(Unity GHA는 빌드 시간·러너 비용 고려). CI/CD 자체 이상은 없음(agent-office 정상·게임 레포는 CI 미구축 상태).',
+      },
+      {
+        title:
+          '🎨 Art Director — 모션이 장식 아닌 "안내 언어"로 스포트라이트 온보딩(블러+포커스 분리)·어시 컬러(테라코타·클레이·오커)+보석톤 액센트 그라데이션 탈피·햅틱/감각 피드백이 리텐션 무기(로얄매치식 카드뽑기 촉감)',
+        description:
+          '**🎨 디자인 신규 1순위**: **모션이 장식이 아닌 "안내 언어"로 전환 — 스포트라이트 온보딩**(배경 블러+디밍, 한 번에 하나의 히어로 모션만 강조해 튜토리얼 인지부하 감소). **🎨 신규 2순위**: **어시(earthy) 컬러 — 테라코타·클레이·오커 + 보석톤 액센트**·뻔한 그라데이션 탈피(전역 규칙 "민트+다크/AI 전형 디자인 금지"와 정합). **🎨 신규 3순위**: **햅틱/감각 피드백이 리텐션 무기로 격상**(로얄매치式 카드뽑기 촉감). **오늘 결정 제안**: **P2 MeowBeat 신곡 첫 진입에 "스포트라이트 온보딩" 적용**(첫 노트 도달 시 배경 블러+디밍·고양이 발바닥 탭 가이드 1개만 강조) + **P2 노트 판정 순간 햅틱 레이어링**(완벽=더블탭 진동·굿=싱글) + **P2 NumLink 크림톤 베이스에 어시 테라코타 톤을 라인 연결 성공 피드백 컬러로 추가**(민트·뻔한 그라데이션 회피). Sources: pixune.com 모바일 게임 UI 2026·ripplix.com UI 애니메이션 가이드 2026·lummi.ai/wannathis 2026 컬러 트렌드·hitem3d.ai 게임 디자인 트렌드 2026.',
+      },
+    ],
+    meetingTitle:
+      '🤝 5/30 종합 회의 — 🚨 게임 코드 단절 신기록(NumLink 31일·MeowBeat 48일)·🆕 최대 리스크 갱신: MeowBeat 브랜치 upstream 미설정 유실 위험 + NumLink 테스트 삭제 사고 의심·5분짜리 P0조차 한 달+ 미실행 = 분석 단계 종료·실행 1건 필요',
+    meetingSummary:
+      '제48회 종합 회의. **핵심 = 게임 코드 단절이 신기록 경신(NumLink 31일·MeowBeat 48일)·어제 인프라 P0(PKM 비활성화)는 실행됐으나 코어 커밋 0건으로 코드 흐름 나흘째 위기.** **🆕 QA·Orchestrator가 일치 확인한 신규 발견 2건이 결정 우선순위를 재편: ① MeowBeat `song-ownership-migration` 브랜치 upstream 미설정 = push 원천 불가·37~42파일이 로컬에 갇혀 유실 위험 최고(CI 부재로 백업 0)·DevOps도 동일 지적 ② NumLink AutoGenTests 4파일이 직전 빌드 수정 직후 삭제 = 사고 의심·git checkout 5분 복구.** NumLink Tools 부재는 4회째 이월된 가장 오래된 P0(MeowBeat Tools 복사로 즉시 해소 가능). **메타 통찰: 한 달 넘게 5분짜리 P0(테스트 복구·upstream 설정 1줄)조차 미실행 = 회의가 새 분석을 추가하는 단계는 끝났고 가장 작은 실행 1건이 회의 가치를 결정.** 신규 리서치는 하이브리드캐주얼 IAP +100%·리듬게임 D30 35%·Play Billing 8.0 마감 경과·Unity CoreCLR·애플 App Store Tags·Meta 노출 69%·스포트라이트 온보딩으로 중복 없이 수집.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '게임 코드 단절 신기록 — NumLink 31일(마지막 게임코드 4/29·이후 .meta 인프라 커밋만)·MeowBeat 48일(마지막 4/12). 어제 인프라 P0는 실행됐으나 코어 커밋 0건 = 코드 흐름 나흘째 위기. NumLink Tools 부재 4회째 이월 확정·MeowBeat Tools 완비라 복사하면 즉시 해소. Tools 이식+5커밋 푸시를 단일 선행 P0로.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '하이브리드캐주얼 IAP 2026 상반기 3.45억$·전년比 +100%(순수 광고형 소멸). 리듬게임 D30 35% vs 캐주얼 21%·세션 25분 = MeowBeat 장르 강점. DAU 유지 월 89개 이벤트·지수형 7일 출석(Day7>Day1~6 합)이 최고 성과. MeowBeat 노트 보상을 농장 자원에 연결한 지수형 스트릭 메타 제안.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'Play Billing Library 8.0 의무화 마감 2026-02 경과(v7 신규빌드 8/31까지)·IAP 쓰면 즉시 점검. Unity CoreCLR 6.7 프리뷰·6.8 Mono 완전 제거(.NET 10/C# 14). URP 2026 on-tile 포스트프로세싱. NumLink AutoGenTests 삭제는 회귀 안전망 손실 = 푸시 전 복구/사유 명시 필요.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '🆕 신규 리스크 2건 — ① MeowBeat song-ownership-migration 브랜치 upstream 미설정으로 push 원천 불가·37파일 갇혀 유실 위험 최고 ② NumLink AutoGenTests 4파일이 직전 빌드수정 직후 삭제=사고 의심·checkout 5분 복구. NumLink QA인프라 전무. 미해결 3건, 최우선=MeowBeat 브랜치 set-upstream 후 커밋·푸시.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '애플 App Store Tags가 스크린샷·설명을 AI 라벨화 = 키워드 스터핑 무력화·캡션 리라이트가 ASO 핵심. Meta 소셜게임 노출 54%→69%·TikTok 21%→12.7% = UA 채널 재편. 리워드 광고 D7 +15~30%·결제액 +326%. 캡션 검색어 삽입+Meta 비중 확대+리워드 광고 1차 테스트 제안.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'NumLink/MeowBeat 둘 다 GitHub Actions 없음(Unity CI 부재)·agent-office deploy-pages.yml 정상·미푸시 0. 미푸시 적체 NumLink 5커밋·MeowBeat 42커밋(meowbeat/main) = 백업·협업 리스크 최대 항목. DailyStandup Running·PKM Disabled 유지. MeowBeat 42커밋 푸시 우선·CI 신설은 별도 안건. CI/CD 자체 이상 없음.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '모션이 장식 아닌 "안내 언어"로 — 스포트라이트 온보딩(블러+포커스 1개만 강조). 어시 컬러(테라코타·클레이·오커)+보석톤·그라데이션 탈피(민트+다크 금지 규칙 정합). 햅틱이 리텐션 무기. MeowBeat 신곡 첫 진입 스포트라이트+노트 판정 햅틱, NumLink 성공 피드백에 테라코타 톤 추가 제안.',
+      },
+    ],
+    decisions: [
+      {
+        title: '[P0] MeowBeat 브랜치 upstream 설정 + 커밋·푸시 — 유실 위험 최고 차단(신규 최우선)',
+        description:
+          'MeowBeat `feature/song-ownership-migration` 브랜치가 upstream 미설정 = push 원천 불가·37~42파일이 로컬에만 존재(CI 부재로 백업 0) = 유실 위험 최고. `git push --set-upstream` 지정 후 farm 작업분 커밋·푸시로 백업 확보. QA·DevOps·Orchestrator 3인이 동일 지적한 단일 최대 리스크 = 다른 작업 전 선행. (사용자 부재 새벽 실행이므로 게임 레포 push/커밋은 사용자 승인 후 실행 권고 — 회의는 우선순위 확정까지.)',
+      },
+      {
+        title: '[P0] NumLink AutoGenTests 4파일 git checkout 복구 — 사고 의심·5분·회귀 안전망',
+        description:
+          'AutoGenTests 4파일이 직전 1358503/4debe05 커밋서 asmdef 빌드 수정·추적 추가한 직후 워킹트리서 D(deleted) 상태 = 의도적 삭제로 보기 어려움(사고 가능성 높음). 커밋 안 된 삭제라 `git checkout -- Assets/Tests/Editor/AutoGenTests.*`로 5분 복구 가능 = UI Toolkit 전환 중 회귀 안전망 손실 차단. 단 동일 워킹트리의 다른 미커밋 변경 보존 주의 — 파일 4개만 타깃 복구.',
+      },
+      {
+        title: '[P0] NumLink Tools 부트스트랩 — 자동 회귀 검증 0건 해소(4회째 이월)',
+        description:
+          'NumLink Tools 폴더 부재 4회째 이월 = 가장 오래된 P0·자동 회귀 검증 0건. MeowBeat Tools(unity_validate.py·qa_static.py·known_bugs.json·run_regression.py 등 18개)를 NumLink에 복사하고 씬 경로 상수("01. Scenes/" 공백 경로 포함)만 수정 후 baseline 0 error 확인 = 검증된 최소 작업. MeowBeat Tools가 완비돼 있어 복사만으로 즉시 해소 가능 = 한 달+ 이월을 끝낼 가장 작은 P0.',
+      },
+      {
+        title: '[P1] Play Billing Library 8.0 점검 — 의무화 마감 2026-02 경과',
+        description:
+          'Play Billing Library 8.0 기존 앱 마이그레이션 의무화 마감이 2026-02에 종료(v7 신규 빌드 업로드는 8/31까지). NumLink/MeowBeat IAP 사용 여부를 먼저 확인하고, 사용 중이면 Billing 8.0 적용 상태를 이번 주 내 점검. 미사용이면 향후 수익화 설계 시 8.0 기준으로 착수. 마감이 이미 경과한 정책 항목이라 P1로 격상.',
+      },
+      {
+        title: '[P2] 신규 리서치 적용 — 지수형 출석 스트릭·스포트라이트 온보딩·App Store Tags 캡션',
+        description:
+          'Game Designer: MeowBeat 지수형 7일 출석 스트릭(노트 보상↔농장 자원 연결). Art Director: MeowBeat 스포트라이트 온보딩+노트 판정 햅틱·NumLink 어시 테라코타 성공 피드백 컬러. Content Writer: 스토어 캡션 검색어 삽입(App Store Tags 대응)·Meta 비중 확대·리워드 광고 1차 테스트. Developer: NumLink Unity CoreCLR 6.8 마이그레이션 영향 모니터링. 모두 코드 흐름 복구 후 컨셉 메모부터.',
+      },
+    ],
+  },
+  {
     id: '2026-05-29T04:00:00-daily-standup',
     date: '2026-05-29',
     researchTitle:
