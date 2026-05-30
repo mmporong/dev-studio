@@ -43,6 +43,119 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-05-31T04:00:00-daily-standup',
+    date: '2026-05-31',
+    researchTitle:
+      '🌅 5/31 일요일 데일리 스탠드업 — **🎉 게임 코드 단절 31일 만에 돌파: NumLink가 어제(5/30) UGUI 전환 MS0~MS4 6커밋으로 코어 커밋 재개**(마지막 .cs 커밋 5/31·단절 0일 = 한 달+ 코드 흐름 위기 종결)·**🆕 단 새 리스크 전이: NumLink 새 브랜치 `feature/ugui-layerlab` upstream 미설정+origin에 미존재 = 어제 6커밋 작업물 push 불가·백업 0**(활발히 작업할수록 유실 위험 급증·CI 부재)·**MeowBeat는 49일째 단절 지속**(4/12 마지막·upstream 미설정·origin/master 대비 72커밋 적체 = 유실 위험 여전)·**🚨 NumLink Tools 부재 5회째 이월·AutoGenTests 4파일 deleted 미복구**(QA 최대 리스크: 회귀 안전망 0인 채 UGUI 대규모 변경 진행 중)·**🚀 시장 신규**: **하이브리드캐주얼 퍼즐 매출 전년比 +429%·IAP:광고 50:50 표준**·**윈스트릭(연속 클리어) 메커닉이 상위 퍼즐 절반 도입**(Royal Kingdom 스트릭 깨짐 직전 $0.99 구제 결제 전환)·**BeatSync AR 리듬게임 AI 적응난이도 DAU +35%**·**🚀 기술 신규**: **Unity 6.4 정식 출시(2026-03)·ECS Core 패키지화·InstanceID→EntityId 전환**·**Unity 6.5 베타 최소 Android API 26 상향+EntityId 4→8바이트 확대**·**Android x86_64 지원 제거·레거시 RenderGraph 컴파일러 삭제**·**📦 콘텐츠 신규**: **구글플레이 검색의도별 커스텀 스토어 등록정보 추천**(sudoku 검색자에 퍼즐 맞춤 페이지)·**마이크로 인플루언서(5만~30만) ROAS 2~3배·참여율 4.84%**·**TikTok UGC 비포스팅 제작 인피드 대비 40~60% 저렴·CPI 최저**·**🎨 디자인 신규**: **키네틱 타이포그래피+레저 누메랄(원장체 등폭 숫자)**(GSAP 무료화로 숫자가 탭에 반응)·**안티-AI 브루탈리즘 고대비 컬러(전기오렌지+딥블루)**·**더블코딩 접근성(색+아이콘/패턴/아웃라인 동시)**.',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제49회 — **5/31 일요일·1개월 임계 D+7**. **🎉 핵심 = 한 달+ 이어진 게임 코드 단절이 NumLink에서 드디어 돌파됨: 어제(5/30) UGUI 전환 MS0~MS4 6개 마일스톤 커밋으로 코어 .cs 커밋 재개(단절 31일→0일).** 분석 단계 종료·실행이 시작됐다는 신호. **🆕 단 리스크가 "단절"에서 "유실"로 전이: NumLink 새 브랜치 `feature/ugui-layerlab`가 upstream 미설정+origin에 미존재 = 어제 6커밋이 push 불가·백업 0(활발히 작업할수록 유실 위험 급증).** **MeowBeat는 49일째 단절 지속(4/12 마지막·upstream 미설정·origin/master 대비 72커밋·meowbeat/main 25커밋 적체) = 유실 위험 여전.** **NumLink Tools 부재 5회째 이월·AutoGenTests 4파일 deleted 미복구 = QA 최대 리스크(회귀 안전망 0인 채 UGUI 대규모 변경 진행 중).** **🚀 시장**: 하이브리드캐주얼 퍼즐 매출 +429%·IAP:광고 50:50·윈스트릭 메커닉 상위 퍼즐 절반 도입(Royal Kingdom 스트릭 깨짐 직전 $0.99 구제)·BeatSync AR AI 적응난이도 DAU +35%. **🚀 기술**: Unity 6.4 정식(ECS Core·InstanceID→EntityId)·6.5 베타 Android API 26 상향+EntityId 8바이트·Android x86_64 제거·레거시 RenderGraph 삭제. **📦 콘텐츠**: 구글플레이 검색의도별 커스텀 등록정보·마이크로 인플루언서 ROAS 2~3배·TikTok UGC 비포스팅 40~60% 저렴. **🎨 디자인**: 키네틱 타이포+레저 누메랄·안티-AI 브루탈리즘 고대비·더블코딩 접근성. **🎯 오늘 핵심 결정 = ① [P0] NumLink `feature/ugui-layerlab` upstream 설정+푸시(어제 6커밋 백업 0 차단·신규 최우선) ② [P0] MeowBeat 브랜치 upstream 설정+푸시(49일·72커밋 적체 유실 차단) ③ [P0] NumLink Tools 부트스트랩+AutoGenTests git restore(회귀 안전망 0·UGUI 변경 중·5회째 이월) ④ [P1] Unity 6.5 대비 GetInstanceID 전수 검색**. 메타 통찰: 실행이 드디어 시작됐으나 백업(upstream 1줄)이 없으면 작업할수록 유실 위험이 커진다 = 이번엔 "push -u 1줄"이 회의 가치를 결정.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — 🎉 NumLink 게임 코드 단절 31일→0일 돌파(어제 UGUI MS0~MS4 6커밋·코어 .cs 커밋 재개)·🆕 단 새 브랜치 feature/ugui-layerlab upstream 미설정+origin 미존재로 6커밋 백업 0·MeowBeat 49일 단절+upstream 미설정 72커밋 적체 지속·NumLink Tools 5회째 이월·AutoGenTests 미복구',
+        description:
+          '**🎉 핵심 = NumLink 게임 코드 단절 돌파**: 어제(5/30 밤~5/31 새벽) `feature/ugui-layerlab` 브랜치에서 UGUI 전환 MS0~MS4 6개 마일스톤 커밋(최신 01bc793 .cs 포함) = 마지막 게임코드 커밋 4/29 기준 31일 단절이 **0일로 종결**·한 달+ 코드 흐름 위기 해소. **🆕 단 리스크 전이**: 이 새 브랜치 `feature/ugui-layerlab`가 **upstream 미설정+origin에 미존재 = push 불가·어제 6커밋 백업 0**(ahead 측정조차 불가). 미커밋 30건(modified 8+deleted 4+untracked 18)도 잔존. **MeowBeat**: `feature/song-ownership-migration` 49일째 단절(4/12 마지막·신규 0)·**upstream 미설정·origin/master 대비 72커밋·meowbeat/main 25커밋 적체**·미커밋 36건 = 유실 위험 여전. **agent-office**: 4d26e11(5/30 저널) origin/main 동기·미푸시 0. **이전 P0 현황**: P0-1 MeowBeat upstream 미완료·P0-2 NumLink AutoGenTests 복구 미완료(여전 deleted)·P0-3 NumLink Tools 5회째 이월(폴더 부재·MeowBeat Tools 18개 복사로 즉시 해소 가능). **오늘 결정 제안**: 어제 6커밋이 백업 0인 NumLink `feature/ugui-layerlab` upstream 설정+푸시를 신규 최우선 P0로 — 실행이 시작된 지금 유실 차단이 가장 시급. (참고: git status -sb·branch -vv 실측)',
+      },
+      {
+        title:
+          '🎮 Game Designer — 하이브리드캐주얼 퍼즐 매출 전년比 +429% IAP:광고 50:50 표준·윈스트릭(연속 클리어) 메커닉이 상위 퍼즐 절반 도입(Royal Kingdom 스트릭 깨짐 직전 $0.99 구제 결제 전환)·BeatSync AR 리듬게임 AI 적응난이도 DAU +35% 프리미엄 $9.99',
+        description:
+          '**🚀 시장 신규 1순위**: **하이브리드캐주얼 퍼즐 매출이 전년比 +429% 폭증·IAP:광고 수익 50:50 비율이 표준** = NumLink 같은 룰 기반 퍼즐의 수익화 잠재력·순수 광고 모델 탈피 시사(maf.ad·gamigion.com). **🚀 신규 2순위**: **윈스트릭(연속 클리어) 메커닉이 상위 퍼즐 게임 절반이 도입** — Royal Kingdom은 "스트릭이 끊기기 직전 $0.99 구제(rescue) 결제" 전환을 핵심 수익 레버로 활용(naavik.co·udonis.co)·"연속 성공을 잃기 싫은 심리" 자극. **🚀 신규 3순위**: **BeatSync(Melodic Games) AR 리듬게임이 AI 적응난이도로 DAU +35%·프리미엄 $9.99 가격** = 리듬 장르에 RL 기반 난이도 조절 부상(arxiv 2509.23796·verifiedmarketreports.com). **오늘 결정 제안**: **P2 NumLink "윈스트릭 + 데일리 챌린지" 도입** — 연속 클리어 N회 달성 시 보너스(추가 힌트·코인)·스트릭 끊김 직전 1회 구제 보상으로 습관 형성·리텐션 강화. NumLink는 타이머·별점 기반 단발 클리어 구조라 "연속 성공 상실 회피" 스트릭 레이어를 얹기에 구조적으로 적합(RL 적응난이도는 후순위). Sources: maf.ad·gamigion.com·naavik.co·udonis.co·arxiv 2509.23796.',
+      },
+      {
+        title:
+          '💻 Developer — Unity 6.4 정식 출시(2026-03) ECS Core 패키지화·InstanceID→EntityId 전환·Unity 6.5 베타 최소 Android API 26 상향+EntityId 4→8바이트 확대·Android x86_64 지원 제거·레거시 RenderGraph 컴파일러 삭제 = NumLink/MeowBeat 6.5 업그레이드 시 실질 기술 부채',
+        description:
+          '**🚀 기술 신규 1순위**: **Unity 6.4 정식 출시(2026-03) — ECS가 Core 패키지로 승격·`GetInstanceID()`→`GetEntityId()` 전환 시작**(InstanceID API 점진 디프리케이트). **🚀 신규 2순위**: **Unity 6.5 베타 — 최소 Android API 레벨 26(Android 8.0)으로 상향 + EntityId가 4바이트→8바이트로 확대** = InstanceID 값을 int로 캐싱/직렬화하는 코드가 있으면 long 전환 필요·없으면 안전. **🚀 신규 3순위**: **Unity 6.5 — Android x86_64 지원 제거·레거시 Render Graph 컴파일러 삭제** = 모바일 빌드 타깃·렌더 파이프라인 점검 필요. 모두 이전 회의 제외 토픽(CoreCLR 6.7/6.8·.NET10·URP 2026·6.3 LTS)과 겹치지 않는 신규 토픽. **오늘 결정 제안**: **P1 NumLink/MeowBeat 코드에서 `GetInstanceID()` 호출부를 전수 검색해 `GetEntityId()` 마이그레이션 대상 목록 작성** + EntityId 8바이트화 대비 InstanceID를 int로 캐싱/직렬화하는 코드 점검(있으면 long 전환). 6.5 업그레이드 전 선제 파악으로 기술 부채 차단. Sources: Unity 6.4 릴리스 노트·Unity 6.5 베타 변경사항.',
+      },
+      {
+        title:
+          '🔍 QA Tester — NumLink 회귀 안전망 0인 채 UGUI/LayerLab 대규모 변경 진행 = 최대 리스크(Tools 5회째 부재·AutoGenTests 4파일 deleted 미복구)·MeowBeat 미해결 5건(RT_SIZE_ZERO error 최심각·VerticalLayoutGroup+sizeDelta=0 width 0)·MeowBeat test_fixtures 부재로 회귀 픽스처 실동작 불가 가능성',
+        description:
+          '**🚨 최대 품질 리스크**: **NumLink가 자동 검증 인프라(Tools)·테스트 코드(AutoGenTests) 둘 다 없어 회귀 안전망이 완전히 0인 상태에서 UGUI/LayerLab 대규모 변경이 진행 중** = 검증 없는 씬 손상 누적 위험. **NumLink 테스트**: `C:/Unity/NumLink/Tools` 폴더 여전 부재(5회째 이월 추정)·unity_validate.py/qa_static.py/run_regression.py 미존재로 자동 회귀 검증 0건. AutoGenTests 4파일(asmdef·asmdef.meta·cs·cs.meta)은 git status에서 deleted 상태로 미복구(브랜치 feature/ugui-layerlab). **MeowBeat 버그**: 미해결 5건(총 6종 패턴 중 auto_fix 가능 1종 YAML_INDENT_M_FATHER 제외)·가장 심각=**RT_SIZE_ZERO(severity:error)** — VerticalLayoutGroup ChildAlignment+sizeDelta=0 조합으로 RectTransform width/height가 0이 되는 버그·자동 수정 불가로 수동 에스컬레이션(이전 보고 6종·미해결 5종에서 변동 없음). **MeowBeat test_fixtures 폴더 부재** = run_regression.py 회귀 픽스처 없어 실제 회귀 검증 미동작 가능성·별도 점검 권장. **오늘 결정 제안**: **P0 NumLink에 `C:/Unity/_ProjectTemplate/Tools/` 즉시 복사+씬 경로 상수 갱신**으로 최소 회귀 검증(unity_validate.py 0 error) 확보 + **deleted된 AutoGenTests 4파일 `git restore` 복구 여부 이번 세션 명시 결정**(의도된 삭제가 아니라면). Sources: known_bugs.json·git status·Tools 폴더 실측.',
+      },
+      {
+        title:
+          '📢 Content Writer — 구글플레이 검색의도별 커스텀 스토어 등록정보 추천(sudoku 검색자에 퍼즐 맞춤 페이지)·마이크로 인플루언서(5만~30만) 메가 대비 ROAS 2~3배 참여율 4.84%·TikTok UGC 비포스팅 제작 인피드 대비 40~60% 저렴 CPI 최저 채널',
+        description:
+          '**📦 콘텐츠 신규 1순위**: **구글플레이가 검색의도별 커스텀 스토어 등록정보 추천 강화** — 예: "sudoku" 검색자에게 퍼즐게임 맞춤 페이지 노출(I/O 2026 솔로 인디 퍼즐 개발자 리포트)·검색 의도에 맞춘 카피·스크린샷 세트가 전환 핵심. **📦 신규 2순위**: **마이크로 인플루언서(5만~30만 팔로워)가 메가 인플루언서 대비 ROAS 2~3배·평균 참여율 4.84%** = 저예산 UA에 마이크로 다수 기용이 효율적(Tomoson). **📦 신규 3순위**: **TikTok UGC를 비포스팅(non-posting) 제작하면 인피드 광고 대비 40~60% 저렴·CPI 최저 채널** = 실제 게재 없이 광고 소재로만 UGC 제작이 비용 효율 최강(insense.pro·megadigital.ai). **오늘 결정 제안**: **P2 NumLink용 검색의도 매칭 콘텐츠 1세트 제작** — "출근길 머리 풀리는 숫자 퍼즐", "자기 전 5분 차분한 두뇌게임" 같은 의도형 문구를 스토어 단문 설명과 마이크로 인플루언서 UGC 스크립트(비포스팅 제작·14일 플라이트 30~50명)에 동일하게 심어 구글플레이 의도 추천 노출+저비용 CPI 동시 공략. Sources: cas.ai ASO 2026·dev.to 구글플레이 I/O 2026·Tomoson·insense.pro·megadigital.ai.',
+      },
+      {
+        title:
+          '🚀 DevOps — 게임 레포 둘 다 GitHub Actions 부재 지속·MeowBeat upstream 미설정으로 push 불가·origin/master 대비 72커밋·meowbeat/main 25커밋 적체(백업 0 유실 위험)·agent-office deploy-pages.yml 정상(SHA 핀 고정 공급망 안전)·Buildalon 증분 빌드 부상',
+        description:
+          '**CI/CD 상태**: **NumLink/MeowBeat 둘 다 `.github/workflows` 부재**(Glob 0건) = Unity 빌드 CI 전무·이전 지적 미해결 이월. **MeowBeat 원격 적체 심각**: 현재 HEAD `feature/song-ownership-migration`이 **upstream 미설정("no upstream configured")으로 push 원천 불가**·origin/master 대비 **72커밋**·meowbeat/main 대비 25커밋·origin/feature 브랜치 대비 6커밋 미푸시 = 로컬에만 갇혀 백업 0·유실 위험. **agent-office 정상**: deploy-pages.yml(push→main 트리거)+weekly-insights.yml 존재·모든 액션이 커밋 SHA로 핀 고정(checkout·setup-node·deploy-pages 공급망 안전)·최근 4d26e11(5/30)·dfd85af(5/29)·ba616e4(5/28) 일일 배포 정상·워킹트리 `.omc/project-memory.json` 1건 미커밋. **인프라 트렌드**: **Buildalon이 GitHub Actions 기반 Unity 빌드에 무료 오픈소스 액션+빌드 머신으로 빠른 증분(incremental) 빌드 제공**·2026 초 부상 중(기존 GameCI 대비 빌드 시간 단축 강점). **오늘 결정 제안**: **P0 MeowBeat `git push -u origin feature/song-ownership-migration` 단 1회로 upstream 설정+적체 즉시 해소**(백업 0·유실 최고위험·5분 내 완료)·CI 신규 구축(GameCI/Buildalon)은 그다음 단계. Sources: game-ci/unity-builder·dev.to Unity GHA·Buildalon.',
+      },
+      {
+        title:
+          '🎨 Art Director — 키네틱 타이포그래피+레저 누메랄(원장체 등폭 숫자) GSAP 무료화로 숫자가 탭에 반응·안티-AI 브루탈리즘 고대비 컬러(전기오렌지+딥블루/네온옐로우+딥퍼플)·더블코딩 접근성(색+아이콘·아웃라인·패턴 동시 인코딩) 2026 인클루시브 핵심',
+        description:
+          '**🎨 디자인 신규 1순위**: **키네틱 타이포그래피 부상 — GSAP 무료화(Webflow 인수)로 숫자·라벨이 탭에 반응**·**레저 누메랄(ledger numeral·원장체 등폭 숫자)이 퍼즐 UI 표준**(NumLink 숫자에 직접 적용 가능·Tubik·Lummi). **🎨 신규 2순위**: **안티-AI 브루탈리즘 고대비 컬러 — 전기오렌지+딥블루·네온옐로우+딥퍼플 등 "용감한" 비대칭 조합이 AI 슬롭 차별화 무기**(전역 규칙 "민트+다크/AI 전형 디자인 금지"와 정합·Fireart·Recursion). **🎨 신규 3순위**: **더블코딩 접근성 의무화 — 색 단독 의존 금지·색+아이콘·아웃라인·패턴 동시 인코딩이 2026 인클루시브 디자인 핵심**(리듬게임 판정 색 의존 탈피·색맹 대응·Filament Games). **오늘 결정 제안**: **P2 NumLink 숫자 타일에 "레저 누메랄(등폭 숫자체)+키네틱 반응" 적용** — 같은 숫자 연결 시 숫자가 살짝 튀어오르고(bounce 100~200ms)·동일 숫자는 색 외에 고유 아웃라인·도트 패턴을 함께 부여해 색맹도 구분(더블코딩). 미니멀 유지하며 딥블루 배경+전기오렌지 강조 1색 고대비로 시그니처 확보(AI 전형 민트+그라데이션 회피). Sources: Tubik UI 2026·Lummi 키네틱 타이포·Fireart 브루탈리즘·Recursion 컬러·Filament Games 색맹 접근성.',
+      },
+    ],
+    meetingTitle:
+      '🤝 5/31 종합 회의 — 🎉 NumLink 코드 단절 31일 만에 돌파(어제 UGUI MS0~MS4 6커밋)·🆕 단 리스크가 "단절"→"유실"로 전이: 새 브랜치 upstream 미설정으로 6커밋 백업 0·MeowBeat 49일+72커밋 적체 여전·실행 시작됐으니 이번엔 push -u 1줄이 회의 가치 결정',
+    meetingSummary:
+      '제49회 종합 회의. **🎉 핵심 = 한 달+ 게임 코드 단절이 NumLink에서 드디어 돌파됨(어제 UGUI 전환 MS0~MS4 6커밋으로 코어 .cs 커밋 재개·31일→0일).** 분석 단계가 끝나고 실행이 시작됐다는 신호. **🆕 단 Orchestrator·QA·DevOps가 일치 확인한 리스크 전이: 이제 문제는 "단절"이 아니라 "유실" — NumLink 새 브랜치 `feature/ugui-layerlab`가 upstream 미설정+origin 미존재로 어제 6커밋이 push 불가·백업 0(활발히 작업할수록 유실 위험 급증).** MeowBeat는 49일 단절+upstream 미설정+origin/master 대비 72커밋 적체로 유실 위험 여전. **NumLink Tools 부재 5회째 이월·AutoGenTests 4파일 deleted 미복구 = QA 최대 리스크(회귀 안전망 0인 채 UGUI 대규모 변경 진행).** **메타 통찰: 어제까지는 "5분짜리 P0조차 미실행"이 문제였으나, 실행이 시작된 오늘은 "백업(upstream 1줄)이 없으면 작업할수록 유실 위험이 커진다" = 이번엔 push -u 1줄이 회의 가치를 결정.** 신규 리서치는 하이브리드캐주얼 퍼즐 +429%·윈스트릭 메커닉·Unity 6.4 정식/6.5 EntityId·구글플레이 검색의도 추천·키네틱 타이포+더블코딩으로 중복 없이 수집.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '🎉 NumLink 게임 코드 단절 31일→0일 돌파 — 어제 feature/ugui-layerlab에서 UGUI 전환 MS0~MS4 6커밋(.cs 포함). 한 달+ 코드 흐름 위기 종결. 🆕 단 이 새 브랜치가 upstream 미설정+origin 미존재 = 6커밋 push 불가·백업 0. MeowBeat 49일 단절+72커밋 적체 여전. 어제 6커밋 백업이 신규 최우선 P0.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '하이브리드캐주얼 퍼즐 매출 전년比 +429%·IAP:광고 50:50 표준. 윈스트릭(연속 클리어) 메커닉이 상위 퍼즐 절반 도입 — Royal Kingdom은 스트릭 깨짐 직전 $0.99 구제 결제 전환. BeatSync AR AI 적응난이도 DAU +35%. NumLink 윈스트릭+데일리챌린지+구제 보상으로 "연속 성공 상실 회피" 심리 자극 제안.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'Unity 6.4 정식 출시(2026-03)·ECS Core 패키지화·GetInstanceID()→GetEntityId() 전환 시작. 6.5 베타 최소 Android API 26 상향+EntityId 4→8바이트 확대. Android x86_64 제거·레거시 RenderGraph 삭제. NumLink/MeowBeat GetInstanceID 호출부 전수 검색해 마이그레이션 대상 목록 작성 제안.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '🚨 최대 리스크 = NumLink 회귀 안전망 0인 채 UGUI/LayerLab 대규모 변경 진행 중. Tools 5회째 부재·AutoGenTests 4파일 deleted 미복구. MeowBeat 미해결 5건(RT_SIZE_ZERO error 최심각·VerticalLayoutGroup+sizeDelta=0 width 0). _ProjectTemplate/Tools 즉시 복사+AutoGenTests git restore 결정 필요.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '구글플레이 검색의도별 커스텀 스토어 등록정보 추천 강화(sudoku 검색자에 퍼즐 맞춤 페이지). 마이크로 인플루언서(5만~30만) ROAS 2~3배·참여율 4.84%. TikTok UGC 비포스팅 제작 인피드 대비 40~60% 저렴·CPI 최저. NumLink "출근길/자기 전 5분" 의도형 문구로 검색의도 매칭 콘텐츠 1세트 제안.',
+      },
+      {
+        speaker: 'DevOps',
+        note: '게임 레포 둘 다 GitHub Actions 부재 지속. MeowBeat upstream 미설정으로 push 불가·origin/master 대비 72커밋·meowbeat/main 25커밋 적체 = 백업 0 유실 위험. agent-office deploy-pages.yml 정상(SHA 핀 고정 공급망 안전). Buildalon 증분 빌드 부상. MeowBeat push -u 1회로 upstream+적체 즉시 해소 우선.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '키네틱 타이포그래피+레저 누메랄(원장체 등폭 숫자)·GSAP 무료화로 숫자가 탭에 반응. 안티-AI 브루탈리즘 고대비(전기오렌지+딥블루)가 AI 슬롭 차별화 무기. 더블코딩 접근성(색+아이콘·아웃라인·패턴 동시)이 2026 인클루시브 핵심. NumLink 숫자 타일 레저 누메랄+키네틱 반응+더블코딩 제안.',
+      },
+    ],
+    decisions: [
+      {
+        title: '[P0] NumLink feature/ugui-layerlab upstream 설정 + 푸시 — 어제 6커밋 백업 0 차단(신규 최우선)',
+        description:
+          '어제(5/30) UGUI 전환 MS0~MS4 6커밋으로 31일 코드 단절을 돌파했으나, 새 브랜치 `feature/ugui-layerlab`가 upstream 미설정+origin에 미존재 = push 불가·백업 0(CI 부재). 실행이 시작된 지금 활발히 작업할수록 유실 위험이 급증하므로 `git push -u origin feature/ugui-layerlab` 단 1회로 upstream 설정+6커밋 백업 확보가 가장 시급. Orchestrator·QA·DevOps 3인이 일치 지적한 신규 최대 리스크. (사용자 부재 새벽 실행이므로 게임 레포 push는 사용자 승인 후 실행 권고 — 회의는 우선순위 확정까지.)',
+      },
+      {
+        title: '[P0] MeowBeat 브랜치 upstream 설정 + 푸시 — 49일 단절·72커밋 적체 유실 차단(이월)',
+        description:
+          'MeowBeat `feature/song-ownership-migration`이 49일째 단절(4/12 마지막)·upstream 미설정으로 push 원천 불가·origin/master 대비 72커밋·meowbeat/main 25커밋·미커밋 36파일이 로컬에만 갇혀 백업 0 = 유실 위험. `git push -u origin feature/song-ownership-migration` 단 1회로 upstream 설정+적체 즉시 해소(5분). 5/30 회의 P0에서 이월된 건. NumLink와 함께 게임 레포 백업을 오늘의 단일 선행 과제로.',
+      },
+      {
+        title: '[P0] NumLink Tools 부트스트랩 + AutoGenTests git restore — 회귀 안전망 0·UGUI 변경 중(5회째 이월)',
+        description:
+          'NumLink는 자동 검증 인프라(Tools)·테스트 코드(AutoGenTests) 둘 다 없어 회귀 안전망이 0인데 UGUI/LayerLab 대규모 변경이 진행 중 = 검증 없는 씬 손상 누적 위험(QA 최대 리스크). `C:/Unity/_ProjectTemplate/Tools/`(또는 MeowBeat Tools 18개)를 NumLink에 복사+씬 경로 상수 갱신해 unity_validate.py 0 error baseline 확보 + deleted된 AutoGenTests 4파일을 `git restore`로 복구할지(의도된 삭제가 아니라면) 명시 결정. Tools 부재는 5회째 이월된 가장 오래된 P0.',
+      },
+      {
+        title: '[P1] Unity 6.5 대비 GetInstanceID 전수 검색 — EntityId 4→8바이트 확대 선제 대응',
+        description:
+          'Unity 6.4 정식(2026-03)에서 InstanceID→EntityId 전환이 시작됐고 6.5 베타에서 EntityId가 4바이트→8바이트로 확대·최소 Android API 26 상향·x86_64 제거. NumLink/MeowBeat 코드에서 `GetInstanceID()` 호출부를 전수 검색해 `GetEntityId()` 마이그레이션 대상 목록을 작성하고, InstanceID 값을 int로 캐싱/직렬화하는 코드가 있으면 long 전환 필요(없으면 안전). 6.5 업그레이드 전 선제 파악으로 기술 부채 차단.',
+      },
+      {
+        title: '[P2] 신규 리서치 적용 — NumLink 윈스트릭·레저 누메랄+더블코딩·검색의도 콘텐츠',
+        description:
+          'Game Designer: NumLink 윈스트릭+데일리 챌린지(연속 클리어 보너스+스트릭 끊김 직전 1회 구제 보상). Art Director: NumLink 숫자 타일 레저 누메랄(등폭 숫자체)+키네틱 바운스+더블코딩(색+아웃라인·패턴) 접근성·딥블루+전기오렌지 고대비 시그니처(AI 슬롭 회피). Content Writer: NumLink 검색의도 매칭 콘텐츠 1세트("출근길/자기 전 5분")+마이크로 인플루언서 비포스팅 UGC. 모두 게임 레포 백업·회귀 안전망 확보 후 컨셉 메모부터.',
+      },
+    ],
+  },
+  {
     id: '2026-05-30T04:00:00-daily-standup',
     date: '2026-05-30',
     researchTitle:
