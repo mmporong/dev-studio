@@ -43,6 +43,124 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-06-01T04:00:00-daily-standup',
+    date: '2026-06-01',
+    researchTitle:
+      '🌅 6/1 월요일 데일리 스탠드업 — **🚨 어제 회의가 "push -u 1줄이 회의 가치 결정"이라 못박은 P0가 또 미실행: NumLink/MeowBeat 둘 다 upstream 여전 미설정·AutoGenTests 4파일 여전 deleted = 5/31 P0 3건 전부 0/3**·**✅ 단 NumLink 코드 흐름은 유지: 5/31 UGUI MS4(b80ab1d) 커밋으로 단절 1일·작성은 계속됨**·**🆕 핵심 전환: 문제가 "백업 0"에서 "백업 0 누적 심화"로 — NumLink는 코드를 계속 쌓는데 push -u 1줄이 6일째 미실행 = 유실 시 손실 규모만 커짐**·**MeowBeat 4/12 마지막→오늘 6/1 = 50일째 단절 돌파**(곡 10개 MVP 컷라인은 유지)·**🚀 시장 신규**: 모바일 IAP 수익 84%가 라이브옵스 타이틀서 발생·**앨범 컬렉션 이벤트가 캐주얼 참여율 1위(66%)·앨범+배틀패스 매출 10~40% 기여**·**🚀 기술 신규**: Unity 6.4 **Project Auditor 에디터 기본 탑재**+Adaptive Performance 콘솔(PS4/5·Xbox) 확장·Unity Hub 독립 CLI 시작속도 50배↑(5s→100ms)·**📦 콘텐츠 신규**: **Apple 스크린샷 캡션 텍스트를 키워드로 정식 인덱싱(2025-06~)**·풀 로컬라이제이션 시 DL 2~3배·스크린샷 현지화만으로 비영어권 설치 +17%·**🛡 보안 신규**: **aquasecurity/trivy-action 75개 태그 하이재킹(2026-03-19 TeamPCP)**·GitHub Actions 호스팅 러너 L7 이그레스 방화벽 로드맵·**🎨 디자인 신규**: **Liquid Glass(글라스모피즘 진화·빛반사 유동 반응)**·**Bento Grid 비대칭 모듈 카드**·Neomorphism 재부상.',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제50회 — **6/1 월요일·1개월 임계 D+8**. **🚨 핵심 = 어제(5/31) 회의가 "이번엔 push -u 1줄이 회의 가치를 결정한다"고 못박았으나 그 1줄조차 미실행: NumLink `feature/ugui-layerlab`·MeowBeat `feature/song-ownership-migration` 둘 다 upstream 여전 미설정·AutoGenTests 4파일 여전 deleted = 5/31 P0 3건 전부 0/3.** **✅ 단 NumLink 코드 흐름은 유지(5/31 UGUI MS4 b80ab1d 커밋·단절 1일·작성은 계속됨).** **🆕 메타 전환: 문제가 "백업 0"에서 "백업 0 누적 심화"로 — NumLink는 코드를 계속 쌓는데 push -u가 6일째 미실행 = 유실 시 손실 규모만 커진다(어제보다 커밋 더 쌓임).** **MeowBeat 4/12 마지막→오늘 6/1 = 50일째 단절 돌파(곡 10개 MVP 컷라인은 유지·미커밋 37파일).** **🚀 시장**: 모바일 IAP 84%가 라이브옵스서 발생·앨범 컬렉션 이벤트 캐주얼 참여율 1위(66%)·앨범+배틀패스 매출 10~40% 기여. **🚀 기술**: Unity 6.4 Project Auditor 에디터 기본 탑재+Adaptive Performance 콘솔 확장·Hub 독립 CLI 시작 50배↑. **📦 콘텐츠**: Apple 스크린샷 캡션 키워드 인덱싱(2025-06~)·풀 로컬라이제이션 DL 2~3배·스크린샷 현지화만으로 비영어권 +17%. **🛡 보안**: trivy-action 75개 태그 하이재킹(2026-03-19)·GitHub Actions L7 이그레스 방화벽 로드맵. **🎨 디자인**: Liquid Glass·Bento Grid·Neomorphism 재부상. **🎯 오늘 핵심 결정 = ① [P0] MeowBeat `git push -u origin feature/song-ownership-migration`(50일·백업 0·5분·6일째 이월·새벽이라 사용자 승인 후) ② [P0] NumLink `git push -u origin feature/ugui-layerlab`(코드 계속 쌓이는데 백업 0 누적·승인 후) ③ [P0] NumLink AutoGenTests 4파일 git restore+Tools 부트스트랩(회귀 안전망 0·6회째 이월) ④ [P1] Unity 6.5 GetInstanceID 전수 검색 착수**. 메타 통찰: "결정"은 50회 누적됐으나 5분짜리 백업 1줄의 "실행"이 안 되는 게 본질 — 오늘은 분석을 줄이고 push -u 1줄 실행만이 유일한 가치.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — 어제 P0 3건 전부 미실행(0/3): NumLink/MeowBeat upstream 여전 미설정·AutoGenTests 여전 deleted·✅ 단 NumLink 5/31 UGUI MS4 커밋으로 코드 흐름 유지(단절 1일)·🆕 문제가 백업 0→백업 0 누적 심화로 전환·MeowBeat 50일째 단절',
+        description:
+          '**🚨 핵심 = 5/31 P0 전부 미실행**: 어제 회의가 "push -u 1줄이 회의 가치 결정"이라 못박았으나 ① NumLink `feature/ugui-layerlab` upstream 여전 미설정(`## feature/ugui-layerlab`만·origin 없음) ② MeowBeat `feature/song-ownership-migration` upstream 여전 미설정 ③ AutoGenTests 4파일(asmdef·meta·cs·meta) git status 여전 deleted = **5/31 P0 3건 0/3 실행**. **✅ 단 긍정 신호**: NumLink가 5/31 UGUI MS4(b80ab1d `feat(ui): MS4 — InGameHUD 컨트롤러 부착`) 커밋 = 마지막 게임코드 5/31·**단절 1일·코드 작성은 계속됨**(흐름 유지). **🆕 메타 전환**: NumLink는 코드를 계속 쌓는데 백업 1줄이 6일째 미실행 = 문제가 "백업 0"에서 "백업 0 누적 심화"로 — 어제보다 커밋이 더 쌓여 유실 시 손실 규모만 증가. **MeowBeat**: 4/12 마지막→오늘 6/1 = **50일째 단절 돌파**·미커밋 37파일·곡 10개 MVP 컷라인은 유지. **NumLink** 미커밋 33파일. **agent-office**: d9679a6(5/31 저널) origin/main 동기·`.omc/project-memory.json` 1건 미커밋·DailyStandup Running. **오늘 결정 제안**: 분석을 멈추고 MeowBeat·NumLink push -u 1줄 실행만을 단일 P0로(새벽이라 게임 레포 push는 사용자 승인 후). (git status -sb·log 실측)',
+      },
+      {
+        title:
+          '🎮 Game Designer — 모바일 IAP 수익 84%가 라이브옵스 타이틀서 발생·앨범 컬렉션 이벤트가 캐주얼 참여율 1위(66%)·앨범+배틀패스 조합 매출 10~40% 기여 = MeowBeat 고양이 카드 수집·NumLink 챕터 스탬프 앨범 적합',
+        description:
+          '**🚀 시장 신규 1순위**: **모바일 IAP 수익의 84%가 라이브옵스(LiveOps) 운영 타이틀에서 발생**·캐주얼 퍼즐 상위작은 월 80~100개 이벤트 레이어 운영 = 단발 출시 후 방치 모델은 수익 구조적 한계. **🚀 신규 2순위**: **앨범 컬렉션 이벤트가 캐주얼 게임 참여율 1위(66%)** — 수집 욕구가 세션 반복을 유도하는 가장 강한 메커닉. **🚀 신규 3순위**: **앨범+배틀패스 조합이 매출의 10~40% 기여**·D7 리텐션 하락 추세 속 대체 수익 레버로 급부상(어제 윈스트릭과 겹치지 않는 신규 토픽). **오늘 결정 제안**: **P2 "앨범 컬렉션" 시즌 이벤트 메커닉을 양 프로젝트 백로그에 등재 검토** — MeowBeat는 고양이 캐릭터 카드 수집 앨범(농장 루프와 자연 결합)·NumLink는 챕터별 스탬프/도장 앨범(클리어 시 수집)으로 월 1~2회 시즌 앨범 기획. 단 게임 레포 백업·회귀 안전망 확보가 선행. Sources: 라이브옵스 IAP 84% 리포트·캐주얼 이벤트 참여율 벤치마크.',
+      },
+      {
+        title:
+          '💻 Developer — Unity 6.4 Project Auditor 에디터 기본 탑재(성능·코드 정적 분석 내장)·Adaptive Performance 기본 프로바이더 콘솔(PS4/5·Xbox) 확장·Unity Hub 독립 CLI 시작속도 50배↑(5s→100ms) = NumLink 회귀 검증에 Project Auditor 활용 가능',
+        description:
+          '**🚀 기술 신규 1순위**: **Unity 6.4(2026-03)에 Project Auditor가 에디터 기본 탑재** — 성능·코드·세팅 정적 분석이 별도 패키지 설치 없이 내장 = NumLink가 Tools/qa_static.py 외에 엔진 내장 정적 분석으로 회귀 안전망 보강 가능(QA P0와 시너지). **🚀 신규 2순위**: **Adaptive Performance 기본 프로바이더가 PS4/5·Xbox 콘솔까지 확장**(6.4) = 모바일 외 타깃 대비 기반 마련. **🚀 신규 3순위**: **Unity Hub 독립 CLI 시작속도 50배↑(5s→<100ms)** = CI 빌드 컨테이너 부트 시간 단축 가능성(DevOps와 연계). 어제 제외 토픽(6.4 ECS Core·6.5 EntityId·GetInstanceID)과 겹치지 않는 신규 측면. **오늘 결정 제안**: **P2 NumLink에 Unity 6.4 내장 Project Auditor 1회 실행해 성능·코드 이슈 baseline 리포트 확보**(Tools 부트스트랩 P0와 병행 시 회귀 안전망 이중화) + **P1 어제 이월 GetInstanceID 전수 검색 착수**(6.5 EntityId 8바이트 대비). Sources: Unity 6.4 릴리스 노트·Unity Hub 2026-05 업데이트.',
+      },
+      {
+        title:
+          '🔍 QA Tester — NumLink 회귀 안전망 여전 0(Tools 6회째 부재·AutoGenTests 4파일 deleted 미복구)인데 코드는 5/31 더 쌓임 = 검증 없는 변경 누적 심화·MeowBeat RT_SIZE_ZERO(error) 등 미해결 5건 변동 없음·게임 레포 백업 0이라 유실 시 회귀 안전망까지 동시 소실',
+        description:
+          '**🚨 최대 품질 리스크 심화**: NumLink가 자동 검증 인프라(Tools)·테스트 코드(AutoGenTests) 둘 다 없어 회귀 안전망 0인데 **5/31 UGUI MS4 커밋으로 코드는 더 쌓였다 = 검증 없는 대규모 변경이 누적 심화**. **NumLink 테스트**: `C:/Unity/NumLink/Tools` 폴더 여전 부재(6회째 이월)·AutoGenTests 4파일 git status 여전 deleted(브랜치 feature/ugui-layerlab·5/31 P0 미복구). **MeowBeat 버그**: 미해결 5건 변동 없음·가장 심각=**RT_SIZE_ZERO(severity:error)** — VerticalLayoutGroup ChildAlignment+sizeDelta=0으로 RectTransform width/height 0. **🆕 이중 리스크**: 게임 레포 둘 다 백업 0(upstream 미설정)이라 로컬 유실 시 코드+회귀 안전망(Tools·AutoGenTests)이 동시 소실 = 복구 불가. **오늘 결정 제안**: **P0 NumLink AutoGenTests 4파일 `git restore` 즉시 복구**(deleted 상태 6일째·파일 4개만 타깃·의도된 삭제 아니면)+**`C:/Unity/_ProjectTemplate/Tools/` 또는 MeowBeat Tools 18개 복사**로 unity_validate.py 0 error baseline 확보·이는 push -u(백업)와 함께 실행해야 회귀 안전망 보존. Sources: known_bugs.json·git status·Tools 폴더 실측.',
+      },
+      {
+        title:
+          '📢 Content Writer — Apple 스크린샷 캡션 텍스트를 키워드 메타데이터로 정식 인덱싱(2025-06~)·풀 로컬라이제이션(메타+스크린샷+키워드) 적용 시 단순 번역 대비 DL 2~3배·스크린샷 이미지 텍스트 현지화만으로 비영어권 설치 +17% = NumLink/MeowBeat 캡션 키워드 재작성 기회',
+        description:
+          '**📦 콘텐츠 신규 1순위**: **Apple이 2025년 6월부터 앱스토어 스크린샷 캡션 텍스트를 키워드 메타데이터로 정식 인덱싱** = 스크린샷 위 문구가 검색 색인에 직접 반영·단순 설명형 캡션은 ASO 기회 손실. **📦 신규 2순위**: **풀 로컬라이제이션(메타+스크린샷+키워드 동시) 적용 시 단순 번역 대비 다운로드 2~3배** = 부분 번역으로는 효과 미미·완전 현지화가 임계. **📦 신규 3순위**: **스크린샷 이미지 텍스트 현지화만으로도 비영어권 설치 전환율 평균 +17%** = 적은 비용으로 즉효(어제 검색의도/마이크로 인플루언서와 겹치지 않는 신규 토픽). **오늘 결정 제안**: **P2 NumLink/MeowBeat 앱스토어 스크린샷 캡션을 키워드 의도 기반으로 재작성** — 설명형("재밌는 퍼즐") 대신 검색 키워드 삽입형("숫자 연결 퍼즐"·"고양이 리듬 게임")으로 캡션 작성·출시 시 주요 비영어권 1~2개 언어 스크린샷 텍스트 우선 현지화로 +17% 전환 확보. 출시 체크리스트에 반영. Sources: Apple ASO 2025-06 캡션 인덱싱·로컬라이제이션 ROI 벤치마크.',
+      },
+      {
+        title:
+          '🛡 DevOps — aquasecurity/trivy-action 75개 태그 하이재킹(2026-03-19 TeamPCP·고정 태그 사용 시 시크릿 탈취)·GitHub Actions 호스팅 러너 L7 이그레스 방화벽 네이티브 도입 로드맵·GameCI unity-license-activate 5/18 패치 = 향후 게임 CI 구축 시 액션 SHA 핀 원칙 필수',
+        description:
+          '**🛡 보안 신규 1순위**: **aquasecurity/trivy-action 75개 태그가 하이재킹됨(2026-03-19·TeamPCP 그룹)** — 버전 태그를 사용하면 변조된 액션이 주입돼 CI 시크릿 탈취 가능(어제 Megalodon·actions-cool과 별개 신규 사건). **🛡 신규 2순위**: **GitHub Actions가 호스팅 러너에 L7 이그레스(egress) 방화벽을 네이티브로 도입 예정** = 액션의 외부 통신 통제로 공급망 공격 방어 강화·2026 보안 로드맵. **🛡 신규 3순위**: **GameCI unity-license-activate가 2026-05-18 업데이트** = Unity 라이선스 활성화 액션 최신 패치. **CI 상태**: NumLink/MeowBeat 여전 `.github/workflows` 부재·agent-office deploy-pages.yml은 모든 액션 SHA 핀 고정으로 공급망 안전 유지. **오늘 결정 제안**: **P2 게임 레포 CI 신규 구축 시 모든 액션을 버전 태그 대신 커밋 SHA로 핀 고정하는 것을 표준 원칙으로 명문화**(trivy-action 사례가 증명)·우선은 P0 push -u 백업이 선행. agent-office는 이미 SHA 핀이라 추가 조치 불요. Sources: trivy-action 하이재킹(TeamPCP)·GitHub Actions 보안 로드맵·game-ci.',
+      },
+      {
+        title:
+          '🎨 Art Director — Liquid Glass(글라스모피즘 진화·투명 레이어가 움직임/빛반사로 유동 반응) 2026 주류·Bento Grid 비대칭 모듈 카드 레이아웃 모바일 전면 채택·Neomorphism 재부상(소프트 그림자+하이라이트 촉각 버튼) = NumLink 레벨 선택 Bento Grid 적합',
+        description:
+          '**🎨 디자인 신규 1순위**: **Liquid Glass — 글라스모피즘 진화형으로 투명 레이어가 움직임·빛반사에 유동적으로 반응**·2026 주류 부상(Apple UI 방향성과 정합). **🎨 신규 2순위**: **Bento Grid — 비대칭 모듈 카드 레이아웃이 모바일 전면 채택**·정보 밀도를 높이면서도 시각적으로 정돈됨 = 레벨/곡 선택처럼 다정보 화면에 최적. **🎨 신규 3순위**: **Neomorphism 재부상 — 소프트 그림자+하이라이트로 촉각적 버튼감**·캐주얼 게임 UI에 적합(어제 키네틱 타이포·브루탈리즘·더블코딩과 겹치지 않는 신규 토픽). **오늘 결정 제안**: **P2 NumLink 레벨 선택 화면에 Bento Grid 비대칭 모듈 카드 적용 검토** — 레벨 정보(번호·별점·잠금 여부)를 크기가 다른 비대칭 타일로 배치해 가독성+몰입 동시 확보·미니멀 유지(동적 Instantiate 금지 준수·씬 사전 배치) + **P2 MeowBeat 곡 선택에 Liquid Glass 카드 검토**. AI 전형 디자인(민트+다크) 회피 원칙과 정합. Sources: 2026 모바일 UI 트렌드(Liquid Glass·Bento Grid·Neomorphism).',
+      },
+    ],
+    meetingTitle:
+      '🤝 6/1 종합 회의 — 🚨 어제 "push -u 1줄이 회의 가치 결정"이라 못박은 P0가 또 0/3 미실행·✅ 단 NumLink 코드 흐름은 유지(5/31 MS4 커밋)·🆕 문제가 백업 0→백업 0 누적 심화로 전환(코드는 쌓이는데 백업 1줄 6일째 미실행)·MeowBeat 50일 단절 돌파·오늘은 분석 줄이고 push -u 1줄 실행만이 유일한 가치',
+    meetingSummary:
+      '제50회 종합 회의. **🚨 핵심 = 어제(5/31) 회의가 "이번엔 push -u 1줄이 회의 가치를 결정한다"고 명시했으나 그 1줄조차 미실행: NumLink·MeowBeat 둘 다 upstream 여전 미설정·AutoGenTests 4파일 여전 deleted = 5/31 P0 3건 전부 0/3.** Orchestrator·QA·DevOps 3인이 git 실측으로 일치 확인. **✅ 단 긍정 신호: NumLink는 5/31 UGUI MS4(b80ab1d) 커밋으로 코드 작성을 계속함(단절 1일·흐름 유지).** **🆕 메타 전환: 문제가 "백업 0"에서 "백업 0 누적 심화"로 — NumLink는 코드를 계속 쌓는데 push -u가 6일째 미실행이라 어제보다 커밋이 더 쌓여 유실 시 손실 규모만 증가.** QA는 게임 레포 백업 0이라 로컬 유실 시 코드+회귀 안전망(Tools·AutoGenTests)이 동시 소실되는 이중 리스크를 경고. MeowBeat는 4/12 마지막→오늘 6/1 = 50일째 단절 돌파(곡 10개 MVP 컷라인은 유지). **메타 통찰: 결정은 50회 누적됐으나 5분짜리 백업 1줄의 실행이 안 되는 게 본질 — 오늘은 신규 리서치 적용보다 push -u 1줄 실행만이 유일한 가치(새벽이라 게임 레포 push는 사용자 승인 후).** 신규 리서치는 라이브옵스 IAP 84%·앨범 컬렉션 참여율 1위·Unity 6.4 Project Auditor 기본 탑재·Apple 스크린샷 캡션 인덱싱·trivy-action 하이재킹·Liquid Glass/Bento Grid로 중복 없이 수집.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '🚨 어제 P0 3건 전부 미실행(0/3) — NumLink·MeowBeat upstream 여전 미설정·AutoGenTests 여전 deleted. ✅ 단 NumLink는 5/31 UGUI MS4 커밋으로 코드 흐름 유지(단절 1일). 🆕 문제가 "백업 0"→"백업 0 누적 심화"로 전환: 코드는 계속 쌓는데 push -u 1줄이 6일째 미실행 = 유실 시 손실만 커짐. MeowBeat 50일째 단절. 오늘은 분석 멈추고 push -u 1줄 실행이 단일 P0.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '모바일 IAP 수익 84%가 라이브옵스 타이틀서 발생·앨범 컬렉션 이벤트가 캐주얼 참여율 1위(66%)·앨범+배틀패스 매출 10~40% 기여. MeowBeat 고양이 카드 수집 앨범·NumLink 챕터 스탬프 앨범으로 월 1~2회 시즌 이벤트 백로그 등재 제안(게임 레포 백업·회귀 안전망 확보 후 착수).',
+      },
+      {
+        speaker: 'Developer',
+        note: 'Unity 6.4 Project Auditor가 에디터 기본 탑재(성능·코드 정적 분석 내장)·Adaptive Performance 콘솔(PS4/5·Xbox) 확장·Unity Hub 독립 CLI 시작속도 50배↑(5s→100ms). NumLink에 내장 Project Auditor 1회 실행해 baseline 리포트 확보하면 Tools 부트스트랩과 회귀 안전망 이중화 가능. 어제 이월 GetInstanceID 전수 검색도 착수.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '🚨 NumLink 회귀 안전망 여전 0(Tools 6회째 부재·AutoGenTests 4파일 deleted 미복구)인데 5/31 코드는 더 쌓임 = 검증 없는 변경 누적 심화. MeowBeat RT_SIZE_ZERO(error) 등 미해결 5건 변동 없음. 🆕 게임 레포 백업 0이라 로컬 유실 시 코드+회귀 안전망 동시 소실 이중 리스크. AutoGenTests git restore+Tools 복사를 push -u와 함께 실행해야 안전망 보존.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'Apple이 2025-06부터 스크린샷 캡션 텍스트를 키워드로 정식 인덱싱·풀 로컬라이제이션 시 DL 2~3배·스크린샷 텍스트 현지화만으로 비영어권 설치 +17%. NumLink/MeowBeat 스크린샷 캡션을 설명형→키워드 의도형("숫자 연결 퍼즐"·"고양이 리듬 게임")으로 재작성하고 비영어권 1~2개 언어 스크린샷 우선 현지화 제안.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'aquasecurity/trivy-action 75개 태그 하이재킹(2026-03-19 TeamPCP·태그 사용 시 시크릿 탈취)·GitHub Actions 호스팅 러너 L7 이그레스 방화벽 로드맵·GameCI unity-license-activate 5/18 패치. 게임 레포 CI 신규 구축 시 모든 액션을 버전 태그 대신 커밋 SHA로 핀 고정하는 원칙 명문화 제안(우선은 P0 push -u 백업 선행). agent-office는 이미 SHA 핀.',
+      },
+      {
+        speaker: 'Art Director',
+        note: 'Liquid Glass(글라스모피즘 진화·빛반사 유동 반응) 2026 주류·Bento Grid 비대칭 모듈 카드 모바일 전면 채택·Neomorphism 재부상. NumLink 레벨 선택 화면에 Bento Grid 비대칭 카드(번호·별점·잠금을 크기 다른 타일로)·MeowBeat 곡 선택에 Liquid Glass 카드 적용 검토(씬 사전 배치·AI 전형 디자인 회피 원칙 준수).',
+      },
+    ],
+    decisions: [
+      {
+        title:
+          '🚨 P0 [MeowBeat git push -u origin feature/song-ownership-migration · 50일 단절·백업 0·5분·6일째 이월]',
+        description:
+          'MeowBeat `feature/song-ownership-migration`이 4/12 마지막 커밋 이후 50일째 단절·upstream 미설정으로 push 원천 불가·origin/master 대비 다수 커밋+미커밋 37파일이 로컬에만 갇혀 백업 0. `git push -u origin feature/song-ownership-migration` 단 1회로 upstream 설정+적체 즉시 해소(5분). **5/30·5/31 연속 이월된 P0 — 오늘은 분석 대신 이 1줄 실행이 회의의 유일한 가치.** 새벽 자동 실행이므로 게임 레포 push는 사용자 승인 후 진행.',
+      },
+      {
+        title:
+          '🚨 P0 [NumLink git push -u origin feature/ugui-layerlab · 코드 계속 쌓이는데 백업 0 누적 심화]',
+        description:
+          'NumLink는 5/31 UGUI MS4까지 코드를 계속 쌓고 있으나 `feature/ugui-layerlab`가 upstream 미설정+origin 미존재로 push 불가·백업 0. 활발히 작업할수록 유실 시 손실 규모만 커진다(어제보다 커밋 더 쌓임). `git push -u origin feature/ugui-layerlab` 1회로 백업 확보. Orchestrator·QA·DevOps 3인 일치. 게임 레포 push는 사용자 승인 후.',
+      },
+      {
+        title:
+          '🚨 P0 [NumLink AutoGenTests 4파일 git restore + Tools 부트스트랩 · 회귀 안전망 0·6회째 이월]',
+        description:
+          'NumLink는 Tools·AutoGenTests 둘 다 없어 회귀 안전망 0인데 5/31 UGUI 코드는 더 쌓임 = 검증 없는 변경 누적 심화. deleted된 AutoGenTests 4파일(asmdef·meta·cs·meta) `git restore`로 즉시 복구(의도된 삭제 아니면)+`C:/Unity/_ProjectTemplate/Tools/` 또는 MeowBeat Tools 18개 복사해 unity_validate.py 0 error baseline 확보. push -u(백업)와 함께 실행해야 유실 시에도 회귀 안전망 보존.',
+      },
+      {
+        title:
+          '🔧 P1 [Unity 6.5 대비 GetInstanceID 전수 검색 착수 · 어제 이월]',
+        description:
+          'Unity 6.4 정식 InstanceID→EntityId 전환 시작·6.5 EntityId 4→8바이트 확대. NumLink/MeowBeat `GetInstanceID()` 호출부를 전수 검색해 `GetEntityId()` 마이그레이션 대상 목록 작성·int 캐싱/직렬화 코드 있으면 long 전환. 추가로 Unity 6.4 내장 Project Auditor 1회 실행해 성능·코드 baseline 리포트 확보(회귀 안전망 이중화).',
+      },
+      {
+        title:
+          '🔍 P2 [신규 리서치 적용 — 앨범 컬렉션·스크린샷 캡션·Bento Grid·SHA 핀 원칙]',
+        description:
+          'Game Designer — MeowBeat 고양이 카드/NumLink 챕터 스탬프 앨범 컬렉션 시즌 이벤트 백로그 등재. Content Writer — 스크린샷 캡션 키워드 의도형 재작성+비영어권 1~2개 언어 우선 현지화(+17%). Art Director — NumLink 레벨 선택 Bento Grid·MeowBeat 곡 선택 Liquid Glass 카드(씬 사전 배치). DevOps — 게임 CI 구축 시 액션 SHA 핀 고정 원칙 명문화. **모두 P0 게임 레포 백업·회귀 안전망 확보 후 착수.**',
+      },
+    ],
+  },
+  {
     id: '2026-05-31T04:00:00-daily-standup',
     date: '2026-05-31',
     researchTitle:
