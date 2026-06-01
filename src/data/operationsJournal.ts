@@ -43,6 +43,124 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-06-02T04:00:00-daily-standup',
+    date: '2026-06-02',
+    researchTitle:
+      '🌅 6/2 화요일 데일리 스탠드업 — **🎉 6일째 이월되던 NumLink 백업 P0가 드디어 실행: `feature/ugui-layerlab` → origin 동기화 완료(백업 0 → 해소)·게다가 6/1 레벨선택 UI 5커밋 추가 작업까지 = "결정→실행" 전환의 첫 증거**·**🚨 단 MeowBeat는 정반대: 51일 단절·`feature/song-ownership-migration` upstream 여전 미설정·`meowbeat/main` origin 대비 ahead 37 미푸시 = 백업 0 유지·이제 단일 최대 리스크가 MeowBeat로 명확히 이동**·**🆕 신규 리스크: MeowBeat `.meta` 3종(Input/Item/SaveLoad) 삭제 미커밋 = GUID 참조 깨짐 위험(무손실 복구 가능)**·**🚀 시장 신규: UGC 레벨에디터 경제 2025년 개발자 페이아웃 22억$(+47% YoY)·Fortnite 유저맵 48.8만개(2.5배)·컬렉션 메타 상위작 70%·미드코어 88% 채택**·**🚀 기술 신규: GPU Resident Drawer(URP 17.0.4) CPU 프레임타임 최대 50%↓·Microsoft.Unity.Analyzers 1.26.0(.NET10/VS2026 대응)·Unity Test Framework 2.0**·**📦 콘텐츠 신규: 구글플레이 스토어 등록정보 실험(무료 네이티브 A/B) 전환 +24.3%·상단 캡션 하단 대비 15~25% 우위·TikTok 게이밍 인게이지먼트 5.77% vs YouTube Shorts 1.98%**·**🛡 보안 신규: Mini Shai-Hulud(CVE-2026-45321) npm/PyPI 횡단 OIDC 토큰 탈취·Unity CVE-2025-59489 Android/Win 임의코드실행 패치 필요**·**🎨 디자인 신규: 플러시코어/토이미학(소프트3D 봉제 형태감)·리퀴드글래스(모션반응 굴절·iOS26)·다이제틱 인월드 UI**.',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제51회 — **6/2 화요일·1개월 임계 D+9**. **🎉 핵심 = "결정→실행" 전환의 첫 증거 포착: 6일째 이월되던 NumLink 백업 P0가 드디어 실행됐다 — `feature/ugui-layerlab`이 `origin/feature/ugui-layerlab`과 동기화(ahead 0) = upstream 설정+push 완료로 백업 0 해소. 게다가 6/1 하루에 레벨선택 UI 5커밋(Layer Lab 프리팹화·톤 정리)을 추가로 쌓았다.** Orchestrator·QA·DevOps 3인이 git 실측으로 NumLink 백업 해소를 일치 확인. **🚨 단 리스크의 무게중심이 MeowBeat로 명확히 이동: 4/12 마지막→오늘 6/2 = 51일째 단절·`feature/song-ownership-migration` upstream 여전 미설정(push 원천 불가)·`meowbeat/main`은 origin 대비 ahead 37(37커밋 미푸시)·미커밋 다수 = 백업 0 유지. 이제 단일 최대 유실 리스크는 NumLink가 아니라 MeowBeat.** **🆕 신규 리스크: MeowBeat `.meta` 3종(Input.meta/Item.meta/SaveLoad.meta) 삭제 미커밋 = 스크립트 GUID 참조 깨짐 위험(working-tree 변경이라 git restore로 무손실 복구 가능).** **✅ QA 정정: MeowBeat 실데이터 버그 0건 — qa_static.py 0 error(곡 10개·오디오 누락 0·노트 3605개 레인 이상 0).** **❌ 이월: NumLink Tools 7회째 부재·AutoGenTests 4파일 deleted 미복구(회귀 안전망 0).** **🚀 시장**: UGC 레벨에디터 경제 페이아웃 22억$(+47%)·컬렉션 메타 70%/88% 채택·코지+가상펫 컬렉션. **🚀 기술**: GPU Resident Drawer(URP 17.0.4) CPU 50%↓·Microsoft.Unity.Analyzers 1.26.0·Test Framework 2.0. **📦 콘텐츠**: 구글플레이 무료 A/B +24.3%·상단캡션 15~25%↑·TikTok 5.77% vs Shorts 1.98%. **🛡 보안**: Mini Shai-Hulud(CVE-2026-45321)·Unity CVE-2025-59489. **🎨 디자인**: 플러시코어·리퀴드글래스·다이제틱 UI. **🎯 오늘 핵심 결정 = ① [P0] MeowBeat 백업 응급조치 — 미커밋 정리/.meta 3종 git restore 후 `git push -u`로 upstream 설정 + `meowbeat/main` 37커밋 push(51일·백업 0·5분·사용자 승인 후) ② [P0] NumLink AutoGenTests 4파일 git restore + Tools 복사(회귀 안전망 0·7회째 이월) ③ [P1] Unity CVE-2025-59489 패치 적용 확인 ④ [P2] 신규 리서치 적용(고양이 수집 메타·무료 A/B·다이제틱 경로맵·Analyzers)**. 메타 통찰: 6일 만에 NumLink 백업 1줄이 실행되며 "결정 마비"가 깨졌다 — 같은 행동을 MeowBeat에 복제하는 것이 오늘의 유일한 본질.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — 🎉 NumLink 백업 P0 6일째 만에 실행(feature/ugui-layerlab→origin 동기화·ahead 0·백업 0 해소)+6/1 레벨선택 UI 5커밋 추가·🚨 단 리스크 무게중심 MeowBeat로 이동(51일 단절·upstream 미설정·meowbeat/main ahead 37 미푸시·백업 0 유지)·❌ NumLink Tools 7회째·AutoGenTests 미복구 이월',
+        description:
+          '**🎉 핵심 = "결정→실행" 전환의 첫 증거**: 6일째 이월되던 NumLink 백업 P0가 드디어 실행됐다 — `git -C C:/Unity/NumLink branch -vv` 결과 `feature/ugui-layerlab`이 `[origin/feature/ugui-layerlab]`과 동기화(ahead 0) = upstream 설정+push 완료로 백업 0 해소. 게다가 6/1 하루에 레벨선택 UI 5커밋(4b16c31 등 Layer Lab 프리팹화·크림 톤 정리)을 추가로 쌓아 코드 흐름도 유지. **🚨 단 리스크 무게중심 이동**: MeowBeat는 정반대 — 마지막 커밋 2026-04-12(farm)→오늘 6/2 = **51일째 단절**·현재 브랜치 `feature/song-ownership-migration` upstream 여전 미설정(push 원천 불가)·`meowbeat/main`은 `[origin/meowbeat/main: ahead 37]`(37커밋 미푸시)·미커밋 다수(SongData/GameManager/SongManager.cs+manifest+.meta 3개 삭제) = **백업 0 유지·이제 단일 최대 유실 리스크는 MeowBeat로 명확히 이동**. **❌ 이월**: NumLink `Tools` 폴더 여전 부재(7회째)·AutoGenTests 4파일 git status 여전 deleted. **agent-office**: a9d1f16(6/1 저널) origin/main 동기·`.omc/project-memory.json` 1건 미커밋·DailyStandup Running. **오늘 결정 제안**: NumLink에서 통한 "백업 1줄 실행"을 MeowBeat에 그대로 복제 — `.meta` 3종 restore 후 `git push -u`로 upstream 설정+37커밋 백업을 단일 P0로(새벽이라 사용자 승인 후). (git branch -vv·log·status 실측)',
+      },
+      {
+        title:
+          '🎮 Game Designer — UGC 레벨에디터 경제 2025 개발자 페이아웃 22억$(+47% YoY)·Fortnite 유저맵 48.8만개(2.5배)·플레이타임 40%가 크리에이터 콘텐츠·컬렉션 메타 상위작 70%·미드코어 88% 채택 = MeowBeat 고양이 수집 메타 GDD 기둥 격상 적합',
+        description:
+          '**🚀 시장 신규 1순위**: **UGC 레벨에디터 경제 폭발 — 2025년 Roblox+Fortnite+Overwolf 개발자 페이아웃 22억$(+47% YoY)·Fortnite 유저제작맵 48.8만개(2024년 19.8만→2.5배)·전체 플레이타임의 40%가 크리에이터 콘텐츠**·퍼즐은 1st파티 미진출 빈 장르(어제 라이브옵스 IAP 84%·앨범 컬렉션과 겹치지 않는 신규 토픽). **🚀 신규 2순위**: **컬렉션 메타가 리텐션 1순위 도구 — 상위 모바일게임의 70%·미드코어의 88%가 캐릭터/수집 메타 채택**·정서적 투자로 이탈 방지. **🚀 신규 3순위**: **코지+가상펫 컬렉션 결합이 캐주얼 신성장축** — Merge Dragons식 펫 육성+수집 메타가 저스트레스 장르에서 retention 견인. **오늘 결정 제안**: **P2 MeowBeat에 "수집 메타 레이어"를 정식 GDD 기둥으로 격상** — 고양이를 단일 마스코트가 아닌 컬렉션(품종/희귀도/코스튬)으로 설계하고 곡 클리어↔고양이 도감 연동(특정 곡 풀콤보→한정 고양이 해금)으로 D7~D30 이탈 방어·NumLink엔 경량 적용(퍼즐 클리어 보상 수집형 테마/스킨 도감). 단 P0 게임 레포 백업·회귀 안전망 선행. Sources: Naavik UGC Games 2026·Udonis 캐릭터 컬렉션 메타.',
+      },
+      {
+        title:
+          '💻 Developer — GPU Resident Drawer(URP/HDRP 17.0.4) BatchRendererGroup 자동 GPU 인스턴싱 CPU 프레임타임 최대 50%↓·Microsoft.Unity.Analyzers 1.26.0(2026-02·.NET10/VS2026 대응)·Unity Test Framework 2.0·Audio Random Container 정식화 = NumLink Analyzers+Test Framework로 테스트 0+미커밋 위험 동시 완화',
+        description:
+          '**🚀 기술 신규 1순위**: **GPU Resident Drawer(URP/HDRP 17.0.4)** — BatchRendererGroup 기반 자동 GPU 인스턴싱으로 CPU 프레임타임 최대 50% 절감·고사양 모바일 대비(어제 Project Auditor·Adaptive Performance·Hub CLI와 겹치지 않는 신규 토픽). **🚀 신규 2순위**: **Microsoft.Unity.Analyzers 1.26.0(2026-02-03 배포)** — .NET10+VS2026 대응·Rider/VS에서 Unity 전용 컴파일타임 진단 강제. **🚀 신규 3순위**: **Unity Test Framework 2.0(exp)** — EditMode/PlayMode 어셈블리 분리·**Audio Random Container 정식화**(모바일 오디오 레이턴시는 DSP Buffer "Best latency"+Decompress On Load 조합이 핵심·MeowBeat 리듬 정확도와 직결). **오늘 결정 제안**: **P2 NumLink에 Microsoft.Unity.Analyzers 1.26.0 + Test Framework 2.0 도입·EditMode 테스트 어셈블리 별도 asmdef 분리** — 삭제된 AutoGenTests 4파일 빈자리를 메우면서 Analyzer 정적 진단이 MeowBeat 미커밋 위험(.meta 삭제 GUID)도 잡아냄 = "테스트 0+미커밋 위험" 두 부채를 단일 툴체인으로 동시 완화·Domain 레이어(순수 C#)부터 RED→GREEN 권장. Sources: GPU Resident Drawer(HDRP 17.0.4)·Microsoft.Unity.Analyzers NuGet·Test Framework 2.0 docs.',
+      },
+      {
+        title:
+          '🔍 QA Tester — ✅ MeowBeat 실데이터 버그 0건(qa_static.py 0 error·곡10·오디오누락0·노트3605개 레인이상0)·🚨 최severe = NumLink 회귀 안전망 전무(AutoGenTests 4파일 삭제+Tools 부재로 정적/회귀검증 0)·🆕 MeowBeat .meta 3종(Input/Item/SaveLoad) 삭제로 스크립트 GUID 참조 깨짐 위험(무손실 복구 가능)',
+        description:
+          '**✅ 정정**: MeowBeat 미해결 실데이터 버그 **0건** — `python3 Tools/qa_static.py` 0 error/0 warning(곡 10개·오디오 누락 0·노트 3605개 레인 이상 0). 어제까지의 "RT_SIZE_ZERO 미해결 5건"은 실데이터에서 재현되지 않음(정적 데이터는 정상). **🚨 최대 품질 리스크**: **NumLink 회귀 안전망 전무** — AutoGenTests 4파일(asmdef·meta·cs·meta) git status 여전 deleted + `C:/Unity/NumLink/Tools` 폴더 부재(7회째)로 정적/회귀 검증 0인데 6/1 레벨선택 UI 5커밋으로 변경은 계속 누적. **🆕 신규 리스크**: MeowBeat `.meta` 3종(Input.meta/Item.meta/SaveLoad.meta) git status deleted = 해당 스크립트 폴더 GUID 참조 깨짐 위험(단 working-tree 변경이라 `git restore`로 무손실 원복 가능). **오늘 결정 제안**: **P0 NumLink AutoGenTests 4파일 `git restore` 즉시 복구 + `C:/Unity/_ProjectTemplate/Tools/`(또는 MeowBeat Tools 18개) 복사**로 unity_validate.py 0 error baseline 확보 + **MeowBeat .meta 3종 `git restore` 원복**(둘 다 미커밋 무손실 복구). Sources: qa_static.py 실행 결과·known_bugs.json·git status·Tools 폴더 실측.',
+      },
+      {
+        title:
+          '📢 Content Writer — 구글플레이 스토어 등록정보 실험(무료 네이티브 A/B) 스크린샷 분기 테스트 전환 +24.3%·상단 캡션 하단 대비 15~25% 우위·분기별 A/B 앱이 연1회 갱신 대비 전환 20~30%↑·TikTok 게이밍 인게이지먼트 5.77% vs YouTube Shorts 1.98% = NumLink/MeowBeat 무료 A/B 즉시 셋업 기회',
+        description:
+          '**📦 콘텐츠 신규 1순위**: **구글플레이 "스토어 등록정보 실험"(무료 네이티브 A/B)** — 스크린샷 분기 테스트로 전환율 +24.3%·상단 캡션이 하단 대비 15~25% 우위(SplitMetrics 15억+ 노출 데이터·어제 Apple 캡션 인덱싱과 겹치지 않는 신규 토픽). **📦 신규 2순위**: **분기별 스크린샷 A/B 테스트 앱이 연 1회 갱신 앱 대비 전환율 20~30% 높음**·10개+ 시장 현지화 등록정보는 전환 35~50%↑. **📦 신규 3순위**: **숏폼 — 게이밍 콘텐츠 인게이지먼트 TikTok 5.77% vs YouTube Shorts 1.98%**·북미 모바일게이머 39%가 TikTok에서 신작 발견. **오늘 결정 제안**: **P2 NumLink·MeowBeat 모두 구글플레이 "스토어 등록정보 실험"(무료)으로 첫 스크린샷 세트를 4~6주 주기로 A/B 테스트·캡션 상단 배치 통일** — NumLink "한 붓에 잇는 쾌감"·MeowBeat "고양이 박자 맞추기" 핵심 후크를 첫 스크린샷 상단 캡션으로 노출하는 A안 vs 게임플레이 클로즈업 B안 비교(+20%↑ 변동 시 채택)·동일 후크 영상은 TikTok 우선(Shorts 대비 약 3배 인게이지먼트). Sources: SplitMetrics 스토어 등록정보 실험·숏폼 게이밍 인게이지먼트 벤치마크.',
+      },
+      {
+        title:
+          '🛡 DevOps — agent-office 배포 이상 없음(Pages workflow 최근 5건 success·SHA 핀)·🆕 Mini Shai-Hulud(CVE-2026-45321) npm/PyPI 횡단 OIDC 토큰 런너메모리 추출(6/1 Red Hat npm 30+ 감염)·Unity CVE-2025-59489(2017.1+ Android/Win 임의코드실행) 패치 필요·MeowBeat 미푸시37+미커밋 동시 = 단일 디스크장애 시 4/12 이후 전량 유실',
+        description:
+          '**CI 상태**: agent-office(GitHub Pages) 배포 파이프라인 이상 없음 — Pages workflow build·HTTPS 강제·최근 5건 전부 success(6/1 마지막)·모든 액션 SHA 핀. **🛡 보안 신규 1순위**: **Mini Shai-Hulud(CVE-2026-45321)** — npm/PyPI 횡단 웜·OIDC 토큰을 런너 메모리에서 추출·6/1 Red Hat npm 30+ 패키지가 OIDC 통해 감염(어제 trivy-action·Megalodon과 별개 신규 사건). **🛡 신규 2순위**: **Unity CVE-2025-59489** — Unity 2017.1+ Android/Windows/Linux/macOS 임의 코드 실행 취약점·엔진 패치 적용 필요. **🚨 백업 위험 확정·악화**: 로컬 `meowbeat/main`이 origin 대비 ahead 37(37커밋 미푸시) + 현재 `feature/song-ownership-migration` upstream 미설정+미커밋 다수 = **단일 디스크 장애 시 4/12 이후 작업 전량 유실**·CI 부재로 백업이 git push에만 의존. **오늘 결정 제안**: **P0 MeowBeat 즉시 백업 — `git push meowbeat HEAD:meowbeat/main`로 37커밋 push + 미커밋 정리 후 `git push -u`로 `feature/song-ownership-migration` upstream 설정**(NumLink에서 통한 방식 복제) + **P1 Unity CVE-2025-59489 패치 적용 확인** + 부가로 keystore base64+GitHub Secrets 분리 권고. Sources: Aikido Red Hat npm·Tenable Mini Shai-Hulud·The Record Unity CVE-2025-59489.',
+      },
+      {
+        title:
+          '🎨 Art Director — 플러시코어/토이미학(봉제·장난감 소프트3D 둥근지오메트리)·리퀴드글래스(글래스모피즘 진화·모션반응 반투명+굴절·iOS26 견인)·다이제틱 인월드 UI(HUD를 게임세계에 녹임·메뉴≠별도화면) = NumLink 레벨선택을 다이제틱 점-선 경로맵으로 정리 적합',
+        description:
+          '**🎨 디자인 신규 1순위**: **플러시코어/토이미학** — 봉제·장난감 형태감의 소프트3D(둥근 지오메트리·친근 비율)·캐주얼 펫게임과 정합(어제 Bento Grid·Neomorphism·키네틱 타이포와 겹치지 않는 신규 토픽). **🎨 신규 2순위**: **리퀴드글래스** — 글래스모피즘 진화형으로 모션 반응 반투명+굴절(iOS26 견인). **🎨 신규 3순위**: **다이제틱 인월드 UI** — HUD를 게임 세계에 녹여 메뉴가 별도 화면이 아닌 세계의 일부. **오늘 결정 제안**: **P2 NumLink 레벨선택 UI를 "다이제틱 보드게임 맵" 방향으로 정리** — 현재 Layer Lab 크림+입체버튼은 좋은 출발점이나 레벨 노드를 단순 격자 버튼이 아닌 **숫자 연결 퍼즐 자체를 메타포로 삼은 점-선 경로 맵**으로 배치(클리어 레벨끼리 선으로 이어져 진척도가 곧 게임 모티프=다이제틱)·잠긴 노드에만 리퀴드글래스 절제 적용(반투명 프로스트+터치 시 굴절·"해금되면 유리가 깨지듯 선명" 보상감)·사용자 선호(민트+다크 회피)에 맞춰 글래스는 무채색/블루 대신 **크림 베이스 위 따뜻한 앰버 톤 굴절**로 한정해 Layer Lab 톤 일관성+60fps 유지·동적 Instantiate 금지 준수. Sources: Casual Game Art 2026·Midrocket UI Trends 2026·Diegetic UI Guide·Liquid Glass 2026.',
+      },
+    ],
+    meetingTitle:
+      '🤝 6/2 종합 회의 — 🎉 6일째 이월되던 NumLink 백업 P0가 드디어 실행(feature/ugui-layerlab→origin 동기화·백업 0 해소)+6/1 UI 5커밋 추가 = "결정 마비" 균열·🚨 단 리스크 무게중심 MeowBeat로 이동(51일·upstream 미설정·37커밋 미푸시·백업 0 유지)·오늘은 NumLink에서 통한 백업 1줄을 MeowBeat에 복제하는 것이 유일한 본질',
+    meetingSummary:
+      '제51회 종합 회의. **🎉 핵심 = "결정→실행" 전환의 첫 증거 포착: 6일째 이월되던 NumLink 백업 P0가 드디어 실행됐다 — `feature/ugui-layerlab`이 `origin/feature/ugui-layerlab`과 동기화(ahead 0)·upstream 설정+push 완료로 백업 0 해소. 게다가 6/1 하루에 레벨선택 UI 5커밋을 추가로 쌓았다.** Orchestrator·QA·DevOps 3인이 git 실측으로 일치 확인 — 50회 누적되던 "결정 마비"가 드디어 깨졌다. **🚨 단 리스크의 무게중심이 MeowBeat로 명확히 이동: 4/12 마지막→오늘 6/2 = 51일째 단절·`feature/song-ownership-migration` upstream 여전 미설정·`meowbeat/main`은 origin 대비 ahead 37(37커밋 미푸시)·미커밋 다수 = 백업 0 유지·단일 디스크 장애 시 4/12 이후 전량 유실.** **🆕 QA 신규 경고: MeowBeat `.meta` 3종(Input/Item/SaveLoad) 삭제 미커밋 = GUID 참조 깨짐 위험(git restore로 무손실 복구).** **✅ QA 정정: MeowBeat 실데이터 버그 0건(qa_static.py 0 error·곡 10·노트 3605·누락 0).** **❌ 이월: NumLink Tools 7회째 부재·AutoGenTests 4파일 deleted 미복구(회귀 안전망 0).** **메타 통찰: NumLink에서 6일 만에 백업 1줄이 실행되며 결정 마비가 깨진 것이 오늘 최대 성과 — 같은 행동(.meta restore→push -u→37커밋 백업)을 MeowBeat에 그대로 복제하는 것이 오늘의 유일한 본질(새벽이라 게임 레포 push는 사용자 승인 후).** 신규 리서치는 UGC 레벨에디터 22억$·컬렉션 메타 70%/88%·GPU Resident Drawer 50%↓·Microsoft.Unity.Analyzers 1.26.0·구글플레이 무료 A/B +24.3%·Mini Shai-Hulud/Unity CVE-2025-59489·플러시코어/다이제틱 UI로 중복 없이 수집.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '🎉 6일째 이월되던 NumLink 백업 P0 드디어 실행 — feature/ugui-layerlab→origin 동기화(ahead 0·백업 0 해소)+6/1 레벨선택 UI 5커밋 추가. 50회 누적 "결정 마비" 균열. 🚨 단 리스크 무게중심 MeowBeat로 이동: 51일 단절·upstream 미설정·meowbeat/main ahead 37 미푸시·백업 0 유지. ❌ NumLink Tools 7회째·AutoGenTests 미복구 이월. 오늘은 NumLink에서 통한 백업 1줄을 MeowBeat에 복제하는 것이 단일 P0.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: 'UGC 레벨에디터 경제 2025 개발자 페이아웃 22억$(+47% YoY)·Fortnite 유저맵 48.8만개(2.5배)·컬렉션 메타 상위작 70%·미드코어 88% 채택·코지+가상펫 컬렉션 신성장축. MeowBeat에 "수집 메타 레이어"를 정식 GDD 기둥으로 격상(고양이 품종/희귀도/코스튬+곡 클리어↔도감 연동)해 D7~D30 이탈 방어 제안. P0 백업·회귀 안전망 선행.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'GPU Resident Drawer(URP 17.0.4) CPU 프레임타임 최대 50%↓·Microsoft.Unity.Analyzers 1.26.0(.NET10/VS2026)·Test Framework 2.0·Audio Random Container 정식화. NumLink에 Analyzers+Test Framework 2.0 도입+EditMode asmdef 분리하면 삭제된 AutoGenTests 빈자리 보강+MeowBeat .meta 삭제 GUID 위험도 정적 진단 = 두 부채 단일 툴체인 동시 완화. Domain부터 RED→GREEN.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '✅ 정정 — MeowBeat 실데이터 버그 0건(qa_static.py 0 error·곡10·오디오누락0·노트3605 레인이상0). 🚨 최severe = NumLink 회귀 안전망 전무(AutoGenTests 4파일 삭제+Tools 부재로 정적/회귀검증 0). 🆕 MeowBeat .meta 3종(Input/Item/SaveLoad) 삭제로 GUID 참조 깨짐 위험. AutoGenTests git restore+Tools 복사+.meta 3종 restore 즉시 실행(모두 미커밋 무손실 복구).',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '구글플레이 "스토어 등록정보 실험"(무료 네이티브 A/B) 스크린샷 분기 전환 +24.3%·상단 캡션 하단 대비 15~25% 우위·분기 A/B 앱이 연1회 갱신 대비 20~30%↑·TikTok 게이밍 5.77% vs Shorts 1.98%. NumLink/MeowBeat 무료 A/B로 첫 스크린샷 4~6주 주기 테스트·캡션 상단 통일·핵심 후크 영상은 TikTok 우선(Shorts 약 3배) 제안.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'agent-office 배포 이상 없음(Pages 최근 5건 success·SHA 핀). 🆕 Mini Shai-Hulud(CVE-2026-45321) npm/PyPI 횡단 OIDC 토큰 탈취·6/1 Red Hat npm 30+ 감염·Unity CVE-2025-59489 Android/Win 임의코드실행 패치 필요. 🚨 MeowBeat 미푸시37+미커밋 동시=단일 디스크장애 시 4/12 이후 전량 유실. P0 git push meowbeat HEAD:meowbeat/main+upstream 설정(NumLink 방식 복제), P1 Unity CVE 패치 확인.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '플러시코어/토이미학(봉제 소프트3D 둥근지오메트리)·리퀴드글래스(모션반응 굴절·iOS26)·다이제틱 인월드 UI(HUD를 세계에 녹임). NumLink 레벨선택을 "다이제틱 점-선 경로맵"으로 정리(클리어 레벨끼리 선으로 이어 진척도가 게임 모티프)+잠긴 노드만 크림 베이스+앰버 톤 리퀴드글래스 절제 적용(민트+다크 회피·60fps·동적 Instantiate 금지 준수) 제안.',
+      },
+    ],
+    decisions: [
+      {
+        title:
+          '✅ [어제 대비 완료] NumLink 백업 P0 6일째 만에 실행 — feature/ugui-layerlab → origin 동기화(백업 0 해소)',
+        description:
+          '5/31·6/1 회의가 "push -u 1줄이 회의 가치를 결정한다"고 6일째 못박았던 NumLink 백업 P0가 드디어 실행됨 — `git branch -vv` 결과 `feature/ugui-layerlab`이 `[origin/feature/ugui-layerlab]`과 동기화(ahead 0). upstream 설정+push 완료로 백업 0 해소. 게다가 6/1 레벨선택 UI 5커밋 추가. **50회 누적되던 "결정 마비"가 깨진 첫 증거 — 오늘은 같은 행동을 MeowBeat에 복제하는 것이 본질.**',
+      },
+      {
+        title:
+          '🚨 P0 [MeowBeat 백업 응급조치 — NumLink 방식 복제 · 51일 단절·37커밋 미푸시·백업 0·5분·사용자 승인 후]',
+        description:
+          'MeowBeat가 이제 단일 최대 유실 리스크: 4/12 마지막→오늘 6/2 = 51일째 단절·`feature/song-ownership-migration` upstream 미설정·`meowbeat/main` origin 대비 ahead 37(37커밋 미푸시)·미커밋 다수 = 백업 0·단일 디스크 장애 시 4/12 이후 전량 유실. **실행 순서**: ① `.meta` 3종(Input/Item/SaveLoad) `git restore`로 원복(GUID 위험 제거) ② 미커밋 정리/커밋 ③ `git push meowbeat HEAD:meowbeat/main`로 37커밋 백업 ④ `git push -u`로 현재 브랜치 upstream 설정. Orchestrator·QA·DevOps 3인 일치. **(새벽 실행이라 게임 레포 push는 사용자 승인 후)**',
+      },
+      {
+        title:
+          '🚨 P0 [NumLink 회귀 안전망 복구 — AutoGenTests git restore + Tools 복사 · 7회째 이월]',
+        description:
+          'NumLink는 AutoGenTests 4파일 deleted + Tools 폴더 부재(7회째)로 회귀 안전망 0인데 6/1 레벨선택 UI 5커밋으로 변경은 계속 누적. **AutoGenTests 4파일 `git restore` 즉시 복구**(의도된 삭제 아니면)+**`C:/Unity/_ProjectTemplate/Tools/`(또는 MeowBeat Tools 18개) 복사**해 unity_validate.py 0 error baseline 확보. QA·Developer 일치. 백업이 끝나면 가장 오래된 이월 P0이므로 우선 처리.',
+      },
+      {
+        title:
+          '🔧 P1 [Unity CVE-2025-59489 패치 적용 확인 + Microsoft.Unity.Analyzers 1.26.0 도입 검토]',
+        description:
+          'Unity 2017.1+ Android/Windows 임의 코드 실행 취약점(CVE-2025-59489) — NumLink/MeowBeat 엔진 버전 확인 후 패치 적용. 부가로 NumLink에 Microsoft.Unity.Analyzers 1.26.0 + Test Framework 2.0 도입해 EditMode 테스트 어셈블리 분리(삭제된 AutoGenTests 빈자리 보강+미커밋 .meta GUID 위험 정적 진단). DevOps·Developer 연계.',
+      },
+      {
+        title:
+          '🔍 P2 [신규 리서치 적용 — 고양이 수집 메타·구글플레이 무료 A/B·다이제틱 경로맵 · 모두 P0 백업·안전망 후 착수]',
+        description:
+          'Game Designer — MeowBeat 고양이 수집 메타(품종/희귀도/코스튬+곡↔도감 연동)를 GDD 기둥으로 격상. Content Writer — NumLink/MeowBeat 구글플레이 "스토어 등록정보 실험"(무료 A/B)로 첫 스크린샷 4~6주 주기 테스트·캡션 상단 통일·후크 영상 TikTok 우선. Art Director — NumLink 레벨선택을 다이제틱 점-선 경로맵+잠긴 노드 크림/앰버 리퀴드글래스 절제 적용. **모두 P0 게임 레포 백업·회귀 안전망 확보 후 착수.**',
+      },
+    ],
+  },
+  {
     id: '2026-06-01T04:00:00-daily-standup',
     date: '2026-06-01',
     researchTitle:
