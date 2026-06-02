@@ -43,6 +43,119 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-06-03T04:00:00-daily-standup',
+    date: '2026-06-03',
+    researchTitle:
+      '🌅 6/3 수요일 데일리 스탠드업 — **🔥 NumLink는 폭발적 실행(오늘 9커밋: UI Toolkit 롤백→Layer Lab 9-slice 스킨·3테마 컬러 전면 재설계·게임오버/레벨선택 가독성)·코드 흐름 최고조**·**🚨 단 MeowBeat 백업 P0는 7일째 이월: feature/song-ownership-migration upstream 여전 미설정·meowbeat/main ahead 37 미푸시·52일 단절·.meta 3종 삭제 유지 = "결정→실행" 전환이 NumLink에만 작동·MeowBeat엔 7일째 0**·**🆕 출시 차단 신규: Android 16KB 페이지 정렬 의무화(2025.11~)+타깃 API36 — AdMob 등 4KB .so가 1개라도 있으면 Google Play AAB 업로드 리젝트(MeowBeat 출시 직전 P0)**·**🆕 QA 신규 오염: MeowBeat _Recovery/.bak untracked .meta 산재**·**🚀 시장 신규: 퍼즐 다운로드 -3%인데 매출 +14%·광고노출 +40% YoY 디커플링(Sensor Tower) = 신규유입 아닌 기존유저 광고수익화가 성장 견인·Block Blast 月 1750만$ 광고단독·연 1만회 A/B로 70M DAU**·**🚀 기술 신규: Unity 6.3 LTS UnityWebRequest HTTP/2 기본화(서버부하 40%↓)·스크립터블 오디오 파이프라인(Burst HPC# DSP·리듬게임 저지연)**·**📦 콘텐츠 신규: 애플 CPP가 25-07-30 organic 검색 노출+10-29 한도 35→70개 2배·게임 CVR +8%·채택률 31%뿐(저경쟁)·퍼즐 인앱이벤트 화~목 출시 추천 트래픽 최대 5배**·**🎨 디자인 신규: Tactile Minimalism(무게·질감 표면)·Neo-Skeuomorphism 프레스드 상태(inset shadow 촉각 깊이)·WCAG 3.0 APCA 대비 알고리즘 2026~27 의무화**.',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제52회 — **6/3 수요일·1개월 임계 D+10**. **🔥 핵심 = NumLink 실행 폭발 vs MeowBeat 7일째 정체의 양극화**: NumLink는 오늘 하루 9커밋(27d82e8 UI Toolkit 롤백 → b5e921b Layer Lab 9-slice 스킨 A-lite → 10bed53 3테마 컬러 전면 재설계 → 5fcac3a 게임오버/레벨선택 가독성)으로 코드 흐름 최고조·"결정→실행" 사이클이 NumLink에선 완전히 작동. **🚨 단 MeowBeat는 정반대로 7일째 백업 P0 이월: `feature/song-ownership-migration` upstream 여전 미설정(push 원천 불가)·`meowbeat/main` ahead 37 미푸시 그대로·마지막 커밋 4/12→오늘 52일 단절·.meta 3종(Input/Item/SaveLoad) 삭제 유지 = 백업 0·DevOps·QA·Orchestrator 3인 git 실측 일치.** **🆕 출시 차단 신규(Developer)**: Android 16KB 페이지 정렬 의무화(2025.11~)+타깃 API36 단계 적용 — Unity 엔진 코어는 16KB 지원하나 AdMob 등 서드파티 `.so`가 4KB 정렬이면 Google Play AAB 업로드 리젝트 = MeowBeat 출시 직전 반드시 통과해야 할 차단 이슈. **🆕 QA 신규 오염**: MeowBeat `_Recovery`/`.bak_btn` untracked `.meta` 산재(이전 회의엔 없던 항목). **✅ QA 유지**: MeowBeat qa_static.py 0 error/0 warning(known_bugs 6패턴 전수 통과·실데이터 무결). **❌ 이월**: NumLink Tools 부재(8회째)·AutoGenTests 4파일 삭제로 Editor 폴더 완전 공백·회귀 안전망 0인데 9커밋 누적. **🚀 시장(Game Designer)**: 퍼즐 다운로드 -3%·매출 +14%·광고노출 +40% YoY 디커플링·Block Blast 광고단독 月 1750만$·연 1만회 A/B로 70M DAU. **🚀 기술**: Unity 6.3 LTS HTTP/2 기본화(서버부하 40%↓)·스크립터블 오디오 파이프라인(Burst HPC# DSP). **📦 콘텐츠(Content Writer)**: 애플 CPP organic 검색 노출+한도 70개·게임 CVR +8%·채택률 31%·인앱이벤트 화~목 추천 5배. **🎨 디자인(Art Director)**: Tactile Minimalism·Neo-Skeuomorphism 프레스드 상태·WCAG 3.0 APCA. **🎯 오늘 핵심 결정 = ① [P0] MeowBeat 백업 — .meta 3종 git restore + `git push -u origin feature/song-ownership-migration` 1줄 + `meowbeat/main` 37커밋 push(52일·7일째 이월·5분·사용자 승인 후) ② [P0] MeowBeat Android 16KB 페이지 정렬 호환성 점검(AdMob .so·출시 차단) ③ [P1] NumLink AutoGenTests 4파일 git restore + Tools 복사(회귀 안전망 0·8회째) ④ [P1] NumLink Layer Lab 9-slice에 Neo-Skeuomorphism 프레스드 상태(inset shadow 0.1초)+APCA Lc60 ⑤ [P2] NumLink 애플 CPP 2~3종+광고 A/B·MeowBeat 화~목 인앱이벤트**. 메타 통찰: NumLink는 9커밋을 쏟는데 MeowBeat 백업 1줄은 7일째 못 친다 — 실행력 부재가 아니라 "어느 레포에 손을 대느냐"의 편중 문제·오늘 본질은 MeowBeat로 1분만 손을 옮기는 것.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — 🔥 NumLink 오늘 9커밋 폭발(UI Toolkit 롤백→Layer Lab 9-slice 스킨→3테마 컬러 재설계→가독성)·코드 흐름 최고조·🚨 단 MeowBeat 백업 P0 7일째 이월(upstream 미설정·meowbeat/main ahead 37·52일 단절·.meta 3종 삭제 유지)·❌ NumLink Tools 8회째·AutoGenTests 미복구',
+        description:
+          '**🔥 NumLink 실행 폭발**: `git -C C:/Unity/NumLink log --since="1 day ago"` = 오늘 하루 9커밋 — 27d82e8(UGUI→UI Toolkit 전면 롤백)·b5e921b(Layer Lab 스프라이트 9-slice 스킨 A-lite+재사용 스킬)·10bed53(3개 테마 컬러 컨셉 전면 재설계)·3eb9762/3964652(버튼 9-slice 코너·ghost 버튼 스킨)·fa725ed/5fcac3a(레벨선택 번호·별 가독성·타이틀 중복 이모지 제거) = **코드 흐름 최고조·"결정→실행" 사이클 완전 작동**. **🚨 단 MeowBeat 정반대**: `git -C C:/Unity/Feedme branch -vv` = 현재 `feature/song-ownership-migration` upstream **여전 미설정**(`no upstream configured`로 push 원천 불가)·`meowbeat/main [origin/meowbeat/main: ahead 37]`(37커밋 미푸시 그대로)·마지막 커밋 4/12→오늘 6/3 = **52일 단절**·미커밋 다수(SongData/GameManager/SongManager.cs+manifest+.meta 3종 삭제) = **백업 0·6/2 P0가 7일째 이월**. **❌ 이월**: NumLink `Tools` 폴더 여전 부재(8회째)·AutoGenTests 4파일 git status 여전 deleted(Editor 폴더 공백). **agent-office**: 958eca1(6/2 저널) origin/main 동기·DailyStandup Running·정상. **오늘 결정 제안**: NumLink가 9커밋을 쏟는 실행력은 충분히 증명됐다 — 그 손을 **단 1분만 MeowBeat로 옮겨** `.meta restore + push -u` 1줄을 치는 것이 유일한 본질(P0·사용자 승인 후). (git log/branch -vv/status 실측)',
+      },
+      {
+        title:
+          '🎮 Game Designer — 퍼즐 다운로드 -3%인데 매출 +14%·광고노출 +40% YoY 디커플링(Sensor Tower) = 신규유입 아닌 기존유저 광고수익화가 성장 견인·Block Blast 광고단독 月 1750만$·연 1만회 A/B로 70M DAU·하이브리드캐주얼 IAP Q2 +100% YoY = NumLink 보상형 광고 도입 적합',
+        description:
+          '**🚀 시장 신규 1순위**: **퍼즐 장르 다운로드-매출 디커플링** — 2025 퍼즐 다운로드 -3%인데 매출 +14%·광고 노출 +40% YoY(Sensor Tower State of Gaming 2026) = **성장이 신규 유입(다운로드)이 아니라 기존 유저 광고 수익화에서 나옴**(어제 UGC 레벨에디터·컬렉션 메타와 겹치지 않는 신규 토픽). **🚀 신규 2순위**: **Block Blast가 月 1750만$를 광고 단독으로** 달성·2025년 연 1만 회 A/B 테스트로 70M DAU = **광고 단일 모델도 라이브옵스 A/B로 스케일 가능**(mobilegamer.biz). **🚀 신규 3순위**: 하이브리드캐주얼 IAP가 25년 Q2 +100% YoY·상위 10개 분기 1.26억$·D7 18~22%로 하이퍼캐주얼 대비 2.5배(Game Growth Advisor). **오늘 결정 제안**: **P2 NumLink에 "광고 노출 빈도 A/B + 보상형 광고(힌트/되돌리기 1회)" 도입** — 퍼즐 매출 성장이 다운로드가 아닌 기존 유저 광고노출(+40%)에서 나온다는 데이터가 근거·보상형 광고는 80~90% 완료율+87% 긍정 인식으로 UX 훼손 최소·한 붓 긋기류 캐주얼에 정합. 단 P0 게임 레포 백업·회귀 안전망 선행. Sources: Sensor Tower State of Gaming 2026·mobilegamer.biz·Game Growth Advisor.',
+      },
+      {
+        title:
+          '💻 Developer — 🆕 Android 16KB 페이지 정렬 의무화(2025.11~)+타깃 API36 = AdMob 4KB .so 1개라도 있으면 Google Play AAB 리젝트(MeowBeat 출시 차단 P0)·Unity 6.3 LTS UnityWebRequest HTTP/2 기본화 서버부하 40%↓·스크립터블 오디오 파이프라인(Burst HPC# DSP) 리듬게임 저지연 노트동기',
+        description:
+          '**🆕 출시 차단 신규 1순위**: **Android 16KB 페이지 정렬 의무화(2025.11~)+타깃 API36(Android16) 2026 단계 적용** — Unity 엔진 코어는 이미 16KB 지원하나 **AdMob 등 서드파티 `.so`가 4KB 정렬이면 Google Play AAB 업로드가 리젝트**됨 = MeowBeat 출시 직전 반드시 통과해야 할 차단 이슈(어제 GPU Resident Drawer·Analyzers와 겹치지 않는 신규 토픽). **🚀 기술 신규 2순위**: **Unity 6.3 LTS UnityWebRequest HTTP/2 기본화** — Android 서버 부하 40%·CPU 15~20% 절감. **🚀 신규 3순위**: **Unity 6.3 스크립터블 오디오 파이프라인(Burst HPC# 제너레이터)** — 커스텀 DSP/저지연 신호체인 가능·MeowBeat 노트-오디오 동기 정밀도 개선 여지. **오늘 결정 제안**: **P0 MeowBeat Android 16KB 페이지 정렬 호환성 점검** — 빌드 후 `objdump`/Unity 빌드 경고로 `.so` 정렬 검증·AdMob SDK가 4KB면 최신 버전으로 업데이트(출시 전 차단 이슈라 P0)·부가로 P2 Unity 6.3 LTS 승격 시 UI Toolkit USS 필터+스크립터블 오디오 검토. Sources: unity.com Unity 6.3 LTS·developer.android.com/guide/practices/page-sizes·target-sdk.',
+      },
+      {
+        title:
+          '🔍 QA Tester — ✅ MeowBeat qa_static.py 0 error/0 warning(known_bugs 6패턴 전수통과·실데이터 무결)·🚨 NumLink Tools 부재+AutoGenTests 4파일 삭제로 Editor 폴더 완전 공백=회귀 안전망 0(9커밋 누적 중)·🆕 MeowBeat _Recovery/.bak untracked .meta 산재 신규 오염',
+        description:
+          '**✅ 유지**: MeowBeat `python3 Tools/qa_static.py` = `0 error(s), 0 warning(s)` exit 0 — known_bugs 6패턴(RT_SIZE_ZERO·YAML_DUPLICATE_FILE_ID·YAML_HEADER_REF_MISMATCH·YAML_INDENT_M_FATHER·MANIFEST_MISSING_AUDIO·NOTE_OUT_OF_LANE) 전수 통과·실데이터 무결성 유지(불변). **🚨 최대 품질 리스크**: **NumLink 회귀 안전망 0** — `ls C:/Unity/NumLink/Tools/` No such file(8회째)+AutoGenTests 4파일(asmdef·meta·cs·meta) git status deleted로 **Editor 폴더 완전 공백**인데 오늘 9커밋으로 UI 대규모 변경 계속 누적·미커밋 36건(대부분 .omc/.claude 세션 산출물·폰트 asset·_Recovery 잔재). **🆕 신규 오염**: MeowBeat `.meta` 3종(Input/Item/SaveLoad) 삭제 유지 + `AutoQATests`/`_Recovery`/`.bak_btn` untracked `.meta` 산재(이전 회의엔 없던 신규 항목·GUID 참조 깨짐 위험·working-tree라 무손실 복구 가능). **오늘 결정 제안**: **P1 NumLink AutoGenTests 4파일 `git restore` 복구 + `C:/Unity/_ProjectTemplate/Tools/`(또는 MeowBeat Tools) 복사**로 unity_validate.py 0 error baseline 확보 + **MeowBeat .meta 3종 `git restore` 원복**(둘 다 미커밋 무손실). NumLink 안전망 0은 즉시 빌드 차단은 아니라 P1. Sources: qa_static.py 실행·known_bugs.json·git status 실측.',
+      },
+      {
+        title:
+          '📢 Content Writer — 애플 CPP 25-07-30 organic 검색 노출 시작+10-29 한도 35→70개 2배·게임 CVR +8%·채택률 31%뿐(저경쟁 기회)·퍼즐 인앱이벤트 화~목 출시 추천 트래픽 최대 5배·AI 리트라이 번들 IAP +27%·2026 퍼즐 CPI iOS$3/안드$2·플레이어블 광고 CPI$1.5 D7 ROAS17%',
+        description:
+          '**📦 콘텐츠 신규 1순위**: **애플 Custom Product Page(CPP)가 2025-07-30 organic 검색 노출 시작 + 2025-10-29 한도 35→70개로 2배 확대** — 게임 평균 CVR +8%인데 **채택률 31%뿐(저경쟁 기회)**(RespectASO/Apptweak·어제 구글플레이 무료 A/B와 겹치지 않는 신규 토픽). **📦 신규 2순위**: **퍼즐 게임 인앱 이벤트는 화~목 출시 시 추천 노출 최대 5배 트래픽**·AI 리트라이 번들 추천으로 IAP 매출 +27% 사례(Audiencelab/Appwill). **📦 신규 3순위**: **2026 퍼즐 CPI iOS 약 $3.00/안드 $2.00·플레이어블 광고는 CPI를 $1.5 수준까지 낮추고 D7 ROAS 17% 달성**(Liftoff 2025 Casual Report). **오늘 결정 제안**: **P2 NumLink에 애플 CPP 2~3종 제작** — "한 붓에 잇는 쾌감" 후크별(릴렉스/두뇌훈련/타임어택) CPP+키워드 할당으로 organic 검색 노출 활용(채택률 31% 저경쟁+CVR +8%·App Store Connect 무비용·메타데이터만이라 즉시)·보조 P2 MeowBeat 신곡을 화~목 인앱 이벤트로 등록(추천 5배 윈도우). Sources: RespectASO CPP 2026·Apptweak·Liftoff 2025 Casual·Audiencelab.',
+      },
+      {
+        title:
+          '🛡 DevOps — 🚨 MeowBeat 백업 0 변화없음(feature/song-ownership-migration upstream 여전 미설정·meowbeat/main ahead 37 미푸시·52일 단절)·NumLink 3개 브랜치 전부 origin 추적 ahead 0 백업 정상·agent-office Pages 최근 5회 전부 success·🆕 GitHub Artifact Attestations 공개레포 기본화(SLSA L2 무료)',
+        description:
+          '**🚨 백업 위험 확정·불변**: `git -C C:/Unity/Feedme branch -vv` = `feature/song-ownership-migration 657032c`(upstream 표기 없음)·`meowbeat/main [origin/meowbeat/main: ahead 37]`·`git log -1` 로컬 최신 4/12 13:24→원격 최신 3/28 = **단절 52일+·단일 디스크 장애 시 4/12 이후 작업 전량 유실**(6/2와 0 변화). **백업 정상**: NumLink는 3개 브랜치 전부 `[origin/...]` 추적·ahead 없음. **CI 상태**: agent-office GitHub Pages `gh run list` 최근 5건 전부 completed success(6/1 마지막 33초)·SHA 핀·안정. **🛡 신규**: 2026년 GitHub가 공개 저장소 대상 **Artifact Attestations(빌드 출처 증명)를 기본값으로 전환** 중·Free/Pro도 공개 레포면 `actions/attest-build-provenance` 무료 적용(Sigstore 공개 인스턴스·SLSA Build Level 2)·Wiz 2026 리포트 비인간 ID +44%·AI 생성코드 1/5 조직 영향(어제 Shai-Hulud·Unity CVE와 별개 신규 토픽). **오늘 결정 제안**: **P0 MeowBeat 백업 즉시 — `git -C C:/Unity/Feedme push -u origin feature/song-ownership-migration` 1줄로 52일치 백업+upstream 영구 설정 + `git push origin meowbeat/main`로 ahead 37 해소**(NumLink 정상이라 조치 불필요)·부가 P2 agent-office Pages에 Artifact Attestations(P0 후). Sources: git branch -vv/log 실측·gh run list·GitHub Docs Artifact Attestations·Wiz SDLC 2026.',
+      },
+      {
+        title:
+          '🎨 Art Director — Tactile Minimalism(무게·질감 표면+극단 단순화·2026 썸네일 우위)·Neo-Skeuomorphism 프레스드 상태(눌림 깊이 inset shadow로 촉각 더블코딩·9-slice 직결)·WCAG 3.0 APCA 대비 알고리즘+인지 접근성 2026~27 의무화 = NumLink Layer Lab 9-slice 한 단계 업그레이드 적합',
+        description:
+          '**🎨 디자인 신규 1순위**: **Tactile Minimalism(촉각적 미니멀리즘)** — 무게·질감 느껴지는 표면+극단적 단순화·2026 스토어 썸네일 경쟁 우위(aaagameartstudio·어제 플러시코어/리퀴드글래스와 겹치지 않는 신규 토픽). **🎨 신규 2순위**: **Neo-Skeuomorphism/New Neumorphism** — 상태 변화를 촉각 깊이로 알리는 클레이형 버튼·강한 대비로 접근성 보완(Userology). **🎨 신규 3순위**: **WCAG 3.0 APCA 대비 알고리즘 + 인지 접근성(난독·ADHD 대응)** — 2026~27 모바일 적용 의무화 단계 진입(web-accessibility-checker). **오늘 결정 제안**: **P1 NumLink — 진행 중인 Layer Lab 9-slice 스킨에 Neo-Skeuomorphism "프레스드 상태(pressed-state)" 적용** — 숫자 셀/버튼을 눌렀을 때 안쪽 그림자(inset shadow)로 눌림 깊이를 0.1초 표현해 "지금 이 셀이 선택됨"을 촉각적으로 더블코딩·3테마 컬러별 inset shadow를 베이스보다 12% 어둡게 토큰화·기존 4.5:1 대비 대신 APCA Lc 60+로 재검증(고령·난독 대응)·평면 9-slice → 촉각 깊이 9-slice 한 단계 업그레이드라 오늘 9커밋 작업과 충돌 없이 즉시 흡수. Sources: aaagameartstudio·userology.co·web-accessibility-checker WCAG 3.0.',
+      },
+    ],
+    meetingTitle:
+      '🗣 6/3 종합 회의 — NumLink 실행 폭발(9커밋) vs MeowBeat 7일째 정체의 양극화·"실행력 부재가 아니라 손을 어느 레포에 대느냐의 편중"·오늘 본질 = MeowBeat로 1분만 손 옮겨 백업 1줄',
+    meetingSummary:
+      '7명 전원 발언. Orchestrator가 "NumLink 9커밋 vs MeowBeat 백업 1줄 7일째 미실행"의 양극화를 제시하자 DevOps·QA가 git 실측으로 MeowBeat 백업 0(upstream 미설정·ahead 37·52일)을 일치 확인. Developer가 16KB 페이지 정렬을 출시 차단 P0로 신규 제기하며 MeowBeat 우선순위에 무게를 더함. Game Designer·Content Writer는 P0 백업·안전망 선행을 전제로 P2 수익화/ASO를, Art Director는 진행 중 Layer Lab 작업에 흡수 가능한 Neo-Skeuomorphism을 P1로 제안. 결론: 실행력은 NumLink가 증명했으니 오늘은 그 손을 MeowBeat로 1분만 옮기는 것이 본질.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: 'NumLink는 오늘 9커밋(UI Toolkit 롤백→Layer Lab 9-slice→3테마 컬러 재설계)으로 실행력을 증명했습니다. 문제는 실행력이 아니라 편중 — MeowBeat 백업 1줄이 7일째 이월입니다. upstream 미설정·meowbeat/main ahead 37·52일 단절 그대로. 오늘 본질은 그 손을 1분만 MeowBeat로 옮기는 것입니다.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'git branch -vv 실측 확정 — feature/song-ownership-migration upstream 여전 미설정, meowbeat/main ahead 37, 단절 52일. `git push -u origin feature/song-ownership-migration` 1줄이면 52일치 백업+upstream 영구 설정이 동시에 끝납니다. NumLink는 3개 브랜치 전부 origin 추적·정상. P0는 MeowBeat 백업 단 하나.',
+      },
+      {
+        speaker: 'Developer',
+        note: '신규 출시 차단 이슈를 올립니다 — Android 16KB 페이지 정렬 의무화(2025.11~). Unity 코어는 16KB 지원하나 AdMob 같은 4KB .so가 하나라도 있으면 Google Play AAB가 리젝트됩니다. MeowBeat 출시 직전 반드시 통과해야 할 P0. objdump로 .so 정렬 검증하고 미달 SDK는 업데이트해야 합니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'MeowBeat qa_static.py는 0 error/0 warning, 실데이터 무결 유지입니다. 단 NumLink는 AutoGenTests 4파일 삭제로 Editor 폴더가 완전 공백 — 회귀 안전망 0인 채 9커밋이 쌓입니다(8회째). MeowBeat .meta 3종 삭제에 더해 _Recovery/.bak untracked .meta까지 신규로 산재. 둘 다 git restore 무손실 복구 가능, NumLink는 P1로 잡겠습니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '퍼즐 시장이 다운로드 -3%인데 매출 +14%·광고노출 +40% YoY로 디커플링됐습니다. 성장이 기존 유저 광고수익화에서 나온다는 뜻 — Block Blast는 광고 단독으로 月 1750만$. NumLink에 보상형 광고(힌트/되돌리기)+노출 A/B를 P2로 제안합니다. 단 P0 백업·안전망 선행이 전제입니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '애플 CPP가 organic 검색에 노출되기 시작했고 한도가 70개로 2배 늘었는데 채택률은 31%뿐 — 저경쟁 기회입니다. 게임 CVR +8%. NumLink에 "한 붓 쾌감" 후크별 CPP 2~3종을 P2로. 퍼즐 인앱이벤트는 화~목 출시 시 추천 트래픽 5배라 MeowBeat 신곡 출시 타이밍에 활용하면 좋습니다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: 'Neo-Skeuomorphism 프레스드 상태가 진행 중인 Layer Lab 9-slice에 바로 흡수됩니다 — 셀을 누르면 inset shadow로 눌림 깊이를 0.1초 표현해 "선택됨"을 촉각적으로 더블코딩. 3테마별 inset를 베이스보다 12% 어둡게 토큰화하고, 대비는 APCA Lc 60+로 재검증(2026~27 의무화 대응). P1로 제안, 오늘 9커밋 작업과 충돌 없습니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: '[P0] MeowBeat 백업 응급조치 (7일째 이월·DevOps·QA·Orchestrator 일치)',
+        description:
+          '.meta 3종(Input/Item/SaveLoad) `git restore` 원복 → `git -C C:/Unity/Feedme push -u origin feature/song-ownership-migration` 1줄로 52일치 백업+upstream 영구 설정 → `git push origin meowbeat/main`로 ahead 37 해소. 새벽이라 사용자 승인 후 실행. NumLink가 9커밋 실행력을 증명했으니 그 손을 1분만 MeowBeat로 옮기면 끝.',
+      },
+      {
+        title: '[P0] MeowBeat Android 16KB 페이지 정렬 호환성 점검 (출시 차단·Developer 신규)',
+        description:
+          '빌드 후 objdump/Unity 빌드 경고로 .so 정렬 검증 → AdMob 등 서드파티 SDK가 4KB 정렬이면 16KB 지원 최신 버전으로 업데이트. 2025.11~ 의무화로 미달 시 Google Play AAB 업로드 리젝트 = 출시 직전 반드시 통과.',
+      },
+      {
+        title: '[P1] NumLink 회귀 안전망 복구 (8회째 이월·QA)',
+        description:
+          'AutoGenTests 4파일 `git restore` 복구 + C:/Unity/_ProjectTemplate/Tools/(또는 MeowBeat Tools 18개) 복사 → unity_validate.py 0 error baseline 확보. 9커밋이 안전망 0 위에 쌓이는 중이라 더 미루면 회귀 검증 불가.',
+      },
+      {
+        title: '[P1] NumLink Layer Lab 9-slice에 Neo-Skeuomorphism 프레스드 상태 (Art Director)',
+        description:
+          '숫자 셀/버튼 누름 시 inset shadow로 눌림 깊이 0.1초 표현(촉각 더블코딩)·3테마별 inset 베이스 대비 12% 어둡게 토큰화·대비는 APCA Lc 60+로 재검증. 오늘 진행 중인 9-slice 작업에 즉시 흡수 가능.',
+      },
+      {
+        title: '[P2] 수익화·ASO 신규 적용 (Game Designer·Content Writer)',
+        description:
+          'NumLink: 보상형 광고(힌트/되돌리기)+노출 빈도 A/B(퍼즐 매출은 기존유저 광고노출에서 성장)·애플 CPP 2~3종(릴렉스/두뇌훈련/타임어택·채택률 31% 저경쟁). MeowBeat: 신곡을 화~목 인앱 이벤트로 등록(추천 트래픽 5배). 모두 P0 백업·안전망 선행 후.',
+      },
+    ],
+  },
+  {
     id: '2026-06-02T04:00:00-daily-standup',
     date: '2026-06-02',
     researchTitle:
