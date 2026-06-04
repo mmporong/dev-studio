@@ -43,6 +43,119 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-06-05T04:00:00-daily-standup',
+    date: '2026-06-05',
+    researchTitle:
+      '🌅 6/5 금요일 데일리 스탠드업 — **🔎 6/4 "동반 정지" 재규명: 손이 멈춘 게 아니라 "커밋·백업이 멈춘" 것 — Developer가 워킹트리를 분석한 결과 MeowBeat 미커밋 변경(SongData/GameManager/SongManager/OptionManager+manifest)은 단일 작업 "곡 선택 UI 다국어화(titleKo 11곡)+음량 조절(SongVolume 슬라이더·PlayerPrefs 영속)"으로 판명·작업물이 워킹트리에만 고여 백업 0**·**🚨 MeowBeat 백업 P0 9일째 이월(6/4=8일째)·Orchestrator origin 기준 재정정: 마지막 원격 푸시 03-28·오늘까지 69일 미백업·meowbeat/main ahead 37 미푸시·NumLink 본진 feature/ugui-layerlab은 origin과 0/0 동기화 양호**·**🚨 NumLink 안전망 2일 연속 부재(Tools/ 없음·Assets/Tests .cs 0개·AutoGenTests 삭제 유지)**·**🆕 기술: Unity Adaptive Performance v5.0 신규 스케일러(Decal/Layer-culling)+Android ADPF·삼성 HW 온도 API 연동(2026-02 문서)·리듬 동기화 표준 AudioSettings.dspTime+PlayScheduled(1초 예약창)+안드 레이턴시 보정 슬라이더 필수**·**🚀 시장: 메타게임층(컬렉션/맵)이 D3~D5 재방문 주동력·무한컬렉션 모델 부상·리듬 난이도는 BPM 아닌 노트밀도·패턴(160BPM 4박>110BPM 스윙트리플)·iOS 톱100 그로싱 61%가 길드 탑재(2년새 +20%p)**·**📦 콘텐츠: 첫 스크린샷이 검색결과 노출 핵심·iOS 첫3장 A/B 전환 +10~25%·아이콘 구글+8~12%·한·일 정식 현지화 시 캐주얼 다운로드 2~3배·스크린샷 현지화만 +5~15%·첫90일 푸시 1회만 받아도 잔존 3배(단 주2회 초과 삭제 급증)**·**🛡 DevOps: agent-office Pages 5회 연속 success(31~42초)·NumLink·MeowBeat .github 자체 부재 CI 전무·game-ci 2레이어 캐시(LFS+Library) 30~60% 단축 적중률 70~90%**·**🎨 디자인: 숫자 퍼즐은 tabular figures(고정폭 숫자)가 자릿수 정렬 가독성 2026 베스트프랙티스·색맹 남성 8%(녹색맹 6%)·WCAG 1.4.1 색만으로 정보전달 금지=형태/패턴 중복 단서 필수**.',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제54회 — **6/5 금요일·1개월 임계 D+12**. **🔎 핵심 = 6/4 "동반 정지"의 재규명**: 어제는 양 레포 커밋 0건을 "손이 멈췄다"로 봤으나, 오늘 Developer가 MeowBeat 워킹트리를 정밀 분석한 결과 미커밋 변경(SongData.cs/GameManager.cs/SongManager.cs/OptionManager.cs+manifest.json)이 **단일 응집 작업 "곡 선택 UI 다국어화(SongData titleKo 필드 추가·manifest 11곡 한글 제목·언어 전환 시 곡 버튼 갱신·미보유곡 톤다운)+음량 조절(OptionManager SongVolume 0~1 슬라이더·PlayerPrefs 영속·SongManager 곡별 기본 밸런스×사용자 음량)"**으로 판명됐다. 즉 손이 멈춘 게 아니라 **"커밋·백업이 멈춘"** 것 — 실제 작업물이 워킹트리에만 고여 백업 0인 상태가 더 위험. **🚨 백업 P0 9일째**: Orchestrator가 origin 기준으로 재정정 — MeowBeat 마지막 원격 푸시 03-28·오늘(6/5)까지 **69일 미백업**·meowbeat/main은 origin 대비 ahead 37 미푸시(6/4 회의의 "58일·04-07"은 04-07을 가정한 값이었고 origin 최신은 실제 03-28). NumLink 본진 feature/ugui-layerlab은 origin과 0/0 완전 동기화로 백업 양호하나, **🚨 NumLink 회귀 안전망은 2일 연속 부재** — `Tools/`(unity_validate.py·qa_static.py·known_bugs.json) 없음·`Assets/Tests/Editor` 빈 폴더(.cs 0개·BoardDataTester.cs는 데이터검사 유틸이라 정식 테스트 아님)·AutoGenTests 삭제 유지. **🆕 기술(Developer)**: Unity Adaptive Performance v5.0이 신규 스케일러(Decal·Layer-culling)와 Android ADPF·삼성 HW 온도 API 연동으로 발열 스로틀링 자동 대응(문서 2026-02 갱신)·모바일 리듬게임 오디오 동기화 표준은 DSP Buffer "Best latency"+클립 Decompress On Load+**AudioSettings.dspTime/PlayScheduled(1초 예약창)**이며 안드로이드 오디오 레이턴시가 최대 변수라 **플레이어 보정 슬라이더(±ms·PlayerPrefs 영속)가 필수**. **🚀 시장(Game Designer)**: 코어 루프 밖 **메타게임층(컬렉션·맵·홈 꾸미기)이 D3~D5 재방문의 주된 이유**가 되어야 하며 무한 컬렉션 모델(완성 동기를 영구 진행 엔진으로)이 신흥 트렌드·**리듬 난이도는 BPM이 아니라 노트밀도·패턴**(160BPM 4박 하우스가 110BPM 스윙트리플보다 쉬움·차트 구조=인트로→빌드업→드롭)·iOS 톱100 그로싱 **61%가 길드 탑재(2년새 +20%p)**나 우리 규모엔 비동기 소셜(선물·공동목표)이 현실적. **📦 콘텐츠(Content Writer)**: **첫 스크린샷이 검색결과 노출의 핵심**·iOS 첫 3장 A/B로 전환 +10~25%·아이콘 변경 구글플레이 +8~12% 리프트·**한·일 정식 현지화 시 캐주얼 다운로드 2~3배**·스크린샷 현지화만으로 전환 +5~15%·첫 90일 **푸시 1회만 받아도 잔존 3배**(단 주 2회 초과 발송 시 삭제 급증). **🛡 DevOps**: agent-office GitHub Pages 최근 5건 전부 success(31~42초·안정)·NumLink·MeowBeat 둘 다 `.github` 디렉터리 **자체가 부재**(CI/CD 전무·빌드 100% 수동)·game-ci 2레이어 캐시(LFS+Library)로 워크플로 30~60% 단축·캐시 적중률 70~90%(RunsOn 2026.1). **🎨 디자인(Art Director)**: 숫자 퍼즐은 가변폭 글리프가 자릿수 정렬을 흔들어 **tabular figures(고정폭 숫자)가 2026 가독성 베스트프랙티스**·색맹은 남성 약 8%(녹색맹 deuteranopia 6%)·**WCAG 1.4.1은 "색만으로 정보 전달 금지"**라 컬러 외 형태·패턴·위치 중복 단서 필수·2026은 "가독성 먼저, 접근성을 기본값으로". **🎯 오늘 핵심 결정 = ① [P0] MeowBeat 백업 — 미커밋 단일 작업(곡 다국어화+음량 조절·QA 무결 확인)을 커밋하고 현 브랜치 push로 69일치 백업+upstream 영구 설정(9일째·사용자 승인 후) ② [P0] NumLink 안전망 복구 — `C:/Unity/_ProjectTemplate/Tools/`(또는 MeowBeat Tools)에서 3종 복사+씬 경로 갱신해 baseline 0-error(2일 연속 공백) ③ [P1] MeowBeat 오디오 레이턴시 보정 슬라이더+dspTime PlayScheduled 전환 — 이미 음량 슬라이더 작업 중인 옵션 패널에 함께 흡수·안드 판정 어긋남 정면 대응 ④ [P1] 메타게임 진행층 설계 안건 채택 — MeowBeat 고양이 컬렉션 도감(무한 진행)·NumLink 월드맵 진행 스파인으로 D3~D5 재방문 동기 ⑤ [P1] NumLink 3테마 색맹 안전 — tabular 고정폭 숫자 통일+셀 외곽선/도형 마커 이중 구분+deuteranopia 시뮬레이터 검증 ⑥ [P2] ASO 첫 스크린샷 3장 재제작+일본어 스토어 현지화·NumLink Library 캐시 PoC**. 메타 통찰: 6/4의 "동반 정지"는 정확히는 "커밋·백업 정지"였다 — MeowBeat엔 다국어화+음량이라는 실제 작업이 워킹트리에 9일째 고여 있다·작업이 없는 게 아니라 그 작업을 안전하게 못 박지 못한 것이 본질·오늘은 그 한 덩어리를 커밋·푸시로 백업하고 NumLink 안전망까지 닫는 날.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — 🚨 MeowBeat 백업 P0 9일째 이월(origin 마지막 푸시 03-28·69일 미백업·meowbeat/main ahead 37 미푸시)·🔎 6/4 "동반 정지" 재규명: 정지가 아니라 미커밋 작업 존재(곡 다국어화+음량 조절이 워킹트리에 고임)·NumLink 본진 feature/ugui-layerlab origin과 0/0 동기화 양호·🚨 NumLink 안전망 2일 연속 부재(Tools/ 없음·Assets/Tests .cs 0개)·3개 레포 오늘 신규 커밋 0건',
+        description:
+          '**🚨 백업 P0 9일째**: `git branch -vv` 실측 — MeowBeat origin 마지막 푸시 03-28·오늘(6/5)까지 **69일 미백업**·meowbeat/main은 origin 대비 ahead 37 미푸시(6/4의 "58일"은 04-07 가정값·origin 최신은 실제 03-28이라 origin 기준 정확값 69일). **🔎 6/4 재규명**: 어제 "동반 정지"로 본 양 레포 커밋 0건은 "손이 멈춤"이 아니라 **"커밋·백업이 멈춤"** — MeowBeat 워킹트리엔 곡 다국어화+음량 조절 작업이 미커밋으로 존재(Developer 분석)·작업물이 백업되지 못한 채 고여 있는 게 더 위험. **백업 양호**: NumLink 본진 feature/ugui-layerlab은 origin과 0/0 완전 동기화(HEAD 06-02). **🚨 NumLink 안전망 2일 연속 부재**: `Tools/` 폴더 없음(unity_validate.py·known_bugs.json 부재)·`Assets/Tests/Editor` 빈 폴더·.cs 0개·AutoGenTests 삭제 유지 = 회귀탐지 불가. **❌ 이월**: 6/4 P0 2건(MeowBeat 백업·NumLink 안전망) 모두 미완료. **agent-office** .omc/project-memory.json만 변경·정상. **오늘 결정 제안**: 미뤄둔 P0 2건을 오늘 못 박을 것 — 특히 MeowBeat는 미커밋 작업이 9일째 워킹트리에만 있어 단일 디스크 장애 시 전량 유실(커밋+push 사용자 승인 후 최우선). (git log/branch/status 실측)',
+      },
+      {
+        title:
+          '🎮 Game Designer — 메타게임층(컬렉션/맵/홈 꾸미기)이 D3~D5 재방문 주동력·무한컬렉션 모델 부상(완성 동기를 영구 진행 엔진으로)·리듬 난이도는 BPM 아닌 노트밀도·패턴(160BPM 4박>110BPM 스윙트리플)·iOS 톱100 그로싱 61%가 길드 탑재(2년새 +20%p)=NumLink·MeowBeat에 코어 밖 메타 진행층 부재가 빈 구멍',
+        description:
+          '**🚀 시장 신규 1순위**: 코어 루프 밖 **메타게임층(컬렉션·맵·홈 꾸미기)이 D3~D5부터 재실행의 "주된 이유"**가 되어야 함·무한 컬렉션 모델(완성 동기를 영구 진행 엔진으로 전환)이 신흥 트렌드(Naavik·Mobidictum·6/4 방치 죄책감/가상펫 시장규모와 겹치지 않는 신규 토픽)·**NumLink·MeowBeat 둘 다 코어 위에 메타 진행층이 없음 = 빈 구멍**. **🚀 신규 2순위**: **리듬 난이도는 BPM이 아니라 노트밀도·패턴** — 160BPM 4박 하우스가 110BPM 스윙트리플보다 쉬울 수 있음·차트 구조=인트로(코어패턴)→빌드업(밀도↑)→드롭(클라이맥스)·MeowBeat 난이도 곡선 설계 직결(rhythm-games.com). **🚀 신규 3순위**: **iOS 톱100 그로싱 중 61%가 길드 탑재(2년새 +20%p)**·다만 우리 규모엔 비동기 소셜(선물·공동목표)이 현실적(ironSource). **오늘 결정 제안**: **P1 NumLink·MeowBeat 공통 "코어 루프 밖 메타 진행층" 1개를 다음 스프린트 설계 안건으로 채택** — MeowBeat는 고양이 컬렉션 도감(무한 진행)·NumLink는 월드맵 진행 스파인을 프로토타입해 D3~D5 재방문 동기 확보(P0 백업·안전망 선행). Sources: Naavik·Game Growth Advisor·Mobidictum·rhythm-games.com·ironSource.',
+      },
+      {
+        title:
+          '💻 Developer — 🔎 MeowBeat 미커밋 변경 정체 규명: 단일 작업 "곡 선택 UI 다국어화(titleKo 11곡)+음량 조절(SongVolume 슬라이더·PlayerPrefs)"·MCP 도구 unity-mcp #beta 교체·collab-proxy 제거·🆕 Adaptive Performance v5.0 발열 스로틀링 자동대응(Android ADPF·삼성 온도 API)·리듬 동기화 표준 dspTime+PlayScheduled(1초 예약창)+안드 레이턴시 보정 슬라이더 필수',
+        description:
+          '**🔎 코드 분석(A)**: MeowBeat 미커밋 변경은 단일 응집 작업 — **"곡 선택 UI 다국어화 + 음량 조절"**. SongData에 titleKo 필드 추가·manifest.json 11곡 한글 제목 부여·GameManager가 언어 전환 시 곡 버튼 제목 갱신(영/한)·미보유곡 톤다운·OptionManager에 SongVolume 슬라이더(0~1·PlayerPrefs 영속)·SongManager가 곡별 기본 밸런스×사용자 음량으로 통합. 부수: Packages/manifest.json에서 com.coplaydev.unity-mcp(#beta)로 MCP 도구 교체·collab-proxy 제거. **🆕 기술 신규 1순위(B)**: **Unity Adaptive Performance v5.0** 신규 스케일러(Decal·Layer-culling)+Android ADPF·삼성 HW 온도 API 연동(문서 2026-02 갱신)으로 발열 스로틀링 자동 대응(6/4 GMA SDK·PrimeTween과 겹치지 않는 신규 토픽). **🆕 신규 2순위**: 모바일 리듬게임 동기화 표준 = DSP Buffer "Best latency"+클립 Decompress On Load+**AudioSettings.dspTime/PlayScheduled(1초 예약창)**·안드로이드 오디오 레이턴시가 최대 변수라 옵션에 **플레이어 보정 슬라이더(±ms·AudioSettings.Reset 연동) 필수**. **오늘 결정 제안**: **P1 MeowBeat 옵션 패널에 이번에 추가한 음량 슬라이더 옆에 "오디오 레이턴시 보정 슬라이더"(±ms·PlayerPrefs 영속)를 함께 넣고 BGM 재생을 AudioSettings.dspTime 기반 PlayScheduled로 전환**해 안드로이드 판정 어긋남을 정면 대응(이미 옵션 작업 중이라 흡수 효율적). Sources: Unity Manual Adaptive Performance 6000.4·AP 5.0 manual·Native Audio dsp-sync·AudioSettings.dspTime ScriptReference.',
+      },
+      {
+        title:
+          '🔍 QA Tester — ✅ MeowBeat qa_static·unity_validate 모두 0 error/0 warning·곡 10개·오디오 누락 0(6/4 동일·미해결 버그 0건 유지)·manifest 변경(+10줄)은 titleKo 한글곡명 추가뿐 audioFile·songId·노트 불변=무결성 영향 0·🚨 NumLink 검증툴 3종 부재+정식 테스트 .cs 0개 회귀탐지 불가 2일 연속(BoardDataTester.cs는 데이터검사 유틸이라 정식 테스트 아님)',
+        description:
+          '**✅ 유지**: MeowBeat `qa_static.py`·`unity_validate.py` 모두 0 error/0 warning·곡 10개·오디오 누락 0건(6/4와 동일·미해결 버그 0건). **🔎 정합성 확인**: manifest.json 변경(+10줄)은 **titleKo 한글 곡명 필드 추가뿐** — audioFile·songId·노트 데이터 모두 불변이라 데이터 무결성 영향 0(Developer가 규명한 다국어화 작업의 데이터측이며 안전). **🚨 최대 리스크 = NumLink 안전망 2일 연속 공백**: 검증툴 3종(unity_validate.py·qa_static.py·known_bugs.json) 여전히 부재·`Assets/Tests`·`Assets/AutoQATests` 정식 테스트 `.cs` 0개(BoardDataTester.cs 1개는 Editor 데이터 검사 유틸이라 정식 테스트 아님)·AutoGenTests 삭제 유지 = 회귀탐지 자체 불가. **오늘 결정 제안**: **P0 NumLink에 `C:\\Unity\\_ProjectTemplate\\Tools\\` 검증툴 3종 복사+씬 경로 상수 갱신해 회귀탐지 공백을 즉시 종료**(MeowBeat는 안정·추가 조치 불필요). Sources: qa_static.py·unity_validate.py 실행·git diff·Glob 테스트 파일 전수.',
+      },
+      {
+        title:
+          '📢 Content Writer — 첫 스크린샷이 검색결과 노출 핵심·iOS 첫3장 A/B 전환 +10~25%·아이콘 구글플레이 +8~12% 리프트·한·일 정식 현지화 시 캐주얼 다운로드 2~3배·스크린샷 현지화만 +5~15%·첫90일 푸시 1회만 받아도 잔존 3배(단 주2회 초과 발송 시 삭제 급증)',
+        description:
+          '**📦 콘텐츠 신규 1순위**: **첫 스크린샷이 앱스토어 검색결과 노출의 핵심**·iOS 첫 3장 A/B로 전환 +10~25%·아이콘 변경만으로 구글플레이 +8~12% 리프트(AppFollow·Strataigize·6/4 광고 후크/틱톡 CPI와 겹치지 않는 신규 토픽). **📦 신규 2순위**: **한·일 정식 현지화 시 캐주얼 다운로드 2~3배**·스크린샷만 현지화해도 전환 +5~15%(ASOMobile·영어 추가 최적화보다 ROI 높음). **📦 신규 3순위**: 첫 90일 **푸시 1회만 받아도 잔존 3배**·단 주 2회 초과 발송 시 삭제 급증(Pushwoosh·Game Growth Advisor). **오늘 결정 제안**: **P2 NumLink·MeowBeat 양쪽 "첫 스크린샷 3장"을 실제 게임플레이+소셜프루프(별점/플레이수) 중심으로 재제작 + 한국어 기본 외 일본어 스토어 메타데이터+스크린샷 현지화를 우선 작업으로 채택**(영어 추가 최적화보다 ROI 높음·P0 백업·안전망 후). Sources: AppFollow·Strataigize·ASOMobile·Game Growth Advisor·Pushwoosh.',
+      },
+      {
+        title:
+          '🛡 DevOps — agent-office Pages 최근 5건 전부 success(31~42초 안정·Deploy GitHub Pages+Weekly Insights)·🚨 NumLink·MeowBeat 둘 다 .github 디렉터리 자체 부재 CI/CD 전무 빌드 100% 수동·🆕 game-ci 2레이어 캐시(LFS+Library) 워크플로 30~60% 단축 적중률 70~90%(RunsOn 2026.1)',
+        description:
+          '**🛡 CI 상태**: agent-office GitHub Pages 최근 5건 전부 success·31~42초로 안정(Deploy GitHub Pages+Weekly Insights). **🚨 구조 공백**: NumLink·MeowBeat 둘 다 `.github` 디렉터리 **자체가 부재** → CI/CD 워크플로 전무·빌드 100% 수동(9일째 이월 중인 MeowBeat 백업 P0의 근본 원인). **🆕 신규**: **game-ci 2레이어 캐시(LFS+Library) 도입 시 워크플로 30~60% 단축·캐시 적중률 70~90%**(RunsOn 2026.1·6/4 game-ci unity-builder 도입/Node24 전환과 겹치지 않는 "캐시 전략" 단일 신규 토픽). **오늘 결정 제안**: **P2 NumLink에 먼저 Unity Library 캐시 PoC 도입** — `actions/cache`로 `Library/` 경로 캐싱·플랫폼별 키+restore-key 폴백으로 부분복원 활용·빌드 워크플로 자체가 없는 상태이므로 첫 워크플로 생성 시점부터 캐시 키 전략을 함께 설계해 초기부터 30~60% 단축 확보(P0 후). Sources: game-ci/unity-actions Caching Strategy(DeepWiki)·GitHub Actions Cache Strategy·GitHub Docs Dependency caching.',
+      },
+      {
+        title:
+          '🎨 Art Director — 숫자 퍼즐은 가변폭 글리프가 자릿수 정렬 흔듦→tabular figures(고정폭 숫자)가 2026 가독성 베스트프랙티스·색맹 남성 약 8%(녹색맹 deuteranopia 6%)·WCAG 1.4.1 "색만으로 정보 전달 금지"=형태/패턴/위치 중복 단서 필수·2026은 가독성 먼저·접근성을 기본값으로 처음부터 설계',
+        description:
+          '**🎨 디자인 신규 1순위**: 숫자 퍼즐은 가변폭 글리프가 자릿수 정렬을 흔들어 **tabular figures(고정폭 숫자)가 2026 가독성 베스트프랙티스** — NumLink 3테마 폰트를 tabular 변형으로 통일하면 같은 자리 숫자가 항상 같은 폭으로 정렬(DesignMonks·UX Design·6/4 손그림/juicy 햅틱/diegetic과 겹치지 않는 신규 토픽). **🎨 신규 2순위**: 색맹은 남성 약 8%(녹색맹 deuteranopia 6%)·**WCAG 1.4.1은 "색만으로 정보 전달 금지"** → 컬러 외 형태·패턴·위치 중복 단서 필수(예: 숫자 외곽선 모양·아이콘으로 페어 구분·Market.us·Colorblind.io). **🎨 신규 3순위**: 2026 트렌드는 "가독성 먼저, 표현은 그 다음"·접근성을 특수기능이 아닌 기본값으로 처음부터 설계(Tubik·uidesignz). **오늘 결정 제안**: **P1 NumLink 3테마 모두에 "색맹 안전(colorblind-safe)" 보조 단서 1차 도입** — 같은 숫자/연결 페어를 색뿐 아니라 (a) tabular 고정폭 숫자체 통일 + (b) 셀 외곽선 형태나 작은 도형 마커로 이중 구분·APCA/WCAG 4.5:1 대비 충족 컬러로 테마 재검수·deuteranopia 시뮬레이터로 출시 전 1회 캡처 검증(진행 중 3테마 작업에 흡수). Sources: DesignMonks·UX Design·WCAG 1.4.1(AccessibilityChecker)·Colorblind.io·Market.us·Tubik.',
+      },
+    ],
+    meetingTitle:
+      '🗣 6/5 종합 회의 — 6/4 "동반 정지"의 재규명: 정지가 아니라 "커밋·백업 정지"·MeowBeat엔 곡 다국어화+음량 조절이라는 실제 작업이 워킹트리에 9일째 고임·오늘 본질 = 그 한 덩어리를 커밋·푸시로 백업하고 NumLink 안전망까지 닫는 것',
+    meetingSummary:
+      '7명 전원 발언. Developer가 "MeowBeat 미커밋 변경은 손이 멈춘 게 아니라 곡 선택 다국어화+음량 조절이라는 단일 작업이 워킹트리에 고인 것"이라 규명하자, Orchestrator가 origin 기준 백업 수치를 69일로 재정정하고 "작업물이 백업 못 된 채 고인 게 더 위험"이라 무게를 더했다. QA는 manifest 변경이 titleKo 추가뿐이라 무결성 영향 0임을 확인하고 NumLink 안전망 2일 연속 공백을 P0로 격상. Developer는 이미 옵션 패널을 건드리는 김에 오디오 레이턴시 보정 슬라이더+dspTime PlayScheduled를 함께 넣자 제안. Game Designer는 메타게임 진행층 부재를, Art Director는 숫자 퍼즐 tabular figures+색맹 안전 단서를 P1로, Content Writer·DevOps는 P0 선행을 전제로 ASO 스크린샷/일본어 현지화와 Library 캐시 PoC를 P2로 제안. 결론: 오늘은 워킹트리에 고인 한 덩어리(다국어화+음량)를 커밋·푸시로 백업하고 NumLink 안전망까지 닫는 날.',
+    meetingItems: [
+      {
+        speaker: 'Developer',
+        note: '어제 "동반 정지"로 본 MeowBeat 미커밋 변경을 분석했습니다. 손이 멈춘 게 아닙니다 — SongData/GameManager/SongManager/OptionManager+manifest는 "곡 선택 UI 다국어화(titleKo 11곡)+음량 조절(SongVolume 슬라이더·PlayerPrefs)"이라는 단일 응집 작업입니다. 이왕 옵션 패널을 건드리는 김에, 음량 슬라이더 옆에 오디오 레이턴시 보정 슬라이더(±ms)를 넣고 BGM을 dspTime PlayScheduled로 전환하면 안드로이드 판정 어긋남을 정면 대응할 수 있습니다.',
+      },
+      {
+        speaker: 'Orchestrator',
+        note: 'Developer 규명에 백업 관점을 더합니다 — 그 작업물이 9일째 워킹트리에만 고여 백업이 0입니다. origin 기준으로 재정정하면 MeowBeat 마지막 원격 푸시는 03-28, 오늘까지 69일 미백업이고 meowbeat/main은 ahead 37 미푸시입니다. 작업이 없는 게 문제가 아니라, 있는 작업을 안전하게 못 박지 못한 게 문제입니다. 단일 디스크 장애 시 전량 유실입니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'manifest.json 변경(+10줄)은 titleKo 한글 곡명 추가뿐이라 audioFile·songId·노트 데이터 모두 불변 — 무결성 영향 0이라 안심하고 커밋해도 됩니다. qa_static·unity_validate 모두 0/0, 곡 10개, 버그 0건 유지. 단 진짜 문제는 NumLink입니다. 검증툴 3종도 정식 테스트 .cs도 0개라 회귀탐지가 2일 연속 불가능합니다. 템플릿 Tools 복사로 P0로 닫아야 합니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '시장은 메타게임층(컬렉션·맵)이 D3~D5 재방문의 주된 이유라고 말합니다 — 무한 컬렉션 모델이 뜨는데 우리 두 게임 다 코어 위에 메타 진행층이 없어 빈 구멍입니다. 리듬 난이도는 BPM이 아니라 노트밀도·패턴이고요. 다음 스프린트 설계 안건으로 MeowBeat 고양이 컬렉션 도감, NumLink 월드맵 진행 스파인을 제안합니다. P0 백업·안전망 선행 전제입니다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '진행 중인 NumLink 3테마 작업에 두 가지를 얹읍시다 — 첫째, 숫자 퍼즐은 tabular figures(고정폭 숫자)가 가독성 베스트프랙티스라 같은 자리 숫자가 항상 같은 폭으로 정렬됩니다. 둘째, 색맹이 남성 8%인데 WCAG 1.4.1은 색만으로 정보 전달을 금지합니다 — 셀 외곽선 형태나 도형 마커로 이중 구분하고 deuteranopia 시뮬레이터로 출시 전 1회 검증하면 됩니다. 진행 중 작업에 그대로 흡수됩니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '스토어 쪽 신규입니다 — 첫 스크린샷이 검색결과 노출의 핵심이고 iOS 첫 3장 A/B만으로 전환 +10~25%, 아이콘은 구글에서 +8~12% 리프트입니다. 특히 한·일 정식 현지화는 다운로드를 2~3배로 올립니다. 두 게임 첫 스크린샷 3장을 실제 플레이+소셜프루프 중심으로 재제작하고 일본어 스토어 현지화를 P2로 제안합니다. 영어 추가 최적화보다 ROI가 높습니다.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'agent-office Pages는 5건 연속 success·31~42초로 안정입니다. NumLink·MeowBeat는 .github 디렉터리 자체가 없어 CI가 전무하고 빌드가 100% 수동 — 백업이 9일째 이월되는 구조적 원인입니다. 신규로, game-ci 2레이어 캐시(LFS+Library)는 워크플로를 30~60% 단축하고 적중률이 70~90%입니다. NumLink에 Library 캐시 PoC부터 넣되, 첫 워크플로 생성 시점부터 캐시 키 전략을 함께 설계하자고 제안합니다. P0 후입니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: '[P0] MeowBeat 백업 — 워킹트리에 고인 단일 작업을 커밋·푸시 (9일째 이월·Orchestrator·Developer·QA 일치·사용자 승인 후)',
+        description:
+          '미커밋 단일 작업 "곡 선택 UI 다국어화(titleKo 11곡)+음량 조절(SongVolume 슬라이더)"을 커밋(QA 전수 결과 manifest는 titleKo만 추가·무결성 영향 0·.meta 삭제분 GUID 미참조) → `git -C C:/Unity/Feedme push`로 69일치 백업+upstream 영구 설정 + meowbeat/main ahead 37 해소. 작업물이 9일째 워킹트리에만 고여 단일 디스크 장애 시 전량 유실. 새벽 실행이라 게임 레포 push는 사용자 승인 후.',
+      },
+      {
+        title: '[P0] NumLink 회귀 안전망 복구 — 2일 연속 공백 (QA·Orchestrator 일치)',
+        description:
+          '`C:\\Unity\\_ProjectTemplate\\Tools\\`(또는 MeowBeat Tools)에서 unity_validate.py·qa_static.py·known_bugs.json을 NumLink `Tools/`로 복사+씬 경로 상수 갱신해 baseline 0-error 확보. 검증툴 3종·정식 테스트 .cs 모두 0개라 회귀탐지 2일 연속 불가·UI 변경이 안전망 0 위에 쌓이는 중.',
+      },
+      {
+        title: '[P1] MeowBeat 오디오 레이턴시 보정 슬라이더 + dspTime PlayScheduled 전환 (Developer)',
+        description:
+          '이미 추가 중인 음량 슬라이더 옆 옵션 패널에 "오디오 레이턴시 보정 슬라이더"(±ms·PlayerPrefs 영속·AudioSettings.Reset 연동)를 함께 넣고 BGM 재생을 AudioSettings.dspTime 기반 PlayScheduled(1초 예약창)로 전환. 안드로이드 오디오 레이턴시가 리듬 판정 최대 변수라 정면 대응. 옵션 작업 중이라 흡수 효율적.',
+      },
+      {
+        title: '[P1] 메타게임 진행층 설계 안건 채택 + NumLink 3테마 색맹 안전 (Game Designer·Art Director)',
+        description:
+          '① 코어 루프 밖 메타 진행층 1개를 다음 스프린트 설계 안건으로 — MeowBeat 고양이 컬렉션 도감(무한 진행)·NumLink 월드맵 진행 스파인으로 D3~D5 재방문 동기. ② NumLink 3테마에 tabular 고정폭 숫자 통일+셀 외곽선/도형 마커 이중 구분(색맹 남성 8%·WCAG 1.4.1)+deuteranopia 시뮬레이터 출시 전 1회 검증. 둘 다 진행 중 작업에 흡수.',
+      },
+      {
+        title: '[P2] ASO 첫 스크린샷 3장 재제작·일본어 현지화 + NumLink Library 캐시 PoC (Content Writer·DevOps·P0 후 착수)',
+        description:
+          'Content Writer — NumLink·MeowBeat 첫 스크린샷 3장을 실제 플레이+소셜프루프 중심으로 재제작(iOS A/B 전환 +10~25%)+일본어 스토어 메타데이터·스크린샷 현지화(다운로드 2~3배·영어보다 ROI 높음). DevOps — NumLink에 actions/cache로 Library 캐시 PoC(플랫폼별 키+restore-key 폴백)·첫 워크플로부터 캐시 키 전략 설계해 30~60% 단축. 모두 P0 백업·안전망 후.',
+      },
+    ],
+  },
+  {
     id: '2026-06-04T04:00:00-daily-standup',
     date: '2026-06-04',
     researchTitle:
