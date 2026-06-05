@@ -43,6 +43,124 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-06-06T04:00:00-daily-standup',
+    date: '2026-06-06',
+    researchTitle:
+      '🌅 6/6 토요일 데일리 스탠드업 — **🚨 MeowBeat 백업 P0 10일째 이월·Orchestrator 재측정으로 더 정밀화: 작업브랜치 `feature/song-ownership-migration` tip이 04-12(실작업 단절 55일째)·이 브랜치의 6커밋이 upstream 미설정(fatal)이라 origin·meowbeat 어느 원격에도 0건 백업·6/5의 "origin 03-28·69일"은 main 기준이었고 진짜 위험은 추적조차 안 되는 작업브랜치 6커밋**·**🚨 NumLink 안전망 3일 연속 부재로 악화: Tools/ 추적파일 0개·유일 정식 테스트 AutoGenTests.cs가 워킹트리에서 삭제(D) 상태(복구 가능)·미커밋 36파일**·**✅ NumLink 본진은 양호: 작업브랜치 origin/feature/ugui-layerlab과 0/0 완전 동기화(미백업 0일)·본진 origin/main만 70일 정체**·**🆕 기술: Unity 6.3 LTS(6000.3·2027.12까지 지원) 정식 출시 — Build Profiles 개선·URP Bloom 모바일 Kawase/Dual 필터·HTTP/2·gRPC·Box2D v3·2026 로드맵 CoreCLR 전환·MeowBeat StreamingAssets/Songs는 Addressables 미적용**·**🚀 시장: 2026 스튜디오 36%가 하이퍼→하이브리드캐주얼 전환·퍼즐/머지 황금비 IAP 45:광고 55·Royal Match는 신규 파워업 1종(Super Light Ball)으로 매출 베이스라인 1.5배·시즌패스 최고 $219가 핵심 수익원·리듬게임 차별화축 BPM→장르융합(People of Note 턴제RPG·NecroDancer 로그라이크)**·**📦 콘텐츠: 인앱이벤트(In-App Events) 표시 시 제품페이지 전환 +17%·애플이 이벤트를 검색·에디토리얼에 색인·구글플레이 LiveOps 프로모션 활성유저 +5%·매출 +4%·숏폼 UA 후크율 틱톡 중앙값 33%(상위 55%)·UGC형이 스튜디오형 압도(34% vs 26%)**·**🛡 DevOps: NumLink·MeowBeat 둘 다 .github 자체 부재 CI 전무·agent-office 워크플로 2건(Pages+Weekly) 정상·GitHub Actions 호스티드 러너 1/1부터 최대 39%↓(16코어 Linux $0.042/min)·셀프호스트 과금은 백래시로 연기**·**🎨 디자인: 2026 UI 핵심은 스프링 피직스(overshoot→bounce→settle·stiffness/damping 2파라미터)·prefers-reduced-motion 토글이 저비용 고임팩트 접근성 표준·리듬게임 주스는 "최소 입력→폭발적 캐스케이드 반응"(squash·stretch·파티클)**.',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제55회 — **6/6 토요일·1개월 임계 D+13**. **🚨 핵심 = MeowBeat 백업 P0 10일째 이월, Orchestrator 재측정으로 위험의 정체가 더 선명해짐**: 6/5엔 "origin 마지막 푸시 03-28·69일 미백업"으로 봤으나 이는 main 브랜치 기준이었고, 오늘 `git branch -vv` 실측 결과 진짜 위험은 **작업브랜치 `feature/song-ownership-migration`의 tip이 04-12(실작업 단절 55일째)이며 이 브랜치가 upstream 미설정(fatal)이라 그 위에 쌓인 6커밋이 origin·meowbeat 어느 원격에도 0건 백업**된 상태라는 것. 즉 추적조차 되지 않는 6커밋+미커밋 37파일(곡 다국어화+음량 조절)이 단일 디스크 장애 시 전량 유실 위험. **🚨 NumLink 안전망 3일 연속 부재로 악화**: `Tools/` 추적파일 0개·유일한 정식 테스트 AutoGenTests.cs가 6/5 시점 "삭제 유지"였는데 오늘은 워킹트리에서 명시적 삭제(D) 상태로 더 나빠짐(단 `git checkout`으로 즉시 복구 가능). **✅ NumLink 본진은 양호**: 작업브랜치 feature/ugui-layerlab이 origin과 0/0 완전 동기화(미백업 0일)·본진 origin/main만 70일 정체. **🆕 기술(Developer)**: **Unity 6.3 LTS(6000.3·2027.12까지 LTS 지원)가 정식 출시** — Build Profiles 개선·URP Bloom 모바일용 Kawase/Dual 필터·HTTP/2·gRPC·Box2D v3 물리·2026 로드맵의 CoreCLR 전환 예고(6/4 GMA SDK·6/5 Adaptive Performance와 겹치지 않는 신규 토픽)·MeowBeat의 StreamingAssets/Songs 곡 데이터는 Addressables 미적용이라 곡당 소그룹 전환 PoC 여지. MeowBeat 미커밋은 6/5 규명대로 단일 작업 "곡선택 titleKo 11곡+미소유곡 톤다운+음량 슬라이더"이며 부수로 unity-cli→CoplayDev Unity-MCP(#beta) 패키지 교체. **🚀 시장(Game Designer)**: **2026 스튜디오 36%가 하이퍼캐주얼→하이브리드캐주얼로 전환**·퍼즐/머지 수익 황금비는 IAP 45:광고 55·**Royal Match는 신규 콘텐츠 폭격이 아니라 파워업 1종(Super Light Ball)으로 매출 베이스라인 1.5배** 끌어올렸고 최고 $219 시즌패스가 핵심 수익원·**리듬게임 차별화축이 BPM→장르융합으로 이동**(People of Note=턴제RPG·Crypt of the NecroDancer=로그라이크)·콜라보 신표준은 Roblox×넷플릭스 KPop Demon Hunters처럼 외부 IP로 비과금층 지갑 개방(6/5 메타게임층·무한컬렉션과 겹치지 않는 "단일 메카닉 수익 레버" 신규 토픽). **📦 콘텐츠(Content Writer)**: **인앱이벤트(In-App Events) 표시 시 제품페이지 전환 평균 +17%·애플이 이벤트를 검색·에디토리얼에 색인**·구글플레이 LiveOps 프로모션 콘텐츠는 활성유저 +5%·매출 +4%(선정 개발자만 노출)·숏폼 게임 UA 후크율은 틱톡 중앙값 33%(상위 55%)·**UGC형이 스튜디오형을 후크 34% vs 26%로 압도**(6/5 첫 스크린샷 A/B·현지화와 겹치지 않는 "인앱이벤트·LiveOps·UGC" 신규 토픽). **🛡 DevOps**: NumLink·MeowBeat 둘 다 `.github` 디렉터리 **자체가 부재**(CI 전무·빌드 100% 수동)·agent-office는 deploy-pages.yml+weekly-insights.yml 2건 정상·**GitHub Actions 호스티드 러너 가격 1/1부터 최대 39%↓**(16코어 Linux $0.042/min·분당 $0.002 플랫폼 차지 신설)·셀프호스트 러너 과금은 백래시로 연기(6/5 game-ci 2레이어 캐시와 겹치지 않는 "러너 가격" 신규 토픽). **🎨 디자인(Art Director)**: **2026 모바일 UI 핵심은 스프링 피직스(overshoot→bounce→settle·stiffness/damping 2파라미터로 무게감)**·**prefers-reduced-motion 토글이 저비용 고임팩트 접근성 표준**(모션 끄면 opacity/색 전환 대체)·리듬게임 주스는 "최소 입력→폭발적 캐스케이드 반응"(squash·stretch·파티클·색변화)이되 코어 게임플레이와 일치 필수(6/5 tabular figures·색맹안전과 겹치지 않는 "모션 피드백" 신규 토픽)·Unity는 DOTween Ease.OutBack으로 스프링 근사 저비용 구현 가능. **🎯 오늘 핵심 결정 = ① [P0] MeowBeat 백업 — 미커밋 단일 작업 커밋+작업브랜치 6커밋을 `git push -u`로 upstream 영구 설정해 추적 안 되던 백업을 한 번에 못 박기(10일째·새벽이라 게임 레포 push는 사용자 승인 후) ② [P0] NumLink 안전망 복구 — 삭제된 AutoGenTests.cs를 `git checkout`으로 복구+템플릿 Tools/ 3종 복사해 baseline 0-error(3일 연속 공백 종료) ③ [P1] 두 Unity 레포에 GameCI 빌드 검증 워크플로 1건씩 신규 — .github 부재가 백업 P0의 구조적 근본 원인이므로 CI 골격부터 세우기 ④ [P1] MeowBeat 미커밋 곡선택 작업 분리 커밋+StreamingAssets/Songs Addressables PoC 1곡 ⑤ [P2] NumLink 애플 인앱이벤트 1종 기획(무비용 ASO·전환 +17%) ⑥ [P2] 스프링 피직스 통합 피드백+모션 감쇠 토글(양 프로젝트·Ease.OutBack) ⑦ [P2] MeowBeat "특별 간식(Golden Treat)" 단일 소비형 IAP를 농장 메타 한정으로 GDD 명문화(P2W 회피·매출 레버 1개)**. 메타 통찰: 6/5엔 "커밋·백업이 멈췄다"가 본질이었다면, 오늘은 그 멈춤의 구조적 뿌리가 드러났다 — **MeowBeat·NumLink 둘 다 .github가 없어 CI/백업 자동화가 0이고, 그래서 작업이 사람 손에 의존해 워킹트리에 고인다**. 오늘은 P0로 고인 작업을 못 박고, P1으로 그 고임을 반복시키는 구조(CI 부재) 자체를 메우기 시작하는 날.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — 🚨 MeowBeat 백업 P0 10일째 이월·재측정으로 위험 정밀화: 작업브랜치 feature/song-ownership-migration tip 04-12(단절 55일)·6커밋이 upstream 미설정(fatal)이라 origin·meowbeat 어느 원격에도 0건 백업(6/5 "origin 03-28·69일"은 main 기준)·🚨 NumLink 안전망 3일 연속 부재로 악화(AutoGenTests.cs 삭제 D 상태)·✅ NumLink 본진 origin과 0/0 동기화 양호·미커밋 36파일·3개 레포 오늘 신규 커밋 0건',
+        description:
+          '**🚨 백업 P0 10일째·재측정 정밀화**: `git branch -vv` 실측 — 진짜 위험은 작업브랜치 **feature/song-ownership-migration**으로, tip이 04-12(실작업 단절 55일째)이고 **upstream 미설정(fatal)이라 이 브랜치의 6커밋이 origin·meowbeat 어느 원격에도 0건 백업**됨. 6/5의 "origin 마지막 푸시 03-28·69일 미백업"은 main 기준 수치였고, 오늘 드러난 더 정확한 위험은 "추적조차 안 되는 작업브랜치 6커밋+미커밋 37파일"이 단일 디스크 장애 시 전량 유실이라는 점. **✅ NumLink 본진 양호**: 작업브랜치 feature/ugui-layerlab이 origin/feature/ugui-layerlab과 0/0 완전 동기화(미백업 0일·HEAD 06-02)·본진 origin/main만 70일 정체. **🚨 NumLink 안전망 3일 연속 부재·악화**: Tools/ 추적파일 0개·유일 정식 테스트 AutoGenTests.cs가 6/5 "삭제 유지"에서 오늘 워킹트리 명시 삭제(D) 상태로 악화(단 `git checkout`으로 즉시 복구 가능)·미커밋 36파일. **agent-office** main이 origin/main과 ahead 0 동기화·미커밋 1파일(.omc/project-memory.json)·정상. **❌ 이월**: 6/5 P0 2건(MeowBeat 백업·NumLink 안전망) 모두 미완료. **오늘 결정 제안**: MeowBeat 미커밋 작업 커밋+작업브랜치 6커밋을 `git push -u meowbeat HEAD`로 upstream 영구 설정해 추적 안 되던 백업을 한 번에 못 박기(새벽 실행이라 게임 레포 push는 사용자 승인 후). (git log/branch/status 실측)',
+      },
+      {
+        title:
+          '🎮 Game Designer — 2026 스튜디오 36% 하이퍼→하이브리드캐주얼 전환·퍼즐/머지 황금비 IAP 45:광고 55·Royal Match 신규 파워업 1종(Super Light Ball)으로 매출 베이스라인 1.5배·시즌패스 최고 $219 핵심 수익원·리듬게임 차별화축 BPM→장르융합(People of Note 턴제RPG·NecroDancer 로그라이크)·콜라보 신표준 외부 IP로 비과금층 지갑 개방',
+        description:
+          '**🚀 시장 신규 1순위**: 2026 스튜디오 **36%가 하이퍼캐주얼→하이브리드캐주얼 전환** 중·퍼즐/머지 수익 황금비는 IAP 45:광고 55·**Royal Match는 신규 콘텐츠 폭격이 아니라 파워업 단 1종(Super Light Ball)으로 매출 베이스라인 1.5배** 상승·최고 $219 시즌패스가 핵심 수익원(Naavik·GameMakers·6/5 메타게임층/무한컬렉션과 겹치지 않는 "단일 메카닉 수익 레버" 신규 토픽). **🚀 신규 2순위**: **리듬게임 차별화축이 BPM→장르융합으로 이동** — People of Note(턴제RPG)·Crypt of the NecroDancer(로그라이크)가 리듬을 다른 장르 코어에 결합(GameSpot). **🚀 신규 3순위**: 콜라보 신표준 = Roblox×넷플릭스 KPop Demon Hunters처럼 외부 IP로 비과금층 지갑 개방(Sensor Tower 4월 톱10). **오늘 결정 제안**: **P2 MeowBeat에 "특별 간식(Golden Treat)" 단일 소비형 IAP를 농장 메타 한정으로 GDD 명문화** — 효과를 리듬 판정 보정이 아닌 농장 메타(먹이 2배 수확)에 한정해 P2W 논란 회피·메타 IAP 진입점 확보·차후 시즌패스 보상통화로 재활용·"신규 메카닉 1종=매출 레버 1개" 원칙으로 ARPDAU $0.50 목표(P0 백업·안전망 선행). Sources: Naavik·GameMakers·Game Growth Advisor·Antier·Sensor Tower·GameSpot.',
+      },
+      {
+        title:
+          '💻 Developer — 🆕 Unity 6.3 LTS(6000.3·2027.12까지 지원) 정식 출시: Build Profiles 개선·URP Bloom 모바일 Kawase/Dual 필터·HTTP/2·gRPC·Box2D v3·2026 로드맵 CoreCLR 전환·🔎 MeowBeat 미커밋은 단일 작업 곡선택 titleKo 11곡+톤다운+음량 슬라이더(6/5 규명 일치)·unity-cli→CoplayDev Unity-MCP #beta 교체·StreamingAssets/Songs Addressables 미적용',
+        description:
+          '**🆕 기술 신규 1순위(웹)**: **Unity 6.3 LTS(6000.3·2027.12까지 LTS 지원)가 정식 출시** — Build Profiles 워크플로 개선·URP Bloom에 모바일 친화 Kawase/Dual 필터 추가·HTTP/2·gRPC 네트워킹·Box2D v3 물리 엔진·2026 로드맵에 CoreCLR(.NET 런타임) 전환 예고(6/4 GMA SDK·6/5 Adaptive Performance v5.0과 겹치지 않는 "6.3 LTS 신기능" 신규 토픽). **🔎 코드 분석**: MeowBeat 미커밋 변경은 6/5 규명대로 단일 응집 작업 **"곡 선택 UI 다국어화(SongData titleKo·manifest 11곡 한글 제목·미소유곡 톤다운)+음량 조절(OptionManager SongVolume 슬라이더 0~1·PlayerPrefs·SongManager 통합)"**·부수로 Packages에서 unity-cli→com.coplaydev.unity-mcp(#beta) 교체·collab-proxy 제거·GMA 플레이스홀더 프리팹 LF/CRLF 노이즈 다수. NumLink 미커밋은 폰트 SDF 재생성+AutoGenTests 삭제+패키지 정리 위주로 실코드 변경 아님. **🆕 신규 2순위**: MeowBeat StreamingAssets/Songs 곡 데이터는 Addressables 미적용이라 곡당 소그룹 전환 PoC 여지(다운로드 크기·메모리 최적화). **오늘 결정 제안**: **P1 MeowBeat의 titleKo+음량슬라이더+잠금톤다운 묶음을 단일 커밋(feat(songselect): 곡 한국어 제목 및 음량 옵션 추가)으로 분리 커밋하고, StreamingAssets/Songs를 Addressables 그룹으로 전환하는 PoC 1곡 착수**(P0 백업의 일부로 자연 연결). Sources: Unity 6.3 LTS 블로그·Whats New 6000.3·Unity 2026 Roadmap CoreCLR·Addressables best practices.',
+      },
+      {
+        title:
+          '🔍 QA Tester — ✅ MeowBeat 루트 실행 시 qa_static 0 error·unity_validate 0 error/1 warn·run_regression 2/2 PASS·manifest 10곡·known_bugs 6패턴·미해결 버그 0건 유지·.meta 3종(Input/Item/SaveLoad) 삭제는 GUID 참조 0이라 안전·🚨 NumLink 안전망 완전 소실(Tools 부재+유일 테스트 AutoGenTests.cs 삭제 D)·⚠️ qa_static.py 상대경로 결함(cwd 실행 시 거짓 error 2건)',
+        description:
+          '**✅ 유지**: MeowBeat를 루트에서 실행 시 qa_static 0 error·unity_validate 0 error/1 warning·run_regression 2/2 PASS·manifest 10곡 정상·known_bugs 6패턴·미해결 버그 0건(6/5와 동일). 삭제된 .meta 3종(Input/Item/SaveLoad)은 GUID 참조 파일 0개라 **고아 참조 없음·삭제 안전**. **🚨 최대 리스크 = NumLink 안전망 완전 소실**: Tools 폴더 부재+유일한 정식 테스트 AutoGenTests.cs가 삭제(D) 상태·Scripts 테스트 .cs 0개 → 회귀 무방비(3일 연속·QA 검증 수단 자체가 없음). **⚠️ 도구 결함 발견**: qa_static.py가 상대 경로를 써서 Tools 폴더를 cwd로 실행하면 거짓 error 2건 발생(반드시 레포 루트에서 실행해야 정확)·NumLink로 복사 시 이 경로 처리도 함께 보정 필요. **오늘 결정 제안**: **P0 NumLink에 삭제된 AutoGenTests.cs를 `git checkout`으로 복구+_ProjectTemplate의 Tools/ 안전망 3종 복사 후 unity_validate 베이스라인 0 error 확보**(MeowBeat는 안정·추가 조치 불필요). Sources: qa_static.py·unity_validate.py·run_regression.py 실행·git status·Glob 테스트 전수.',
+      },
+      {
+        title:
+          '📢 Content Writer — 인앱이벤트(In-App Events) 표시 시 제품페이지 전환 +17%·애플이 이벤트를 검색·에디토리얼에 색인·구글플레이 LiveOps 프로모션 활성유저 +5%·매출 +4%(선정 개발자만)·숏폼 UA 후크율 틱톡 중앙값 33%(상위 55%)·UGC형이 스튜디오형 압도(34% vs 26%)',
+        description:
+          '**📦 콘텐츠 신규 1순위**: **애플 인앱이벤트(In-App Events) 표시 시 제품페이지 전환율 평균 +17%·애플이 이벤트를 검색결과·에디토리얼에 색인**해 추가 노출 면 확보(MobileAction·6/5 첫 스크린샷 A/B·현지화와 겹치지 않는 "인앱이벤트" 신규 토픽). **📦 신규 2순위**: **구글플레이 LiveOps 프로모션 콘텐츠는 활성유저 +5%·매출 +4%**(선정 개발자만 스토어 노출·Apptweak). **📦 신규 3순위**: 숏폼 게임 UA 후크율은 틱톡 중앙값 33%(상위 55%)·**UGC형이 스튜디오형을 후크 34% vs 26%로 압도**(Benly 2026 벤치마크). **오늘 결정 제안**: **P2 NumLink 출시 시점에 맞춰 애플 인앱이벤트 1종 기획·등록 — "신규 레벨팩 출시" 또는 "주간 챌린지"** — 추가 개발 없이 기존 레벨/모드를 이벤트 카드(이미지+카피 2~3줄)로 포장만 해도 전환 +17%·검색 색인 노출 기대(무비용 ASO·P0 백업·안전망 후). Sources: MobileAction·Apptweak·Benly·AppFollow.',
+      },
+      {
+        title:
+          '🛡 DevOps — 🚨 NumLink·MeowBeat 둘 다 .github 디렉터리 자체 부재 CI 전무·agent-office 워크플로 2건(deploy-pages.yml+weekly-insights.yml) 정상·미푸시 1건(project-memory.json 로컬 메타·푸시 불필요)·🆕 GitHub Actions 호스티드 러너 1/1부터 최대 39%↓(16코어 Linux $0.042/min·분당 $0.002 플랫폼 차지 신설)·셀프호스트 과금 백래시로 연기',
+        description:
+          '**🛡 CI 상태**: NumLink·MeowBeat 둘 다 `.github` 디렉터리 **자체가 부재** → CI/CD 전무·빌드 100% 수동(MeowBeat 백업 P0가 10일째 이월되는 구조적 근본 원인)·agent-office는 deploy-pages.yml+weekly-insights.yml 2건 정상·미푸시는 .omc/project-memory.json(로컬 메타·푸시 불필요)뿐. **🆕 신규**: **GitHub Actions 호스티드 러너 가격이 1/1부터 최대 39%↓**(16코어 Linux $0.042/min)·분당 $0.002 플랫폼 차지 신설·셀프호스트 러너 과금(3월 예정)은 백래시로 연기(6/5 game-ci 2레이어 캐시와 겹치지 않는 "러너 가격 정책" 신규 토픽). **오늘 결정 제안**: **P1 NumLink·MeowBeat 두 Unity 레포에 GameCI 기반 빌드 검증 워크플로 1건씩 신규 작성** — 현재 .github 자체가 없어 CI 부재이므로 최소 컴파일/빌드 검증 1건씩 추가해 백업 P0의 구조적 근본 원인(자동화 0)을 메우기 시작(첫 워크플로부터 Library 캐시 키 전략 동반). Sources: GitHub Changelog 러너 가격 인하·Tenki Cloud 셀프호스트 과금 연기·game-ci.',
+      },
+      {
+        title:
+          '🎨 Art Director — 2026 모바일 UI 핵심은 스프링 피직스(overshoot→bounce→settle·stiffness/damping 2파라미터로 무게감)·prefers-reduced-motion 토글이 저비용 고임팩트 접근성 표준(모션 끄면 opacity/색 전환 대체)·리듬게임 주스는 "최소 입력→폭발적 캐스케이드 반응"(squash·stretch·파티클·색변화) 단 코어와 일치 필수',
+        description:
+          '**🎨 디자인 신규 1순위**: **2026 모바일 게임 UI 핵심은 스프링 피직스 모션**(overshoot→bounce→settle·stiffness/damping 2파라미터로 무게감 구현)·선형 트윈보다 물리 기반 반응이 표준화(4tech·Techqware·6/5 tabular figures/색맹안전과 겹치지 않는 "모션 피드백" 신규 토픽). **🎨 신규 2순위**: **클린 HUD+prefers-reduced-motion 토글이 저비용 고임팩트 접근성 표준** — 모션 끄면 opacity/색 전환으로 대체(vestibular 접근성). **🎨 신규 3순위**: 리듬게임 주스는 "최소 입력→폭발적 캐스케이드 반응"(squash·stretch·파티클·색변화)이되 코어 게임플레이와 일치해야 함(abagames·GameAnalytics). **오늘 결정 제안**: **P2 스프링 피직스 기반 통합 피드백 시스템+모션 감쇠 토글 양 프로젝트 동시 도입** — NumLink는 Layer Lab 9-slice 버튼 프레스에 스프링(압축→오버슈트→정착)+연결 성공 시 노드 squash 바운스·MeowBeat는 Perfect 판정에 파티클 버스트+노트 색변화(콤보 강도 점증·10~16프레임)·공통으로 Settings에 "모션 줄이기" 토글 1개 추가(ON이면 바운스/파티클을 페이드+색전환 대체)·DOTween Ease.OutBack으로 스프링 근사 저비용 구현(신규 에셋 불필요·진행 중 작업에 흡수). Sources: 4tech·Techqware·Spring Animation 2026·prefers-reduced-motion 가이드·abagames Juicy·GameAnalytics.',
+      },
+    ],
+    meetingTitle:
+      '🏢 6/6 토요일 종합 회의 — 백업 P0 10일째의 구조적 뿌리를 찾다: ".github 부재 = 자동화 0 = 작업이 워킹트리에 고임" / 오늘은 P0로 고인 작업 못 박고 P1으로 CI 골격 세우기',
+    meetingSummary:
+      'Orchestrator가 백업 P0를 재측정해 위험의 정체를 더 선명히 했다 — 6/5의 "origin 03-28·69일"은 main 기준이었고, 진짜 위험은 **upstream 미설정으로 추적조차 안 되는 작업브랜치 feature/song-ownership-migration의 6커밋(tip 04-12)**이다. DevOps가 이 멈춤의 구조적 뿌리를 짚었다: **NumLink·MeowBeat 둘 다 .github 디렉터리 자체가 없어 CI/백업 자동화가 0**이고, 그래서 작업이 전적으로 사람 손에 의존해 워킹트리에 고인다. QA는 NumLink 안전망이 3일 연속 부재를 넘어 유일 테스트 AutoGenTests.cs가 삭제(D)로 악화됐으나 `git checkout`으로 즉시 복구 가능함을, 그리고 MeowBeat는 루트 실행 시 qa/validate/regression 전부 통과·버그 0건 안정임을 확인했다. Developer는 Unity 6.3 LTS 정식 출시와 MeowBeat 미커밋의 단일 작업 정체(곡 다국어화+음량)를 재확인하며 분리 커밋+Addressables PoC를 제안했다. Game Designer는 "신규 콘텐츠 폭격이 아니라 파워업 1종으로 매출 1.5배"라는 Royal Match 사례로 단일 메카닉 수익 레버(특별 간식 IAP)를, Content Writer는 무비용 인앱이벤트(+17% 전환)를, Art Director는 스프링 피직스+모션 감쇠 토글을 각각 제안했다. 결론: **오늘은 ① P0로 고인 작업을 커밋·푸시로 못 박고(MeowBeat 백업·NumLink 안전망 복구) ② P1으로 그 고임을 반복시키는 구조 자체(CI 부재)를 GameCI 워크플로로 메우기 시작한다**. 게임 레포 push는 새벽 실행이라 사용자 승인 후.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '백업 P0 10일째입니다. 재측정해 보니 6/5의 "origin 03-28·69일"은 main 기준이었고, 진짜 위험은 upstream 미설정(fatal)으로 추적조차 안 되는 작업브랜치 feature/song-ownership-migration의 6커밋(tip 04-12·단절 55일)이에요. 미커밋 37파일까지 단일 디스크 장애 시 전량 유실 위험. NumLink 본진은 origin과 0/0 동기화로 양호하지만, 안전망은 AutoGenTests.cs가 삭제(D)로 악화됐습니다. 오늘 P0는 커밋+`git push -u`로 upstream 영구 설정해 한 번에 못 박기 — 새벽이라 게임 레포 push는 사용자 승인 후.',
+      },
+      {
+        speaker: 'DevOps',
+        note: '그 멈춤의 구조적 뿌리를 짚겠습니다. NumLink·MeowBeat 둘 다 .github 디렉터리 자체가 없어요. CI/백업 자동화가 0이니 작업이 전적으로 사람 손에 의존하고, 그래서 워킹트리에 고이는 겁니다. agent-office는 워크플로 2건이 멀쩡히 도는데 정작 게임 레포엔 골격이 없죠. P1으로 두 레포에 GameCI 빌드 검증 워크플로 1건씩 세우는 걸 제안합니다. 참고로 호스티드 러너는 1/1부터 최대 39% 싸졌고(16코어 $0.042/min), 셀프호스트 과금은 연기됐어요.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'MeowBeat는 루트에서 돌리면 qa_static 0 error·unity_validate 0 error/1 warn·run_regression 2/2 PASS·버그 0건으로 안정입니다. .meta 3종 삭제도 GUID 참조 0이라 안전하고요. 문제는 NumLink — 안전망이 3일 연속 부재를 넘어 유일 테스트 AutoGenTests.cs가 삭제(D)로 더 나빠졌습니다. 다만 `git checkout`으로 즉시 복구 가능하니, 복구+Tools 3종 복사면 베이스라인 0-error 회복됩니다. 한 가지 더, qa_static.py가 상대경로라 cwd 실행 시 거짓 error 2건이 나니 복사할 때 경로 처리도 보정해야 합니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'Unity 6.3 LTS가 정식 출시됐습니다(6000.3·2027.12까지 지원). Build Profiles 개선·URP Bloom 모바일 Kawase 필터·Box2D v3·2026 CoreCLR 전환 예고가 핵심이에요. MeowBeat 미커밋은 어제 규명대로 단일 작업 "곡 다국어화 titleKo 11곡+미소유곡 톤다운+음량 슬라이더"가 맞고, 부수로 unity-cli→CoplayDev Unity-MCP로 교체됐습니다. P1으로 이 묶음을 `feat(songselect)` 단일 커밋으로 분리하고, StreamingAssets/Songs를 Addressables 그룹으로 전환하는 PoC 1곡을 백업 작업의 일부로 함께 가져가죠.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: 'Royal Match가 신규 콘텐츠 폭격이 아니라 파워업 단 1종(Super Light Ball)으로 매출 베이스라인 1.5배를 올렸습니다. 시즌패스는 최고 $219가 핵심 수익원이고요. 우리도 "신규 메카닉 1종=매출 레버 1개" 원칙이 필요해요. P2로 MeowBeat에 "특별 간식(Golden Treat)" 단일 소비형 IAP를 제안하는데, 효과는 리듬 판정 보정이 아니라 농장 메타(먹이 2배 수확)에 한정해 P2W 논란을 피하는 게 핵심입니다. 참고로 리듬게임 차별화축도 BPM에서 장르융합으로 넘어갔어요(턴제RPG·로그라이크).',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '무비용 ASO 액션 하나 제안합니다. 애플 인앱이벤트를 표시하면 제품페이지 전환이 평균 +17%, 애플이 이벤트를 검색·에디토리얼에 색인해 노출 면도 늘어요. NumLink 출시 시점에 "신규 레벨팩 출시"나 "주간 챌린지"를 이벤트 카드(이미지+카피 2~3줄)로 포장만 하면 추가 개발 0으로 적용됩니다. 구글플레이 LiveOps도 활성유저 +5%·매출 +4%고요. UA 크리에이티브는 UGC형이 스튜디오형을 후크 34% vs 26%로 압도하니 참고하세요. P0 백업·안전망 다음 순번입니다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '2026 UI 핵심은 스프링 피직스 모션입니다(overshoot→bounce→settle). P2로 양 프로젝트 동시 도입을 제안해요 — NumLink는 9-slice 버튼 프레스에 스프링 압축·오버슈트, 연결 성공 시 노드 squash 바운스. MeowBeat는 Perfect 판정에 파티클 버스트+노트 색변화(10~16프레임). 공통으로 Settings에 "모션 줄이기" 토글 1개를 넣어 끄면 페이드+색전환으로 대체하면 vestibular 접근성까지 챙깁니다. DOTween Ease.OutBack으로 스프링을 저비용 근사할 수 있어 신규 에셋도 불필요하고, 진행 중인 3테마/먹이 애니 작업에 그대로 흡수됩니다.',
+      },
+    ],
+    decisions: [
+      {
+        title:
+          '🚨 P0 — MeowBeat 백업: 미커밋 작업 커밋 + 작업브랜치 6커밋 upstream 설정 후 push (10일째 이월·사용자 승인 후)',
+        description:
+          'Orchestrator·Developer·QA 합의. 미커밋 단일 작업(곡 다국어화 titleKo 11곡+미소유곡 톤다운+음량 슬라이더·QA 전수 결과 manifest titleKo만 추가로 무결성 영향 0·.meta 삭제분 GUID 미참조 안전)을 커밋한 뒤, upstream 미설정(fatal)으로 추적조차 안 되던 작업브랜치 feature/song-ownership-migration의 6커밋을 `git -C C:/Unity/Feedme push -u meowbeat HEAD`로 영구 추적 설정+한 번에 백업. tip 04-12·단절 55일·미커밋 37파일이 단일 디스크 장애 시 전량 유실 위험. **새벽 실행이라 게임 레포 push는 사용자 승인 후 실행.**',
+      },
+      {
+        title:
+          '🚨 P0 — NumLink 회귀 안전망 복구: AutoGenTests.cs git checkout 복구 + 템플릿 Tools/ 3종 복사 → baseline 0-error',
+        description:
+          'QA·Orchestrator 합의. 3일 연속 안전망 부재가 유일 테스트 AutoGenTests.cs 삭제(D)로 악화됨. 삭제된 테스트를 `git -C C:/Unity/NumLink checkout -- Assets/Tests/Editor/AutoGenTests.cs(.meta/.asmdef 포함)`로 복구하고, `C:/Unity/_ProjectTemplate/Tools/`(또는 MeowBeat Tools)에서 unity_validate.py·qa_static.py·known_bugs.json을 NumLink `Tools/`로 복사+씬 경로 상수 갱신. qa_static.py 상대경로 결함(cwd 실행 시 거짓 error 2건)도 함께 보정. 이후 unity_validate 베이스라인 0 error 확보로 회귀탐지 공백 종료.',
+      },
+      {
+        title:
+          '🛡 P1 — 두 Unity 레포에 GameCI 빌드 검증 워크플로 1건씩 신규 (.github 부재 = 백업 P0의 구조적 근본 원인)',
+        description:
+          'DevOps 제안. NumLink·MeowBeat 둘 다 .github 디렉터리 자체가 없어 CI/자동화가 0이고, 이것이 작업이 워킹트리에 고이는 구조적 뿌리. GameCI(game-ci/unity-builder) 기반 최소 컴파일/빌드 검증 워크플로를 레포당 1건씩 작성해 골격을 세우고, 첫 워크플로부터 Library 캐시 키 전략(플랫폼별 키+restore-key 폴백)을 동반해 초기부터 30~60% 단축 확보. P0 백업·안전망 선행 후.',
+      },
+      {
+        title:
+          '🔧 P1 — MeowBeat 곡선택 작업 분리 커밋 + StreamingAssets/Songs Addressables PoC 1곡 (Developer)',
+        description:
+          'Developer 제안. titleKo+음량슬라이더+잠금톤다운 묶음을 단일 커밋 `feat(songselect): 곡 한국어 제목 및 음량 옵션 추가`로 분리(P0 백업과 자연 연결)하고, Addressables 미적용 상태인 StreamingAssets/Songs 곡 데이터를 곡당 소그룹 Addressables로 전환하는 PoC 1곡 착수(다운로드 크기·메모리 최적화 검증). Unity 6.3 LTS 정식 출시로 Build Profiles·URP Bloom Kawase 등 신기능도 차후 검토 대상.',
+      },
+      {
+        title:
+          '🔍 P2 — NumLink 애플 인앱이벤트 1종 기획 (무비용 ASO·전환 +17%) + 스프링 피직스 피드백·특별 간식 IAP',
+        description:
+          'P0/P1 후 착수. ① Content Writer — NumLink 출시 시점에 "신규 레벨팩 출시" 또는 "주간 챌린지"를 애플 인앱이벤트로 등록(이미지+카피 2~3줄·추가 개발 0·전환 +17%·검색 색인 노출). ② Art Director — 스프링 피직스 통합 피드백+"모션 줄이기" 토글 양 프로젝트 동시(NumLink 버튼 스프링/노드 바운스·MeowBeat Perfect 파티클·DOTween Ease.OutBack 저비용·진행 중 작업에 흡수). ③ Game Designer — MeowBeat "특별 간식(Golden Treat)" 단일 소비형 IAP를 농장 메타(먹이 2배) 한정으로 GDD 명문화(P2W 회피·매출 레버 1개).',
+      },
+    ],
+  },
+  {
     id: '2026-06-05T04:00:00-daily-standup',
     date: '2026-06-05',
     researchTitle:
