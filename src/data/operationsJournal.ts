@@ -43,6 +43,118 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-06-07T04:00:00-daily-standup',
+    date: '2026-06-07',
+    researchTitle:
+      '🌅 6/7 일요일 데일리 스탠드업 — **🔴 진단 11일·실행 0: 6/6 액션아이템 4건 전부 미완료(P0 2건 또 이월)·"원인은 완벽히 아는데 새벽 무인 실행이라 게임 레포 push 승인을 못 받아 P0가 영구 이월"이 진짜 병목으로 확정**·**🚨 MeowBeat 백업 P0 11일째: 작업브랜치 feature/song-ownership-migration upstream 미설정·로컬 6커밋 ahead·미커밋 37파일 전량 미백업(tip 04-12·56일)**·**🚨 NumLink 안전망 4일째: AutoGenTests 4파일 삭제(D) 방치·Tools 0개·단 git checkout으로 push 없이 즉시 복구 가능(=오늘 사용자 승인 불필요한 유일 P0)**·**🆕 기술: Google Play 2026-08-31부터 타겟 API 36(Android 16) 강제 — MeowBeat 현 35에서 상향 필요·빌드크기 ASTC 8x8+Addressables Brotli/Gzip 2026 표준·MeowBeat 미커밋=곡 음량 슬라이더(OptionManager PlayerPrefs+AudioSource·+110줄)**·**🚀 시장: 최적 온보딩 시 리텐션 최대 50%↑·핵심루프 60초 내 진입 필수·캐주얼/매치 퍼즐 D1 35~45% 우수작 기준·텍스트 튜토리얼→learn-by-doing 전환·모바일 리듬게임 시장 $2.5B(2024)→$5.3B(2033) CAGR 9.1%**·**📦 콘텐츠: 앱 프리뷰 영상 15~30초·첫3초 후크→설치율 +20~35%·무음 자막 필수·캐주얼 아이콘 A/B 구글플레이 +8~12%·캐릭터 단독 노출 +21.5%·12~18개월 주기**·**🛡 DevOps: 두 Unity 레포 .github 부재 11일째 동일·agent-office GitHub Pages 최근 3회 success(36~50초)·🆕 Unity Build Automation 2026-03-01 무료티어 확대 Mac 100분/월 신규 허용·스토리지 25GB**·**🎨 디자인: 2026 "엘리베이티드 뉴트럴"(웜샌드/뮤티드클레이/오트밀)+단일 비비드 액센트가 AI슬롭 회피 정석·타이포 버블 디스플레이+가독성 산세리프 이원화·펫게임 코지 데스크탑펫 르네상스 2D 핸드드로운**.',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제56회 — **6/7 일요일·1개월 임계 D+14**. **🔴 오늘의 본질 = 진단 피로(diagnosis fatigue)**: 6/6은 백업 멈춤의 구조적 뿌리(.github 부재→자동화 0→작업이 워킹트리에 고임)를 규명하고 P0 2건+P1 2건을 결정했으나, 오늘 Orchestrator 실측 결과 **6/6 액션아이템 4건 전부 미완료**다. MeowBeat 백업 P0는 11일째, NumLink 안전망은 4일째 이월. 11일간 매일 같은 P0를 재측정·재기술하는데 실행은 0인 이유가 오늘 분명해졌다 — **이 회의가 새벽 무인 자동실행이라 게임 레포 push 승인을 받을 수 없고, 사용자는 아침에 긴 회의록을 봐도 "그래서 내가 정확히 뭘 쳐야 하나"가 불명확**하다는 것. 따라서 오늘은 결정의 형태를 바꾼다: 재측정 대신 **사용자가 아침에 그대로 복붙할 명령 블록**을 제시하고, push가 필요한 것(MeowBeat 백업)과 push 없이 로컬에서 끝나는 것(NumLink 안전망 복구=git checkout+Tools 복사)을 명확히 분리한다. **🚨 MeowBeat 백업 P0 11일째**: 작업브랜치 feature/song-ownership-migration이 여전히 upstream 미설정·로컬 6커밋 ahead·미커밋 37파일(어제 Developer가 규명한 곡 음량 슬라이더 작업)·tip 04-12 기준 56일 미백업. **🚨 NumLink 안전망 4일째**: AutoGenTests.cs/.asmdef+.meta 4파일 모두 삭제(D)·Tools 폴더 0개·단 이건 `git checkout`+템플릿 Tools 복사라 **push 없이 로컬에서 완결되는 유일한 P0**라 오늘 우선 처리 후보. **🆕 기술(Developer)**: **Google Play가 2025-08-31 API 35 강제에 이어 2026-08-31부터 타겟 API 36(Android 16) 강제** — MeowBeat 현 35에서 상향 필요(8/31 마감 백로그 등록 권장·6/4 GMA SDK와 겹치지 않는 신규 정책 토픽)·빌드크기 2026 권고는 ASTC 8x8 블록+Addressables Brotli/Gzip 번들 압축(초기 다운로드 절반 절감)·MeowBeat 미커밋은 곡 음량 슬라이더(OptionManager 0~1 Clamp·PlayerPrefs "SongVolume"·ApplyVolume로 AudioSource 반영·+110줄)+manifest 신곡 1곡+MCP 패키지 교체. **🚀 시장(Game Designer)**: **최적 온보딩 시 리텐션 최대 50%↑·핵심루프 60초 내 진입 필수·캐주얼/매치 퍼즐 우수작 D1 35~45%·텍스트 튜토리얼→learn-by-doing(따라하며 배우기) 전환이 표준**·모바일 리듬게임 시장 $2.5B(2024)→$5.3B(2033)·CAGR 9.1%·2026 PC 신작 Stip(Metroidbrainia=규칙 발견형)이 숫자퍼즐 차별화 사례(6/5 메타게임층·6/6 단일 메카닉 수익과 겹치지 않는 "온보딩·FTUE" 신규 토픽). **📦 콘텐츠(Content Writer)**: **앱 프리뷰 영상은 15~30초·첫 3초 후크로 설치율 +20~35%·다수 무음 시청이라 자막/캡션 필수**(0~5초 후크/5~20초 핵심기능/20~30초 앱명+CTA 구조)·**캐주얼 게임 아이콘 A/B는 구글플레이 중앙값 +8~12%로 스크린샷보다 우위·친근한 캐릭터 단독 노출 설치 +21.5%·대규모 변경은 12~18개월 주기**(6/5 첫 스크린샷 A/B·6/6 인앱이벤트와 겹치지 않는 "앱 프리뷰 영상·아이콘 A/B" 신규 토픽). **🛡 DevOps**: 두 Unity 레포 .github 부재 11일째 동일·agent-office GitHub Pages 최근 3회 모두 success(36~50초)·오늘 CI/CD 변경 없음·**🆕 Unity Build Automation이 2026-03-01부터 무료티어 확대 — Windows 200분+Mac(Standard) 100분+Linux 100분/월·Mac/iOS 빌드 신규 무료 허용·클라우드 스토리지 5GB→25GB**(6/6 GitHub Actions 러너 가격과 겹치지 않는 "Unity 1st-party 빌드 자동화" 신규 토픽·모바일 Mac 빌드를 GitHub Actions Mac 러너 $0.08/min 대신 무료 100분으로 검증 가능). **🎨 디자인(Art Director)**: **2026 컬러 정석은 "엘리베이티드 뉴트럴"(웜샌드 #E8DFD0~뮤티드클레이 #C9A88A 베이스)+레벨당 단일 비비드 액센트 — 민트+다크 그라데이션은 전형적 AI슬롭이라 회피**·타이포는 타이틀 굵은 버블 디스플레이+본문 가독성 산세리프 이원화·펫게임 아트는 "코지 데스크탑펫 르네상스" 2D 핸드드로운 마스코트·모바일 콘페티는 50개 이하 60fps 유지(6/6 스프링 피직스·tabular figures와 겹치지 않는 "컬러·타이포·펫아트" 신규 토픽). **🎯 오늘 핵심 결정 = ① [P0·복붙 명령] MeowBeat 백업 — 미커밋 37파일 커밋(`feat(songselect): 곡 음량 옵션 추가`) 후 `git -C C:/Unity/Feedme push -u meowbeat feature/song-ownership-migration`로 6커밋+신커밋 일괄 백업·11일째라 새벽 무인 미실행→사용자 아침 1줄 실행 필요 ② [P0·push 불필요·우선] NumLink 안전망 복구 — `git -C C:/Unity/NumLink checkout -- Assets/Tests/Editor/AutoGenTests.*`로 4파일 복구+_ProjectTemplate/Tools 3종 복사(로컬 완결·단 AutoGenTests 삭제가 의도적이었는지 사용자 1회 확인) ③ [P1] Android 타겟 API 36 백로그 등록(2026-08-31 마감·MeowBeat 현 35) ④ [P1] 두 Unity 레포 CI 골격 — Unity Build Automation 무료 Mac 100분 PoC가 GitHub Actions+라이선스 활성화보다 진입장벽 낮음 ⑤ [P2] NumLink "60초 온보딩"(고스트핸드 첫 연결·텍스트 패널 제거·D1 35%+ 목표) ⑥ [P2] 출시 전 15~30초 앱 프리뷰 영상(첫3초 후크·무음 자막)+아이콘 A/B(MeowBeat 고양이 클로즈업·NumLink 2색 고대비) ⑦ [P2] NumLink 컬러를 엘리베이티드 뉴트럴 베이스+단일 비비드 액센트로 재정의(AI슬롭 회피)**. 메타 통찰: 6/6이 "왜 작업이 고이는가(=.github 부재)"를 답했다면, 오늘은 "왜 그 처방이 11일째 실행되지 않는가(=새벽 무인 실행은 push 승인을 못 받고, 회의록은 실행 명령이 아니다)"를 답했다. 처방을 바꾸는 게 아니라 **처방의 전달 형태를 "복붙 1줄 명령"으로 바꾸는 날**.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — 🔴 6/6 액션아이템 4건 전부 미완료 확정(P0 2건 또 이월)·🚨 MeowBeat 백업 11일째(작업브랜치 upstream 미설정·6커밋 ahead·미커밋 37파일·tip 04-12·56일)·🚨 NumLink 안전망 4일째(AutoGenTests 4파일 삭제 D·Tools 0개·단 push 없이 git checkout 복구 가능)·✅ agent-office 클린·진짜 병목=새벽 무인 실행이라 게임 레포 push 승인 불가로 P0 영구 이월',
+        description:
+          '**🔴 6/6(#88) 액션아이템 4건 전수 판정 — 전부 미완료**: ① MeowBeat 백업(6커밋 push -u) 미완료 — upstream 여전히 미설정·6커밋 로컬에만 ② NumLink 안전망 복구(AutoGenTests checkout+Tools 복사) 미완료 — 4파일 삭제 방치·Tools 없음 ③ 두 Unity 레포 GameCI 워크플로 미완료 — 양쪽 .github 부재 ④ MeowBeat 곡선택 분리 커밋 미완료 — 곡 관련 신규 커밋 0·SongData/SongManager/manifest 여전히 미커밋(M). **🚨 MeowBeat 백업 P0 11일째**: feature/song-ownership-migration 체크아웃·upstream 미설정(fatal)·로컬 6커밋 ahead·0 behind·미커밋 37파일·tip 04-12 기준 56일 미백업·meowbeat/main도 ahead 37 미푸시 유지. **🚨 NumLink 안전망 4일째**: AutoGenTests.cs/.asmdef+.meta 4파일 전부 삭제(D)·Tests/Editor 폴더 비어있음·Tools 0개·오늘커밋 0건·미커밋 36파일·단 본진 feature/ugui-layerlab은 origin과 동기화 양호. **✅ agent-office**: 미커밋 .omc/project-memory.json 1파일뿐·정상. **🎯 진짜 병목 규명**: 11일간 진단은 완벽한데 실행이 0인 이유 = 이 회의가 새벽 무인 실행이라 게임 레포 push 승인을 받을 수 없고, 아침에 보는 긴 회의록은 "실행 명령"이 아니다. **오늘 결정 제안**: 재측정 대신 **복붙 명령 블록 제시** + push 불필요한 NumLink 안전망 복구(git checkout+Tools 복사)를 우선 분리. (git log/branch -vv/status 실측·6/6 이슈 #88 대조)',
+      },
+      {
+        title:
+          '🎮 Game Designer — 최적 온보딩 시 리텐션 최대 50%↑·핵심루프 60초 내 진입 필수·캐주얼/매치 퍼즐 우수작 D1 35~45%·텍스트 튜토리얼→learn-by-doing 전환 표준·모바일 리듬게임 시장 $2.5B(2024)→$5.3B(2033) CAGR 9.1%·Stip(Metroidbrainia 규칙발견형) 숫자퍼즐 차별화 사례',
+        description:
+          '**🚀 시장 신규 1순위**: 2026 벤치마크상 **최적 온보딩 적용 시 리텐션 최대 50%↑·핵심 게임루프 진입은 다운로드 후 60초 내 필수**·캐주얼/매치 퍼즐 우수작 기준선 D1 35~45%·D7 ~20%·D30 ~10%·신규 유저 대다수가 1~3일 내 이탈하므로 **텍스트 튜토리얼→learn-by-doing(따라 하며 배우기)·gamified 온보딩으로 전환이 표준**(Game Growth Advisor·Antidote FTUE·6/5 메타게임층·6/6 단일 메카닉 수익과 겹치지 않는 "온보딩/FTUE" 신규 토픽). **🚀 신규 2순위**: 모바일 리듬게임 시장 $2.5B(2024)→$5.3B(2033)·CAGR 9.1%·2026 신작은 AR 융합·하이브리드 수익화 표준(상위 매출작 45%가 IAP+광고+패스 결합)·"쉽게 배우는 접근성"이 시장 확장 핵심. **🚀 신규 3순위**: 2026 PC 신작 Stip(Metroidbrainia=규칙을 직접 발견하게 만드는 장르)이 단순 숫자퍼즐 차별화 사례 — NumLink 후반 "숨은 규칙 발견형" 변주 스테이지 검토 여지. **오늘 결정 제안**: **P2 NumLink "60초 룰 온보딩" — 다운로드 직후 설정/계정/텍스트 패널 없이 고스트핸드 가이드로 숫자 2개를 직접 연결시키고 성공 시 즉시 코인/별 보상·텍스트 설명 전면 제거(D1 35%+ 목표)**. P0 백업·안전망 선행. Sources: Game Growth Advisor·Antidote·Verified Market Reports·Bleeding Cool(Stip).',
+      },
+      {
+        title:
+          '💻 Developer — 🆕 Google Play 2026-08-31부터 타겟 API 36(Android 16) 강제(MeowBeat 현 35→상향 필요)·빌드크기 ASTC 8x8+Addressables Brotli/Gzip 2026 표준(초기 다운로드 절반 절감)·🔎 MeowBeat 미커밋=곡 음량 슬라이더(OptionManager 0~1 Clamp·PlayerPrefs SongVolume·AudioSource 반영·+110줄)+manifest 신곡 1곡+MCP 패키지 교체',
+        description:
+          '**🆕 기술 신규 1순위(웹)**: **Google Play 타겟 API는 2025-08-31 API 35 강제에 이어 2026-08-31부터 API 36(Android 16) 강제**(Wear OS/TV는 35)·MeowBeat 현 35에서 상향 필요(6/4 GMA SDK 25.0.0과 겹치지 않는 "타겟 API 정책" 신규 토픽). **🆕 신규 2순위**: 빌드크기 2026 권고 = ASTC 블록크기 선택(8x8 균형점·4x4=8bpp 고품질 vs 12x12=0.89bpp 저용량)+Addressables 그룹 통합+Brotli/Gzip 번들 압축으로 초기 다운로드 절반 가까이 절감(예: 17MB 초기+16MB 지연 로드)·리듬게임 오디오는 DSP time 동기화 핵심이고 FMOD(통합 1~2일·$200K 미만 무료)는 인디·Wwise(SoundBank 메모리 제어 우수)는 모바일 메모리 관리에 유리. **🔎 코드 분석**: MeowBeat 최근 3커밋은 농장 "먹이 먹기" 애니메이션(고양이 흔들기 1초·음식 즉시 제거·catfood fileID 수정)에 집중·미커밋은 옵션 곡 음량 슬라이더(0~1 Clamp·PlayerPrefs "SongVolume" 저장·100% 표기·ApplyVolume로 AudioSource 반영)+GameManager 59줄/SongManager 16줄 연동+manifest 신곡 1곡·부수로 unity-cli→CoplayDev unity-mcp(beta) 교체·collab-proxy 제거. NumLink 미커밋은 AutoGenTests 삭제+TMP/Maplestory SDF 폰트 재임포트(메타 변경) 위주·기능 변경 아님. **오늘 결정 제안**: **P1 MeowBeat 음량 슬라이더 작업을 단일 커밋으로 마무리(P0 백업의 일부) + Android 타겟 API 36을 2026-08-31 마감 백로그에 등록 + NumLink AutoGenTests 삭제·폰트 재임포트를 별도 chore 커밋으로 분리**. Sources: Google Play target API 정책·Unity 빌드 최적화 ASTC/Addressables·FMOD vs Wwise 비교.',
+      },
+      {
+        title:
+          '🔍 QA Tester — ✅ MeowBeat 검증 3종 ALL PASS(unity_validate 0err·qa_static 0err=6/6 거짓에러 2건 해소·run_regression 2/2)·곡10·known_bugs 6패턴·미해결 버그 0건·.meta 3종 삭제 GUID 참조 0 안전·🚨 최대 리스크=안전망 비대칭: NumLink는 Tools 부재+테스트 4파일 삭제로 회귀 무방비(4일째)·MeowBeat만 안전망 보유',
+        description:
+          '**✅ MeowBeat(루트 실행)**: unity_validate.py 0 error/0 warning(5.0s)·qa_static.py 0 error/0 warning(**6/6의 상대경로 cwd 거짓 error 2건 해소됨·개선**)·run_regression.py 2/2 시나리오(RT_SIZE_ZERO·YAML_INDENT_M_FATHER) PASS·곡수 10(6/6 동일·audio 누락 0)·known_bugs 6패턴(6/6 동일)·삭제 .meta 3종(Input/Item/SaveLoad)은 대응 폴더 부재 빈 폴더 메타·GUID 3종 전부 프로젝트 참조 0건 → 6/6 안전 판정 유지·미해결 버그 0건. **🚨 최대 리스크 = 안전망 비대칭**: NumLink는 Tools 폴더 부재(unity_validate/qa_static/run_regression/known_bugs.json 전부 없음)+Assets/Tests/Editor 비어있음(AutoGenTests 4파일 D)+Scripts 테스트 .cs 0개 → 회귀 무방비(4일째)·MeowBeat만 안전망 보유. **⚠️ 잠재 악화**: 양 프로젝트 미커밋 누적(MeowBeat 37·NumLink 36)+신규 ?? Assets/_Recovery/·AutoQATests/·MainScene.unity.bak_btn 잔존 = 리뷰 사각지대. **오늘 결정 제안**: **P0 NumLink에 _ProjectTemplate/Tools 3종 즉시 복사+AutoGenTests 4파일 git checkout 복구 후 unity_validate 베이스라인 0-error 확보**(push 불필요·로컬 완결·단 AutoGenTests 삭제 의도성 1회 확인). MeowBeat는 안정·추가 조치 불필요. Sources: unity_validate/qa_static/run_regression 실행·git status·manifest 파싱.',
+      },
+      {
+        title:
+          '📢 Content Writer — 앱 프리뷰 영상 15~30초·첫3초 후크→설치율 +20~35%·무음 시청 다수라 자막/캡션 필수(0~5초 후크/5~20초 핵심기능/20~30초 앱명+CTA)·캐주얼 게임 아이콘 A/B 구글플레이 중앙값 +8~12%(스크린샷보다 우위)·친근한 캐릭터 단독 노출 설치 +21.5%·대규모 변경 12~18개월 주기',
+        description:
+          '**📦 콘텐츠 신규 1순위**: **앱스토어 앱 프리뷰 영상 최적화(2026) — 길이 15~30초 고정·첫 3초에 최고 기능 1개로 후크 → 스크린샷 단독 대비 전환율 +20~35%**·다수 유저가 무음 시청하므로 자막/캡션/비주얼 스토리텔링 필수·0~5초 후크/5~20초 핵심기능 2~3개/20~30초 앱명+CTA("무료 시작") 구조 권장(6/5 첫 스크린샷 A/B·6/6 인앱이벤트와 겹치지 않는 "앱 프리뷰 영상" 신규 토픽). **📦 신규 2순위**: **캐주얼 게임 아이콘 A/B는 구글플레이에서 중앙값 +8~12% 리프트로 가장 효과적**(iOS는 스크린샷 첫 3프레임이 +10~25%로 우위)·친근한 캐릭터 단독 노출이 캐주얼/키즈에서 높은 승률·강한 2색 대비가 홈스크린 인식·탭률 개선·실제 사례 아이콘 교체로 설치 +21.5%·대규모 컨셉 변경은 브랜드 인식 보호 위해 12~18개월 주기. **오늘 결정 제안**: **P2 NumLink/MeowBeat 둘 다 출시 전 15~30초 앱 프리뷰 영상을 첫 3초 후크 중심+무음 자막으로 제작하고, 아이콘은 구글플레이 우선 A/B 대상으로 지정 — MeowBeat 고양이 캐릭터 단독 클로즈업·NumLink 2색 고대비 숫자 연결 모션을 각각 후보 아이콘으로 준비**. P0 백업·안전망 후. Sources: 앱 프리뷰 영상 최적화 2026·아이콘 A/B 벤치마크(구글플레이/iOS).',
+      },
+      {
+        title:
+          '🛡 DevOps — 두 Unity 레포 .github 부재 11일째 동일(CI 전무)·agent-office GitHub Pages 최근 3회 success(36~50초)·오늘 CI/CD 변경 없음·🆕 Unity Build Automation 2026-03-01 무료티어 확대: Windows 200분+Mac 100분+Linux 100분/월·Mac/iOS 빌드 신규 무료 허용·스토리지 5GB→25GB',
+        description:
+          '**🛡 CI 현황(실측 6/7)**: NumLink `.github/workflows/` 없음·MeowBeat(Feedme) `.github/workflows/` 없음(둘 다 `.git` 로컬 저장소는 존재 → 원격 푸시·CI 연결만 추가하면 됨)·agent-office는 deploy-pages.yml+weekly-insights.yml 정상·**agent-office 최근 배포 3회 전부 completed success(36/50/40초)**·6/6 진단(".github 부재=CI 전무=백업 P0 구조적 근본원인")은 오늘도 동일 유효·CI/CD 변경 없음. **🆕 신규(웹)**: **Unity Build Automation/Unity DevOps가 2026-03-01부터 무료티어 확대** — Windows(Micro) 200분+**Mac(Standard) 100분+Linux(Micro) 100분/월**·**무료티어에서 iOS·macOS 빌드 신규 허용**(과거 Mac 빌드는 유료 전용)·클라우드 스토리지 5GB→25GB·이그레스 100GB 무료·초과분 pay-as-you-go(6/6 GitHub Actions 호스티드 러너 가격과 겹치지 않는 "Unity 1st-party 빌드 자동화" 신규 토픽). **시사점**: MeowBeat는 모바일 리듬게임→Mac/iOS 빌드 필요·자체 GitHub Actions Mac 러너($0.08/min)는 부담이나 **Unity Build Automation 무료 Mac 100분/월**이면 초기 모바일 빌드를 무비용 검증 가능·라이선스 활성화도 Unity 내장 처리(단 무료 100분은 빠르게 소진되니 빌드 빈도 통제 필요). **오늘 결정 제안**: **P1 MeowBeat에 CI 골격 추가 시 GitHub Actions+GameCI(라이선스 활성화 부담)보다 Unity Build Automation 무료 Mac 100분 PoC를 우선 검토**. Sources: Unity DevOps 신규 가격(2026-03-01)·Build Automation 가격 작동 방식·Unity Pricing Updates.',
+      },
+      {
+        title:
+          '🎨 Art Director — 2026 컬러 정석 "엘리베이티드 뉴트럴"(웜샌드 #E8DFD0~뮤티드클레이 #C9A88A 베이스)+레벨당 단일 비비드 액센트·민트+다크 그라데이션은 전형적 AI슬롭이라 회피·타이포 타이틀 버블 디스플레이+본문 가독성 산세리프 이원화·펫게임 코지 데스크탑펫 르네상스 2D 핸드드로운·모바일 콘페티 50개 이하 60fps',
+        description:
+          '**🎨 디자인 신규 1순위**: **2026 캐주얼 컬러 표준은 하시 화이트→웜그레이/스톤/오트밀 베이스 전환+비비드 액센트 절제("엘리베이티드 뉴트럴")** — 웜샌드 #E8DFD0~뮤티드클레이 #C9A88A 베이스에 레벨당 단일 비비드(네온코랄·애시드옐로·비비드틸 중 1색)만·**민트+다크 그라데이션은 전형적 AI슬롭으로 분류되어 회피**(Envato·Updivision·6/6 스프링 피직스·tabular figures와 겹치지 않는 "컬러" 신규 토픽). **🎨 신규 2순위**: 타이포는 타이틀에만 굵은 버블 디스플레이(Gumdrop류)+숫자/본문은 가독성 산세리프 이원화 = 개성+가독성 동시 확보(Letterhend Font Trends 2026). **🎨 신규 3순위**: 펫게임 아트는 "코지 데스크탑펫 르네상스"(2D 핸드드로운/픽셀 마스코트 중심)·모바일 콘페티는 50개 이하 60fps 유지·보상 주스는 "순간 이벤트(먹이주기 성공)"에 집중하고 결과화면 콘페티는 절제(AAA Game Art·RetroStyle·PC Gamer·GameAnalytics). **오늘 결정 제안**: **P2 NumLink 테마 컬러를 민트/다크→"엘리베이티드 뉴트럴 베이스(웜샌드~뮤티드클레이)+레벨당 단일 비비드 액센트"로 재정의 — Layer Lab 9-slice도 뉴트럴 베이스에 CTA 버튼·완성 라인에만 비비드를 몰아주는 "calm base+bold accent" 원칙·타이틀만 버블 디스플레이·숫자/본문은 가독성 산세리프 분리**. P0 백업·안전망 후. Sources: Envato·Updivision·Letterhend·AAA Game Art·RetroStyle·PC Gamer·GameAnalytics.',
+      },
+    ],
+    meetingTitle:
+      '🏢 6/7 일요일 종합 회의 — 진단 11일·실행 0의 정체: "처방이 아니라 처방의 전달 형태가 문제다" / 재측정을 멈추고 복붙 1줄 명령으로 전환·push 불필요한 NumLink 안전망부터',
+    meetingSummary:
+      'Orchestrator가 6/6 액션아이템 4건을 전수 대조해 전부 미완료임을 확정했다 — MeowBeat 백업 11일째·NumLink 안전망 4일째·CI 골격 미착수·곡선택 분리 커밋 미실행. 11일간 진단은 완벽한데 실행이 0인 이유가 오늘 분명해졌다: **이 회의가 새벽 무인 자동실행이라 게임 레포 push 승인을 받을 수 없고, 아침에 보는 긴 회의록은 "실행 명령"이 아니다.** 그래서 회의는 처방을 또 바꾸는 대신 처방의 전달 형태를 바꾸기로 했다 — 재측정을 멈추고 **사용자가 그대로 복붙할 1줄 명령**을 제시하며, push가 필요한 MeowBeat 백업과 push 없이 로컬에서 끝나는 NumLink 안전망 복구(git checkout+Tools 복사)를 명확히 분리한다. QA는 MeowBeat 검증 3종이 전부 통과(6/6 거짓에러 2건도 해소)·버그 0건 안정인 반면 NumLink는 안전망이 비대칭적으로 비어있음을 강조했고, NumLink 복구가 로컬 완결이라 오늘 바로 처리 가능한 유일 P0임을 짚었다. Developer는 Google Play 타겟 API 36이 2026-08-31부터 강제되니 MeowBeat(현 35)를 백로그에 등록하자고 했고, 미커밋이 곡 음량 슬라이더 단일 작업임을 재확인했다. DevOps는 CI 골격을 세울 때 GitHub Actions+라이선스 활성화보다 2026-03-01 확대된 Unity Build Automation 무료 Mac 100분 PoC가 진입장벽이 낮다고 제안했다. Game Designer는 "60초 룰 온보딩"(고스트핸드 첫 연결·텍스트 패널 제거)을, Content Writer는 15~30초 앱 프리뷰 영상+아이콘 A/B를, Art Director는 엘리베이티드 뉴트럴 컬러 재정의(AI슬롭 회피)를 각각 P2로 올렸다. 결론: **오늘은 진단을 한 줄도 더 쌓지 않는다 — 대신 사용자가 아침에 복붙할 명령 2줄(MeowBeat 백업·NumLink 안전망)을 텔레그램으로 명확히 전달해 11일짜리 이월을 깨는 데 집중한다.** 게임 레포 push는 새벽 무인이라 사용자 승인 후.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '6/6 액션아이템 4건을 하나씩 대조했는데 전부 미완료입니다. MeowBeat 백업 11일째, NumLink 안전망 4일째, CI 골격도 곡선택 분리 커밋도 안 됐어요. 11일간 우리 진단은 정확했는데 실행이 0인 이유를 이제 알겠습니다 — 이 회의가 새벽 무인 실행이라 게임 레포 push 승인을 못 받고, 사용자가 아침에 보는 건 긴 회의록이지 실행 명령이 아니에요. 오늘부터 재측정 그만하고, 복붙할 1줄 명령을 드립시다. 특히 NumLink 안전망 복구는 push가 필요 없는 로컬 작업이니 그것부터 분리해서요.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'MeowBeat는 루트에서 unity_validate 0 error, qa_static 0 error(어제 거짓에러 2건도 해소됐어요), run_regression 2/2 PASS, 버그 0건으로 안정입니다. 문제는 안전망 비대칭이에요 — NumLink는 Tools 폴더도 없고 AutoGenTests 4파일이 다 삭제(D)라 회귀 무방비가 4일째입니다. 그런데 이건 git checkout으로 4파일 되살리고 템플릿 Tools 3종만 복사하면 끝나는 로컬 작업이라, push 승인 없이 오늘 바로 처리할 수 있는 유일한 P0예요. 단 AutoGenTests를 일부러 지운 건지 1회만 확인하면 됩니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'Google Play가 2025년 API 35 강제에 이어 2026-08-31부터 타겟 API 36(Android 16)을 강제합니다. MeowBeat가 현재 35니까 8/31 마감으로 백로그에 등록해두죠. 미커밋 변경은 어제 본 대로 곡 음량 슬라이더 단일 작업이 맞아요 — OptionManager에 0~1 Clamp, PlayerPrefs "SongVolume" 저장, ApplyVolume로 AudioSource에 반영하는 +110줄에 manifest 신곡 1곡. 이걸 feat(songselect) 단일 커밋으로 마무리하면 그게 곧 백업의 일부가 됩니다. 빌드크기는 ASTC 8x8+Addressables Brotli가 2026 표준이고요.',
+      },
+      {
+        speaker: 'DevOps',
+        note: '두 Unity 레포 .github 부재는 11일째 그대로입니다. agent-office GitHub Pages는 최근 3회 다 success(36~50초)로 멀쩡하고요. CI 골격 세울 때 한 가지 좋은 소식 — Unity Build Automation이 2026-03-01부터 무료티어를 확대해서 Mac 100분/월, iOS·macOS 빌드를 무료로 허용합니다(스토리지도 25GB로). MeowBeat는 모바일이라 Mac 빌드가 필요한데, GitHub Actions Mac 러너 $0.08/min에 라이선스 활성화까지 하는 것보다 Unity Build Automation 무료 100분 PoC가 진입장벽이 훨씬 낮아요. P1으로 이쪽을 먼저 검토하죠.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '2026 벤치마크상 최적 온보딩이 리텐션을 최대 50%까지 올리고, 핵심 루프는 다운로드 후 60초 안에 진입시켜야 합니다. 캐주얼/매치 퍼즐 우수작 D1이 35~45%인데, 텍스트 튜토리얼은 죽고 learn-by-doing이 표준이 됐어요. NumLink 출시 전 P2로 "60초 룰 온보딩"을 제안합니다 — 설정도 계정도 텍스트 패널도 없이, 고스트핸드 가이드로 숫자 2개를 직접 긋게 하고 성공하면 즉시 코인/별 보상. 텍스트 설명은 전부 빼고요. 참고로 모바일 리듬게임 시장은 2033년 $5.3B까지 CAGR 9.1%로 큽니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '출시 마케팅 두 가지를 P2로 올립니다. 첫째, 앱 프리뷰 영상은 15~30초로 첫 3초에 후크를 넣으면 스크린샷 단독보다 설치율이 +20~35% 오릅니다. 다들 무음으로 보니까 자막은 필수고요(0~5초 후크, 5~20초 핵심기능, 20~30초 앱명+CTA). 둘째, 캐주얼 아이콘 A/B는 구글플레이에서 +8~12%로 가장 효과 좋고, 친근한 캐릭터 단독 노출은 설치 +21.5% 사례도 있어요. MeowBeat는 고양이 클로즈업, NumLink는 2색 고대비 숫자 연결 모션을 후보 아이콘으로 준비합시다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '2026 컬러 정석은 "엘리베이티드 뉴트럴"입니다 — 웜샌드~뮤티드클레이 베이스에 레벨당 단일 비비드 액센트 하나만. 민트+다크 그라데이션은 이제 전형적인 AI슬롭이라 피해야 해요. P2로 NumLink 테마 컬러를 이 방향으로 재정의하자고 제안합니다. Layer Lab 9-slice도 패널 전체에 색을 분산하지 말고 CTA 버튼이랑 완성 라인에만 비비드를 몰아주는 "calm base + bold accent" 원칙으로요. 폰트는 타이틀만 굵은 버블 디스플레이, 숫자/본문은 가독성 산세리프로 분리하면 개성과 가독성을 둘 다 잡습니다. 펫 아트는 코지 데스크탑펫 르네상스 흐름이라 MeowBeat 핸드드로운 마스코트 강화가 맞고요.',
+      },
+    ],
+    decisions: [
+      {
+        title:
+          '🚨 P0 [복붙 명령] MeowBeat 백업 — 11일째 이월·사용자 아침 1줄 실행',
+        description:
+          '진단을 한 줄도 더 쌓지 않고 실행 명령으로 전환한다. 미커밋 37파일(곡 음량 슬라이더 단일 작업)을 커밋한 뒤 작업브랜치 6커밋과 함께 일괄 백업: ① `git -C C:/Unity/Feedme add -A` ② `git -C C:/Unity/Feedme commit -m "feat(songselect): 곡 음량 옵션 및 한국어 제목 추가"` ③ `git -C C:/Unity/Feedme push -u meowbeat feature/song-ownership-migration`. tip 04-12·56일 미백업·6커밋+미커밋 37파일이 단일 디스크 장애 시 전량 유실. **새벽 무인 실행이라 게임 레포 push는 사용자 아침 승인 후** — 이 명령을 텔레그램으로 그대로 전달.',
+      },
+      {
+        title:
+          '🚨 P0 [push 불필요·우선] NumLink 회귀 안전망 복구 — 4일째·로컬에서 완결',
+        description:
+          'push 승인이 필요 없는 유일한 P0이므로 최우선. ① `git -C C:/Unity/NumLink checkout -- "Assets/Tests/Editor/AutoGenTests.cs" "Assets/Tests/Editor/AutoGenTests.cs.meta" "Assets/Tests/Editor/AutoGenTests.asmdef" "Assets/Tests/Editor/AutoGenTests.asmdef.meta"`로 4파일 복구 ② `C:\\Unity\\_ProjectTemplate\\Tools\\`에서 unity_validate.py·qa_static.py·run_regression.py·known_bugs.json 복사 후 NumLink 씬 경로 상수 갱신 ③ unity_validate 베이스라인 0-error 확보. **단 AutoGenTests 삭제가 의도적이었는지 사용자 1회 확인 후 진행**(6/6도 복구하지 않았으므로 의도적 삭제 가능성 존재).',
+      },
+      {
+        title:
+          '🛡 P1 Android 타겟 API 36 백로그 등록 + 두 Unity 레포 CI 골격(Unity Build Automation 우선)',
+        description:
+          'Developer: Google Play가 2026-08-31부터 타겟 API 36(Android 16)을 강제하므로 MeowBeat(현 35)를 8/31 마감 백로그에 등록. DevOps: 두 Unity 레포 .github 부재(11일째)를 메우되, GitHub Actions+라이선스 활성화보다 2026-03-01 확대된 Unity Build Automation 무료 Mac 100분/월 PoC를 우선 검토(모바일 Mac/iOS 빌드 무비용 검증·라이선스 Unity 내장 처리). MeowBeat 음량 슬라이더는 feat(songselect) 단일 커밋으로 분리(P0 백업과 자연 연결).',
+      },
+      {
+        title:
+          '🔍 P2 출시 준비 — NumLink 60초 온보딩 + 앱 프리뷰 영상/아이콘 A/B + 엘리베이티드 뉴트럴 컬러 (모두 P0 후)',
+        description:
+          'Game Designer: NumLink "60초 룰 온보딩" — 설정/계정/텍스트 패널 없이 고스트핸드로 첫 연결 유도·성공 시 즉시 보상·텍스트 설명 전면 제거(D1 35%+ 목표). Content Writer: 출시 전 15~30초 앱 프리뷰 영상(첫3초 후크·무음 자막·+20~35% 설치율)+아이콘 A/B(MeowBeat 고양이 클로즈업·NumLink 2색 고대비). Art Director: NumLink 컬러를 엘리베이티드 뉴트럴 베이스(웜샌드~뮤티드클레이)+레벨당 단일 비비드 액센트로 재정의(민트+다크 AI슬롭 회피·타이틀만 버블 디스플레이·본문 가독성 산세리프). 모두 P0 백업·안전망 완료 후 착수.',
+      },
+    ],
+  },
+  {
     id: '2026-06-06T04:00:00-daily-standup',
     date: '2026-06-06',
     researchTitle:
