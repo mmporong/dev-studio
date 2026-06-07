@@ -43,6 +43,128 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-06-08T04:00:00-daily-standup',
+    date: '2026-06-08',
+    researchTitle:
+      '🌙 6/8 월요일 데일리 스탠드업 — **🔴 진단 12일·실행 0: 6/7의 "복붙 1줄 명령" 전환마저 실행 0 — 처방 형태를 바꿔도 안 됐다는 건 병목이 "명령 형태"가 아니라 "실행 트리거 부재"임을 증명**·**🚨 MeowBeat 백업 P0 12일째: feature/song-ownership-migration upstream 미설정·이제 master 대비 ahead 67커밋(어제보다 farm 작업 커밋 더 쌓여 가중)·미커밋 37파일 전량 미백업**·**🚨 NumLink 안전망 5일째: AutoGenTests 4파일 삭제(D)·Tools 0개·단 push 불필요한 git checkout인데도 5일째 미복구 = 삭제가 의도적일 가능성 강함 → 오늘 회의의 처방 자체를 의심**·**🆕 기술: Unity Sentis(현 Inference Engine) com.unity.ai.inference 2.6.1·ONNX opset 7~25·Float32→Uint8 양자화·단 모바일 NPU 미지원 CPU 단독이라 게임 런타임 부적합·Burst+IL2CPP ARM64 관리코드 대비 20~40배**·**🚀 시장: 7일 streak 도달 시 일일 참여 2.3배·streak+마일스톤 병행 시 30일 이탈 35%↓(Day7 보상을 Day1~6 합보다 크게)·배틀패스 글로벌 IAP 15%·연 286억$·리워드 광고 패배화면 opt-in 64%·부스터 전환 70%↑·총광고매출 68%↑**·**📦 콘텐츠: 롱테일 키워드 전환율 헤드 대비 2.5배·중소형 게임 비브랜드 오가닉 37~52% 유입·디스코드 친구 1명 동반 시 플레이시간 6배·3명 8배·인디 디스코드 킥스타터 2,600만\$ 견인**·**🛡 DevOps: 두 Unity 레포 .github 부재 12일째·agent-office Pages 3회 연속 success(33~50초)·🆕 GitHub OIDC 키리스 인증 2026-06-18 이후 생성 레포부터 owner/repo ID 클레임 자동화·Artifact Attestation(SLSA Build L2) 공개 레포 기본값화·game-ci unity-activate 라이선스 자동화**·**🎨 디자인: 2026 온보딩 "첫 60초 TTFV(가치도달시간)"·강제 가입벽→게스트 플레이 기본화·스킵버튼 가시화(5단계 초과 시 단계당 완료율 10~15%↓)·"Nothing here" 빈 상태 금지→친근한 마이크로카피+따뜻한 일러스트**.',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제57회 — **6/8 월요일·1개월 임계 D+15**. **🔴 오늘의 본질 = 처방을 바꿔도 실행이 0이라는 메타-실패의 확정**: 6/6은 "왜 작업이 고이는가(=.github 부재)"를, 6/7은 "왜 처방이 실행 안 되나(=새벽 무인이라 push 승인 불가)"를 답하고 처방의 전달 형태를 "복붙 1줄 명령"으로 바꿨다. 그런데 오늘 Orchestrator 실측 결과 **6/7 액션아이템 5건도 전부 미완료** — 복붙 명령으로 바꿔도 실행 0이었다. 이것이 증명하는 것: 병목은 "명령의 형태"가 아니라 **"사용자가 아침에 이 회의록을 열어 명령을 실제로 실행하는 트리거/루틴 자체가 없다"**는 것. 12일째 같은 P0를 재기술하는 회의는 그 자체로 오작동이다. **🚨 MeowBeat 백업 P0 12일째**: feature/song-ownership-migration upstream 여전히 미설정·이제 master 대비 ahead 67커밋(어제 6커밋 ahead에서 farm 작업 커밋이 더 쌓여 미백업 리스크 가중)·미커밋 37파일(곡 음량 슬라이더). **🚨 NumLink 안전망 5일째**: AutoGenTests.cs/.asmdef+.meta 4파일 삭제(D)·Tools 0개·**핵심 관찰**: 이건 `git checkout`로 push 없이 5초에 끝나는 유일 P0인데도 5일째 미복구 → 5일간 매일 "복구하라"고 했는데 안 한 것은 사용자 게으름이 아니라 **삭제가 의도적이었을 가능성**을 강하게 시사. 즉 회의가 5일째 잘못된 처방("복구")을 반복했을 수 있다. **🎯 오늘의 처방 자체를 바꾼다**: 재측정도 복붙 명령도 아니라, 사용자에게 단 하나의 yes/no 결정 질문으로 좁힌다 — "AutoGenTests 삭제는 의도적인가? (Y=회의 P0에서 영구 제거·Tools만 신규 복사 / N=복구)". **🆕 기술(Developer)**: Unity Sentis가 com.unity.ai.inference 2.6.1로 출시·ONNX opset 7~25·Float32→Uint8 양자화로 메모리 절감·단 **추론이 CPU 단독 실행이라 모바일 NPU 미지원**→리듬/퍼즐 런타임 AI는 사전계산 데이터 방식 유지가 정답(발열·지연 리스크)·Burst+IL2CPP ARM64는 관리코드 대비 20~40배·Incremental IL2CPP로 변경분만 재트랜스파일(6/3~6/7 Unity 6.3·Adaptive Performance·PrimeTween·GMA·API36·ASTC와 겹치지 않는 "온디바이스 AI·Burst" 신규 토픽). **🚀 시장(Game Designer)**: **7일 연속 streak 7+일 도달 시 일일 참여 2.3배·streak+마일스톤 병행 시 30일 이탈 35%↓**(핵심=Day7 보상을 Day1~6 합산보다 크게 설계)·배틀패스는 글로벌 IAP의 15%·연 286억\$·캐주얼은 짧은 소비형 패스 적합·**리워드 광고 패배화면+일일보상상자 배치 시 opt-in 64%·통화 2~3배 부스터 광고 전환 70%↑·총광고매출 68%↑**(6/5 메타게임층·6/7 온보딩/FTUE와 겹치지 않는 "streak·배틀패스·리워드 광고 경제" 신규 토픽). **📦 콘텐츠(Content Writer)**: **롱테일 키워드 전환율이 헤드 대비 2.5배·중소형 게임은 비브랜드 검색에서 오가닉 37~52% 유입**(상위10위 헤드는 12~18%)·장르+기믹+무드 조합("relaxing number connect puzzle")이 단일 키워드보다 강함·**디스코드 친구 1명 동반 시 플레이시간 중앙값 6배·3명이면 8배·인디 디스코드 커뮤니티가 2025 킥스타터 2,600만\$ 견인**(6/4~6/7 인앱이벤트·CPP·앱 프리뷰 영상·아이콘 A/B와 겹치지 않는 "롱테일 ASO·디스코드 커뮤니티" 신규 토픽). **🛡 DevOps**: 두 Unity 레포 .github 부재 12일째 동일·agent-office Pages 최근 3회 모두 success(33/36/50초)·오늘 CI/CD 변경 없음·**🆕 GitHub OIDC 키리스 인증이 2026-06-18 이후 생성 레포부터 owner/repo 변경불가 ID를 subject 클레임에 자동 포함(name-reuse 공격 방어)·Artifact Attestation(`actions/attest@v4` 한 줄로 SLSA Build L2 provenance)이 공개 레포 기본값화·game-ci unity-activate로 무료 개인 라이선스 만료·재활성화 자동화**(6/5 GameCI 캐시·6/6 러너 가격·6/7 Build Automation 무료티어와 겹치지 않는 "OIDC·Attestation·라이선스 자동화" 신규 토픽). **🎨 디자인(Art Director)**: **2026 온보딩 정석은 "첫 60초 TTFV(Time To First Value)"** — 60초 내 가치 미체감 시 이탈·**강제 가입벽 대신 게스트 플레이 기본화·스킵 버튼 가시화**(온보딩 5단계 초과 시 단계당 완료율 10~15%↓)·**"Nothing here" 빈 상태 금지→친근한 마이크로카피+따뜻한 일러스트로 동기부여**(6/7 엘리베이티드 뉴트럴 컬러·6/6 스프링 피직스와 겹치지 않는 "온보딩 UX·빈 상태 디자인" 신규 토픽). **🎯 오늘 핵심 결정 = ① [P0·결정질문·최우선] NumLink 안전망 — 5일째 push 불필요한데도 미복구 = 회의 처방 의심 → 사용자에게 yes/no 1질문("AutoGenTests 삭제 의도적인가?")으로 좁히고 답에 따라 영구제거 또는 복구·Tools 3종은 의도와 무관하게 신규 복사 ② [P0·복붙명령] MeowBeat 백업 — ahead 67커밋으로 가중·미커밋 37파일 커밋 후 push -u meowbeat·12일째라 사용자 아침 실행 ③ [P1] 두 Unity 레포 CI 골격 — game-ci unity-activate 라이선스 자동화로 설계·차주 단일 실행 목표로 못박기 ④ [P1] Android 타겟 API 36 백로그 등록(8/31 마감·이월) ⑤ [P2] NumLink 데일리 챌린지+지수형 streak 캘린더(Day7>Day1~6 합·프리즈 1회로 죄책감 회피·7일 도달 시 데일리 2.3배) + 패배/클리어 화면 리워드 광고("보상 2배") ⑥ [P2] NumLink/MeowBeat 첫 60초 TTFV 온보딩(게스트 플레이·텍스트 제거·친근한 빈 상태) ⑦ [P2] ASO 롱테일 키워드 전면 교체(비브랜드 오가닉 37~52% 1차 KPI)**. 메타 통찰: 6/7이 "처방의 전달 형태를 바꾼 날"이었다면, 오늘은 "처방의 형태를 바꿔도 실행이 0이니 처방의 내용(=복구하라)과 회의의 작동 방식(=재측정·재기술 반복)을 의심하는 날". 12일째 같은 결론을 다른 말로 쓰는 대신, 결정을 단일 yes/no 질문으로 환원한다.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — 🔴 6/7 액션아이템 5건 전부 미완료(복붙 1줄 명령 전환마저 실행 0)·🚨 MeowBeat 백업 12일째(upstream 미설정·master 대비 ahead 67커밋으로 가중·미커밋 37파일)·🚨 NumLink 안전망 5일째(AutoGenTests 4파일 D·Tools 0개·push 불필요한데도 미복구=삭제 의도성 강력 시사)·✅ agent-office 클린·진짜 병목=실행 트리거 부재',
+        description:
+          '**🔴 6/7(#89) 액션아이템 5건 전수 판정 — 컬러만 부분, 나머지 전부 미완료**: ① MeowBeat 백업 미완료 — upstream 여전히 `fatal: no upstream`·ahead 67커밋(어제 6→오늘 farm 커밋 더 쌓임) ② NumLink 안전망 복구 미완료 — Assets/Tests/Editor 빈 폴더·4파일 D 유지·Tools 부재 ③ Android API 36 백로그 미완료 ④ 두 Unity 레포 CI 골격 미완료 — 양쪽 .github/workflows 부재 ⑤ NumLink 온보딩/프리뷰/컬러 — 컬러만 부분(10bed53 3테마 재설계는 4/12 커밋·신규 아님)·온보딩·프리뷰 흔적 0. **🚨 MeowBeat 백업 P0 12일째**: feature/song-ownership-migration upstream 미설정·master(eb2cce9) 대비 ahead 67커밋·미커밋 37파일·meowbeat/main도 ahead 37 미푸시·최근 farm 커밋(657032c)이 더 쌓여 미백업 위험 가중. **🚨 NumLink 안전망 5일째**: AutoGenTests 4파일 삭제(D)·HEAD에는 존재(checkout 복구 가능)·Tools 0개·오늘 신규 커밋 0·본진 feature/ugui-layerlab은 origin과 0/0 동기화. **✅ agent-office**: .omc/project-memory.json 1파일만 M·정상. **🎯 메타 규명**: 6/7이 "복붙 1줄 명령"으로 처방 형태를 바꿨는데도 5건 전부 실행 0 → 병목은 명령 형태가 아니라 "사용자가 회의록을 열어 실행하는 트리거 부재". 특히 NumLink 안전망은 push조차 불필요한데 5일째 미복구 → 삭제가 의도적일 가능성 강함. **오늘 결정 제안**: 재측정·복붙 명령 반복을 멈추고, 단일 yes/no 결정 질문("AutoGenTests 삭제 의도적인가?")으로 환원해 5일째 잘못된 처방 가능성을 종결. (git log/branch -vv/status 실측·6/7 이슈 #89 대조)',
+      },
+      {
+        title:
+          '🎮 Game Designer — 7일 streak 도달 시 일일 참여 2.3배·streak+마일스톤 병행 시 30일 이탈 35%↓(Day7 보상>Day1~6 합)·배틀패스 글로벌 IAP 15%·연 286억$·캐주얼은 짧은 소비형 패스 적합·리워드 광고 패배화면 opt-in 64%·부스터 전환 70%↑·총광고매출 68%↑',
+        description:
+          '**🚀 시장 신규 1순위**: **7일 연속 streak 7+일 도달 시 일일 참여 2.3배·streak+마일스톤 병행 시 30일 이탈 35%↓** — 핵심은 평탄한 일일 로그인 보상(2026 기준 구식)이 아니라 **Day7 보상을 Day1~6 합산보다 크게 설계하는 지수형 곡선**·죄책감 없는 톤(프리즈/유예 1회)이 표준(Game Growth Advisor·Plotline·UX Mag). **🚀 신규 2순위**: 배틀패스가 글로벌 IAP의 15%·연 286억\$ 규모·캐주얼은 길고 무거운 패스보다 **짧은 소비형 패스**가 적합(고양이 스킨·농장 꾸미기를 시즌 단위로 묶기)·프리미엄 구매자 세션 수 증가(Deconstructor of Fun·Udonis). **🚀 신규 3순위**: **리워드 광고는 패배 화면+일일 보상 상자에 배치 시 opt-in 64%·게임 통화 2~3배 또는 "다음 보상 2배" 부스터형 광고 전환 70%↑·총 광고매출 68%↑·eCPM \$18~45**(MAF·Coinis·AdReact). **오늘 결정 제안**: **P2 NumLink "데일리 챌린지 + 지수형 streak 캘린더" 도입** — Day7 보상을 Day1~6 합보다 크게·프리즈 1회로 죄책감 회피(7일 도달 시 데일리 2.3배 노림)+패배/클리어 화면에 "다음 레벨 보상 2배" 리워드 광고 배치. MeowBeat는 시즌 단위 짧은 소비형 패스(고양이 스킨·농장 보상). P0 백업·안전망 선행. Sources: gamegrowthadvisor.com·plotline.so·uxmag.com·deconstructoroffun.com·udonis.co·maf.ad·coinis.com·adreact.com.',
+      },
+      {
+        title:
+          '💻 Developer — 🆕 Unity Sentis(현 Inference Engine) com.unity.ai.inference 2.6.1·ONNX opset 7~25·Float32→Uint8 양자화로 메모리 절감·단 추론 CPU 단독 실행으로 모바일 NPU 미지원=게임 런타임 부적합·Burst+IL2CPP ARM64 관리코드 대비 20~40배·Incremental IL2CPP로 변경분만 재트랜스파일',
+        description:
+          '**🆕 기술 신규 1순위(웹)**: **Unity Sentis가 com.unity.ai.inference 2.6.1로 출시** — ONNX opset 7~25 지원·Float32→Uint8 양자화로 모델 메모리 대폭 절감·**단 추론이 CPU 단독 실행이라 모바일 NPU를 활용 못 함**→Quest3/모바일에선 양자화 필수이고 발열·지연 리스크로 리듬/퍼즐 런타임 AI에는 부적합(6/3~6/7 Unity 6.3·Adaptive Performance·PrimeTween·GMA SDK·API36·ASTC와 겹치지 않는 "온디바이스 AI" 신규 토픽). **🆕 신규 2순위**: **Burst+IL2CPP ARM64 조합은 관리 코드 대비 20~40배 성능**·Incremental IL2CPP로 변경분만 재트랜스파일해 빌드 시간 절감·CPU 집약 경로(퍼즐 생성·경로 탐색)에 Job System+Burst 적용 시 런타임·빌드 비용 동시 절감. **🔎 코드 분석**: 두 레포 최근 커밋은 MeowBeat farm 애니메이션·NumLink UI 수정 위주로 신규 기술 도입 없음. **오늘 결정 제안**: **MeowBeat 차기 "고양이 자동 추천/패턴 생성"을 검토 중이라면 Sentis 런타임 추론 대신 사전계산 데이터 방식 유지**(모바일 CPU 추론 발열·지연 회피)·**P2 NumLink 퍼즐 생성 로직을 Burst+Job System(Incremental IL2CPP·ARM64 빌드)으로 검증을 차기 스프린트 후보로 등록**. P0 백업·안전망 선행. Sources: docs.unity3d.com(Inference Engine 2.6)·discussions.unity.com(모바일 NPU 미지원)·support.unity.com(IL2CPP 최적화)·resources.unity.com(Burst ARM64).',
+      },
+      {
+        title:
+          '🔍 QA Tester — ✅ MeowBeat 검증 3종 ALL PASS(unity_validate 0err·qa_static 0err·run_regression 2/2)·곡10·known_bugs 6패턴·미해결 버그 0건·🚨 최대 리스크=NumLink 안전망 5일째 부재(Tools 0개·AutoGenTests 4파일 D·BoardDataTester만 잔존하나 정식 테스트 아님)·무방비 상태로 코드 변경 지속',
+        description:
+          '**✅ MeowBeat(루트 실행)**: unity_validate.py 0 error/0 warning(exit 0)·qa_static.py 0 error/0 warning(exit 0)·run_regression.py 2/2 시나리오(RT_SIZE_ZERO·YAML_INDENT_M_FATHER) PASS·곡수 10(audio 누락 0)·known_bugs 6패턴·미해결 버그 0건·안정 유지·추가 조치 불필요. **🚨 최대 리스크 = NumLink 안전망 5일째 부재**: Tools 폴더 부재(unity_validate/qa_static/run_regression/known_bugs.json 전부 없음)+Assets/Tests/Editor 빈 폴더(AutoGenTests.cs/.meta/.asmdef/.asmdef.meta 4파일 D)+남은 건 BoardDataTester.cs 1개뿐인데 정식 단위 테스트가 아닌 에디터 유틸 → 회귀·검증·단위테스트 0의 무방비 상태로 코드 변경(최근 UI 수정) 계속 진행 중. **⚠️ 잠재 악화**: 양 프로젝트 미커밋 누적(MeowBeat 37·NumLink 36)+?? _Recovery/·AutoQATests/·.bak 잔존이 리뷰 사각지대. **오늘 결정 제안**: **P0 NumLink에 _ProjectTemplate/Tools 3종을 즉시 복사·경로 패치(삭제 의도와 무관하게 검증 도구는 필요)+AutoGenTests는 git restore 복구 여부를 사용자 yes/no로 확정**(5일째 미복구는 의도적 삭제 가능성·잘못된 복구 강행 금지). MeowBeat 안정·조치 불필요. Sources: unity_validate/qa_static/run_regression 실행·git status·manifest 파싱.',
+      },
+      {
+        title:
+          '📢 Content Writer — 롱테일 키워드 전환율 헤드 대비 2.5배·중소형 게임 비브랜드 오가닉 37~52% 유입(헤드 상위10위 12~18%)·장르+기믹+무드 조합이 단일 키워드보다 강함·디스코드 친구 1명 동반 시 플레이시간 6배·3명 8배·인디 디스코드 킥스타터 2,600만$ 견인',
+        description:
+          '**📦 콘텐츠 신규 1순위**: **롱테일 키워드 전환율이 헤드 키워드 대비 2.5배·중소형 게임은 비브랜드 검색에서 오가닉 설치의 37~52%를 확보**(헤드 상위10위는 12~18%)·"relaxing number connect puzzle"·"offline brain puzzle no wifi"처럼 **장르+기믹+무드 조합 롱테일**이 단일 "number puzzle"보다 전환·노출 우위(MobileAction·ASO World·Neil Patel·6/4~6/7 인앱이벤트·CPP·앱 프리뷰 영상·아이콘 A/B와 겹치지 않는 "롱테일 ASO" 신규 토픽). **📦 신규 2순위**: **디스코드 친구 1명 동반 시 플레이시간 중앙값 6배·3명이면 8배**·인디 디스코드 커뮤니티가 2025 킥스타터 펀딩 2,600만\$ 견인·2026 인디는 자체 웹스토어 판매로 앱스토어 30% 수수료 우회가 표준 전략으로 부상·커뮤니티=리텐션·LTV 직결(Discord·GrowthHQ). **오늘 결정 제안**: **P2 NumLink ASO 키워드를 단일 "number puzzle"→롱테일 조합("relaxing number connect puzzle"·"offline brain puzzle no wifi")으로 전면 교체·MeowBeat는 "cute cat rhythm game"류 무드+캐릭터 롱테일 5개를 제목/부제/롱디스크립션에 분산·두 게임 모두 비브랜드 오가닉 유입(37~52%)을 1차 KPI로 설정**(디스코드 커뮤니티는 출시 후 리텐션 단계 백로그). P0 백업·안전망 선행. Sources: mobileaction.co·asoworld.com·neilpatel.com·discord.com·growthhq.io.',
+      },
+      {
+        title:
+          '🛡 DevOps — 두 Unity 레포 .github 부재 12일째 동일(CI 전무)·agent-office Pages 최근 3회 success(33/36/50초)·오늘 CI/CD 변경 없음·🆕 GitHub OIDC 키리스 인증 2026-06-18 이후 생성 레포부터 owner/repo 변경불가 ID 클레임 자동화·Artifact Attestation SLSA Build L2 공개 레포 기본값화·game-ci unity-activate 라이선스 자동화',
+        description:
+          '**🛡 CI 현황(실측 6/8)**: NumLink·MeowBeat 둘 다 `.github/workflows/` 부재(레포 자체는 존재→원격 연결·CI 추가만 하면 됨)·12일째 동일·agent-office는 deploy-pages.yml+weekly-insights.yml 정상·**최근 배포 3회 전부 success(33/36/50초)**·오늘 CI/CD 변경 없음. **🆕 신규(웹)**: **GitHub OIDC 키리스 인증** — 클라우드 배포 시 장기 시크릿 저장 불필요·워크플로 실행마다 단기 JWT→임시자격 교환·2026-04-23 발표로 OIDC subject 클레임에 변경불가 owner/repo ID 추가(name-reuse 공격 방어)·**2026-06-18 이후 생성 레포**부터 자동 적용. **Artifact Attestation**: `actions/attest@v4` 한 줄로 SLSA Build Level 2 provenance 생성·공개 레포 opt-in→기본 동작 전환 중·reusable workflow로 격리 시 L3 가능. **game-ci**: `unity-activate`·`unity-license-activate`(puppeteer)로 무료 개인 라이선스 만료·재활성화 자동화·셀프호스티드 러너·2FA TOTP 자동 생성 지원(6/5 GameCI 캐시·6/6 러너 가격·6/7 Build Automation 무료티어와 겹치지 않는 "OIDC·Attestation·라이선스 자동화" 신규 토픽). **오늘 결정 제안**: **P1 두 Unity 레포 CI 신설 시 처음부터 game-ci unity-activate+GitHub Secrets 조합으로 라이선스 자동화를 설계하고 "최소 1개(빌드 OR 테스트) 워크플로 추가"를 차주 단일 실행 목표로 못박기**(12일째 부재 종결). Sources: docs.github.com(OIDC·Attestation)·github.com/actions/attest-build-provenance·game-ci/unity-activate·game.ci/docs.',
+      },
+      {
+        title:
+          '🎨 Art Director — 2026 온보딩 "첫 60초 TTFV(가치도달시간)" 핵심·60초 내 미체감 시 이탈·강제 가입벽→게스트 플레이 기본화·스킵 버튼 가시화(온보딩 5단계 초과 시 단계당 완료율 10~15%↓)·"Nothing here" 빈 상태 금지→친근한 마이크로카피+따뜻한 일러스트(민트+다크 그라데이션 배제)',
+        description:
+          '**🎨 디자인 신규 1순위**: **2026 게임 온보딩은 "첫 60초 TTFV(Time To First Value·가치도달시간)"가 핵심** — 다운로드 후 60초 내 게임의 가치를 체감하지 못하면 이탈(Medium·Udonis FTUE·6/7 엘리베이티드 뉴트럴 컬러·6/6 스프링 피직스와 겹치지 않는 "온보딩 UX" 신규 토픽). **🎨 신규 2순위**: **강제 가입벽 대신 게스트 플레이 기본화·스킵 버튼을 명확히 노출**·온보딩이 5단계를 넘으면 단계당 완료율 10~15%↓이라 단계 최소화가 표준(Appcues·UX Collective). **🎨 신규 3순위**: **"Nothing here" 빈 상태(empty state)는 금지**·"아직 없어요" 대신 "첫 퍼즐을 풀어 별을 모아보세요!" 같은 동기부여 마이크로카피+따뜻한 일러스트로 전환(state-change용 짧은 마이크로인터랙션·유저 컨트롤 가능 시 만족도 +28%·Muz.li). **민트+다크 그라데이션 AI슬롭 배제·따뜻한 컬러팔레트 유지**. **오늘 결정 제안**: **P2 NumLink+MeowBeat 공통 "첫 60초 퀵윈+친근한 빈 상태"** — NumLink는 텍스트 없이 애니메이션 화살표+하이라이트 글로우로 첫 라인 연결을 60초 내 직접 유도·빈 기록 화면에 "첫 퍼즐을 풀어 별을 모아보세요!" 마이크로카피·MeowBeat는 빈 농장을 "빈 방석+발자국 일러스트+첫 곡을 연주하면 고양이가 찾아와요" 카피로·첫 곡은 게스트로 바로 진입. P0 백업·안전망 선행. Sources: muz.li·medium.com(온보딩 UX)·udonis.co(FTUE)·uxdesign.cc·appcues.com.',
+      },
+    ],
+    meetingTitle:
+      '🌙 6/8 종합 회의 — "처방을 바꿔도 실행이 0이면, 처방의 내용과 회의 작동 방식을 의심하라": 12일째 P0를 단일 yes/no 결정 질문으로 환원',
+    meetingSummary:
+      '제57회 종합 회의. **6/7이 "처방의 전달 형태를 복붙 1줄 명령으로 바꾼 날"이었는데, 오늘 실측 결과 그 5건도 전부 실행 0**. 회의는 두 갈래로 결론을 좁혔다. **첫째(NumLink 안전망)**: 5일째 push조차 불필요한 git checkout인데도 미복구라는 사실은 사용자 게으름이 아니라 **삭제가 의도적이었을 가능성**을 강하게 시사 → 5일간 "복구하라"는 처방 자체가 오진일 수 있음. 따라서 재측정·복붙 명령 반복을 멈추고 단일 yes/no 질문("AutoGenTests 삭제 의도적인가?")으로 환원하고, 검증 도구(Tools 3종)는 의도와 무관하게 필요하므로 신규 복사. **둘째(MeowBeat 백업)**: ahead 67커밋으로 위험이 어제보다 가중·이건 진짜 미백업이므로 사용자 아침 push 1줄로 백업 필요(P0 유지). 나머지는 출시 준비 신규 리서치(streak·리워드 광고·롱테일 ASO·60초 TTFV 온보딩·Burst·CI 라이선스 자동화)를 P1/P2로 적재. 메타: 12일째 같은 결론을 다른 말로 재기술하는 대신, 회의의 산출물을 "긴 진단"에서 "사용자가 5초 안에 답할 단일 결정"으로 바꾼다.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '6/7 복붙 1줄 명령 5건도 전부 실행 0으로 확정합니다. 병목은 명령 형태가 아니라 실행 트리거 부재예요. MeowBeat는 ahead 67커밋으로 어제보다 가중됐고, NumLink 안전망은 push 불필요한데도 5일째 미복구 — 이건 삭제가 의도적이라는 신호일 수 있습니다. 오늘은 재측정을 멈추고 단일 yes/no 질문으로 좁히겠습니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'MeowBeat 검증 3종 ALL PASS·곡10·버그0로 안정적입니다. 문제는 NumLink 안전망 5일째 부재 — Tools 0개, AutoGenTests 4파일 D, 남은 BoardDataTester는 정식 테스트가 아니라 회귀 무방비예요. Tools 3종은 삭제 의도와 무관하게 필요하니 즉시 복사하고, AutoGenTests 복구 여부만 사용자 답을 받겠습니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '신규 시장 데이터예요. 7일 streak 도달 시 일일 참여 2.3배, Day7 보상을 Day1~6 합보다 크게 설계하는 게 핵심입니다. 리워드 광고는 패배 화면에 두면 opt-in 64%, "보상 2배" 부스터형은 전환 70%↑. NumLink에 지수형 streak 캘린더+패배 화면 리워드 광고를 P2로 제안합니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'Unity Sentis가 com.unity.ai.inference 2.6.1로 나왔는데 추론이 CPU 단독이라 모바일 NPU를 못 써요. 게임 런타임 AI는 사전계산 유지가 정답입니다. 대신 Burst+IL2CPP ARM64가 관리코드 대비 20~40배니, NumLink 퍼즐 생성 같은 CPU 집약 경로에 Job System 도입 검증을 차기 스프린트 후보로 올립니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '롱테일 키워드 전환율이 헤드 대비 2.5배고, 중소형 게임은 비브랜드 오가닉이 37~52%를 차지합니다. NumLink를 "number puzzle"에서 "relaxing number connect puzzle" 같은 장르+무드 조합으로 전면 교체하고 비브랜드 오가닉을 1차 KPI로 삼자는 제안이에요. 디스코드 커뮤니티는 플레이시간 6배지만 출시 후 백로그로.',
+      },
+      {
+        speaker: 'DevOps',
+        note: '두 Unity 레포 .github 부재가 12일째 동일합니다. agent-office Pages는 3회 연속 success로 안정적이에요. 신규로 GitHub OIDC 키리스 인증과 Artifact Attestation이 2026 기본값화되고 있고, game-ci unity-activate로 라이선스 자동화가 가능합니다. CI 신설 시 처음부터 이걸로 설계하고 차주 단일 실행 목표로 못박겠습니다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '2026 온보딩 정석은 "첫 60초 TTFV"예요. 60초 안에 가치를 못 느끼면 이탈하고, 강제 가입벽 대신 게스트 플레이가 기본입니다. "Nothing here" 빈 상태는 금지 — 친근한 마이크로카피+따뜻한 일러스트로 바꿔야 해요. NumLink는 텍스트 없이 첫 라인 연결, MeowBeat는 빈 농장에 "첫 곡 연주하면 고양이가 찾아와요"를 P2로 제안합니다.',
+      },
+      {
+        speaker: 'Orchestrator',
+        note: '종합합니다. 오늘 회의의 산출물을 "긴 진단"에서 "사용자가 5초에 답할 단일 결정"으로 바꿉니다. P0① NumLink 안전망=AutoGenTests 삭제 의도성 yes/no + Tools 3종 신규 복사, P0② MeowBeat 백업=ahead 67커밋 push. P1 CI 라이선스 자동화·API36 백로그. P2 streak·60초 온보딩·롱테일 ASO. 모두 P0 후 착수합니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: '🚨 P0[결정질문·최우선] NumLink 안전망 — 5일째 미복구는 의도적 삭제 신호, yes/no로 종결',
+        description:
+          'push 불필요한 git checkout인데도 5일째 미복구 = AutoGenTests 4파일 삭제가 의도적일 가능성 강함. ① **사용자 단일 결정 질문**: "AutoGenTests 삭제는 의도적인가? Y=회의 P0에서 영구 제거 / N=`git -C C:/Unity/NumLink checkout -- \"Assets/Tests/Editor/AutoGenTests.cs\" \"...meta\" \"...asmdef\" \"...asmdef.meta\"`로 복구" ② **삭제 의도와 무관하게** `C:\\Unity\\_ProjectTemplate\\Tools\\`에서 unity_validate.py·qa_static.py·run_regression.py·known_bugs.json을 NumLink/Tools/로 복사+씬 경로 상수 갱신(검증 도구는 테스트 파일과 별개로 필요) ③ unity_validate 베이스라인 0-error 확보. 로컬 완결·push 불필요.',
+      },
+      {
+        title: '🚨 P0[복붙 명령] MeowBeat 백업 — ahead 67커밋으로 가중, 사용자 아침 push 1줄',
+        description:
+          '12일째 이월·이제 master 대비 ahead 67커밋(어제보다 farm 커밋 더 쌓여 미백업 위험 가중)·미커밋 37파일(곡 음량 슬라이더). 사용자 아침 실행: ① `git -C C:/Unity/Feedme add -A` ② `git -C C:/Unity/Feedme commit -m "feat(songselect): 곡 음량 옵션 및 한국어 제목 추가"` ③ `git -C C:/Unity/Feedme push -u meowbeat feature/song-ownership-migration`. 새벽 무인이라 게임 레포 push는 사용자 승인 후 1줄 실행.',
+      },
+      {
+        title: '🛡 P1 두 Unity 레포 CI 골격 — game-ci unity-activate 라이선스 자동화로 설계, 차주 단일 실행 목표',
+        description:
+          '두 Unity 레포 .github/workflows 12일째 부재가 백업 P0의 구조적 뿌리. CI 신설 시 처음부터 game-ci `unity-activate`+GitHub Secrets로 무료 개인 라이선스 만료·재활성화 자동화를 설계하고, "최소 1개(빌드 OR 테스트) 워크플로 추가"를 차주 단일 실행 목표로 못박는다(6/7 Unity Build Automation 무료 Mac 100분 PoC와 양자택일 검토).',
+      },
+      {
+        title: '🛡 P1 Android 타겟 API 36 백로그 등록 — 8/31 마감(이월)',
+        description:
+          'Google Play가 2026-08-31부터 타겟 API 36(Android 16)을 강제하므로 MeowBeat(현 35)를 8/31 마감 백로그에 등록. MeowBeat 음량 슬라이더는 feat(songselect) 단일 커밋으로 분리해 P0 백업과 자연 연결.',
+      },
+      {
+        title: '🎮 P2 NumLink 데일리 챌린지 + 지수형 streak 캘린더 + 패배화면 리워드 광고',
+        description:
+          'Day7 보상을 Day1~6 합산보다 크게 설계(지수형 곡선)·프리즈/유예 1회로 죄책감 회피(7일 도달 시 데일리 참여 2.3배 노림)+패배/클리어 화면에 "다음 레벨 보상 2배" 리워드 광고 배치(opt-in 64%·부스터 전환 70%↑). MeowBeat는 시즌 단위 짧은 소비형 패스. 모두 P0 후 착수.',
+      },
+      {
+        title: '🎨 P2 NumLink/MeowBeat 첫 60초 TTFV 온보딩 + 친근한 빈 상태 + 롱테일 ASO',
+        description:
+          '온보딩: NumLink는 텍스트 없이 애니메이션 화살표+하이라이트로 첫 라인 연결을 60초 내 유도·게스트 플레이·빈 기록 화면에 "첫 퍼즐을 풀어 별을 모아보세요!" 마이크로카피·MeowBeat는 빈 농장에 "빈 방석+발자국+첫 곡 연주하면 고양이가 찾아와요". ASO: NumLink를 "relaxing number connect puzzle" 등 롱테일로 전면 교체·비브랜드 오가닉 유입(37~52%) 1차 KPI. 모두 P0 후 착수.',
+      },
+    ],
+  },
+  {
     id: '2026-06-07T04:00:00-daily-standup',
     date: '2026-06-07',
     researchTitle:
