@@ -1,6 +1,46 @@
 {
-  "lastUpdated": "2026-06-01T02:43:44.781Z",
+  "lastUpdated": "2026-06-08T02:41:48.819Z",
   "weeks": [
+    {
+      "weekOf": "2026-W24",
+      "articles": [
+        {
+          "id": "d5b2fa86bb33f81f",
+          "title": "Skill 품질 관리를 위한 Rubric 설계와 시스템 구현",
+          "url": "https://toss.tech/article/skill-quality-rubric",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "Skill 품질 관리를 위한 Rubric 설계와 시스템 구현",
+          "publishedAt": "2026-06-08T01:00:00.000Z",
+          "collectedAt": "2026-06-08T02:41:48.819Z"
+        }
+      ]
+    },
+    {
+      "weekOf": "2026-W23",
+      "articles": [
+        {
+          "id": "f9153ec8c599292f",
+          "title": "토스팀이 AI 파도를 마주하는 방법: AI Surf Day",
+          "url": "https://toss.tech/article/ai-surf-day",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "토스팀이 AI 파도를 마주하는 방법: AI Surf Day",
+          "publishedAt": "2026-06-05T01:00:00.000Z",
+          "collectedAt": "2026-06-08T02:41:48.819Z"
+        },
+        {
+          "id": "a5c45c0e9e861f45",
+          "title": "당근 200+개 DB 를 옮기는 ELT 플랫폼, DT Platform 을 만든 이야기",
+          "url": "https://medium.com/daangn/%EB%8B%B9%EA%B7%BC-200-%EA%B0%9C-db-%EB%A5%BC-%EC%98%AE%EA%B8%B0%EB%8A%94-elt-%ED%94%8C%EB%9E%AB%ED%8F%BC-dt-platform-%EC%9D%84-%EB%A7%8C%EB%93%A0-%EC%9D%B4%EC%95%BC%EA%B8%B0-65a499b4967a?source=rss----4505f82a2dbd---4",
+          "company": "당근 테크",
+          "category": "general",
+          "summary": "당근 200+개 DB 를 옮기는 ELT 플랫폼, DT Platform 을 만든 이야기",
+          "publishedAt": "2026-06-04T09:45:23.000Z",
+          "collectedAt": "2026-06-08T02:41:48.819Z"
+        }
+      ]
+    },
     {
       "weekOf": "2026-W21",
       "articles": [
@@ -547,81 +587,6 @@
           "category": "infra",
           "summary": "Claude Code로 Figma 디자인 시스템을 C++ 코드로 변환하기",
           "publishedAt": "2026-03-16T00:45:59.000Z",
-          "collectedAt": "2026-04-07T03:23:00.667Z"
-        }
-      ]
-    },
-    {
-      "weekOf": "2026-W11",
-      "articles": [
-        {
-          "id": "cbde7c31ac0afec8",
-          "title": "학생에서 개발자로: 로또 구현부터 레거시 개선까지, 서버의 흐름을 배우다",
-          "url": "https://tech.kakao.com/posts/816",
-          "company": "카카오테크",
-          "category": "general",
-          "summary": "학생에서 개발자로: 로또 구현부터 레거시 개선까지, 서버의 흐름을 배우다",
-          "publishedAt": "2026-03-12T15:00:00.000Z",
-          "collectedAt": "2026-04-07T03:23:00.667Z"
-        },
-        {
-          "id": "15d5cd7aeeeeeda7",
-          "title": "학생에서 개발자로: DB, 보안부터 AI까지, 정답보다 합리적인 선택을 배우다",
-          "url": "https://tech.kakao.com/posts/815",
-          "company": "카카오테크",
-          "category": "general",
-          "summary": "학생에서 개발자로: DB, 보안부터 AI까지, 정답보다 합리적인 선택을 배우다",
-          "publishedAt": "2026-03-12T15:00:00.000Z",
-          "collectedAt": "2026-04-07T03:23:00.667Z"
-        },
-        {
-          "id": "63d5e43a022b576d",
-          "title": "한국 문화 이해부터 화면 조작까지: Kanana-V 기능 확장의 모든 것",
-          "url": "https://tech.kakao.com/posts/812",
-          "company": "카카오테크",
-          "category": "general",
-          "summary": "한국 문화 이해부터 화면 조작까지: Kanana-V 기능 확장의 모든 것",
-          "publishedAt": "2026-03-10T15:00:00.000Z",
-          "collectedAt": "2026-04-07T03:23:00.667Z"
-        },
-        {
-          "id": "c92b1ade4d90fb8b",
-          "title": "2026 카카오그룹 신입크루 공채 코딩테스트 2차 문제해설",
-          "url": "https://tech.kakao.com/posts/814",
-          "company": "카카오테크",
-          "category": "general",
-          "summary": "2026 카카오그룹 신입크루 공채 코딩테스트 2차 문제해설",
-          "publishedAt": "2026-03-10T15:00:00.000Z",
-          "collectedAt": "2026-04-07T03:23:00.667Z"
-        },
-        {
-          "id": "95c6052d18505cd0",
-          "title": "2026 카카오그룹 신입크루 공채 코딩테스트 1차 문제해설",
-          "url": "https://tech.kakao.com/posts/813",
-          "company": "카카오테크",
-          "category": "general",
-          "summary": "2026 카카오그룹 신입크루 공채 코딩테스트 1차 문제해설",
-          "publishedAt": "2026-03-10T15:00:00.000Z",
-          "collectedAt": "2026-04-07T03:23:00.667Z"
-        },
-        {
-          "id": "5a139fccfa7d352d",
-          "title": "AI로 바뀐 건 업무가 아니라 사람이었습니다",
-          "url": "https://techblog.woowahan.com/26034/",
-          "company": "우아한형제들",
-          "category": "general",
-          "summary": "AI로 바뀐 건 업무가 아니라 사람이었습니다",
-          "publishedAt": "2026-03-13T02:20:26.000Z",
-          "collectedAt": "2026-04-07T03:23:00.667Z"
-        },
-        {
-          "id": "7e55d649b11ff22b",
-          "title": "RAG, 들어는 봤는데… 내 서비스엔 어떻게 쓰지?",
-          "url": "https://techblog.woowahan.com/25900/",
-          "company": "우아한형제들",
-          "category": "general",
-          "summary": "RAG, 들어는 봤는데… 내 서비스엔 어떻게 쓰지?",
-          "publishedAt": "2026-03-10T02:50:45.000Z",
           "collectedAt": "2026-04-07T03:23:00.667Z"
         }
       ]
