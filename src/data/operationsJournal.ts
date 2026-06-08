@@ -43,6 +43,128 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-06-09T04:00:00-daily-standup',
+    date: '2026-06-09',
+    researchTitle:
+      '🔥 6/9 화요일 데일리 스탠드업 — **🟢 12일 무한이월 첫 돌파: MeowBeat 백업 P0를 메인 에이전트가 직접 push로 실행 완료(923c260..657032c·커밋된 작업분 origin 백업)** — "회의록에 적으면 또 이월된다, 직접 실행하라"는 처방을 회의가 처음으로 자기 손으로 이행**·**🔧 진단 정정(Orchestrator): 어제 "NumLink 안전망 5일째"는 부정확 — 실제 AutoGenTests 삭제는 58일째(4/12 마지막 생존)=명백한 의도적 삭제·NumLink는 origin과 0/0 완전 동기화로 백업 안전망 자체는 양호·진짜 P0는 오직 MeowBeat 하나·"백업 73일"도 master(작업중단) 기준이라 무의미, 진짜는 feature 브랜치 origin 마지막 4/7=63일**·**🚨 신규 최대 리스크(Developer): MeowBeat GMA v21→v25.0.0(4 메이저 점프) 마이그레이션이 8주째 미커밋 방치·UMP user-messaging-platform 4.0.0 추가됐으나 동의 초기화(requestConsentInfoUpdate+canRequestAds 게이트) 미구현 시 EEA/UK 광고 매출 0원+정책 위반**·**🆕 시장(Game Designer): 캔디크러시 D1 45%(top25% 캐주얼 D1 26~28%)·FTUE "5분 내 와우모먼트"가 핵심·하이브리드캐주얼 ARPDAU $0.15~0.50·D7 18~22%(하이퍼 대비 2.5배)·Phigros 무과금+커스텀 차트 UGC로 곡 라이선스 비용 0원**·**📦 콘텐츠(Content Writer): 혜택중심 첫 스크린샷 교체→30일내 설치전환 +9%p·첫3프레임이 전환의 70%·A/B는 변형당 5,000뷰·14~21일 필요·ASMR 후크 영상 3초잔존 65~70%(평균 30% 미만)·UGC 전환 10.38배**·**🛡 DevOps: 두 Unity 레포 .github 부재 재확정(원격 API도 404)·agent-office Pages 5회 연속 success·🆕 fastlane는 CI 없이도 Gemfile+Fastfile만으로 AAB 빌드/Play 업로드 자동화 가능(가성비 진입점)**·**🎨 디자인(Art Director): 2026 "파랑 디폴트=가장 위험"·주얼톤(머스키드 사파이어·머롯·가닛)+듀오톤이 AI슬롭 회피·정적폰트=깨진폰트, Variable+Condensed가 표준·리듬 노트는 텍스트 판정(Perfect/Great)+글로우 특수노트 즉시 피드백**.',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제58회 — **6/9 화요일·1개월 임계 D+16**. **🟢 오늘의 본질 = 회의가 처음으로 자기 처방을 직접 이행한 날**: 12일간 매일 "MeowBeat 백업하라"고 적기만 하고 실행이 0이었는데, 6/8 회의가 "회의록에 적으면 또 이월된다 — 메인 에이전트가 직접 실행하라"고 결론냈고, 오늘 그 처방을 **실제로 이행**했다. 메인 에이전트가 이미 커밋된 작업분을 `git push origin HEAD`로 origin에 백업 완료(923c260..657032c). force가 아닌 비파괴 push라 안전하며, 미커밋 37파일은 Developer가 "GMA 마이그레이션은 별도 브랜치로 분리하라"고 했으므로 한 덩어리 커밋의 위험을 피해 사용자 확인 사항으로 남겼다. **🔧 진단 정정(Orchestrator)**: 어제까지의 두 진단이 부정확했음을 실측으로 바로잡았다. ① "NumLink 안전망 5일째"는 틀렸다 — AutoGenTests 4파일은 4/12(4debe05)가 마지막 생존이라 **58일째 삭제**이며, 58일간 push조차 불필요한데 복구 안 한 것은 **명백한 의도적 삭제**(5일째 운운은 오진). 게다가 NumLink는 로컬·origin이 0/0 완전 동기화라 **백업 안전망 자체는 양호** — 회귀 검증 인프라(Tools/테스트) 부재만 실제 문제. ② "MeowBeat 백업 73일"도 master(3/28·작업 중단 브랜치) 기준이라 무의미하고, 진짜는 작업 브랜치 feature/song-ownership-migration의 origin 마지막 4/7=**63일**·ahead 6커밋·미커밋 37파일이다(이 중 6커밋은 오늘 push로 백업 완료). **🚨 신규 최대 리스크(Developer)**: MeowBeat의 진짜 위험은 백업뿐 아니라 **GMA(Google Mobile Ads) Unity 플러그인 v21→v25.0.0이라는 4 메이저 점프 마이그레이션이 8주째 빌드 검증 없이 미커밋 방치**되고 있다는 것. AndroidResolverDependencies.xml에 play-services-ads 25.0.0+user-messaging-platform(UMP) 4.0.0이 추가됐는데, UMP의 `canRequestAds()`는 매 실행마다 `requestConsentInfoUpdate()`를 호출하기 전까지 항상 false를 반환 → **동의 초기화 코드가 누락되면 EEA/UK 사용자에게 광고가 아예 안 나가 매출 0원**+Google 인증 CMP 강제 정책 위반. SongManager.cs의 음량 로직도 bgm[1]/bgm[2] 인덱스 직접 참조(IndexOutOfRange 위험)+"SongVolume" 매직 스트링이 OptionManager 상수와 중복(CLAUDE.md 위반). **🆕 시장(Game Designer)**: 캔디크러시 D1 45%(top25% 캐주얼은 26~28%)·**FTUE 핵심은 "5분 내 와우 모먼트"**·하이브리드캐주얼 ARPDAU $0.15~0.50·D7 18~22%로 하이퍼 대비 2.5배·**Phigros가 무과금+플레이어 커스텀 차트 UGC로 곡 라이선스 비용 0원**을 달성(리듬게임 곡 확보 전략의 대안·6/8 streak·배틀패스와 겹치지 않는 "FTUE/D1·UGC 곡전략" 신규 토픽). **📦 콘텐츠(Content Writer)**: **혜택중심 첫 스크린샷 교체만으로 30일내 설치전환 +9%p·영상 첫 3프레임이 전환의 70%를 차지**·A/B는 변형당 최소 5,000뷰·14~21일 측정 필요(조기 판단 금지)·**ASMR 후크 영상은 3초 잔존 65~70%(업계 평균 30% 미만)·UGC 콘텐츠 전환이 일반 광고의 10.38배**(6/8 롱테일 ASO·디스코드와 겹치지 않는 "스크린샷 A/B·ASMR UGC" 신규 토픽). **🛡 DevOps**: NumLink·Feedme 둘 다 .github 디렉터리 자체가 없고 원격 API도 404로 CI 0건 재확정·agent-office Pages는 최근 5회 연속 success(6/4~6/8 매일 자동)·**🆕 fastlane는 CI 인프라 없이도 Gemfile+Fastfile만으로 AAB 빌드·Play 업로드 자동화가 가능**해 game-ci 풀세팅보다 진입장벽이 낮은 첫 도미노(6/8 OIDC·Attestation과 겹치지 않는 "fastlane·시크릿 관리" 신규 토픽). **🎨 디자인(Art Director)**: **2026 컬러 정석은 "파랑 디폴트=가장 위험"** — 주얼톤(머스키드 사파이어·머롯·가닛)+듀오톤이 AI슬롭 회피의 핵심·**정적 폰트=깨진 폰트 취급, Variable+Condensed Impact가 표준**(숫자 타일에 tabular variable weight로 색 의존 최소화)·**리듬 노트는 "Perfect/Great 텍스트 판정+글로우 특수노트"로 즉시 피드백**(MeowBeat 먹이 명중에 라이트버스트 결합)·NumLink는 Layer Lab GUI Pro-MinimalGame 에셋 도입 확인됨(6/8 60초 TTFV·빈 상태와 겹치지 않는 "주얼톤 컬러·Variable 폰트·노트 히트 피드백" 신규 토픽). **🎯 오늘 핵심 결정 = ① [P0·✅완료] MeowBeat 백업 — 메인 에이전트가 커밋된 6커밋을 push origin HEAD로 백업 완료(12일 무한이월 첫 돌파) ② [P0·신규·최우선] MeowBeat GMA v25 마이그레이션 — 미커밋 37파일 중 GMA 관련을 별도 브랜치(chore/gma-25-migration)로 분리 커밋하고 UMP 동의 초기화(requestConsentInfoUpdate+canRequestAds 게이트) 구현 여부 먼저 확인(미구현 시 EEA 광고 0원) ③ [P1·진단 종결] NumLink AutoGenTests — 58일째 의도적 삭제로 확정, "복구" 처방 영구 폐기, 삭제를 git rm으로 커밋 정리(사용자 yes/no)+Tools 3종은 의도와 무관하게 신규 복사해 회귀 인프라 0 탈출 ④ [P1] 두 Unity 레포 fastlane 선배치 — Gemfile+Fastfile만 먼저 두고 서명·업로드는 시크릿 준비 후 단계적(CI 0→1 첫 도미노) ⑤ [P2] FTUE — NumLink 텍스트 튜토리얼 제거→첫 제스처 1회로 즉시 첫 퍼즐 클리어(5분 와우모먼트·D1 40%+ 목표) ⑥ [P2] ASO/마케팅 — NumLink 첫 스크린샷 혜택중심+조각 스냅 ASMR로 교체·변형당 5,000뷰 A/B·MeowBeat 9:16 무음 후크 영상 UGC 1편 ⑦ [P2] 디자인 — NumLink 3테마를 주얼톤 듀오톤으로 확정(민트+다크 완전 배제)·숫자 Variable 폰트·MeowBeat 먹이 명중 Perfect 텍스트팝+라이트버스트**. 메타 통찰: 6/8이 "처방을 직접 실행하라"고 결론낸 날이라면, 오늘은 그 처방을 회의가 처음으로 자기 손으로 이행하고, 동시에 12일간의 진단(백업 일수·안전망 일수) 자체가 부정확했음을 실측으로 정정한 날. 무한이월의 고리를 "직접 실행+진단 정정"으로 동시에 끊었다.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — 🟢 MeowBeat 백업 P0 메인 에이전트 직접 push 실행 완료(923c260..657032c·커밋분 origin 백업·12일 무한이월 첫 돌파)·🔧 진단 정정: NumLink "안전망 5일째"는 부정확(실제 AutoGenTests 58일째 삭제=의도적·origin과 0/0 동기화로 백업 안전망 양호)·"백업 73일"은 master 기준 무의미(진짜는 feature 브랜치 origin 마지막 4/7=63일)·진짜 P0는 MeowBeat 하나',
+        description:
+          '**🟢 12일 무한이월 첫 돌파**: 6/8 회의가 "회의록에 적으면 또 이월된다 — 메인 에이전트가 직접 실행하라"고 결론냈고, 오늘 그 처방을 실제 이행했다. 메인 에이전트가 `git -C C:/Unity/Feedme push origin HEAD`로 이미 커밋된 작업분을 origin에 백업(923c260..657032c·force 아닌 비파괴 push). 미커밋 37파일은 GMA 마이그레이션이 섞여 "별도 브랜치 분리" 필요(Developer)라 한 덩어리 커밋 위험을 피해 사용자 확인 사항으로 분리. **🔧 진단 정정 2건(실측)**: ① **NumLink "안전망 5일째"는 오진** — AutoGenTests 4파일은 4/12(4debe05) 마지막 생존이라 **58일째 삭제**, 58일간 push 불필요한데도 미복구 = 명백한 의도적 삭제. 게다가 NumLink는 로컬·origin이 0/0 완전 동기화라 **백업 안전망 자체는 양호**(회귀 검증 인프라 부재만 문제). ② **"백업 73일"은 master(3/28·작업 중단) 기준이라 무의미** — 진짜는 작업 브랜치 feature/song-ownership-migration의 origin 마지막 4/7=63일·ahead 6커밋(오늘 push로 백업)·미커밋 37파일. master..HEAD ahead는 72(어제 67→+5). **✅ agent-office**: main 동기화·미커밋은 .omc/project-memory.json 1건뿐·Pages 최근 3회 success. **오늘 결정 제안**: 백업은 완료됐으니, 남은 진짜 P0는 GMA v25 마이그레이션 별도 브랜치 분리+UMP 동의 확인. NumLink는 "복구" 처방을 영구 폐기하고 삭제 확정+Tools 신규 복사로 전환. (git push 실행·branch -vv·rev-list·log 실측)',
+      },
+      {
+        title:
+          '🎮 Game Designer — 캔디크러시 D1 45%(top25% 캐주얼 26~28%)·FTUE 핵심 "5분 내 와우모먼트"·하이브리드캐주얼 ARPDAU $0.15~0.50·D7 18~22%(하이퍼 대비 2.5배)·Phigros 무과금+커스텀 차트 UGC로 곡 라이선스 비용 0원',
+        description:
+          '**🆕 시장 신규 1순위(FTUE/D1)**: **캔디크러시 D1 45%**·캐주얼 top25%도 D1 26~28%에 그치는데 1위작은 두 배·**FTUE의 핵심은 "5분 내 와우 모먼트"** — 첫 5분 안에 즉시 클리어 가능한 성취 1개를 배치하고 복잡 규칙(분기·장애물)은 그 이후 맥락적(contextual)으로 1개씩 도입(6/8 streak·배틀패스·리워드 광고와 겹치지 않는 "FTUE/D1 리텐션 설계" 신규 토픽). **🆕 신규 2순위**: 하이브리드캐주얼 ARPDAU $0.15~0.50·**D7 18~22%로 하이퍼캐주얼 대비 2.5배**(메타게임층이 리텐션 견인). **🆕 신규 3순위(곡 전략)**: **Phigros가 무과금+플레이어 자작 노트차트 UGC로 곡 라이선스 비용 0원**을 달성 — 라이선스곡은 비용 최고+계약 만료 시 곡이 삭제되는 리스크라, MeowBeat는 오리지널곡(Suno/Lyria 기반)+자작 차트 UGC 루트가 곡 확보 전략으로 우위. **오늘 결정 제안**: **P2 NumLink FTUE를 "텍스트 튜토리얼 제거→첫 손가락 제스처 1회로 즉시 첫 퍼즐 클리어" 구조로 재설계**(첫 레벨 5초 내 진입+즉시 클리어 와우모먼트·D1 40%+ 목표). MeowBeat는 라이선스곡 대신 오리지널곡+자작 차트 UGC 곡확보 검토. P0 백업 완료·GMA·안전망 선행. Sources: 캔디크러시 D1 벤치·하이브리드캐주얼 ARPDAU/D7·Phigros UGC 차트 사례.',
+      },
+      {
+        title:
+          '💻 Developer — 🚨 MeowBeat GMA v21→v25.0.0(4 메이저 점프) 마이그레이션 8주째 미커밋 방치·UMP 4.0.0 추가됐으나 동의 초기화 미구현 시 EEA/UK 광고 매출 0원+정책 위반·SongManager bgm[1]/bgm[2] 인덱스 직접참조(IndexOutOfRange 위험)+"SongVolume" 매직스트링 중복(CLAUDE.md 위반)',
+        description:
+          '**🚨 코드 분석 최대 리스크**: MeowBeat 미커밋 37파일의 핵심은 곡 음량 작업이 아니라 **GMA(Google Mobile Ads) Unity 플러그인 v21→v25.0.0이라는 4 메이저 점프 마이그레이션이 8주째 빌드 검증 없이 떠 있는 것**. AndroidResolverDependencies.xml: play-services-ads 21.0.0→25.0.0·lifecycle-process 2.4.1→2.6.2·신규 user-messaging-platform(UMP) 4.0.0·constraintlayout 2.1.4 추가. AndroidManifest.xml: UNITY_VERSION 6000.3.5f2 명시·APPLICATION_ID 하드코딩·BOM 추가됨. **🆕 웹 리서치(GMA v25/UMP)**: UMP의 `canRequestAds()`는 매 실행마다 `requestConsentInfoUpdate()` 호출 전까지 항상 false 반환 → **동의 초기화 코드 누락 시 EEA/UK 사용자에 광고 자체가 안 나감(매출 직결)**·EEA/UK는 Google 인증 CMP(=UMP) 강제·requestConsentInfoUpdate 호출만으로 WebView 생성되어 Termination Handling 미관리 시 특정 단말(Android 13 MIUI) 크래시 사례. **🔎 추가 부채**: SongManager.cs 음량 로직이 bgm[1]/bgm[2] 인덱스 직접 참조(배열 길이 미검증·IndexOutOfRange 가능)+"SongVolume" 매직 스트링이 OptionManager VOLUME_KEY 상수와 중복(CLAUDE.md "매직 넘버 GameConstants" 위반). manifest.json은 collab-proxy 제거+unity-mcp #beta 교체(재현성 리스크). **🆕 빌드 최적화**: 텍스처가 최대 절감점·iOS ASTC/Android ETC2·ASTC 6x6이 품질/용량 균형·코드 스트리핑은 Medium→High 단계적·link.xml로 동적 참조 보존. **오늘 결정 제안**: **P0 GMA v21→v25 마이그레이션을 별도 브랜치(chore/gma-25-migration)로 분리 커밋+UMP 동의 초기화(requestConsentInfoUpdate+canRequestAds 게이트) 구현 여부 먼저 확인**(미구현이면 EEA 광고 0원+정책 위반). 8주 미커밋 해소가 1순위. Sources: googleads-mobile-unity releases·UMP SDK Android·Unity 빌드 사이즈 최적화·ARM ASTC.',
+      },
+      {
+        title:
+          '🔍 QA Tester — ✅ MeowBeat 검증 3종 ALL PASS(unity_validate 0err·qa_static 0err·run_regression 2/2)·곡10·known_bugs 6패턴·버그0(어제와 동일 무회귀)·🚨 NumLink 검증 인프라 완전 부재 재확정(Tools 0+Assets/Tests/Editor 빈 폴더·asmdef도 없음·AutoGenTests 삭제로 회귀탐지 0)·두 프로젝트 품질 격차 방치',
+        description:
+          '**✅ MeowBeat(6/9 재실행)**: unity_validate.py 0 error/0 warning(6.4s)·qa_static.py 0 error/0 warning·run_regression.py 2/2 시나리오(RT_SIZE_ZERO·YAML_INDENT_M_FATHER) 탐지 성공·known_bugs 6패턴·곡 10(audio 누락 0)·미해결 버그 0건·**어제 대비 변화 없음(무회귀)**·추가 조치 불필요. **🚨 NumLink 검증 인프라 완전 부재 재확정**: Tools 폴더 없음→검증 3종 실행 불가·Assets/Tests/Editor 폴더는 존재하나 **완전히 비어있음(asmdef도 없음·Editor.meta만 잔존)**·AutoGenTests 삭제 후 대체 테스트 전무 → **회귀 탐지 메커니즘 0개**, 코드 변경 시 리그레션이 런타임까지 잠복. 어제 "Tools 0개"에서 진전 없음. **품질 격차**: MeowBeat는 검증 자동화 완비, NumLink는 무방비 — 격차가 어제와 동일하게 방치 중. **오늘 결정 제안**: **NumLink에 MeowBeat 템플릿(Tools/unity_validate.py 등 3종+known_bugs.json)을 즉시 이식+RT 크기/YAML 최소 검증 1종 우선 도입**해 회귀탐지 0 상태를 즉시 탈출(AutoGenTests 복구와 무관하게 검증 도구는 필요). MeowBeat 안정·조치 불필요. Sources: unity_validate/qa_static/run_regression 실행·Assets/Tests/Editor 스캔·manifest 파싱.',
+      },
+      {
+        title:
+          '📢 Content Writer — 혜택중심 첫 스크린샷 교체→30일내 설치전환 +9%p·영상 첫3프레임이 전환의 70%·A/B는 변형당 5,000뷰·14~21일 필요(조기 판단 금지)·ASMR 후크 영상 3초잔존 65~70%(업계평균 30% 미만)·UGC 콘텐츠 전환이 일반 광고의 10.38배',
+        description:
+          '**📦 콘텐츠 신규 1순위(스크린샷 A/B)**: **혜택중심(benefit-led) 첫 스크린샷으로 교체만 해도 30일내 설치전환 +9%p·앱 프리뷰 영상은 첫 3프레임이 전환의 70%를 좌우**·A/B 테스트는 변형당 최소 5,000뷰·14~21일 측정해야 통계 유의(조기 판단 금지)·첫 스크린샷 변경만으로 전환 15~30%↑ 사례(SplitMetrics·AppTweak·Apple PPO·6/8 롱테일 ASO·디스코드와 겹치지 않는 "스크린샷/프리뷰 A/B" 신규 토픽). **📦 신규 2순위(ASMR/UGC)**: **캐주얼 게임 ASMR 후크 영상은 3초 잔존 65~70%로 업계 평균(30% 미만)을 압도·UGC 콘텐츠 전환이 일반 광고의 10.38배**(Emplifi·MegaDigital). **⚠️ 주의**: 모두 외부 벤치마크라 NumLink/MeowBeat 자체 기준선 측정이 선행되어야 함. **오늘 결정 제안**: **P2 NumLink 앱스토어 첫 스크린샷을 "혜택중심 문구+조각 스냅 ASMR 비주얼"로 교체+PPO/SplitMetrics A/B 1건(변형당 5,000뷰·14~21일)**·MeowBeat는 "고양이 박자 맞추기 만족감" 9:16 세로 무음 영상(첫 프레임 큰 후크 텍스트)으로 릴스/쇼츠 UGC 1편. P0 백업 완료·GMA·안전망 선행. Sources: SplitMetrics·AppTweak·Apple PPO·Emplifi Q3 2025·MegaDigital.',
+      },
+      {
+        title:
+          '🛡 DevOps — NumLink·Feedme 둘 다 .github 디렉터리 자체 부재(원격 API도 404) CI 0건 재확정·agent-office Pages 최근 5회 연속 success(6/4~6/8 매일 자동)·🆕 fastlane는 CI 인프라 없이도 Gemfile+Fastfile만으로 AAB 빌드/Play 업로드 자동화 가능(game-ci 풀세팅보다 진입장벽 낮은 첫 도미노)',
+        description:
+          '**🛡 CI 현황(실측 6/9)**: NumLink·Feedme 로컬에 `.github` 디렉터리 자체가 없고 원격 GitHub API도 `.github/workflows` 404 → 워크플로 0건 재확정(백업 P0의 구조적 원인 그대로)·agent-office는 deploy-pages.yml+weekly-insights.yml 정상·**최근 5회 연속 success(6/4~6/8 매일 19시대 자동)**·오늘 변경 없음. **🆕 웹 리서치(fastlane)**: **fastlane는 CI 인프라 없이도 Gemfile+Fastfile만으로 AAB 빌드·Google Play 업로드 자동화가 가능**·match로 서명 인증서 공유·Gemfile.lock 버전 고정이 2026 표준 → game-ci 풀세팅보다 진입장벽이 낮아 "CI 0→1" 첫 도미노로 적합. 시크릿은 처음부터 OIDC 페더레이션 전제로 설계해 장수 토큰 방지(6/8 OIDC·Attestation과 겹치지 않는 "fastlane·시크릿 관리" 신규 토픽). **레포 매핑**: NumLink(remote mmporong/NumLink)·Feedme(origin=Feedme·meowbeat=mmporong/meowbeat) 둘 다 워크플로 없음. **오늘 결정 제안**: **P1 두 Unity 레포에 fastlane Gemfile+Fastfile만 먼저 선배치**(서명·업로드는 시크릿 준비 후 단계적)·NumLink 1개에 game-ci 최소 빌드 워크플로(build.yml) 파일럿. CI 0→1이 백업 P0 해소의 첫 도미노. Sources: GameCI Deploy to Google Play·Fastlane+GitHub Actions(Calmops)·JumpServer/DigitalApplied 시크릿 관리 2026.',
+      },
+      {
+        title:
+          '🎨 Art Director — 2026 "파랑 디폴트=가장 위험"·주얼톤(머스키드 사파이어·머롯·가닛)+듀오톤이 AI슬롭 회피·정적폰트=깨진폰트, Variable+Condensed Impact가 표준(숫자 타일 tabular variable weight)·리듬 노트는 "Perfect/Great 텍스트 판정+글로우 특수노트" 즉시 피드백·NumLink Layer Lab GUI Pro-MinimalGame 도입 확인',
+        description:
+          '**🎨 디자인 신규 1순위(컬러)**: **2026은 "파랑 디폴트=가장 위험한 선택"** — 누구나 쓰는 안전한 파랑 대신 **주얼톤(머스키드 사파이어·머롯·가닛)+듀오톤**으로 NumLink 3테마를 차별화하면 AI슬롭(민트+다크·뻔한 그라데이션) 회피(Recursion·Envato 2026 컬러 트렌드·6/8 60초 TTFV·빈 상태와 겹치지 않는 "주얼톤 컬러·Variable 폰트·노트 피드백" 신규 토픽). **🎨 신규 2순위(타이포)**: **정적 폰트는 "깨진 폰트" 취급·Variable Font+Condensed Impact가 표준** — 숫자 타일에 tabular variable weight를 적용하면 weight로 잠금/활성 상태를 표현해 색 의존을 최소화(색맹 안전·IK Agency·Creative Bloq). **🎨 신규 3순위(리듬 피드백)**: **리듬 노트는 "Perfect/Great 텍스트 판정+글로우 특수노트"로 즉시 피드백** — MeowBeat 먹이 명중 시 "Perfect" 텍스트 팝+라이트버스트(글래스 투과형 소프트 그라데이션) 결합으로 juicy 강화(rhythm-games.com). **검증**: NumLink Layer Lab GUI Pro-MinimalGame 에셋 도입 확인·최근 커밋(3테마 재설계·9-slice 스킨)과 일치. **오늘 결정 제안**: **P2 NumLink 3테마를 머스키드 사파이어·이글플랜트 퍼플·헌터그린 주얼톤 듀오톤 3종으로 확정(민트+다크 완전 배제)·숫자 폰트는 Variable Font 단일 파일로 교체·MeowBeat 먹이 명중에 Perfect 텍스트팝+라이트버스트 결합**. P0 백업 완료·GMA·안전망 선행. Sources: Recursion UI Color 2026·Envato Color Scheme·IK Agency/Creative Bloq Typography·rhythm-games.com.',
+      },
+    ],
+    meetingTitle:
+      '🔥 6/9 종합 회의 — "회의가 처음으로 자기 처방을 직접 이행한 날": MeowBeat 백업 P0 직접 push 돌파 + 12일 진단(백업 일수·안전망 일수) 자체를 실측으로 정정',
+    meetingSummary:
+      '제58회 종합 회의. **12일 무한이월의 고리를 두 갈래로 동시에 끊었다**. **첫째(직접 실행)**: 6/8이 "회의록에 적으면 또 이월된다 — 메인 에이전트가 직접 실행하라"고 결론냈고, 오늘 회의가 그 처방을 처음으로 자기 손으로 이행했다 — MeowBeat 커밋된 작업분을 `push origin HEAD`로 origin 백업(923c260..657032c·비파괴). 미커밋 37파일은 Developer가 "GMA 마이그레이션은 별도 브랜치 분리"라 했으므로 한 덩어리 커밋을 피해 사용자 확인 사항으로 남겼다. **둘째(진단 정정)**: Orchestrator가 12일간 반복된 두 진단이 부정확했음을 실측으로 바로잡았다 — NumLink "안전망 5일째"는 실제 AutoGenTests 58일째 삭제(=의도적)이고 NumLink는 origin과 0/0 동기화로 안전망 자체는 양호하며, "백업 73일"은 master(작업중단) 기준 허수이고 진짜는 feature 브랜치 4/7=63일이다. **셋째(신규 최대 리스크)**: Developer가 MeowBeat의 진짜 위험은 단순 백업이 아니라 GMA v21→v25 4메이저 마이그레이션 8주 미커밋+UMP 동의 초기화 미구현 시 EEA 광고 0원임을 규명. 나머지는 출시 준비 신규 리서치(FTUE 5분 와우모먼트·스크린샷 A/B·fastlane·주얼톤 컬러)를 P1/P2로 적재. 메타: 12일째 "같은 결론을 다른 말로"가 아니라, 처방을 실행하고 진단을 정정해 회의가 작동하기 시작한 날.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '오늘은 보고가 다릅니다 — MeowBeat 백업 P0를 제가 직접 push로 실행 완료했어요(923c260..657032c, 비파괴 push). 12일 무한이월 첫 돌파입니다. 그리고 12일간의 진단 자체를 정정합니다: NumLink "안전망 5일째"는 틀렸고 실제 AutoGenTests는 58일째 삭제=의도적이며 origin과 0/0 동기화로 백업은 양호해요. "백업 73일"도 master 기준 허수, 진짜는 feature 브랜치 63일이고 그 커밋분은 방금 백업됐습니다. 진짜 남은 P0는 GMA 마이그레이션 하나예요.',
+      },
+      {
+        speaker: 'Developer',
+        note: '그 GMA가 진짜 위험입니다. 미커밋 37파일의 핵심은 곡 음량이 아니라 GMA v21→v25.0.0 4메이저 점프 마이그레이션이 8주째 빌드 검증 없이 떠 있는 거예요. UMP 4.0.0이 추가됐는데 동의 초기화(requestConsentInfoUpdate+canRequestAds 게이트)가 누락되면 EEA/UK 광고가 아예 안 나가 매출 0원에 정책 위반입니다. 별도 브랜치(chore/gma-25-migration)로 분리 커밋하고 UMP 구현 여부부터 확인해야 해요. SongManager 인덱스 직접참조·매직스트링도 정리 대상입니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'MeowBeat 검증 3종 6/9 재실행도 ALL PASS, 곡10·버그0로 무회귀입니다. 반면 NumLink는 Tools 0개에 Assets/Tests/Editor가 asmdef도 없이 완전히 비어 회귀탐지가 0이에요. AutoGenTests 복구 여부와 무관하게 검증 도구는 필요하니, MeowBeat 템플릿 3종을 즉시 이식하고 RT크기/YAML 최소 검증 1종부터 도입해 무방비 상태를 탈출하자고 제안합니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '출시 준비 신규 데이터예요. 캔디크러시 D1이 45%인데 캐주얼 top25%도 26~28%에 그쳐요 — 차이는 FTUE "5분 내 와우모먼트"입니다. NumLink를 텍스트 튜토리얼 제거하고 첫 제스처 1회로 즉시 첫 퍼즐을 클리어시키는 구조로 재설계해 D1 40%+를 노리자고요. 그리고 Phigros가 무과금+자작 차트 UGC로 곡 라이선스 비용 0원을 달성했으니, MeowBeat 곡 전략은 오리지널곡+UGC 차트 루트를 검토할 만합니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '혜택중심 첫 스크린샷으로 교체만 해도 30일내 설치전환 +9%p, 영상은 첫 3프레임이 전환의 70%를 좌우합니다. 단 A/B는 변형당 5,000뷰·14~21일 측정해야 하니 조기 판단은 금물이에요. ASMR 후크 영상은 3초 잔존 65~70%로 평균(30% 미만)을 압도하고 UGC 전환은 일반 광고의 10.38배입니다. NumLink 첫 스샷을 혜택중심+조각 스냅 ASMR로 교체하고 A/B 1건, MeowBeat는 9:16 무음 후크 영상 UGC 1편을 P2로 제안해요.',
+      },
+      {
+        speaker: 'DevOps',
+        note: '두 Unity 레포는 .github 디렉터리 자체가 없고 원격 API도 404 — CI 0건 재확정입니다. agent-office Pages는 5회 연속 success로 안정적이고요. 신규로 fastlane은 CI 인프라 없이도 Gemfile+Fastfile만으로 AAB 빌드·Play 업로드가 가능해요. game-ci 풀세팅보다 진입장벽이 낮으니 두 레포에 fastlane 파일만 먼저 선배치하는 걸 "CI 0→1" 첫 도미노로 제안합니다. 시크릿은 처음부터 OIDC 전제로.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '2026 컬러 정석은 "파랑 디폴트가 가장 위험"이에요. 주얼톤(머스키드 사파이어·머롯·가닛)+듀오톤으로 NumLink 3테마를 차별화하면 AI슬롭을 피합니다. 정적 폰트는 깨진 폰트 취급이라 Variable+Condensed가 표준이고, 숫자 타일에 tabular variable weight를 쓰면 색 의존도 줄어요. 리듬 노트는 Perfect/Great 텍스트 판정+글로우로 즉시 피드백 — MeowBeat 먹이 명중에 Perfect 텍스트팝+라이트버스트를 결합하자고 제안합니다.',
+      },
+      {
+        speaker: 'Orchestrator',
+        note: '종합합니다. P0① MeowBeat 백업은 ✅완료. P0② GMA v25 마이그레이션 별도 브랜치 분리+UMP 동의 확인(최우선·EEA 광고 0원 리스크). P1③ NumLink는 "복구" 처방을 폐기하고 58일 삭제 확정+Tools 3종 신규 복사. P1④ 두 레포 fastlane 선배치. P2는 FTUE 5분 와우모먼트·스크린샷 A/B·주얼톤 컬러. 오늘은 회의가 처음으로 처방을 실행하고 진단을 정정한 날입니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: '✅ P0[완료] MeowBeat 백업 — 메인 에이전트 직접 push로 12일 무한이월 첫 돌파',
+        description:
+          '6/8 "회의록에 적으면 또 이월된다 — 직접 실행하라" 처방을 오늘 회의가 이행. 메인 에이전트가 `git -C C:/Unity/Feedme push origin HEAD`로 이미 커밋된 작업분을 origin에 백업 완료(923c260..657032c·force 아닌 비파괴 push·feature/song-ownership-migration). 미커밋 37파일은 GMA 마이그레이션이 섞여 한 덩어리 커밋이 위험하므로 P0② 별도 브랜치 분리로 이관(사용자 확인). 12일간 0이던 실행을 1로 만든 변곡점.',
+      },
+      {
+        title: '🚨 P0[신규·최우선] MeowBeat GMA v25 마이그레이션 별도 브랜치 분리 + UMP 동의 초기화 확인',
+        description:
+          '미커밋 37파일의 진짜 핵심은 GMA(Google Mobile Ads) Unity 플러그인 v21→v25.0.0(4 메이저 점프) 마이그레이션이 8주째 빌드 검증 없이 방치된 것. ① GMA 관련 변경(AndroidResolverDependencies.xml·AndroidManifest.xml·Plugins/Android)을 별도 브랜치 `chore/gma-25-migration`으로 분리 커밋 ② UMP(user-messaging-platform 4.0.0) 동의 초기화 코드(`requestConsentInfoUpdate`+`canRequestAds` 게이트) 구현 여부 먼저 확인 — 미구현이면 EEA/UK 사용자 광고 0원+Google 인증 CMP 강제 정책 위반 ③ 분리 후 곡 음량·SongData 등 게임플레이 변경은 별도 feat 커밋. 8주 미커밋 해소가 1순위.',
+      },
+      {
+        title: '🔧 P1[진단 종결] NumLink AutoGenTests — 58일째 의도적 삭제로 확정, "복구" 처방 영구 폐기 + Tools 3종 신규 복사',
+        description:
+          'AutoGenTests 4파일은 4/12 마지막 생존으로 58일째 삭제이며, 58일간 push 불필요한 git checkout인데도 미복구 = 명백한 의도적 삭제. 12일간 반복된 "복구하라" 처방을 영구 폐기하고 ① 삭제 확정을 `git -C C:/Unity/NumLink rm Assets/Tests/Editor/AutoGenTests.* && commit -m "chore: 미사용 AutoGenTests 제거"`로 정리(사용자 yes/no) ② **삭제 의도와 무관하게** MeowBeat 템플릿(unity_validate.py·qa_static.py·run_regression.py·known_bugs.json)을 NumLink/Tools/로 복사+씬 경로 상수 갱신 ③ RT크기/YAML 최소 검증 1종 우선 도입해 회귀탐지 0 상태 탈출. NumLink는 origin과 0/0 동기화라 백업 안전망 자체는 양호.',
+      },
+      {
+        title: '🛡 P1 두 Unity 레포 fastlane 선배치 — CI 0→1 첫 도미노',
+        description:
+          'NumLink·Feedme 둘 다 .github 디렉터리 자체 부재로 CI 0건이 백업 P0의 구조적 뿌리. fastlane은 CI 인프라 없이도 Gemfile+Fastfile만으로 AAB 빌드·Play 업로드 자동화가 가능하므로 ① 두 레포에 Gemfile+Fastfile만 먼저 선배치(서명·업로드는 시크릿 준비 후 단계적) ② NumLink 1개에 game-ci 최소 빌드 워크플로(build.yml) 파일럿 ③ 시크릿은 처음부터 OIDC 페더레이션 전제로 설계해 장수 토큰 방지. CI 0→1을 차주 단일 실행 목표로.',
+      },
+      {
+        title: '🎮 P2 FTUE 재설계 — NumLink 텍스트 튜토리얼 제거→첫 제스처 1회 즉시 클리어(5분 와우모먼트)',
+        description:
+          '캔디크러시 D1 45% vs 캐주얼 top25% 26~28%의 차이는 FTUE "5분 내 와우모먼트". NumLink FTUE를 텍스트 튜토리얼 제거→첫 손가락 제스처 1회로 즉시 첫 퍼즐 클리어 구조로 재설계(첫 레벨 5초 내 진입+즉시 클리어 와우모먼트 1개·복잡 규칙은 이후 맥락적 도입·D1 40%+ 목표). MeowBeat는 라이선스곡 대신 오리지널곡+자작 차트 UGC 곡확보 전략 검토(Phigros식 곡 비용 0원). 모두 P0 후 착수.',
+      },
+      {
+        title: '📦🎨 P2 마케팅·디자인 — 스크린샷 A/B + ASMR UGC + 주얼톤 컬러 + Variable 폰트',
+        description:
+          '마케팅: NumLink 첫 스크린샷을 "혜택중심 문구+조각 스냅 ASMR 비주얼"로 교체+A/B 1건(변형당 5,000뷰·14~21일·조기 판단 금지·설치전환 +9%p 노림)·MeowBeat는 "고양이 박자 만족감" 9:16 무음 후크 영상 UGC 1편(3초 잔존 65~70%·UGC 전환 10.38배). 디자인: NumLink 3테마를 머스키드 사파이어·이글플랜트 퍼플·헌터그린 주얼톤 듀오톤으로 확정(민트+다크 완전 배제)·숫자 Variable 폰트 단일 파일 교체·MeowBeat 먹이 명중 Perfect 텍스트팝+라이트버스트. 모두 P0 후 착수.',
+      },
+    ],
+  },
+  {
     id: '2026-06-08T04:00:00-daily-standup',
     date: '2026-06-08',
     researchTitle:
