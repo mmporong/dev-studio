@@ -43,6 +43,123 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-06-10T04:00:00-daily-standup',
+    date: '2026-06-10',
+    researchTitle:
+      '🔥 6/10 수요일 데일리 스탠드업 — **🟢 "백업 P0" 13일 프레이밍 자체가 오진으로 종결: `git push -u origin` 실행 결과 "Everything up-to-date" — 커밋분은 이미 origin 백업돼 있었고 upstream tracking 미설정이 fatal로 보였을 뿐, 어제 "72커밋 미백업"은 추적 미설정에서 비롯된 측정 착시**·**🎯 진짜 P0 재정의: "백업"이 아니라 "미커밋 37파일이 8주째 커밋조차 안 된 것" — push로는 절대 안 잡히는, 커밋이 없으면 백업도 없는 문제**·**🚨 UMP 동의 흐름 0건 독립 2중 확인(Developer grep + QA 코드추적): `ConsentInformation`·`UserMessagingPlatform`·`ConsentForm` Assets/Scripts 내 0건·`MobileAds.Initialize` 직행 — UMP DLL/라이브러리는 import됐으나 동의 초기화 코드 미작성 = 출시 차단급**·**🆕 시장(Game Designer): 하이브리드캐주얼 D30 8~12%로 하이퍼(1~3%)의 4~5배·농장/빌딩 메타 결합 시 ARPDAU $0.15~0.50·D90 LTV $4~12·리워드 광고 노출 유저는 IAP 4배+평균 결제액 +326%·eCPM iOS $19.63 — LTV 90%가 메타층에서 발생, 메타가 3~5세션 내 등장해야 D30 곡선 진입**·**💻 Developer(신규): 리듬게임은 `AudioSource.PlayScheduled`+DSP 1초 윈도우로 시작 동기화·기기별 audio offset calibration 필수(연주자는 0.02초도 감지)·Unity 6.3 Package Manager 서명 패키지·2026 Asset Store 암호화 서명 의무(npm Shai-hulud 공급망 공격 배경)**·**📦 Content(신규): 2026 ASO 알고리즘이 키워드→리텐션·평점 최신성으로 이동·애플 3월 검색광고 추가·3→4스타 전환 +89%·4.5+ 설치 3배·캐주얼 아이콘 A/B 리프트 4~8%(구글플레이 8~12%)**·**🛡 DevOps(신규): agent-office Pages 5/5 전부 success·두 Unity 레포 .github·fastlane 전부 미배치(P1 진행 0)·`actions/cache@v4` Library 캐싱만으로 CI 빌드 40~50% 단축·asmdef 증분 70~80%**·**🎨 Art Director(신규): 2026 아이콘은 Soft 3D 플러시+Mascot(마이크로캐릭터)이 캐주얼 설치율 +20% 레버·햅틱은 transient(탭)/continuous(텍스처) 분리+단일 HapticService·농장 캐릭터 감정은 squash-stretch 차등(기쁨=stretch·졸림=squash)**.',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제59회 — **6/10 수요일·1개월 임계 D+17**. **🟢 오늘의 본질 = "백업 P0"라는 13일짜리 프레이밍 자체가 오진이었음을 실행으로 종결한 날**: 어제 Orchestrator는 "MeowBeat 작업브랜치 upstream 미설정(fatal)·master 대비 72커밋 미백업"으로 측정했다. 오늘 메인 에이전트가 `git -C C:/Unity/Feedme push -u origin feature/song-ownership-migration`을 실행한 결과는 **"branch set up to track origin/... / Everything up-to-date"** — 즉 **커밋된 72커밋은 이미 origin에 백업돼 있었고**, 단지 upstream tracking이 설정 안 돼 ahead/behind 추적이 안 되니 fatal로 보였을 뿐이다. 어제의 "72커밋 미백업"은 데이터 유실 위험이 아니라 **추적 메타데이터 부재에서 비롯된 측정 착시**였다. 오늘 `-u`로 추적이 정상화되어 이 착시는 영구 종결. **🎯 진짜 P0 재정의**: 13일간 "백업하라"고 반복한 프레이밍이 틀렸다. 정확한 P0는 **"미커밋 37파일(GMA 마이그레이션+곡 한/영 다국어+곡별 음량 밸런스)이 8주째 커밋조차 안 된 것"** — 이건 push로는 절대 안 잡힌다. 커밋이 없으면 백업도 없다. 커밋되지 않은 변경만이 진짜 유실 위험이고, 그 핵심은 GMA v25 마이그레이션이다. **🚨 UMP 동의 흐름 0건 독립 2중 확인**: Developer가 `grep -rl "ConsentInformation|UserMessagingPlatform|ConsentForm" Assets/Scripts` 0건, QA가 코드 추적으로 `MobileAds.Initialize` 직행(동의 절차 없음)을 각각 독립 규명. UMP DLL/라이브러리(`GoogleMobileAds.Ump.*`)는 import됐으나 실제 동의 초기화 코드(`requestConsentInfoUpdate`+`canRequestAds` 게이트)는 미작성 — EEA/UK 사용자 광고 0원+Google 인증 CMP 강제 정책 위반으로 **출시 차단급(정적 검증으로는 안 잡히는 사각지대)**. **NumLink**: feature/ugui-layerlab이 origin과 0/0 동기화로 UI 작업 백업은 양호하나, 검증 인프라는 여전히 0(Tools 폴더 부재·Assets/Tests/Editor 빈 폴더·AutoGenTests 삭제 지속)·마지막 커밋 6/2로 무진척. **🆕 시장(Game Designer)**: **하이브리드캐주얼 D30 리텐션 8~12%로 하이퍼캐주얼(1~3%)의 4~5배**·농장/빌딩 메타 결합 시 ARPDAU $0.15~0.50·D90 LTV $4~12·D30 결제전환 3~5%·**리워드 광고 노출 유저는 IAP를 4배 더 하고 평균 결제액 +326%(최대 +500%)**·eCPM iOS $19.63 — **LTV의 90%가 메타층에서 발생하며 메타가 3~5세션 내 등장해야 D30 8~12% 곡선에 진입**(6/9 캔디크러시 D1·FTUE·Phigros와 겹치지 않는 "메타층 LTV·리워드 광고 결제전환" 신규 토픽). **💻 Developer(신규)**: 미커밋 코드 실측 — SongData.cs +titleKo·GameManager.cs +59줄(다국어 GetSongDisplayTitle+곡버튼 잠금/앵커 0.05~0.95 통일)·SongManager.cs +16줄(곡별 밸런스×사용자 음량)·manifest +titleKo(폭신한 고양이/폼폼 발바닥/에스코트). 웹: **리듬게임은 `AudioSource.PlayScheduled`+DSP 1초 스케줄 윈도우로 시작점 보장·DSP↔게임시간 선형회귀 매핑·기기별 player calibration 필수(연주자는 0.02초도 감지)**·Unity 6.3부터 Package Manager 서명 패키지/신뢰 표시 내장·2026 Asset Store 암호화 서명 의무화(2026.05 npm Mini Shai-hulud 공급망 공격 배경)(6/9 GMA·빌드 사이즈와 겹치지 않는 "오디오 동기화·패키지 보안" 신규 토픽). **📦 Content(신규)**: **2026 ASO 알고리즘이 키워드 중심→리텐션·평점 최신성 중심으로 이동**·애플 3월부터 검색광고 추가·**3→4스타 전환 +89%·4.5+ 평점은 설치 3배·캐주얼 게임 아이콘 A/B 리프트 4~8%(구글플레이 8~12%)**(6/9 스크린샷 A/B·ASMR UGC와 겹치지 않는 "평점 최신성·아이콘 A/B" 신규 토픽). **🛡 DevOps(신규)**: agent-office Pages **최근 5회 전부 success**(마지막 6/9 44초)·두 Unity 레포 .github·fastlane **전부 미배치**(어제 P1 진행 0)·웹: **`actions/cache@v4` Library 폴더 캐싱만으로 CI 빌드 40~50% 단축**·asmdef 기반 증분 컴파일 70~80% 단축·플랫폼별 Library 분리로 전환당 5~10분 절감·실측 15분→5분(6/9 fastlane·OIDC와 겹치지 않는 "Library 캐싱·증분 빌드" 신규 토픽). **🎨 Art Director(신규)**: **2026 아이콘 정석은 Soft 3D(플러시·파스텔·촉각질감)+Mascot(마이크로캐릭터) 조합이 캐주얼 설치율 +20% 성장 레버**(Duolingo 부엉이式 브랜드 리콜)·**햅틱은 transient(탭)/continuous(텍스처) 분리+sharpness로 의미 전달·On/Minimal/Off 3단 옵션+단일 HapticService 집중화**·**농장 캐릭터 감정은 squash-stretch 차등(기쁨=stretch 과장·무거움/졸림=squash 우세)**(6/9 주얼톤·Variable 폰트와 겹치지 않는 "Soft 3D 아이콘·햅틱·squash-stretch" 신규 토픽). **🎯 오늘 핵심 결정 = ① [P0·재정의] MeowBeat 미커밋 37파일 — "백업"이 아니라 "커밋"이 진짜 P0. GMA v25 마이그레이션을 별도 브랜치 `chore/gma-25-migration`으로 분리 커밋+게임플레이 변경(다국어·음량)은 별도 feat 커밋 ② [P0·출시 차단] UMP 동의 초기화 구현 — `requestConsentInfoUpdate`+`canRequestAds` 게이트를 `MobileAds.Initialize` 앞에 추가(미구현 시 EEA 광고 0원+정책 위반·Dev+QA 2중 확인) ③ [P1] NumLink 검증 인프라 — MeowBeat Tools 3종 이식+AutoGenTests git rm 확정+DevOps가 `actions/cache@v4` Library 캐싱 빌드 워크플로 1개 선배치(CI 0→1·빌드 40~50% 단축 검증) ④ [P2] MeowBeat 메타층 — 곡 클리어 보상을 농장 건물/고양이 해금에 연결하는 루프를 첫 3~5세션 내 배치(D30 8~12% 진입·LTV 90%가 메타층) ⑤ [P2] MeowBeat 오디오 — 기기별 audio offset calibration 슬라이더 UI+`PlayScheduled` 시작 동기화(판정 정확도=출시 전 체감 품질 최대 레버) ⑥ [P2] 마케팅·디자인 — 평점 4.5+ KPI화(클리어/콤보 직후 인앱 평점 팝업)+아이콘 A/B(NumLink 숫자캐릭터·MeowBeat Soft 3D 플러시 고양이 마스코트)+farm 먹이 squash-stretch 차등**. 메타 통찰: 6/9이 "회의가 처음으로 처방을 직접 실행한 날"이었다면, 오늘은 그 실행(`push -u`)이 13일간의 "백업 P0" 프레이밍 자체가 오진이었음을 드러낸 날 — 진짜 위험은 "백업 안 됨"이 아니라 "8주째 커밋 안 됨+UMP 미구현"이었고, 진단을 정확한 단어로 교체했다.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — 🟢 "백업 P0" 13일 프레이밍 종결: `push -u origin` 결과 "Everything up-to-date"(커밋분은 이미 백업·upstream 미설정이 fatal 착시)·🎯 진짜 P0 재정의="백업"이 아니라 "미커밋 37파일 8주째 커밋 안 됨"·NumLink feature/ugui-layerlab origin 0/0 동기화로 UI 백업 양호·두 레포 오늘 커밋 0건·액션아이템 진척 0',
+        description:
+          '**🟢 13일 프레이밍 오진 종결(실행으로)**: 어제 측정 "MeowBeat 작업브랜치 upstream 미설정(fatal)·master 대비 72커밋 미백업"을 오늘 `git -C C:/Unity/Feedme push -u origin feature/song-ownership-migration`으로 검증 → 결과 **"branch set up to track origin/... / Everything up-to-date"**. 즉 72커밋은 이미 origin에 백업돼 있었고 upstream tracking 미설정 때문에 ahead/behind 추적이 안 돼 fatal로 보였을 뿐. "72커밋 미백업"은 데이터 유실이 아니라 **추적 메타데이터 부재 착시**였고, 오늘 `-u`로 정상화되어 영구 종결. **🎯 진짜 P0 재정의**: 13일간 "백업하라"는 프레이밍 자체가 틀렸다. 정확한 P0는 **"미커밋 37파일(GMA+다국어+음량)이 8주째 커밋조차 안 된 것"** — push로는 안 잡히고, 커밋이 없으면 백업도 없다. **NumLink**: 본진 feature/ugui-layerlab origin과 0/0 완전 동기화로 UI 작업 백업 양호·미커밋 36파일(Layer Lab 에셋 추가)·마지막 커밋 6/2·Tools 부재·AutoGenTests 삭제 지속. **✅ agent-office**: .omc/project-memory.json 1건만 M·Pages 정상. **측정값**: 두 레포 오늘(1일내) 커밋 0건·MeowBeat 미커밋 37·NumLink 미커밋 36·어제 액션아이템(GMA 분리·UMP·Tools·fastlane) 전부 미착수. **오늘 결정 제안**: "백업" 단어를 회의에서 폐기하고 "커밋 P0"로 교체 — GMA를 별도 브랜치로 분리 커밋하는 것이 8주 미커밋 해소의 1순위. (git push -u·status -sb·rev-list 실측)',
+      },
+      {
+        title:
+          '🎮 Game Designer — 하이브리드캐주얼 D30 8~12%로 하이퍼(1~3%)의 4~5배·농장/빌딩 메타 결합 시 ARPDAU $0.15~0.50·D90 LTV $4~12·D30 결제전환 3~5%·리워드 광고 노출 유저 IAP 4배+평균 결제액 +326%(최대 +500%)·eCPM iOS $19.63·LTV 90%가 메타층에서 발생',
+        description:
+          '**🆕 시장 신규 1순위(메타층 LTV)**: **하이브리드캐주얼 D30 리텐션 8~12%로 하이퍼캐주얼(1~3%)의 4~5배** — 차이는 농장/빌딩 같은 메타게임층. 농장 메타 결합 시 ARPDAU $0.15~0.50·D90 LTV $4~12·D30 결제전환 3~5%·**LTV의 90%가 메타층에서 발생**하며 메타가 3~5세션 내 등장해야 D30 8~12% 곡선에 진입(6/9 캔디크러시 D1·FTUE·Phigros UGC와 겹치지 않는 "메타층 LTV·세션 배치" 신규 토픽). **🆕 신규 2순위(리워드 광고 경제)**: **리워드 광고 노출 유저는 IAP를 4배 더 하고 평균 결제액 +326%(최대 +500%)**·eCPM iOS $19.63 — 광고가 IAP를 잠식하는 게 아니라 결제를 촉진. **오늘 결정 제안**: **P2 MeowBeat에 "농장 빌딩 메타" 진입을 첫 3~5세션 내로 배치** — 곡(코어 리듬) 클리어 보상을 즉시 농장 건물/고양이 해금에 연결해 복귀 동기를 만든다. manifest에 "곡 클리어 → 농장 재화 N개 지급 → 건물 1단계 해금" 루프를 정의하고 농장 화면을 곡 선택 직전/직후에 노출. NumLink는 동일 원리로 "레벨 클리어 → 컬렉션/도감 채우기" 메타 적용 가능. P0 커밋·UMP 선행. Sources: Game Growth Advisor 하이브리드캐주얼 2026·MAF.ad 리워드 광고 통계·KPI 벤치마크 2026.',
+      },
+      {
+        title:
+          '💻 Developer — 미커밋 실측: SongData +titleKo·GameManager +59줄(다국어 GetSongDisplayTitle+곡버튼 앵커 0.05~0.95 통일)·SongManager +16줄(곡별 밸런스×음량)·🆕 리듬게임 `PlayScheduled`+DSP 1초 윈도우 시작 동기화·기기별 audio offset calibration 필수(연주자 0.02초 감지)·Unity 6.3 서명 패키지·2026 Asset Store 암호화 서명 의무',
+        description:
+          '**🔎 미커밋 코드 분석(실측)**: MeowBeat 미커밋 37파일 = SongData.cs +titleKo 필드·GameManager.cs +59줄(`GameEvents.OnLanguageChanged` 구독+`GetSongDisplayTitle()` 영어=title/한글=titleKo fallback+곡버튼 잠금 톤다운+Lock/Score 앵커 0.05~0.95 통일)·SongManager.cs +16줄(곡별 기본 밸런스×사용자 음량 곱셈)·manifest +titleKo(폭신한 고양이/폼폼 발바닥/에스코트)·Packages manifest는 unity-mcp 교체+collab-proxy 제거(재현성 리스크). **UMP 진행 상태 명확**: GMA 관련 변경은 PlaceholderAds 프리팹 CRLF+AndroidManifest 20줄+AndroidResolverDependencies뿐 전부 미커밋·`ConsentInformation`/`UserMessagingPlatform`/`ConsentForm` grep 0건·DLL은 `GoogleMobileAds.Ump.*` 일체 존재 → **UMP 라이브러리는 import됐으나 동의 흐름 코드 미작성**. **🆕 웹(오디오 동기화)**: `AudioSource.PlayScheduled`+DSP 1초 스케줄 윈도우로 시작점 보장·DSP↔게임시간 선형회귀 매핑·DSP Buffer "Best latency"+Decompress On Load·**기기별 player calibration 필수(연주자는 0.02초도 감지)**. **🆕 웹(패키지 보안)**: Unity 6.3부터 Package Manager 서명 패키지/신뢰 표시 내장·2026 Asset Store 암호화 서명 의무화(2026.05 npm Mini Shai-hulud 공급망 공격 배경). **오늘 결정 제안**: **P2 MeowBeat에 기기별 audio offset calibration UI(슬라이더)+`PlayScheduled` 기반 시작 동기화 도입** — 현재 음량 곱셈만 손본 상태라 판정 정확도(특히 Android 출력 지연) 미검증·calibration이 출시 전 체감 품질의 최대 레버. Sources: exceed7 native-audio DSP sync·Rhythm Quest devlog·Unity 2026 roadmap CoreCLR/verified packages.',
+      },
+      {
+        title:
+          '🔍 QA Tester — ✅ MeowBeat 검증 3종 ALL PASS(unity_validate 0err·qa_static 0err·run_regression 2/2)·곡10·known_bugs 6패턴·버그0(무회귀)·🚨 AdMob이 UMP 동의 없이 `MobileAds.Initialize` 직행=GDPR/구글 정책 위반 출시 차단급(정적 검증 사각지대)·🚨 NumLink 검증 인프라 0 지속(Tools 부재·Editor 빈 폴더·회귀탐지 0)',
+        description:
+          '**✅ MeowBeat 검증(6/10 재실행)**: unity_validate.py PASS(0 error/0 warning)·qa_static.py PASS(0 error/0 warning)·run_regression.py 2/2 시나리오(RT_SIZE_ZERO·YAML_INDENT_M_FATHER) 탐지 성공·known_bugs 6패턴·곡 10(audioFile 누락 0)·미해결 버그 0건·**어제 대비 무회귀**·미커밋 37건도 검증상 0 error 통과(커밋해도 안전). **🚨 가장 심각한 리스크(독립 확인)**: AdMob이 UMP/`ConsentInformation` 동의 흐름 없이 `MobileAds.Initialize` 직행 — GDPR/구글 동의 정책 위반으로 **출시 차단급(정적 검증으로는 안 잡히는 사각지대)**. Developer의 grep 0건과 독립적으로 코드 추적으로 동일 결론 도달(2중 확인). **🚨 NumLink 검증 인프라 0 지속**: `C:/Unity/NumLink/Tools` 디렉토리 없음·`Assets/Tests/Editor` 폴더 비어있음 → 회귀 탐지 0건(어제와 동일·변화 없음)·마지막 커밋 6/2. **품질 격차**: MeowBeat 자동화 완비 vs NumLink 무방비, 격차 방치 지속. **오늘 결정 제안**: **P0 MeowBeat 출시 전 UMP 동의 흐름 구현을 차단 게이트로 지정**(미구현 시 스토어 거절/계정 정지)+P1 NumLink Tools 3종 즉시 이식. Sources: unity_validate/qa_static/run_regression 실행·MobileAds.Initialize 호출 추적.',
+      },
+      {
+        title:
+          '📦 Content Writer — 2026 ASO 알고리즘이 키워드→리텐션·평점 최신성으로 이동·애플 3월 검색광고 추가·3→4스타 전환 +89%·4.5+ 평점은 설치 3배·캐주얼 게임 아이콘 A/B 리프트 4~8%(구글플레이 8~12%)',
+        description:
+          '**📦 신규 1순위(평점 최신성)**: **2026 앱스토어 랭킹 알고리즘이 키워드 매칭 중심→리텐션·평점 최신성 중심으로 이동**·애플은 3월부터 검색광고 슬롯 추가·**평점 3→4스타 전환 시 설치전환 +89%·4.5+ 평점은 설치 3배**·신규 리뷰 최신성이 랭킹에 직접 반영(출시 직후 2주가 결정적). **📦 신규 2순위(아이콘 A/B)**: **캐주얼 게임 아이콘 A/B 테스트 리프트 4~8%(구글플레이 8~12%)** — 친근한 캐릭터형 아이콘이 우위. **오늘 결정 제안**: **P2 NumLink·MeowBeat 둘 다 "평점 4.5+ 사수"를 KPI로 두고, 인앱 평점 요청 팝업을 클리어/콤보 성공 직후(긍정 순간)에만 노출+출시 직후 2주 집중 리뷰 유도 캠페인 준비+아이콘 A/B(NumLink 숫자캐릭터·MeowBeat 고양이)를 출시 전 필수 테스트로 확정**. P0 커밋·UMP 선행. Sources: Apptweak ASO News 2026·Strataigize App Store Conversion 2026·AppFollow App Rating Impact.',
+      },
+      {
+        title:
+          '🛡 DevOps — agent-office Pages 최근 5회 전부 success(마지막 6/9 44초)·두 Unity 레포 .github·fastlane 전부 미배치(어제 P1 진행 0)·🆕 `actions/cache@v4` Library 캐싱만으로 CI 빌드 40~50% 단축·asmdef 증분 70~80%·플랫폼별 Library 분리 전환당 5~10분 절감·실측 15분→5분',
+        description:
+          '**🛡 CI 현황(실측 6/10)**: agent-office GitHub Pages **최근 5회 배포 전부 성공(5/5)·실패 0**·마지막 6/9 데일리 스탠드업 push 44초. NumLink·Feedme `.github` 둘 다 부재(재확인)·**fastlane 둘 다 미배치 — 어제 P1(fastlane AAB 자동화)은 디렉터리조차 생성 안 된 상태로 진행 0**. **🆕 웹(증분 빌드/캐싱)**: `actions/cache@v4`로 Library 폴더 캐싱 → CI 빌드 **40~50% 단축**(키 `Library-${targetPlatform}`+restore-keys 폴백)·asmdef 기반 증분 컴파일 → 빌드 **70~80% 단축**·플랫폼별 Library 분리 → 전환당 **5~10분 절감**·캐시 서버 운영 시 빌드당 10~15분·실측 15분→5분(일 10회 기준 약 2시간 절약)·IL2CPP 증분은 변경 C++만 재컴파일. **오늘 결정 제안**: **fastlane(P1)은 .github조차 없어 진행 불가 상태이므로, 선행 단계로 NumLink 한 레포에 `actions/cache@v4` Library 캐싱만 넣은 최소 빌드 워크플로(`.github/workflows/build.yml`) 1개를 먼저 배치** — 캐싱 효과(40~50%) 검증 후 fastlane 확장(CI 0→1 첫 도미노). Sources: game-ci/unity-builder #612·DrCodes Reduce Unity Build Time 70%·GameCI Builder docs.',
+      },
+      {
+        title:
+          '🎨 Art Director — 2026 아이콘 Soft 3D(플러시·파스텔·촉각질감)+Mascot(마이크로캐릭터)이 캐주얼 설치율 +20% 레버·햅틱은 transient(탭)/continuous(텍스처) 분리+sharpness 의미전달+단일 HapticService·농장 캐릭터 감정은 squash-stretch 차등(기쁨=stretch·졸림=squash)',
+        description:
+          '**🎨 신규 1순위(아이콘)**: **2026 아이콘은 Soft 3D(플러시·파스텔·촉각질감)+Mascot(마이크로캐릭터) 조합이 캐주얼 설치율 +20% 성장 레버**(Duolingo 부엉이式 브랜드 리콜 전략)·MeowBeat는 고양이 마스코트를 파스텔 그라데이션+부드러운 라운드 엣지+미세 촉각질감으로 렌더링이 적합·NumLink는 보조로 Bold Geometric(굵은 스트로크+펀치 컬러 블록)이 숫자퍼즐 명료성에 최적(6/9 주얼톤·Variable 폰트와 충돌 없음). **🎨 신규 2순위(햅틱)**: **햅틱은 transient(탭)/continuous(텍스처) 분리+sharpness로 의미 전달·On/Minimal/Off 3단 옵션+단일 HapticService로 집중화**가 정석. **🎨 신규 3순위(캐릭터 감정)**: **농장 캐릭터 감정은 squash-stretch 차등 적용**(기쁨=stretch 과장·무거움/졸림=squash 우세). **오늘 결정 제안**: **P2 MeowBeat 앱 아이콘을 "Soft 3D 플러시 마스코트" 방향으로 확정+farm 먹이 애니메이션에 squash-stretch 차등 규칙 적용**(먹이 받기 직전 졸린 고양이=squash 우세·먹는 순간=stretch 과장 1프레임 삽입). 아이콘과 인게임 캐릭터 톤을 한 룰로 일관되게 묶음. P0 커밋·UMP 선행. Sources: 99designs splash·Envato icon-design-trends·Newly haptics·CGWire squash-stretch.',
+      },
+    ],
+    meetingTitle:
+      '🔥 6/10 종합 회의 — "백업 P0 13일 프레이밍이 오진으로 종결된 날": `push -u` 결과 "Everything up-to-date" → 진짜 P0는 "백업"이 아니라 "8주째 커밋 안 됨+UMP 미구현"',
+    meetingSummary:
+      '제59회 종합 회의. **13일짜리 "백업 P0" 프레이밍 자체가 오진이었음을 실행으로 종결했다**. 어제 측정 "72커밋 미백업"을 오늘 `push -u origin`으로 검증하니 "Everything up-to-date" — 커밋분은 이미 origin에 백업돼 있었고 upstream tracking 미설정이 fatal 착시를 만들었을 뿐. 오늘 `-u`로 추적 정상화. **진짜 P0를 정확한 단어로 교체**: "백업 안 됨"이 아니라 "미커밋 37파일(GMA+다국어+음량)이 8주째 커밋조차 안 됨" — push로는 안 잡히고 커밋이 없으면 백업도 없다. **출시 차단급 신규 합의**: Developer(grep 0건)와 QA(MobileAds.Initialize 직행 추적)가 **UMP 동의 흐름 0건을 독립 2중 확인** — EEA/UK 광고 0원+정책 위반으로 출시 차단급. 나머지는 출시 준비 신규 리서치(메타층 LTV 90%·오디오 calibration·평점 4.5+ KPI·Soft 3D 아이콘)를 P2로 적재. 메타: 6/9이 "처방을 처음 실행한 날"이라면, 오늘은 그 실행이 13일간의 진단 단어 자체가 틀렸음을 드러낸 날 — "백업"을 "커밋"으로 교체했다.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '오늘 push 결과가 모든 걸 바꿨습니다 — `git push -u origin feature/song-ownership-migration`을 실행하니 "Everything up-to-date"였어요. 어제 제가 측정한 "72커밋 미백업"은 데이터 유실이 아니라 upstream tracking이 안 잡혀 추적이 안 됐던 착시였습니다. 커밋분은 이미 origin에 있었고, 오늘 -u로 추적만 정상화됐어요. 13일간 "백업하라"고 한 프레이밍 자체가 틀렸습니다. 진짜 P0는 "백업"이 아니라 "미커밋 37파일이 8주째 커밋조차 안 된 것"이에요. 단어를 바꿔야 합니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: '동의합니다. 그 미커밋 37파일을 실측했어요 — SongData에 titleKo, GameManager +59줄 다국어·곡버튼 앵커 통일, SongManager +16줄 곡별 음량. 그리고 GMA 쪽은 AndroidResolverDependencies·Manifest만 떠 있고 동의 코드는 0건입니다. ConsentInformation·UserMessagingPlatform·ConsentForm grep 전부 0건이고 DLL만 import된 상태예요. GMA를 chore/gma-25-migration으로 분리 커밋하고 게임플레이 변경은 별도 feat 커밋으로 8주 미커밋을 끊어야 합니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: 'UMP는 제가 코드 추적으로도 확인했습니다 — AdMob이 동의 절차 없이 MobileAds.Initialize로 직행해요. Developer의 grep 0건과 독립적으로 같은 결론입니다. GDPR/구글 정책 위반이라 출시 차단급이고, 이건 정적 검증으로는 안 잡히는 사각지대예요. MeowBeat 검증 3종은 오늘도 ALL PASS·곡10·버그0 무회귀입니다. 반면 NumLink는 Tools 0개에 Editor 폴더가 비어 회귀탐지가 여전히 0이고요. UMP 구현을 출시 차단 게이트로 못박자고 제안합니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '출시 준비 신규 데이터예요. 하이브리드캐주얼 D30이 8~12%로 하이퍼캐주얼(1~3%)의 4~5배인데, 차이는 농장 같은 메타게임층입니다. LTV의 90%가 메타층에서 발생하고, 메타가 3~5세션 내 등장해야 D30 곡선에 진입해요. MeowBeat는 곡 클리어 보상을 즉시 농장 건물·고양이 해금에 연결하는 루프를 첫 3~5세션에 배치하자고요. 리워드 광고 노출 유저는 IAP를 4배 더 하고 평균 결제액이 +326%라, 광고가 결제를 잠식하는 게 아니라 촉진합니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '2026 ASO 알고리즘이 키워드 매칭에서 리텐션·평점 최신성 중심으로 이동했어요. 평점 3→4스타로 올리면 설치전환 +89%, 4.5+는 설치 3배입니다. 신규 리뷰 최신성이 랭킹에 직접 반영돼서 출시 직후 2주가 결정적이에요. NumLink·MeowBeat 둘 다 "평점 4.5+ 사수"를 KPI로 두고, 인앱 평점 팝업을 클리어/콤보 성공 직후에만 띄우자고 제안합니다. 캐주얼 아이콘 A/B 리프트가 4~8%(구글 8~12%)라 출시 전 아이콘 A/B도 필수예요.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'agent-office Pages는 최근 5회 전부 success로 안정적입니다. 두 Unity 레포는 .github·fastlane 둘 다 미배치라 어제 P1(fastlane)은 진행 0이에요. fastlane은 .github조차 없어 바로 못 갑니다. 그래서 선행 단계로 NumLink 한 레포에 actions/cache@v4 Library 캐싱만 넣은 최소 빌드 워크플로 1개를 먼저 배치하자고요 — Library 캐싱만으로 CI 빌드가 40~50% 단축되고, 효과를 검증한 뒤 fastlane으로 확장하면 CI 0→1 첫 도미노가 됩니다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '2026 아이콘 정석은 Soft 3D 플러시+Mascot 조합이고, 캐주얼 설치율 +20% 레버예요. MeowBeat 아이콘을 고양이 마스코트의 파스텔 그라데이션+촉각질감으로 확정하자고 제안합니다 — Duolingo 부엉이式 브랜드 리콜이죠. 동시에 farm 먹이 애니메이션에 squash-stretch 차등을 적용해서, 먹기 직전 졸린 고양이는 squash, 먹는 순간은 stretch 과장 1프레임으로 "살아있는 반응"을 만들면 아이콘과 인게임 톤이 한 룰로 묶입니다. 햅틱은 단일 HapticService로 집중화하고요.',
+      },
+      {
+        speaker: 'Orchestrator',
+        note: '종합합니다. P0① MeowBeat는 "백업"이 아니라 "커밋"이 진짜 P0 — GMA를 별도 브랜치로 분리 커밋. P0② UMP 동의 초기화를 출시 차단 게이트로(Dev+QA 2중 확인). P1③ NumLink Tools 3종 이식+AutoGenTests git rm 확정+DevOps가 cache 빌드 워크플로 1개 선배치. P2는 MeowBeat 농장 메타 첫 3~5세션 배치·오디오 calibration·평점 4.5+ KPI·Soft 3D 마스코트 아이콘. 오늘은 13일 "백업 P0" 프레이밍이 오진이었음을 실행으로 종결하고, 진단을 정확한 단어로 교체한 날입니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: '🚨 P0[재정의·최우선] MeowBeat 미커밋 37파일 — "백업"이 아니라 "커밋"이 진짜 P0, GMA v25 별도 브랜치 분리 커밋',
+        description:
+          '`push -u origin` 결과 "Everything up-to-date"로 커밋분은 이미 백업돼 있음이 확인됨 → 13일짜리 "백업 P0" 프레이밍은 오진으로 종결. 진짜 P0는 미커밋 37파일(GMA 마이그레이션+곡 한/영 다국어+곡별 음량 밸런스)이 8주째 커밋조차 안 된 것 — push로는 안 잡히고 커밋이 없으면 백업도 없다. ① GMA 관련 변경(AndroidResolverDependencies.xml·AndroidManifest.xml·Plugins/Android·PlaceholderAds)을 별도 브랜치 `chore/gma-25-migration`으로 분리 커밋 ② 게임플레이 변경(SongData titleKo·GameManager 다국어+앵커·SongManager 음량)은 별도 feat 커밋 ③ Packages manifest unity-mcp 교체는 별도 chore. 8주 미커밋 해소가 1순위.',
+      },
+      {
+        title: '🚨 P0[출시 차단 게이트] MeowBeat UMP 동의 초기화 구현 — Developer+QA 2중 확인',
+        description:
+          'Developer(grep 0건)와 QA(`MobileAds.Initialize` 직행 코드 추적)가 UMP 동의 흐름 0건을 독립 2중 확인. UMP DLL/라이브러리(`GoogleMobileAds.Ump.*`)는 import됐으나 동의 초기화 코드 미작성 → EEA/UK 사용자 광고 0원+Google 인증 CMP 강제 정책 위반(스토어 거절/계정 정지 리스크). ① `MobileAds.Initialize` 호출 앞에 `ConsentInformation.Update`(`requestConsentInfoUpdate`)+`canRequestAds` 게이트 추가 ② 동의 폼 로드/표시(`ConsentForm.LoadAndShowConsentFormIfRequired`) ③ EEA 디버그 지역 시뮬레이션으로 동의 흐름 검증. 정적 검증으로는 안 잡히는 사각지대이므로 출시 차단 게이트로 못박음.',
+      },
+      {
+        title: '🔧 P1 NumLink 검증 인프라 — Tools 3종 이식 + AutoGenTests git rm 확정 + actions/cache 빌드 워크플로 선배치',
+        description:
+          'NumLink는 본진 origin과 0/0 동기화로 백업 안전망은 양호하나 검증 인프라가 0(Tools 폴더 부재·Assets/Tests/Editor 빈 폴더·AutoGenTests 58→59일째 삭제 지속·회귀탐지 0). ① AutoGenTests 4파일을 `git -C C:/Unity/NumLink rm Assets/Tests/Editor/AutoGenTests.*`로 삭제 확정 커밋(58일째 의도적 삭제로 종결) ② MeowBeat 템플릿(unity_validate.py·qa_static.py·run_regression.py·known_bugs.json)을 NumLink/Tools/로 복사+씬 경로 상수 갱신 ③ DevOps: fastlane(.github 부재로 진행 불가) 대신 NumLink에 `actions/cache@v4` Library 캐싱만 넣은 최소 빌드 워크플로(`.github/workflows/build.yml`) 1개 선배치 — 빌드 40~50% 단축 검증 후 fastlane 확장(CI 0→1 첫 도미노).',
+      },
+      {
+        title: '🎮💻 P2 MeowBeat 출시 품질 — 농장 메타 첫 3~5세션 배치 + 기기별 audio offset calibration',
+        description:
+          '메타층(Game Designer): 하이브리드캐주얼 D30 8~12%는 하이퍼(1~3%)의 4~5배이고 LTV의 90%가 메타층에서 발생·메타가 3~5세션 내 등장해야 D30 곡선 진입 → manifest에 "곡 클리어 → 농장 재화 N개 지급 → 건물 1단계 해금" 루프 정의+농장 화면을 곡 선택 직전/직후 노출. 오디오(Developer): 현재 음량 곱셈만 손본 상태라 판정 정확도(Android 출력 지연) 미검증 → 기기별 audio offset calibration 슬라이더 UI+`AudioSource.PlayScheduled` 기반 시작 동기화 도입(calibration이 출시 전 체감 품질 최대 레버). 모두 P0 커밋·UMP 후 착수.',
+      },
+      {
+        title: '📦🎨 P2 마케팅·디자인 — 평점 4.5+ KPI + 아이콘 A/B + Soft 3D 마스코트 + farm squash-stretch',
+        description:
+          '마케팅(Content): 2026 ASO가 평점 최신성 중심으로 이동(3→4스타 +89%·4.5+ 설치 3배)·NumLink·MeowBeat 둘 다 "평점 4.5+ 사수" KPI화+인앱 평점 팝업을 클리어/콤보 성공 직후에만 노출+출시 직후 2주 집중 리뷰 유도+아이콘 A/B(리프트 4~8%·구글 8~12%) 출시 전 필수. 디자인(Art): MeowBeat 앱 아이콘을 "Soft 3D 플러시 마스코트"(파스텔 그라데이션+촉각질감·캐주얼 설치율 +20% 레버)로 확정+farm 먹이 애니메이션에 squash-stretch 차등(받기 직전 졸린 고양이=squash·먹는 순간=stretch 과장 1프레임)+햅틱 단일 HapticService 집중화. 모두 P0 후 착수.',
+      },
+    ],
+  },
+  {
     id: '2026-06-09T04:00:00-daily-standup',
     date: '2026-06-09',
     researchTitle:
