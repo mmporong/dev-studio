@@ -43,6 +43,114 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-06-11T04:00:00-daily-standup',
+    date: '2026-06-11',
+    researchTitle:
+      '🔥 6/11 목요일 데일리 스탠드업 — **🎯 진단은 6/10에 끝났다(백업→커밋 재정의 완료). 그런데 6/11 오늘도 두 레포 0커밋·미커밋 그대로 — 이제 부족한 건 "진단"이 아니라 "실행 트리거" 하나뿐**·**🟢 오늘의 실질 기여: QA가 미커밋 37파일을 분리 가능한 기능 묶음으로 해부 — GMA 5파일 + i18n 4파일(GameManager +59줄 9주째 미커밋) + 폰트/패키지/placeholder. "커밋하라"는 추상 명령을 복붙 가능한 3커밋 시퀀스로 환원**·**🆕 Game Designer: 조절식 난이도 모드 D30 +22%·점진적 온보딩+즉시피드백 1세션 잔존 18%→41%(2.3배)·일일미션 우수운영사 월 6~10개·Royal Match 매치3 D30 16.5% 1위**·**💻 Developer: Unity 6.3 LTS(6000.3·25.12 출시·27.12 지원) 모바일 Bloom Kawase/Dual 필터·Burst+IL2CPP 빌드 -22%·HTTP/2 기본화 안드로 CPU -15~20%·신규 부채 SongVolume 음량 소스 이원화(SongManager 2곳 직접 read + OptionManager static)**·**🔍 QA: MeowBeat 검증 4종 ALL PASS(0err)·곡10 정합 100%·known_bugs 6·회귀 2/2·신규 사각지대 qa_static이 titleKo 누락/RectTransform 앵커 미검증**·**📦 Content: 애플 In-App Events 종료 후 7일 +20%(Royal Match)·막판 3일 +11%(Candy Crush)·앱당 15개 승인/동시 10개/최장 31일/14일 전 사전노출·구글 프로모션 콘텐츠 28일 권장·딥링크 즉시연결이 전환 핵심**·**🛡 DevOps: agent-office Pages 정상·두 게임 .github 부재 CI 0 재확정·매니지드 러너(Blacksmith 무료 3000분/Namespace) GitHub 대비 2배속·50% 비용절감·runs-on YAML 1줄 마이그레이션**·**🎨 Art Director: M3 Expressive 스프링 모션(spatial/effects 분리·damping 0.6~0.8·60/30/10 분배 룰)·비대칭 이징(입장 ease-out/퇴장 ease-in)·마이크로 인터랙션 100~200ms·브루탈리스트 인터랙티비티 부상**.',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제60회 — **6/11 목요일·1개월 임계 D+18**. **🎯 오늘의 본질 = "진단은 어제 끝났는데 실행은 여전히 0"인 날**: 6/10에 13일짜리 "백업 P0" 프레이밍을 "8주째 미커밋"으로 재정의하며 진단을 완성했다. 그런데 6/11 오늘 두 Unity 레포 모두 **오늘 커밋 0건**·MeowBeat 미커밋 37파일·NumLink 미커밋 36파일이 **그대로**다. 6/10 P0 액션 3종(GMA 별도 브랜치 분리 커밋·UMP 동의 구현·NumLink Tools 이식) **전부 미착수**(`gma-25-migration` 브랜치 부재 확인·UMP 코드는 작업트리에도 0건·NumLink Tools 디렉터리 여전히 없음). **결론: 더 이상 진단할 게 없다. 부족한 건 "왜"가 아니라 "실행 트리거" 하나다.** 이는 6/7~6/8 회의가 이미 규명한 "새벽 무인 실행이라 게임 레포 push/커밋 승인을 못 받아 P0 영구 이월"의 재확인 — 진단을 14일째 반복할 게 아니라 사용자 단일 액션으로 환원해야 한다. **🟢 오늘의 실질 기여(QA)**: 미커밋 37파일이 단일 덩어리가 아니라 **분리 가능한 3개 기능 묶음**임을 해부했다 — ① GMA v25 5파일(ADAPTIVE.prefab·768x1024×2·AndroidManifest.xml·AndroidResolverDependencies) ② i18n 4파일(SongData +titleKo·GameManager +59줄 다국어 GetSongDisplayTitle+곡버튼 잠금/앵커 0.05~0.95+SongManager 음량·manifest titleKo) — **GameManager +59줄은 9주(4/12 이후)째 미커밋된 게임플레이 핵심** ③ 폰트 SDF/Packages manifest/placeholder. 따라서 "커밋하라"는 추상 명령을 **복붙 가능한 3개 git 커밋 시퀀스**로 환원할 수 있다 — 막막함이 미실행의 한 원인이라면 이게 트리거다. **🆕 시장(Game Designer)**: **조절식 난이도 모드 제공 시 D30 충성도 +22%**·점진적 온보딩+즉시 피드백으로 **1세션 잔존 18%→41%(2.3배)**·일일미션 우수운영사 월 6~10개 완료(평균 2~4개)·게이미피케이션 적용 D30 30~40% vs 비적용 15~25%·매치3 D30 1위 Royal Match 16.5%·캐주얼 2026 벤치마크 D1 40%+/D7 8%+/D30 5~9%·전환율 우수군 3~5%·ARPDAU $0.10~0.20·라이브옵스 운영 게임이 모바일 IAP 매출의 84%(6/10 메타층 LTV·리워드 광고와 겹치지 않는 "조절식 난이도·온보딩 즉시피드백·일일미션 운영량" 신규 토픽). **💻 Developer(신규)**: **Unity 6.3 LTS(6000.3·2025.12 출시·2027.12 지원)** — 모바일 전용 Bloom 필터 Kawase(저해상도 최速)·Dual 추가로 리듬게임 비트 이펙트 GPU 부하 절감·Burst+IL2CPP 빌드시간 최대 -22%·HTTP/2 기본화로 안드로이드 CPU -15~20%(manifest.json CDN 로딩 직접 이득). **신규 부채**: SongManager.cs가 `PlayerPrefs.GetFloat("SongVolume")`를 두 곳에서 매번 읽고 OptionManager에 `CurrentVolume` static까지 별도 보유 — 음량 상태 소스가 이원화돼 동기화 누락 위험·매직키 `"SongVolume"`도 두 파일 하드코딩(GameConstants 미적용)(6/10 PlayScheduled·DSP calibration과 겹치지 않는 "Unity 6.3 LTS·음량 소스 이원화" 신규 토픽). **🔍 QA(신규)**: MeowBeat 검증 4종 ALL PASS(unity_validate 0err 4.6s·qa_static 0err·run_regression 2/2·known_bugs 6패턴)·곡 10 audioFile 정합 100%·**무회귀**·미커밋 37건도 0err 통과. **신규 사각지대**: qa_static.py가 audioFile/note lane/scene button은 검증하나 **titleKo 누락이나 GameManager가 재조정한 RectTransform 앵커(0.05~0.95)는 미검증** — titleKo 곡명 길이 오버플로(MiddleLeft+Overflow)는 정적 검증 불가 → known_bugs.json에 "titleKo 누락" 패턴 추가 권장. NumLink는 Tools 부재로 회귀탐지 0·AutoGenTests 삭제 상태 지속. **📦 Content(신규)**: **애플 In-App Events 메이저 이벤트 시 게임 매출 종료 후 7일째 +20%(Royal Match)·막판 3일 +11%(Candy Crush)** — 신규 설치+휴면 재활성 동시·운영 한도 앱당 승인 최대 15개/동시 노출 10개/최장 31일/14일 전 사전노출·노출면 검색·추천탭·제품페이지(인디도 무료 노출)·구글 프로모션 콘텐츠는 28일 권장·스토어홈/검색/오퍼홈 4개 면·딥링크 즉시연결이 전환 핵심(6/10 평점 최신성·아이콘 A/B와 겹치지 않는 "인앱 이벤트 매출 리프트·운영 한도" 신규 토픽). **🛡 DevOps(신규)**: agent-office Pages 최근 3런 전부 success(6/9 56초)·NumLink·Feedme .github 둘 다 부재 CI 0 재확정·웹: **매니지드 러너(Blacksmith 무료 3000분/Namespace Unity 빌드 적합)가 GitHub 호스티드 대비 2배+ 속도·50%+ 비용절감·`runs-on` YAML 한 줄 마이그레이션**·베어메탈(Tenki) 약 30% 빠름·NVMe Docker 레이어 영속화 최대 40배·GitHub 2026.03 가격 인상으로 대안 매력 증가(6/10 actions/cache@v4·증분 빌드와 겹치지 않는 "매니지드 러너·베어메탈" 신규 토픽). **🎨 Art Director(신규)**: **M3 Expressive 스프링 모션 표준화** — 스프링을 spatial(위치·크기·회전)과 effects(색·투명도)로 분리·낮은 damping(0.6~0.8)으로 오버슈트/바운스·**60/30/10 분배 룰(워크호스 ease-out 60%·보조 30%·스프링 10%)**·비대칭 이징이 디자인 언어(입장 ease-out `cubic-bezier(0,0,0.2,1)`/퇴장 ease-in·토글 sharp·마이크로 인터랙션 100~200ms)·"브루탈리스트 인터랙티비티" 부상(의식적 조작+강한 햅틱/사운드로 매력적 불완전함)(6/10 Soft 3D 아이콘·squash-stretch와 겹치지 않는 "M3 스프링·비대칭 이징·모션 분배 룰" 신규 토픽). **🎯 오늘 핵심 결정 = ① [P0·실행 환원] MeowBeat 미커밋 37파일을 3커밋으로 분리 — 추상 "커밋하라" 대신 복붙 가능한 명령 시퀀스 제공: (a) `chore(gma): GMA v25 마이그레이션` 5파일 (b) `feat(i18n): 곡명 다국어 표시 및 잠금 시각화` 4파일(GameManager 9주 미커밋 해소) (c) `chore: 폰트/패키지/placeholder 정리`. 진단 14일·실행 0을 끊는 유일한 길은 막막함 제거 ② [P0·후속] UMP 동의 초기화 구현 — GMA 커밋 직후 `MobileAds.Initialize` 앞에 `ConsentInformation.Update`+`canRequestAds` 게이트(출시 차단급 유지) ③ [P1] NumLink Tools 3종 이식 — push 불필요한 로컬 작업이므로 새벽 무인에도 실행 가능·다음 세션 최우선·AutoGenTests git rm 확정 ④ [P2] 출시 품질 신규 적재: MeowBeat "Auto-Fit 조절식 난이도"(D30 +22%)·분기 상시 In-App Event 1개(종료 후 +11~20%)·Unity 6.3 LTS Bloom Kawase 전환·SongVolume 단일 소스 통합·NumLink M3 스프링(연결 확정 순간만)·일일미션 3개 동시 노출**. 메타 통찰: 6/10이 "진단 단어를 백업→커밋으로 교체한 날"이었다면, 6/11은 "그 진단조차 더는 보탤 게 없고 남은 건 실행 트리거 하나임을 인정한 날" — 회의의 임무가 "진단"에서 "막막함 제거(복붙 명령)"로 이동했다.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — 진단은 6/10에 끝났는데 6/11 오늘도 두 레포 0커밋·미커밋 그대로(MeowBeat 37·NumLink 36)·6/10 P0 3종(GMA 분리·UMP·Tools) 전부 미착수(gma-25-migration 브랜치 부재·UMP 코드 작업트리에도 0건·NumLink Tools 여전히 없음)·부족한 건 진단이 아니라 실행 트리거 하나',
+        description:
+          '**🎯 진단 완료 후 첫날, 실행 여전히 0**: 6/10에 "백업 P0" 13일 프레이밍을 "8주째 미커밋"으로 재정의하며 진단을 완성했으나, 6/11 오늘 두 Unity 레포 모두 **오늘 커밋 0건**·MeowBeat 미커밋 37파일·NumLink 미커밋 36파일이 그대로. **6/10 P0 액션 3종 완료 여부 실측**: ① GMA 별도 브랜치 분리 커밋 = **미완료**(`git branch -a`에 `gma-25-migration` 부재·GMA 5파일 여전히 미커밋) ② UMP 동의 구현 = **미완료**(Consent/UserMessaging 파일이 미커밋에도 작업트리에도 0건) ③ NumLink Tools 이식 = **미완료**(`C:/Unity/NumLink/Tools` 디렉터리 여전히 부재·회귀 인프라 0 지속). **✅ agent-office**: 998ab42(6/10 저널)·Pages 최근 3런 전부 success(56초·44초·35초). **측정값**: 두 레포 오늘 0커밋·MeowBeat 미커밋 37·NumLink 36. **결론**: 6/7~6/8이 규명한 "새벽 무인 실행이라 게임 레포 승인을 못 받아 영구 이월"의 재확인 — 진단을 14일째 반복할 게 아니라 실행 트리거로 환원해야 한다. **오늘 결정 제안**: 회의의 임무를 "진단"에서 "막막함 제거"로 이동 — 미커밋을 3개 복붙 커밋 명령으로 쪼개 제공. (git log/status/branch 실측)',
+      },
+      {
+        title:
+          '🎮 Game Designer — 조절식 난이도 모드 제공 시 D30 충성도 +22%·점진적 온보딩+즉시 피드백 1세션 잔존 18%→41%(2.3배)·일일미션 우수운영사 월 6~10개(평균 2~4개)·게이미피케이션 적용 D30 30~40% vs 비적용 15~25%·매치3 1위 Royal Match D30 16.5%·캐주얼 2026 D1 40%+/D7 8%+/D30 5~9%',
+        description:
+          '**🆕 시장 신규 1순위(조절식 난이도)**: **조절식 난이도 모드 제공 시 D30 충성도 +22%**(GameAnalytics)·리듬게임 이탈의 주원인이 "난이도 벽". **🆕 신규 2순위(온보딩 즉시피드백)**: **점진적 온보딩+즉시 피드백으로 1세션 잔존 18%→41%(2.3배)**(MoldStud). **🆕 신규 3순위(라이브옵스 운영량)**: 일일미션 우수운영사 월 6~10개 완료(평균사 2~4개)·게이미피케이션 적용 D30 30~40% vs 비적용 15~25%·매치3 D30 1위 Royal Match 16.5%·캐주얼 2026 벤치마크 D1 40%+/D7 8%+/D30 5~9%·전환율 우수군 3~5%·ARPDAU $0.10~0.20·라이브옵스 운영 게임이 모바일 IAP 매출의 84%(6/10 메타층 LTV·리워드 광고와 겹치지 않는 신규 토픽). **오늘 결정 제안(P2)**: **MeowBeat에 "Auto-Fit 조절식 난이도" 모드** — Easy/Normal/Hard 외 "오토 핏" 추가, 직전 3회 플레이 정확도/콤보 유실률 기반으로 노트 밀도 ±1단계 자동 조정·Auto-Fit 클리어도 동일 보상 지급해 "쉽게 깨도 손해 없음" 보장(패배-이탈 루프 차단·D30 +22% 근거). 대안: NumLink 일일미션 3개 동시 노출(월 6~10 완료 유도). P0 커밋·UMP 선행. Sources: Game Growth Advisor 2026 KPI·Naavik 퍼즐 라이브옵스·Xtremepush 게이미피케이션 2026·PocketGamer 매치3 D30·MoldStud 난이도-잔존.',
+      },
+      {
+        title:
+          '💻 Developer — Unity 6.3 LTS(6000.3·25.12 출시·27.12 지원) 모바일 Bloom Kawase/Dual 필터·Burst+IL2CPP 빌드 -22%·HTTP/2 기본화 안드로 CPU -15~20%·🆕 신규 부채 SongVolume 음량 소스 이원화(SongManager 2곳 직접 read + OptionManager static)+매직키 두 파일 하드코딩',
+        description:
+          '**🆕 웹(Unity 6.3 LTS)**: **Unity 6.3 LTS(6000.3·2025.12 출시·2027.12 지원)** — 모바일 전용 Bloom 필터 Kawase(저해상도 최速)·Dual 추가로 리듬게임 비트/노트 히트 이펙트 GPU 부하 절감·Burst+IL2CPP 빌드시간 최대 -22%·HTTP/2 기본화로 안드로이드 CPU -15~20%(manifest.json CDN 로딩 직접 이득). **🆕 신규 부채(코드 실측)**: SongManager.cs가 `PlayerPrefs.GetFloat("SongVolume")`를 두 곳에서 매번 읽고 OptionManager에 `CurrentVolume` static까지 별도 보유 → **음량 상태 소스가 이원화돼 동기화 누락 위험**·매직키 `"SongVolume"`도 두 파일 하드코딩(GameConstants 미적용)(6/10 PlayScheduled·DSP calibration과 겹치지 않는 신규 토픽). **오늘 결정 제안(P2)**: MeowBeat를 Unity 6.3 LTS로 올린 뒤 노트 히트 이펙트 Bloom을 Kawase 필터로 전환(모바일 GPU 절감 검증)·**선결 부채로 `SongVolume`을 OptionManager 단일 소스(static 프로퍼티 경유)로 통합+키 상수화**. P0 커밋·UMP 선행. Sources: Unity 6.3 LTS 블로그·6000.3 What\'s New·Gamigion 6.3 모바일 요약·URP Bloom 레퍼런스.',
+      },
+      {
+        title:
+          '🔍 QA Tester — ✅ MeowBeat 검증 4종 ALL PASS(unity_validate 0err 4.6s·qa_static 0err·run_regression 2/2·known_bugs 6)·곡10 정합 100%·무회귀·🟢 미커밋 37파일을 분리 가능한 3묶음으로 해부(GMA 5+i18n 4(GameManager +59줄 9주 미커밋)+폰트/패키지)·🚨 신규 사각지대 qa_static이 titleKo 누락/RectTransform 앵커 미검증·NumLink 회귀탐지 0 지속',
+        description:
+          '**✅ MeowBeat 검증(6/11 재실행)**: unity_validate.py PASS(0err/0warn·4.6s)·qa_static.py PASS(0err)·run_regression.py 2/2(RT_SIZE_ZERO·YAML_INDENT_M_FATHER)·known_bugs 6패턴·곡 10 audioFile 정합 100%·**무회귀**·미커밋 37건도 0err 통과(커밋해도 안전). **🟢 오늘의 실질 기여(미커밋 해부)**: 37파일은 단일 덩어리가 아니라 **분리 가능한 3묶음** — ① GMA v25 5파일(ADAPTIVE.prefab·768x1024×2·AndroidManifest·AndroidResolverDependencies) ② i18n 4파일(SongData +titleKo·GameManager +59줄 다국어/소유잠금/버튼앵커 0.05~0.95·SongManager 음량·manifest titleKo) — **GameManager +59줄은 9주(4/12 이후) 미커밋된 게임플레이 핵심** ③ 폰트 SDF/Packages manifest/placeholder. → "커밋하라"를 3개 복붙 커밋으로 환원 가능. **🚨 신규 사각지대**: qa_static.py가 audioFile/note lane/scene button은 검증하나 **titleKo 누락·GameManager 재조정 RectTransform 앵커(0.05~0.95)는 미검증**·titleKo 곡명 길이 오버플로(MiddleLeft+Overflow)는 정적 검증 불가 → known_bugs.json에 "titleKo 누락" 패턴 추가 권장. **🚨 NumLink**: Tools 부재+Assets/Tests/Editor AutoGenTests 삭제 → 회귀탐지 0 지속. **오늘 결정 제안**: P0 i18n 4파일을 `feat(i18n): 곡명 다국어 표시 및 잠금 시각화` 단일 커밋으로 9주 회귀 위험 차단+P2 known_bugs에 titleKo 패턴 추가. Sources: 검증 4종 실행·미커밋 diff 분석.',
+      },
+      {
+        title:
+          '📦 Content Writer — 애플 In-App Events 종료 후 7일 +20%(Royal Match)·막판 3일 +11%(Candy Crush)·앱당 승인 15개/동시 노출 10개/최장 31일/14일 전 사전노출·노출면 검색·추천탭·제품페이지(인디 무료 노출)·구글 프로모션 콘텐츠 28일 권장·딥링크 즉시연결이 전환 핵심',
+        description:
+          '**📦 신규 1순위(인앱 이벤트 매출 리프트)**: **애플 In-App Events 메이저 이벤트 시 게임 매출 종료 후 7일째 +20%(Royal Match)·막판 3일 +11%(Candy Crush)** — 신규 설치+휴면 재활성 동시 효과. **📦 신규 2순위(운영 한도/노출면)**: 앱당 승인 이벤트 최대 15개/동시 노출 10개/최장 31일/14일 전 사전노출·노출면=검색·추천탭·제품페이지(인디도 무료 노출 획득)·구글 프로모션 콘텐츠는 28일 권장·스토어홈/검색/오퍼홈 4개 면·"실시간 한정 경험" 강제·**클릭 후 즉시 해당 콘텐츠 딥링크 연결이 전환의 핵심**(6/10 평점 최신성·아이콘 A/B와 겹치지 않는 신규 토픽). **오늘 결정 제안(P2)**: **NumLink·MeowBeat 모두 분기 단위로 In-App Event 상시 1개 운영**(MeowBeat "주말 더블 보상 라이브"·NumLink "신규 챕터 한정 챌린지")·콘텐츠 업데이트마다 동일 시점에 이벤트 카드를 붙여 무료 검색·추천 노출+휴면 재활성·핵심 KPI는 이벤트 카드 탭→딥링크 진입 전환율. P0 커밋·UMP 선행. Sources: Sensor Tower In-App Events Impact·MobileAction IAE/프로모션 가이드 2026·App Radar 사전등록·Liftoff 2025 캐주얼 리포트.',
+      },
+      {
+        title:
+          '🛡 DevOps — agent-office Pages 최근 3런 전부 success(6/9 56초)·NumLink·Feedme .github 둘 다 부재 CI 0 재확정·🆕 매니지드 러너(Blacksmith 무료 3000분/Namespace Unity 빌드 적합) GitHub 호스티드 대비 2배+ 속도·50%+ 비용절감·runs-on YAML 한 줄 마이그레이션·베어메탈(Tenki) 약 30% 빠름·GitHub 2026.03 가격 인상으로 대안 매력 증가',
+        description:
+          '**🛡 CI 현황(실측 6/11)**: agent-office GitHub Pages 최근 3런 전부 success(6/9 데일리 스탠드업 56초·6/8 44초·Weekly Insights 35초)·배포 파이프라인 건강. NumLink(`C:/Unity/NumLink/.github`)·Feedme(`C:/Unity/Feedme/.github`) **둘 다 부재 → CI 0 재확정**. **🆕 웹(매니지드 러너·캐싱 외 기법)**: **매니지드 러너(Blacksmith 무료 3000분/Namespace Unity 빌드 적합)가 GitHub 호스티드 대비 2배+ 속도·50%+ 비용절감·`runs-on` YAML 한 줄 마이그레이션**·베어메탈(Tenki/Blacksmith) 약 30% 빠름·NVMe Docker 레이어 영속화(Blacksmith) 최대 40배·GitHub 2026.03 가격 인상(분당 단가↑·무료 분 축소)으로 대안 매력 증가·참고 GitHub도 Windows Server 2025+VS 2026 러너 GA(5/4)(6/10 actions/cache@v4·증분 빌드와 겹치지 않는 신규 토픽). **오늘 결정 제안(P2)**: 게임 레포 CI 도입 시점이 오면 GitHub 호스티드가 아니라 매니지드 러너(Blacksmith/Namespace)를 처음부터 검토 — Unity Library 캐싱과 결합 시 빌드 시간 대폭 단축·한 줄 마이그레이션이라 초기 비용 거의 0. P0 커밋·P1 NumLink CI 선행. Sources: Tenki GitHub Actions Runner Showdown 2026·GitHub Engineering larger-runners·GitHub Docs hosted runners.',
+      },
+      {
+        title:
+          '🎨 Art Director — M3 Expressive 스프링 모션 표준화(spatial/effects 분리·damping 0.6~0.8 오버슈트·60/30/10 분배 룰)·비대칭 이징이 디자인 언어(입장 ease-out·퇴장 ease-in·토글 sharp·마이크로 인터랙션 100~200ms)·브루탈리스트 인터랙티비티 부상(의식적 조작+강한 햅틱/사운드)',
+        description:
+          '**🎨 신규 1순위(M3 Expressive 스프링)**: 스프링을 spatial(위치·크기·회전)과 effects(색·투명도)로 분리·낮은 damping(0.6~0.8)으로 오버슈트/바운스·**60/30/10 분배 룰(워크호스 ease-out 60%·보조 30%·스프링 10%)**. **🎨 신규 2순위(비대칭 이징)**: 입장/퇴장에 같은 커브 금지(입장 ease-out `cubic-bezier(0,0,0.2,1)`·퇴장 ease-in)·토글류 sharp ease·마이크로 인터랙션 100~200ms. **🎨 신규 3순위(브루탈리스트 인터랙티비티)**: 의식적 조작+강한 햅틱/사운드 피드백으로 "매력적 불완전함"·노트 히트의 게임필을 정직·강하게(6/10 Soft 3D 아이콘·squash-stretch와 겹치지 않는 신규 토픽). **오늘 결정 제안(P2)**: **NumLink 숫자 타일에 M3 Expressive 스프링 도입(60/30/10 절제)** — 타일 선택/연결 확정 순간만 spatial 스프링(stiffness 380·damping 0.8)으로 살짝 오버슈트→정착("딸깍" 촉각감)·레벨 시작 등장 ease-out/클리어 퇴장 ease-in 비대칭·3테마 전환·힌트 버튼은 sharp·전체 모션 <200ms 유지(퍼즐 흐름 보호)·바운스는 "연결 확정" 단 한 곳만. Unity 구현: DOTween `Ease.OutBack` 또는 커스텀 커브·View 레이어 트윈만(Domain 불변)·매직넘버는 GameConstants.cs. P0 커밋·UMP 선행. Sources: Material Design 3 Motion·M3 Expressive Motion·Flutter Motor(스프링 수치)·baraa.app 이징 디자인 언어·Primotech UI/UX 2026.',
+      },
+    ],
+    meetingTitle:
+      '🔥 6/11 종합 회의 — "진단은 끝났다, 남은 건 실행 트리거 하나": 회의 임무를 진단에서 "막막함 제거(복붙 3커밋 명령)"로 이동',
+    meetingSummary:
+      '제60회 종합 회의. **진단 완료 후 첫날인데 실행은 여전히 0**. 6/10에 "백업→커밋" 재정의로 진단을 완성했으나, 오늘 두 레포 0커밋·미커밋 그대로·6/10 P0 3종(GMA 분리·UMP·Tools) 전부 미착수다. 결론: **더 이상 진단할 게 없다 — 부족한 건 "왜"가 아니라 "실행 트리거" 하나**. 이는 6/7~6/8이 규명한 "새벽 무인 실행이라 게임 레포 승인 못 받아 영구 이월"의 재확인이다. **오늘의 전환**: QA가 미커밋 37파일을 분리 가능한 3묶음(GMA 5·i18n 4·기타)으로 해부했고, GameManager +59줄이 9주째 미커밋된 게임플레이 핵심임을 짚었다. 따라서 회의의 임무를 "진단"에서 **"막막함 제거"**로 옮겨, "커밋하라"를 복붙 가능한 3개 git 커밋 명령으로 환원한다. 나머지는 출시 품질 신규 리서치(조절식 난이도 D30+22%·인앱 이벤트 +11~20%·Unity 6.3 LTS Bloom·M3 스프링)를 P2로 적재. 메타: 6/10이 "진단 단어를 교체한 날"이라면, 6/11은 "진단으로 보탤 게 더는 없고 실행 트리거 하나만 남았음을 인정한 날".',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '솔직히 말하면, 어제로 진단은 끝났습니다. "백업"을 "커밋"으로 교체했고 더 정확해질 게 없어요. 그런데 오늘도 두 레포 0커밋이고 6/10 P0 3종은 전부 미착수입니다 — gma-25-migration 브랜치 없고, UMP 코드는 작업트리에도 없고, NumLink Tools 디렉터리도 여전히 없어요. 6/7에 우리가 규명했던 그대로예요: 새벽 무인 실행이라 게임 레포 커밋 승인을 못 받습니다. 14일째 진단을 반복하는 건 의미가 없어요. 오늘은 진단을 멈추고, 사용자가 깨어났을 때 복붙 한 번으로 끝낼 수 있게 명령을 만들어 드립시다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '그래서 제가 미커밋 37파일을 쪼개봤습니다. 단일 덩어리가 아니에요 — GMA v25 5파일, i18n 4파일(SongData·GameManager·SongManager·manifest), 그리고 폰트/패키지/placeholder. 특히 GameManager +59줄은 다국어·소유잠금·버튼앵커인데 4/12 이후 9주째 미커밋된 게임플레이 핵심입니다. 검증 4종은 오늘도 ALL PASS·곡10·버그0 무회귀라 지금 커밋해도 100% 안전해요. "커밋하라"가 막막했다면, 이걸 3개 커밋 명령으로 쪼개면 그 막막함이 사라집니다. 다만 qa_static이 titleKo 누락이랑 RectTransform 앵커는 아직 못 잡아서 known_bugs에 패턴 하나 추가하겠습니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'i18n 4파일 커밋은 `feat(i18n): 곡명 다국어 표시 및 잠금 시각화`로 묶으면 깔끔합니다. 그리고 새 부채를 하나 찾았어요 — SongManager가 PlayerPrefs "SongVolume"을 두 곳에서 직접 읽는데 OptionManager에도 CurrentVolume static이 따로 있어서 음량 소스가 이원화돼 있습니다. 동기화 누락 위험이라 OptionManager 단일 소스로 통합하고 키를 상수화해야 해요. 웹에선 Unity 6.3 LTS가 나왔는데 모바일 Bloom Kawase 필터가 리듬게임 노트 이펙트 GPU 부하를 줄여줍니다. 빌드도 Burst+IL2CPP -22%, HTTP/2로 안드로이드 CPU -15~20%고요. 다 P0 커밋 이후 얘기입니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '출시 품질 신규 데이터예요. 조절식 난이도 모드를 주면 D30 충성도가 +22% 오릅니다. 리듬게임 이탈 1위가 "난이도 벽"이거든요. MeowBeat에 Easy/Normal/Hard 외에 "오토 핏" 모드를 넣어서 직전 3회 정확도 기반으로 노트 밀도를 ±1단계 자동 조정하고, 오토핏 클리어도 보상을 똑같이 주면 "쉽게 깨도 손해 없음"이 보장돼 패배-이탈 루프가 끊깁니다. 온보딩도 즉시 피드백을 주면 1세션 잔존이 18%에서 41%로 2.3배예요. NumLink는 일일미션 3개 동시 노출로 가면 됩니다. 전부 P2, P0 커밋 다음입니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '애플 In-App Events가 효과가 확실합니다 — Royal Match는 이벤트 종료 후 7일째 매출이 +20%, Candy Crush는 막판 3일에 +11% 올랐어요. 신규 설치랑 휴면 복귀가 동시에 일어나서요. 앱당 15개까지 승인되고 동시 10개·최장 31일·14일 전 사전노출 가능하고, 검색·추천탭·제품페이지에 인디도 무료로 노출됩니다. NumLink·MeowBeat 둘 다 분기마다 상시 이벤트 1개씩 돌리고, 콘텐츠 업데이트할 때마다 같은 시점에 이벤트 카드를 붙이자고요. 핵심은 카드 클릭하면 바로 해당 콘텐츠로 딥링크 연결하는 겁니다. P0 커밋 선행이고요.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'agent-office Pages는 최근 3런 전부 success로 건강합니다. 두 게임 레포는 .github가 아예 없어서 CI 0 재확정이고요. 캐싱 말고 새로운 빌드 단축 기법을 봤는데, 매니지드 러너가 흥미롭습니다 — Blacksmith는 무료 3000분 주고 Namespace는 Unity 빌드에 적합한데, GitHub 호스티드보다 2배 이상 빠르고 비용은 50% 이상 절감돼요. 마이그레이션도 runs-on 한 줄이면 끝납니다. GitHub가 2026년 3월 가격을 올려서 대안 매력이 더 커졌어요. 게임 레포 CI 도입할 때가 오면 처음부터 매니지드 러너를 검토하자는 제안입니다. P1 NumLink CI 선행이고요.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '2026 모션 트렌드 핵심은 M3 Expressive 스프링입니다. 스프링을 위치/크기용과 색/투명도용으로 나누고, damping을 0.6~0.8로 낮춰 살짝 오버슈트를 주는데, 핵심은 60/30/10 분배 룰이에요 — 기본 ease-out 60%, 보조 30%, 스프링은 10%만. 남발하면 테크데모로 전락하거든요. NumLink 숫자 타일은 "연결 확정" 순간 단 한 곳에만 스프링을 주고, 레벨 시작은 ease-out·클리어 퇴장은 ease-in으로 비대칭을 줍시다. 전체 모션은 200ms 아래로 유지해 퍼즐 흐름을 안 끊고요. Domain은 안 건드리고 View 트윈만, 매직넘버는 GameConstants에 둡니다. P2입니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: '🚨 P0[실행 환원] MeowBeat 미커밋 37파일 → 복붙 가능한 3커밋으로 분리',
+        description:
+          '진단 14일·실행 0을 끊는 유일한 길은 "막막함 제거". "커밋하라"는 추상 명령 대신 사용자가 깨어났을 때 복붙할 수 있는 명령 시퀀스를 제공한다: ① `chore(gma): GMA v25 마이그레이션` — ADAPTIVE.prefab·768x1024×2·GoogleMobileAdsPlugin AndroidManifest.xml·AndroidResolverDependencies 5파일 ② `feat(i18n): 곡명 다국어 표시 및 잠금 시각화` — SongData.cs(+titleKo)·GameManager.cs(+59줄 9주 미커밋)·SongManager.cs·manifest.json(titleKo) 4파일 ③ `chore: 폰트/패키지/placeholder 정리` — 폰트 SDF·Packages manifest·나머지. 검증 4종 ALL PASS·무회귀라 지금 커밋해도 100% 안전(QA 보증). 게임 레포라 새벽 무인 자동 실행은 불가 → 사용자 승인 1회로 완료.',
+      },
+      {
+        title: '🚨 P0[출시 차단·후속] UMP 동의 초기화 구현',
+        description:
+          'GMA 커밋 직후 `MobileAds.Initialize` 앞에 `ConsentInformation.Update`+`canRequestAds` 게이트+동의 폼 로드/표시+EEA 디버그 지역 검증 추가. 미구현 시 EEA/UK 광고 0원+Google 인증 CMP 강제 정책 위반(스토어 거절/계정 정지)·정적 검증 사각지대로 출시 차단급 유지(Dev grep 0건+QA MobileAds.Initialize 직행 추적 2중 확인).',
+      },
+      {
+        title: '🔧 P1 NumLink 검증 인프라 — push 불필요한 로컬 작업이므로 새벽에도 실행 가능',
+        description:
+          'NumLink Tools 3종(unity_validate.py·qa_static.py·run_regression.py)+known_bugs.json을 MeowBeat 템플릿에서 `C:/Unity/NumLink/Tools/`로 복사+씬 경로 갱신(회귀탐지 0→가동)·AutoGenTests 4파일 `git rm`으로 삭제 확정(59일째 의도적 삭제 종결). 이건 push/승인이 불필요한 로컬 파일 작업이라 새벽 무인에도 실행 가능 → 다음 세션 최우선. (단, 본 회의 워크플로 범위 밖이므로 별도 세션에서 처리)',
+      },
+      {
+        title: '🎮💻📦🎨 P2 출시 품질 신규 적재 — 모두 P0 후',
+        description:
+          'Game Designer: MeowBeat "Auto-Fit 조절식 난이도" 모드(직전 3회 정확도 기반 노트 밀도 ±1단계·D30 +22%)·NumLink 일일미션 3개 동시 노출. Developer: Unity 6.3 LTS 업그레이드+노트 Bloom Kawase 전환·선결로 SongVolume을 OptionManager 단일 소스 통합+키 상수화. Content Writer: NumLink·MeowBeat 분기 상시 In-App Event 1개(종료 후 +11~20%·딥링크 즉시연결). Art Director: NumLink 숫자 타일 M3 Expressive 스프링(연결 확정 순간만·60/30/10 절제·<200ms). QA: known_bugs.json에 "titleKo 누락" 패턴 추가. 모두 P0 커밋·UMP 후 착수.',
+      },
+    ],
+  },
+  {
     id: '2026-06-10T04:00:00-daily-standup',
     date: '2026-06-10',
     researchTitle:
