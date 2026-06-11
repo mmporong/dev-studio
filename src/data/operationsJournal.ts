@@ -43,6 +43,119 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-06-12T04:00:00-daily-standup',
+    date: '2026-06-12',
+    researchTitle:
+      '🔥 6/12 금요일 데일리 스탠드업 — **🎯 복붙 3커밋까지 만들어줘도 실행 0(15일째): P0 3종(GMA 분리·UMP·NumLink Tools) 오늘도 전부 미착수 — 이제 회의의 무게중심을 "승인 필요 P0 대기"에서 "승인 불필요 영역의 실행률 만들기"로 이동**·**🚨 QA 신규: 회귀 픽스처 커버리지 33%(known_bugs 6건 중 2건만 커버) — "검증 ALL PASS"가 실제로는 알려진 버그의 1/3만 보증하는 거짓 안심·error 등급 YAML_DUPLICATE_FILE_ID·MANIFEST_MISSING_AUDIO 무보호**·**🛡 DevOps 신규: 원격 레포 agent-office→dev-studio 리네임 확인·dependabot PR 15건 적체(actions 메이저 5건 포함)·GitHub windows-latest VS2026 이미지 마이그레이션 6/8~6/15 진행 중·Buildalon(game-ci 대안 Unity 전용 무료 액션)**·**🎮 Game Designer: 5월 화살퍼즐 신작 2종 합산 5,240만 DL로 다운로드 1·2위 석권(Arrows: Puzzle Escape 2,860만+Arrows GO! 2,380만) — untangle 순서해소+무타이머 저압박 설계가 흥행 핵심·하이브리드캐주얼 퍼즐 IAP:광고 45:55 표준화**·**💻 Developer: Unity 6.4 정식 출시(3월·비LTS Supported) — DirectStorage 로드 최대 40% 단축·UI Toolkit 커스텀 셰이더/필터·ECS 코어 패키지화·GMA Unity SDK v11.2.0(Android 25.3.0/iOS 13.4.0)·결론은 6.3 LTS 유지(2027.12 지원)**·**📦 Content: 사전등록 보상 명시 시 스토어 전환율 +20%(넥슨 FAITH)·스크린샷 소셜프루프 추가 시 다운로드 +90%·스토어 체류 7초·첫 3장 법칙·마이크로 크리에이터 분산 협업 주 7~14클립**·**🎨 Art Director: 2026 HUD는 컨텍스추얼 미니멀리즘(필요한 순간만 표시)·리액티브 마스코트가 UI 컴포넌트화(Duolingo·Finch 검증)·햅틱은 10~20ms 펄스+사운드 동기화 어휘 설계**.',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제61회 — **6/12 금요일·1개월 임계 D+19**. **🎯 오늘의 본질 = "막막함 제거"도 답이 아니었음을 확인하고, 회의의 무게중심을 옮긴 날**: 6/11에 QA가 미커밋 37파일을 3묶음으로 해부하고 복붙 3커밋 명령까지 만들었지만, 6/12 오늘도 두 Unity 레포 **오늘 커밋 0건**·MeowBeat 미커밋 37·NumLink 36 그대로·P0 3종(GMA 분리·UMP·NumLink Tools) **15일째 전부 미착수**(`ConsentInformation` grep 0건·`Test-Path NumLink/Tools` False 재확인). 6/7 "복붙 1줄 명령" → 6/11 "복붙 3커밋" — 명령의 형태를 아무리 다듬어도 새벽 무인 실행 구조에서는 게임 레포 커밋이 발생하지 않는다. **오늘의 전환: 승인이 필요한 P0는 사용자 깨어있는 세션으로 명확히 위임하고, 회의는 "승인 불필요 영역"(자체 레포 dev-studio·로컬 픽스처·도구 위생)에서 실행률을 만든다.** **🚨 QA 신규(검증 시스템 자체의 신뢰도)**: MeowBeat 검증 3종 오늘도 ALL PASS(unity_validate 0err 5.5s·qa_static 0err·run_regression 2/2)지만, **run_regression이 known_bugs 6건 중 2건(RT_SIZE_ZERO·YAML_INDENT_M_FATHER)만 커버 — 커버리지 33%**. error 등급인 YAML_DUPLICATE_FILE_ID·MANIFEST_MISSING_AUDIO는 픽스처가 없어 detector가 회귀로 망가져도 "2/2 PASS"가 계속 출력된다 — **"ALL PASS"가 알려진 버그의 1/3만 보증하는 거짓 안심**. 부수 발견 2건: ① unity_validate.py를 프로젝트 루트 밖에서 실행하면 known_bugs.json 상대경로 실패로 detector 검증을 통째로 skip(자동화 스케줄러 환경 함정) ② NumLink 고아 Editor.meta+빈 AutoQATests 폴더가 임포트 churn 유발. auto_fix 가능 패턴도 6건 중 1건뿐. **🛡 DevOps 신규(인프라 위생)**: 원격 레포가 `mmporong/agent-office`→**`mmporong/dev-studio`로 리네임** 확인(API 리다이렉트·로컬 origin도 dev-studio.git·Pages는 https://mmporong.github.io/dev-studio/ 정상). **dependabot PR 15건 적체** — 특히 Pages 배포 워크플로 직결 actions 메이저 5건(checkout v6·deploy-pages v5·configure-pages v6·upload-pages-artifact v4·setup-node v6). 웹: **GitHub windows-latest VS2026 이미지 마이그레이션 6/8~6/15 진행 중**·macos-latest는 6/15부터 30일·Copilot 코드리뷰가 6/1부터 Actions 분 과금·Arm64 이미지 GitHub 직접 관리 이관·**Buildalon**(game-ci 대안 Unity 전용 무료 오픈소스 액션 세트, 퍼시스턴트 VM 빌드머신 옵션으로 빌드 50%+ 절감 주장)(6/11 매니지드 러너와 겹치지 않는 "이미지 마이그레이션·Buildalon" 신규 토픽). **🎮 시장(Game Designer)**: **2026년 5월 다운로드 차트를 화살퍼즐 신작 2종이 합산 5,240만 DL로 1·2위 석권**(Arrows: Puzzle Escape 2,860만·Arrows GO! 2,380만) — 흥행 핵심은 "막힌 경로를 올바른 순서로 해소"하는 **untangle 만족감+무타이머 저압박 설계+7천+ 레벨 물량전**. 하이브리드캐주얼 퍼즐 수익 구성 **IAP:광고 45:55** 표준화·하이퍼→하이브리드 전환 스튜디오 36%·리듬게임 시장 CAGR 9.1%($2.5B→$5.3B)·Rhythm Heaven Groove 7/2 출시 예정(6/11 조절식 난이도·온보딩과 겹치지 않는 "화살퍼즐 메커니즘·수익 비율" 신규 토픽). **💻 Developer**: NumLink 최근 3커밋 테마 USS 3종 재설계 +171/-169 실측·MeowBeat 4/12 이후 2개월 정체. 웹: **Unity 6.4 정식 출시(2026년 3월·비LTS Supported 릴리스)** — DirectStorage NVMe→GPU 로드 최대 40% 단축(Windows Standalone)·ECS 코어 패키지화·Project Auditor 에디터 내장·UI Toolkit 커스텀 셰이더/필터/벡터·Addressables 2.9.1·Input System 1.19·**GMA Unity SDK v11.2.0**(Android 25.3.0/iOS 13.4.0·NativeOverlay). **결론: 6.3 LTS 유지가 정답**(2027.12까지 지원·6.4는 비LTS)·UI Toolkit 신기능은 NumLink가 UGUI 롤백을 확정했으므로 차기 검토 항목으로만 등록(6/11 Unity 6.3 Bloom과 겹치지 않는 "6.4 출시·GMA SDK 버전" 신규 토픽). **📦 Content**: **사전등록 보상 명시 시 스토어 전환율 +20%(넥슨 FAITH 사례)**·구글플레이 사전등록자는 출시 시 자동설치(14일 내 설치로 전환 집계)되어 출시일 다운로드 집중→차트 초기 진입 확률 상승·**스크린샷에 소셜프루프(평점·수상) 추가 시 다운로드 +90%**·스토어 체류시간 약 7초·첫 3장이 승부처·2026 숏폼은 마이크로 크리에이터 수백명 분산 협업(주 7~14클립 권장)·장르별 CVR 레이싱 20.6%/보드 1.2%(6/11 In-App Events와 겹치지 않는 "사전등록·소셜프루프" 신규 토픽). **🎨 Art Director**: **2026 HUD는 컨텍스추얼 미니멀리즘** — 항상 떠 있는 HUD 대신 필요한 순간에만 표시. **리액티브 마스코트가 UI 컴포넌트화**(Duolingo·Finch·Yazio 검증·Rive 상태머신 구현 사례)·**햅틱은 10~20ms 짧은 펄스+사운드 동기화를 "어휘"로 설계**(Perfect/Good 구분 패턴). 에셋 실측: NumLink는 Layer Lab GUI 임포트·폰트 갱신 등 활발 vs MeowBeat 최근 30일 스프라이트/프리팹 수정 0건 정체(6/11 M3 스프링과 겹치지 않는 "컨텍스추얼 HUD·리액티브 마스코트·햅틱 어휘" 신규 토픽). **🎯 오늘 핵심 결정 = ① [P0·이월+위임 명시] MeowBeat 복붙 3커밋+UMP 동의 초기화 — 새벽 무인으로는 불가, 사용자 다음 세션 첫 작업으로 위임(6/11 준비된 명령 그대로 사용 가능) ② [P1·승인 불필요·신규] 회귀 픽스처 2→6 확충 — error 등급 YAML_DUPLICATE_FILE_ID·MANIFEST_MISSING_AUDIO 재현 미니씬을 test_fixtures/에 우선 추가해 "PASS의 거짓 안심" 해소+unity_validate.py 상대경로 버그 수정(스크립트 기준 절대경로화) ③ [P1·승인 불필요·신규] dev-studio dependabot actions 메이저 5건 우선 머지 — 6/8~6/15 GitHub 러너 이미지 마이그레이션에 선제 대응 ④ [P1·이월] NumLink Tools 3종 이식+AutoGenTests git rm+고아 Editor.meta/빈 AutoQATests 정리 추가 ⑤ [P2] NumLink "방향 잠금 타일" 변형 레벨 프로토타입(화살퍼즐 5,240만 DL 검증 메커니즘 흡수·기존 에셋 재활용)·양 게임 사전등록 페이지 선오픈(보상 명시형·전환 +20%)·MeowBeat 고양이 마스코트 리액티브 UI화(콤보 입력 상태머신·씬 사전 배치 규칙 준수)·SongVolume 단일 소스 통합**. 메타 통찰: 6/11이 "복붙 명령으로 막막함을 제거한 날"이라면, 6/12는 "막막함 제거로도 실행이 발생하지 않음을 확인하고, 회의가 직접 움직일 수 있는 영역(자체 레포·로컬 픽스처)으로 실행의 무게중심을 옮긴 날" — 동시에 검증 시스템 자체의 신뢰도(픽스처 33%)를 처음으로 의심했다.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — 복붙 3커밋까지 만들어줘도 실행 0(15일째): 6/11 P0 3종(GMA 3커밋·UMP·NumLink Tools) 오늘도 전부 미착수(ConsentInformation grep 0건·NumLink/Tools False 재확인)·두 레포 오늘 커밋 0·미커밋 36/37 동결·agent-office 자동화만 정상 가동(6/11 저널 ee2cc2e)',
+        description:
+          '**🎯 액션아이템 실측(6/12)**: ① MeowBeat 37파일 3커밋 분리 = **미완료**(Feedme 24시간 내 신규 커밋 0건·최신 657032c는 기존 farm 작업·미커밋 37 그대로) ② UMP 동의 초기화 = **미완료**(Assets 내 *.cs에서 `ConsentInformation` 검색 0건) ③ NumLink Tools 이식 = **미완료**(`Test-Path C:/Unity/NumLink/Tools` = False·24시간 내 커밋 0건). **패턴**: journal만 갱신되는 "진단만 반복" 구조 지속 — 6/7 복붙 1줄→6/11 복붙 3커밋으로 명령 형태를 다듬어도 새벽 무인 구조에서는 게임 레포 커밋이 발생하지 않음을 15일째 실증. **✅ agent-office**: 오늘 커밋 1건(ee2cc2e 6/11 스탠드업 저널)·미커밋 1파일 — 자동화 정상. **측정값**: NumLink 오늘커밋 0/미커밋 36(최근 작업 UI 테마·가독성 fix 5건), MeowBeat 오늘커밋 0/미커밋 37. **오늘 결정 제안**: 승인 필요 P0는 사용자 다음 세션 첫 작업으로 명시 위임하고, 회의는 승인 불필요 영역(dev-studio dependabot·회귀 픽스처·도구 위생)에서 실행률을 만든다. (git log/status/grep/Test-Path 실측)',
+      },
+      {
+        title:
+          '🎮 Game Designer — 2026년 5월 화살퍼즐 신작 2종 합산 5,240만 DL로 다운로드 1·2위 석권(Arrows: Puzzle Escape 2,860만+Arrows GO! 2,380만)·untangle 순서해소+무타이머 저압박+7천 레벨 물량전이 흥행 핵심·하이브리드캐주얼 퍼즐 IAP:광고 45:55 표준화·리듬게임 시장 CAGR 9.1%($2.5B→$5.3B)',
+        description:
+          '**🆕 시장 신규 1순위(화살퍼즐 차트 점령)**: 2026년 5월 다운로드 차트에서 **화살퍼즐 신작 2종이 합산 5,240만 DL로 1·2위 석권** — Arrows: Puzzle Escape 2,860만·Arrows GO! 2,380만. 흥행 핵심은 "막힌 경로를 올바른 순서로 해소"하는 **untangle 만족감+무타이머 저압박 설계+7천+ 레벨 물량전**. **🆕 신규 2순위(수익 구성)**: 하이브리드캐주얼 퍼즐 **IAP:광고 45:55**가 장르 표준으로 정착·하이퍼→하이브리드 전환 스튜디오 36%·플레이어블 광고 전환율 2~4배. **🆕 신규 3순위(리듬게임 시장)**: CAGR 9.1%($2.5B→$5.3B)·홀로라이브 리듬RPG 150곡 출시·Rhythm Heaven Groove 7/2 출시(80+ 게임 수록)(6/11 조절식 난이도·온보딩과 겹치지 않는 신규 토픽). **오늘 결정 제안(P2)**: **NumLink "방향 잠금 타일" 변형 레벨 타입** — 숫자 연결 코어에 "특정 방향으로만 통과 가능한 화살 타일"을 추가하면 기존 레벨 에셋 재활용하면서 경로 탐색에 \'순서 결정\' 레이어가 생겨 검증된 트렌드 메커니즘을 최소 비용으로 흡수. 신규 레벨 팩 10개 프로토타입→클리어율·재시도율 비교 측정. P0 커밋·UMP 선행. Sources: AppMagic 2026.05 차트·MAF 하이브리드캐주얼 퍼즐·Verified Market Reports 리듬게임.',
+      },
+      {
+        title:
+          '💻 Developer — Unity 6.4 정식 출시(2026.03·비LTS Supported): DirectStorage 로드 최대 40% 단축·UI Toolkit 커스텀 셰이더/필터·ECS 코어 패키지화·GMA Unity SDK v11.2.0(Android 25.3.0/iOS 13.4.0)·결론은 6.3 LTS 유지(2027.12 지원)·NumLink 테마 USS +171/-169 실측·MeowBeat 2개월 정체',
+        description:
+          '**🔎 코드 실측**: NumLink 최근 3커밋 기준 8개 파일 +171/-169 — UGUI 롤백 후 Layer Lab 9-slice 스킨+테마 USS(premium/retro 등 3종) 컬러 전면 재설계로 활발. MeowBeat 마지막 커밋 4/12·약 2개월 커밋 0 — SongVolume 이원화 부채 미해결 정체. **🆕 웹(Unity 6.4)**: **2026년 3월 정식 출시된 비LTS Supported 릴리스** — DirectStorage NVMe→GPU 로드 최대 40% 단축(Windows Standalone)·ECS(Entities/Collections/Mathematics) 코어 내장·Project Auditor 기본 탑재·UI Toolkit 커스텀 셰이더/필터/벡터 그래픽. **패키지**: Addressables 2.9.1(6000.3 대상)·Input System 1.19·Addressables+Input System 동시 사용 컴파일 버그 수정됨. **광고 SDK**: GMA Unity 플러그인 v11.2.0 — Android 25.3.0/iOS 13.4.0 의존성·차세대 NativeOverlay 지원(MeowBeat GMA v25 마이그레이션 커밋과 직결)(6/11 6.3 Bloom·SongVolume과 겹치지 않는 신규 토픽). **오늘 결정 제안**: **엔진은 6.3 LTS 유지**(2027.12 지원·6.4는 비LTS라 보류)·대신 2개월 정체된 MeowBeat SongVolume 음량 소스 이원화 부채 해소를 이번 주 착수·6.4 UI Toolkit 신기능은 NumLink UGUI 롤백 확정이므로 차기 스킨 고도화 검토 항목으로만 등록. P0 커밋·UMP 선행. Sources: CG Channel Unity 6.4·Unity GDC 로드맵·googleads-mobile-unity releases·Addressables 문서.',
+      },
+      {
+        title:
+          '🔍 QA Tester — ✅ MeowBeat 검증 3종 ALL PASS(unity_validate 0err 5.5s·qa_static 0err·run_regression 2/2)·🚨 신규 리스크: 회귀 픽스처 커버리지 33%(known_bugs 6건 중 2건만 커버) — error 등급 YAML_DUPLICATE_FILE_ID·MANIFEST_MISSING_AUDIO 무보호·"ALL PASS"의 거짓 안심·unity_validate 상대경로 함정·NumLink 고아 Editor.meta+빈 AutoQATests',
+        description:
+          '**✅ MeowBeat 검증(6/12 재실행)**: unity_validate.py PASS(0err/0warn·5.5s)·qa_static.py PASS(0err)·run_regression.py 2/2(RT_SIZE_ZERO·YAML_INDENT_M_FATHER 탐지 성공). known_bugs 6패턴(error 4·warning 2)·auto_fix 가능은 1건뿐. **🚨 신규 리스크(검증 시스템 자체의 신뢰도)**: run_regression이 **known_bugs 6건 중 2건만 검증 — 커버리지 33%**. error 등급인 YAML_DUPLICATE_FILE_ID·MANIFEST_MISSING_AUDIO는 픽스처가 없어 detector가 리팩터링으로 망가져도 "2/2 PASS"가 계속 출력됨 — **워크플로 표준(검증 3종 통과=안전)이 실제로는 알려진 버그의 1/3만 보증하는 거짓 안심**. **🚨 부수 발견 2건**: ① unity_validate.py를 프로젝트 루트 밖 cwd에서 실행하면 known_bugs.json 상대경로 실패로 detector 검증 통째 skip(WARN) — 자동화 스케줄러 환경 함정 ② NumLink Assets/Tests는 고아 Editor.meta 1개뿐+AutoQATests는 완전 빈 폴더+프로젝트 전체 *Test*.cs 0건 — 임포트 churn 유발·정리 대상. **오늘 결정 제안(P1·승인 불필요)**: **회귀 픽스처 2→6 확충** — error 등급 2건의 재현 미니씬을 test_fixtures/에 우선 추가+unity_validate.py 경로를 스크립트 기준 절대경로로 수정. Sources: 검증 3종 실행·known_bugs.json 분석·Test-Path 실측.',
+      },
+      {
+        title:
+          '📦 Content Writer — 사전등록 보상 명시 시 스토어 전환율 +20%(넥슨 FAITH)·구글플레이 사전등록자 출시 시 자동설치(14일 내 전환 집계)·스크린샷 소셜프루프 추가 시 다운로드 +90%·스토어 체류 7초·첫 3장 법칙·마이크로 크리에이터 분산 협업 주 7~14클립·장르별 CVR 레이싱 20.6%/보드 1.2%',
+        description:
+          '**📦 신규 1순위(사전등록)**: **사전등록 보상 제공 시 스토어 전환율 +20%(넥슨 FAITH 사례)** — 구글플레이 사전등록자는 출시 시 자동설치(14일 내 설치로 전환 집계)되어 출시일 다운로드가 집중돼 차트 초기 진입 확률 상승. **📦 신규 2순위(소셜프루프)**: **스크린샷에 평점·수상 등 소셜프루프 추가 시 다운로드 +90%**·스토어 체류시간 약 7초·첫 3장이 승부처. **📦 신규 3순위(숏폼)**: 2026 숏폼은 대형 인플루언서 1명 대신 **마이크로 크리에이터 수백명 분산 협업(주 7~14클립 권장)**·UGC 리액션형 광고 부상·장르별 CVR 레이싱 20.6%/보드 1.2%(6/11 In-App Events와 겹치지 않는 신규 토픽). **오늘 결정 제안(P2)**: **양 게임 구글플레이 사전등록 페이지 선오픈+보상 명시형 배너** — MeowBeat는 한정 고양이 스킨+보너스 곡 1개·NumLink는 힌트 팩을 보상으로 명시·보상 소구를 1~2번째 스크린샷에 배치(7초·첫 3장 법칙). P0 커밋·UMP 선행. Sources: AppRadar 사전등록·AppLaunchFlow ASO 2026·Business of Apps CVR.',
+      },
+      {
+        title:
+          '🛡 DevOps — 🆕 원격 레포 agent-office→dev-studio 리네임 확인(Pages https://mmporong.github.io/dev-studio/ 정상·최근 3런 success)·dependabot PR 15건 적체(actions 메이저 5건: checkout v6·deploy-pages v5·configure-pages v6·upload-pages-artifact v4·setup-node v6)·GitHub windows-latest VS2026 마이그레이션 6/8~6/15 진행 중·Buildalon(Unity 전용 무료 액션·빌드 50%+ 절감 주장)',
+        description:
+          '**🛡 CI 현황(실측 6/12)**: 원격 레포가 `mmporong/agent-office`→**`mmporong/dev-studio`로 리네임** 확인(API 리다이렉트·로컬 origin도 dev-studio.git). Pages: https://mmporong.github.io/dev-studio/ — build_type=workflow·최근 3런 전부 success(최신 6/11 저널 36초). 워크플로 2개 건강(deploy-pages.yml SHA 핀+concurrency 양호·weekly-insights.yml). NumLink·Feedme `.github` 둘 다 부재 CI 0 변화 없음. ahead/behind: NumLink feature/ugui-layerlab 0/0·Feedme feature/song-ownership-migration 0/0·agent-office main 0/0(단 NumLink 로컬 main은 origin 대비 62커밋 behind). **🚨 신규(위생)**: **dependabot PR 15건 적체** — Pages 배포 직결 actions 메이저 5건(checkout v6·deploy-pages v5·configure-pages v6·upload-pages-artifact v4·setup-node v6)+npm 10건(eslint 10·react 19.2.5 등). **🆕 웹**: **windows-latest VS2026 이미지 마이그레이션 6/8~6/15 진행 중**·macos-latest 6/15부터 30일·Copilot 코드리뷰 6/1부터 Actions 분 과금·Arm64 이미지 GitHub 직접 관리 이관·**Buildalon** — game-ci 대안 Unity 전용 무료 오픈소스 액션 세트(unity-setup·activate-unity-license·unity-action)·퍼시스턴트 VM 옵션 빌드 50%+ 절감 주장(6/11 매니지드 러너와 겹치지 않는 신규 토픽). **오늘 결정 제안(P1·승인 불필요)**: **dev-studio dependabot actions 메이저 5건 우선 머지** — 러너 이미지 마이그레이션 기간(6/8~6/15)에 선제 대응·자체 레포라 새벽 실행 가능. Sources: GitHub Changelog 이미지 마이그레이션·Copilot 과금·Buildalon.',
+      },
+      {
+        title:
+          '🎨 Art Director — 2026 HUD는 컨텍스추얼 미니멀리즘(필요한 순간만 표시)·리액티브 마스코트가 UI 컴포넌트화(Duolingo·Finch·Yazio 검증·Rive 상태머신)·햅틱은 10~20ms 짧은 펄스+사운드 동기화 "어휘" 설계·에셋 실측: NumLink 활발(Layer Lab·폰트) vs MeowBeat 30일간 스프라이트/프리팹 수정 0건 정체',
+        description:
+          '**🎨 신규 1순위(컨텍스추얼 미니멀리즘 HUD)**: 항상 떠 있는 HUD 대신 **필요한 순간에만 표시** — 리듬게임이라면 콤보·판정은 이벤트 순간만 강조하고 평시엔 화면을 곡과 캐릭터에 양보. **🎨 신규 2순위(리액티브 마스코트)**: **마스코트가 정적 일러스트가 아니라 UI 컴포넌트로 진화** — Duolingo·Finch·Yazio가 리텐션·수익 검증·Rive 상태머신 구현 사례 확산. **🎨 신규 3순위(햅틱 어휘)**: 햅틱은 **10~20ms 짧은 펄스+사운드 동기화를 "어휘"로 설계**(이벤트별 구분 패턴)(6/11 M3 스프링·비대칭 이징과 겹치지 않는 신규 토픽). **에셋 실측(최근 30일)**: NumLink 활발(5/27 Layer Lab GUI Pro 임포트·6/1 Cafe24Ssurround TMP 갱신·스크린샷 다수) vs **MeowBeat 스프라이트/프리팹 수정 0건 정체**. **오늘 결정 제안(P2)**: **MeowBeat 고양이 마스코트의 리액티브 UI화** — 플레이/결과 화면 고양이에 콤보 수치를 입력값으로 받는 Animator 상태머신(idle/콤보 상승/미스/풀콤보 환호) 적용·씬 사전 배치+SetActive 규칙 준수·후속으로 노트 판정 시 10~20ms 라이트 햅틱(Perfect/Good 구분). 고양이 리듬게임 정체성과 가장 부합하는 검증 트렌드. P0 커밋·UMP 선행. Sources: Pixune 모바일 게임 UI 2026·IndieRadar 마스코트 가이드·Rive 상태머신·Android Haptics Principles.',
+      },
+    ],
+    meetingTitle:
+      '🔥 6/12 종합 회의 — "복붙 명령으로도 실행 0(15일째)": 승인 필요 P0는 사용자 세션으로 위임하고, 회의는 승인 불필요 영역(픽스처 33% 해소·dependabot 15건)에서 실행률을 만든다',
+    meetingSummary:
+      '제61회 종합 회의. **6/11의 처방(복붙 3커밋)으로도 실행은 발생하지 않았다** — 오늘도 두 레포 0커밋·P0 3종 15일째 미착수. 6/7 "복붙 1줄"→6/11 "복붙 3커밋"으로 명령 형태를 다듬는 접근은 한계가 확인됐다. 새벽 무인 구조에서 게임 레포 커밋은 구조적으로 발생하지 않는다. **오늘의 전환: 회의의 실행 무게중심을 "승인 필요 P0 대기"에서 "승인 불필요 영역"으로 이동** — ① dev-studio(자체 레포) dependabot 15건 중 actions 메이저 5건 머지 ② MeowBeat 회귀 픽스처 2→6 확충(로컬 작업). 특히 QA가 처음으로 **검증 시스템 자체의 신뢰도를 의심**했다 — "ALL PASS"가 실제로는 known_bugs 6건 중 2건(33%)만 보증하는 거짓 안심이며, error 등급 2건이 무보호 상태. DevOps는 원격 레포의 dev-studio 리네임과 GitHub 러너 이미지 마이그레이션(6/8~6/15)을 확인해 actions 메이저 머지의 시급성을 보탰다. 시장 쪽은 화살퍼즐 5,240만 DL(untangle+무타이머)·사전등록 +20%·리액티브 마스코트 등 출시 품질 신규 데이터를 P2로 적재. 메타: 6/11이 "막막함을 제거한 날"이라면 6/12는 "막막함 제거로도 부족함을 인정하고, 회의가 직접 움직일 수 있는 영역에서 실행을 시작하기로 한 날".',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '인정할 건 인정합시다. 6/11에 복붙 3커밋 명령까지 만들었는데 오늘도 실행 0입니다. ConsentInformation grep 0건, NumLink Tools 디렉터리 False, 두 레포 오늘 커밋 0 — 15일째예요. 명령의 형태를 다듬는 건 6/7부터 두 번 해봤고 효과가 없다는 게 실증됐습니다. 구조 문제예요: 새벽 무인 실행은 게임 레포에 커밋할 권한이 없습니다. 그래서 오늘은 방향을 바꿉니다. 승인 필요한 P0는 사용자 다음 세션 첫 작업으로 명확히 위임하고, 우리는 승인이 필요 없는 영역 — 자체 레포 dependabot, 로컬 픽스처 — 에서 실행률을 만듭시다. 진단 0건, 실행 2건이 오늘 목표입니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '오늘 불편한 발견을 하나 가져왔습니다. 우리가 매일 "검증 3종 ALL PASS·무회귀"라고 보고해왔는데, run_regression이 실제로 검증하는 건 known_bugs 6건 중 2건뿐입니다 — 커버리지 33%예요. error 등급인 YAML_DUPLICATE_FILE_ID와 MANIFEST_MISSING_AUDIO는 픽스처가 없어서, detector가 리팩터링으로 망가져도 "2/2 PASS"가 계속 나옵니다. "ALL PASS"가 거짓 안심이었던 거죠. 픽스처를 2건에서 6건으로 늘리는 건 로컬 작업이라 승인이 필요 없습니다 — 오늘 회의가 말한 "승인 불필요 실행"에 딱 맞아요. 부수로 unity_validate가 프로젝트 루트 밖에서 실행되면 known_bugs를 못 찾고 조용히 skip하는 함정도 잡았고, NumLink 고아 Editor.meta와 빈 AutoQATests 폴더도 정리 대상입니다.',
+      },
+      {
+        speaker: 'DevOps',
+        note: '저도 승인 불필요 실행 거리를 가져왔습니다. 먼저 보고 — 원격 레포가 agent-office에서 dev-studio로 리네임돼 있었습니다. Pages는 dev-studio 주소로 정상이고 최근 3런 전부 success라 동작엔 문제없지만, 문서나 메모리의 레포 참조는 갱신이 필요해요. 그리고 dependabot PR이 15건 쌓여 있습니다. 특히 Pages 배포 워크플로에 직결되는 actions 메이저 5건 — checkout v6, deploy-pages v5, configure-pages v6, upload-pages-artifact v4, setup-node v6 — 이 우선입니다. 지금 GitHub가 windows-latest VS2026 이미지 마이그레이션을 6/8~6/15에 진행 중이라 타이밍도 맞아요. 자체 레포니까 새벽에도 머지 가능합니다. 웹 리서치로는 Buildalon이라는 Unity 전용 무료 액션 세트를 찾았는데, 게임 레포 CI 도입 시 game-ci·매니지드 러너와 3파전으로 비교하면 됩니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: '엔진 결정 하나 정리합니다. Unity 6.4가 3월에 정식 출시됐는데 — DirectStorage 로드 40% 단축, UI Toolkit 커스텀 셰이더, ECS 코어 패키지화 — 비LTS Supported 릴리스입니다. 우리는 6.3 LTS 유지가 정답이에요. 2027년 12월까지 지원되고, 6.4 UI Toolkit 신기능은 NumLink가 UGUI 롤백을 확정한 마당이라 차기 검토 항목으로만 적어둡니다. GMA Unity SDK는 v11.2.0이 최신인데 미커밋 GMA v25 마이그레이션과 직결되니, 사용자가 P0 커밋을 실행할 때 버전 확인을 같이 하면 됩니다. 코드 실측으로는 NumLink 테마 USS 재설계 +171/-169로 활발한 반면 MeowBeat는 4/12 이후 2개월 정체 — SongVolume 이원화 부채 해소를 이번 주 착수 제안합니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '5월 차트에 사건이 있었습니다. 화살퍼즐 신작 2종이 합산 5,240만 다운로드로 1·2위를 석권했어요 — Arrows: Puzzle Escape 2,860만, Arrows GO! 2,380만. 흥행 공식은 "막힌 경로를 올바른 순서로 해소"하는 untangle 만족감에 무타이머 저압박 설계입니다. NumLink에 바로 흡수할 수 있어요 — "특정 방향으로만 통과 가능한 화살 타일"을 변형 레벨로 넣으면 기존 에셋을 재활용하면서 경로 탐색에 순서 결정 레이어가 생깁니다. 레벨 팩 10개 프로토타입으로 시작해서 클리어율·재시도율을 비교하면 됩니다. 수익 구성은 IAP:광고 45:55가 장르 표준으로 정착 중이고요. 전부 P2, P0 뒤입니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '출시 준비 쪽 신규 데이터입니다. 사전등록에 보상을 명시하면 스토어 전환율이 +20%예요 — 넥슨 FAITH 사례. 구글플레이 사전등록자는 출시 시 자동설치돼서 출시일 다운로드가 집중되고 차트 초기 진입 확률이 올라갑니다. 그리고 스크린샷에 평점·수상 같은 소셜프루프를 넣으면 다운로드 +90%, 스토어 체류는 7초·첫 3장이 승부처입니다. 제안은 양 게임 사전등록 페이지 선오픈 — MeowBeat는 한정 고양이 스킨+보너스 곡, NumLink는 힌트 팩을 보상으로 내걸고, 보상 소구를 1~2번째 스크린샷에 배치하는 겁니다. 숏폼은 마이크로 크리에이터 수백명 분산 협업이 대세고 주 7~14클립이 권장량이에요.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '2026 HUD 트렌드는 컨텍스추얼 미니멀리즘입니다 — 항상 떠 있는 HUD 대신 필요한 순간에만 표시하는 거죠. 그리고 마스코트가 정적 일러스트에서 UI 컴포넌트로 진화하고 있습니다. Duolingo·Finch·Yazio가 리텐션으로 검증했어요. MeowBeat 고양이에 딱 맞습니다 — 플레이/결과 화면 고양이에 콤보 수치를 입력으로 받는 Animator 상태머신을 붙여서 idle/콤보 상승/미스/풀콤보 환호로 반응하게 합시다. 씬 사전 배치+SetActive 규칙 그대로 지키면서요. 에셋 실측으로는 MeowBeat가 30일간 스프라이트/프리팹 수정 0건 정체라, 이 마스코트 작업이 정체를 깨는 첫 단추가 될 수 있습니다. 햅틱은 10~20ms 펄스를 Perfect/Good 구분 어휘로 설계하는 게 후속이고요. P2입니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: '🚨 P0[이월·위임 명시] MeowBeat 복붙 3커밋+UMP 동의 초기화 — 사용자 다음 세션 첫 작업',
+        description:
+          '15일째 미착수. 새벽 무인 구조에서는 게임 레포 커밋이 구조적으로 불가하므로 사용자 다음 세션 첫 작업으로 명시 위임한다. 6/11 준비된 명령 그대로 유효: ① `chore(gma): GMA v25 마이그레이션` 5파일 ② `feat(i18n): 곡명 다국어 표시 및 잠금 시각화` 4파일(GameManager +59줄 10주째) ③ `chore: 폰트/패키지/placeholder 정리`. 직후 UMP — `MobileAds.Initialize` 앞 `ConsentInformation.Update`+`canRequestAds` 게이트(출시 차단급·GMA SDK v11.2.0 버전 확인 동반). 검증 3종 오늘도 ALL PASS라 커밋 안전 보증 유지.',
+      },
+      {
+        title: '🔧 P1[승인 불필요·신규] MeowBeat 회귀 픽스처 2→6 확충 — "ALL PASS 거짓 안심" 해소',
+        description:
+          'run_regression 커버리지 33%(known_bugs 6건 중 2건) 해소. error 등급인데 픽스처 없는 YAML_DUPLICATE_FILE_ID·MANIFEST_MISSING_AUDIO 재현 미니씬을 test_fixtures/에 우선 추가하고 warning 2건도 후속 추가. 동반 수정: unity_validate.py의 known_bugs.json 참조를 스크립트 기준 절대경로로 변경(프로젝트 루트 밖 실행 시 조용한 skip 함정 제거). 로컬 작업이라 승인 불필요 — 새벽 세션에서도 실행 가능.',
+      },
+      {
+        title: '🔧 P1[승인 불필요·신규] dev-studio dependabot actions 메이저 5건 우선 머지',
+        description:
+          '원격 레포 dev-studio(구 agent-office)에 dependabot PR 15건 적체. Pages 배포 워크플로 직결 actions 메이저 5건(checkout v6·deploy-pages v5·configure-pages v6·upload-pages-artifact v4·setup-node v6)을 우선 머지해 GitHub 러너 이미지 마이그레이션(windows 6/8~6/15·macos 6/15~) 영향에 선제 대응. npm 10건은 배포 성공 확인 후 단계 머지. 자체 레포라 새벽 실행 가능. 부수: 문서·메모리의 agent-office 레포 참조를 dev-studio로 갱신.',
+      },
+      {
+        title: '🔧 P1[이월+확장] NumLink 검증 인프라 — Tools 이식+고아 메타 정리 추가',
+        description:
+          'MeowBeat Tools 3종(unity_validate·qa_static·run_regression)+known_bugs.json을 `C:/Unity/NumLink/Tools/`로 복사+씬 경로 갱신(회귀탐지 0→가동)·AutoGenTests git rm 확정. 오늘 확장: 고아 Editor.meta(대응 폴더 없음)+완전히 빈 AutoQATests 폴더 정리(임포트 churn 제거). 전부 push 불필요 로컬 작업 — 다음 세션 최우선 유지.',
+      },
+      {
+        title: '🎮💻📦🎨 P2 출시 품질 신규 적재 — 모두 P0 후',
+        description:
+          'Game Designer: NumLink "방향 잠금 타일" 변형 레벨 프로토타입 10개(화살퍼즐 5,240만 DL 검증 untangle 메커니즘·기존 에셋 재활용·클리어율/재시도율 측정). Developer: 엔진 6.3 LTS 유지 확정(6.4 비LTS 보류)·SongVolume OptionManager 단일 소스 통합 이번 주 착수. Content Writer: 양 게임 사전등록 페이지 선오픈+보상 명시형 배너(전환 +20%·보상 소구 1~2번째 스크린샷). Art Director: MeowBeat 고양이 마스코트 리액티브 UI화(콤보 입력 Animator 상태머신·씬 사전 배치 규칙)+후속 10~20ms 판정 햅틱. 모두 P0 커밋·UMP 후 착수.',
+      },
+    ],
+  },
+  {
     id: '2026-06-11T04:00:00-daily-standup',
     date: '2026-06-11',
     researchTitle:
