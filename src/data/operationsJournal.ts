@@ -43,6 +43,119 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-06-13T04:00:00-daily-standup',
+    date: '2026-06-13',
+    researchTitle:
+      '🔥 6/13 토요일 데일리 스탠드업 — **✅ 16일 만의 첫 실행: dev-studio dependabot actions 메이저 5건(#13~17) 회의 중 직접 머지 완료 — 6/12 "승인 불필요 영역으로 무게중심 이동" 결정의 첫 이행·러너 마이그레이션 기한(6/15) 전 마지막 평일에 실행**·**🚨 Developer: Google Play 타겟 API 36 의무화 2026-08-31 확정 + UMP/CMP는 미래 데드라인이 아니라 2024-01-16부터 이미 시행 중(미적용 시 EEA/UK Limited Ads 강제 — 출시 시점부터 수익 차단)·Unity 6000.3.16f1 보안 CVE 3건 수정**·**🚨 QA 신규: known_bugs의 RT_SIZE_ZERO detector(scene_analyzer.calc_size)가 참조하는 scene_analyzer 모듈 미배치 — 탐지 경로 불완전(HIGH)·qa_static에 노트 타이밍 순서 검증 부재(MEDIUM)**·**🎮 Game Designer: 美 퍼즐 IAP $4.6B 전년 +31.4%·캐주얼 D1 26~30%로 하락 "리텐션 시대"·hololive Dreams 8/31 출시(54멤버×솔로곡 2개=150곡)·Beatstar 3,800만 DL·1년 $73M·RPD $1.41 — "곡=콘텐츠·캐릭터=수집동기" 공식**·**📦 Content: 구글 I/O 2026 Gemini "Ask Play" 의도 기반 검색 전환·스토어 내 틱톡식 Play Shorts 세로영상 피드(美 시범)·퍼즐 CPI iOS $3/AOS $2·틱톡이 메타보다 15~25% 저렴**·**🎨 Art Director: 판정 VFX 3원칙(등급 차등·반투명 알파 50%·무음 — DJMAX·beatmania·Arcaea 사례)·MeowBeat 2개월 전체 정체 재확인**.',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제62회 — **6/13 토요일·D+20**. **✅ 오늘의 본질 = 16일 만에 "실행 0" 사슬을 끊은 날**: 6/12 회의가 결정한 "승인 불필요 영역 실행"을 오늘 회의가 직접 이행 — **dev-studio dependabot actions 메이저 5건(#13 upload-pages-artifact v4·#14 setup-node v6·#15 checkout v6·#16 configure-pages v6·#17 deploy-pages v5)을 회의 중 squash 머지 완료**. DevOps가 5건 전부 mergeable clean을 사전 확인했고, GitHub 러너 이미지 마이그레이션 기한(windows VS2026 6/8~6/15)을 이틀 앞둔 마지막 타이밍이었다. 잔여 npm 10건은 Pages 배포 성공 확인 후 단계 머지. **다만 게임 레포는 오늘도 0커밋** — NumLink 미커밋 36·MeowBeat 37 동결 그대로, P0(GMA 3커밋·UMP·NumLink Tools)는 사용자 세션 위임 상태 유지. **🚨 Developer(스토어 컴플라이언스 데드라인 확정)**: ① **Google Play 타겟 API 36(Android 16) 의무화 — 2026-08-31부터 신규 앱·업데이트 필수**(미만 타겟은 신규 기기 사용자 비노출) ② **UMP/CMP는 "나중에 할 일"이 아니었다 — 2024-01-16부터 이미 시행 중**인 요건으로, 미적용 시 EEA/UK/스위스 트래픽이 Limited Ads(제한 광고)로 강제되어 eCPM 급락. MeowBeat는 출시 시점부터 미준수 상태가 되므로 UMP 구현(GMA 내장 `ConsentInformation.Update`→`LoadAndShowConsentFormIfRequired`)을 targetSdk 36 상향과 묶어 한 번에 처리하는 것이 효율적 ③ Unity 6.3 LTS 최신 패치 **6000.3.16f1**(5월 하순)에 비디오 모듈 보안 CVE 3건(CVE-2023-6349·CVE-2024-5197·CVE-2025-5283) 수정 포함 — 한가한 시점 에디터 업데이트 권장. **🚨 QA(검증 시스템 신뢰도 2차 의심)**: 검증 3종 오늘도 ALL PASS(unity_validate 0err 5.1s·qa_static 0err·run_regression 2/2)지만, **known_bugs.json의 RT_SIZE_ZERO detector가 "scene_analyzer.calc_size"를 참조하는데 scene_analyzer 모듈이 Tools/에 미배치** — 탐지 경로가 불완전해 RectTransform width=0 버그(VLG+sizeDelta.x=0)가 조용히 누락될 위험(HIGH). 6/12 픽스처 커버리지 33%에 이어 검증 시스템 자체의 두 번째 구멍. 부수: qa_static이 manifest 노트 타이밍 순서를 검증하지 않음(현재 10곡 전부 정렬 상태라 0위반이지만 수동 추가 시 무방비·MEDIUM). **🎮 시장(Game Designer)**: **美 모바일 퍼즐 IAP 지출 $4.6B·전년 +31.4%**(Sensor Tower)·글로벌 퍼즐 시장 2026 $6.66B→2035 $14.45B 전망. **캐주얼 리텐션 벤치마크 하락 — D1 26~30%·D7 10~15%·D30 4~8%** — 신규 유저 볼륨에서 기존 유저 LTV로 시장 이동("리텐션 시대"). 리듬게임 벤치마크: **hololive Dreams 8/31 글로벌 출시**(54멤버×솔로곡 2개=150곡+사전등록 50만 이벤트)·**Beatstar 누적 3,800만 DL·1년차 $73M·RPD $1.41** — 두 사례 공통 공식 "곡=콘텐츠 단위·캐릭터=수집 동기". MeowBeat에 **고양이=곡 해금 단위 1:1 매핑**(manifest.json에 catId 필드 1개 추가로 시작)을 GDD 반영 제안(6/12 화살퍼즐·IAP:광고 45:55와 겹치지 않는 신규 토픽). **📦 Content(ASO 대전환)**: 구글 I/O 2026에서 **Gemini가 플레이스토어 검색을 키워드 매칭→의도 이해로 전환**("Ask Play" 챗봇·롱테일 자연어 문장이 유리)·Grow 페이지에서 Gemini 원클릭 커스텀 리스팅 자동 생성·CSV 업로드 다국어 자동 현지화. **스토어 안에 틱톡식 "Play Shorts" 세로영상 피드 신설**(美 시범) — 미출시 게임은 9:16 세로 클립 자산을 미리 쌓으면 확대 시 즉시 대응. 퍼즐 CPI iOS $3.00/AOS $2.00(+5%)·틱톡 CPI가 메타 대비 15~25% 저렴(CPM ~$3.50 최저)·단 ROAS는 메타 4.2x>UAC 3.3x>틱톡 2.8x — "설치는 틱톡·과금은 메타" 구도(6/12 사전등록·소셜프루프와 겹치지 않는 신규 토픽). **🛡 DevOps**: Pages 최근 5런 전부 success·actions 5건 머지 실행 완료(상기)·재적체 방지로 **dependabot auto-merge 도입** 리서치 — fetch-metadata로 update-type 판별→patch 한정 자동 머지(공급망 공격 대비 minor/major는 수동 유지)·필수 사전 설정 2가지(Actions PR 승인 허용+status check 필수)(6/12 러너 마이그레이션·Buildalon과 겹치지 않는 신규 토픽). **🎨 Art Director(판정 VFX 설계 원칙)**: ① **등급 차등** — Perfect/Good이 시각적으로 같으면 숙련 동기 소멸(색·스케일 분리) ② **반투명 보호** — 히트 이펙트가 후속 노트를 가리면 안 됨(DJMAX 알파 50% 이하 사례·Hard 고밀도에서 결정적) ③ **무음 원칙** — beatmania IIDX는 입력 피드백음이 원곡을 훼손한 실패 사례·VFX는 toneless로. 보조: Arcaea 판정선 이중 대비(어두운 보라+밝은 마젠타)·노트 진입은 페이드보다 팝업. 에셋 실측: MeowBeat 4/12 이후 **전체 커밋 0건·2개월 정체**(에셋만이 아니라 프로젝트 전체) — **고양이 발바닥 모양 히트 이펙트**로 마스코트 정체성을 연결한 판정 VFX 스펙 확정을 재시동 작업으로 제안(스프라이트 1~2장+파티클로 시작 가능한 작은 단위)(6/12 컨텍스추얼 HUD·리액티브 마스코트와 겹치지 않는 신규 토픽). **🎯 오늘 핵심 결정 = ① [✅완료] dependabot actions 메이저 5건 머지 — 16일 만의 첫 실행·Pages 배포 성공 확인 동반 ② [P0·위임 유지+근거 보강] MeowBeat 복붙 3커밋+UMP — UMP는 이미 시행 중 요건(Limited Ads 수익 차단)이므로 targetSdk 36(8/31 기한)과 묶음 처리 ③ [P1·승인 불필요] scene_analyzer 인라인화+회귀 픽스처 2→6 확충 통합(검증 시스템 구멍 2개 동시 해소) ④ [P1·이월] NumLink Tools 3종 이식 ⑤ [P2·신규] MeowBeat manifest catId 곡-고양이 1:1 매핑·판정 VFX 스펙(차등·반투명·무음·발바닥)·9:16 세로 클립 제작 표준+자연어 스토어 문구·dependabot auto-merge(patch 한정)**. 메타 통찰: 6/12가 "실행의 무게중심을 옮기기로 결정한 날"이라면, 6/13은 **"그 결정이 처음으로 커밋(머지)으로 바뀐 날"** — 회의는 이제 진단 기관이 아니라 승인 불필요 영역의 실행 기관이다.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — ✅ 16일 만의 첫 실행: dependabot actions 5건 머지(회의 중 직접)·게임 레포는 오늘도 0커밋(NumLink 미커밋 36·MeowBeat 37 동결)·6/12 액션아이템 4건 중 3건 미완·P0는 사용자 세션 위임 상태 유지',
+        description:
+          '**🎯 액션아이템 실측(6/13)**: ① MeowBeat 3커밋+UMP = **미완**(24시간 내 커밋 0·ConsentInformation grep 0건·사용자 세션 위임 유지) ② 회귀 픽스처 2→6 = **미완**(test_fixtures/ 2개 그대로) ③ dependabot actions 5건 머지 = **회의 중 완료✅**(#13~17 squash 머지·16일 만의 첫 실행) ④ NumLink Tools 이식 = **미완**(Tools/ 부재 지속). **측정값**: NumLink 최신 5fcac3a(게임오버 타이틀 이모지 fix)·브랜치 feature/ugui-layerlab·미커밋 36, MeowBeat 최신 657032c(farm 먹기 애니메이션)·미커밋 37, agent-office 71b13c6(6/12 저널)+머지 5커밋. **패턴 변화**: 진단만 반복하던 구조에서 처음으로 회의가 직접 실행 — 단 승인 필요 영역(게임 레포)은 여전히 0이므로 위임 구조는 유지. **오늘 결정 제안**: 머지 후 Pages 배포 성공을 오늘 회의 안에서 확인하고, 다음 승인 불필요 실행 대상(scene_analyzer 인라인화)을 차기 회의 실행 큐에 적재. (git log/status/grep/gh pr 실측)',
+      },
+      {
+        title:
+          '🎮 Game Designer — 美 퍼즐 IAP $4.6B 전년 +31.4%(Sensor Tower)·캐주얼 D1 26~30%로 하락 "리텐션 시대" 진입·hololive Dreams 8/31 출시(54멤버×솔로곡 2개=150곡)·Beatstar 3,800만 DL·1년 $73M·RPD $1.41 — "곡=콘텐츠·캐릭터=수집동기" 공식',
+        description:
+          '**🆕 신규 1순위(퍼즐 시장 규모)**: **美 모바일 퍼즐 IAP 지출 $4.6B·전년 대비 +31.4%**(Sensor Tower)·글로벌 퍼즐 시장 2026 $6.66B→2035 $14.45B(CAGR ~9%)·5월 매출 Royal Match $105.1M 3위·Gossip Harbor $96.8M 역대 2번째 월 기록. **🆕 신규 2순위(리텐션 시대)**: 매출 톱25 캐주얼 D1 ~30%·D7 14~15%·D30 7~8%로 수년째 하락, 업계 전체 캐주얼은 **D1 26%·D7 10%·D30 4% 미만**(GameAnalytics 2026) — 다운로드 감소에도 총 세션 1조 회 돌파, 시장이 신규 볼륨→기존 유저 LTV로 이동. NumLink는 D1 26%를 최저 기준선 KPI로 설정하고 첫 세션 내 테마 1개 해금 보장 온보딩 권장. **🆕 신규 3순위(리듬게임 벤치마크)**: **hololive Dreams 8/31 글로벌 출시** — 54멤버×솔로곡 2개=150곡+리듬·RPG·육성 결합·사전등록 50만 이벤트. **Beatstar 누적 3,800만 DL·1년차 $73M(권리자 배분 $16M)·라이선스 300곡·RPD $1.41** — 서구권 리듬게임 매출 기준점(6/12 화살퍼즐·45:55와 겹치지 않는 신규 토픽). **오늘 결정 제안(P2)**: **MeowBeat "고양이=곡 해금 단위" 1:1 매핑 GDD 반영** — manifest.json에 catId 필드 1개 추가로 시작 가능한 저비용 변경·곡 해금→고양이 수집→재방문 루프 형성. Sources: Sensor Tower 퍼즐 $4.6B·GameDev Reports AppMagic 5월·GameAnalytics 2026 벤치마크·hololive 공식·Water & Music Beatstar.',
+      },
+      {
+        title:
+          '💻 Developer — 🚨 Google Play 타겟 API 36 의무화 2026-08-31 확정·UMP/CMP는 2024-01-16부터 이미 시행 중(미적용 시 EEA/UK Limited Ads 강제 — MeowBeat 출시 시점부터 미준수)·Unity 6000.3.16f1 패치(5월 하순) 보안 CVE 3건 수정·미커밋 실측 NumLink 14파일 +438/-2563·MeowBeat 21파일 +1190/-1089',
+        description:
+          '**🚨 신규 1순위(타겟 API 데드라인)**: **2026-08-31부터 Google Play 신규 앱·업데이트는 Android 16(API 36) 타겟 필수**(Wear OS/TV만 API 35 예외) — 미만 타겟은 신규 기기 사용자에게 비노출. Unity Player Settings Target API 상향+GMA/EDM4U 호환 재확인 필요. **🚨 신규 2순위(UMP 긴급도 재정의)**: UMP/CMP는 미래 데드라인이 아니라 **2024-01-16부터 이미 시행 중** — EEA/UK/스위스 광고에 Google 인증 CMP 필수·미적용 시 해당 지역 Limited Ads(제한 광고)만 송출돼 eCPM 급락. **MeowBeat는 출시 순간부터 미준수가 되므로 "나중에" 항목이 아님** — GMA SDK 내장 UMP API(`ConsentInformation.Update()`→`ConsentForm.LoadAndShowConsentFormIfRequired()`)로 별도 SDK 없이 구현 가능. **🆕 신규 3순위(엔진 패치)**: 6.3 LTS 최신 **6000.3.16f1**(5월 하순) — 비디오 모듈 고위험 보안 CVE 3건(CVE-2023-6349·CVE-2024-5197·CVE-2025-5283)+Animator normalized time·DX12 async compute 수정. 6.3 LTS 지원 2027.12까지 — 유지 확정 변동 없음(6/12 Unity 6.4·GMA v11.2.0과 겹치지 않는 신규 토픽). **코드 실측**: NumLink 미커밋 14파일 +438/-2563(Cafe24 TMP 폰트 SDF 재생성 309줄·Packages manifest 변동 — 커밋 전 의도 확인 필요), MeowBeat 미커밋 21파일 +1190/-1089(AndroidResolverDependencies.xml 95줄 — UMP 작업 시 동반 정리 권장). **오늘 결정 제안**: UMP 구현을 targetSdk 36 상향(8/31 기한)과 묶어 한 번에 스토어 컴플라이언스 완결 — 사용자 P0 세션에서 일괄 처리. Sources: Play Console Help 타겟 API·Android Developers targetSdk·AdMob CMP 요건·GMA Unity GDPR 문서·Unity 6000.3.16f1 릴리스 노트.',
+      },
+      {
+        title:
+          '🔍 QA Tester — ✅ 검증 3종 ALL PASS(unity_validate 0err 5.1s·qa_static 0err·run_regression 2/2)·🚨 신규 HIGH: known_bugs의 RT_SIZE_ZERO detector(scene_analyzer.calc_size)가 참조하는 scene_analyzer 모듈 Tools/ 미배치 — 탐지 경로 불완전·🚨 신규 MEDIUM: qa_static에 노트 타이밍 순서 검증 부재(10곡 현재 0위반이나 무방비)',
+        description:
+          '**✅ MeowBeat 검증(6/13 재실행)**: unity_validate.py PASS(0err·5.1s)·qa_static.py PASS(0err)·run_regression.py 2/2. manifest 10곡-오디오 10파일 1:1 매칭·전 곡 전 난이도 노트 시간순 정렬 확인. **🚨 신규 발견 1(HIGH — 검증 시스템 두 번째 구멍)**: known_bugs.json의 **RT_SIZE_ZERO detector가 "scene_analyzer.calc_size"를 참조하는데 scene_analyzer 모듈이 Tools/에 미배치** — import 경로가 불완전해 RectTransform width=0 버그(VLG ChildAlignment=4+sizeDelta.x=0)가 회귀해도 조용히 누락될 위험. 6/12 "픽스처 33% 거짓 안심"에 이은 검증 신뢰도 2차 의심 — 대응은 scene_analyzer.py 배치 또는 calc_size 로직의 unity_validate.py 인라인화. **🚨 신규 발견 2(MEDIUM)**: qa_static이 **manifest 노트 타이밍 순서를 검증하지 않음** — 현재 10곡 전부 정렬 상태(0위반)지만 수동 노트 추가 시 무방비. check_note_timing_order() 추가 검토. **부수**: qa_static의 check_scene_buttons()가 known_bugs.json에 미등록(unmapped detector — 버그 ID 불명). **NumLink**: Tools/ 미배치·고아 Editor.meta·빈 AutoQATests 정리 미진행(6/12와 동일 — 변화 없음). **오늘 결정 제안(P1·승인 불필요)**: scene_analyzer 인라인화를 회귀 픽스처 2→6 확충과 묶어 검증 시스템 구멍 2개를 한 번에 해소 — 차기 회의의 승인 불필요 실행 큐 1순위. Sources: 검증 3종 실행 실측·known_bugs.json/unity_validate.py 코드 분석·manifest 정합성 검사.',
+      },
+      {
+        title:
+          '📦 Content Writer — 구글 I/O 2026: Gemini "Ask Play"가 플레이 검색을 키워드 매칭→의도 이해로 전환(롱테일 자연어 유리·원클릭 커스텀 리스팅)·스토어 내 틱톡식 Play Shorts 세로영상 피드(美 시범)·퍼즐 CPI iOS $3.00/AOS $2.00·틱톡 CPI 메타 대비 15~25% 저렴·ROAS는 메타 4.2x 우위',
+        description:
+          '**📦 신규 1순위(ASO 대전환)**: 구글 I/O 2026(5월)에서 **Gemini가 플레이스토어 디스커버리에 통합 — "Ask Play" 챗봇이 자연어 질문("출퇴근에 한 손으로 하는 퍼즐")으로 앱 추천**. 검색이 키워드 패턴 매칭에서 "설명문이 사용자 의도를 해결하는가" 평가로 전환 — 롱테일 자연어 문장이 빅키워드 경쟁보다 유리. Grow 페이지에서 Gemini 원클릭 커스텀 스토어 리스팅 자동 생성+CSV 다국어 자동 현지화(1인 스튜디오 현지화 비용 ~0). 제재 신규: 3/1부터 과도한 wake lock(임계 5%) 코어 바이탈 추가·위반 시 노출 제외. **📦 신규 2순위(Play Shorts)**: **플레이스토어 안에 틱톡식 세로영상 발견 피드 신설**(美·선별 개발자 시범) — 미출시 게임은 9:16 클립 자산을 미리 쌓으면 확대 시 즉시 대응 가능. **📦 신규 3순위(숏폼 CPI)**: 퍼즐 CPI iOS $3.00/AOS $2.00(+5%)·틱톡 CPI iOS $2.00~3.50(메타 대비 15~25% 저렴·CPM ~$3.50 최저)·단 ROAS 메타 4.2x>UAC 3.3x>틱톡 2.8x — "설치는 틱톡·과금은 메타"·플레이어블 광고 전환 +25~40%(6/12 사전등록·소셜프루프와 겹치지 않는 신규 토픽). **오늘 결정 제안(P2)**: 스토어 문구를 키워드 나열 대신 **롱테일 자연어 문장 표준**("숫자 이어 푸는 두뇌 퍼즐"·"고양이와 리듬 타는 게임")으로 확정+게임플레이 클립은 처음부터 **9:16 세로 규격 제작 표준**(Play Shorts·틱톡·릴스·쇼츠 1소스 멀티유즈). Sources: Android Developers Blog I/O 2026·9to5Google Ask Play·ASO World·Game Growth Advisor CPI 2026·MegaDigital 틱톡.',
+      },
+      {
+        title:
+          '🛡 DevOps — ✅ dependabot actions 메이저 5건(#13~17) 회의 중 머지 완료(전건 mergeable clean 사전 확인·러너 마이그레이션 6/15 기한 전 마지막 평일)·Pages 최근 5런 전부 success·잔여 npm 10건은 배포 확인 후 단계 머지·재적체 방지책 dependabot auto-merge(patch 한정) 도입 제안',
+        description:
+          '**✅ 실행 완료(16일 만의 첫 실행)**: **dependabot actions 메이저 5건 squash 머지** — #13 upload-pages-artifact 3→4·#14 setup-node 4→6·#15 checkout 4→6·#16 configure-pages 5→6·#17 deploy-pages 4→5. 5건 전부 mergeable clean 사전 확인·충돌 0. GitHub windows-latest VS2026 이미지 마이그레이션(6/8~6/15) 기한 이틀 전 마지막 평일 타이밍. 머지 직후 Pages 배포 성공 확인 동반(오늘 저널 커밋 푸시로 검증). **CI 현황**: Deploy GitHub Pages 최근 5런 전부 success·실패 0. **잔여**: npm 10건(#19 react-router-dom·#23 eslint 9→10·#30 @anthropic-ai/sdk·#31 react 등)은 배포 안정 확인 후 단계 머지. **백업 상태**: Feedme feature/song-ownership-migration 0/0·NumLink feature/ugui-layerlab 0/0 — 커밋된 작업은 원격 동기, 단 양쪽 미커밋 다수는 디스크 장애 시 유실 위험 지속. **🆕 웹(재적체 방지)**: **dependabot auto-merge** — dependabot[bot] 트리거 워크플로에서 fetch-metadata로 update-type 판별→`gh pr merge --auto`·필수 사전 설정 2가지(Actions의 PR 생성·승인 허용+대상 브랜치 status check 필수 — 없으면 즉시 머지 보안 구멍)·2026 권장은 공급망 공격 대비 **patch 한정 자동 머지**(minor/major 수동 유지)(6/12 러너 마이그레이션·Buildalon과 겹치지 않는 신규 토픽). **오늘 결정 제안**: auto-merge(patch 한정) 워크플로 도입을 차기 승인 불필요 실행 큐에 등록 — npm patch성 PR 재적체 자동 해소. Sources: GitHub Docs Automating Dependabot·gh pr merge 실행 실측.',
+      },
+      {
+        title:
+          '🎨 Art Director — 판정 피드백 VFX 3원칙: ① 등급 차등(Perfect/Good 시각 분리 없으면 숙련 동기 소멸) ② 반투명 보호(DJMAX 히트 이펙트 알파 처리로 후속 노트 시인성 확보) ③ 무음 원칙(beatmania IIDX 입력음이 원곡 훼손한 실패 사례)·Arcaea 판정선 이중 대비·MeowBeat 4/12 이후 전체 커밋 0건 2개월 정체 재확인',
+        description:
+          '**🎨 신규 1순위(판정 VFX 설계 원칙 — 오늘 심층)**: ① **등급 차등** — "잘했으면 잘했다는 피드백"(Clear and with Differentiation)·Perfect와 Good이 시각적으로 같으면 숙련 동기가 사라짐 → 색·스케일·이펙트 분리 ② **반투명 보호** — 히트 이펙트가 다음 노트를 가리면 안 됨·DJMAX Trilogy는 히트 이펙트 투명도로 후속 노트 시인성 확보(Hard 고밀도에서 결정적) ③ **무음 원칙** — beatmania IIDX는 모든 입력에 동일 키음 피드백을 줘 플레이 실력이 음악 품질을 훼손하는 부작용·VFX는 무음(toneless)으로 원곡 보존. **보조**: Arcaea 판정선은 어두운 보라+밝은 마젠타 이중 대비로 판정 위치 인지 강화·노트 화면 진입은 페이드보다 팝업이 덜 산만(6/12 컨텍스추얼 HUD·리액티브 마스코트·햅틱 어휘와 겹치지 않는 신규 토픽). **에셋 실측(30일)**: NumLink png/prefab 변경 0건이나 UI 커밋 10+건 활발(작업이 코드/스킨 기반)·**MeowBeat는 전체 커밋 자체가 0건 — 4/12 이후 2개월 프로젝트 전체 정체**(이전 "에셋 정체" 진단보다 심각). **오늘 결정 제안(P2)**: **MeowBeat 판정 VFX 스펙 확정을 재시동 작업으로** — Perfect/Good/Miss 색·스케일 차등+알파 50% 이하 반투명+무음+**고양이 발바닥 모양 히트 이펙트**로 마스코트 정체성 연결. 스프라이트 1~2장+파티클 세팅으로 시작 가능한 작은 단위라 정체 탈출 진입점으로 적합. Sources: Procyon 리듬게임 피드백·exceed7 노트차팅·Arcaea TV Tropes·Sekaipedia.',
+      },
+    ],
+    meetingTitle:
+      '🔥 6/13 종합 회의 — "16일 만의 첫 실행": dependabot actions 5건 머지로 승인 불필요 실행이 시작됐다 — 다음 큐는 scene_analyzer 인라인화+픽스처 확충, UMP는 "이미 시행 중 요건"으로 긴급도 재정의',
+    meetingSummary:
+      '제62회 종합 회의. **6/12의 운영 전환("승인 불필요 영역으로 무게중심 이동")이 오늘 처음으로 커밋이 됐다** — 회의가 dependabot actions 메이저 5건(#13~17)을 직접 squash 머지, 16일 만의 첫 실행. 러너 이미지 마이그레이션 기한(6/15) 이틀 전 마지막 타이밍이었고 5건 전부 mergeable clean을 사전 확인한 안전한 실행이었다. **다만 승인 필요 영역(게임 레포)은 오늘도 0커밋** — P0(GMA 3커밋·UMP·NumLink Tools)는 사용자 세션 위임 유지. 대신 Developer가 P0의 긴급도를 재정의했다: **UMP는 미래 데드라인이 아니라 2024-01-16부터 이미 시행 중인 요건**으로, 미적용 출시 시 EEA/UK 트래픽이 Limited Ads로 강제되는 수익 차단 사안이며, **타겟 API 36 의무화(2026-08-31)**와 묶어 한 번에 처리하는 것이 효율적. QA는 6/12 "픽스처 33%"에 이어 **검증 시스템의 두 번째 구멍**을 발견 — known_bugs의 RT_SIZE_ZERO detector가 참조하는 scene_analyzer 모듈이 미배치라 탐지 경로가 불완전(HIGH). 차기 승인 불필요 실행 큐 1순위로 "scene_analyzer 인라인화+픽스처 2→6 확충" 통합 작업을 적재. 시장 쪽은 "리텐션 시대"(캐주얼 D1 26~30%)·Beatstar RPD $1.41·Gemini 의도 기반 검색·Play Shorts·판정 VFX 3원칙 등 출시 품질 데이터를 P2로 적재. 메타: 6/12가 "방향을 바꾼 날"이라면 6/13은 **"바뀐 방향으로 첫 발을 디딘 날"**.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '오늘은 다른 보고로 시작합니다 — 실행이 있었습니다. 6/12에 결정한 dependabot actions 메이저 5건을 회의 중에 직접 머지했어요. #13부터 #17까지 전부 squash 머지 완료, 16일 만의 첫 실행입니다. 러너 마이그레이션 기한이 6/15라 오늘이 마지막 평일이었어요 — 타이밍을 놓치지 않았습니다. 다만 정직하게: 게임 레포는 오늘도 0커밋입니다. NumLink 미커밋 36, MeowBeat 37 동결 그대로고, P0 3종은 사용자 세션 위임 상태를 유지합니다. 6/12 액션아이템 4건 중 1건 완료·3건 미완. 오늘 회의의 임무는 두 가지입니다 — 머지 후 Pages 배포가 성공하는지 오늘 안에 확인하고, 다음 승인 불필요 실행 대상을 큐에 적재하는 것. QA가 가져온 scene_analyzer 건이 1순위 후보입니다.',
+      },
+      {
+        speaker: 'DevOps',
+        note: '머지 실행 보고입니다. 어제 결정대로 actions 메이저 5건 — upload-pages-artifact v4, setup-node v6, checkout v6, configure-pages v6, deploy-pages v5 — 을 머지했습니다. 사전에 5건 전부 mergeable clean을 확인했고 충돌 0이었어요. Pages는 최근 5런 전부 success라 베이스라인이 건강하고, 오늘 저널 커밋을 푸시하면 새 액션 버전으로 배포가 도는 첫 케이스가 됩니다 — 그게 성공하면 npm 10건 단계 머지로 넘어갑니다. 재적체 방지책도 조사했어요: dependabot auto-merge를 patch 한정으로 거는 방식입니다. fetch-metadata로 update-type을 판별해서 patch만 자동 머지하고 minor/major는 수동 유지 — 공급망 공격 대비 2026년 권장 구성입니다. 차기 승인 불필요 실행 큐에 등록 제안합니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'P0의 긴급도를 재정의할 발견을 가져왔습니다. 우리가 UMP를 "출시 전에 해야 할 일"로 분류해왔는데, 틀렸어요 — UMP/CMP 요건은 2024년 1월 16일부터 이미 시행 중입니다. 미적용 상태로 출시하면 EEA·UK 트래픽이 그 순간부터 Limited Ads로 강제되어 eCPM이 급락해요. "나중에"가 아니라 "출시 즉시 미준수"가 되는 사안입니다. 여기에 타겟 API 36 의무화가 2026년 8월 31일로 확정됐으니, 사용자 P0 세션에서 UMP 구현과 targetSdk 36 상향을 묶어 스토어 컴플라이언스를 한 번에 끝내는 걸 제안합니다. GMA SDK에 UMP API가 내장돼 있어 별도 SDK 없이 ConsentInformation.Update에서 LoadAndShowConsentFormIfRequired로 이어지는 표준 플로우면 됩니다. 부수로 Unity 6.3 패치 6000.3.16f1에 보안 CVE 3건 수정이 들어왔으니 한가한 시점에 에디터 업데이트 권장합니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '검증 3종은 오늘도 ALL PASS입니다 — unity_validate 0에러 5.1초, qa_static 0에러, run_regression 2/2. 그런데 어제 픽스처 33%에 이어 두 번째 구멍을 찾았습니다. known_bugs.json의 RT_SIZE_ZERO detector가 "scene_analyzer.calc_size"를 참조하는데, 정작 scene_analyzer 모듈이 Tools/에 없어요. 탐지 경로가 불완전해서 RectTransform width=0 버그가 회귀해도 조용히 누락될 수 있습니다 — HIGH 등급입니다. 대응은 둘 중 하나: scene_analyzer.py를 배치하거나 calc_size 로직을 unity_validate.py에 인라인화. 저는 인라인화를 권합니다 — 파일 하나로 자기완결되니까요. 이걸 어제의 픽스처 2→6 확충과 묶어서 검증 시스템 구멍 2개를 한 번에 막는 게 차기 승인 불필요 실행 1순위라고 봅니다. 부수 발견: qa_static이 노트 타이밍 순서를 검증하지 않아요. 지금은 10곡 전부 정렬 상태라 0위반이지만 수동 추가 시 무방비입니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '리듬게임 벤치마크 둘을 가져왔습니다. 홀로라이브 리듬게임이 8월 31일 글로벌 출시인데 멤버 54명에 멤버당 솔로곡 2개, 합쳐서 150곡 구조예요. 그리고 Beatstar — 누적 3,800만 다운로드, 1년차 매출 $73M, RPD $1.41로 서구권 리듬게임 매출 기준점입니다. 두 사례의 공통 공식이 "곡=콘텐츠 단위, 캐릭터=수집 동기"예요. MeowBeat에 바로 적용 가능합니다 — 고양이와 곡을 1:1로 매핑해서 곡 해금이 고양이 수집이 되게 하는 거죠. manifest.json에 catId 필드 1개 추가로 시작할 수 있는 저비용 변경입니다. 시장 쪽은 美 퍼즐 IAP 지출이 $4.6B로 전년 +31.4% 급성장 중인데, 캐주얼 D1 리텐션은 26~30%로 하락 추세 — "리텐션 시대"입니다. NumLink는 D1 26%를 최저 기준선으로 잡고 첫 세션에서 테마 1개 해금을 보장하는 온보딩을 권합니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: 'ASO 판이 바뀌었습니다. 구글 I/O 2026에서 Gemini가 플레이스토어 검색에 통합됐어요 — "Ask Play" 챗봇이 자연어 질문으로 앱을 추천하고, 검색이 키워드 매칭에서 의도 이해로 전환됐습니다. "photo editor"보다 "remove background from photo"가 이기는 구조예요. 우리 스토어 문구도 키워드 나열 대신 롱테일 자연어 문장으로 가야 합니다 — "숫자 이어 푸는 두뇌 퍼즐", "고양이와 리듬 타는 게임" 식으로요. 그리고 스토어 안에 틱톡식 세로영상 피드 "Play Shorts"가 신설됐습니다(미국 시범). 미출시인 우리는 게임플레이 클립을 처음부터 9:16 세로 규격으로 만들면 Play Shorts·틱톡·릴스·쇼츠에 1소스 멀티유즈가 됩니다. CPI 데이터도 확보했어요 — 퍼즐 iOS $3.00/AOS $2.00, 틱톡이 메타보다 15~25% 저렴하지만 ROAS는 메타 4.2x 우위라 "설치는 틱톡, 과금은 메타" 구도입니다. 출시 후 UA 순서의 근거가 됩니다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: 'MeowBeat 정체가 생각보다 심각합니다 — 에셋만이 아니라 4/12 이후 프로젝트 전체 커밋이 0건, 2개월입니다. 그래서 재시동 진입점으로 작은 단위를 제안합니다: 판정 피드백 VFX 스펙 확정이요. 오늘 심층 조사한 업계 원칙이 셋입니다. 첫째 등급 차등 — Perfect와 Good이 시각적으로 같으면 숙련 동기가 사라지니 색과 스케일로 분리. 둘째 반투명 보호 — DJMAX가 히트 이펙트에 투명도를 줘서 다음 노트 시인성을 지킨 사례, Hard 고밀도에서 결정적입니다. 셋째 무음 원칙 — beatmania IIDX가 입력 피드백음으로 원곡을 훼손한 실패 사례가 있어 VFX는 무음으로요. 여기에 고양이 발바닥 모양 히트 이펙트로 마스코트 정체성을 연결하면, 스프라이트 1~2장과 파티클 세팅으로 시작 가능한 작은 작업이 됩니다. 보조로 Arcaea의 판정선 이중 대비(어두운 보라+밝은 마젠타)도 판정선 점검에 적용할 만합니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: '✅ [완료] dev-studio dependabot actions 메이저 5건(#13~17) 머지 — 16일 만의 첫 실행',
+        description:
+          '6/12 결정("승인 불필요 영역 실행")의 첫 이행. upload-pages-artifact v4·setup-node v6·checkout v6·configure-pages v6·deploy-pages v5 — 5건 전부 mergeable clean 사전 확인 후 squash 머지. 러너 이미지 마이그레이션 기한(6/15) 이틀 전 마지막 평일 타이밍. 오늘 저널 커밋 푸시로 새 액션 버전 배포 성공까지 확인. 잔여 npm 10건은 배포 안정 확인 후 단계 머지.',
+      },
+      {
+        title: '🚨 [P0·위임 유지+긴급도 재정의] MeowBeat 복붙 3커밋+UMP+targetSdk 36 묶음 — 사용자 다음 세션 첫 작업',
+        description:
+          'UMP는 미래 데드라인이 아니라 2024-01-16부터 이미 시행 중인 요건 — 미적용 출시 시 EEA/UK 트래픽 Limited Ads 강제(수익 차단). 타겟 API 36 의무화(2026-08-31)와 묶어 한 번에 스토어 컴플라이언스 완결: ① 6/11 준비된 복붙 3커밋 ② ConsentInformation.Update→LoadAndShowConsentFormIfRequired ③ Target API 36 상향+GMA/EDM4U 호환 확인. 검증 3종 ALL PASS 유지로 커밋 안전 보증.',
+      },
+      {
+        title: '🔧 [P1·승인 불필요·차기 실행 큐 1순위] MeowBeat scene_analyzer 인라인화+회귀 픽스처 2→6 확충 통합',
+        description:
+          '검증 시스템 구멍 2개 동시 해소: ① RT_SIZE_ZERO detector가 참조하는 scene_analyzer 미배치 → calc_size 로직을 unity_validate.py에 인라인화(HIGH) ② error 등급 YAML_DUPLICATE_FILE_ID·MANIFEST_MISSING_AUDIO 재현 미니씬 test_fixtures/ 추가(6/12 이월). 부수: qa_static에 check_note_timing_order() 추가 검토(MEDIUM)·unity_validate 절대경로화. 전부 로컬 작업 — 새벽 실행 가능.',
+      },
+      {
+        title: '🔧 [P1·이월] NumLink Tools 3종 이식+고아 메타 정리',
+        description:
+          'MeowBeat Tools 3종+known_bugs.json 이식+씬 경로 갱신(회귀탐지 0→가동)·고아 Editor.meta+빈 AutoQATests 폴더 정리(임포트 churn 제거). push 불필요 로컬 작업이나 게임 레포 커밋이 필요해 사용자 세션 권장.',
+      },
+      {
+        title: '🎮📦🎨🛡 [P2·신규 적재] catId 곡-고양이 매핑·판정 VFX 스펙·9:16 클립 표준·auto-merge',
+        description:
+          'Game Designer — MeowBeat manifest catId 필드로 "고양이=곡 해금 단위" 1:1 매핑 GDD 반영(Beatstar RPD $1.41·hololive 150곡 공식). Art Director — 판정 VFX 스펙 확정(등급 차등·알파 50% 반투명·무음·고양이 발바닥 이펙트)을 2개월 정체 재시동 진입점으로. Content Writer — 스토어 문구 롱테일 자연어 표준+9:16 세로 클립 제작 표준(Play Shorts·틱톡 멀티유즈). DevOps — dependabot auto-merge(patch 한정) 워크플로 도입. NumLink — D1 26% 기준선 KPI+첫 세션 테마 1개 해금 온보딩. 모두 P0 후 착수.',
+      },
+    ],
+  },
+  {
     id: '2026-06-12T04:00:00-daily-standup',
     date: '2026-06-12',
     researchTitle:
