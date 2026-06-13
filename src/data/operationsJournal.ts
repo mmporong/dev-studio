@@ -43,6 +43,119 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-06-14T04:00:00-daily-standup',
+    date: '2026-06-14',
+    researchTitle:
+      '🔥 6/14 일요일 데일리 스탠드업 — **🔄 QA 자기검증: 6/13 "scene_analyzer 미배치 HIGH"는 오진이었다 — 실제로 Tools/에 존재·known_bugs.json이 calc_size 정상 참조 중·탐지 경로 연결됨 → 검증 시스템 "두 번째 구멍"은 실재하지 않았다(어제 HIGH 종결)**·**🚨 QA 신규(진짜 구멍): 검증 3종이 하드코딩 상대경로(Tools/known_bugs.json)를 써서 CWD가 Tools/ 디렉터리면 전부 거짓 에러 — 루트 실행 시에만 PASS·자동화 스케줄러 작업 디렉터리 의존성 함정(승인 불필요·__file__ 절대경로화로 즉시 수정 가능)**·**💻 Developer: 두 프로젝트 모두 Unity 6000.3.5f2(6.3 LTS 초기 패치)·광고 SDK 마감 2건 이미 경과(LevelPlay Waterfall 종료 1/31·Unity Ads Legacy 직접연동 성능저하 4/1) → 수익화 시 Bidding 전환 필수·Unity 6.8서 Mono 완전 제거+CoreCLR(.NET 8)+Code Reload 로드맵 시작**·**🎮 Game Designer: 하이브리드캐주얼 퍼즐 IAP Q2 2025 +100% YoY·퍼즐 매출 430%↑·Hexa Sort 카드수집·Royal Match 아바타 메타(engagement +12%)·Rhythm Doctor(7th Beat 2025) 조절식 판정윈도우+TTS 원버튼 접근성**·**🎨 Art Director: Material 3 Expressive 스프링 모션(stiffness/damping 오버슈트)·컬러블라인드 3원칙(색+아이콘+모양 이중신호·red-green 금지)·EU 접근성법(EAA) 6/28 시행·모바일 햅틱 micro-signal**·**📦 Content: 2026 ASO 첫 스크린샷 애니메이션이 CVR 견인·검색이 다운로드 65% 차지·자연어 롱테일 AI검색 유리·숏폼 완주율 80% 첫 3초 결정**.',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제63회 — **6/14 일요일·D+21**. **🔄 오늘의 본질 = 회의가 자기 자신의 어제 진단을 검증해 오진을 정정한 날**: 6/13이 HIGH로 올린 "scene_analyzer 모듈 미배치(검증 시스템 두 번째 구멍)"를 QA가 오늘 실파일로 재점검한 결과 — **scene_analyzer.py는 Tools/에 정상 존재**하며 known_bugs.json의 RT_SIZE_ZERO detector가 `scene_analyzer.calc_size`를 정상 참조 중이라 **탐지 경로는 끊긴 적이 없었다**. 어제의 HIGH는 거짓 경보였고 오늘 종결한다. **다만 QA가 같은 점검에서 진짜 구멍을 찾았다**: 검증 3종(unity_validate·qa_static·run_regression)이 `Tools/known_bugs.json`·`Tools/make_fixtures.py` 같은 **하드코딩 상대경로**를 써서, 실행 디렉터리(CWD)가 `Tools/` 안이면 경로가 어긋나 전부 거짓 에러를 낸다 — 루트에서 실행할 때만 ALL PASS. 6/12 "루트 밖 실행 시 skip"의 더 구체적 재확인이며, 새벽 자동화 스케줄러가 작업 디렉터리를 어디로 잡느냐에 검증 신뢰도가 통째로 걸리는 함정. 대응은 세 스크립트의 경로를 `__file__` 기준 절대경로로 바꾸는 것 — **로컬 작업·게임 레포 커밋 불필요·승인 불필요**라 차기 실행 큐 1순위로 적재. **🎯 게임 레포 상태**: NumLink 미커밋 36·MeowBeat 37 **2일째 동결**(6/13 대비 무변동·5fcac3a/657032c 그대로)·P0(GMA 3커밋·UMP·targetSdk 36)는 사용자 세션 위임 유지·dev-studio도 오늘 새 커밋 0(최신 0e5dc99 = 6/13 저널)·dependabot npm PR 10건 잔존. **💻 Developer(엔진·수익화 인프라)**: 두 프로젝트 ProjectVersion 실측 결과 **둘 다 Unity 6000.3.5f2 — 6.3 LTS의 초기 패치**(6/13에 다룬 최신 6000.3.16f1과 11개 패치 차이·보안 CVE 3건 미반영). **광고 SDK 마감 2건이 이미 지났다**: ① ironSource/Unity LevelPlay의 구식 Waterfall 중개 종료 2026-01-31(경과) ② Unity Ads Legacy 직접 연동의 성능 저하 시작 2026-04-01(경과) — 둘 다 Bidding(실시간 입찰) 중개로 전환해야 정상 eCPM 회복. 6/13의 UMP 묶음에 "광고 SDK Bidding 전환"을 한 항목 더 추가해야 한다. ③ 장기 로드맵: **Unity 6.8에서 Mono 런타임 완전 제거 → CoreCLR(.NET 8)+Code Reload(Domain Reload 대체)** 도입 예고 — 2026년 점진 적용·6.3 LTS 사용 중인 우리는 당장 영향 없으나 차기 메이저 업그레이드 시 IL2CPP/스크립팅 백엔드 재검토 필요. **🎮 시장(Game Designer·새 각도)**: **하이브리드캐주얼 퍼즐 IAP가 Q1 2025 +67%→Q2 +100% YoY로 가속·퍼즐 매출 430% 성장**·ARPDAU가 하이퍼캐주얼 대비 4~7배($0.15~0.50 vs $0.03~0.08) — 6/13의 "리텐션 시대"에 이어 "메타 레이어가 격전지"로 심화. 구체 사례: **Hexa Sort의 카드 수집 시스템·Royal Match Starlight Quest의 아바타 메타(Q3 2025 engagement +12%)** — 경량 메타/수집 레이어가 리텐션 핵심. 리듬게임: **Rhythm Doctor(7th Beat Games·2025 1.0)**가 원버튼+**조절 가능한 판정 윈도우**+TTS 무시야 플레이로 접근성 설계의 정점으로 호평. FTUE 개선 시 D1 최대 +50%·"learn by doing"(인터랙티브 온보딩). **🎨 Art Director(새 각도)**: ① **Material 3 Expressive 스프링 모션** — stiffness/damping 기반 살짝 오버슈트하는 바운스가 2026 표준(버튼 play/pause 상태 전환) ② **컬러블라인드 3원칙** — 색만 쓰지 말고 색+아이콘+모양 이중 신호·red-green 조합 금지 — 특히 **EU 접근성법(European Accessibility Act) 2025-06-28 시행**으로 디지털 제품 접근성이 규제 영역에 진입 ③ **모바일 햅틱 micro-signal** — 콤보·스와이프마다 짧은 진동으로 시청각 보조(Aurion Rhythm 2025 사례). 6/13의 판정 VFX 3원칙과 겹치지 않는 "모션·접근성·햅틱" 신규 토픽. **📦 Content(새 각도)**: ① 2026 ASO는 **첫 스크린샷에 3~5초 영상형 애니메이션** 삽입이 CVR 최대 견인·아이콘은 3D→볼드 미니멀 회귀·배경색 A/B로 전환 +5% ② **검색이 앱스토어 다운로드의 65%** 차지·자연어 롱테일("짧게 즐기는 힐링 퍼즐")이 AI 검색 노출에 유리·설명문 250자당 키워드 1회 권장 ③ **숏폼 완주율 80%가 첫 3초에 결정·가치 인식 65%는 1초에 판가름**·게임 광고 영상 비중 81%·하이브리드캐주얼 D7 20%/D30 10%(6/13 Gemini Ask Play·Play Shorts와 겹치지 않는 "스크린샷 애니메이션·검색 점유율·완주율" 신규 토픽). **🛡 DevOps**: Pages 배포 정상(최근 런 success·6/13 저널 37s)·dependabot npm PR 10건 누적(#19~32·라벨 없음·mergeState UNKNOWN)·워크플로 2개(deploy-pages·weekly-insights)+dependabot.yml 정상·package.json은 이미 Vite8/TS6/React19 최신 스택. 웹: **Vite 8 + Rolldown으로 빌드 10~30배 가속**(현 레포 vite ^8.0.1 사용 중이나 기본 빌드 경로가 여전히 esbuild/rollup일 수 있어 Rolldown 활성화 여지 점검 가치). **🎯 오늘 핵심 결정 = ① [✅정정·종결] 6/13 scene_analyzer 미배치 HIGH → 오진(실파일 존재·calc_size 정상 참조) ② [P1·승인 불필요·차기 큐 1순위] 검증 3종 __file__ 절대경로화 — CWD 의존성 함정 제거(어제 scene_analyzer 인라인화 대신 진짜 구멍을 메움) ③ [P0·위임 유지+근거 보강] MeowBeat 복붙 3커밋+UMP+targetSdk 36에 "광고 SDK Bidding 전환"+"엔진 6000.3.16f1 패치" 추가 ④ [P1·이월] NumLink Tools 3종 이식 ⑤ [P2·신규] 접근성 묶음(조절식 판정윈도우 Lenient/Standard/Strict+컬러블라인드 이중신호·EU EAA 6/28 컨텍스트)·고양이 도감 경량 메타·ASO 첫 스크린샷 애니메이션·Material 3 스프링 버튼·dependabot patch 머지**. 메타 통찰: 6/13이 "바뀐 방향으로 첫 발을 디딘 날"이라면, 6/14는 **"그 첫 발이 밟은 자리를 되돌아봐 어제의 경보가 오진이었음을 스스로 잡아낸 날"** — 회의는 이제 진단·실행에 더해 자기 진단을 검증하는 단계로 들어섰다.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — 게임 레포 미커밋 2일째 동결(NumLink 36·MeowBeat 37 무변동·5fcac3a/657032c)·dev-studio도 오늘 새 커밋 0(최신 0e5dc99 6/13 저널)·dependabot npm PR 10건 잔존·6/13 액션아이템 중 dependabot 머지만 완료·나머지 위임/이월',
+        description:
+          '**🎯 액션아이템 실측(6/14)**: ① MeowBeat 3커밋+UMP+targetSdk 36 = **미완**(657032c 무변동·미커밋 37 그대로·사용자 세션 위임 유지) ② scene_analyzer 인라인화+픽스처 2→6 = **재정의**(QA 재점검 결과 scene_analyzer는 이미 존재 — 인라인화 불필요·픽스처 확충만 이월) ③ NumLink Tools 이식 = **미완**(Tools/ 부재 지속) ④ dependabot actions 5건 = **6/13 완료 확정**(이번 주 새 npm 10건은 잔존). **측정값**: NumLink 최신 5fcac3a·브랜치 feature/ugui-layerlab·미커밋 36(2일째 동결), MeowBeat 최신 657032c·브랜치 feature/song-ownership-migration·미커밋 37(2일째 동결), dev-studio 최신 0e5dc99(6/13 스탠드업 저널)·미커밋 1(.omc/project-memory.json 자동생성)·dependabot npm PR 10건(#19·21·22·23·24·25·29·30·31·32). **패턴**: 6/13의 "첫 실행" 이후 자체 레포는 다시 정적·게임 레포는 2일째 동결 — 주말 무인 구간 진입. **오늘 결정 제안**: dependabot PR을 패치/마이너(예 #31 react·#19 react-router·#29 typescript-eslint)와 메이저(eslint 10.x 계열)로 분리해 안전한 patch/minor만 승인 불필요 큐로 머지하고, 메이저는 breaking 검토 별도 분리. (git log/status/gh pr 실측)',
+      },
+      {
+        title:
+          '🔍 QA Tester — 🔄 6/13 "scene_analyzer 미배치 HIGH" 오진 정정: 실제 Tools/에 존재·known_bugs.json이 calc_size 정상 참조(탐지 경로 연결됨)·🚨 진짜 신규 구멍: 검증 3종 하드코딩 상대경로로 CWD=Tools/면 전부 거짓 에러(루트 실행 시에만 PASS)·회귀 픽스처 여전히 2/6(33%)',
+        description:
+          '**🔄 6/13 HIGH 오진 정정(가장 중요)**: 어제 "scene_analyzer 모듈 미배치로 RT_SIZE_ZERO 탐지 경로 불완전(HIGH)"로 올렸으나, 오늘 실파일 재점검 결과 **scene_analyzer.py는 Tools/에 정상 존재**하고 known_bugs.json의 RT_SIZE_ZERO detector가 `scene_analyzer.calc_size`를 정상 참조 중 — **탐지 경로는 끊긴 적이 없었다**. 어제의 HIGH는 거짓 경보였고 종결한다(검증 시스템 "두 번째 구멍"은 실재하지 않음). **🚨 진짜 신규 구멍(CWD 의존성)**: 검증 3종이 `Tools/known_bugs.json`·`Tools/make_fixtures.py` 등 **하드코딩 상대경로**를 사용 — 실행 디렉터리가 `Tools/` 안이면 경로가 어긋나 전부 거짓 에러를 내고, **프로젝트 루트에서 실행할 때만 ALL PASS**(unity_validate exit0·qa_static exit0·run_regression 2/2). 6/12 "루트 밖 실행 시 detector skip"의 구체적 재확인 — 새벽 자동화 스케줄러가 CWD를 Tools/로 잡으면 검증이 통째로 거짓 에러/스킵되는 함정. **회귀 픽스처**: 여전히 2개(indent_fixture·size0_fixture)로 known_bugs 6패턴 대비 33% 커버(6/12·6/13 이월·재론 안 함). **NumLink**: Tools/ 폴더 부재 확정(회귀·정적QA 0건 — 변화 없음). **오늘 결정 제안(P1·승인 불필요·차기 큐 1순위)**: unity_validate.py·qa_static.py·run_regression.py의 경로를 `os.path.dirname(__file__)` 기준 절대경로로 패치 — CWD 무관하게 동작하도록 만들어 자동화 신뢰도 확보. 어제 적재했던 scene_analyzer 인라인화는 불필요해졌으므로 이 절대경로화로 대체. Sources: Tools/ 디렉터리 실측·검증 3종 루트/Tools CWD 양쪽 실행·known_bugs.json/scene_analyzer.py 코드 분석.',
+      },
+      {
+        title:
+          '💻 Developer — 두 프로젝트 모두 Unity 6000.3.5f2(6.3 LTS 초기 패치·최신 6000.3.16f1과 11패치 차)·광고 SDK 마감 2건 경과(LevelPlay Waterfall 종료 1/31·Unity Ads Legacy 성능저하 4/1) → Bidding 전환 필수·Unity 6.8 Mono 제거+CoreCLR(.NET 8)+Code Reload 로드맵',
+        description:
+          '**💻 실측(ProjectVersion.txt)**: NumLink·MeowBeat **둘 다 Unity 6000.3.5f2** — 6.3 LTS의 초기 패치로, 6/13에 다룬 최신 6000.3.16f1(보안 CVE 3건 수정)과 11개 패치 차이. 6.3 LTS는 2027.12까지 지원이라 메이저 변동은 없으나, 한가한 시점 6000.3.16f1로 패치 업데이트 권장. **🚨 신규 1순위(광고 SDK 마감 이미 경과)**: ① **ironSource/Unity LevelPlay 구식 Waterfall 중개 종료 2026-01-31(경과)** ② **Unity Ads Legacy 직접 연동 성능 저하 시작 2026-04-01(경과)** — 둘 다 Bidding(실시간 입찰) 중개로 전환하지 않으면 정상 eCPM이 안 나옴. MeowBeat 수익화 구현 시 UMP와 함께 LevelPlay Bidding 구성을 같이 처리해야 함(6/13 UMP 묶음에 항목 추가). **🆕 신규 2순위(장기 로드맵)**: **Unity 6.8에서 Mono 런타임 완전 제거 → CoreCLR(.NET 8) + Code Reload**(Domain Reload 대체로 에디터 반복 속도 개선) 도입 예고 — 2026년 점진 적용. 6.3 LTS 사용 중인 우리는 당장 영향 없으나 차기 메이저 업그레이드 시 스크립팅 백엔드/IL2CPP 재검토 필요. **🆕 신규 3순위(6.3 모바일 신기능)**: Bloom용 Kawase/Dual filtering(모바일 최적화)·xAtlas 라이트맵 패킹·Build Profile 셰이더 키워드 제어로 컴파일 시간 단축 — 다음 빌드 작업 시 적용 가치(6/13 6000.3.16f1·6/12 Unity 6.4와 겹치지 않는 "광고 SDK Bidding·CoreCLR·6.3 모바일 신기능" 신규 토픽). **오늘 결정 제안**: 6/13 P0 묶음(복붙 3커밋+UMP+targetSdk 36)에 "광고 SDK LevelPlay Bidding 전환"+"엔진 6000.3.16f1 패치"를 추가해 수익화·컴플라이언스를 한 세션에 완결. Sources: ProjectVersion.txt 실측·Unity 6.3 LTS 릴리스 노트·LevelPlay Ads Mediation 문서·Path to CoreCLR 2026 업그레이드 가이드.',
+      },
+      {
+        title:
+          '🎮 Game Designer — 하이브리드캐주얼 퍼즐 IAP Q2 2025 +100% YoY·퍼즐 매출 430%↑·ARPDAU 하이퍼캐주얼 4~7배·Hexa Sort 카드수집·Royal Match 아바타 메타(engagement +12%)·Rhythm Doctor(7th Beat 2025) 조절식 판정윈도우+TTS 원버튼 접근성 — "메타 레이어가 격전지"',
+        description:
+          '**🆕 신규 1순위(메타 레이어 격전지)**: **하이브리드캐주얼 퍼즐 IAP가 Q1 2025 +67%→Q2 +100% YoY로 가속·퍼즐 매출 430% 성장**·ARPDAU가 하이퍼캐주얼 대비 4~7배($0.15~0.50 vs $0.03~0.08) — 6/13 "리텐션 시대"에서 "메타/수집 레이어가 리텐션 핵심"으로 심화. **구체 사례**: Hexa Sort의 카드 수집 시스템·Royal Match Starlight Quest의 아바타 메타(Q3 2025 engagement +12%) — 경량 메타 레이어가 D7 견인. **🆕 신규 2순위(리듬게임 접근성 벤치마크)**: **Rhythm Doctor(7th Beat Games·2025 1.0)** — 원버튼+**조절 가능한 판정 윈도우**+TTS 무시야 플레이로 접근성 설계의 정점, 1.0 호평. 신규 유저는 넓은 윈도우로 튜토리얼 이탈을 줄이고 코어 유저는 좁은 윈도우로 도전하는 구조. **🆕 신규 3순위(FTUE)**: FTUE(첫 사용자 경험) 개선 시 D1 리텐션 최대 +50%·텍스트 대신 "learn by doing" 인터랙티브 온보딩(6/13 美 퍼즐 $4.6B·hololive·Beatstar와 겹치지 않는 "메타 레이어·Rhythm Doctor·FTUE" 신규 토픽). **오늘 결정 제안(P2)**: ① **MeowBeat에 "조절 가능한 판정 윈도우"(Lenient/Standard/Strict) 접근성 옵션 추가** — Rhythm Doctor 검증 패턴·별점 기준은 윈도우와 분리해 밸런스 유지(Art Director 컬러블라인드 건과 "접근성 묶음"으로 통합 가능) ② **NumLink에 고양이 도감/스티커 수집 경량 메타**(Hexa Sort식)를 레벨 클리어 보상으로 연결해 D7 강화. Sources: Gamigion 하이브리드캐주얼 2026·Game Growth Advisor 하이브리드 디자인·Rhythm Doctor 1.0 리뷰/Family Gaming Database 접근성·Medium 모바일 온보딩 UX.',
+      },
+      {
+        title:
+          '🎨 Art Director — Material 3 Expressive 스프링 모션(stiffness/damping 오버슈트 바운스)·컬러블라인드 3원칙(색+아이콘+모양 이중신호·red-green 금지·EU 접근성법 EAA 2025-06-28 시행)·모바일 햅틱 micro-signal(콤보·스와이프마다 짧은 진동·Aurion Rhythm 2025)',
+        description:
+          '**🎨 신규 1순위(모션 디자인)**: **Material 3 Expressive 스프링 모션** — stiffness/damping 물리 기반으로 살짝 오버슈트하는 바운스가 2026 모바일 UI 표준. 버튼 play/pause 상태 전환에 가벼운 오버슈트를 입혀 반응성 체감을 높이되 미니멀 톤은 유지. **🎨 신규 2순위(접근성·규제 진입)**: **컬러블라인드 3원칙** — ① 색만 쓰지 말고 색+아이콘+모양 이중 신호 ② red-green 조합 금지 ③ 그레이스케일 변환 시 구분되는지 자가검증. **EU 접근성법(European Accessibility Act) 2025-06-28 시행**으로 디지털 제품 접근성이 규제 영역에 진입 — 글로벌 출시 시 선제 대응 가치. **🎨 신규 3순위(햅틱)**: 모바일 햅틱은 micro-signal로 — 콤보·스와이프마다 짧은 진동을 시청각 보조로(Aurion Rhythm 2025 사례)(6/13 판정 VFX 3원칙·Arcaea 판정선과 겹치지 않는 "Material 3 스프링·컬러블라인드·햅틱 micro-signal" 신규 토픽). **오늘 결정 제안(P2)**: ① **NumLink 숫자 연결 성공/실패 피드백에 컬러블라인드 이중 신호 적용** — 색상만으로 구분하던 라인/숫자에 모양(체크 아이콘·선 굵기·점선/실선) 보조 큐 추가+그레이스케일 자가검증(Game Designer 판정윈도우 건과 "접근성 묶음" 통합) ② 버튼 탭에 Material 3 Expressive식 스프링 바운스(가벼운 오버슈트) 적용. Sources: Tubik UI 트렌드 2026·Material 3 Expressive 공식·rgblind 컬러블라인드 팔레트·Filament Games 게임 컬러블라인드 접근성·Maxima 햅틱 게임 디자인.',
+      },
+      {
+        title:
+          '📦 Content Writer — 2026 ASO: 첫 스크린샷 3~5초 영상형 애니메이션이 CVR 최대 견인·아이콘 3D→볼드 미니멀 회귀·검색이 앱스토어 다운로드 65% 차지·자연어 롱테일 AI검색 유리·설명문 250자당 키워드 1회·숏폼 완주율 80% 첫 3초 결정·게임광고 영상비중 81%',
+        description:
+          '**📦 신규 1순위(스크린샷 진화)**: 2026 ASO는 **첫 스크린샷에 3~5초 영상형 애니메이션** 삽입이 CVR을 최대로 견인 — 정적 설정화면 대신 게임플레이 임팩트 순간을 동적으로. 아이콘 트렌드는 3D 디테일→볼드 미니멀로 회귀·배경색 A/B 테스트로 전환 +5%. **📦 신규 2순위(검색 점유율·자연어)**: **검색이 앱스토어 다운로드의 65%** 차지 — 자연어 롱테일("짧게 즐기는 힐링 퍼즐")이 AI 검색 노출에 유리(6/13 Gemini Ask Play의 정량 근거)·설명문은 250자당 키워드 1회 권장(과밀 페널티 회피). **📦 신규 3순위(숏폼 후킹)**: **숏폼 완주율 80%가 첫 3초에 결정·가치 인식 65%는 1초에 판가름**·게임 광고에서 영상 비중 81%·하이브리드캐주얼 D7 20%/D30 10%(6/13 Play Shorts·CPI·ROAS와 겹치지 않는 "스크린샷 애니메이션·검색 65%·완주율" 신규 토픽). **오늘 결정 제안(P2)**: NumLink·MeowBeat **첫 번째 스토어 스크린샷을 "설정화면 대신 게임플레이 임팩트 순간"으로 교체**하고, 캡션에 자연어 롱테일 키워드(NumLink="짧게 즐기는 숫자 연결 퍼즐"·MeowBeat="고양이와 즐기는 캐주얼 리듬게임")를 넣은 2종 A/B 버전을 커스텀 프로덕트 페이지로 제작(9:16 세로 클립과 1소스 멀티유즈). Sources: Phiture ASO 트렌드 2026·AppFollow 스크린샷/게임 ASO·AppTweak Play Store 키워드·RevenueCat UGC 광고·Admiral 모바일 게임 벤치마크.',
+      },
+      {
+        title:
+          '🛡 DevOps — Pages 배포 정상(최근 런 success·6/13 저널 37s)·dependabot npm PR 10건 누적(#19~32·라벨 없음·mergeState UNKNOWN)·워크플로 2개+dependabot.yml 정상·package.json Vite8/TS6/React19 최신·웹: Vite8+Rolldown 빌드 10~30배 가속',
+        description:
+          '**🛡 CI 현황**: GitHub Pages 배포 정상 — 최근 런 success(6/13 docs 커밋 37s)·6/13 머지한 actions 5건(deploy-pages 5.0.0 등)으로 배포 정상 동작 확인. **잔여 PR**: dependabot deps PR 10건(#19~32) 누적·라벨 없음·mergeState UNKNOWN(미평가)·대부분 dev 의존성(eslint 10 메이저·@anthropic-ai/sdk 0.88·globals 17 포함). **워크플로**: deploy-pages.yml+weekly-insights.yml 2개+dependabot.yml 존재. package.json은 이미 Vite ^8.0.1/TS 6/React 19 최신 스택. **🆕 웹(새 각도)**: **Vite 8 + Rolldown**(Rust 기반 번들러)이 Rollup 대비 빌드 10~30배 가속 — 현 레포가 vite ^8.0.1을 쓰지만 기본 빌드 경로가 여전히 esbuild/rollup일 수 있어 Rolldown 활성화 여지 점검 가치(6/13 dependabot actions 머지·6/12 러너 마이그레이션과 겹치지 않는 "Vite8 Rolldown" 신규 토픽). **오늘 결정 제안**: 누적 dependabot deps PR 10건 중 patch/minor(react 19.2.5·react-router 7.14·typescript-eslint 8.58.1)를 우선 일괄 머지 검토하고, eslint 10·@eslint/js 10·globals 17 등 메이저 3건은 lint 깨짐 위험으로 분리 검증 후 처리. Sources: Vite 8 Beta(Rolldown) 공식·The Register Vite8 Rolldown 빌드 가속·gh run/pr 실측.',
+      },
+    ],
+    meetingTitle:
+      '🔄 6/14 종합 회의 — "회의가 자기 진단을 검증했다": 어제 HIGH로 올린 scene_analyzer 미배치는 오진(실파일 존재)이었고, 진짜 구멍은 검증툴의 CWD 의존성 — 어제 적재한 인라인화 대신 __file__ 절대경로화로 차기 큐 교체',
+    meetingSummary:
+      '제63회 종합 회의. **오늘의 핵심은 회의가 자기 자신의 어제 진단을 검증해 오진을 잡아낸 것이다.** 6/13이 HIGH로 올린 "scene_analyzer 모듈 미배치(검증 시스템 두 번째 구멍)"를 QA가 실파일로 재점검한 결과, scene_analyzer.py는 Tools/에 정상 존재하고 known_bugs.json이 calc_size를 정상 참조 중이라 탐지 경로는 끊긴 적이 없었다 — 어제의 HIGH는 거짓 경보였다. 다만 같은 점검에서 진짜 구멍을 찾았다: 검증 3종이 하드코딩 상대경로를 써서 실행 디렉터리가 Tools/면 전부 거짓 에러를 내고 루트에서만 ALL PASS — 새벽 자동화 스케줄러의 CWD에 검증 신뢰도가 통째로 걸린다. 그래서 6/13에 적재했던 "scene_analyzer 인라인화"는 불필요해졌고, 차기 승인 불필요 실행 큐 1순위를 "검증 3종 __file__ 절대경로화"로 교체한다 — 로컬 작업·게임 레포 커밋 불필요라 새벽 실행 가능. Developer는 P0 묶음에 근거를 더 보탰다: 두 프로젝트가 Unity 6000.3.5f2(6.3 초기 패치)인데 광고 SDK 마감 2건(LevelPlay Waterfall 1/31·Unity Ads Legacy 4/1)이 이미 지나 Bidding 전환이 수익화의 전제이며, UMP·targetSdk 36과 함께 한 세션에 묶어야 한다. 게임 레포는 미커밋 2일째 동결·P0는 사용자 위임 유지. 시장·디자인은 "접근성"으로 수렴했다 — Game Designer의 조절식 판정 윈도우(Rhythm Doctor)와 Art Director의 컬러블라인드 이중 신호가 EU 접근성법(6/28 시행) 컨텍스트에서 하나의 "접근성 묶음" P2로 통합됐다. 메타: 6/13이 "첫 발을 디딘 날"이라면 6/14는 "그 발자국을 되짚어 어제의 경보가 오진이었음을 스스로 잡아낸 날" — 검증의 검증이 시작됐다.',
+    meetingItems: [
+      {
+        speaker: 'QA Tester',
+        note: '오늘은 어제 제 보고를 정정하는 것으로 시작하겠습니다. 어제 제가 "scene_analyzer 모듈이 미배치라 RT_SIZE_ZERO 탐지 경로가 불완전하다"며 HIGH로 올렸는데, 오늘 실파일을 다시 확인하니 scene_analyzer.py가 Tools/에 멀쩡히 있습니다. known_bugs.json도 calc_size를 정상 참조하고 있고요 — 탐지 경로는 끊긴 적이 없었습니다. 어제 HIGH는 거짓 경보였어요, 종결합니다. 다만 같은 점검에서 진짜 구멍을 찾았습니다. 검증 3종이 "Tools/known_bugs.json" 같은 하드코딩 상대경로를 쓰는데, 실행 디렉터리가 Tools/ 안이면 경로가 어긋나서 전부 거짓 에러를 냅니다. 루트에서 실행할 때만 ALL PASS예요. 새벽 자동화 스케줄러가 작업 디렉터리를 어디로 잡느냐에 검증 신뢰도가 통째로 걸리는 함정입니다. 그래서 제안을 바꿉니다 — 어제 적재한 scene_analyzer 인라인화는 불필요하니, 세 스크립트의 경로를 __file__ 기준 절대경로로 바꾸는 걸 차기 큐 1순위로 올립니다. 로컬 작업이고 게임 레포 커밋도 필요 없어서 새벽에 실행 가능합니다.',
+      },
+      {
+        speaker: 'Orchestrator',
+        note: 'QA의 정정을 받아 액션아이템을 갱신합니다. 6/13 4건 중 dependabot actions 5건 머지만 완료고, 나머지는 위임·이월입니다. 게임 레포는 미커밋 2일째 동결이에요 — NumLink 36, MeowBeat 37 그대로, 커밋 해시도 5fcac3a/657032c 무변동입니다. 주말 무인 구간이라 P0는 사용자 세션 위임을 유지합니다. dev-studio도 오늘 새 커밋은 없고 최신이 어제 저널이에요. 대신 dependabot npm PR이 10건 잔존하는데, 패치·마이너(react, react-router, typescript-eslint)와 메이저(eslint 10 계열)를 분리해서 안전한 patch/minor만 승인 불필요 큐로 머지하고 메이저는 breaking 검토를 따로 빼는 걸 제안합니다. 오늘 회의 임무는 QA의 절대경로화를 차기 실행 1순위로 확정하고, 접근성 제안들을 묶는 겁니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'P0 묶음에 근거를 더 보태겠습니다. 두 프로젝트 ProjectVersion을 실측했는데 둘 다 Unity 6000.3.5f2예요 — 6.3 LTS 초기 패치라 어제 다룬 최신 6000.3.16f1과 11패치 차이고 보안 CVE 3건이 안 들어가 있습니다. 더 중요한 건 광고 SDK 마감 두 건이 이미 지났다는 거예요. ironSource/LevelPlay 구식 Waterfall 중개가 1월 31일에 종료됐고, Unity Ads Legacy 직접 연동은 4월 1일부터 성능 저하가 시작됐습니다. 둘 다 Bidding 실시간 입찰 중개로 전환하지 않으면 정상 eCPM이 안 나와요. 그래서 어제 UMP 묶음에 "광고 SDK LevelPlay Bidding 전환"을 한 항목 더 추가해야 합니다 — UMP 동의, targetSdk 36, 그리고 Bidding 전환을 한 세션에 같이 처리하는 게 맞습니다. 장기로는 Unity 6.8에서 Mono가 완전히 빠지고 CoreCLR .NET 8로 가는 로드맵이 시작됐는데, 6.3 LTS 쓰는 우리는 당장 영향 없으니 차기 메이저 업그레이드 때 검토 항목으로만 남깁니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '오늘은 메타 레이어 얘기를 가져왔습니다. 하이브리드캐주얼 퍼즐 IAP가 작년 Q1 +67%에서 Q2 +100% YoY로 가속됐고 퍼즐 매출이 430% 성장했어요 — ARPDAU가 하이퍼캐주얼의 4~7배입니다. 어제 "리텐션 시대"라고 했는데, 그 리텐션의 엔진이 메타·수집 레이어라는 게 오늘 사례로 확인됩니다. Hexa Sort는 카드 수집을, Royal Match는 아바타 메타를 붙여서 engagement를 12% 올렸어요. 리듬게임 쪽에선 Rhythm Doctor가 인상적입니다 — 원버튼에 조절 가능한 판정 윈도우, TTS 무시야 플레이까지 접근성 설계의 정점이에요. 그래서 두 가지 제안합니다. MeowBeat에 판정 윈도우를 Lenient/Standard/Strict로 조절 가능하게 만들되 별점 기준은 윈도우와 분리해서 밸런스를 지키고요 — 이건 Art Director의 컬러블라인드 건과 묶어서 접근성 패키지로 가면 좋겠습니다. NumLink에는 Hexa Sort식 고양이 도감 수집을 레벨 보상으로 붙여서 D7을 강화하는 걸 검토합시다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: 'Game Designer와 자연스럽게 이어집니다 — 저도 접근성을 가져왔거든요. 세 가지인데, 첫째는 Material 3 Expressive 스프링 모션입니다. stiffness/damping 물리 기반으로 살짝 오버슈트하는 바운스가 2026 표준이에요 — 버튼 탭에 가벼운 오버슈트를 입히면 미니멀 톤을 해치지 않으면서 반응성 체감이 올라갑니다. 둘째가 핵심인데, 컬러블라인드 3원칙입니다. 색만 쓰지 말고 색+아이콘+모양으로 이중 신호를 주고, red-green 조합은 피하고, 그레이스케일로 변환했을 때 구분되는지 자가검증하는 거예요. 마침 EU 접근성법이 6월 28일에 시행돼서 디지털 제품 접근성이 규제 영역으로 들어왔습니다 — 글로벌 출시 전에 선제 대응할 가치가 있어요. 구체적으로 NumLink는 지금 라인이랑 숫자를 색상만으로 구분하는데, 여기에 체크 아이콘이나 선 굵기, 점선/실선 같은 모양 보조 큐를 추가하자고 제안합니다. 셋째 햅틱은 콤보·스와이프마다 짧은 진동을 주는 micro-signal로요.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '어제 Gemini Ask Play 얘기를 했는데, 오늘은 그 정량 근거를 가져왔습니다. 검색이 앱스토어 다운로드의 65%를 차지해요 — 그래서 자연어 롱테일 키워드가 AI 검색 노출에 결정적입니다. 설명문은 250자당 키워드 1회가 적정이고요, 과밀하면 페널티를 받습니다. 스크린샷 트렌드가 또 바뀌었어요 — 첫 스크린샷에 3~5초 영상형 애니메이션을 넣는 게 CVR을 가장 크게 끌어올립니다. 정적인 설정화면 말고 게임플레이 임팩트 순간을 동적으로 보여주는 거죠. 아이콘은 오히려 3D에서 볼드 미니멀로 회귀하고 있고요. 숏폼은 완주율 80%가 첫 3초에 결정되고 가치 인식의 65%는 1초에 판가름 납니다. 제안은 이겁니다 — 두 게임 첫 스크린샷을 게임플레이 임팩트 순간으로 교체하고, NumLink는 "짧게 즐기는 숫자 연결 퍼즐", MeowBeat는 "고양이와 즐기는 캐주얼 리듬게임" 같은 자연어 롱테일 캡션을 넣은 A/B 2종을 만드는 겁니다. 9:16 세로 클립과 1소스로 같이 쓸 수 있어요.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'CI는 건강합니다 — Pages 배포 최근 런 전부 success고, 어제 머지한 actions 5건으로 새 액션 버전 배포가 정상 동작하는 것까지 확인됐습니다. 잔여 dependabot deps PR이 10건 누적인데 라벨이 없고 mergeState가 아직 미평가 상태예요. 대부분 dev 의존성이고 eslint 10 메이저, anthropic sdk, globals 17 같은 게 섞여 있습니다. 제안은 Orchestrator와 같습니다 — patch/minor인 react 19.2.5, react-router 7.14, typescript-eslint 8.58.1을 우선 일괄 머지하고, eslint 10과 @eslint/js 10, globals 17 메이저 3건은 lint가 깨질 위험이 있으니 분리해서 검증 후 처리하는 거죠. 새 정보 하나 — Vite 8에 Rolldown이 들어가면서 빌드가 Rollup 대비 10~30배 빨라졌습니다. 우리 레포가 이미 vite 8을 쓰는데 기본 빌드 경로는 여전히 esbuild/rollup일 수 있어서, Rolldown을 활성화할 여지가 있는지 점검할 가치가 있습니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: '✅ [정정·종결] 6/13 "scene_analyzer 미배치 HIGH"는 오진 — 실파일 존재·calc_size 정상 참조',
+        description:
+          'QA 실파일 재점검 결과 scene_analyzer.py는 Tools/에 정상 존재하고 known_bugs.json의 RT_SIZE_ZERO detector가 calc_size를 정상 참조 중 — 탐지 경로는 끊긴 적이 없음. 6/13의 "검증 시스템 두 번째 구멍(HIGH)"은 거짓 경보로 종결. 6/13에 적재했던 "scene_analyzer 인라인화"는 불필요해졌으므로 차기 큐에서 제거하고 아래 절대경로화로 대체.',
+      },
+      {
+        title: '🔧 [P1·승인 불필요·차기 실행 큐 1순위] 검증 3종 __file__ 절대경로화 — CWD 의존성 함정 제거',
+        description:
+          '진짜 구멍: unity_validate.py·qa_static.py·run_regression.py가 Tools/known_bugs.json·Tools/make_fixtures.py 등 하드코딩 상대경로를 사용 — 실행 디렉터리가 Tools/면 전부 거짓 에러·루트에서만 ALL PASS. 새벽 자동화 스케줄러 CWD 의존성 함정. 대응: 세 스크립트 경로를 os.path.dirname(__file__) 기준 절대경로로 패치해 CWD 무관 동작 보장. 로컬 작업·게임 레포 커밋 불필요라 새벽 실행 가능. 회귀 픽스처 2→6 확충은 이월 유지.',
+      },
+      {
+        title: '🚨 [P0·위임 유지+근거 보강] MeowBeat 복붙 3커밋+UMP+targetSdk 36+광고 Bidding 전환+엔진 패치 — 사용자 세션 첫 작업',
+        description:
+          'Developer 실측으로 근거 추가: 두 프로젝트 Unity 6000.3.5f2(6.3 초기 패치)·광고 SDK 마감 2건 이미 경과(LevelPlay Waterfall 종료 1/31·Unity Ads Legacy 성능저하 4/1)로 Bidding 전환이 수익화 전제. 한 세션에 묶을 항목: ① 6/11 준비된 복붙 3커밋 ② UMP(ConsentInformation.Update→LoadAndShowConsentFormIfRequired) ③ Target API 36 상향(8/31 기한) ④ LevelPlay Bidding 중개 전환 ⑤ 엔진 6000.3.16f1 패치(CVE 3건). 검증 3종은 절대경로화 후 신뢰도 확보된 상태로 커밋.',
+      },
+      {
+        title: '🔧 [P1·이월] NumLink Tools 3종 이식+고아 메타 정리',
+        description:
+          'MeowBeat Tools 3종(unity_validate·qa_static·run_regression)+known_bugs.json 이식+씬 경로 갱신(회귀탐지 0→가동)·고아 Editor.meta+빈 AutoQATests 폴더 정리. 이식 시 위 절대경로화 패치를 함께 적용. 게임 레포 커밋 필요해 사용자 세션 권장.',
+      },
+      {
+        title: '🎮🎨📦🛡 [P2·신규 적재] 접근성 묶음·고양이 도감·ASO 스크린샷·Material 3 버튼·dependabot patch 머지',
+        description:
+          '접근성 묶음(통합) — Game Designer: MeowBeat 조절식 판정 윈도우 Lenient/Standard/Strict(별점 기준과 분리)+Art Director: NumLink 컬러블라인드 이중 신호(색+아이콘+모양·그레이스케일 자가검증), EU 접근성법(EAA) 2025-06-28 시행 컨텍스트로 글로벌 출시 선제 대응. Game Designer — NumLink 고양이 도감/스티커 수집 경량 메타(Hexa Sort식·D7 강화). Content Writer — 첫 스토어 스크린샷을 게임플레이 임팩트 순간으로 교체+자연어 롱테일 캡션 A/B 2종. Art Director — 버튼 탭 Material 3 Expressive 스프링 바운스. DevOps — dependabot patch/minor 3건(react·react-router·typescript-eslint) 우선 머지·메이저 3건(eslint 10 계열) 분리 검증·Vite8 Rolldown 활성화 여지 점검. 모두 P0 후 착수.',
+      },
+    ],
+  },
+  {
     id: '2026-06-13T04:00:00-daily-standup',
     date: '2026-06-13',
     researchTitle:
