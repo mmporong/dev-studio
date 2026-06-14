@@ -43,6 +43,119 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-06-15T04:00:00-daily-standup',
+    date: '2026-06-15',
+    researchTitle:
+      '🔥 6/15 월요일 데일리 스탠드업 — **🛠 오늘의 본질 = 동결 3일째에 회의가 "결정만 하는 기계"가 되길 거부하고 자체 레포 보안 개선을 직접 커밋한 날: DevOps가 찾아낸 weekly-insights.yml의 `permissions: contents: write` 워크플로 레벨 전역 부여를 collect job 레벨로 격하(최소권한 원칙)·deploy-pages.yml과 패턴 통일 — 게임 레포 P0가 위임으로 막혀도 회의는 멈추지 않음을 행동으로 증명**·**🎯 Orchestrator: NumLink·MeowBeat·agent-office 세 레포 동결 3일째(미커밋 36/37·해시 5fcac3a/657032c/7e95fbf 불변)·dependabot PR 13건(npm 10·actions 3)·6/14 액션아이템 4종 전부 미완료**·**🔍 QA: 검증 3종 절대경로화 4일째 미착수(unity_validate.py:24 `Path(\'Tools/known_bugs.json\')` 상대경로 그대로·Tools/ CWD서 거짓 WARN 2건 재현·루트 0err)·미커밋 37건 미백업 리스크**·**💻 Developer: PrimeTween(GC 0할당·DOTween 호환 API)이 NumLink DOTween 7스크립트 GC 스파이크 해소 후보·MeowBeat는 DOTween 미사용·LitMotion(DOTS) 신흥 최속·Unity 6.3 프로파일러 기본 2,000프레임/TypeTree 메모리 99%절감**·**🎮 Game Designer: 데일리 스트릭 게임 95% 채택(손실회피)·보상형 광고 리텐션 3.5배·완료율 85~95%·광고매출 50~70%·리듬 신작 RedOctane Stage Tour(가을·Gibson)·Rhythm Heaven Groove(7/2) — MeowBeat Lyria 자체생성=라이선스 0 차별점**·**📦 Content: 마이크로 인플루언서 ROAS 메타 2~5배·인게이지 4.84%·현지화 시 대상지역 다운로드 4~5배·CJK 글로벌 모바일 매출 50%+·애플 신규 Featuring Nominations**·**🎨 Art Director: 글래스모피즘 2026 다크UI 깊이 표현(색추가 없이)·캐주얼 마스코트 3정규포즈+스쿼시앤스트레치·스토어 일관성(아이콘=스크린샷 변주·before/after 컷)**.',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제64회 — **6/15 월요일·D+22**. **🛠 오늘의 본질 = 회의가 "결정만 하는 기계"가 되길 거부한 날**: 6/13이 "16일 만의 첫 실행", 6/14가 "자기 진단 검증"이었다면, 6/15는 **동결 3일째·액션아이템 4종 전부 미완료라는 정체 속에서 회의가 자체 레포에서 실행 가능한 것을 직접 커밋한 날**. DevOps가 weekly-insights.yml에서 `permissions: contents: write`가 워크플로 레벨에 전역 부여돼 있음을 발견했고(deploy-pages.yml은 이미 job별 분리 적용), 회의 중 메인 에이전트가 이를 **워크플로 레벨 `contents: read` + collect job 레벨 `contents: write`로 격하**해 최소권한 원칙을 적용·두 워크플로 패턴을 통일했다. 단일 job이라 동작 변화는 0이고 보안 일관성만 확보 — "게임 레포 P0가 사용자 위임으로 막혀 있어도 회의가 자체 레포 개선은 직접 실행한다"는 6/12 "무게중심 이동" 결정의 두 번째 이행이다. 배경 근거로 DevOps는 **2026년 3월 trivy-action 76개 태그 중 75개가 force-push로 침해돼 PyPI(LiteLLM)까지 연쇄 유출된 사건**을 들며 agent-office가 이미 모든 액션을 SHA 핀으로 고정해 방어돼 있음을 확인했다. **🎯 게임 레포 상태(동결 3일째)**: NumLink 미커밋 36·MeowBeat 37, 해시 5fcac3a/657032c 6/14 대비 변동 0·agent-office도 7e95fbf 그대로(저널 커밋 전)·dependabot PR 13건(npm 10건 #19~32+actions 3건 #97~99)·6/14 액션아이템 4종(MeowBeat P0·검증 절대경로화·NumLink Tools 이식·dependabot 머지) 전부 미완료. **🔍 QA(절대경로화 4일째 미착수)**: 6/14에 "차기 큐 1순위·승인 불필요"로 결정한 검증 3종 절대경로화가 여전히 미착수 — unity_validate.py:24가 `Path(\'Tools/known_bugs.json\')` 상대경로 그대로라 Tools/ 디렉터리에서 실행하면 거짓 WARN 2건(known_bugs not found·manifest 없음) 재현, 루트에서만 0err. 작업량 약 30분으로 작지만 게임 레포 커밋이 필요해 위임 큐에 묶여 4일째 적체. 회귀 픽스처 2/6(33%) 그대로·**미커밋 37건(.cs 6개·manifest·ProjectSettings)이 백업 안 된 채 방치**돼 핵심 로직 유실 리스크. 게임데이터 무결성은 양호(manifest 곡 10·audioFile 10·ogg 실파일 10 정확 일치·노트 레인 0위반·.meta 누락 0). **💻 Developer(트위닝 GC·신규 각도)**: 두 프로젝트 모두 Unity 6000.3.5f2 유지. 신규 발견 — **PrimeTween**(DOTween과 거의 동일한 API에 zero-allocation 제공·객체 파괴 시 크래시 없음·속도는 1.29배 느린 trade-off)이 **NumLink의 DOTween GC 스파이크 해소 후보**다. NumLink는 NumberButton·ComboPopupUI·EffectManager 등 7개 게임 스크립트에서 DOTween 실사용 중이라 콤보 팝업/이펙트의 GC Alloc이 모바일 프레임 드랍 원인일 수 있고, MeowBeat는 DOTween 미사용이라 영향 없음. 1차로 ComboPopupUI/EffectManager만 시범 전환 후 GC Alloc 측정 권장. 보조: LitMotion(DOTS 기반 최속·대량 오브젝트용)·Unity 6.3 LTS 프로파일러 기본 2,000프레임 캡처·TypeTree 런타임 메모리 최대 99% 절감(6/13·6/14의 광고 SDK·CoreCLR·6.3 모바일 신기능과 겹치지 않는 "트위닝 GC·프로파일러" 신규 토픽). **🎮 시장(Game Designer·라이브옵스 각도)**: **데일리 스트릭은 게임 95%가 채택**(손실회피로 미접속일도 복귀 유도)·**보상형 광고는 이용자 리텐션 3.5배·완료율 85~95%·광고매출의 50~70% 차지**(美 안드로이드 eCPM $16.49/iOS $19.63)·단 레벨완료 등 자연스러운 전환점에 배치해야 D7 중립~상승, 잘못 배치 시 D7 최대 10~25% 하락. 시즌패스 가격대 스타터팩 $0.99~2.99·시즌패스 $7.99~19.99·무료+유료 듀얼패스가 표준. 리듬 신작: **RedOctane "Stage Tour"(2026 가을·Gibson 제휴)·닌텐도 "Rhythm Heaven Groove"(7/2)** — 모바일 리듬게임 70%+가 라이선스 음원이라 **MeowBeat의 Lyria 자체 생성음원은 라이선스 비용 0의 구조적 차별점**(6/14 하이브리드캐주얼 메타·Rhythm Doctor와 겹치지 않는 "스트릭·보상형 광고·신작 동향" 신규 토픽). **📦 Content(UA·현지화 각도)**: **마이크로 인플루언서($100~500/건)는 $1만을 5~8명에 분산 시 메타 광고 대비 ROAS 2~5배·평균 인게이지먼트 4.84%**·**현지화 시 대상 지역 1일차 다운로드·위시리스트 4~5배 급증·CJK(중·일·한)가 글로벌 모바일 매출 50%+ 차지**·애플 신규 **Featuring Nominations**로 인게임 한정 이벤트·할인을 에디토리얼에 직접 제안 가능(6/14 ASO 스크린샷·검색점유율과 겹치지 않는 "인플루언서·현지화·피처링" 신규 토픽). **🎨 Art Director(비주얼 트렌드 각도)**: ① **글래스모피즘 2026 진화** — 다크 UI에서 반투명 레이어로 색 추가 없이 깊이 표현(NumLink 미니멀 톤에 적합·고블러 금지·고대비 텍스트 필수) ② **캐주얼 마스코트 표준** — 3개 정규 포즈(중립 대기·히어로 액션·컴팩트)+스쿼시앤스트레치 비율·바운스 속도 문서화 ③ **스토어 일관성** — 아이콘=스크린샷 변주(동일 배경·폰트·팔레트)·before/after 컷이 전환율 우위(6/14 Material 3·컬러블라인드·햅틱과 겹치지 않는 "글래스모피즘·마스코트 시트·스토어 일관성" 신규 토픽). **🎯 오늘 핵심 결정 = ① [✅실행완료] weekly-insights.yml permissions 워크플로 레벨→collect job 레벨 격하(최소권한·deploy-pages 패턴 통일·회의 중 직접 커밋) ② [P1·4일째 미착수·실착수 권고] 검증 3종 __file__ 절대경로화(게임 레포 커밋 필요라 사용자 세션) ③ [P0·위임 유지·동결 3일째] MeowBeat UMP+targetSdk 36+광고 Bidding+엔진 패치 ④ [P1·검증 후] dependabot actions #97~99 머지(#99 upload-pages-artifact 메이저는 deploy-pages 호환 검증 선행)·npm major 분리 ⑤ [P2·신규] PrimeTween 시범 마이그레이션(NumLink ComboPopupUI/EffectManager GC 측정)·데일리 스트릭+보상형 광고 스트릭 구제(NumLink)·마이크로 인플루언서 시딩 테스트(MeowBeat)+일본어 현지화(NumLink)·고양이 마스코트 3정규포즈 캐릭터 시트 표준화**. 메타 통찰: 6/13이 "첫 실행", 6/14가 "자기 진단 검증"이라면, 6/15는 **"정체 속에서도 회의가 손이 닿는 곳(자체 레포 보안)을 직접 고친 날"** — 위임으로 막힌 영역과 실행 가능한 영역을 분리해, 회의가 멈추지 않는 구조를 한 번 더 입증했다.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — 세 레포 동결 3일째(NumLink 미커밋 36/5fcac3a·MeowBeat 37/657032c·agent-office 7e95fbf 불변)·dependabot PR 13건(npm 10·actions 3)·6/14 액션아이템 4종 전부 미완료·자율 실행 가능 영역은 자체 레포뿐',
+        description:
+          '**🎯 액션아이템 실측(6/15)**: ① MeowBeat UMP+targetSdk 36+Bidding(P0 위임) = **미완**(신규 커밋 0·657032c 무변동) ② 검증 3종 절대경로화(P1 차기큐 1순위) = **미완**(MeowBeat Tools/ 상대경로 그대로) ③ NumLink Tools 3종 이식(P1) = **미완**(Tools/ 디렉터리 부재 지속) ④ dependabot 머지 = **미완**(open 13건 그대로). **측정값**: NumLink 최신 5fcac3a·브랜치 feature/ugui-layerlab·미커밋 36, MeowBeat 최신 657032c·브랜치 feature/song-ownership-migration·미커밋 37, agent-office 최신 7e95fbf(6/14 저널)·브랜치 main·미커밋 1, dependabot open PR 13건 — actions 3건(#99 upload-pages-artifact 5.0 메이저·#98 checkout 6.0.3·#97 setup-node 6.4.0)+npm 10건(#32 globals 17.5 메이저·#31 react 19.2.5·#30 @anthropic-ai/sdk 0.88·#29 typescript-eslint 8.58.1·#25 react-refresh 0.5.2·#24 @types/cheerio 1.0 메이저·#23 eslint 10.2 메이저·#22 react-hooks 7.0 메이저·#21 @eslint/js 10.0 메이저·#19 react-router-dom 7.14). **패턴**: 6/13 첫 실행·6/14 자기진단 이후 세 레포 모두 동결 3일째 — 주말+월요일 새벽 무인 구간. 게임 레포 P0는 사용자 위임으로 자율 실행 불가, 자율 실행 가능한 유일 영역은 자체 레포(agent-office)다. **오늘 결정 제안**: 코드 동결 중 위임 불필요한 자체 레포 개선(DevOps의 weekly-insights.yml 권한 최소화)을 회의 중 직접 실행해 "결정만 하는 회의" 정체를 깨고, dependabot은 patch/minor만 검증 후 단계 머지. (git log/status/gh pr 실측)',
+      },
+      {
+        title:
+          '🔍 QA Tester — 검증 3종 절대경로화 4일째 미착수(unity_validate.py:24 `Path(\'Tools/known_bugs.json\')` 상대경로 그대로·Tools/ CWD서 거짓 WARN 2건 재현·루트 0err)·회귀 픽스처 2/6 그대로·미커밋 37건 백업 안 됨(.cs 6개 포함 핵심 로직 미백업)',
+        description:
+          '**🔍 절대경로화 실측(P1 재확정)**: 6/14에 "차기 큐 1순위·승인 불필요"로 결정한 검증 3종 절대경로화가 여전히 미착수. unity_validate.py:24 `Path(\'Tools/known_bugs.json\')`·:64 `Path(\'Tools\')/...`·qa_static.py:20-22 `Path(\'Assets/...\')`·run_regression.py:19-20 `Path(\'test_fixtures\')`+`\'Tools/unity_validate.py\'`·add_song_buttons.py:167 동일 — 전부 CWD 기준 상대경로. **루트 실행**: unity_validate 0err 0warn(4.5s)·qa_static 0err·run_regression 2/2 PASS. **Tools/ CWD 실행(거짓에러 재현)**: `[WARN] Tools\\known_bugs.json not found — detector validation skipped`+`[WARN] manifest.json 없음` = 거짓 1warning. 대응: 4개 스크립트 상단에 `SCRIPT_DIR=Path(__file__).resolve().parent`·`ROOT=SCRIPT_DIR.parent` 정의 후 KNOWN_BUGS_PATH·MANIFEST_PATH·FIXTURES_DIR·VALIDATOR를 ROOT 기준 절대경로로 교체(약 30분·CWD 무관 ALL PASS 보장). 게임 레포 커밋 필요라 위임 큐에 묶여 4일째 적체. **회귀 픽스처**: 2/6(33%) 그대로 — known_bugs 6패턴(RT_SIZE_ZERO·YAML_DUPLICATE_FILE_ID·YAML_HEADER_REF_MISMATCH·YAML_INDENT_M_FATHER·MANIFEST_MISSING_AUDIO·NOTE_OUT_OF_LANE) 중 RT_SIZE_ZERO·YAML_INDENT_M_FATHER 2건만 픽스처 커버·4건 무회귀. **🚨 신규 리스크**: 미커밋 37건(.cs 6개·manifest·ProjectSettings 등)이 백업 안 된 채 방치 — 핵심 게임 로직(SongData.cs·GameManager.cs·SongManager.cs) 유실 리스크. NumLink: Tools/ 디렉터리 부재 확정(검증 파이프라인 미도입). 게임데이터 무결성 양호: manifest 곡 10·audioFile 10·ogg 실파일 10 정확 일치·노트 레인 0위반·.cs meta 누락 0. **오늘 결정 제안(P1·재확정)**: 검증 3종+make_fixtures+add_song_buttons 절대경로화를 사용자 세션 1순위로 실착수 — 4일째 결정만 반복 중. Sources: unity_validate.py/qa_static.py/run_regression.py 코드 실측·루트/Tools CWD 양쪽 실행·manifest/ogg 대조.',
+      },
+      {
+        title:
+          '💻 Developer — PrimeTween(GC 0할당·DOTween 호환 API·파괴 시 크래시 없음·1.29배 느림)이 NumLink DOTween 7스크립트 GC 스파이크 해소 후보·MeowBeat DOTween 미사용·LitMotion(DOTS) 신흥 최속·Unity 6.3 프로파일러 2,000프레임/TypeTree 99%절감',
+        description:
+          '**💻 실측**: NumLink·MeowBeat 둘 다 Unity 6000.3.5f2 유지·NumLink 최근 .cs 커밋 5fcac3a(게임오버 타이틀 이모지 fix)·MeowBeat 657032c(farm 먹기 애니메이션). **🆕 신규 1순위(트위닝 GC)**: **PrimeTween** — DOTween과 거의 동일한 API에 zero-allocation 제공·객체 파괴 시 크래시 없음(DOTween의 고질적 NRE 회피)·속도는 1.29배 느린 trade-off. NumLink는 NumberButton·ComboPopupUI·EffectManager 등 **7개 게임 스크립트에서 DOTween 실사용** 중이라 콤보 팝업/이펙트의 GC Alloc이 모바일 프레임 드랍 원인일 수 있고, MeowBeat(Feedme)는 DOTween 0건(미사용)이라 영향 없음. **🆕 신규 2순위(대안)**: LitMotion — DOTS 기반 최속 트위닝·대량 오브젝트용 신흥 대안(단 API 학습비용·NumLink 규모엔 PrimeTween이 적합). **🆕 신규 3순위(프로파일러)**: Unity 6.3 LTS 프로파일러 기본 캡처 2,000프레임으로 확대(간헐적 스파이크 추적 용이)·TypeTree 런타임 메모리 최대 99% 절감(6/13 6000.3.16f1·6/14 광고 Bidding/CoreCLR/6.3 모바일 신기능과 겹치지 않는 "트위닝 GC·프로파일러" 신규 토픽). **오늘 결정 제안(P2)**: NumLink ComboPopupUI/EffectManager만 PrimeTween 시범 전환 후 GC Alloc 프로파일러로 측정 — 유의미하면 7개 스크립트 단계 마이그레이션. MeowBeat는 대상 아님. Sources: github.com/KyryloKuzyk/PrimeTween·omitram.com 2026 트위닝 가이드·unity.com Unity 6.3 LTS 블로그·NumLink/Feedme DOTween 사용처 grep 실측.',
+      },
+      {
+        title:
+          '🎮 Game Designer — 데일리 스트릭 게임 95% 채택(손실회피)·보상형 광고 리텐션 3.5배·완료율 85~95%·광고매출 50~70%·eCPM 安$16.49/iOS$19.63·시즌패스 듀얼 표준·리듬 신작 RedOctane Stage Tour(가을·Gibson)·Rhythm Heaven Groove(7/2)·MeowBeat Lyria 자체생성=라이선스 0 차별점',
+        description:
+          '**🆕 신규 1순위(라이브옵스·스트릭)**: **데일리 스트릭은 게임 95%가 채택** — 손실회피 심리로 미접속일에도 복귀 유도. **🆕 신규 2순위(보상형 광고 디자인)**: 보상형 광고 이용자는 **리텐션 3.5배·완료율 85~95%·전체 광고매출의 50~70% 차지**(美 안드로이드 eCPM $16.49/iOS $19.63)·단 레벨완료 같은 "자연스러운 전환점"에 배치 시 D7 중립~상승, 잘못 배치 시 D7 최대 10~25% 하락. 시즌패스 가격대: 스타터팩 $0.99~2.99·시즌패스 $7.99~19.99·무료+유료 듀얼패스가 표준. **🆕 신규 3순위(리듬 신작·차별점)**: **RedOctane "Stage Tour"(2026 가을·Gibson 제휴)·닌텐도 "Rhythm Heaven Groove"(7/2)** — 모바일 리듬게임 70%+가 라이선스 음원을 쓰므로 **MeowBeat의 Lyria 자체 생성음원은 라이선스 비용 0의 구조적 차별점**(6/14 하이브리드캐주얼 메타·Rhythm Doctor 접근성과 겹치지 않는 "스트릭·보상형 광고·신작 동향" 신규 토픽). **오늘 결정 제안(P2)**: NumLink에 "데일리 스트릭+보상형 광고 스트릭 구제" 결합 — 매일 첫 접속 시 스트릭 증가(7일 주기 보상)·끊길 위기 시 "보상형 광고 1회로 스트릭 1일 복구". ① 손실회피로 D1/D7 상승 ② 광고를 "레벨완료"가 아닌 "스트릭 구제"라는 자연스러운 가치 지점에 배치해 부정적 리텐션 영향 회피 ③ 자체생성 콘텐츠라 라이선스 0 — NumLink가 코어루프 단순해 우선 적용. Sources: designthegame.com(스트릭·배틀패스)·maf.ad/coinis.com(보상형 광고 eCPM·리텐션)·gamerefinery.com·gamegrowthadvisor.com·insider-gaming.com(리듬 신작).',
+      },
+      {
+        title:
+          '📦 Content Writer — 마이크로 인플루언서 ROAS 메타 2~5배·인게이지 4.84%($100~500/건·$1만 5~8명 분산)·현지화 시 대상지역 다운로드·위시리스트 4~5배·CJK 글로벌 모바일 매출 50%+·애플 신규 Featuring Nominations(이벤트·할인 에디토리얼 직접 제안)',
+        description:
+          '**📦 신규 1순위(마이크로 인플루언서)**: $100~500/건의 마이크로 인플루언서에 $1만을 5~8명 분산 시 **메타 광고 대비 ROAS 2~5배·평균 인게이지먼트 4.84%**·단건 협업당 재사용 영상 5~10개 확보해 ASO 스크린샷·숏폼 광고 소재로 멀티유즈. **📦 신규 2순위(현지화)**: 현지화 시 **대상 지역 1일차 다운로드·위시리스트 4~5배 급증**·**CJK(중·일·한)가 글로벌 모바일 매출 50%+ 차지** — 한국어 외 일본어 우선 현지화가 비용 대비 효율 높음. **📦 신규 3순위(피처링)**: 애플 신규 **Featuring Nominations** — 인게임 한정 이벤트·할인을 에디토리얼 팀에 직접 제안 가능·검색결과·페이지 헤더에 크리에이티브 노출(6/14 ASO 스크린샷 애니메이션·검색 65%와 겹치지 않는 "인플루언서·현지화·피처링" 신규 토픽). **오늘 결정 제안(P2·상)**: MeowBeat 출시 전 고양이/리듬게임 TikTok 마이크로 크리에이터(10k~100k) 3~5명에 무료 빌드+소액 플랫피($100~300/건) 시딩 테스트($1천 내 검증·ROAS 측정·재사용 영상 확보). 동시에 NumLink 일본어 우선 현지화를 백로그 등록(CJK 매출 비중 근거). Sources: influencermarketinghub.com(TikTok/마이크로 요율 2026)·brands.joinstatus.com(ROI 가이드)·1word4pics.com/speequalgames.com(현지화 2026)·prismnews.com(애플 피처링 툴)·discord.com(게임 그로스).',
+      },
+      {
+        title:
+          '🎨 Art Director — 글래스모피즘 2026 다크UI 깊이 표현(색추가 없이·고블러 금지·고대비 텍스트)·캐주얼 마스코트 3정규포즈(중립·히어로·컴팩트)+스쿼시앤스트레치 비율·스토어 일관성(아이콘=스크린샷 변주·동일 배경/폰트/팔레트·before/after 컷)',
+        description:
+          '**🎨 신규 1순위(글래스모피즘 진화)**: **글래스모피즘 2026** — 다크 UI에서 반투명 레이어로 색을 추가하지 않고 깊이를 표현, NumLink 미니멀 모던 톤에 적합(단 과한 블러 금지·텍스트 고대비 필수로 가독성 보장). **🎨 신규 2순위(마스코트 표준)**: 캐주얼 게임 마스코트는 **3개 정규 포즈(중립 대기·콤보 히어로 액션·스토어 아이콘용 컴팩트)+스쿼시앤스트레치 비율·바운스 속도 문서화**가 표준 — 캐릭터 시트로 정립하면 인게임·스토어·SNS 자산이 일관됨. **🎨 신규 3순위(스토어 일관성)**: 아이콘=스크린샷 변주(동일 배경·폰트·팔레트)·before/after 컷이 전환율 우위(6/14 Material 3 스프링·컬러블라인드·햅틱과 겹치지 않는 "글래스모피즘·마스코트 시트·스토어 일관성" 신규 토픽). **오늘 결정 제안(P2·상)**: MeowBeat 마스코트 고양이를 3개 정규 포즈(중립/콤보 히어로/컴팩트)로 정의하고 스쿼시앤스트레치 비율·바운스 속도를 문서화 — 컴팩트 포즈를 그대로 스토어 아이콘에 써 "아이콘=인게임 캐릭터" 일관성으로 ASO 전환율(특히 before/after 스크린샷) 직결. NumLink는 차순위로 다크모드 패널에 서브틀 글래스모피즘(고대비 텍스트) 적용해 미니멀 톤 강화. Sources: retrostylegames.com(게임 아트 트렌드 2026)·blog.tubikstudio.com(UI 트렌드 2026)·zignuts.com(뉴모피즘 vs 글래스모피즘)·screenhance.com/apptweak.com(ASO 스크린샷·아이콘 2026).',
+      },
+      {
+        title:
+          '🛡 DevOps — ✅ weekly-insights.yml permissions 워크플로 레벨→collect job 레벨 격하(회의 중 직접 커밋·최소권한·deploy-pages 패턴 통일)·배포 정상(최근 4/5 success·SHA핀 적용)·dependabot PR 13건·trivy-action 75태그 force-push 침해(2026.3)가 SHA핀 실증',
+        description:
+          '**🛡 ✅ 회의 중 실행 완료**: weekly-insights.yml이 `permissions: contents: write`를 워크플로 레벨에 전역 부여하고 있었으나(deploy-pages.yml은 이미 job별 분리), 회의 중 **워크플로 레벨 `contents: read` + collect job 레벨 `contents: write`로 격하**해 최소권한 원칙을 적용하고 두 워크플로 패턴을 통일 — 단일 job이라 동작 변화 0·보안 일관성만 확보. **🛡 CI 현황**: gh run 최근 5건 중 4건 success(6/14 actions update·6/13·6/12 Deploy Pages)+1건 cancelled(6/12 concurrency 정상 취소)·워크플로 2종(deploy-pages·weekly-insights) 모두 SHA 핀+최소권한·deploy-pages는 OIDC(id-token: write)까지 적용된 모범 구성. **잔여 PR**: dependabot 13건 — actions 3건(#97 setup-node 6.4·#98 checkout 6.0.3·#99 upload-pages-artifact 5.0 메이저)+npm dev 10건(#19~32·eslint 10/react-hooks 7/@eslint/js 10/@types/cheerio 1.0 메이저 다수). **🆕 보안 근거(새 각도)**: **2026년 3월 trivy-action 76개 태그 중 75개가 force-push로 침해돼 PyPI(LiteLLM)까지 연쇄 유출된 공급망 사건** — agent-office는 이미 모든 액션을 커밋 SHA로 핀해 태그 침해에 방어됨을 확인(6/14 Vite8 Rolldown·6/13 dependabot actions 머지와 겹치지 않는 "SHA핀 보안·권한 최소화" 신규 토픽). **오늘 결정 제안**: actions PR #97·#98(setup-node·checkout patch/minor)은 안전해 머지 권장하되, #99(upload-pages-artifact 4→5 메이저)는 deploy-pages.yml 호환 검증 선행. npm 메이저(eslint 10 계열)는 lint 깨짐 위험으로 분리 검증. Sources: stepsecurity.io·wiz.io·wellarchitected.github.com(Actions 보안 2026)·gh run/pr 실측·workflows/*.yml 코드 분석.',
+      },
+    ],
+    meetingTitle:
+      '🛠 6/15 종합 회의 — "결정만 하는 기계가 되길 거부했다": 동결 3일째·액션 4종 미완 속에서 회의가 자체 레포 보안 개선(weekly-insights.yml 권한 최소화)을 직접 커밋 — 게임 레포 위임 영역과 자율 실행 영역을 분리해 회의가 멈추지 않는 구조를 재입증',
+    meetingSummary:
+      '제64회 종합 회의. **오늘의 핵심은 회의가 "결정만 하는 기계"가 되길 거부하고 손이 닿는 곳을 직접 고친 것이다.** Orchestrator가 세 레포 동결 3일째·6/14 액션아이템 4종 전부 미완료를 보고하며, 게임 레포 P0는 사용자 위임으로 막혀 있으니 자율 실행 가능한 유일 영역은 자체 레포(agent-office)임을 짚었다. DevOps가 weekly-insights.yml의 `permissions: contents: write`가 워크플로 레벨에 전역 부여돼 있고(deploy-pages.yml은 이미 job별 분리) 이를 최소권한으로 좁힐 수 있다고 제안했고, 회의는 이를 결정으로만 남기지 않고 **워크플로 레벨 read+collect job 레벨 write로 격하해 회의 중 직접 커밋**했다 — 6/12 "무게중심 이동"의 두 번째 이행이자 6/13 dependabot 머지에 이은 자체 레포 실행. 배경엔 2026년 3월 trivy-action 75개 태그 force-push 침해 사건이 있고, agent-office는 이미 SHA 핀으로 방어돼 있음도 확인됐다. QA는 6/14에 "차기 큐 1순위"로 올린 검증 3종 절대경로화가 4일째 미착수임을 실측으로 못박았다 — unity_validate.py:24가 여전히 상대경로라 Tools/ CWD에서 거짓 WARN 2건이 재현되고, 30분 작업이지만 게임 레포 커밋이 필요해 위임 큐에 묶여 있으며, 미커밋 37건(핵심 .cs 6개)이 백업 안 된 채 방치된 점도 경고했다. Developer는 신규로 PrimeTween을 가져왔다 — NumLink가 7개 스크립트에서 DOTween을 실사용 중이라 콤보/이펙트 GC 스파이크가 프레임 드랍 원인일 수 있고, zero-allocation인 PrimeTween으로 ComboPopupUI/EffectManager만 시범 전환해 측정하자고 제안(MeowBeat는 DOTween 미사용이라 대상 아님). 시장·마케팅·아트는 각자 새 각도를 가져왔다: Game Designer는 데일리 스트릭(95% 채택)+보상형 광고(리텐션 3.5배)를 "스트릭 구제"로 결합한 NumLink 라이브옵스, Content는 마이크로 인플루언서 시딩(ROAS 2~5배)과 일본어 현지화(CJK 매출 50%+), Art Director는 고양이 마스코트 3정규포즈 캐릭터 시트 표준화로 "아이콘=인게임 캐릭터" 일관성을 제안했다. 메타: 6/13 "첫 실행", 6/14 "자기 진단 검증"에 이어 6/15는 "정체 속에서도 회의가 자율 영역을 직접 실행한 날" — 위임으로 막힌 P0와 손이 닿는 자체 레포를 분리해, 회의가 멈추지 않는 구조를 한 번 더 입증했다.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '동결 3일째를 보고합니다. NumLink 미커밋 36, MeowBeat 37, 해시 5fcac3a·657032c 6/14 대비 변동 0이고 agent-office도 7e95fbf 그대로예요. 6/14 액션아이템 4종 — MeowBeat P0, 검증 절대경로화, NumLink Tools 이식, dependabot 머지 — 전부 미완료입니다. 솔직히 말하면 우리는 4일째 같은 걸 결정만 하고 있어요. 게임 레포 P0는 사용자 세션 위임이라 새벽에 우리가 손댈 수 없는 게 맞습니다. 하지만 자율로 실행 가능한 영역이 하나 있어요 — 자체 레포 agent-office입니다. 오늘 회의의 임무를 명확히 합시다: 위임으로 막힌 건 위임으로 두되, 손이 닿는 자체 레포 개선 하나는 회의가 직접 커밋해서 "결정만 하는 기계"가 되는 걸 깨는 겁니다. DevOps, 자체 레포에서 지금 바로 할 수 있는 게 있나요?',
+      },
+      {
+        speaker: 'DevOps',
+        note: '있습니다. weekly-insights.yml을 보니 `permissions: contents: write`가 워크플로 레벨에 전역으로 부여돼 있어요. deploy-pages.yml은 이미 job별로 권한을 분리해 뒀는데 weekly만 안 돼 있습니다. 최소권한 원칙으로 보면 워크플로 레벨은 read로 두고, 실제 push가 필요한 collect job에만 write를 주는 게 맞아요. 단일 job이라 동작은 전혀 안 바뀌고 보안 일관성만 확보됩니다. 지금 바로 고치죠 — 방금 커밋했습니다. 배경 근거도 있어요. 올해 3월에 trivy-action 76개 태그 중 75개가 force-push로 침해돼서 PyPI의 LiteLLM까지 연쇄 유출된 사건이 있었는데, 우리 레포는 이미 모든 액션을 커밋 SHA로 핀해 둬서 그런 태그 침해엔 방어돼 있습니다. dependabot은 actions #97·#98(setup-node·checkout)은 안전해서 머지 권장하지만, #99 upload-pages-artifact 4→5 메이저는 deploy-pages 호환 검증을 먼저 해야 합니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '저는 4일째 같은 보고를 반복하게 돼서 오늘은 수치로 못박겠습니다. 6/14에 "차기 큐 1순위·승인 불필요"로 올린 검증 3종 절대경로화, 여전히 미착수입니다. unity_validate.py 24번째 줄이 아직 Path(\'Tools/known_bugs.json\') 상대경로예요. Tools/ 디렉터리 안에서 실행하면 "known_bugs.json not found", "manifest 없음" 거짓 WARN 2건이 그대로 재현되고, 루트에서만 0 에러가 납니다. 작업은 30분이면 되는데 게임 레포 커밋이 필요해서 위임 큐에 묶여 4일째 적체 중이에요. 더 걱정되는 건 미커밋 37건입니다 — SongData.cs, GameManager.cs, SongManager.cs 같은 핵심 로직이 백업 안 된 채 방치돼 있어요. 게임 데이터 무결성은 양호합니다, manifest 곡 10개·audioFile 10개·ogg 실파일 10개가 정확히 일치하고 노트 레인도 0위반입니다. 절대경로화는 사용자 세션 1순위로 꼭 실착수해 주세요.',
+      },
+      {
+        speaker: 'Developer',
+        note: '오늘은 트위닝 GC를 가져왔습니다. PrimeTween이라는 라이브러리가 있는데, DOTween과 거의 똑같은 API에 zero-allocation을 제공하고 객체 파괴 시 크래시도 없어요. 속도는 1.29배 느린 trade-off가 있지만요. 왜 중요하냐면 — NumLink가 NumberButton, ComboPopupUI, EffectManager 등 7개 게임 스크립트에서 DOTween을 실사용 중입니다. 콤보 팝업이랑 이펙트의 GC Alloc이 모바일에서 프레임 드랍 원인일 가능성이 있어요. MeowBeat는 DOTween을 아예 안 써서 대상이 아니고요. 제안은 무겁지 않습니다 — NumLink ComboPopupUI랑 EffectManager만 PrimeTween으로 시범 전환해서 프로파일러로 GC Alloc을 측정해 보고, 유의미하면 나머지로 확대하는 거예요. 참고로 Unity 6.3 프로파일러가 기본 2,000프레임 캡처로 늘어서 간헐적 스파이크 추적이 쉬워졌습니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '오늘은 라이브옵스 각도예요. 데일리 스트릭을 게임의 95%가 채택하고 있습니다 — 손실회피 심리로 미접속일에도 사람을 돌아오게 만들죠. 그리고 보상형 광고는 이용자 리텐션이 3.5배, 완료율 85~95%, 전체 광고매출의 50~70%를 차지합니다. 다만 함정이 있어요 — 레벨완료 같은 자연스러운 전환점에 넣으면 D7이 중립~상승인데, 잘못 배치하면 D7이 최대 25%까지 떨어집니다. 그래서 제안은 이 둘을 NumLink에서 결합하는 거예요. 매일 첫 접속 시 스트릭을 올리고 7일 주기 보상을 주되, 스트릭이 끊길 위기일 때 "보상형 광고 1회 보면 하루 복구" 옵션을 주는 거죠. 광고를 레벨완료가 아니라 "스트릭 구제"라는 유저가 원하는 가치 지점에 배치하니 부정적 리텐션 영향을 피할 수 있어요. NumLink가 코어루프가 단순해서 먼저 붙이기 좋습니다. 그리고 리듬게임 신작들 — RedOctane Stage Tour, Rhythm Heaven Groove — 70% 이상이 라이선스 음원인데, MeowBeat는 Lyria 자체 생성이라 라이선스 비용 0이 구조적 강점이에요.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '마케팅은 채널 다변화로 가져왔습니다. 마이크로 인플루언서가 가성비가 정말 좋아요 — 건당 $100~500인데, $1만을 5~8명에 분산하면 메타 광고 대비 ROAS가 2~5배 나오고 평균 인게이지먼트가 4.84%입니다. 게다가 협업 한 건당 재사용 영상을 5~10개 확보할 수 있어서 ASO 스크린샷이랑 숏폼 광고 소재로 그대로 돌려쓸 수 있어요. 현지화도 강력합니다 — 현지화하면 그 지역 1일차 다운로드랑 위시리스트가 4~5배 뛰고, 중국·일본·한국 CJK가 글로벌 모바일 매출의 50% 이상을 차지해요. 제안은 MeowBeat 출시 전에 고양이·리듬게임 TikTok 마이크로 크리에이터 3~5명한테 무료 빌드랑 소액 플랫피를 주고 시딩 테스트를 $1천 안에서 돌려보는 겁니다. ROAS 측정하고 재사용 영상도 확보하고요. NumLink는 일본어 우선 현지화를 백로그에 넣읍시다. 참고로 애플이 새 Featuring Nominations를 열어서 인게임 이벤트나 할인을 에디토리얼 팀에 직접 제안할 수 있게 됐어요.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '비주얼 트렌드 세 가지입니다. 첫째, 글래스모피즘이 2026에 다시 진화했는데 다크 UI에서 반투명 레이어로 색을 더하지 않고 깊이를 표현하는 방식이에요 — NumLink 미니멀 톤에 잘 맞습니다. 단 블러를 과하게 하면 안 되고 텍스트는 고대비로 가독성을 지켜야 해요. 둘째가 오늘 핵심인데, 캐주얼 게임 마스코트는 3개 정규 포즈 — 중립 대기, 콤보 히어로 액션, 스토어 아이콘용 컴팩트 — 와 스쿼시앤스트레치 비율, 바운스 속도를 캐릭터 시트로 문서화하는 게 표준이에요. 셋째, 스토어는 아이콘이 스크린샷의 변주가 되도록 배경·폰트·팔레트를 통일하고 before/after 컷을 넣는 게 전환율이 높습니다. 그래서 제안은 MeowBeat 고양이를 3개 정규 포즈로 정의하고 컴팩트 포즈를 그대로 스토어 아이콘에 쓰는 거예요 — "아이콘=인게임 캐릭터" 일관성이 ASO 전환율에 직결됩니다. NumLink는 차순위로 다크모드 패널에 서브틀 글래스모피즘을 적용하면 좋겠어요.',
+      },
+    ],
+    decisions: [
+      {
+        title: '✅ [실행완료·회의 중 직접 커밋] weekly-insights.yml permissions 워크플로 레벨→collect job 레벨 격하 (최소권한·deploy-pages 패턴 통일)',
+        description:
+          'DevOps가 weekly-insights.yml의 `permissions: contents: write` 워크플로 레벨 전역 부여를 발견 — deploy-pages.yml은 이미 job별 분리 적용. 회의 중 메인 에이전트가 워크플로 레벨 `contents: read`+collect job 레벨 `contents: write`로 격하해 최소권한 원칙 적용·두 워크플로 패턴 통일. 단일 job이라 동작 변화 0·보안 일관성만 확보. 6/12 "무게중심 이동"의 두 번째 이행(6/13 dependabot actions 머지에 이어). 배경: 2026.3 trivy-action 75태그 force-push 침해→PyPI 연쇄 유출 사건, agent-office는 이미 SHA 핀으로 방어. 이 저널 커밋과 함께 배포.',
+      },
+      {
+        title: '🔧 [P1·4일째 미착수·실착수 권고] 검증 3종+make_fixtures+add_song_buttons __file__ 절대경로화 — 게임 레포 커밋 필요라 사용자 세션 1순위',
+        description:
+          'QA 실측: unity_validate.py:24 `Path(\'Tools/known_bugs.json\')`·:64·qa_static.py:20-22·run_regression.py:19-20·add_song_buttons.py:167 전부 CWD 상대경로 — Tools/ 디렉터리 실행 시 거짓 WARN 2건 재현·루트에서만 ALL PASS(0err·2/2). 대응: 각 스크립트 상단 `SCRIPT_DIR=Path(__file__).resolve().parent`·`ROOT=SCRIPT_DIR.parent` 정의 후 KNOWN_BUGS_PATH·MANIFEST_PATH·FIXTURES_DIR·VALIDATOR를 ROOT 기준 절대경로로 교체(약 30분·CWD 무관 보장). 6/14 "차기 큐 1순위" 결정 후 4일째 미착수 — 게임 레포 커밋 필요라 위임 큐에 묶임. 미커밋 37건(핵심 .cs 6개) 백업도 함께 권고. 회귀 픽스처 2→6 확충은 이월.',
+      },
+      {
+        title: '🚨 [P0·위임 유지·동결 3일째] MeowBeat UMP+targetSdk 36+광고 Bidding 전환+엔진 6000.3.16f1 패치 — 사용자 세션 첫 작업',
+        description:
+          '6/14 P0 묶음 그대로 이월(동결 3일째). 한 세션 묶음: ① 6/11 준비된 복붙 3커밋 ② UMP(ConsentInformation.Update→LoadAndShowConsentFormIfRequired·2024-01-16부터 이미 시행 중 요건) ③ Target API 36 상향(8/31 기한) ④ LevelPlay Bidding 중개 전환(Waterfall 종료 1/31·Unity Ads Legacy 4/1 경과) ⑤ 엔진 6000.3.16f1 패치(CVE 3건). 새벽 무인 구간이라 게임 레포 push 승인 불가 — 사용자 세션 위임 유지. 절대경로화 후 검증 신뢰도 확보된 상태로 커밋 권장.',
+      },
+      {
+        title: '🛡 [P1·검증 후 머지] dependabot actions #97·#98 안전 머지·#99(upload-pages-artifact 메이저)·npm 메이저 분리 검증',
+        description:
+          'open PR 13건(actions 3+npm 10). #97 setup-node 6.4·#98 checkout 6.0.3은 patch/minor라 안전 머지 권장. #99 upload-pages-artifact 4→5는 메이저라 deploy-pages.yml 호환 검증 선행(6/13 deploy-pages 5.0.0 머지와 정합성 확인). npm 메이저(eslint 10.2 #23·@eslint/js 10 #21·react-hooks 7 #22·@types/cheerio 1.0 #24·globals 17.5 #32)는 lint 깨짐 위험으로 분리 검증 후 처리·patch/minor(react 19.2.5 #31·react-router 7.14 #19·typescript-eslint 8.58.1 #29)는 우선 일괄 머지 검토. 빌드 검증 환경 없는 새벽 무인 머지는 보류.',
+      },
+      {
+        title: '🎮💻🎨📦 [P2·신규 적재] PrimeTween 시범 마이그레이션·데일리 스트릭+보상형 광고·마이크로 인플루언서 시딩·고양이 마스코트 시트 — 모두 P0 후',
+        description:
+          'Developer — NumLink ComboPopupUI/EffectManager만 PrimeTween(zero-allocation) 시범 전환 후 GC Alloc 프로파일러 측정·유의미하면 7스크립트 확대(MeowBeat는 DOTween 미사용·대상 아님). Game Designer — NumLink "데일리 스트릭+보상형 광고 스트릭 구제" 결합(스트릭 95% 채택·보상형 광고 리텐션 3.5배·광고를 "스트릭 구제" 가치 지점에 배치해 D7 부정 영향 회피). Content Writer — MeowBeat 출시 전 TikTok 마이크로 크리에이터 3~5명 시딩 테스트($1천 내·ROAS 메타 2~5배·재사용 영상 5~10개 확보)+NumLink 일본어 우선 현지화 백로그(CJK 매출 50%+). Art Director — MeowBeat 고양이 마스코트 3정규포즈(중립/히어로/컴팩트) 캐릭터 시트 표준화+컴팩트 포즈를 스토어 아이콘에 재사용(아이콘=인게임 캐릭터 일관성)·NumLink 다크모드 글래스모피즘. 모두 P0 커밋·UMP 선행.',
+      },
+    ],
+  },
+  {
     id: '2026-06-14T04:00:00-daily-standup',
     date: '2026-06-14',
     researchTitle:
