@@ -43,6 +43,119 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-06-16T04:00:00-daily-standup',
+    date: '2026-06-16',
+    researchTitle:
+      '🎵 6/16 화요일 데일리 스탠드업 — **🛠 오늘의 본질 = 리듬게임의 심장이 빠져 있었다: Developer와 Game Designer가 서로 모르게 같은 출시 차단급 결함(MeowBeat 노트-오디오 동기화 부재)을 두 각도에서 동시에 지목한 날** — Developer는 코드에서 노트 타이밍이 `AudioSettings.dspTime`이 아닌 `Time.deltaTime` 누적(NoteSpawner.cs:126)이고 `dspTime`/`PlayScheduled` 사용 0건·BGM은 단순 `.Play()`(SongManager.cs:91)임을 실측했고, Game Designer는 시장에서 모바일 오디오 지연이 기기별 0.01~0.2s(최대 200ms)까지 벌어져 캘리브레이션 없으면 "정확히 쳤는데 Miss"로 D0 즉시 이탈한다는 데이터로 같은 결론에 도달 — 그동안 P0였던 UMP·광고는 출시 "허가" 문제였다면, 오늘 발견은 출시 "가치"=리듬게임이 리듬게임답게 작동하느냐의 문제**·**🛡 DevOps: dependabot.yml `groups` 미설정으로 13건이 개별 PR로 누적 → 회의 중 npm·actions 각각 minor/patch·major 2그룹씩으로 묶도록 직접 커밋(6/15 weekly-insights 격하에 이은 3번째 자율 실행·CI 최근 6건 전부 success)**·**🎯 Orchestrator: 게임 레포 동결 4일째(NumLink 5fcac3a·MeowBeat 657032c 해시 불변)·6/15 액션 4종 중 ①권한 격하만 완료(60f87b2)·②③④ 미완·NumLink Layer Lab UI 에셋 실제 추가됨(미커밋 36)**·**🔍 QA: 미커밋 핵심 .cs 4건(SongData/GameManager/SongManager/OptionManager) 4/23 수정인데 마지막 커밋 4/12 → 약 2개월 미백업·악화·검증 절대경로화 5일째 미착수·test_fixtures/ 부재로 회귀 0/6**·**📦 Content: 숏폼 첫 3초가 시청 지속 71% 결정·사전등록 출시 2~3개월 전·전환율 3~5%·Discord 데모 사전공개 인디 펀딩 3배**·**🎨 Art Director: 가변폰트 tabular figures+optical sizing이 숫자 가독성 2026 표준(NumLink 직결)·AI 슬롭 회피=muted 뉴트럴+의외 비비드 1액센트(머스타드/코랄)**.',
+    researchSummary:
+      '7명 에이전트 병렬 리서치 제65회 — **6/16 화요일·D+23**. **🛠 오늘의 본질 = "리듬게임의 심장이 빠져 있었다"**: 6/13이 "16일 만의 첫 실행", 6/14가 "자기 진단 검증", 6/15가 "정체 속 자체 레포 보안 직접 커밋"이었다면, 6/16은 **두 에이전트가 서로 모르게 같은 출시 차단급 결함을 두 각도에서 동시에 지목해 진짜 P0를 발견한 날**이다. Developer가 코드를 직접 읽어 MeowBeat의 노트 스폰 타이밍이 `AudioSettings.dspTime`(오디오 하드웨어 클럭)이 아니라 `Time.deltaTime` 프레임 델타 누적 기반(NoteSpawner.cs:126)이고, 프로젝트 전체에서 `dspTime`/`PlayScheduled` 사용이 0건·BGM은 `bgmPlayer.Play()`로만 재생(SongManager.cs:91)됨을 실측했다 — 프레임 드랍이나 모바일 가변 프레임레이트에서 노트와 음악이 누적 드리프트하면 판정 자체가 무너진다. 같은 시각 Game Designer는 시장 데이터에서 **모바일 오디오 출력 지연이 기기별 0.01~0.2s(최대 200ms)까지 벌어져, 캘리브레이션이 없으면 정확히 친 노트도 Miss로 판정돼 "정확하게 쳤는데 왜 안 맞지?"라는 리듬게임 최대 이탈 원인이 발생**하고, 풀스코어 판정 윈도우가 경쟁작 ±20ms·캐주얼 ±40~50ms 수준이라는 결론에 도달했다 — 두 에이전트가 코드와 시장이라는 다른 출발점에서 **같은 결함(노트-오디오 동기화 부재)**으로 수렴한 것이다. 그동안 회의가 P0로 다뤄온 UMP 동의·광고 Bidding·targetSdk 36은 본질적으로 "스토어가 출시를 허가하느냐"의 문제였다면, 오늘 발견한 동기화 결함은 **"리듬게임이 리듬게임답게 작동하느냐"=출시 가치 자체의 문제**다. **🛡 자율 실행 3일째**: DevOps가 dependabot.yml에 `groups`가 설정돼 있지 않아 의존성 13건이 전부 개별 PR로 누적됨을 발견했고, 회의는 이를 결정으로만 남기지 않고 **npm·github-actions 각각 minor/patch 묶음과 major 묶음으로 분리(`update-types` 기반 4그룹)하도록 dependabot.yml을 직접 수정·커밋**했다 — 다음 주 월요일부터 13건 개별 PR이 묶음 PR로 줄어 머지 부담이 경감되고, 메이저는 별도 묶음으로 분리돼 lint 깨짐 위험(eslint 10·@eslint/js 10 등)을 격리한다. 6/13 dependabot actions 머지·6/15 weekly-insights 권한 격하에 이은 자체 레포 3번째 자율 실행이다. CI는 최근 6건 전부 success(Deploy Pages·Weekly Insights·Dependabot Updates). **🎯 게임 레포(동결 4일째)**: NumLink 미커밋 36·MeowBeat 37, 해시 5fcac3a/657032c 6/15 대비 변동 0. 단 NumLink는 **Layer Lab UI 에셋킷이 실제로 추가됨**(`?? Assets/Layer Lab/`+.meta 신규·AutoGenTests 4파일 삭제)으로 작업 자체는 진행 중. 6/15 액션아이템 4종 판정: ① weekly-insights 권한 격하 = **완료**(agent-office 60f87b2) ② 검증 3종 절대경로화 = **미완**(unity_validate.py:24 `Path(\'Tools/known_bugs.json\')` 상대경로 그대로) ③ NumLink Tools/ 이식 = **미완**(디렉터리 부재 지속) ④ MeowBeat P0 = **미완**(657032c 이후 신규 커밋 0). **🔍 QA(백업 리스크 악화)**: 검증 절대경로화는 5일째 미착수로 unity_validate.py:24가 여전히 상대경로 — Tools/ CWD에서 실행하면 known_bugs.json·manifest를 못 찾아 1 warning이 나지만 **exit 0이라 무증상 통과되는 점이 더 위험**(거짓 안심). NumLink Tools/는 여전히 미존재(검증 인프라 0건). **🚨 신규·악화 리스크**: 미커밋 핵심 .cs 4건(SongData.cs·GameManager.cs·SongManager.cs·OptionManager.cs)이 4/23 수정인데 마지막 커밋이 **4/12** — 약 2개월간 백업 안 된 채 방치돼 게임 로직 유실 리스크가 누적되고 있고, test_fixtures/ 폴더가 아예 미존재라 회귀 검증은 0/6(불가). manifest 무결성은 양호(곡 10·audioFile 10/10 실파일 일치·누락 0). **📦 Content(런칭 채널·신규 각도)**: ① **숏폼(TikTok/Reels/Shorts) 첫 3초가 시청 지속의 71%를 결정**하고 바이럴 완주율 기준이 70% — 가장 임팩트 있는 리듬 타격 순간을 0~3초에 배치해야 한다 ② **사전등록은 출시 2~3개월 전 시작·게임 스토어 전환율 3~5%대**(상위 F2P) ③ **Discord 데모 사전공개가 인디 펀딩 성공률 3배·가입 30일 잔존이 핵심 지표**(6/14 ASO 스크린샷·6/15 인플루언서/현지화/피처링과 겹치지 않는 "숏폼 후킹·사전등록·Discord" 신규 토픽). **🎨 Art Director(타이포·컬러 신규 각도)**: ① **가변폰트의 tabular figures(고정폭 숫자)+optical sizing이 숫자 가독성 2026 표준** — NumLink 숫자 퍼즐에 직결, 1·7 등 혼동 글리프 구분 강화 필요 ② 모션은 cause-and-effect 명료성 우선·"조용한 마이크로인터랙션"이 대세 ③ **AI 슬롭 회피법 = muted 뉴트럴 베이스 + 머스타드·코랄 같은 의외의 비비드 1액센트**(6/14 Material 3·6/15 글래스모피즘/마스코트와 겹치지 않는 "가변폰트 tabular figures·조용한 모션·뉴트럴+비비드 1액센트" 신규 토픽). **🎯 오늘 핵심 결정 = ① [✅실행완료·회의 중 직접 커밋] dependabot.yml groups 설정(npm·actions 각 minor/patch·major 4그룹·13건→묶음 PR·6/15에 이은 3번째 자율 실행) ② [🚨P0·신규·출시 차단급] MeowBeat 노트-오디오 동기화 재설계 — dspTime+PlayScheduled 노트 타이밍 전환(NoteSpawner.cs:126·SongManager.cs:91)+첫 실행 5초 오디오 캘리브레이션+판정 윈도우 3단계(Easy±60/Normal±50/Hard±35ms)·Developer+Game Designer 합류·게임 레포 커밋 필요라 사용자 세션 ③ [🚨P0·이월·동결 4일째] MeowBeat UMP+targetSdk 36+광고 Bidding+엔진 패치 ④ [🔧P1·악화] 미커밋 .cs 4건 2개월 미백업 즉시 커밋·푸시+검증 3종 절대경로화(5일째 미착수) ⑤ [🎨📦P2 신규] NumLink 숫자 타일 tabular figures 가변폰트+뉴트럴+비비드 1액센트(Art)·MeowBeat D-60 사전등록+Discord+첫3초 후킹 숏폼(Content)**. 메타 통찰: 6/16은 **"두 에이전트가 코드와 시장이라는 다른 길로 같은 진짜 P0에 도달한 날"** — 회의의 7개 시점이 서로 검증 장치로 작동해, 그동안 놓치고 있던 출시 차단급 결함(리듬게임의 노트-오디오 동기화)을 비로소 수면 위로 끌어올렸다.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — 게임 레포 동결 4일째(NumLink 5fcac3a·MeowBeat 657032c 해시 불변)·6/15 액션 4종 중 ①권한 격하만 완료(60f87b2)·②③④ 전부 미완·NumLink Layer Lab UI 에셋 실제 추가됨(미커밋 36·MeowBeat 37)·dependabot 13건',
+        description:
+          '**🎯 6/15 액션아이템 실측(6/16)**: ① weekly-insights.yml 권한 격하 = **완료**(agent-office 60f87b2 커밋 확인) ② 검증 3종 절대경로화 = **미완**(unity_validate.py:24 `Path(\'Tools/known_bugs.json\')` 상대경로 그대로·22·23행도 상대) ③ NumLink Tools/ 이식 = **미완**(디렉터리 부재 지속) ④ MeowBeat P0(UMP/targetSdk 36) = **미완**(657032c 이후 신규 커밋 0). **측정값**: NumLink 최신 5fcac3a·브랜치 feature/ugui-layerlab·미커밋 36, MeowBeat 최신 657032c·브랜치 feature/song-ownership-migration·미커밋 37, agent-office 6/15 결정 2건 실제 커밋됨(b271aa0 저널·60f87b2 권한 격하)·미커밋 .omc/project-memory.json 1건. **🆕 진행 신호**: NumLink는 동결이지만 죽은 게 아니다 — `?? Assets/Layer Lab/`+.meta 신규 UI 에셋킷이 실제 추가되고 AutoGenTests 4파일이 삭제(D)됨, 즉 UI 리스킨 작업이 미커밋 상태로 진행 중. **dependabot**: open PR 13건 — actions 3건(#99 upload-pages-artifact·#98 checkout·#97 setup-node)+npm 10건(#32 globals·#31 react·#30 @anthropic-ai/sdk·#29 typescript-eslint·#25 react-refresh·#24 @types/cheerio·#23 eslint·#22 react-hooks·#21 @eslint/js·#19 react-router-dom). **패턴**: 게임 레포 P0는 새벽 무인 구간이라 사용자 위임으로 자율 실행 불가, 자율 실행 가능한 유일 영역은 자체 레포(agent-office). **오늘 결정 제안**: 6/15 패턴 계승해 자체 레포 무위험 개선(DevOps의 dependabot grouping)을 회의 중 직접 실행하고, 게임 레포는 신규 발견된 노트-오디오 동기화 P0를 사용자 세션 1순위로 격상. (git log/status/gh pr 실측)',
+      },
+      {
+        title:
+          '💻 Developer — 🚨 MeowBeat 노트 타이밍이 dspTime 아닌 Time.deltaTime 누적(NoteSpawner.cs:126)·dspTime/PlayScheduled 사용 0건·BGM 단순 .Play()(SongManager.cs:91) → 프레임 드랍 시 음악·노트 누적 드리프트로 리듬게임 판정 붕괴·노트 풀링 부재(곡당 수백 Instantiate/Destroy)',
+        description:
+          '**💻 코드 실측(출시 차단급)**: MeowBeat 노트 스폰 타이밍이 `AudioSettings.dspTime`(오디오 하드웨어 클럭)이 아니라 `Time.deltaTime` 프레임 델타 누적 기반(NoteSpawner.cs:126)이다. 프로젝트 전체에서 `dspTime`/`PlayScheduled` 사용이 **0건**이고 BGM은 `bgmPlayer.Play()`로만 재생(SongManager.cs:91)된다. 결과: 프레임 드랍이나 모바일 가변 프레임레이트에서 노트와 음악이 누적 드리프트 → 곡이 길어질수록 어긋남이 커져 판정 자체가 무너진다(리듬게임 치명적). 또한 Android 오디오 레이턴시 200~300ms를 보정하는 장치가 전혀 없다. **🆕 2순위(노트 풀링 부재)**: `SpawnNote()`가 매번 `Instantiate`(NoteSpawner.cs:171)하고 `Note.cs:45`에서 `Destroy` — 곡당 수백 개 노트가 생성/파괴돼 GC 스파이크 유발(타이밍 흔들림을 더 악화). **대응 설계**: ① BGM을 `audioSource.PlayScheduled(dspTime+delay)`로 예약 시작 ② 노트 타이밍 기준을 `dspTime - songStartDspTime`으로 전환(프레임레이트 독립) ③ 후속으로 노트 오브젝트 풀링 도입. (6/13 엔진 패치·6/14 광고 Bidding·6/15 PrimeTween 트위닝 GC와 겹치지 않는 "노트-오디오 동기화·dspTime·풀링" 신규 토픽). **오늘 결정 제안(P0)**: 노트 타이밍 dspTime 전환+PlayScheduled 시작 예약을 MeowBeat 출시 전 최우선 과제로 격상 — Game Designer의 캘리브레이션 제안과 한 묶음으로 처리. 풀링은 후속 백로그. Sources: NoteSpawner.cs/SongManager.cs/Note.cs 코드 실측·Medium(Unity3D 리듬게임 레이턴시 동기화)·Native Audio 리듬게임 가이드·Unity Android 오디오 레이턴시 문서.',
+      },
+      {
+        title:
+          '🎮 Game Designer — 🚨 모바일 오디오 지연 기기별 0.01~0.2s(최대 200ms) → 캘리브레이션 없으면 정확히 친 노트도 Miss로 D0 즉시 이탈·풀스코어 판정 윈도우 경쟁작 ±20ms·캐주얼 ±40~50ms·하캐 D1 38~40%로 절반이 온보딩서 이탈',
+        description:
+          '**🎮 시장 데이터(Developer와 독립 수렴)**: 모바일 기기 오디오 출력 지연이 기기별 **0.01~0.2s(최대 200ms)**까지 벌어져, 캘리브레이션이 없으면 정확히 친 노트도 Miss로 판정돼 **"정확하게 쳤는데 왜 안 맞지?"가 리듬게임 최대 이탈 원인**이 된다 — Developer가 코드에서 찾은 dspTime 부재와 같은 문제에 시장 각도로 수렴. **판정 윈도우 기준**: 풀스코어 윈도우가 경쟁작 ±20ms·캐주얼 ±40~50ms 수준, 0.3s 관대 윈도우로 난이도 조절 가능. **온보딩**: 하이퍼캐주얼 D1 리텐션 38~40%인데 절반이 온보딩에서 이탈 — 60초 내 코어루프 진입이 관건(6/14 하이브리드캐주얼·6/15 데일리 스트릭/보상형 광고와 겹치지 않는 "오디오 캘리브레이션·판정 윈도우·온보딩 60초" 신규 토픽). **오늘 결정 제안(P0)**: MeowBeat 첫 곡 진입 전 고양이 발소리 4비트 탭으로 오프셋 자동 측정(5초 내·Skip 가능·PlayerPrefs 저장), 판정 윈도우는 Easy ±60ms/Normal ±50ms/Hard ±35ms 3단계. Lyria 자체 음원이라 BPM/오프셋이 정확히 알려져 캘리브레이션 기준 비트를 신뢰성 있게 깔 수 있는 게 강점. **보조(NumLink)**: 첫 60초 내 규칙 텍스트 나열 대신 1번 노드 연결만 손가락 가이드로 시연 후 즉시 첫 퍼즐 클리어 경험("보여주고 따라하게"). Sources: businessofapps.com(리텐션 2026)·gamegrowthadvisor.com·Medium/Native Audio(리듬게임 레이턴시·판정)·NamuWiki(판정 시스템).',
+      },
+      {
+        title:
+          '🔍 QA Tester — 🚨 미커밋 핵심 .cs 4건(SongData/GameManager/SongManager/OptionManager) 4/23 수정·마지막 커밋 4/12 = 약 2개월 미백업(악화)·검증 절대경로화 5일째 미착수(unity_validate.py:24 상대경로·Tools/ CWD 1 warning이 exit 0 무증상 통과)·test_fixtures/ 부재 회귀 0/6·manifest 10곡 정상',
+        description:
+          '**🔍 백업 리스크 악화(실측)**: 미커밋 핵심 .cs 4건(SongData.cs·GameManager.cs·SongManager.cs·OptionManager.cs)이 **4/23 수정인데 마지막 커밋이 4/12** — 약 2개월간 백업 안 된 채 방치돼 게임 로직 유실 리스크가 누적. 전체 미커밋 37건 유지. **절대경로화 5일째 미착수**: unity_validate.py:24 `Path(\'Tools/known_bugs.json\')` 상대경로 변화 없음. 루트 실행은 0err/0warn 정상, **Tools/ CWD 실행 시 known_bugs.json·manifest 둘 다 못 찾아 1 warning 발생하지만 exit 0이라 무증상 통과되는 점이 더 위험**(검증이 거짓 안심을 줌). NumLink Tools/는 여전히 미존재(검증 인프라 0건). **회귀**: test_fixtures/ 폴더가 아예 미존재라 회귀 검증 0/6(불가). **게임데이터 무결성 양호**: manifest 곡 10·audioFile 10/10 실파일 존재 일치·누락 0. (6/14·6/15 절대경로화 미착수 반복에 더해 "미커밋 .cs 2개월 미백업·exit 0 무증상 통과·test_fixtures 부재" 악화 추적). **오늘 결정 제안(P1·악화)**: 미커밋 핵심 .cs 4건을 오늘 우선 커밋·푸시로 백업 확보(2개월 유실 리스크 차단)하고, unity_validate.py 3개 Path를 __file__ 기준 절대경로로 수정 — 둘 다 게임 레포 커밋 필요라 사용자 세션 1순위. Sources: unity_validate.py 코드·루트/Tools CWD 양쪽 실행·git status 타임스탬프·manifest/ogg 대조.',
+      },
+      {
+        title:
+          '📦 Content Writer — 숏폼 첫 3초가 시청 지속의 71% 결정·바이럴 완주율 기준 70%·사전등록 출시 2~3개월 전 시작·게임 스토어 전환율 3~5%·Discord 데모 사전공개가 인디 펀딩 성공률 3배·가입 30일 잔존이 핵심 지표',
+        description:
+          '**📦 신규 1순위(숏폼 후킹)**: TikTok/Reels/Shorts에서 **첫 3초가 시청 지속의 71%를 결정**하고 바이럴 완주율 기준이 70% — 가장 임팩트 있는 리듬 타격 순간을 0~3초에 배치, 60초 이내, 트렌딩 사운드 위에 게임 BGM 싱크. **📦 신규 2순위(사전등록)**: 사전등록은 **출시 2~3개월 전 시작**·게임 스토어 전환율 3~5%대(상위 F2P)·출시 전 위시리스트/대기자 명단 축적. **📦 신규 3순위(Discord 커뮤니티)**: Discord 데모 사전공개가 인디 펀딩 성공률 3배·**가입 30일 잔존이 핵심 지표**(6/14 ASO 스크린샷·6/15 인플루언서/현지화/피처링과 겹치지 않는 "숏폼 첫3초·사전등록·Discord 빌딩" 신규 토픽). **오늘 결정 제안(P2)**: MeowBeat 출시 D-60부터 사전등록 랜딩+Discord 채널 동시 오픈, 고양이가 비트에 맞춰 반응하는 "첫 3초 후킹" 숏폼 1편 제작(0~3초 임팩트 타격 배치·완주율 70% 목표). NumLink는 사전등록 캠페인으로 위시리스트 2~3개월 축적. Sources: businessofapps.com(전환율 2026)·maf.ad(IAP 벤치마크)·mobileaction.co(인앱 이벤트)·opus.pro/cloutboost.com(TikTok 후킹)·growthhq.io/marketingagent.blog(Discord 마케팅).',
+      },
+      {
+        title:
+          '🎨 Art Director — 가변폰트 tabular figures(고정폭 숫자)+optical sizing이 숫자 가독성 2026 표준(NumLink 직결·1/7 혼동 글리프 구분)·모션은 cause-and-effect 명료성 우선 "조용한 마이크로인터랙션"·AI 슬롭 회피=muted 뉴트럴+의외 비비드 1액센트(머스타드/코랄)',
+        description:
+          '**🎨 신규 1순위(숫자 타이포)**: **가변폰트의 tabular figures(고정폭 숫자)+optical sizing이 숫자 가독성 2026 표준** — 숫자 정렬이 흔들리지 않고 작은 크기에서도 또렷, NumLink 숫자 퍼즐에 직결되며 1·7 등 혼동 글리프 구분 강화가 필수. **🎨 신규 2순위(조용한 모션)**: 모션은 화려함보다 cause-and-effect 명료성 우선·"조용한 마이크로인터랙션"이 2026 대세(버튼 피드백·트랜지션이 결과를 분명히 전달). **🎨 신규 3순위(AI 슬롭 회피 컬러)**: **muted 뉴트럴 베이스 + 머스타드·코랄 같은 의외의 비비드 1액센트**가 독창성 확보법 — 민트+다크 그라데이션 같은 AI 전형 조합 회피(6/14 Material 3 스프링·6/15 글래스모피즘/마스코트와 겹치지 않는 "가변폰트 tabular figures·조용한 모션·뉴트럴+비비드 1액센트" 신규 토픽). **오늘 결정 제안(P2)**: NumLink 숫자 타일에 tabular figures 가변폰트 적용+1·7 혼동 글리프 구분 강화, 도입 중인 Layer Lab UI 킷의 다크 뉴트럴 베이스는 유지하되 정답 연결 순간에만 단일 비비드 액센트(머스타드 옐로/코랄)를 "조용한 글로우+살짝 바운스"로 입혀 cause-and-effect 피드백 제공. AI 전형 조합 회피·뉴트럴 위 단색 액센트 1개 원칙. Sources: muz.li(가변폰트 2026)·designmonks.co(타이포 2026)·medium(모션/마이크로인터랙션 2026)·recursion.software/bigbashstudio.com(컬러 2026).',
+      },
+      {
+        title:
+          '🛡 DevOps — ✅ dependabot.yml groups 설정 회의 중 직접 커밋(npm·actions 각 minor/patch·major 4그룹·13건 개별 PR→묶음 PR·메이저 격리)·CI 최근 6건 전부 success·게임 레포 CI 무(MeowBeat만 Tools/ Python 스크립트 보유)·6/15에 이은 3번째 자율 실행',
+        description:
+          '**🛡 ✅ 회의 중 실행 완료**: dependabot.yml에 `groups`가 설정돼 있지 않아 의존성 13건이 전부 개별 PR로 누적되고 있었다. 회의 중 **npm·github-actions 각각 minor/patch 묶음과 major 묶음으로 분리(`update-types` 기반 npm 2그룹+actions 2그룹)**하도록 dependabot.yml을 직접 수정·커밋 — 다음 주 월요일부터 13건 개별 PR이 묶음 PR로 줄어 머지 부담이 경감되고, 메이저(eslint 10·@eslint/js 10·react-hooks 7·upload-pages-artifact 5 등)는 별도 묶음으로 격리돼 lint/빌드 깨짐 위험을 분리 검증할 수 있다. 6/13 dependabot actions 머지·6/15 weekly-insights 권한 격하에 이은 자체 레포 3번째 자율 실행. **🛡 CI 현황**: gh run 최근 6건 전부 success(Deploy Pages·Weekly Insights·Dependabot Updates 모두 정상)·워크플로 2종 모두 SHA 핀+최소권한·deploy-pages는 OIDC 적용. **게임 레포 CI**: NumLink·MeowBeat 둘 다 CI 워크플로 없음·NumLink는 Tools/ 디렉터리 자체가 없고 MeowBeat만 Tools/에 검증 가능한 Python 스크립트(beat_extractor.py·note_generator.py+requirements.txt) 보유 — 경량 Python CI는 한쪽만 대상이라 효과 제한적이라 grouping을 우선(6/13 러너 마이그레이션·6/14 Vite8·6/15 SHA핀과 겹치지 않는 "dependabot grouping·PR 관리 자동화" 신규 토픽). **오늘 결정 제안**: ✅ grouping 실행 완료. 다음 머지 사이클부터 묶음 PR로 patch/minor 일괄·major 분리 검증. Sources: gh run/pr 실측·dependabot.yml 코드·게임 레포 Tools/ glob.',
+      },
+    ],
+    meetingTitle:
+      '🎵 6/16 종합 회의 — "리듬게임의 심장이 빠져 있었다": Developer와 Game Designer가 서로 모르게 같은 출시 차단급 결함(MeowBeat 노트-오디오 동기화 부재)을 코드와 시장 두 각도로 동시 지목 — 그동안의 P0(출시 허가)보다 더 본질적인 출시 가치 문제를 발견·DevOps는 dependabot grouping을 회의 중 직접 커밋(3번째 자율 실행)',
+    meetingSummary:
+      '제65회 종합 회의. **오늘의 핵심은 두 에이전트가 서로 다른 길로 같은 진짜 P0에 도달한 것이다.** Developer가 MeowBeat 코드를 직접 읽고 "노트 스폰 타이밍이 dspTime이 아니라 Time.deltaTime 누적(NoteSpawner.cs:126)이고, dspTime/PlayScheduled가 프로젝트 전체에서 0건이며 BGM은 단순 .Play()다(SongManager.cs:91) — 프레임 드랍이나 모바일 가변 프레임레이트에서 노트와 음악이 누적 드리프트하면 판정이 무너진다"고 보고했다. 곧바로 Game Designer가 "내가 시장에서 찾은 것과 정확히 같은 문제"라며 합류했다 — 모바일 오디오 지연이 기기별 0.01~0.2s(최대 200ms)까지 벌어져 캘리브레이션이 없으면 정확히 친 노트도 Miss로 판정돼 "정확하게 쳤는데 왜 안 맞지?"가 리듬게임 최대 이탈 원인이고, 그래서 첫 곡 진입 전 5초 오디오 캘리브레이션과 판정 윈도우 3단계(Easy±60/Normal±50/Hard±35ms)가 필요하다는 것이다. 회의는 두 보고를 한 묶음의 P0로 격상했다 — 그동안 회의가 P0로 다뤄온 UMP·광고·targetSdk 36은 "스토어가 출시를 허가하느냐"의 문제였지만, 오늘 발견한 동기화 결함은 "리듬게임이 리듬게임답게 작동하느냐"=출시 가치 자체의 문제이기 때문이다. Orchestrator는 게임 레포 동결 4일째와 6/15 액션 4종 중 권한 격하만 완료됐음을 보고하면서, 게임 레포 P0는 새벽 무인이라 위임할 수밖에 없으니 자율 실행 가능한 자체 레포에서 오늘 할 일을 찾자고 했다. DevOps가 답했다 — dependabot.yml에 groups가 없어 13건이 개별 PR로 쌓이니, npm·actions 각각 minor/patch와 major 묶음으로 분리하면 머지 부담이 줄고 메이저 위험도 격리된다며, 결정으로만 두지 않고 회의 중 직접 수정·커밋했다(6/13 머지·6/15 권한 격하에 이은 3번째 자율 실행). QA는 더 무거운 경고를 했다 — 검증 절대경로화는 5일째 미착수지만 그보다 미커밋 핵심 .cs 4건(SongData/GameManager/SongManager/OptionManager)이 4/23 수정인데 마지막 커밋이 4/12로 2개월간 백업 안 된 채 방치돼 있고, Tools/ CWD에서 검증이 1 warning을 내지만 exit 0이라 무증상 통과되는 게 거짓 안심을 준다는 것이다. Content와 Art는 각자 새 각도를 가져왔다: Content는 숏폼 첫 3초가 시청 지속 71%를 결정한다며 MeowBeat D-60 사전등록+Discord+첫3초 후킹 숏폼을, Art는 가변폰트 tabular figures가 숫자 가독성 2026 표준이라며 NumLink 숫자 타일 고정폭 폰트+뉴트럴 위 비비드 1액센트(AI 슬롭 회피)를 제안했다. 메타: 6/13 첫 실행·6/14 자기 진단·6/15 자체 레포 보안 직접 커밋에 이어, 6/16은 "회의의 7개 시점이 서로 검증 장치로 작동해, 코드와 시장 두 길이 같은 출시 차단급 결함으로 수렴한 날"이다.',
+    meetingItems: [
+      {
+        speaker: 'Developer',
+        note: '오늘은 코드를 직접 파고들었는데, MeowBeat에 심각한 게 있습니다. 노트 스폰 타이밍이 AudioSettings.dspTime — 오디오 하드웨어 클럭 — 이 아니라 Time.deltaTime 프레임 델타 누적 기반이에요. NoteSpawner.cs 126번째 줄입니다. 프로젝트 전체를 grep해봤는데 dspTime이랑 PlayScheduled 사용이 0건이고, BGM은 그냥 bgmPlayer.Play()로만 재생됩니다, SongManager.cs 91번째 줄이요. 이게 왜 치명적이냐면 — 프레임이 한 번이라도 드랍되거나 모바일에서 프레임레이트가 흔들리면 노트랑 음악이 누적으로 어긋나요. 곡이 길수록 드리프트가 커지고, 결국 판정 자체가 무너집니다. 리듬게임에서 이건 출시하면 안 되는 결함이에요. 덤으로 노트 풀링도 없어서 곡당 수백 개를 Instantiate하고 Destroy합니다(NoteSpawner.cs:171, Note.cs:45) — GC 스파이크가 타이밍 흔들림을 더 악화시키고요. 제안은 BGM을 PlayScheduled로 예약 시작하고, 노트 타이밍 기준을 dspTime 기반으로 전환하는 겁니다. 풀링은 후속으로 빼고요.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '잠깐, 그거 제가 오늘 시장에서 찾은 거랑 정확히 같은 문제예요. 모바일 기기 오디오 출력 지연이 기기별로 0.01초에서 0.2초, 최대 200밀리초까지 벌어집니다. 캘리브레이션이 없으면 유저가 정확히 친 노트도 Miss로 판정돼요. "정확하게 쳤는데 왜 안 맞지?"가 리듬게임 D0 최대 이탈 원인입니다. Developer가 코드에서 찾은 dspTime 부재랑 제가 데이터에서 찾은 캘리브레이션 부재가 같은 구멍의 양면이에요. 판정 윈도우도 기준이 있는데, 풀스코어가 경쟁작은 ±20ms, 캐주얼은 ±40~50ms 수준입니다. 그래서 제안은 둘을 한 묶음으로 처리하는 거예요 — 첫 곡 들어가기 전에 고양이 발소리 4비트를 탭하게 해서 오프셋을 5초 안에 자동 측정하고(Skip 가능, PlayerPrefs 저장), 판정 윈도우는 Easy ±60, Normal ±50, Hard ±35로 3단계. 우리는 Lyria 자체 음원이라 BPM이랑 오프셋을 정확히 아니까 캘리브레이션 기준 비트를 신뢰성 있게 깔 수 있는 게 강점입니다.',
+      },
+      {
+        speaker: 'Orchestrator',
+        note: '두 분 보고를 한 묶음 P0로 격상하겠습니다. 그동안 우리가 P0로 다룬 UMP, 광고 Bidding, targetSdk 36은 본질적으로 "스토어가 출시를 허가하느냐"의 문제였어요. 그런데 방금 발견한 노트-오디오 동기화는 "리듬게임이 리듬게임답게 작동하느냐", 출시 가치 그 자체의 문제입니다. 더 본질적이에요. 게임 레포 상태부터 정리하면, 동결 4일째입니다 — NumLink 5fcac3a, MeowBeat 657032c 해시 변동 0. 6/15 액션 4종 중에는 권한 격하만 완료됐고(60f87b2) 절대경로화·NumLink Tools 이식·MeowBeat P0는 전부 미완이에요. 다만 NumLink는 죽은 게 아니라 Layer Lab UI 에셋킷이 실제로 추가되면서 리스킨 작업이 미커밋으로 진행 중입니다. 게임 레포 P0는 새벽 무인이라 위임할 수밖에 없으니, 오늘도 자율 실행 가능한 자체 레포에서 할 일을 찾읍시다. DevOps, 뭐가 있나요?',
+      },
+      {
+        speaker: 'DevOps',
+        note: '있습니다. dependabot.yml에 groups 설정이 없어서 의존성 13건이 전부 개별 PR로 쌓이고 있어요. npm 10건에 actions 3건. 이걸 npm이랑 github-actions 각각 minor/patch 묶음하고 major 묶음으로 분리하면, 다음 주 월요일부터 개별 13건이 묶음 PR로 줄어서 머지 부담이 확 줄어듭니다. 게다가 메이저 — eslint 10, @eslint/js 10, react-hooks 7, upload-pages-artifact 5 같은 것들 — 는 별도 묶음으로 격리되니까 lint나 빌드 깨질 위험을 따로 검증할 수 있어요. 결정으로만 두지 않고 방금 dependabot.yml에 직접 넣고 커밋했습니다. 6/13 dependabot 머지, 6/15 weekly-insights 권한 격하에 이은 세 번째 자율 실행이에요. CI는 최근 6건 전부 success고요. 참고로 게임 레포 경량 Python CI도 검토했는데, NumLink는 Tools 디렉터리 자체가 없고 MeowBeat만 검증 스크립트가 있어서 한쪽만 대상이라 효과가 제한적이에요. 그래서 grouping을 먼저 했습니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '저는 오늘 더 무거운 경고를 드려야겠어요. 검증 절대경로화는 5일째 미착수입니다 — unity_validate.py 24번째 줄 여전히 상대경로예요. Tools/ 디렉터리에서 실행하면 known_bugs.json이랑 manifest를 못 찾아서 1 warning이 나는데, 문제는 exit 코드가 0이라 무증상으로 통과된다는 거예요. 검증이 오히려 거짓 안심을 줍니다. 근데 그보다 더 급한 게 있어요. 미커밋 핵심 .cs 4건 — SongData, GameManager, SongManager, OptionManager — 이게 4월 23일에 수정됐는데 마지막 커밋이 4월 12일입니다. 두 달 가까이 백업이 안 된 채 방치돼 있어요. 게임 핵심 로직이 유실되면 복구 불가입니다. 게다가 test_fixtures 폴더가 아예 없어서 회귀 검증은 0/6, 불가능하고요. manifest 무결성은 그나마 양호합니다 — 곡 10개, audioFile 10개 실파일 일치, 누락 0이에요. 오늘 사용자 세션 1순위로 미커밋 .cs 4건부터 커밋·푸시해서 2개월 유실 리스크를 차단해 주세요.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '저는 런칭 채널을 새 각도로 가져왔어요. 숏폼이 핵심인데, TikTok·Reels·Shorts에서 첫 3초가 시청 지속의 71%를 결정합니다. 바이럴 완주율 기준은 70%고요. 그러니까 가장 임팩트 있는 리듬 타격 순간을 0~3초에 박아야 해요. 사전등록도 강력합니다 — 출시 2~3개월 전에 시작하고, 게임 스토어 사전등록 전환율이 3~5%대예요. 출시 전에 위시리스트랑 대기자를 미리 쌓는 거죠. 그리고 Discord — 데모를 Discord에 사전공개하면 인디 펀딩 성공률이 3배고, 가입 30일 잔존이 핵심 지표입니다. 제안은 MeowBeat 출시 D-60부터 사전등록 랜딩이랑 Discord 채널을 동시에 열고, 고양이가 비트에 맞춰 반응하는 "첫 3초 후킹" 숏폼을 한 편 만드는 거예요 — 0~3초에 임팩트 타격을 배치하고 완주율 70%를 목표로요. NumLink는 사전등록 캠페인으로 위시리스트를 미리 축적하면 좋겠습니다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '저는 NumLink에 직결되는 타이포부터요. 2026 숫자 가독성 표준이 가변폰트의 tabular figures, 그러니까 고정폭 숫자에 optical sizing을 더하는 거예요. 숫자 정렬이 안 흔들리고 작은 크기에서도 또렷합니다 — 숫자 퍼즐인 NumLink에 딱이고, 1이랑 7처럼 헷갈리는 글리프 구분을 강화해야 해요. 모션은 화려함보다 cause-and-effect 명료성이 우선이라, "조용한 마이크로인터랙션"이 대세입니다. 컬러는 — 사용자가 AI 전형 디자인을 싫어하시는 거 아니까 — muted 뉴트럴 베이스에 머스타드나 코랄 같은 의외의 비비드를 딱 한 가지만 액센트로 쓰는 게 독창성 확보법이에요. 민트+다크 그라데이션 같은 AI 슬롭은 피하고요. 제안은 NumLink 숫자 타일에 tabular figures 가변폰트를 적용하고, 도입 중인 Layer Lab 킷의 다크 뉴트럴 베이스는 유지하되 정답 연결 순간에만 단일 비비드 액센트를 조용한 글로우+살짝 바운스로 입히는 겁니다. 뉴트럴 위 단색 액센트 하나 원칙으로요.',
+      },
+    ],
+    decisions: [
+      {
+        title: '✅ [실행완료·회의 중 직접 커밋] dependabot.yml groups 설정 — npm·actions 각 minor/patch·major 4그룹 분리·13건 개별 PR→묶음 PR·메이저 격리 (6/15에 이은 3번째 자율 실행)',
+        description:
+          'DevOps가 dependabot.yml에 `groups` 미설정으로 의존성 13건(npm 10·actions 3)이 전부 개별 PR로 누적됨을 발견. 회의 중 메인 에이전트가 npm·github-actions 각각 `update-types` 기반 minor/patch 묶음+major 묶음으로 분리(npm 2그룹+actions 2그룹) 직접 수정·커밋. 다음 주 월요일부터 개별 PR이 묶음 PR로 축소돼 머지 부담 경감·메이저(eslint 10·@eslint/js 10·react-hooks 7·upload-pages-artifact 5 등)는 별도 묶음 격리로 lint/빌드 깨짐 위험 분리 검증 가능. 6/13 dependabot actions 머지·6/15 weekly-insights 권한 격하에 이은 자체 레포 3번째 자율 실행. CI 최근 6건 전부 success. 이 저널 커밋과 함께 배포.',
+      },
+      {
+        title: '🚨 [P0·신규·출시 차단급] MeowBeat 노트-오디오 동기화 재설계 — dspTime+PlayScheduled 노트 타이밍 전환(NoteSpawner.cs:126·SongManager.cs:91)+첫 실행 5초 오디오 캘리브레이션+판정 윈도우 3단계 (Developer+Game Designer 합류·사용자 세션)',
+        description:
+          'Developer 코드 실측+Game Designer 시장 데이터가 독립 수렴한 출시 차단급 결함. ① 노트 타이밍을 Time.deltaTime 누적(NoteSpawner.cs:126)에서 AudioSettings.dspTime 기반으로 전환·BGM을 PlayScheduled(dspTime+delay)로 예약 시작(SongManager.cs:91)해 프레임레이트 독립 동기화 확보 ② 첫 곡 진입 전 고양이 발소리 4비트 탭으로 기기 오프셋 자동 측정(5초 내·Skip 가능·PlayerPrefs 저장) ③ 판정 윈도우 Easy±60/Normal±50/Hard±35ms 3단계. 근거: 모바일 오디오 지연 기기별 0.01~0.2s(최대 200ms)·캘리브레이션 없으면 정확히 친 노트도 Miss로 D0 이탈. Lyria 자체 음원이라 BPM/오프셋 정확해 캘리브레이션 기준 비트 신뢰성 있게 구성 가능(강점). 그동안 P0(UMP·광고)는 출시 "허가" 문제·이건 출시 "가치" 문제로 더 본질적. 노트 풀링(Instantiate/Destroy→풀)은 후속 백로그. 게임 레포 커밋 필요라 사용자 세션 1순위.',
+      },
+      {
+        title: '🚨 [P0·이월·동결 4일째] MeowBeat UMP+targetSdk 36+광고 Bidding 전환+엔진 6000.3.16f1 패치 — 사용자 세션',
+        description:
+          '6/14~6/15 P0 묶음 그대로 이월(동결 4일째). 한 세션 묶음: ① 6/11 준비된 복붙 3커밋 ② UMP(ConsentInformation.Update→LoadAndShowConsentFormIfRequired·2024-01-16부터 시행 중 요건) ③ Target API 36 상향(8/31 기한) ④ LevelPlay Bidding 중개 전환(Waterfall 1/31·Unity Ads Legacy 4/1 경과) ⑤ 엔진 6000.3.16f1 패치(CVE 3건). 새벽 무인 구간이라 게임 레포 push 승인 불가 — 사용자 세션 위임 유지. 신규 발견된 노트-오디오 동기화 P0와 같은 세션에서 묶어 처리 권장.',
+      },
+      {
+        title: '🔧 [P1·악화] 미커밋 핵심 .cs 4건 2개월 미백업 즉시 커밋·푸시(SongData/GameManager/SongManager/OptionManager)+검증 3종 절대경로화(5일째 미착수) — 사용자 세션',
+        description:
+          'QA 실측: 미커밋 핵심 .cs 4건이 4/23 수정인데 마지막 커밋 4/12 → 약 2개월 미백업·게임 로직 유실 리스크 누적(악화). 오늘 우선 커밋·푸시로 백업 확보. 동시에 검증 절대경로화 5일째 미착수 — unity_validate.py:24 `Path(\'Tools/known_bugs.json\')` 상대경로·Tools/ CWD 실행 시 1 warning이 exit 0이라 무증상 통과(거짓 안심). 각 스크립트 상단 `SCRIPT_DIR=Path(__file__).resolve().parent`·`ROOT=SCRIPT_DIR.parent` 정의 후 절대경로 교체. test_fixtures/ 폴더 부재로 회귀 0/6 — 픽스처 확충 이월. 모두 게임 레포 커밋 필요라 사용자 세션. dependabot 묶음 PR은 다음 사이클부터 patch/minor 일괄·major 분리 검증.',
+      },
+      {
+        title: '🎨📦 [P2·신규 적재] NumLink 숫자 타일 tabular figures 가변폰트+뉴트럴+비비드 1액센트(Art)·MeowBeat D-60 사전등록+Discord+첫3초 후킹 숏폼(Content) — 모두 P0 후',
+        description:
+          'Art Director — NumLink 숫자 타일에 tabular figures(고정폭 숫자) 가변폰트+optical sizing 적용·1·7 혼동 글리프 구분 강화, Layer Lab 킷 다크 뉴트럴 베이스 유지+정답 연결 순간에만 단일 비비드 액센트(머스타드/코랄)를 "조용한 글로우+살짝 바운스"로 입혀 cause-and-effect 피드백. AI 전형(민트+다크 그라데이션) 회피·뉴트럴 위 단색 액센트 1개 원칙. Content Writer — MeowBeat 출시 D-60부터 사전등록 랜딩+Discord 채널 동시 오픈(전환율 3~5%·Discord 펀딩 3배)·고양이가 비트에 맞춰 반응하는 "첫 3초 후킹" 숏폼 1편(0~3초 임팩트 타격·완주율 70% 목표·트렌딩 사운드 위 BGM 싱크)·NumLink 사전등록 위시리스트 축적. 모두 P0(노트-오디오 동기화·UMP) 후 착수.',
+      },
+    ],
+  },
+  {
     id: '2026-06-15T04:00:00-daily-standup',
     date: '2026-06-15',
     researchTitle:
