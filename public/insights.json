@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-08T02:41:48.819Z",
+  "lastUpdated": "2026-06-15T00:35:36.547Z",
   "weeks": [
     {
       "weekOf": "2026-W24",
@@ -13,6 +13,56 @@
           "summary": "Skill 품질 관리를 위한 Rubric 설계와 시스템 구현",
           "publishedAt": "2026-06-08T01:00:00.000Z",
           "collectedAt": "2026-06-08T02:41:48.819Z"
+        },
+        {
+          "id": "653b11f219ad7340",
+          "title": "에이전틱 AI 생태계의 주인공들, MCP Player 10 성료와 Next!",
+          "url": "https://tech.kakao.com/posts/818",
+          "company": "카카오테크",
+          "category": "general",
+          "summary": "에이전틱 AI 생태계의 주인공들, MCP Player 10 성료와 Next!",
+          "publishedAt": "2026-06-08T15:00:00.000Z",
+          "collectedAt": "2026-06-15T00:35:36.547Z"
+        },
+        {
+          "id": "51ac121a657518fb",
+          "title": "빠르게 움직이는 조직에서, TAM은 어떻게 문제를 해결할까?",
+          "url": "https://toss.tech/article/tam-connect-2025",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "빠르게 움직이는 조직에서, TAM은 어떻게 문제를 해결할까?",
+          "publishedAt": "2026-06-09T07:24:00.000Z",
+          "collectedAt": "2026-06-15T00:35:36.547Z"
+        },
+        {
+          "id": "61df834c4c3deaa8",
+          "title": "얼굴 인식의 역사와 페이스페이의 미래",
+          "url": "https://toss.tech/article/history-of-face-recognition-facepay",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "얼굴 인식의 역사와 페이스페이의 미래",
+          "publishedAt": "2026-06-09T05:22:00.000Z",
+          "collectedAt": "2026-06-15T00:35:36.547Z"
+        },
+        {
+          "id": "a99eb085cb0f4065",
+          "title": "디자인시스템 팀은 디자인시스템만 잘 만들면 될까",
+          "url": "https://medium.com/daangn/%EB%94%94%EC%9E%90%EC%9D%B8%EC%8B%9C%EC%8A%A4%ED%85%9C-%ED%8C%80%EC%9D%80-%EB%94%94%EC%9E%90%EC%9D%B8%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%A7%8C-%EC%9E%98-%EB%A7%8C%EB%93%A4%EB%A9%B4-%EB%90%A0%EA%B9%8C-4f6f2478a8db?source=rss----4505f82a2dbd---4",
+          "company": "당근 테크",
+          "category": "general",
+          "summary": "디자인시스템 팀은 디자인시스템만 잘 만들면 될까",
+          "publishedAt": "2026-06-11T09:32:10.000Z",
+          "collectedAt": "2026-06-15T00:35:36.547Z"
+        },
+        {
+          "id": "2888e9134eb20320",
+          "title": "운영하지 않는 Kafka, EasyQueue를 소개합니다",
+          "url": "https://meetup.nhncloud.com/posts/415",
+          "company": "NHN Cloud Meetup",
+          "category": "infra",
+          "summary": "운영하지 않는 Kafka, EasyQueue를 소개합니다",
+          "publishedAt": "2026-06-11T01:46:39.000Z",
+          "collectedAt": "2026-06-15T00:35:36.547Z"
         }
       ]
     },
