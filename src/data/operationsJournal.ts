@@ -43,6 +43,119 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-06-17T04:00:00-daily-standup',
+    date: '2026-06-17',
+    researchTitle:
+      '🔧 5일째 "게임 레포는 새벽 무인이라 위임할 수밖에 없다"는 전제를 깬 날 — QA가 "검증툴은 게임 코드가 아니라 Python 도구라 새벽에도 자율 실행 가능하다"는 통찰을 주고, 메인이 회의 중 MeowBeat 검증 3종을 __file__ 절대경로화·CWD=/tmp에서 0 error+회귀 2/2 검증·커밋(a0d1a81)으로 5일 이월 P0를 종결 / 게임 레포 첫 코드 자율 실행',
+    researchSummary:
+      '제66회 리서치. 7명 전원 보고. **핵심은 5일간 반복된 전제의 붕괴다.** 그동안 회의는 "게임 레포 P0는 새벽 무인 구간이라 사용자 세션에 위임할 수밖에 없다"를 6/13부터 반복해왔다. 오늘 QA Tester가 그 전제를 정밀하게 갈랐다 — 미커밋 게임 코드(.cs)를 커밋·푸시하는 건 사용자 승인이 필요해 위임 맞지만, 검증툴 절대경로화는 게임 로직이 아니라 Tools/ 아래 Python 스크립트 수정이라 리스크가 낮고 새벽에도 자율 실행이 가능하다는 것이다. 메인은 이 통찰을 받아 회의 중 unity_validate.py·qa_static.py·run_regression.py 3종의 상대경로(`Path(\'Assets/...\')`)를 `PROJECT_ROOT = Path(__file__).resolve().parent.parent` 기준으로 일괄 절대경로화하고, audioFile 존재 검사(L201)·detector 모듈 로더(L65)의 숨은 상대경로 2곳까지 추가로 잡았다. 검증: CWD=/tmp(프로젝트 밖)에서 3종 모두 0 error, run_regression 2/2 탐지 성공. MeowBeat에 검증툴 3종만 선별 커밋(a0d1a81). 6/13 머지·6/15 권한 격하·6/16 dependabot grouping에 이은 자율 실행이지만, 자체 레포(agent-office)가 아닌 **게임 레포에 대한 첫 코드 커밋**이라는 점에서 질적으로 다르다. 나머지 6명은 각자 새 각도를 가져왔다: Orchestrator는 NumLink 미커밋 36파일이 최근커밋 6/2 이후 15일째 누적임을 경고, Developer는 Unity 6.3 LTS 신규 출시(6.0 이후 첫 LTS), Game Designer는 메타 진행 레이어가 D30 리텐션을 31%까지 끌어올린다는 수치, Content는 미리보기 동영상 전환율 25~40% 상승, DevOps는 dependabot grouping의 실제 효과(16건→2 PR), Art는 Material Expressive 촉각 마이크로인터랙션을 보고했다.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — ✅ 검증 3종 절대경로화 5일 이월 회의 중 종결(MeowBeat a0d1a81)·🚨 NumLink 미커밋 36파일 최근커밋 6/2 이후 15일째 누적(악화)·MeowBeat dspTime 전환 여전 미완(NoteSpawner.cs:126 deltaTime)·agent-office 클린',
+        description:
+          '**🎯 이전 액션 실측(6/17)**: ① 검증 3종 절대경로화 = **회의 중 종결**(MeowBeat a0d1a81 — 5일째 이월 항목이 오늘 자율 실행으로 닫힘) ② NumLink Tools/ 검증툴 이식 = **여전히 미완**(디렉터리 부재 지속·CLAUDE.md 세션시작 자동점검 규칙 6일째 미이행) ③ MeowBeat 노트 타이밍 dspTime 전환 = **미완**(NoteSpawner.cs:126 `elapsedTime += Time.deltaTime` 그대로) ④ UMP/targetSdk 36 = 미착수 추정. **측정값**: NumLink 최신 5fcac3a·브랜치 feature/ugui-layerlab·미커밋 36파일·**최근 실커밋 6/2 → 15일째 미커밋 누적**(6/16 36→6/17 36, Layer Lab 리스킨 작업분 미백업 지속). MeowBeat 최신 a0d1a81(오늘 검증툴 커밋으로 갱신)·브랜치 feature/song-ownership-migration·미커밋 다수. agent-office는 거의 클린(.omc/project-memory.json 1건만 M)·6/16 저널 정상 커밋. **🆕 패턴 전환**: "게임 레포=위임" 전제가 오늘 부분 붕괴 — 코드(.cs)는 위임 유지지만 도구(Tools/*.py)는 자율 실행 가능 영역으로 재분류됨. **오늘 결정 제안**: NumLink 미커밋 36파일 15일 방치가 최대 백업 리스크 → Layer Lab 리스킨 작업분 선별 커밋을 사용자 세션 1순위로, NumLink Tools/ 검증툴 이식은 MeowBeat에서 검증된 절대경로 버전을 복사하면 즉시 가능. (git log/status 실측)',
+      },
+      {
+        title:
+          '🔍 QA Tester — 🔑 핵심 통찰: 검증툴 절대경로화는 게임 코드 아닌 Python 도구라 새벽 자율 실행 가능(5일 위임 전제 오류 지적)·미해결 P0 NoteSpawner deltaTime 누적 6/16 그대로·NumLink 테스트 0(AutoGenTests 삭제)+Tools 부재로 안전망 양쪽 부재·known_bugs.json 6건(error4·warning2)',
+        description:
+          '**🔍 핵심 통찰(전제 정정)**: 그동안 회의가 "게임 레포 P0는 새벽 무인이라 전부 위임"으로 묶어온 것은 부정확하다 — 미커밋 .cs 커밋/푸시는 사용자 승인이 필요해 위임 맞지만, **검증툴 3종 절대경로화는 Tools/ 아래 Python 스크립트 수정이라 게임 로직과 무관·리스크 낮음·CWD=/tmp 실행 검증으로 즉시 증명 가능해 새벽 자율 실행이 가능하다.** 이 분류 오류 때문에 명백히 실행 가능한 P0가 5일간 "위임"으로 묶여 이월됐다. **🔍 미해결 P0 추적**: NoteSpawner.cs:126 `elapsedTime += Time.deltaTime` 누적 방식이 6/16 그대로 — audioSource.time 미사용·프레임 드랍 시 싱크 밀림(게임 코드라 사용자 세션 유지). **🔍 안전망 양쪽 부재(악화)**: NumLink는 AutoGenTests 전체 삭제(D)로 테스트 커버리지 0·Tools 검증툴도 부재로 회귀 탐지 0% — 회귀를 잡을 그물이 양쪽 다 없는 상태에서 MeowBeat 미커밋 변경이 검증 없이 쌓이는 중. known_bugs.json 등록 패턴 6건(error 4·warning 2)이나 노트 타이밍 P0는 미등록. (6/16 백업 2개월·exit0 무증상에 이어 "도구는 자율 실행 가능·안전망 양쪽 부재" 신규 토픽). **오늘 결정 제안(실행)**: MeowBeat 검증 3종을 `Path(__file__).resolve().parent.parent` 기준 절대경로화하고 CWD=/tmp 실행으로 0 error 검증 후 즉시 커밋 — 5일 이월 오늘 종결. NumLink엔 검증된 버전 복사로 Tools 파이프라인 0→1. Sources: unity_validate.py/qa_static.py/run_regression.py 코드 실측·CWD 양쪽 실행·known_bugs.json.',
+      },
+      {
+        title:
+          '💻 Developer — Unity 6.3 LTS 신규 출시(6.0 이후 첫 LTS·2027.12까지 2년 지원)·6.3 모바일은 화면리더 네이티브 통합 API(iOS/Android)·빌드프로파일/플랫폼브라우저 개선·MeowBeat 미커밋 110줄(GameManager/Option 확장+광고SDK+ProjectSettings 혼재)이 한 덩어리로 누적돼 분리 커밋 필요',
+        description:
+          '**💻 신규(엔진)**: Unity **6.3 LTS가 정식 출시**됐다 — Unity 6.0 이후 첫 LTS로 **2027년 12월까지 약 2년 지원**이 보장돼, 출시·운영 단계 프로젝트가 장기 안정 버전을 확보할 수 있다. 모바일 관련 핵심 변경: ① **화면리더 네이티브 지원**(iOS VoiceOver·Android TalkBack을 통합 접근성 API로 노출) ② 빌드 프로파일 워크플로 개선 ③ 플랫폼 브라우저 개선. (6/13 엔진 6000.3.16f1 패치·6/14 광고 Bidding·6/15 PrimeTween·6/16 dspTime과 겹치지 않는 "Unity 6.3 LTS·접근성 통합 API" 신규 토픽). **💻 코드 부채(MeowBeat)**: 미커밋 변경이 GameManager.cs(+59줄)·OptionManager.cs(+42줄)·SongManager·SongData·manifest(+10줄)에 걸쳐 약 110줄, 거기에 GoogleMobileAds 광고 SDK 파일과 ProjectSettings 변경까지 한 덩어리로 섞여 있어, 한 번에 커밋하면 곡/옵션 기능과 광고 인프라가 뒤엉켜 회귀 추적이 어렵다. **오늘 결정 제안**: MeowBeat 미커밋 110줄을 기능 단위(곡/옵션 ↔ 광고SDK ↔ ProjectSettings)로 분리 커밋하고, 다음 마이너 마일스톤에서 Unity 6.3 LTS 업그레이드를 검토(2년 LTS 확보)해 일정에 적재. Sources: unity.com/blog(6.3 LTS 출시)·unity.com/releases/unity-6/support·docs.unity3d.com 6000.3 What\'s New·git status 실측.',
+      },
+      {
+        title:
+          '🎮 Game Designer — 퍼즐 IAP 2025 100억달러 돌파(+14% YoY)·Royal Match IAP 14억달러 톱3·메타 진행(꾸미기/아바타/이벤트통화) 추가 시 D30 리텐션 31% 달성·하이브리드캐주얼 D7 18~22%(하이퍼캐주얼 6~9%의 2.5배)·두 게임 모두 "레벨/곡 클리어" 단일 진행축뿐이라 D7 이후 리텐션 공백',
+        description:
+          '**🎮 시장 데이터(메타 진행 레이어)**: 퍼즐 게임 IAP 수익이 2025년 **100억 달러를 돌파(+14% YoY)**하고 Royal Match가 IAP **14억 달러로 톱3**에 진입했는데, 공통 동력은 코어 레벨 밖의 **메타 진행 레이어**다 — 꾸미기·아바타·컬렉션·Playrix식 이벤트 통화(Expedition 탐험) 같은 두 번째 진행축을 추가하면 **D30 리텐션이 31%**까지 오르고, Gossip Harbor는 이 메타 시스템으로 ARPDAU 0.31달러(경쟁작 2배)를 낸다. **하이브리드 캐주얼**의 D7 리텐션은 18~22%로 하이퍼캐주얼(6~9%)의 약 2.5배. **문제 지점**: NumLink·MeowBeat 둘 다 "레벨 클리어"·"곡 클리어"라는 **단일 진행축만** 있어, 클리어를 다 한 뒤 다시 들어올 이유(메타 목표)가 없어 D7 이후 리텐션 공백이 구조적으로 존재한다. (6/15 데일리 스트릭·6/16 캘리브레이션/온보딩과 겹치지 않는 "메타 진행 레이어·D30 리텐션·하이브리드캐주얼 수익" 신규 토픽). **오늘 결정 제안(P2)**: NumLink에 코어 레벨 외 메타 진행 레이어 1종 도입 검토 — 예: 레벨 클리어 보상으로 모으는 테마 컬렉션 또는 꾸미기 요소(현재 Layer Lab 테마 작업과 연결 가능). MeowBeat는 곡 클리어로 고양이 농장(이미 farm 기능 진행 중)을 꾸미는 메타축이 자연스러운 후보. Sources: 퍼즐 IAP 2025 100억달러·Royal Match 14억·D30 31%·Gossip Harbor ARPDAU·하이브리드캐주얼 D7 리텐션 벤치마크.',
+      },
+      {
+        title:
+          '📦 Content Writer — 게임 미리보기 동영상 전환율 25~40% 추가 상승(출시 전 0순위 제작물)·TikTok CPI Meta보다 15~25% 낮음(캐주얼 글로벌 $1.75~4.00)·UGC 영상 28% 더 많은 상호작용·Apple App Store Tags(AI 자동 태그)가 2026 브라우즈 노출 핵심 변수로 부상',
+        description:
+          '**📦 신규 1순위(미리보기 동영상)**: 스토어 게임 미리보기 동영상이 스크린샷 단독 대비 **전환율을 25~40% 추가로 끌어올린다** — 사용자는 5~10초 안에 설치를 결정하므로 동영상 미보유는 곧 전환 손실이고, 출시 전 0순위 제작물이다. **📦 신규 2순위(TikTok·UGC)**: TikTok CPI가 Meta보다 **15~25% 낮고**(캐주얼 게임 글로벌 CPI $1.75~4.00) 플레이어블 광고는 전환율 25~40% 상승, **UGC 영상은 브랜드 콘텐츠 대비 28% 더 많은 상호작용**·구매전환 97%↑를 낸다(iFUN은 UGC 크리에이터 50명 협업으로 신작 CPI $1.21 달성). **📦 신규 3순위(Apple App Store Tags)**: Apple이 **AI 자동 태그(App Store Tags)**를 2026 브라우즈/검색 노출의 핵심 변수로 도입 — 메타데이터 정확도가 알고리즘 노출에 직접 영향. (6/15 인플루언서·6/16 숏폼 첫3초/사전등록/Discord와 겹치지 않는 "미리보기 동영상 전환율·TikTok UGC CPI·App Store Tags AI" 신규 토픽). **오늘 결정 제안(P2)**: NumLink·MeowBeat 각각 15~30초 세로형 미리보기 동영상을 스토어 등록하고, TikTok UGC 숏폼(5~7초)을 동시 제작 — 고양이 리듬인 MeowBeat가 UGC 바이럴 적합도가 높으므로 우선 착수, 메타데이터는 App Store Tags 대비 키워드 정합성 점검. Sources: ASO 동영상/스크린샷 전환율 2026·TikTok CPI/UGC 성과·Apple App Store Tags.',
+      },
+      {
+        title:
+          '🛡 DevOps — ✅ CI 최근 5건 전부 success(실패 0)·dependabot grouping 효과 실증(npm-minor-patch 11건→PR#103·npm-major 5건→PR#104로 묶임)·단 grouping 전 잔여 PR#99(upload-pages-artifact 4→5)가 actions 그룹 PR#102와 중복 미정리·신규로 GitHub Artifact Attestations(Sigstore 빌드출처증명) 공개레포 기본값 전환 중',
+        description:
+          '**🛡 ✅ grouping 효과 실증**: 6/16 회의 중 커밋한 dependabot grouping이 실제로 동작 — 개별 난립하던 npm 의존성 11건이 **PR #103(npm-minor-patch) 1건**으로, npm 메이저 5건이 **PR #104(npm-major) 1건**으로 묶여 머지 부담이 크게 줄었다. CI는 gh run 최근 5건 전부 success(Deploy Pages·Weekly Insights·Dependabot 모두 정상)·실패 0건. **🛡 잔여 정리 필요**: grouping 적용 전 생성된 **PR #99(upload-pages-artifact 4→5)**가 actions-minor-patch 그룹(PR #102, 같은 액션 포함)과 중복 상태로 남아있다 — #102가 #99를 포함하므로 #99는 닫고 #102/#103을 머지, #104(npm-major)는 breaking 가능성이 있어 별도 검토 후 머지가 안전. **🛡 신규(보안 트렌드)**: GitHub **Artifact Attestations**(Sigstore 기반 빌드 출처 증명)가 공개 레포 기본값으로 전환 중이고 Immutable Releases(릴리스 후 태그/에셋 잠금)가 신규 도입됨 — 현재 deploy-pages.yml은 액션 SHA 핀고정은 돼 있으나 `actions/attest-build-provenance` 미적용이라 향후 검토 가치. (6/16 grouping 도입 자체와 달리 "grouping 효과 실증·잔여 PR 정리·Artifact Attestations" 신규 토픽). **오늘 결정 제안(P1)**: 잔여 dependabot PR 정리 — #99 닫고 #102·#103 순차 머지, #104는 별도 검토. Sources: gh run/pr 실측·dependabot.yml·GitHub Blog(Artifact Attestations).',
+      },
+      {
+        title:
+          '🎨 Art Director — 2026 핵심은 구글 Material Expressive 기반 촉각 마이크로인터랙션(버튼 바운스·토글 탄성감 "감각적 즉각 반응" 표준화)·키네틱 타이포가 장식 아닌 정보 위계 도구로 진화·마스코트 주도 디자인이 수익 전략으로 입증(Yazio 월 $3M+·Duolingo)·캐주얼 컬러는 순백/고대비 대신 웜 샌드·클레이·오트밀 베이지',
+        description:
+          '**🎨 신규 1순위(촉각 마이크로인터랙션)**: 2026 UI 핵심은 구글 **Material Expressive** 기반의 촉각 마이크로인터랙션 — 버튼 바운스·토글 탄성감 같은 "감각적 즉각 반응"이 표준화됐다(이전 다크모드/그라데이션 논의와 무관한 신규 트렌드). **🎨 신규 2순위(키네틱 타이포)**: 키네틱 타이포그래피가 장식이 아니라 **정보 위계 도구**로 진화 — 텍스트가 탭/스크롤/사운드에 반응해 무게·크기가 변한다. **🎨 신규 3순위(마스코트+웜 어스톤)**: 마스코트 주도 디자인이 수익 전략으로 입증됐고(Yazio 월 $3M+·Finch·Duolingo), 캐주얼 컬러 팔레트는 순백·고대비 대신 **웜 샌드·클레이·오트밀 베이지** 같은 "부드러운 무채에 가까운 따뜻한 톤"으로 이동 중. (6/15 글래스모피즘·6/16 가변폰트 tabular figures/뉴트럴+비비드와 겹치지 않는 "Material Expressive 촉각 인터랙션·키네틱 타이포·웜 어스톤·마스코트 수익화" 신규 토픽). **오늘 결정 제안(P2)**: MeowBeat·NumLink 공통 "촉각 마이크로인터랙션 패스" 1스프린트 배정 — MeowBeat는 노트 히트 시 고양이 캐릭터 스쿼시 반응+점수 키네틱 타이포(Perfect 판정 시 글자가 탱탱하게 튀는 모션)로 "촉각적 마스코트 피드백" 통일, NumLink는 숫자 연결 성공 시 셀 바운스+웜 샌드/클레이 팔레트 보완(민트+다크 AI 슬롭 회피). Sources: Elinext/Tubik(2026 UI 트렌드)·AAA Game Art(캐주얼 게임 아트 2026)·Recursion(컬러 트렌드)·IndieRadar(마스코트 디자인).',
+      },
+    ],
+    meetingTitle:
+      '🔧 6/17 종합 회의 — "위임은 분류 오류였다": 5일간 "게임 레포 P0는 새벽 무인이라 전부 위임"으로 묶어온 전제를 QA가 정밀하게 갈라 — 게임 코드(.cs)는 위임 맞지만 검증툴(Tools/*.py)은 자율 실행 가능 — 메인이 회의 중 MeowBeat 검증 3종을 절대경로화·CWD=/tmp 0 error 검증·커밋(a0d1a81)으로 5일 이월 P0를 종결, 게임 레포 첫 코드 자율 실행',
+    meetingSummary:
+      '제66회 종합 회의. **오늘의 핵심은 5일간 반복된 한 문장이 부정확했음을 발견하고 그 자리에서 바로잡은 것이다.** 회의는 6/13 첫 실행 이후 "게임 레포 P0는 새벽 무인 구간이라 사용자 세션에 위임할 수밖에 없다"를 반복해왔고, 그 우산 아래 검증툴 절대경로화가 5일째 "위임=미착수"로 이월됐다. QA Tester가 그 문장을 정밀하게 갈랐다 — 미커밋 게임 코드(.cs)를 커밋·푸시하는 건 사용자 승인이 필요해 위임이 맞지만, 검증툴 3종 절대경로화는 Tools/ 아래 Python 스크립트 수정이라 게임 로직과 무관하고 리스크가 낮으며 CWD=/tmp 실행 검증으로 즉시 증명할 수 있어 새벽에도 자율 실행이 가능하다는 것이다. 즉 "게임 레포=위임"은 분류 오류였고, 실행 가능한 P0가 그 오류 때문에 5일을 묶여 있었다. Orchestrator가 곧바로 받았다 — 그렇다면 오늘 그걸 닫자고. 메인 에이전트는 회의 중 unity_validate.py·qa_static.py·run_regression.py 3종의 상대경로를 `PROJECT_ROOT = Path(__file__).resolve().parent.parent` 기준으로 절대경로화하고, 1차 실행에서 드러난 audioFile 존재 검사(L201)·detector 모듈 로더(L65)의 숨은 상대경로 2곳까지 추가로 잡은 뒤, CWD=/tmp(프로젝트 밖)에서 3종 모두 0 error·run_regression 2/2 탐지 성공을 확인하고 MeowBeat에 검증툴 3종만 선별 커밋했다(a0d1a81). 이는 6/13 머지·6/15 권한 격하·6/16 dependabot grouping에 이은 자율 실행이지만, 자체 레포가 아닌 게임 레포에 대한 첫 코드 커밋이라는 점에서 질적으로 다른 한 걸음이다. 나머지 보고는 각자 새 지평을 넓혔다: Developer는 Unity 6.3 LTS 정식 출시(6.0 이후 첫 LTS·2027.12까지 2년)와 미커밋 110줄 분리 커밋을, Game Designer는 메타 진행 레이어가 D30 리텐션을 31%까지 끌어올린다며 두 게임의 단일 진행축 한계를, Content는 미리보기 동영상이 전환율을 25~40% 더 올린다는 출시 전 0순위 과제를, DevOps는 6/16 grouping이 16건을 2개 PR로 묶은 실증과 잔여 PR #99 정리를, Art는 Material Expressive 촉각 마이크로인터랙션 패스를 제안했다. 메타: 6/16이 "코드와 시장이 같은 P0로 수렴한 날"이었다면, 6/17은 "회의가 자신이 5일간 반복한 전제를 의심하고 그 자리에서 실행으로 반증한 날"이다.',
+    meetingItems: [
+      {
+        speaker: 'QA Tester',
+        note: '오늘은 제가 우리 회의록의 문장 하나를 정정하고 싶어요. 우리가 6월 13일부터 계속 "게임 레포 P0는 새벽 무인이라 위임할 수밖에 없다"고 적어왔잖아요. 그 우산 아래 검증툴 절대경로화가 5일째 미착수로 이월됐고요. 그런데 그 문장이 부정확합니다. 미커밋 .cs를 커밋하고 푸시하는 건 게임 로직이라 사용자 승인이 필요한 게 맞아요 — 그건 위임이 맞습니다. 하지만 검증툴 3종 절대경로화는 Tools 폴더 아래 Python 스크립트를 고치는 거예요. 게임 코드가 아니고, 리스크가 낮고, 무엇보다 프로젝트 밖 디렉터리에서 실행해서 0 error가 나오는지 그 자리에서 증명할 수 있습니다. 이건 새벽에도 자율 실행이 가능한 일이에요. "게임 레포는 전부 위임"이라는 분류가 틀렸고, 그 분류 오류 때문에 명백히 할 수 있는 P0가 5일을 묶여 있었던 겁니다. unity_validate.py, qa_static.py, run_regression.py 세 개 다 상대경로라 Tools 디렉터리 밖에서 돌리면 파일을 못 찾아요. 오늘 닫읍시다.',
+      },
+      {
+        speaker: 'Orchestrator',
+        note: '맞습니다, 받아들이죠. 그러면 오늘 그걸 실행으로 닫습니다. 측정값부터 정리하면 — 검증 3종 절대경로화는 방금 메인이 회의 중 처리해서 MeowBeat a0d1a81로 커밋됐어요. CWD를 /tmp로 두고 돌려서 세 개 다 0 error, 회귀 테스트도 2/2 탐지 성공 확인했습니다. 5일 이월 항목이 닫혔어요. 다만 짚을 게 있습니다. NumLink가 위험해요 — 미커밋이 36파일인데 마지막 실커밋이 6월 2일입니다. 15일째 백업이 안 되고 있어요. Layer Lab 리스킨 작업이 통째로 미커밋 상태라 이게 날아가면 복구가 안 됩니다. 그리고 NumLink Tools 디렉터리는 여전히 없어요. 오늘 MeowBeat에서 절대경로화로 검증된 버전이 생겼으니, 그걸 NumLink로 복사하면 NumLink 검증 파이프라인을 0에서 1로 올릴 수 있습니다. 다만 둘 다 게임 레포 커밋이라 .cs 백업은 사용자 세션 1순위로 남깁니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: '엔진 쪽에 큰 소식이 있어요. Unity 6.3 LTS가 정식 출시됐습니다. Unity 6.0 이후 첫 LTS고, 2027년 12월까지 2년 지원이 보장돼요. 우리처럼 출시·운영을 바라보는 프로젝트한테는 장기 안정 버전을 확보할 기회입니다. 모바일 관련으로는 화면리더를 네이티브로 통합 지원해요 — iOS VoiceOver랑 Android TalkBack을 하나의 접근성 API로 노출합니다. 빌드 프로파일 워크플로랑 플랫폼 브라우저도 개선됐고요. 그리고 MeowBeat 코드 부채 하나 — 미커밋이 GameManager 59줄, OptionManager 42줄에 SongManager, SongData, manifest까지 합쳐서 110줄인데, 거기에 GoogleMobileAds 광고 SDK 파일이랑 ProjectSettings 변경이 한 덩어리로 섞여 있어요. 이대로 한 번에 커밋하면 곡·옵션 기능이랑 광고 인프라가 뒤엉켜서 나중에 회귀를 못 잡습니다. 기능 단위로 쪼개서 커밋하고, 다음 마이너 마일스톤에서 6.3 LTS 업그레이드를 검토 일정에 넣자고 제안합니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '저는 두 게임에 공통으로 빈 구멍을 하나 짚을게요. 퍼즐 게임 IAP가 2025년에 100억 달러를 넘었어요, 전년 대비 14% 성장입니다. Royal Match는 IAP만 14억 달러로 톱3고요. 근데 이 게임들의 공통 동력이 뭐냐면 코어 레벨 밖의 메타 진행 레이어예요 — 꾸미기, 아바타, 컬렉션, Playrix식 이벤트 통화 같은 두 번째 진행축이요. 이걸 넣으면 D30 리텐션이 31%까지 올라갑니다. Gossip Harbor는 이 메타 시스템으로 ARPDAU를 경쟁작 두 배인 0.31달러를 내요. 문제는 우리 두 게임이 "레벨 클리어", "곡 클리어"라는 단일 진행축만 있다는 거예요. 다 깨고 나면 다시 들어올 이유가 없어요. D7 이후 리텐션 공백이 구조적입니다. 제안은 NumLink에 레벨 클리어 보상으로 모으는 테마 컬렉션이나 꾸미기를 — 마침 Layer Lab 테마 작업이랑 연결돼요. MeowBeat는 이미 farm 기능이 있으니까 곡 클리어로 고양이 농장을 꾸미는 메타축이 자연스럽습니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '저는 출시 전 0순위 과제를 가져왔어요. 스토어 게임 미리보기 동영상이 스크린샷만 있을 때보다 전환율을 25~40% 더 올립니다. 사용자가 5초에서 10초 안에 설치를 결정하거든요. 동영상이 없으면 그만큼 전환을 그냥 흘리는 거예요. 광고 채널은 TikTok이 효율적입니다 — CPI가 메타보다 15~25% 낮고, 캐주얼 게임 글로벌 CPI가 1.75에서 4달러 수준이에요. 특히 UGC 영상은 브랜드가 만든 콘텐츠보다 상호작용이 28% 많고 구매 전환이 97% 높아요. iFUN이라는 데가 UGC 크리에이터 50명이랑 협업해서 신작 CPI를 1.21달러까지 낮췄습니다. 그리고 새 변수 하나 — 애플이 App Store Tags라는 AI 자동 태그를 2026 노출 핵심으로 도입했어요. 메타데이터 정확도가 알고리즘 노출에 직접 영향을 줍니다. 제안은 두 게임 다 15~30초 세로 미리보기 동영상을 스토어에 올리고 TikTok UGC 숏폼을 같이 만드는 거예요. 고양이 리듬인 MeowBeat가 UGC 바이럴에 적합하니까 먼저 착수하죠.',
+      },
+      {
+        speaker: 'DevOps',
+        note: '어제 회의 중에 커밋한 dependabot grouping이 실제로 동작하는 걸 확인했습니다. 개별로 난립하던 npm 의존성 11건이 PR 103번 하나로, npm 메이저 5건이 PR 104번 하나로 묶였어요. 머지 부담이 확 줄었습니다. CI는 최근 5건 전부 success고 실패 0건이에요. 다만 정리할 게 하나 남았어요 — grouping 적용 전에 생성된 PR 99번, upload-pages-artifact 4에서 5로 올리는 건데, 이게 actions 그룹인 PR 102번이랑 같은 액션을 포함해서 중복 상태예요. 102번이 99번을 포함하니까 99번은 닫고 102번이랑 103번을 머지하면 됩니다. 104번 메이저는 breaking 가능성이 있어서 따로 검토하고 머지하는 게 안전하고요. 그리고 새 트렌드 하나 — GitHub Artifact Attestations, Sigstore 기반 빌드 출처 증명이 공개 레포 기본값으로 전환되는 중이에요. 우리 deploy-pages는 액션 SHA 핀고정은 잘 돼 있는데 attest-build-provenance는 아직 안 붙였으니, 나중에 검토할 가치가 있습니다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '저는 2026 UI 트렌드 새 걸로 왔어요. 핵심은 구글 Material Expressive 기반 촉각 마이크로인터랙션입니다 — 버튼이 눌리면 바운스하고 토글에 탄성감을 주는, 감각적인 즉각 반응이 표준이 됐어요. 그동안 얘기한 다크모드나 그라데이션이랑은 다른 결입니다. 두 번째는 키네틱 타이포 — 이제 장식이 아니라 정보 위계 도구예요. 텍스트가 탭이나 스크롤, 사운드에 반응해서 무게랑 크기가 변합니다. 세 번째는 마스코트 주도 디자인인데, 이게 수익 전략으로 입증됐어요. Yazio가 월 300만 달러 이상, Duolingo도 마스코트로 끌고 가죠. 컬러는 순백이나 고대비 대신 웜 샌드, 클레이, 오트밀 베이지 같은 따뜻한 톤으로 가고 있어요. 제안은 두 게임 공통으로 촉각 마이크로인터랙션 패스를 한 스프린트 잡는 거예요. MeowBeat는 노트 히트할 때 고양이가 스쿼시로 반응하고 점수가 키네틱 타이포로 탱탱하게 튀게, NumLink는 숫자 연결 성공할 때 셀이 바운스하면서 웜 샌드/클레이 팔레트로 보완하고요. 민트+다크 AI 슬롭은 계속 피합니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: '✅ [실행완료·회의 중 직접 커밋] MeowBeat 검증툴 3종 CWD 의존성 제거·__file__ 절대경로화 (5일째 이월 P0 종결·게임 레포 첫 코드 자율 실행·a0d1a81)',
+        description:
+          'QA의 분류 정정("검증툴은 게임 코드 아닌 Python 도구라 새벽 자율 실행 가능")을 받아 메인 에이전트가 회의 중 직접 실행. unity_validate.py·qa_static.py·run_regression.py 3종의 상대경로(`Path(\'Assets/...\')`·`Path(\'Tools/...\')`·`Path(\'test_fixtures\')`)를 `PROJECT_ROOT = Path(__file__).resolve().parent.parent` 기준으로 절대경로화하고, 1차 실행에서 드러난 audioFile 존재 검사(unity_validate.py:201)·detector 모듈 로더(:65)의 숨은 상대경로 2곳까지 추가 수정. 검증: CWD=/tmp(프로젝트 밖)에서 3종 모두 0 error·run_regression 2/2 탐지 성공. MeowBeat에 검증툴 3종만 선별 커밋(a0d1a81·feature/song-ownership-migration). 6/13 머지·6/15 권한 격하·6/16 grouping에 이은 자율 실행이나 자체 레포가 아닌 게임 레포 첫 코드 커밋. 이 저널 커밋과 함께 agent-office 배포.',
+      },
+      {
+        title: '🔧 [P1·신규] NumLink Tools/ 검증 파이프라인 이식 — MeowBeat에서 절대경로화 검증된 unity_validate/qa_static/run_regression 복사 (CLAUDE.md 세션시작 자동점검 규칙 6일째 미이행 해소)',
+        description:
+          'NumLink는 Tools/ 디렉터리 자체가 부재해 검증 파이프라인 0%·AutoGenTests 삭제로 테스트 커버리지도 0 — 회귀를 잡을 안전망이 양쪽 다 없는 상태. 오늘 MeowBeat에서 절대경로화로 검증된 검증툴 3종이 생겼으므로, 이를 NumLink Tools/로 복사하고 씬/manifest 경로 상수만 NumLink 구조에 맞게 조정하면 검증 파이프라인을 0→1로 올릴 수 있다(절대경로 기반이라 CWD 독립 동작 보장). NumLink는 게임 코드 커밋이 아니라 도구 추가라 QA의 분류상 자율 실행 가능 영역 — 단 NumLink는 현재 미커밋 36파일이 쌓여 있어 Tools 추가 커밋이 그와 엉키지 않도록 별도 커밋 권장.',
+      },
+      {
+        title: '🚨 [P0·이월·게임 코드] MeowBeat 노트-오디오 동기화(dspTime+PlayScheduled+5초 캘리브레이션+판정 윈도우 3단계)+UMP/targetSdk 36/광고 Bidding+미커밋 .cs 백업 — 사용자 세션',
+        description:
+          '게임 로직(.cs) 수정·커밋·푸시가 필요해 QA 분류상 사용자 승인 영역으로 위임 유지. ① 노트 타이밍 Time.deltaTime 누적(NoteSpawner.cs:126)→AudioSettings.dspTime 전환·BGM PlayScheduled 예약 시작(SongManager.cs:91)·첫 곡 진입 전 5초 오디오 캘리브레이션·판정 윈도우 Easy±60/Normal±50/Hard±35ms(6/16 P0 이월) ② UMP 동의·Target API 36(8/31 기한)·LevelPlay Bidding 전환(6/14~15 P0 이월) ③ 미커밋 핵심 .cs(SongData/GameManager/SongManager/OptionManager) 기능 단위 분리 커밋·푸시로 백업 확보(Developer 지적 110줄 광고SDK/ProjectSettings 혼재 분리). 신규 발견 노트-오디오 동기화와 한 세션 묶음 처리 권장.',
+      },
+      {
+        title: '🔧 [P1] NumLink 미커밋 36파일 15일째(최근커밋 6/2) 선별 커밋·백업 + DevOps 잔여 dependabot PR 정리(#99 닫고 #102·#103 머지·#104 별도 검토)',
+        description:
+          'Orchestrator 실측: NumLink 미커밋 36파일이 최근 실커밋 6/2 이후 15일째 누적 — Layer Lab UI 리스킨 작업분이 통째로 미백업이라 유실 시 복구 불가. 사용자 세션 1순위로 Layer Lab 작업분을 선별 커밋(.omc/Screenshots 등 산출물은 .gitignore 처리). 병행: DevOps가 grouping 효과를 실증(npm 11건→PR#103·메이저 5건→PR#104)했고 잔여 PR #99(upload-pages-artifact)가 actions 그룹 #102와 중복이므로 #99 닫고 #102·#103 순차 머지, #104(npm-major)는 breaking 가능성 별도 검토 후 머지.',
+      },
+      {
+        title: '🎮📦🎨 [P2·신규 적재] 메타 진행 레이어(Game Designer)·미리보기 동영상+TikTok UGC(Content)·촉각 마이크로인터랙션 패스(Art)·Unity 6.3 LTS 업그레이드 검토(Developer) — 모두 P0 후',
+        description:
+          'Game Designer — NumLink에 코어 레벨 외 메타 진행 레이어 1종(테마 컬렉션/꾸미기, Layer Lab 연결) 도입 검토·MeowBeat는 farm 기반 고양이 농장 꾸미기 메타축(D30 리텐션 31% 근거). Content Writer — 두 게임 15~30초 세로 미리보기 동영상 스토어 등록(전환율 25~40%↑)+TikTok UGC 숏폼(MeowBeat 우선·CPI 15~25%↓)·App Store Tags 대비 메타데이터 키워드 정합성 점검. Art Director — 촉각 마이크로인터랙션 패스 1스프린트(MeowBeat 노트 히트 고양이 스쿼시+점수 키네틱 타이포·NumLink 셀 바운스+웜 샌드/클레이 팔레트·민트+다크 회피). Developer — 다음 마이너 마일스톤에 Unity 6.3 LTS 업그레이드(2027.12까지 2년 LTS) 검토 적재. 모두 P0(노트-오디오 동기화·UMP·백업) 후 착수.',
+      },
+    ],
+  },
+  {
     id: '2026-06-16T04:00:00-daily-standup',
     date: '2026-06-16',
     researchTitle:
