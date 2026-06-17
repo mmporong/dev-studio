@@ -43,6 +43,128 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-06-18T04:00:00-daily-standup',
+    date: '2026-06-18',
+    researchTitle:
+      '🧹 같은 병을 세 의사가 따로 짚었고, 한 명이 진짜 원인을 댔다 — Orchestrator·QA·Developer가 서로 모르게 "NumLink 미커밋 16일 누적"을 동시 지목했는데, QA가 그 근본 원인을 "커밋 의지 부족이 아니라 .gitignore 미정비(.omc/·Screenshots 노이즈 36건)로 실작업분이 묻혀 손이 안 가는 것"으로 정확히 진단 / 한편 DevOps는 6/17 "#99 닫기" 결정이 오진(정상 major 업데이트)임을 정정하고, 메인이 회의 중 dependabot 3건(#102·#99·#103) 자율 머지로 6/17 P1을 종결',
+    researchSummary:
+      '제67회 리서치. 7명 전원 보고. **오늘의 구조는 "수렴과 정정"이다.** 첫째, NumLink 미커밋 누적(6/2 이후 16일째·36파일)을 Orchestrator(git 실측)·QA(안전망 부재)·Developer(DOTween 부채)가 서로 다른 경로로 모두 지목했는데, 세 보고를 겹쳐 보면 단순 "커밋을 안 했다"가 아니라 QA가 댄 원인 — `.gitignore`가 정비되지 않아 .omc/·state/·Screenshots/·Layer Lab 에셋 같은 노이즈가 작업트리를 가득 채워, 정작 커밋해야 할 실작업분이 36건 노이즈에 묻혀 손이 안 가는 구조 — 가 진짜 병목이다. 둘째, DevOps가 6/17 결정의 오류를 정정했다: 6/17 회의는 dependabot "#99를 닫아라"로 결론냈지만, #99는 actions-major 그룹으로 의도적 분리된 정상 upload-pages-artifact v5 업데이트라 닫을 게 아니라 머지 대상이었다. DevOps가 4PR 전부 MERGEABLE/CLEAN을 확인하고 머지 순서(#102→#99→#103, 워크플로 파일 충돌 회피)를 제시하자, 메인이 회의 중 그 3건을 자율 머지(npm-major 5건짜리 #104만 changelog 검토로 보류)해 6/17 P1을 닫았다. 나머지는 각자 새 각도를 더했다: Developer는 PrimeTween이 50+동시트윈서 GC스파이크 0(DOTween 2-3초마다)·NumLink가 DOTween을 게임플레이 9파일서 실사용 중이라 마이그레이션 범위가 명확함을, Game Designer는 8주 시즌패스가 5주차 리텐션 50% 붕괴라 캐주얼은 4주 짧은 시즌이 표준임을, Content는 게임 전환율 3~5%대서 첫 2장 스크린샷 A/B가 첫 3프레임 10~25% 리프트를, Art는 2026 글래스모피즘이 전면 적용에서 부분 적용으로 이동했고 글래스 위 텍스트엔 Barrier Layer로 WCAG 4.5:1 확보가 표준임을 보고했다.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — 🚨 NumLink 미커밋 16일째·36파일(6/2 이후·전일 대비 +1일 악화)·새 커밋 0·MeowBeat 6/17 a0d1a81 이후 정체(미커밋 37파일·.cs 4개 백업 안 됨)·dependabot PR 4건 전부 OPEN(6/17 액션 미진행)·agent-office main 정상',
+        description:
+          '**🎯 이전 액션 실측(6/18)**: 6/17 결정 5건 중 ① dependabot PR 정리(#99 닫기·#102·#103 머지) = **회의 시작 시점 0% 진행**(4건 전부 OPEN으로 새벽까지 방치 → 오늘 회의 중 메인이 자율 머지로 종결) ② NumLink Tools/ 검증 이식 = **미착수**(디렉터리 여전히 부재) ③ MeowBeat dspTime 전환 = **미완**(NoteSpawner.cs:126 deltaTime 누적 그대로·사용자 세션 대기) ④ MeowBeat 미커밋 .cs 백업 = **미완**. **측정값**: NumLink 최신 5fcac3a·브랜치 feature/ugui-layerlab·미커밋 36파일·**최근 실커밋 6/2 → 16일째 누적**(6/17 15일→6/18 16일, 하루 더 악화). MeowBeat 최신 a0d1a81(6/17 이후 새 커밋 0)·미커밋 37파일(.cs 4개=GameManager/SongManager/OptionManager/SongData). agent-office는 dependabot PR 4건(#99·#102·#103·#104)이 전부 OPEN으로 6/17 액션이 새벽까지 미진행 상태였음. **오늘 결정 제안**: NumLink 미커밋 16일 방치가 최대 백업 리스크 → 그러나 단순 커밋이 아니라 QA가 지적한 .gitignore 정비를 선행해야 실작업분이 드러남. dependabot은 회의 중 자율 머지 가능(자체 레포). (git log/status·gh pr list 실측)',
+      },
+      {
+        title:
+          '🔍 QA Tester — 🔑 핵심 진단: NumLink 미커밋 36건의 근본 원인은 커밋 의지가 아니라 .gitignore 미정비(.omc/·state/·Screenshots 노이즈)로 실작업분이 묻힘·미해결 P0 NoteSpawner deltaTime 누적 그대로(파일 미수정 방치)·MeowBeat 미커밋 .cs 4종은 타이밍 코어 미접촉이라 회귀 위험 낮으나 장기 미커밋 컨텍스트 유실 위험',
+        description:
+          '**🔍 핵심 진단(근본 원인)**: NumLink 미커밋 36건을 "커밋을 안 한다"로만 보면 해법이 "커밋해라"가 되지만, 작업트리를 실제로 들여다보면 대부분이 `.omc/`·`state/`·`Screenshots/`·Layer Lab 에셋 같은 **버전관리 대상이 아닌 노이즈**다 — `.gitignore`가 정비되지 않아 이 노이즈가 status를 가득 채우고, 정작 커밋해야 할 Layer Lab 리스킨 실작업분이 그 속에 묻혀 selective add 자체가 번거로워 손이 안 가는 구조다. 즉 16일 누적의 진짜 원인은 의지가 아니라 **위생(hygiene)**이다. **🔍 미해결 P0 추적**: NoteSpawner.cs:126 `elapsedTime += Time.deltaTime` 누적 방식이 6/16·6/17 그대로 — 파일은 오히려 미수정 상태로 "방치"돼 있어, 손을 안 댄 채 P0가 박제됨(게임 코드라 사용자 세션 유지). **🔍 회귀 위험 분리**: MeowBeat 미커밋 .cs 4종(GameManager +59줄 등)은 다국어/잠금 UI 작업으로 타이밍 코어를 안 건드려 NoteSpawner P0와 독립적 — P0 수정은 이 미커밋과 충돌 없이 별도 진행 가능. 단 약 2개월 장기 미커밋이라 컨텍스트 유실 위험. **오늘 결정 제안(실행)**: NumLink `.gitignore`에 `.omc/`·`state/`·`Screenshots/` 추가해 노이즈 제거 → 실작업분 노출 → 선별 커밋. 그 뒤 MeowBeat 검증툴 3종을 NumLink로 이식해 검증 0% 탈출. Sources: git status 실측·NoteSpawner.cs:126·known_bugs.json.',
+      },
+      {
+        title:
+          '💻 Developer — PrimeTween 50+동시트윈서 GC스파이크 0건(DOTween 2-3초마다·트윈당 48-120B)·NumLink가 DOTween을 게임플레이 9파일(GameManager·UIManager·EffectManager·ComboPopupUI 등) 실사용 중→마이그레이션 범위 명확·소규모·MeowBeat는 둘 다 미사용·Unity6 GPU Resident Drawer는 모바일선 GPU부하↑+정적배칭 충돌',
+        description:
+          '**💻 신규(트위닝 부채·구체 벤치마크)**: 6/15에 PrimeTween이 이름만 언급됐던 것을 오늘 실측으로 채웠다 — PrimeTween은 **50개 이상 동시 트윈에서 GC 스파이크 0건**(DOTween은 2~3초마다 스파이크), **트윈당 48~120바이트 프레임 할당을 제거**한다. 합성 테스트 CPU는 1.29배 느리지만, 모바일 프레임 안정성엔 할당 제로가 더 중요하다. **NumLink는 DOTween을 게임플레이 9개 파일**(GameManager·UIManager·NumberManager·EffectManager·NumberButton·ComboPopupUI·GameOverPanel·ProgressBarUI·LevelCompletePanel)에서 실사용 중이라 마이그레이션 대상이 명확하고 규모가 작다. MeowBeat는 DOTween/PrimeTween 둘 다 미사용이라 무관. **💻 신규(렌더링)**: Unity6 GPU Resident Drawer는 CPU를 최대 50% 줄이지만 **모바일에선 GPU 부하가 오히려 늘고 정적 배칭과 충돌**(둘 중 하나만 선택)이라 캐주얼 2D엔 신중해야 한다. **💻 코드 부채**: MeowBeat 미커밋 21파일(+1190/-1089)이 한 덩어리로 누적. (6/17 Unity 6.3 LTS와 겹치지 않는 "PrimeTween 실측 벤치마크·DOTween 9파일 실사용·GPU Resident Drawer 모바일 주의" 신규 토픽). **오늘 결정 제안(P1)**: NumLink DOTween→PrimeTween PoC — 부하 큰 ComboPopupUI/EffectManager 반복 트윈부터 교체해 실기 GC Alloc 프로파일러로 before/after 측정. Sources: DeepWiki PrimeTween 벤치마크·Omitram 2026 트위닝 가이드·Unity Manual GPU Resident Drawer·grep 실측.',
+      },
+      {
+        title:
+          '🎮 Game Designer — 8주 시즌패스는 5주차 리텐션 50% 붕괴·캐주얼은 2~4주 짧은 시즌+2주 콘텐츠 갱신이 표준·데일리 알림 아침→점심 이동 시 D7 18%p 상승·리듬게임 시장 25→53억달러(CAGR 9.1%)·캐주얼 과금 IAP:광고 50:50·보상형동영상이 광고매출 62% 점유',
+        description:
+          '**🎮 시장 데이터(시즌 길이·알림 타이밍)**: 8주 길이의 시즌패스는 **5주차에 리텐션이 50% 붕괴**한다 — 캐주얼은 8주가 아니라 **2~4주 짧은 시즌 + 2주 주기 콘텐츠 갱신**이 2026 표준이다(GameMakers/PocketGamer). 데일리 알림 발송 시간을 아침에서 **점심(정오 전후)으로 옮긴 사례에서 D7 리텐션이 18%p 상승**했고, 비경쟁 리더보드+시간제한 챌린지가 세션·과금을 동시에 견인했다. 리듬게임 시장은 **25→53억 달러(CAGR 9.1%)**로 성장 중이고, 캐주얼 과금 구조는 IAP:광고가 50:50이며 **보상형 동영상이 광고 매출의 62%**를 점유한다. (6/17 메타 진행 레이어/D30 31%와 겹치지 않는 "시즌 길이·알림 타이밍·리듬게임 시장규모·보상형 동영상 비중" 신규 토픽). **오늘 결정 제안(P2)**: NumLink에 "주간 데일리 챌린지 + 비경쟁 리더보드"를 4주 짧은 시즌으로 도입 — 매일 동일 시드 고정 퍼즐 1개+주간 7스탬프 보상, 알림은 점심에, 콘텐츠는 2주 주기 갱신, 별도 IAP 없이 보상형 동영상만 얹어 50:50 비중에 맞춤. 단일 진행축을 안 건드리는 최소 침습 라이브옵스 레이어. MeowBeat는 "데일리 1곡 챌린지+주간 누적"으로 동형 이식 가능. Sources: GameGrowthAdvisor·PocketGamer·GetBruin 시즌길이-리텐션·Udonis 과금·VerifiedMarket 리듬게임 시장.',
+      },
+      {
+        title:
+          '📦 Content Writer — 2026 ASO는 탭률7%↑·전환20%↑ 키워드만 타이틀/부제 30자에 배치·키워드필드100자는 잔여어·게임 평균 전환율 3~5%대·첫 2장 스크린샷이 대부분 결정·A/B 시 첫 3프레임 10~25% 리프트(상위게임 57%가 연2회+ 테스트)·디스코드 멤버 유지율 20~60%로 트위터/인스타 압도',
+        description:
+          '**📦 신규 1순위(ASO 키워드 배치)**: 2026 ASO는 키워드를 모두 욱여넣는 게 아니라 **탭률 7%↑·전환 20%↑를 내는 키워드만 타이틀/부제(각 30자)에 배치**하고, 키워드 필드(100자)는 타이틀에 못 넣은 잔여어·롱테일만 채우는 게 정석이다. **📦 신규 2순위(스크린샷 A/B)**: 게임 앱 평균 전환율은 3~5%대고 **첫 2장 스크린샷이 설치 결정의 대부분**을 좌우하며, A/B 테스트로 **첫 3프레임을 바꾸면 10~25% 전환 리프트**가 난다(상위 게임의 57%가 연 2회 이상 테스트). **📦 신규 3순위(커뮤니티)**: 디스코드 커뮤니티 멤버 유지율은 **20~60%로 트위터/인스타를 압도**하고, 인디는 1개 히트보다 WIP 공유형 소규모 커뮤니티 운영이 표준이다. (6/17 미리보기 동영상/TikTok UGC/App Store Tags와 겹치지 않는 "ASO 키워드 30자 배치·스크린샷 A/B 첫3프레임·디스코드 유지율" 신규 토픽). **오늘 결정 제안(P2)**: NumLink 스토어 첫 2장 스크린샷을 A/B 테스트 — 연결선이 그어지는 순간을 캡처해 핵심 메커니즘을 모션감 있게 노출, 숫자가 디바이스 프레임 밖으로 튀는 캐주얼 정석 구도로 대조군 제작. 부제 30자엔 "숫자 연결 퍼즐" 롱테일 1개만 자연 삽입(스터핑 배제). Sources: MobileAction ASO 2026·AppDrift·Adapty/ScreenFast 전환율 벤치마크·Screenhance 스크린샷.',
+      },
+      {
+        title:
+          '🛡 DevOps — ✅ CI 최근 5건 전부 success(Pages 배포 44s~1m2s)·dependabot 4PR 전부 MERGEABLE/CLEAN·🔧 6/17 "#99 닫기"는 오진(정상 major 업데이트라 머지 대상)·#99·#102가 deploy-pages.yml 동시 수정이라 #102먼저 권고·#104(npm-major 5건)만 changelog 검토 후 머지·GitHub Actions 2026.1.1 호스티드러너 최대 39% 인하',
+        description:
+          '**🛡 ✅ CI 상태**: gh run 최근 5건 전부 success(Deploy Pages 44s~1m2s·npm 캐시 적용 중)·실패 0. dependabot PR 4건 전부 **MERGEABLE/CLEAN**. **🔧 6/17 결정 정정**: 6/17 회의는 "#99(upload-pages-artifact 4→5)를 닫아라"로 결론냈으나, #99는 dependabot.yml에서 major가 `actions-major` 그룹으로 **의도적으로 단독 분리된 정상 v5 업데이트**라 닫을 게 아니라 머지 대상이다. 다만 #99와 #102가 **둘 다 deploy-pages.yml을 수정**하므로 머지 순서가 중요 — #102(checkout/setup-node minor, 영향 큼) 먼저, 그 뒤 #99 CLEAN 재확인 머지. #103(npm minor/patch 11건)은 package.json만 건드려 독립적이라 안전, **#104(npm-major 5건)만 breaking 가능성으로 changelog 검토 후 머지** 권고. **🛡 신규(인프라 비용)**: GitHub Actions가 2026.1.1부로 호스티드 러너 가격을 **최대 39% 인하**(16코어 Linux $0.042/min), 자체 호스팅 분당 과금은 무기한 보류. agent-office는 공개 레포라 Actions 무료고 단일 job·1분 빌드라 추가 최적화 여지는 적음. (6/17 grouping 효과/Sigstore와 겹치지 않는 "6/17 #99 오진 정정·머지 순서 충돌 회피·Actions 가격 39% 인하" 신규 토픽). **오늘 결정 제안(실행)**: dependabot #102→#99→#103 회의 중 자율 머지, #104만 보류. Sources: gh run/pr 실측·dependabot.yml·StackTrack/GitHub Actions 2026 가격.',
+      },
+      {
+        title:
+          '🎨 Art Director — 2026 모바일 UI는 글래스모피즘+뉴모피즘 하이브리드가 주류지만 전면 적용은 사라지고 토글/카드/슬라이더 핵심 요소에만 부분 적용·글래스 위 텍스트는 WCAG 본문 4.5:1·UI 3:1 필수→Barrier Layer(글래스 밑 저투명 단색 fill)가 가독성 확보 표준·캐주얼 D1 리텐션 35~40%가 상위권(25% 미만이면 온보딩·코어루프 결함)',
+        description:
+          '**🎨 신규 1순위(글래스모피즘 부분 적용)**: 2026 모바일 UI는 글래스모피즘+뉴모피즘 하이브리드가 주류이나 **전면 적용은 사라지고 토글·카드·슬라이더 같은 핵심 요소에만 부분 적용**하는 방향으로 정착했다. **🎨 신규 2순위(접근성·Barrier Layer)**: 글래스 패널 위 텍스트는 **WCAG 2.2 본문 4.5:1·UI 요소 3:1 대비가 필수**라, 글래스 카드 밑에 **Barrier Layer(불투명도 70~80% 단색 fill)를 깔아 배경이 비쳐도 텍스트가 묻히지 않게** 하는 것이 2026 표준 기법이다. **🎨 신규 3순위(온보딩·리텐션)**: 캐주얼 게임 **D1 리텐션 35~40%가 상위권**이고 25% 미만이면 온보딩·코어루프 결함 신호이며, 정적 스와이프 튜토리얼보다 "learn by doing"(템플런식) 점진 온보딩이 대체 추세다. (6/17 Material Expressive/키네틱 타이포/웜 어스톤과 겹치지 않는 "글래스모피즘 부분 적용·Barrier Layer 접근성·learn-by-doing 온보딩" 신규 토픽). **오늘 결정 제안(P2)**: NumLink Layer Lab 리스킨에 글래스모피즘을 HUD 패널·일시정지/설정 팝업·숫자 셀 하이라이트에만 부분 적용(퍼즐 그리드 본판은 플랫 유지)하고, 글래스 위 숫자/타이머엔 반드시 Barrier Layer를 깔아 WCAG 4.5:1 확보 — 배경 퍼즐이 비쳐 숫자가 묻히는 사고를 사전 차단. 검증은 리스킨 후 실캡처로 셀 숫자 대비 육안 확인. MeowBeat는 노트 히트 시 snap음+파티클 버스트를 판정선 주변으로 절제 적용. Sources: Zignuts(뉴모피즘vs글래스모피즘)·AxessLab(글래스모피즘 접근성)·VWO(온보딩 가이드)·GameAnalytics(juice).',
+      },
+    ],
+    meetingTitle:
+      '🧹 6/18 종합 회의 — "위생이 의지를 가뒀다, 그리고 어제의 오진을 오늘 정정했다": 세 에이전트가 따로 짚은 NumLink 16일 미커밋의 진짜 원인이 .gitignore 미정비(노이즈 36건에 실작업분 매몰)임을 QA가 댔고, DevOps가 6/17 "#99 닫기"가 오진(정상 major)임을 정정하자 메인이 회의 중 dependabot 3건(#102·#99·#103)을 자율 머지해 6/17 P1을 종결',
+    meetingSummary:
+      '제67회 종합 회의. **오늘의 회의는 두 개의 교정으로 짜였다 — 진단의 교정과 결정의 교정.** 첫째, 진단의 교정. Orchestrator는 git 실측으로 NumLink 미커밋이 6/2 이후 16일째·36파일임을, Developer는 그 안에 DOTween 9파일 부채가 있음을, QA는 안전망(테스트·검증) 양쪽 부재를 각자 따로 보고했는데 — 세 보고를 겹치자 공통점이 "NumLink가 커밋되지 않고 있다"였다. 여기서 QA가 한 발 더 들어갔다: 그동안 우리는 이걸 "커밋을 안 한다"로 적어왔지만, 작업트리를 실제로 열어보면 36건 중 대부분이 .omc/·state/·Screenshots/·Layer Lab 에셋 같은 버전관리 대상이 아닌 노이즈이고, .gitignore가 정비되지 않아 이 노이즈가 status를 가득 채워 정작 커밋할 Layer Lab 리스킨 실작업분이 그 속에 묻혀 손이 안 가는 구조라는 것이다. 즉 16일 누적의 원인은 개발자의 의지가 아니라 저장소 위생이었고, 해법도 "커밋해라"가 아니라 ".gitignore부터 정비해 실작업분을 드러내라"로 바뀐다. 둘째, 결정의 교정. DevOps가 6/17 회의록을 다시 읽고 오류를 짚었다 — 6/17은 dependabot "#99를 닫아라"로 결론냈지만, #99는 actions-major 그룹으로 의도적으로 단독 분리된 정상 upload-pages-artifact v5 업데이트라 닫을 게 아니라 머지 대상이었다. DevOps가 4PR 전부 MERGEABLE/CLEAN을 확인하고, #99·#102가 둘 다 deploy-pages.yml을 건드리니 #102 먼저·그 뒤 #99·이어서 독립적인 #103, npm-major 5건짜리 #104만 changelog 검토로 보류하라는 순서를 제시하자, 메인 에이전트가 회의 중 그 3건을 실제로 자율 머지하고 로컬을 동기화했다(#104 보류). 6/17이 "닫아라"로 잘못 판단한 P1을, 6/18이 "사실은 머지였다"로 정정하며 실행으로 닫은 것이다. 나머지 보고는 각자 새 지평을 더했다: Developer는 PrimeTween GC 스파이크 0(DOTween 2-3초마다) 실측과 NumLink DOTween 9파일 PoC를, Game Designer는 8주 시즌패스가 5주차 50% 붕괴라 4주 짧은 시즌이 표준임을, Content는 첫 2장 스크린샷 A/B가 첫 3프레임 10~25% 리프트를, Art는 글래스모피즘 부분 적용+Barrier Layer로 WCAG 4.5:1 확보를 제안했다. 메타: 6/17이 "5일간 반복한 전제를 의심한 날"이었다면, 6/18은 "어제의 결정 자체가 틀릴 수 있음을 인정하고 그 자리에서 정정해 실행한 날"이다 — 회의가 자신의 과거 기록을 감사(audit)하기 시작했다.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '먼저 실측부터 보고합니다. NumLink는 마지막 실커밋이 6월 2일이고, 오늘이 6월 18일이니 16일째 미커밋이에요. 어제 15일이라고 했는데 하루 더 늘었습니다. 미커밋이 36파일, 새 커밋은 0. MeowBeat는 6월 17일 a0d1a81 이후로 새 커밋이 없고 미커밋 37파일인데 그중 .cs가 4개입니다. 그리고 짚을 게 있어요 — 어제 우리가 결정한 dependabot PR 정리가 새벽까지 하나도 진행이 안 됐습니다. #99, #102, #103, #104 네 개가 전부 OPEN이에요. 어제 액션아이템 다섯 개 중 실질적으로 닫힌 게 없습니다. 다만 dependabot은 자체 레포라서 회의 중에 자율로 머지할 수 있는 영역이에요. NumLink 커밋은 게임 레포라 사용자 세션이 맞지만, 그 전에 QA가 할 말이 있는 것 같습니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '네, 그 NumLink 16일 얘기를 제가 이어받을게요. 우리가 이걸 계속 "커밋을 안 한다"로 적어왔는데, 그 프레임이 틀렸어요. status를 실제로 열어보면 36건 중 대부분이 .omc 폴더, state 폴더, Screenshots, Layer Lab 에셋이에요. 이건 원래 버전관리에 들어갈 게 아닌 노이즈입니다. 문제는 .gitignore가 이걸 안 걸러줘서, 정작 커밋해야 할 Layer Lab 리스킨 실작업분이 노이즈 36건 속에 파묻혀 있다는 거예요. 이 상태에선 selective add 하는 것 자체가 번거로워서 손이 안 갑니다. 그러니까 16일 누적은 개발자가 게을러서가 아니라 저장소 위생 문제예요. 해법도 "커밋해라"가 아니라 ".gitignore에 .omc/, state/, Screenshots/ 추가해서 노이즈부터 치워라"가 맞습니다. 그래야 실작업분이 드러나고 커밋이 쉬워져요. 그 다음에 MeowBeat 검증툴 3종을 NumLink로 복사하면 검증 0%도 같이 벗어납니다. 그리고 NoteSpawner P0는 여전히 deltaTime 누적 그대로인데, 오히려 파일을 아예 안 건드려서 박제된 상태예요.',
+      },
+      {
+        speaker: 'DevOps',
+        note: '저는 어제 우리 결정 하나를 정정하겠습니다. 6월 17일에 우리가 "#99를 닫아라"라고 결론냈잖아요. 그거 오진이었어요. #99는 upload-pages-artifact 4에서 5로 가는 정상 메이저 업데이트고, dependabot.yml에서 메이저는 actions-major 그룹으로 일부러 단독 분리되게 해놨기 때문에 단독 PR이 된 겁니다. 닫을 게 아니라 머지할 대상이었어요. 지금 PR 네 개 다 MERGEABLE에 CLEAN 상태 확인했습니다. 다만 #99랑 #102가 둘 다 deploy-pages.yml을 건드려서 순서가 중요해요 — #102를 먼저 머지하고, #99가 여전히 CLEAN인지 확인한 다음 머지, 그리고 #103은 package.json만 건드리니까 독립적으로 안전합니다. #104만 npm 메이저 5건이라 breaking 가능성이 있으니 changelog 보고 나서요. 메인이 이 순서대로 지금 머지해주시면 어제 P1이 닫힙니다. 참고로 GitHub Actions가 1월부터 호스티드 러너 가격을 최대 39% 내렸는데, 우리는 공개 레포라 무료고 빌드도 1분이라 당장 영향은 없습니다.',
+      },
+      {
+        speaker: 'Orchestrator',
+        note: '좋습니다, 그러면 그 자리에서 실행하죠. (메인이 #102 → #99 → #103 순서로 자율 머지 완료, #104는 changelog 검토로 보류) 머지 끝났고 로컬도 동기화했습니다 — HEAD가 7527c52로 올라갔어요. 어제 "닫아라"로 잘못 판단했던 P1이 오늘 "사실은 머지였다"로 정정되면서 실행으로 닫혔습니다. 이게 중요한 패턴이에요. 6월 17일이 5일간 반복한 전제를 의심한 날이었다면, 오늘은 어제 내린 결정 자체가 틀릴 수 있다는 걸 인정하고 정정한 날입니다. 회의가 자기 과거 기록을 감사하기 시작한 거죠. 그럼 남은 P0는 명확합니다 — NumLink는 .gitignore 정비 후 선별 커밋, MeowBeat는 dspTime 전환하고 .cs 백업. 둘 다 게임 코드라 사용자 세션 1순위로 넘깁니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: '저는 NumLink 커밋이 풀리면 바로 이어서 할 기술 과제를 하나 깔아두겠습니다. 6월 15일에 PrimeTween 이름만 나왔었는데, 오늘 실측 벤치마크로 채웠어요. PrimeTween은 동시 트윈 50개 이상에서 GC 스파이크가 0건입니다. DOTween은 2~3초마다 스파이크가 나고, 트윈마다 프레임당 48에서 120바이트를 할당해요. 합성 테스트에선 CPU가 1.29배 느리지만, 모바일에선 할당 제로가 프레임 안정성에 훨씬 중요합니다. 그리고 NumLink가 DOTween을 게임플레이 9개 파일에서 실사용 중이에요 — GameManager, UIManager, EffectManager, ComboPopupUI 등. 마이그레이션 범위가 명확하고 작아요. MeowBeat는 둘 다 안 쓰니 무관하고요. 제안은, 부하가 가장 큰 ComboPopupUI랑 EffectManager의 반복 트윈부터 PrimeTween으로 바꿔서 실기에서 GC Alloc을 프로파일러로 before/after 측정하는 PoC입니다. 참고로 Unity6 GPU Resident Drawer는 모바일에선 GPU 부하가 늘고 정적 배칭과 충돌하니 우리 2D 캐주얼엔 신중해야 해요.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '저는 리텐션 구조에 새 수치를 가져왔어요. 시즌패스를 8주로 길게 잡으면 5주차에 리텐션이 50% 무너집니다. 캐주얼은 8주가 아니라 2주에서 4주짜리 짧은 시즌에 2주 주기로 콘텐츠를 갱신하는 게 2026 표준이에요. 그리고 데일리 알림을 아침에서 점심으로 옮긴 사례에서 D7 리텐션이 18%포인트 올랐습니다. 리듬게임 시장 자체도 25억에서 53억 달러로 커지는 중이고, 캐주얼 과금은 IAP랑 광고가 반반인데 광고 매출의 62%가 보상형 동영상이에요. 제안은 NumLink에 주간 데일리 챌린지랑 비경쟁 리더보드를 4주 짧은 시즌으로 넣는 겁니다. 매일 모든 유저에게 같은 시드의 고정 퍼즐 하나를 주고, 주간 7스탬프를 채우면 보상. 알림은 점심에 보내고, 콘텐츠는 2주마다 갱신, 별도 IAP 없이 보상형 동영상만 얹어서 50:50 비중에 맞춥니다. 기존 단일 진행축을 안 건드리는 최소 침습 라이브옵스 레이어예요. MeowBeat는 데일리 1곡 챌린지로 그대로 이식 가능합니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '저는 출시 준비 쪽에서 ASO와 스토어 전환을 짚을게요. 2026 ASO의 핵심은 키워드를 다 욱여넣는 게 아니라, 탭률 7% 올리고 전환 20% 올리는 키워드만 골라서 타이틀이랑 부제 30자 안에 넣는 거예요. 키워드 필드 100자는 거기 못 들어간 잔여어랑 롱테일만 채웁니다. 그리고 스토어 전환에서 게임 평균이 3에서 5% 수준인데, 첫 2장 스크린샷이 설치 결정의 대부분을 좌우해요. A/B로 첫 3프레임만 바꿔도 10에서 25% 전환 리프트가 납니다. 상위 게임의 57%가 1년에 두 번 이상 테스트하고 있어요. 제안은 NumLink 스토어 첫 2장 스크린샷 A/B 테스트입니다. 연결선이 그어지는 순간을 캡처해서 핵심 메커니즘을 모션감 있게 보여주고, 대조군은 숫자가 디바이스 프레임 밖으로 튀어나오는 캐주얼 정석 구도로 만들어요. 부제 30자엔 "숫자 연결 퍼즐" 같은 롱테일 하나만 자연스럽게 넣고 키워드 스터핑은 피합니다. 커뮤니티는 디스코드 멤버 유지율이 20~60%로 트위터·인스타를 압도하니 장기적으로 디스코드를 봐야 해요.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '저는 NumLink Layer Lab 리스킨에 바로 쓸 수 있는 가이드를 드릴게요. 2026 모바일 UI는 글래스모피즘이랑 뉴모피즘 하이브리드가 주류인데, 핵심은 전면 적용이 사라졌다는 거예요. 토글, 카드, 슬라이더 같은 핵심 요소에만 부분 적용합니다. 그래서 제안은 — 글래스모피즘을 HUD 패널이랑 일시정지·설정 팝업, 숫자 셀 하이라이트에만 쓰고, 퍼즐 그리드 본판은 플랫으로 유지하세요. 그런데 여기 함정이 있어요. 글래스 패널 위에 올라가는 텍스트는 WCAG 기준으로 본문 4.5:1, UI 요소 3:1 대비를 맞춰야 하는데, 글래스는 배경이 비쳐서 숫자나 타이머가 묻히기 쉬워요. 그래서 2026 표준 기법이 Barrier Layer입니다 — 글래스 카드 밑에 불투명도 70~80%짜리 단색 fill을 한 겹 깔아서 대비를 확보하는 거예요. 이걸 안 하면 배경 퍼즐이 비쳐서 숫자가 안 보이는 사고가 납니다. 리스킨 끝나면 실제 캡처로 셀 숫자 대비를 육안 확인까지 하죠. MeowBeat는 노트 히트 이펙트를 판정선 주변으로 절제해서 과한 juice로 가독성 해치는 걸 피하면 됩니다.',
+      },
+    ],
+    decisions: [
+      {
+        title:
+          '✅ [실행완료] dependabot PR #102·#99·#103 회의 중 자율 머지 — 6/17 P1 종결 (#99는 "닫기"가 아니라 정상 major 머지로 정정)',
+        description:
+          'DevOps가 6/17 "#99 닫기" 결정을 오진(actions-major 그룹 정상 v5 업데이트)으로 정정. 메인이 #102(actions minor/patch)→#99(upload-pages-artifact v5)→#103(npm minor/patch 11건) 순으로 자율 머지하고 로컬 동기화(HEAD 7527c52). #104(npm-major 5건)만 breaking 가능성으로 changelog 검토 후 머지 보류. 자체 레포 자율 실행 4번째·어제 결정을 정정하며 닫은 첫 사례.',
+      },
+      {
+        title:
+          '🚨 [P0·사용자 세션] NumLink .gitignore 정비(.omc/·state/·Screenshots/) 선행 후 Layer Lab 리스킨 실작업분 선별 커밋 — 16일 누적 해소',
+        description:
+          'QA의 근본 원인 진단: 미커밋 36건의 병목은 의지가 아니라 .gitignore 미정비로 노이즈가 실작업분을 매몰시킨 것. 따라서 단순 커밋이 아니라 ① .gitignore에 .omc/·state/·Screenshots/ 추가로 노이즈 제거 → ② 드러난 Layer Lab 리스킨 실작업분 선별 커밋 순서가 정답. Orchestrator·QA·Developer 3명이 독립 지목한 최우선 백업 리스크. 게임 코드 포함이라 사용자 세션 1순위.',
+      },
+      {
+        title:
+          '🔴 [P0·이월·사용자 세션] MeowBeat NoteSpawner.cs:126 dspTime 전환 + 미커밋 .cs 4종 백업',
+        description:
+          'NoteSpawner.cs:126 `elapsedTime += Time.deltaTime` 누적이 6/16·6/17·6/18 그대로 방치(파일 미수정 박제). dspTime+PlayScheduled+판정 윈도우 전환 필요. 미커밋 .cs 4종(GameManager/SongManager/OptionManager/SongData)은 타이밍 코어 미접촉이라 P0와 독립 진행 가능하나 약 2개월 장기 미커밋으로 컨텍스트 유실 위험 — WIP 백업 커밋 필요. 게임 코드라 사용자 세션.',
+      },
+      {
+        title:
+          '🟡 [P1] NumLink DOTween→PrimeTween PoC(ComboPopupUI/EffectManager 우선·GC Alloc before/after 측정) + MeowBeat 검증툴 3종 NumLink 이식',
+        description:
+          'Developer 실측: PrimeTween은 50+동시트윈서 GC스파이크 0(DOTween 2-3초마다·트윈당 48-120B). NumLink가 DOTween을 게임플레이 9파일 실사용 중이라 범위 명확. 부하 큰 ComboPopupUI/EffectManager 반복 트윈부터 교체해 실기 프로파일러로 측정. 병행하여 MeowBeat 절대경로화 검증툴 3종을 NumLink로 복사해 검증 0%→1 탈출(QA).',
+      },
+      {
+        title:
+          '🟢 [P2] 백로그 — 글래스모피즘+Barrier Layer 리스킨(AD)·4주 데일리 챌린지 시즌(GD)·스크린샷 A/B 첫3프레임(CW)',
+        description:
+          'Art: NumLink Layer Lab 리스킨에 글래스모피즘 부분 적용(HUD/팝업/셀 하이라이트만)+글래스 위 텍스트 Barrier Layer로 WCAG 4.5:1 확보. Game Designer: 주간 데일리 챌린지+비경쟁 리더보드를 4주 짧은 시즌으로(8주는 5주차 50% 붕괴)·점심 알림·보상형 동영상만. Content: 스토어 첫 2장 스크린샷 A/B(연결선 모션 캡처)+부제 30자 롱테일 1개. 출시 단계 진입 시 일괄 검토.',
+      },
+    ],
+  },
+  {
     id: '2026-06-17T04:00:00-daily-standup',
     date: '2026-06-17',
     researchTitle:
