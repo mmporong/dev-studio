@@ -43,6 +43,128 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-06-19T04:00:00-daily-standup',
+    date: '2026-06-19',
+    researchTitle:
+      '🛡️ 안전망이 조용히 두 번 무너졌다 — QA가 "NumLink 미커밋"의 프레임을 또 한 번 갈아끼웠다: 우리가 계속 백업 리스크로만 봐온 NumLink 미커밋의 작업트리 안에서, Domain 단위테스트 4파일(AutoGenTests)이 worktree에서 삭제돼 있었고(코드는 살아있고 안전망만 증발) Tools/ 검증 시스템은 애초에 이식된 적이 없어(정적QA 0%) 회귀 감지 수단이 동시에 0이 된 "이중 무방비"를 발견 / 한편 DevOps가 6/17 이월된 마지막 dependabot #104(npm-major 5건)를 회의 중 자율 머지해(HEAD 37b261c) 4PR 전수 종결',
+    researchSummary:
+      '제68회 리서치. 7명 전원 보고. **오늘의 구조는 "안전망의 발견"이다.** 어제(6/18)까지 우리는 NumLink 17일 미커밋을 "백업 리스크"로, 그 원인을 ".gitignore 위생"으로 좁혀왔다. 오늘 QA가 같은 작업트리를 다른 눈으로 다시 열자 더 깊은 구멍이 나왔다 — `Assets/Tests/Editor/AutoGenTests.*` 4파일(`.cs`·`.cs.meta`·`.asmdef`·`.asmdef.meta`)이 ` D` 상태, 즉 worktree에서 삭제돼 HEAD에만 남아 있었다. 삭제된 건 `DailyPuzzleProvider`(GetTodaySeed 결정성·보드크기 5~7 범위)·`EndlessModeProvider`(레벨별 보드크기) 같은 **Domain 순수 로직 단위테스트**이고, 검증 대상 코드(Provider.cs)는 멀쩡히 살아 있다. 즉 "코드는 있는데 그 코드를 지키는 테스트만 사라진" 상태다. 여기에 `_ProjectTemplate/Tools/`의 정적 QA 3종(unity_validate·qa_static·known_bugs)은 NumLink로 한 번도 이식된 적이 없어 정적 검증도 0%다. 단위테스트(삭제됨)와 정적QA(부재)가 동시에 0 — NumLink는 지금 회귀를 잡을 그물이 한 장도 없는 이중 무방비 상태다. 한편 DevOps는 6/17부터 이월돼 온 dependabot의 마지막 한 건 #104(npm-major 5건: eslint 10·eslint-plugin-react-hooks 7·@types/cheerio 1.0 등)를 검토해 — 레포가 이미 flat config·Node22라 ESLint 10 최대 breaking 2종(eslintrc 제거·Node18 중단)이 무력하고, lint가 머지 게이트도 아님을 확인하고 — 회의 중 자율 머지했다(HEAD 37b261c). 6/13에 16일 만의 첫 머지로 열린 dependabot 정리가 #102·#99·#103(6/18)·#104(6/19)로 6일 만에 4PR 전수 종결됐다. 나머지는 각자 새 지평을 더했다: Orchestrator는 .gitignore 정비가 실은 `.gstack/` 한 줄만 추가된 미완이라 노이즈 14건이 그대로임을, Developer는 Unity 6.2 Adaptive Performance가 빌트인 모듈화돼 패키지 추가 0으로 발열 기반 프레임 보호가 가능함을(리듬게임 판정 직결), Game Designer는 캐주얼 D30이 4% 미만으로 붕괴하는 시대에 레벨 실패 직후 Continue 보상형 광고(opt-in 15~30%)가 손실회피 심리로 churn·매출을 동시에 잡음을, Content는 앱 아이콘 A/B가 Google Play에서 8~12% 리프트(iOS의 2배)임을, Art는 햅틱 레이어링(3강도×3시맨틱)과 OKLCH 색상계가 색맹 대응을 명도 대비로 자동 보장함을 보고했다.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — 🚨 NumLink 17일째 미커밋(6/2 이후·+1일 악화)·.gitignore 정비는 .gstack/ 한 줄뿐(.omc/·state/·Screenshots/ 미정비·노이즈 14건 잔존)·MeowBeat NoteSpawner dspTime 미착수(3일째 박제)·DOTween→PrimeTween PoC 미착수·#104만 잔여였으나 회의 중 종결',
+        description:
+          '**🎯 이전 액션 실측(6/19)**: 6/18 결정 4건 중 ① NumLink .gitignore 정비 후 선별 커밋(P0) = **미완** — `.gitignore` M 변경분이 `.gstack/` 한 줄 추가뿐이라 6/18 결정한 `.omc/`·`state/`·`Screenshots/`가 정비되지 않아 노이즈 14건이 status에 그대로, 실작업분은 여전히 매몰. ② MeowBeat dspTime 전환(P0) = **미착수** — NoteSpawner.cs:126 `elapsedTime += Time.deltaTime` 그대로·dspTime 코드 0건(6/16·17·18·19 4일째 박제). ③ DOTween→PrimeTween PoC(P1) = **미착수**(양쪽 레포 PrimeTween 흔적 0). ④ dependabot #104 = **회의 중 종결**(아래 DevOps). **측정값**: NumLink 최신 5fcac3a·feature/ugui-layerlab·미커밋 36파일·**최근 실커밋 6/2 → 17일째**(6/18 16일→6/19 17일, 하루 더 악화). MeowBeat 최신 a0d1a81(6/17 이후 새 커밋 0)·미커밋 37파일. agent-office는 #104 머지로 dependabot 4PR 전수 종결(HEAD 37b261c). **오늘 결정 제안**: NumLink는 .gitignore 4줄 추가(노이즈 제거)와 더불어, QA가 발견한 삭제된 테스트 4파일 복원 여부 판단이 선행돼야 함 — 단순 커밋보다 안전망 복구가 먼저. (git log/status·gh pr 실측)',
+      },
+      {
+        title:
+          '🔍 QA Tester — 🔑 핵심 발견: NumLink 안전망 이중 붕괴 — Domain 단위테스트 4파일(AutoGenTests)이 worktree 삭제(코드는 생존·테스트만 증발)+Tools/ 검증 시스템 미이식(정적QA 0%)→회귀 감지 수단 동시 0·미해결 버그 7건(MeowBeat 등재 6건+NoteSpawner P0 1건)·NoteSpawner deltaTime 4일째 박제',
+        description:
+          '**🔍 핵심 발견(신규·이중 무방비)**: NumLink 미커밋을 어제는 ".gitignore 위생"으로 봤지만, 오늘 같은 작업트리를 테스트 관점으로 다시 열자 더 깊은 구멍이 나왔다. `git status --short`에서 `Assets/Tests/Editor/AutoGenTests.cs`가 ` D`(앞칸 공백·뒷칸 D = worktree에서만 삭제, 아직 staged 아님) 상태로, `.cs`·`.cs.meta`·`.asmdef`·`.asmdef.meta` 4파일이 디스크에서 사라지고 HEAD에만 남아 있다. 삭제된 테스트는 `DailyPuzzleProvider`(GetTodaySeed 결정성·보드크기 5~7 범위·HidePatternType enum)·`EndlessModeProvider`(레벨별 보드크기) 등 **Domain 순수 로직 단위테스트**고, 검증 대상 코드(Provider.cs)는 살아 있다 — 즉 "코드는 있는데 안전망만 증발"이 핵심이다. 이는 .gitignore 위생 이슈와 무관(테스트를 ignore에 넣은 게 아니라 단순 작업트리 삭제). 더해 `_ProjectTemplate/Tools/`의 정적 QA 3종이 NumLink로 한 번도 이식된 적 없어 정적 검증도 0% — **단위테스트(삭제)와 정적QA(부재)가 동시에 0인 이중 무방비**. **🔍 미해결 버그**: MeowBeat known_bugs.json 6건(에러4·경고2·auto_fix 가능은 YAML_INDENT 1건뿐)+NoteSpawner.cs:126 deltaTime 누적 P0 1건 = 총 7건. NoteSpawner는 프레임 드랍/탭 전환 시 누적 오차로 노트 타이밍이 드리프트해 리듬게임 판정을 직접 흔드는데 4일째 파일 미수정으로 박제. **오늘 결정 제안(실행)**: NumLink AutoGenTests 4파일을 `git checkout -- Assets/Tests/Editor/`로 복원 검토(삭제가 의도였는지 사용자 확인 선행)하고, 같은 세션에 `_ProjectTemplate/Tools/` 검증 3종을 이식해 안전망을 최소 1장이라도 복구. Sources: git status --short 실측·AutoGenTests 내용·known_bugs.json.',
+      },
+      {
+        title:
+          '🛡 DevOps — ✅ [실행완료] dependabot #104(npm-major 5건) 회의 중 자율 머지·6/17~6/19 4PR 전수 종결(HEAD 37b261c)·CI 최근 5건 success(취소 2건은 중복 트리거 정상)·레포 flat config+Node22라 ESLint10 최대 breaking 2종 무력·신규: Runner Scale Set Go클라이언트·self-hosted runner 2.329.0+ 강제·Codemagic/Fastlane Unity CI',
+        description:
+          '**🛡 ✅ #104 종결 실행**: 6/17부터 이월돼 온 마지막 dependabot #104(npm-major 5건: eslint 10·eslint-plugin-react-hooks 7·@types/cheerio 0.22→1.0 등)를 검토했다 — 레포가 이미 `eslint.config.js`(flat config)·Node22라 ESLint 10의 최대 breaking 2종(eslintrc 제거·Node18 중단)이 무력하고, deploy-pages 워크플로는 vite build만 돌려 eslint가 머지 게이트가 아니며(statusCheckRollup 비어있음), 변경도 package.json/lock 2파일뿐·CLEAN이라 머지가 배포를 깨뜨릴 수 없음을 확인하고 회의 중 자율 머지(HEAD 37b261c). 잔여 위험(react-hooks 7 신규 규칙·@types/cheerio 타입 메이저)은 lint 경고 수준이라 추후 빌드 시 자연 노출. **이로써 6/13 16일 만의 첫 머지로 시작된 dependabot 정리가 #102·#99·#103(6/18)·#104(6/19)로 4PR 전수 종결됐다.** **🛡 ✅ CI**: gh run 최근 5건 success(deploy-pages 정상·취소 2건은 중복 트리거). **🛡 신규(인프라)**: GitHub Actions가 Runner Scale Set 클라이언트(Go 기반·K8s 불필요)를 공개 프리뷰, ARC 0.14.0 GA, **self-hosted runner 2.329.0+ 30일 내 업데이트 강제**, windows-2025/macos-26/Ubuntu26.04 신규 이미지. Unity 모바일 CI는 Unity Cloud Build 대안으로 Codemagic(Unity SDK 프리인스톨·LTS 기본)/Fastlane(오픈소스 자가관리)이 2026 선택지. (6/18 dependabot grouping/Actions 39% 인하와 겹치지 않는 "#104 종결·Runner Scale Set·self-hosted 2.329 강제·Codemagic/Fastlane" 신규 토픽). **오늘 결정 제안(실행완료)**: #104 자율 머지로 dependabot 큐 비움. Sources: gh run/pr 실측·github.blog/changelog 2026·codemagic.io.',
+      },
+      {
+        title:
+          '💻 Developer — Unity 6.2부터 Adaptive Performance 빌트인 모듈화(패키지 설치 0·ADPF로 Android12+ 발열/배터리 throttling 자동대응)→리듬게임 장시간 프레임 안정화 직결·IL2CPP High stripping 코드 30~50% 절감(link.xml 필수)·UI Toolkit 런타임 네이티브 SVG(6.3)·MeowBeat 미커밋 .cs 4종은 다국어+볼륨 세이브 작업',
+        description:
+          '**💻 신규(발열·프레임 안정성)**: Unity 6.2부터 Adaptive Performance가 **빌트인 에디터 모듈로 승격**(별도 패키지 설치 불필요)돼, ADPF API로 Android 12+ 기기의 발열·배터리 throttling을 자동 감지·대응한다. 리듬게임(MeowBeat)은 장시간 세션에서 발열 throttling이 프레임 드랍을 일으키면 노트 판정 정확도가 직접 망가지므로 직결되는 토픽이다. **💻 신규(빌드 사이즈)**: IL2CPP High stripping은 코드를 30~50% 줄이지만 link.xml/[Preserve]가 필수(Addressables 리플렉션 크래시 위험)며, Android는 AAB+ARM 단일 빌드로 다운로드 용량을 더 줄인다. UI Toolkit 런타임은 6.3에서 네이티브 SVG를 지원해 해상도 무관 벡터 UI가 2D 캐주얼 아이콘에 적합하다. **💻 코드 실측**: MeowBeat 미커밋 .cs 4종은 모두 다국어(한/영 LocalizationManager·OnLanguageChanged)+볼륨 PlayerPrefs 세이브 UI 작업 — GameManager +59(언어 전환 시 곡 버튼/텍스트·앵커 갱신)·OptionManager +42(볼륨 슬라이더·SongVolume)·SongManager +16·SongData +1. 타이밍 코어 미접촉이라 NoteSpawner P0와 독립. (6/18 PrimeTween/GPU Resident Drawer와 겹치지 않는 "Adaptive Performance 빌트인(6.2)·IL2CPP High stripping·UI Toolkit SVG(6.3)" 신규 토픽). **오늘 결정 제안(P2)**: MeowBeat에 Adaptive Performance 빌트인 모듈 도입 검토 — 6.2+ thermal API로 장시간 세션 프레임을 보호(패키지 추가 비용 0). Sources: Unity Manual Adaptive Performance·IL2CPP 빌드 가이드·diff --stat 실측.',
+      },
+      {
+        title:
+          '🎮 Game Designer — 캐주얼 D30 리텐션 4% 미만 붕괴(FTUE 5~15분 첫 가치 전달이 최대 레버)·퍼즐 신규 IAP Sort($279M)/Screw($177M) 2년새 2배·블록퍼즐 YoY 10배($213M)·레벨 실패 직후 Continue 보상형광고 opt-in 15~30%로 churn 감소+광고매출 동시 견인',
+        description:
+          '**🎮 시장 데이터(리텐션·서브장르)**: 캐주얼 게임 D30 리텐션이 **4% 미만으로 붕괴**하는 시대라(GameAnalytics 2026), FTUE 5~15분 내 첫 가치 전달이 D30을 끌어올리는 최대 레버다. 퍼즐 신규 IAP는 서브장르가 격전지 — Sort 퍼즐 $279M·Screw 퍼즐 $177M로 2년새 2배, 블록 퍼즐은 YoY 10배 성장한 $213M로, **단순 코어+깊은 진행** 조합이 돈을 번다. **🎮 수익화 심리(Continue)**: 레벨 실패/막힘 직후 "광고 1회 시청→힌트/이어하기(Continue)" 컨텍스트 프롬프트의 opt-in이 15~30%고, 처음부터 다시 푸는 손실회피 심리를 활용해 churn 감소와 광고 매출을 동시에 견인한다(Unity/Pushwoosh). (6/18 시즌 길이/알림 타이밍/리듬게임 시장규모와 겹치지 않는 "D30 4% 붕괴·퍼즐 서브장르 성장·FTUE 첫가치·Continue 보상형광고" 신규 토픽). **오늘 결정 제안(P2)**: NumLink 레벨 실패/막힘 순간에 "광고 1회 시청→힌트 1개 or 진행 유지하고 이어하기" 단일 프롬프트를 기존 실패 다이얼로그에 버튼 1개 추가 수준으로 코어 루프에 삽입(신규 UI 0)·병행해 FTUE 1~12레벨 레벨별 이탈률 로깅 1줄로 튜토리얼 누수 지점 데이터 확보. Sources: GameAnalytics D30·Sensor Tower 퍼즐 서브장르·Unity/Pushwoosh 보상형광고.',
+      },
+      {
+        title:
+          '📦 Content Writer — iOS In-App Events FOMO/독점성 설계 시 전환율 30~50%↑·재참여 +18%(미출시도 5슬롯 선예약)·앱 아이콘 A/B Google Play 8~12% 리프트(iOS 3~6%·무명IP는 단일글자형+채도배경 승률 최고)·마이크로 인플루언서 ROI 6.9배(참여율 2~5% 크리에이터 우선)',
+        description:
+          '**📦 신규 1순위(In-App Events)**: iOS In-App Events를 FOMO/독점성으로 설계하면 전환율 30~50% 상승·재참여 +18%고, 미출시 앱도 5개 슬롯을 선예약할 수 있다. **📦 신규 2순위(앱 아이콘 A/B)**: 앱 아이콘 A/B 테스트는 Google Play에서 8~12% 설치 리프트(iOS는 3~6%로 절반)며, 약브랜드/무명 IP는 단일 글자형+채도 높은 단색 배경 변형의 승률이 가장 높다. **📦 신규 3순위(인플루언서)**: 마이크로 인플루언서 ROI가 6.9배(690%)로, CPI보다 참여율 2~5% 크리에이터를 우선하고 14일간 30~50명 동시 활성화가 2026 표준이다. (6/18 ASO 키워드 30자/스크린샷 첫3프레임/디스코드 유지율과 겹치지 않는 "In-App Events·앱 아이콘 A/B·인플루언서 ROI·Google Play Gemini 시맨틱" 신규 토픽). **오늘 결정 제안(P2)**: NumLink/MeowBeat 출시 직후 앱 아이콘 A/B를 1순위 ASO 작업으로 — 두 게임 모두 무명 신규 IP라 "단일 글자형(N/고양이 실루엣)+채도 단색 배경" 변형을 기본안과 대조, Google Play 우선(8~12%·iOS 2배 효율)·사전등록 페이지에 In-App Events 슬롯 미리 설계(FOMO 30~50%). Sources: Apple In-App Events·StoreMaven/SplitMetrics 아이콘 A/B·인플루언서 ROI 벤치마크.',
+      },
+      {
+        title:
+          '🎨 Art Director — 마이크로인터랙션이 햅틱 레이어링으로 진화(iOS 3강도 light/medium/heavy×3시맨틱 success/warning/error 매핑)·iOS 26 Liquid Glass 아이콘 네이티브화+squircle 통일(상위100앱 40% 그라데이션 배경)·OKLCH 색상계가 색맹 대응 신표준(동일 L=모든 색조 일관 대비)·캐주얼 마스코트 라이트3D+표정 5~8종',
+        description:
+          '**🎨 신규 1순위(햅틱 레이어링)**: 2026 마이크로인터랙션은 단순 제스처에서 "복합 제스처+촉각 피드백"으로 진화 — iOS 3강도(light/medium/heavy)×3시맨틱(success/warning/error)을 각 액션에 매핑하는 게 표준이다(Muzli/DEV). **🎨 신규 2순위(iOS 26 아이콘)**: iOS 26 Liquid Glass 아이콘이 네이티브화돼 단일 소스에서 깊이/반사/명암 변형을 시스템이 실시간 렌더하고 squircle로 통일됐으며 상위 100앱의 약 40%가 그라데이션 배경을 쓴다(MacRumors). **🎨 신규 3순위(OKLCH·색맹)**: OKLCH 색상계는 L채널이 인지 명도와 직결돼 동일 L 차이가 모든 색조에서 일관된 대비를 보장 — 11스텝 스케일+APCA+색맹 시뮬레이션이 색맹 대응 신표준이다(66colorful/LogRocket). 캐주얼 마스코트는 "라이트 3D+2D 따뜻함"(둥근 지오메트리·소프트 라이팅)에 아이콘 스케일 식별용 2~3개 시그니처 특징+표정 5~8종 세트가 핵심 스펙. (6/18 글래스모피즘 부분적용/Barrier Layer/Material Expressive와 겹치지 않는 "햅틱 레이어링·iOS26 Liquid Glass squircle·OKLCH 색맹대응·마스코트 표정세트" 신규 토픽). **오늘 결정 제안(P2)**: NumLink Layer Lab 리스킨에 3종 햅틱(연결 성공=medium·라인 완성=success·막다른 길=warning)을 버튼 컴포넌트에 매핑+팔레트를 OKLCH 11스텝으로 재정의해 색맹 모드를 별도 에셋 없이 명도 대비로 자동 보장. MeowBeat 고양이는 라이트3D+표정 5~8종으로 정비해 아이콘부터 일관 마스코트화. Sources: Muzli/DEV 햅틱·MacRumors iOS26·66colorful/LogRocket OKLCH·AAAGameArt 마스코트.',
+      },
+    ],
+    meetingTitle:
+      '🛡️ 6/19 종합 회의 — "안전망이 두 번 무너진 걸 오늘에야 봤다": NumLink 미커밋을 어제는 백업 리스크·위생 문제로 봤는데, QA가 같은 작업트리를 테스트 눈으로 다시 열자 단위테스트 4파일이 worktree 삭제(코드는 생존)·검증툴은 애초에 미이식이라 회귀 감지 수단이 동시에 0인 이중 무방비를 발견하고, DevOps가 6/17 이월 마지막 #104를 자율 머지해 dependabot 4PR을 전수 종결',
+    meetingSummary:
+      '제68회 종합 회의. **오늘의 회의는 "같은 대상을 더 깊이 본 날"이다.** 6/13부터 우리는 NumLink 미커밋을 추적해왔다 — 처음엔 "커밋을 안 한다"(백업 리스크)로, 6/18엔 QA가 "위생 문제"(.gitignore 미정비로 실작업분 매몰)로 프레임을 한 번 갈았다. 오늘 QA가 그 작업트리를 또 한 번, 이번엔 테스트 관점으로 열자 더 깊은 구멍이 드러났다: `Assets/Tests/Editor/AutoGenTests.*` 4파일이 ` D`(worktree 삭제) 상태로, DailyPuzzleProvider·EndlessModeProvider의 Domain 단위테스트가 디스크에서 사라지고 HEAD에만 남아 있었다. 검증 대상 코드는 멀쩡한데 그 코드를 지키는 테스트만 증발한 것이다. 게다가 _ProjectTemplate의 정적 QA 3종은 NumLink로 한 번도 이식된 적이 없어 정적 검증도 0%. 단위테스트(삭제)와 정적QA(부재)가 동시에 0 — NumLink는 회귀를 잡을 그물이 한 장도 없는 이중 무방비다. Orchestrator가 확인해주듯 6/18 결정한 .gitignore 정비조차 `.gstack/` 한 줄만 추가된 미완이라 노이즈 14건도 그대로다. 그래서 오늘 P0의 순서가 바뀐다 — "커밋해라"도 ".gitignore부터"도 아니라, 먼저 삭제된 테스트 4파일을 복원할지 판단하고(`git checkout -- Assets/Tests/Editor/`·단 삭제가 사용자 의도였는지 확인 선행) 검증툴 3종을 이식해 안전망을 최소 한 장이라도 다시 깔아야 한다. 게임 코드라 사용자 세션 1순위로 넘기되, 이건 더는 "백업"이 아니라 "안전망 복구"다. 한편 결정의 종결도 있었다. DevOps가 6/17부터 이월돼 온 마지막 dependabot #104(npm-major 5건)를 검토해 — 레포가 이미 flat config·Node22라 ESLint 10 최대 breaking이 무력하고 lint가 머지 게이트가 아님을 확인하고 — 회의 중 자율 머지했다(HEAD 37b261c). 6/13 16일 만의 첫 머지로 열린 dependabot 정리가 #102·#99·#103(6/18)·#104(6/19)로 6일 만에 4PR 전수 종결됐다. 나머지는 새 지평을 더했다: Developer는 Unity 6.2 Adaptive Performance 빌트인 모듈(패키지 0)로 MeowBeat 발열 프레임 보호를, Game Designer는 D30 4% 붕괴 시대에 레벨 실패 직후 Continue 보상형광고(opt-in 15~30%)를, Content는 앱 아이콘 A/B(Google Play 8~12%·iOS 2배)를, Art는 햅틱 레이어링과 OKLCH 색맹 대응을 제안했다. 메타: 6/18이 "어제의 결정을 정정한 날"이었다면, 6/19는 "같은 문제를 더 깊이 들여다보니 안전망 자체가 없었음을 발견한 날" — 회의가 같은 대상을 매일 한 겹씩 더 벗겨내고 있다.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '실측부터 보고합니다. NumLink는 마지막 실커밋이 6월 2일, 오늘이 19일이니 17일째 미커밋이에요. 어제 16일에서 또 하루 늘었습니다. 그리고 어제 우리가 결정한 .gitignore 정비, 이거 안 됐어요. .gitignore가 M 상태이긴 한데 열어보니 .gstack/ 한 줄만 추가됐고, 정작 우리가 넣기로 한 .omc/·state/·Screenshots/는 그대로라 노이즈 14건이 status에 남아 있습니다. MeowBeat NoteSpawner dspTime 전환도 미착수, 파일 그대로고요. DOTween→PrimeTween PoC도 양쪽 레포에 흔적이 없어요. 다만 dependabot #104는 DevOps가 오늘 처리할 수 있는 영역입니다. 그런데 NumLink 얘기는 QA가 오늘 완전히 다른 걸 발견했다고 하니 넘길게요.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '네, 어제 제가 NumLink 미커밋을 ".gitignore 위생 문제"라고 했잖아요. 오늘 그 작업트리를 테스트 눈으로 다시 열었는데, 더 깊은 게 있었어요. git status에 AutoGenTests.cs가 앞칸 공백, 뒷칸 D로 떠 있어요. 이건 worktree에서 파일이 삭제됐다는 뜻이에요. .cs, .meta, .asmdef 4개가 디스크에서 사라지고 HEAD에만 남아 있습니다. 삭제된 게 DailyPuzzleProvider, EndlessModeProvider 같은 Domain 순수 로직 단위테스트예요. 그런데 검증 대상인 Provider.cs 코드는 멀쩡히 살아 있어요. 즉 코드는 있는데 그걸 지키는 테스트만 사라진 겁니다. 여기에 _ProjectTemplate의 검증툴 3종은 NumLink로 이식된 적이 한 번도 없어서 정적 QA도 0%예요. 단위테스트가 삭제됐고 정적 검증도 없으니, 지금 NumLink는 회귀를 잡을 그물이 한 장도 없는 이중 무방비 상태입니다. 이건 더 이상 백업 리스크가 아니라 안전망 부재예요. 그래서 P0 순서를 바꿔야 합니다 — 커밋이나 .gitignore보다, 삭제된 테스트 4파일을 git checkout으로 복원할지부터 판단하고 검증툴을 이식해야 해요. 단, 그 삭제가 사용자가 의도한 건지 먼저 확인하고요.',
+      },
+      {
+        speaker: 'DevOps',
+        note: '저는 6월 17일부터 끌고 온 마지막 dependabot, #104를 오늘 닫겠습니다. npm 메이저 5건짜리라 어제 보류했던 건데, 검토해보니 머지해도 안전해요. eslint 10이 최대 breaking인데 우리 레포는 이미 flat config에 Node 22라 그 breaking 두 개가 다 무력화됩니다. 그리고 deploy-pages 워크플로는 vite build만 돌리고 eslint를 머지 게이트로 안 써요. statusCheckRollup이 비어 있어서 lint가 배포를 막지 못합니다. 변경도 package.json이랑 lock 2개뿐이고 CLEAN이고요. 그래서 회의 중에 머지했습니다. HEAD가 37b261c로 올라갔어요. 이걸로 6월 13일에 16일 만의 첫 머지로 시작했던 dependabot 정리가 #102·#99·#103에 이어 #104까지, 4개 PR 전부 6일 만에 종결됐습니다. 큐가 완전히 비었어요. 참고로 인프라 쪽은 GitHub이 Runner Scale Set Go 클라이언트를 프리뷰 냈고 self-hosted runner는 2.329.0 이상으로 30일 내 강제 업데이트 걸렸는데, 우리는 호스티드라 영향 없습니다.',
+      },
+      {
+        speaker: 'Orchestrator',
+        note: '좋습니다. #104 머지로 dependabot은 완전히 정리됐고, 남은 P0는 전부 게임 코드라 사용자 세션이에요. 정리하면 — NumLink는 ① 삭제된 테스트 4파일 복원 판단(QA), ② 검증툴 3종 이식, ③ .gitignore 4줄 정비 후 선별 커밋, 이 순서. MeowBeat는 NoteSpawner dspTime 전환이 4일째 박제라 그대로 P0. 중요한 건 오늘 QA가 보여준 패턴이에요 — 6월 13일엔 "커밋 안 함", 18일엔 "위생 문제", 19일엔 "안전망 자체가 없음". 같은 NumLink 미커밋을 매일 한 겹씩 더 깊이 벗겨내고 있어요. 표면만 보고 "커밋해라"로 끝냈으면 테스트가 사라진 줄도 몰랐을 겁니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: '저는 두 가지인데요. 먼저 MeowBeat 미커밋 .cs 4개를 실측했어요. GameManager, OptionManager, SongManager, SongData인데 전부 다국어 한영 전환이랑 볼륨 PlayerPrefs 세이브 UI 작업이에요. 타이밍 코어는 안 건드렸으니 NoteSpawner P0랑 독립적으로 백업 커밋해도 됩니다. 그리고 신규 기술 하나 — Unity 6.2부터 Adaptive Performance가 빌트인 모듈이 됐어요. 패키지 설치가 아예 필요 없어졌습니다. ADPF API로 안드로이드 12 이상에서 발열이랑 배터리 throttling을 자동으로 감지하고 대응해요. 이게 MeowBeat에 직결되는 게, 리듬게임은 장시간 플레이하면 폰이 뜨거워지면서 프레임이 떨어지는데 그게 바로 노트 판정 정확도를 망치거든요. 빌트인이라 추가 비용 0으로 발열 프레임 보호가 가능합니다. dspTime 전환이랑 같이 가면 타이밍 안정성이 두 겹으로 좋아져요.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '저는 수익화 심리를 하나 가져왔어요. 지금 캐주얼 게임 D30 리텐션이 4% 미만으로 붕괴하는 시대예요. 그만큼 이탈이 심한데, 효과적인 한 수가 레벨 실패나 막힘 직후에 띄우는 Continue 보상형 광고입니다. "광고 1회 보고 힌트 받기" 또는 "광고 보고 진행 유지하고 이어하기" 같은 거요. 처음부터 다시 풀어야 하는 손실 회피 심리를 건드려서, opt-in이 15에서 30%까지 나오고 이탈도 줄고 광고 매출도 같이 올라갑니다. NumLink에 적용하면 기존 실패 다이얼로그에 버튼 하나 추가하는 수준이라 신규 UI가 거의 안 들어요. 그리고 시장 흐름이, 퍼즐 신규 IAP는 Sort 퍼즐이 2억8천만 달러, 블록 퍼즐이 1년 새 10배 성장이라 단순 코어에 깊은 진행을 얹는 조합이 돈을 법니다. 병행해서 FTUE 1~12레벨 이탈률을 한 줄 로깅으로 찍어두면 튜토리얼 누수 지점이 데이터로 보일 거예요.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '저는 출시 준비 관점인데, 오늘은 앱 아이콘 A/B를 1순위로 올리고 싶어요. 앱 아이콘 A/B 테스트가 구글 플레이에서 8에서 12% 설치 리프트를 내요. iOS는 3~6%니까 플레이가 두 배 효율입니다. 특히 우리처럼 무명 신규 IP는 단일 글자형에 채도 높은 단색 배경 조합의 승률이 제일 높아요. NumLink는 N 글자, MeowBeat는 고양이 실루엣으로 변형을 만들어서 기본안이랑 대조하면 됩니다. 그리고 iOS In-App Events는 미출시 앱도 슬롯 5개를 미리 예약할 수 있는데, FOMO나 독점성으로 설계하면 전환율이 30~50% 올라가요. 사전등록 페이지 만들 때 이 슬롯을 미리 설계해두는 걸 제안합니다. 인플루언서는 마이크로 단가가 ROI 6.9배라 나중에 팔로워 수보다 참여율 2~5% 크리에이터를 우선하는 게 맞고요.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '저는 디테일 레이어 세 개예요. 첫째, 2026 마이크로인터랙션이 햅틱 레이어링으로 진화했어요. iOS가 light/medium/heavy 3강도에 success/warning/error 3시맨틱을 곱해서 각 액션에 매핑하는 게 표준입니다. NumLink Layer Lab 리스킨에 바로 넣을 수 있어요 — 숫자 연결 성공은 medium, 라인 완성은 success, 막다른 길은 warning 햅틱. 버튼 컴포넌트에 코드로 매핑만 하면 되니까 추가 에셋이 없습니다. 둘째, OKLCH 색상 시스템인데, L채널이 인지 명도랑 직결돼서 같은 L값이면 모든 색조에서 대비가 일관돼요. 팔레트를 OKLCH 11스텝으로 재정의하면 색맹 모드를 별도 에셋 없이 명도 대비만으로 자동 보장합니다. 어제 얘기한 Barrier Layer랑 같이 가면 접근성이 탄탄해져요. 셋째, iOS 26부터 Liquid Glass 아이콘이 네이티브화되고 squircle로 통일됐는데, 상위 100앱 40%가 그라데이션 배경이에요. MeowBeat 고양이는 라이트 3D에 표정 5~8종 세트로 정비해서 아이콘부터 게임플레이까지 일관된 마스코트로 쓰는 걸 제안합니다.',
+      },
+    ],
+    decisions: [
+      {
+        title:
+          '✅ [실행완료·자체 레포 자율 실행] dependabot #104(npm-major 5건) 회의 중 자율 머지 — 6/17~6/19 4PR 전수 종결',
+        description:
+          'DevOps가 #104(eslint 10·eslint-plugin-react-hooks 7·@types/cheerio 1.0 등 npm-major 5건)를 검토 — 레포가 이미 flat config(eslint.config.js)·Node22라 ESLint 10 최대 breaking 2종(eslintrc 제거·Node18 중단)이 무력하고, deploy-pages는 vite build만 돌려 eslint가 머지 게이트가 아니며(statusCheckRollup 비어있음), 변경이 package.json/lock 2파일·CLEAN이라 배포를 깨뜨릴 수 없음을 확인하고 회의 중 자율 머지(HEAD 37b261c). 6/13 16일 만의 첫 머지로 열린 dependabot 정리가 #102·#99·#103(6/18)·#104(6/19)로 6일 만에 4PR 전수 종결되어 큐가 비었다. 잔여 위험(react-hooks 7 신규 규칙·@types/cheerio 타입 메이저)은 lint 경고 수준이라 추후 빌드 시 자연 노출.',
+      },
+      {
+        title:
+          '🚨 P0 [게임 코드·사용자 세션·순서 변경] NumLink 안전망 복구 — 삭제된 테스트 4파일 복원 판단 + 검증툴 3종 이식을 .gitignore 정비/커밋보다 먼저',
+        description:
+          'QA 신규 발견: NumLink는 Domain 단위테스트 4파일(AutoGenTests.cs/.meta/.asmdef/.asmdef.meta)이 worktree에서 삭제(` D` 상태·코드는 생존·테스트만 증발)되고 _ProjectTemplate 검증툴 3종도 미이식이라 회귀 감지 수단이 동시에 0인 이중 무방비. 따라서 ① 삭제가 사용자 의도였는지 확인 후 `git checkout -- Assets/Tests/Editor/`로 복원 → ② _ProjectTemplate/Tools/ 검증 3종(unity_validate·qa_static·known_bugs) 이식(씬 경로 상수만 갱신) → ③ .gitignore에 .omc/·.claude/·state/·Screenshots/ 4줄 추가(노이즈 14건 제거) → ④ 드러난 Layer Lab 리스킨 실작업분 선별 커밋. 17일째 미커밋이지만 핵심은 백업이 아니라 안전망 복구.',
+      },
+      {
+        title:
+          '🔴 P0 [이월·4일째·게임 코드·사용자 세션] MeowBeat NoteSpawner.cs:126 dspTime 전환 + 미커밋 .cs 4종 백업 커밋',
+        description:
+          'NoteSpawner.cs:126 `elapsedTime += Time.deltaTime` 누적이 6/16·17·18·19 4일째 파일 미수정으로 박제 — 프레임 드랍/탭 전환 시 누적 오차로 노트 타이밍이 드리프트해 리듬게임 판정을 직접 흔드는 출시 차단급 P0. dspTime+PlayScheduled+판정 윈도우로 전환 필요. 병행해 미커밋 .cs 4종(GameManager/OptionManager/SongManager/SongData·전부 다국어+볼륨 세이브 UI라 타이밍 코어 미접촉·P0와 독립)을 WIP 백업 커밋(약 2개월 장기 미커밋 컨텍스트 유실 위험).',
+      },
+      {
+        title:
+          '🟡 P1 NumLink DOTween→PrimeTween PoC + MeowBeat Adaptive Performance 빌트인 모듈 검토',
+        description:
+          '6/18 이월 PrimeTween PoC(NumLink가 DOTween을 게임플레이 9파일 실사용·부하 큰 ComboPopupUI/EffectManager 반복 트윈부터 교체·실기 GC Alloc before/after 측정) 지속. 신규로 Developer 제안 — MeowBeat에 Unity 6.2 Adaptive Performance 빌트인 모듈(패키지 추가 0) 도입 검토: ADPF thermal API로 Android12+ 발열 throttling을 자동 대응해 장시간 세션 프레임을 보호, dspTime 전환과 함께 가면 타이밍 안정성이 두 겹으로 강화.',
+      },
+      {
+        title:
+          '🟢 P2 [신규 적재 — 모두 P0 후] 디자인·수익화·마케팅 레이어',
+        description:
+          'Art Director — NumLink Layer Lab 리스킨에 3종 햅틱(연결 성공=medium·라인 완성=success·막다른 길=warning) 버튼 매핑+팔레트 OKLCH 11스텝 재정의로 색맹 모드 명도 대비 자동 보장(어제 Barrier Layer와 병행)·MeowBeat 고양이 라이트3D+표정 5~8종 마스코트화. Game Designer — NumLink 레벨 실패/막힘 직후 Continue 보상형광고 단일 프롬프트를 기존 실패 다이얼로그에 버튼 1개 추가(opt-in 15~30%·신규 UI 0)+FTUE 1~12레벨 이탈률 1줄 로깅. Content Writer — NumLink/MeowBeat 출시 직후 앱 아이콘 A/B(Google Play 8~12%·무명IP는 단일글자형+채도배경)+사전등록 페이지에 In-App Events 슬롯 선설계(FOMO 30~50%).',
+      },
+    ],
+  },
+  {
     id: '2026-06-18T04:00:00-daily-standup',
     date: '2026-06-18',
     researchTitle:
