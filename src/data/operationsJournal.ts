@@ -43,6 +43,126 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-06-20T04:00:00-daily-standup',
+    date: '2026-06-20',
+    researchTitle:
+      '🐛 버그 추적기에 정작 가장 중요한 버그가 없었다 — 그리고 회의가 그 자리에서 메웠다: QA가 "6일째 미해결 P0(NoteSpawner dspTime)가 알려진 버그 단일 진실 소스(known_bugs.json)에 등록조차 안 돼 정적QA가 가장 치명적인 결함을 구조적으로 못 잡는다"는 메타-갭을 발견하자, 메인이 회의 중 TIMING_DSPTIME_UNUSED를 등록·runtime_timing 카테고리 신설·선별 커밋(a7588c7)으로 즉시 교정 / 동시에 Developer가 같은 버그의 구체 픽스(dspTime+PlayScheduled)를 제시해 "갭 발견·등록·해법"이 한 회의에서 만났다',
+    researchSummary:
+      '제69회 리서치. 7명 전원 보고. **오늘의 구조는 "추적 시스템 자체의 구멍"이다.** 6/13부터 우리는 두 P0를 추적해왔다 — NumLink 미커밋(백업→위생→안전망으로 매일 한 겹씩 깊어짐)과 MeowBeat NoteSpawner의 dspTime 미전환(deltaTime 누적). 오늘 QA가 MeowBeat의 known_bugs.json(우리가 "알려진 버그 패턴 단일 진실 소스"라 부르는 파일)을 직접 열자, 등록된 6건이 전부 씬/YAML/에셋·리듬데이터에 한정돼 **런타임 타이밍 카테고리 자체가 없고, 그래서 6일째 미해결인 가장 치명적인 P0(NoteSpawner.cs:126 deltaTime 누적)가 추적기에서 통째로 빠져 있었다**. 정적QA가 가장 중요한 결함을 영원히 못 잡는 구조적 메타-갭이다. 이건 단순 누락이 아니라 "우리의 검증 시스템이 정작 우리가 매일 걱정하는 버그를 모른다"는 뜻이다. 그래서 오늘 메인은 결정만 하지 않고 회의 중 직접 메웠다 — TIMING_DSPTIME_UNUSED를 등록하고 runtime_timing 카테고리를 신설해 escalation에 Developer의 픽스 경로(dspTime+PlayScheduled)까지 박아 넣고, known_bugs.json만 선별 커밋했다(HEAD a7588c7·게임 레포 두 번째 데이터/도구 자율 실행). 마침 Developer가 같은 회의에서 그 버그의 구체 해법을 들고 왔다 — `elapsedTime += Time.deltaTime`를 `songPosition = (AudioSettings.dspTime - dspStart)`로 바꾸고 BGM을 `PlayScheduled`로 고정, DSP↔프레임 매핑은 선형회귀로 평활화. "갭 발견(QA)·추적기 등록(메인)·해법 설계(Developer)"가 한 자리에서 닫혔다. 한편 NumLink는 더 악화됐다 — Orchestrator 실측 18일째 미커밋(어제 17일→하루 더), .gitignore는 여전히 `.gstack/` 한 줄뿐이라 핵심 3종(.omc/·state/·Screenshots/) 미정비, AutoGenTests 4파일은 6/19 발견 후 미복구 이월, 거기에 Layer Lab untracked 7,663파일과 UGUI/UIToolkit .cs 12개(ComboPopup/DailyChallengeHub/GameOver/TimerUI 등)가 테스트·정적QA 커버리지 밖에서 쌓이는 중. 나머지는 새 지평을 더했다: Game Designer는 퍼즐 최초결제가 전 장르 최단(안드 1.6일·iOS 1.7일)이고 라이브옵스-스토어 동기화가 D7 +18%·설치전환 +23%를 내며 LTO가 마일스톤 트리거(컴백 키트/챔피언 부스터)로 진화함을, Content는 커스텀 스토어 페이지(CPP/CSL)가 전환 +40%·일본어+한국어 로컬라이제이션이 다운로드 2~3배로 남은 최고 ROI임을, DevOps는 agent-office CI 5건 success·열린 PR 0건으로 안정이고 deploy-pages가 이미 artifact v5 SHA핀이라 v3 폐기와 무관함을, Art는 2026 모션이 듀레이션 트윈에서 스프링 물리(stiffness/damping/mass)로 격상되고 가변폰트+APCA가 동적 텍스트 접근성 표준이 됨을 보고했다.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — 🚨 NumLink 18일째 미커밋(6/2 이후·17→18일 또 악화)·.gitignore는 .gstack/ 한 줄뿐(핵심 .omc/·state/·Screenshots/ 미정비 지속)·AutoGenTests 4파일 worktree 삭제 6/19 발견 후 미복구 이월·Layer Lab untracked 7,663파일+UGUI .cs 12개 워킹트리 오염 가속·MeowBeat dspTime 5일째 박제(코어 미접촉)',
+        description:
+          '**🎯 이전 액션 실측(6/20)**: 6/19 결정 중 ① NumLink 삭제 테스트 4파일 복원 판단+검증툴 이식(P0) = **미실행 이월**(AutoGenTests 4파일 여전히 ` D`·검증툴 0개). ② MeowBeat dspTime 전환(P0) = **미착수 5일째**(NoteSpawner.cs:126 그대로·diff에 NoteSpawner 없음). ③ .gitignore 정비 = **여전히 미완**(추가분 `.gstack/` 1줄뿐·`.omc/`·`state/`·`Screenshots/` untracked 노출 지속). **측정값**: NumLink 최신 5fcac3a(6/2 14:05)·feature/ugui-layerlab·미커밋 36파일·**18일째 미커밋**(6/19 17일→하루 악화). 신규 untracked 대량 유입 — `Assets/Layer Lab/`(약 7,663파일)·`Assets/02. Scripts/UI/UGUI.meta`·`UIToolkit.meta`·`Assets/AutoQATests.meta` 등 UGUI 레이어랩 작업물. MeowBeat 최신 a7588c7(오늘 known_bugs 등록 커밋)·게임 코드 실커밋은 4/12가 마지막·미커밋 37파일. agent-office HEAD 5a7410f·dependabot 큐 비어있음. **오늘 결정 제안**: NumLink는 "정비"가 아니라 **단일 스냅샷 커밋으로 봉인** — .gitignore에 .omc/·state/·Screenshots/·_Recovery/ 4종 일괄 추가 후 Layer Lab 작업분을 1커밋으로 묶어 18일 공백을 끊되, AutoGenTests 삭제 확정 여부는 사용자 확인 선행. (git log/status·diff --stat 실측)',
+      },
+      {
+        title:
+          '🔍 QA Tester — 🔑 핵심 발견(메타-갭): 6일째 미해결 P0(NoteSpawner dspTime)가 known_bugs.json에 미등록 — 등록 6건 전부 씬/YAML/에셋·리듬데이터에 한정돼 runtime_timing 카테고리 자체가 없어 정적QA가 가장 치명적 결함을 구조적으로 못 잡음·test_fixtures 0개(회귀 픽스처 부재)·NumLink AutoGenTests 15케이스 미복구 이월·미해결 버그 총 7건',
+        description:
+          '**🔍 핵심 발견(신규·추적 시스템의 구멍)**: MeowBeat `Tools/known_bugs.json`을 직접 열자 등록 6건(RT_SIZE_ZERO·YAML_DUPLICATE_FILE_ID·YAML_HEADER_REF_MISMATCH·YAML_INDENT_M_FATHER·MANIFEST_MISSING_AUDIO·NOTE_OUT_OF_LANE)이 전부 씬/YAML/에셋·리듬데이터에 한정 — severity error 4·warning 2, auto_fix 가능은 YAML_INDENT 1건뿐. 결정적 공백은 **런타임 타이밍 카테고리 자체가 없다**는 것이다. 그래서 6일째 미해결인 가장 치명적 P0(NoteSpawner.cs:126 `elapsedTime += Time.deltaTime`)가 "알려진 버그 단일 진실 소스"에서 통째로 빠져 정적QA 탐지 대상에서 영구 누락 중이었다. **🔍 NumLink 무방비 정량화**: 삭제된 AutoGenTests.cs는 `[Test]` 15케이스 — `DailyPuzzleProvider.GetTodaySeed/GetTodayBoardSize/GetTodayPattern`(데일리 시드·보드크기·패턴 결정성)·`EndlessModeProvider.GetSeedForLevel/GetPatternForLevel`·`GetBoardSizeForLevel`(레벨0~9=5×5·10~24=6×6·25+=7×7 경계)을 검증하던 Domain 순수 로직 테스트인데, 코드(Provider.cs)는 살아 있고 테스트만 6/19 발견 후 미복구 이월. NumLink Tools/*.py는 0개로 정적QA도 0%. test_fixtures 폴더 부재로 회귀 픽스처 0개. Layer Lab 7,663파일+UGUI .cs 12개도 전부 커버리지 밖. **🚨 미해결 버그 7건**: known_bugs 6건+NoteSpawner P0 1건. **최우선 리스크 1줄**: 가장 치명적 P0가 추적기에 없어 자동탐지망이 구조적으로 못 잡는다. **오늘 결정 제안(실행)**: ① P0 dspTime을 known_bugs.json에 즉시 등록(데이터 파일·도구 영역이라 회의 중 자율 가능)·② NumLink AutoGenTests 4파일 `git restore`로 15케이스 복구. Sources: known_bugs.json·git status·AutoGenTests 내용 실측.',
+      },
+      {
+        title:
+          '💻 Developer — 5일째 P0 픽스 설계 완료: NoteSpawner.cs:126 deltaTime 누적을 dspTime 단일 진실+PlayScheduled 시작 고정으로 교체(DSP↔프레임 선형회귀 평활화·Android 지연 0.01~0.2s 캘리브레이션)·diff 실측 NoteSpawner 양쪽 미변경 재확인·Unity 6.2 Burst/Job 스케줄러 개선으로 핫패스 프레임 코드변경 0으로 수%↑',
+        description:
+          '**💻 P0 해법 설계(코어 직결)**: 리듬게임 타이밍은 `Time.deltaTime` 누적 대신 `AudioSettings.dspTime`를 단일 진실로 써야 한다 — NoteSpawner.cs:126 `elapsedTime += Time.deltaTime`를 `songPosition = (float)(AudioSettings.dspTime - dspSongStartTime)`로 교체하고, BGM 시작은 `AudioSource.PlayScheduled(dspStart + 1.0)`로 고정. DSP↔게임프레임 매핑은 선형회귀로 평활화하고, Android는 오디오 지연이 0.01~0.2s로 디바이스 편차가 커 캘리브레이션(탭 테스트) 오프셋 저장이 필요하다. **💻 diff 실측**: MeowBeat 미커밋 .cs는 GameManager(+59)·SongManager(+16)·OptionManager(+42)·SongData(+1) 4개뿐으로 모두 옵션/곡관리·세이브 계열 — **타이밍 코어 NoteSpawner.cs는 diff에 없음**(5일째 미수정 재확인). NumLink diff는 14파일(+438/-2563)로 핵심이 AutoGenTests 삭제(-414)+폰트 SDF 재생성, 신규 도메인 로직 0. **💻 신규 기술(6/18·19 미중복)**: Unity 6.2 LTS는 Burst/Job System 스케줄러 개선으로 MonoBehaviour Update 다수·단순 루프 같은 핫패스 관리코드가 코드변경 없이 수% 프레임 개선되고 transform/컬링 엔진 오버헤드가 감소. **오늘 결정 제안(P0)**: NoteSpawner를 dspTime+PlayScheduled로 교체해 5일 묵은 P0를 코어 패치 1건으로 종결(사용자 세션). Sources: Rhythm Quest Devlog 4·Unity dspTime API·Unity 6.2 LTS Performance·diff --stat 실측.',
+      },
+      {
+        title:
+          '🎮 Game Designer — 퍼즐 최초결제 전 장르 최단(안드 1.6일·iOS 1.7일)·라이브옵스-스토어 동기화 D7 리텐션 +18%·browse→install 전환 +23%·LTO가 고정 24h세일→마일스톤 트리거(연속 실패=컴백 키트·연승=챔피언 부스터)로 진화·리듬 차트 Easy→Hard 3단계 NPS 스프레드가 신규 접근성·고수 추격 동시 확보',
+        description:
+          '**🎮 시장 데이터(결제·라이브옵스)**: 퍼즐은 최초 결제까지 평균 안드 1.6일·iOS 1.7일로 전 장르 최단(Mistplay). 강한 D30의 비결로 데일리 스트릭/보너스(69%)·인게임 이벤트(52%)가 꼽힌다. 2026 상위 퍼즐/캐주얼은 월 80~100개 이벤트 터치포인트를 중첩 운영하고, 스토어 크리에이티브-라이브옵스 동기화로 browse→install +23%·동기화 런칭 시 D7 리텐션 중앙값 +18%를 낸다. LTO는 단순 24h 세일에서 벗어나 **플레이어 마일스톤 트리거**(난이도 연속 실패 후 \'컴백 키트\'·연승 후 \'챔피언 멀티플라이어\')로 진화 중(PocketGamer.biz·Game Growth Advisor). **🎮 리듬 차트 설계**: 차팅은 정확한 BPM(0.01 오차도 싱크 붕괴)·첫 비트 ms 확정이 전제고, 난이도 스프레드는 Easy/Normal=주 멜로디·강한 드럼, Hard=빠른 멜로디+8·16분음표, Master=거의 모든 사운드+16분 스트림. 손동작이 자연스러운 "플로우(ergonomic)"가 가장 주관적 핵심. (6/18 시즌 길이/알림, 6/19 D30 4%/Continue 광고와 미중복). **오늘 결정 제안(P2)**: NumLink 데일리퍼즐 화면에 streak 카운터(연속 도전일) 노출로 손실회피 유도+어려운 레벨 연속 실패 시 마일스톤 트리거 \'컴백 키트\'를 고정 세일 대신 자동 발동. MeowBeat은 곡별 NPS(초당 노트수) 기준표를 manifest에 명문화(Easy 1~2·Normal 2~4·Hard 4+)하고 Easy↔Hard 격차를 넓혀 신규는 쉽게·고수는 추격. Sources: Mistplay·PocketGamer.biz·rhythm-games.com 차팅 가이드.',
+      },
+      {
+        title:
+          '📦 Content Writer — 커스텀 스토어 페이지(iOS CPP·Android CSL)가 전환율 최대 +40%·채널별 메시지 분리 무기·일본어+한국어 로컬라이제이션만으로 캐주얼 다운로드 2~3배(남은 최고 ROI)·구글 사전등록 웨이팅 리스트로 출시일 오가닉 노출·D1 선점·UGC 광고 CTR iOS 4.27%/안드 3.34%(시네마틱보다 저CPI)',
+        description:
+          '**📦 신규 1순위(커스텀 스토어 페이지)**: iOS Custom Product Pages·Android Custom Store Listings는 2026 가장 강력한 전환 수단으로 오가닉·유료 트래픽 전환을 최대 40% 끌어올린다 — 무명 신규 IP인 NumLink/MeowBeat는 채널별(숏폼 유입 vs 검색 유입) 맞춤 페이지로 메시지를 분리해야 한다. **📦 신규 2순위(로컬라이제이션 ROI)**: 일본어+한국어 추가만으로 캐주얼 다운로드가 routinely 2~3배인 "남은 최고 ROI 수단"이고, 단순 번역이 아닌 스크린샷·크리에이티브·리뷰 답변의 문화적 현지화가 메타데이터보다 중요(별점 4.2→4.6~4.7 시 전환 +30~50%). **📦 신규 3순위(사전등록·UGC)**: 구글플레이 App campaigns for pre-registration의 웨이팅 리스트로 출시일 오가닉 노출·D1 다운로드를 선점하고, 기만적 게임플레이 광고 금지로 UGC 스타일이 가장 안전·저CPI 대안(게임 광고 CTR iOS 4.27%·안드 3.34%·스토어 방문→설치 3~5%). (6/18 ASO 키워드/스크린샷, 6/19 In-App Events/아이콘 A/B와 미중복). **오늘 결정 제안(P2)**: NumLink/MeowBeat 출시 전 영문 기본 외 일본어·영어 CPP/CSL 2종을 선제작하고 사전등록 페이지에 보상 1건(테마 스킨 등)을 걸어 웨이팅 리스트 확보. Sources: megadigital·udonis ASO 2026·apptweak·Google Ads Help·FoxData/Business of Apps 벤치마크.',
+      },
+      {
+        title:
+          '🛡 DevOps — ✅ agent-office CI 최근 5건 전부 success·열린 PR 0건(#104 이후 dependabot 정주기 대기 안정)·deploy-pages가 이미 artifact v5+SHA핀이라 2025-01 v3 전면 폐기와 무관·신규: NumLink/MeowBeat Unity CI는 game-ci/unity-builder@v4로 personal 라이선스 수동 활성화 없이 공식 구축 가능',
+        description:
+          '**🛡 ✅ CI/배포 실측(6/20)**: `gh run list --repo mmporong/agent-office --limit 5` → 최근 5건 모두 completed/success(최신 6/18 Deploy GitHub Pages 51s). `gh pr list` → 출력 없음(열린 PR 0건). #104 이후 dependabot 신규 PR 미발생 = 정주기 대기 안정. **🛡 워크플로 실측**: `.github/workflows/deploy-pages.yml`이 upload-pages-artifact@v5.0.0·deploy-pages@v5.0.0·configure-pages@v6.0.0·checkout@v6.0.3 모두 SHA 핀+최신 메이저라 2025-01-30 시행된 artifact actions v3 전면 폐기(브라운아웃 후 강제 차단)에 이미 안전. **🛡 신규(Unity CI 라이선스·6/18·19 미중복)**: Unity가 2023.8월 personal 라이선스 수동 활성화(ULF 생성)를 중단해 CI 셋업이 막혔으나, 2024-07-05 `game-ci/unity-builder@v4`부터 브라우저 DevTools 워크어라운드 없이 공식 처리되고 `game-ci/unity-license-activate`로 매 실행 라이선스 활성화 가능. NumLink/MeowBeat는 CI 미구축이라 향후 도입 시 v4 기준 권장. **오늘 결정 제안**: agent-office 이상 없음. Unity 게임 CI는 GameCI unity-builder@v4 채택 검토 권고(P2·수동 활성화 워크어라운드 불필요). Sources: gh run/pr 실측·GitHub Changelog artifact v3 폐기·game.ci/docs activation.',
+      },
+      {
+        title:
+          '🎨 Art Director — 2026 모션이 듀레이션 트윈→스프링 물리(stiffness/damping/mass 3파라미터)로 격상(snappy=stiffness 300·gentle=stiffness50/damping20)·마이크로인터랙션 200~300ms+커스텀 이징(선형은 로봇틱 금지)·가변폰트 1파일=정적 6~8개 대체+APCA/WCAG3.0·iOS Dynamic Type이 동적 텍스트 접근성 표준',
+        description:
+          '**🎨 신규 1순위(스프링 물리 모션)**: 2026 모션 디자인 핵심은 듀레이션 기반 트윈을 stiffness(강성)·damping(감쇠)·mass(질량) 3파라미터의 스프링 물리로 대체하는 것 — momentum과 인터럽트 응답을 자연스럽게 처리한다(snappy=stiffness 300·bouncy=mass1.0/stiffness100/damping10·gentle=stiffness50/damping20). 출처 Motion·Josh Comeau·Android DynamicAnimation. **🎨 신규 2순위(마이크로인터랙션 타이밍)**: 200~300ms가 sweet spot(탭류 120~200ms)이고 선형 모션은 "로봇틱"으로 간주돼 전 인터랙션에 커스텀 이징 적용이 베스트 프랙티스, 목적(guide/reassure/confirm) 없는 애니는 제거. **🎨 신규 3순위(가변폰트·접근성)**: 가변폰트는 2026 trend→best practice로 격상돼 단일 파일이 정적 6~8개를 대체(로드 절감+화면별 weight/width 적응), 접근성은 APCA·WCAG 3.0+iOS Dynamic Type 지원이 필수. (6/18 글래스모피즘, 6/19 햅틱/OKLCH/Liquid Glass와 미중복). **오늘 결정 제안(P2)**: NumLink "숫자 연결 성공" 피드백을 듀레이션 트윈에서 스프링 물리 트윈(mass 1.0·stiffness 300·damping 18)으로 전환해 스내피+정착감 손맛 부여+버튼 탭 마이크로인터랙션 250ms 커스텀 이징 통일+숫자 폰트를 가변폰트 1종으로 교체해 동적 텍스트 접근성 대응. Sources: Motion·Josh Comeau·Primotech·Lounge Lizard/DesignMonks 가변폰트.',
+      },
+    ],
+    meetingTitle:
+      '🐛 6/20 종합 회의 — "추적기에 P0가 없던 걸 발견하고, 회의가 그 자리에서 메웠다": QA가 6일째 미해결 NoteSpawner dspTime P0가 known_bugs.json에 미등록(런타임 타이밍 카테고리 자체 부재)이라 정적QA가 가장 치명적 결함을 구조적으로 못 잡는 메타-갭을 발견하자 메인이 회의 중 TIMING_DSPTIME_UNUSED 등록·runtime_timing 신설·선별 커밋(a7588c7)으로 즉시 교정하고, Developer가 같은 버그의 dspTime+PlayScheduled 픽스를 들고 와 발견·등록·해법이 한 회의에서 닫혔다',
+    meetingSummary:
+      '제69회 종합 회의(토요일·D+27). **오늘의 회의는 "검증 시스템이 자기 자신을 검증한 날"이다.** 우리는 6/13부터 MeowBeat NoteSpawner의 dspTime 미전환을 P0로 추적해왔다 — deltaTime 누적이 프레임 드랍 시 오디오와 드리프트해 리듬 판정을 흔드는 출시 차단급 결함. 그런데 오늘 QA가 우리의 검증 인프라(known_bugs.json — "알려진 버그 패턴 단일 진실 소스")를 직접 열자, 등록된 6건이 전부 씬/YAML/에셋·리듬데이터에 한정돼 런타임 타이밍 카테고리 자체가 없고, 그래서 6일째 우리가 매일 입에 올린 그 P0가 추적기에서 통째로 빠져 있었다. 정적QA가 가장 중요한 버그를 영원히 못 잡는 구조다 — 버그 추적기에 정작 가장 치명적인 버그가 없었던 것이다. 6/15 회의에서 우리가 다짐한 "회의는 결정만 하는 기계가 아니다"를 오늘 다시 실천했다: 메인이 회의 중 known_bugs.json에 TIMING_DSPTIME_UNUSED를 등록하고 runtime_timing 카테고리를 신설해 escalation에 Developer의 픽스 경로까지 박은 뒤, 그 파일만 선별 커밋했다(HEAD a7588c7·6/17 검증툴 절대경로화에 이은 게임 레포 두 번째 데이터/도구 자율 실행). 절묘하게 Developer가 같은 회의에서 그 버그의 구체 해법을 들고 왔다 — `elapsedTime += Time.deltaTime`를 `songPosition = (AudioSettings.dspTime - dspStart)`로 교체하고 BGM을 `PlayScheduled`로 고정, DSP↔프레임 매핑은 선형회귀 평활화, Android 지연 0.01~0.2s는 캘리브레이션 오프셋으로 흡수. "갭 발견(QA)·추적기 등록(메인 실행)·해법 설계(Developer)"가 한 자리에서 만났다. 이제 남은 건 코어 패치 1건뿐이고 그건 게임 코드라 사용자 세션 P0다. 한편 NumLink는 또 악화됐다 — Orchestrator 실측 18일째 미커밋, .gitignore는 여전히 `.gstack/` 한 줄뿐, AutoGenTests 15케이스는 6/19 발견 후 미복구 이월, Layer Lab 7,663파일+UGUI .cs 12개가 커버리지 밖에서 쌓인다. QA가 짚었듯 이것도 "git restore 한 줄"이면 15케이스가 부활하는데 이월 중이다. 두 P0의 공통점이 오늘 선명해졌다 — 둘 다 "코어 패치 1건/git restore 한 줄"로 끝나는데 게임 코드라 새벽 무인 세션에서 손대지 못하고 미뤄진다. 그래서 우리가 자율로 할 수 있는 가장자리(추적기 등록·검증툴)부터 회의 중에 메우는 게 오늘의 일관된 전략이었다. 나머지는 새 지평을 더했다: Game Designer는 퍼즐 최초결제 최단(안드 1.6일)과 마일스톤 트리거 LTO·곡별 NPS 명문화를, Content는 커스텀 스토어 페이지(+40%)와 일본어+한국어 로컬라이제이션(2~3배)을, DevOps는 CI 안정과 GameCI unity-builder@v4를, Art는 스프링 물리 모션과 가변폰트 접근성을 제안했다. 메타: 6/19가 "안전망이 없었음을 발견한 날"이었다면, 6/20은 "안전망의 목록(추적기)에마저 가장 큰 구멍이 있었음을 발견하고 그 한 칸을 회의 중에 메운 날" — 검증 시스템이 한 겹 더 자기 자신을 들여다봤다.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '실측부터요. NumLink는 마지막 실커밋이 6월 2일, 오늘 20일이니 18일째 미커밋입니다. 어제 17일에서 또 하루 늘었어요. 어제 결정한 것 중 삭제된 테스트 4파일 복원도 안 됐고, 검증툴 이식도 0개, .gitignore는 여전히 .gstack 한 줄뿐이에요. 핵심 3종(.omc, state, Screenshots)이 그대로 노출됩니다. 게다가 Layer Lab 작업물이 untracked로 7천 6백 개 넘게 들어왔고 UGUI 신규 .cs도 12개 쌓였어요. 워킹트리 오염이 가속되고 있습니다. MeowBeat은 dspTime이 5일째 박제인데, 이건 QA랑 Developer가 오늘 큰 걸 들고 왔다니 넘기겠습니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '오늘은 우리 검증 시스템 자체를 열어봤어요. MeowBeat의 known_bugs.json, 우리가 "알려진 버그 단일 진실 소스"라고 부르는 그 파일이요. 등록된 게 6건인데 전부 씬, YAML, 에셋, 리듬데이터예요. 런타임 타이밍 카테고리가 아예 없어요. 그 말은, 우리가 6일째 매일 입에 올린 그 P0 — NoteSpawner의 deltaTime 누적 — 이 추적기에 통째로 빠져 있다는 겁니다. 정적QA가 가장 치명적인 버그를 구조적으로 못 잡는 상태예요. 버그 추적기에 정작 제일 중요한 버그가 없었던 거죠. 그리고 NumLink 쪽도 — 삭제된 AutoGenTests.cs를 열어보니 [Test]가 15개예요. DailyPuzzleProvider 시드 결정성, EndlessMode 레벨별 보드크기 경계, 이런 Domain 핵심 로직을 지키던 테스트인데 코드는 멀쩡하고 테스트만 사라졌어요. git restore 한 줄이면 15케이스가 부활하는데 이틀째 그대로고요. 제안은 두 갭을 다 메우는 겁니다 — dspTime 버그를 known_bugs.json에 즉시 등록하고, AutoGenTests를 복구하는 거요.',
+      },
+      {
+        speaker: 'Orchestrator',
+        note: 'QA 말이 맞아요. known_bugs.json은 데이터 파일이고 도구 영역이라 6/17에 검증툴 절대경로화했던 것처럼 회의 중에 우리가 직접 손댈 수 있는 자리예요. 게임 로직 코드가 아니니까요. 제가 지금 메우겠습니다 — TIMING_DSPTIME_UNUSED로 등록하고, 빠져 있던 runtime_timing 카테고리를 신설하고, escalation에 Developer가 이따 말할 픽스 경로까지 박아 넣은 다음, 그 파일만 선별 커밋할게요. 다른 37개 미커밋 파일은 안 건드리고요.',
+      },
+      {
+        speaker: 'DevOps',
+        note: '제가 그 커밋 확인했습니다. HEAD가 a7588c7로 올라갔고, known_bugs.json 한 파일만 11줄 추가, 깨끗하게 들어갔어요. 6/17 검증툴 절대경로화에 이은 게임 레포 두 번째 데이터/도구 자율 실행입니다. 제 본업 쪽은 이상 없어요 — agent-office CI 최근 5건 전부 success, 열린 PR 0건이라 #104 이후 dependabot도 안정적으로 대기 중입니다. deploy-pages는 이미 artifact v5에 SHA 핀이라 올해 1월 v3 전면 폐기랑도 무관하고요. 신규로 하나 — Unity 게임 CI는 game-ci/unity-builder v4를 쓰면 personal 라이선스 수동 활성화 없이 공식으로 구축할 수 있어요. NumLink, MeowBeat 둘 다 CI가 없으니 나중에 도입할 때 v4 기준으로 보면 됩니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: '마침 제가 그 dspTime 버그 픽스를 들고 왔어요. NoteSpawner.cs 126번 줄의 elapsedTime += Time.deltaTime, 이걸 songPosition = AudioSettings.dspTime - dspSongStartTime 방식으로 바꿔야 해요. dspTime은 오디오 하드웨어 클럭이라 프레임 드랍이나 탭 전환에 영향을 안 받습니다. BGM 시작은 PlayScheduled로 dspStart + 1초처럼 미래 시점에 고정하고요. DSP랑 게임 프레임 매핑은 선형회귀로 평활화하면 떨림이 잡혀요. 안드로이드는 기기마다 오디오 지연이 0.01초에서 0.2초까지 편차가 크니까 탭 테스트 캘리브레이션으로 오프셋을 저장해서 흡수해야 합니다. diff로 확인했는데 NoteSpawner는 양쪽 레포 어디에도 변경이 없어요. 5일째 그대로입니다. 이제 추적기에 등록도 됐고 해법도 나왔으니, 남은 건 코어 패치 한 건이에요. 그리고 별개로 Unity 6.2 Burst랑 Job System 스케줄러가 개선돼서, Update 많은 핫패스가 코드 변경 없이도 몇 퍼센트 프레임이 좋아집니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '저는 시장 쪽인데요. 퍼즐 게임이 최초 결제까지 걸리는 시간이 전 장르에서 제일 짧아요 — 안드로이드 1.6일, iOS 1.7일. 그만큼 초반 후킹이 결정적이라는 뜻이에요. 그리고 라이브옵스를 스토어 크리에이티브랑 동기화하면 D7 리텐션이 18%, 설치 전환이 23% 올라갑니다. 요즘 LTO는 고정 24시간 세일이 아니라 플레이어 행동 트리거예요 — 어려운 레벨 연속 실패하면 컴백 키트, 연승하면 챔피언 부스터, 이렇게요. NumLink 데일리퍼즐에 연속 도전일 streak 카운터 노출하고, 연속 실패 시 컴백 키트를 자동 발동하면 손실회피 심리가 작동해요. MeowBeat은 곡별로 초당 노트 수(NPS)를 manifest에 명문화하면 좋겠어요 — Easy 1~2, Normal 2~4, Hard 4 이상으로요. 이게 Developer 차트 설계랑 바로 연결됩니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '마케팅은 두 개만요. 첫째, 커스텀 스토어 페이지요. iOS는 CPP, 안드로이드는 CSL인데 채널별로 메시지를 분리하면 전환율이 최대 40%까지 올라요. 우리 두 게임은 무명 IP라 숏폼 유입용 페이지랑 검색 유입용 페이지를 따로 만들어야 합니다. 둘째, 이게 진짜 ROI가 큰데 — 일본어랑 한국어 로컬라이제이션만 추가해도 캐주얼 게임 다운로드가 보통 2~3배예요. 단순 번역이 아니라 스크린샷이랑 리뷰 답변까지 현지화하는 게 메타데이터보다 중요하고요. 출시 전에 일본어, 영어 커스텀 페이지 2종 만들고 사전등록 페이지에 테마 스킨 같은 보상 하나 걸어서 웨이팅 리스트부터 쌓는 걸 제안합니다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '모션 트렌드가 올해 크게 바뀌었어요. 듀레이션 기반 트윈에서 스프링 물리로 격상됐습니다. 강성, 감쇠, 질량 세 파라미터로 움직이는 거요. 스내피한 느낌은 stiffness 300, 부드러운 건 stiffness 50에 damping 20, 이런 식이에요. 마이크로인터랙션은 200~300ms가 sweet spot이고 선형 모션은 로봇 같다고 다 커스텀 이징을 씁니다. 그리고 가변폰트가 올해 트렌드에서 베스트 프랙티스로 올라섰어요 — 파일 하나가 정적 폰트 6~8개를 대체하고 화면 크기별로 굵기가 적응해요. 접근성은 APCA랑 iOS Dynamic Type 지원이 필수고요. NumLink 숫자 연결 성공 피드백을 스프링 물리 트윈으로 바꾸면 손맛이 확 살아요 — mass 1.0, stiffness 300, damping 18 정도로요. 숫자 폰트도 가변폰트 하나로 통일하면 접근성까지 같이 잡힙니다.',
+      },
+      {
+        speaker: 'Orchestrator',
+        note: '정리하면, 오늘은 우리 검증 시스템이 자기 자신을 점검한 날이에요. 6월 13일엔 NumLink가 "커밋 안 함", 18일엔 "위생 문제", 19일엔 "안전망 자체가 없음", 그리고 오늘은 "안전망의 목록에마저 가장 큰 구멍이 있었다"까지 왔습니다. 그 한 칸을 회의 중에 메웠고요(a7588c7). 남은 두 P0는 둘 다 게임 코드라 사용자 세션입니다 — MeowBeat은 Developer 설계대로 dspTime+PlayScheduled 코어 패치 1건, NumLink는 AutoGenTests git restore로 15케이스 복구하고 .gitignore 4종 정비 후 Layer Lab 작업분을 단일 스냅샷 커밋으로 봉인. 둘 다 "한 줄/한 패치"로 끝나는 일인데 새벽 무인이라 못 건드릴 뿐이에요. 그래서 우리가 자율로 닿는 가장자리부터 메우는 게 맞습니다.',
+      },
+    ],
+    decisions: [
+      {
+        title:
+          '✅ [실행완료·게임 레포 두 번째 데이터/도구 자율 실행] MeowBeat known_bugs.json에 P0 타이밍 버그 등록(HEAD a7588c7)',
+        description:
+          'QA가 "6일째 미해결 P0(NoteSpawner.cs:126 deltaTime 누적)가 known_bugs.json에 미등록 — 런타임 타이밍 카테고리 자체가 없어 정적QA가 가장 치명적 결함을 구조적으로 못 잡는다"는 메타-갭을 발견하자, 회의 중 메인이 TIMING_DSPTIME_UNUSED(severity error·detector qa_static.check_dsptime_usage)를 등록하고 runtime_timing 카테고리를 신설, escalation에 Developer의 픽스 경로(dspTime+PlayScheduled+Android 캘리브레이션)까지 박아 넣은 뒤 known_bugs.json만 선별 커밋(11줄 추가·다른 37개 미커밋 파일 미접촉). JSON 유효성 검증 완료(7건·runtime_timing 신설). 6/17 검증툴 절대경로화에 이은 게임 레포 두 번째 데이터/도구 자율 실행.',
+      },
+      {
+        title:
+          '🔴 P0 [이월·게임 코드·사용자 세션] MeowBeat NoteSpawner.cs:126 dspTime 전환 — 5일 묵은 출시 차단급 P0를 코어 패치 1건으로 종결',
+        description:
+          'Developer 설계 확정: `elapsedTime += Time.deltaTime`를 `songPosition = (float)(AudioSettings.dspTime - dspSongStartTime)`로 교체하고 BGM은 `AudioSource.PlayScheduled(dspStart + leadTime)`로 시작 고정, DSP↔프레임 매핑은 선형회귀 평활화, Android 오디오 지연 0.01~0.2s는 탭 테스트 캘리브레이션 오프셋으로 흡수. diff 실측상 NoteSpawner는 양쪽 레포 미변경(5일째). 추적기 등록(a7588c7)·해법 설계가 모두 끝났으니 남은 건 코어 패치뿐 — 게임 코드라 사용자 세션. 병행해 미커밋 .cs 4종(GameManager/OptionManager/SongManager/SongData·다국어+볼륨 세이브) WIP 백업.',
+      },
+      {
+        title:
+          '🚨 P0 [이월·게임 코드·사용자 세션] NumLink 안전망 복구를 단일 스냅샷 커밋으로 봉인 — 18일째 미커밋 종료',
+        description:
+          '① 삭제된 AutoGenTests 4파일을 `git restore Assets/Tests/Editor/`로 복구해 15케이스(DailyPuzzleProvider 시드/보드크기/패턴 결정성·EndlessMode 레벨별 보드크기 경계 0~9=5×5·10~24=6×6·25+=7×7) 부활(삭제가 사용자 의도였는지 확인 선행) → ② .gitignore에 .omc/·state/·Screenshots/·_Recovery/ 4종 일괄 추가(노이즈 제거) → ③ Layer Lab 리스킨+UGUI .cs 12개(ComboPopup/DailyChallengeHub/GameOver/TimerUI 등) 실작업분을 단일 스냅샷 커밋으로 봉인. 18일째 미커밋이지만 핵심은 백업이 아니라 안전망 복구. 병행해 _ProjectTemplate 검증툴 3종 이식(정적QA 0%→복구).',
+      },
+      {
+        title:
+          '🟢 P2 [신규 적재·모두 P0 후] 시장·아트·마케팅 제안',
+        description:
+          'Game Designer — NumLink 데일리퍼즐 streak 카운터 노출+어려운 레벨 연속 실패 시 마일스톤 트리거 \'컴백 키트\' 자동 발동(고정 세일 대신·손실회피)·MeowBeat 곡별 NPS 기준표 manifest 명문화(Easy 1~2·Normal 2~4·Hard 4+). Art Director — NumLink "숫자 연결 성공" 피드백을 스프링 물리 트윈(mass 1.0·stiffness 300·damping 18)으로 전환+버튼 탭 250ms 커스텀 이징 통일+숫자 폰트 가변폰트 1종 교체(동적 텍스트 접근성). Content Writer — 출시 전 일본어·영어 CPP/CSL 2종 선제작(전환 +40%)+사전등록 보상으로 웨이팅 리스트 확보·일본어+한국어 로컬라이제이션(다운로드 2~3배) 우선. DevOps — Unity 게임 CI는 game-ci/unity-builder@v4 채택 검토(수동 라이선스 활성화 불필요).',
+      },
+    ],
+  },
+  {
     id: '2026-06-19T04:00:00-daily-standup',
     date: '2026-06-19',
     researchTitle:
