@@ -43,6 +43,123 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-06-21T04:00:00-daily-standup',
+    date: '2026-06-21',
+    researchTitle:
+      '🔍 등록은 됐는데 잡히질 않았다 — 어제 메운 칸 뒤에 탐지기가 비어 있었고, 회의가 그것마저 실체화했다: QA가 "6/20 등록한 P0(TIMING_DSPTIME_UNUSED)의 detector가 가리키는 qa_static.check_dsptime_usage 함수가 실재하지 않는 댕글링 디텍터라 회귀에서 영원히 못 잡는다"는 한 겹 더 깊은 갭을 발견하자, 메인이 회의 중 그 탐지기를 직접 구현하고(NoteSpawner 정적 스캔: deltaTime 누적+dspTime 미사용=error·dspTime 도입 시 자동 통과·단순 deltaTime 오탐 제외) 3케이스 검증(B=1 탐지/A=0 픽스통과/C=0 오탐방지)·회귀 2/2 무손상 확인 후 도구 파일만 선별 커밋(921e0cf) — 6/17 절대경로화·6/20 추적기 등록에 이은 게임 레포 세 번째 도구/데이터 자율 실행',
+    researchSummary:
+      '제70회 리서치. 7명 전원 보고. **오늘의 구조는 "어제 메운 칸의 바닥이 비어 있었다"이다.** 6/20 우리는 가장 치명적인 P0(NoteSpawner의 dspTime 미전환)가 추적기(known_bugs.json)에서 통째로 빠져 있던 메타-갭을 발견하고 TIMING_DSPTIME_UNUSED를 등록했다 — 그 자리를 메웠다고 믿었다. 그런데 오늘 QA가 그 등록 엔트리를 다시 열자, `detector: "qa_static.check_dsptime_usage"`가 가리키는 그 함수가 **정작 qa_static.py에 존재하지 않았다**. 등록은 됐지만 탐지 함수가 실재하지 않는 댕글링 디텍터 — 회귀를 아무리 돌려도 가장 치명적인 P0가 영원히 안 잡히는 상태였다. "추적기에 버그가 없던 것(6/20)"을 메우자 "추적기엔 있는데 탐지기가 빈 것(6/21)"이 드러난 것이다. 검증 시스템의 자기검증이 한 겹 더 깊이 내려갔다. 그래서 오늘도 메인은 결정만 하지 않고 회의 중 직접 실체화했다 — qa_static.py에 NOTESPAWNER_PATH 상수와 check_dsptime_usage 함수를 추가해 NoteSpawner.cs를 정적 스캔하고, `+= Time.deltaTime` 누적 패턴이 있으면서 `AudioSettings.dspTime`가 없으면 error를 내되, dspTime이 도입되면 자동 통과(회귀 가드)하고 단순 deltaTime 사용(회전 보간 등)은 오탐에서 제외하도록 설계했다. 실프로젝트에서 NoteSpawner.cs:126을 정확히 error로 탐지(exit 2)했고, 임시 .cs 3케이스 검증에서 dspTime 픽스본=0·deltaTime 누적본=1·비누적 사용=0으로 기대대로 동작했으며, 기존 회귀 2/2(RT_SIZE_ZERO·YAML_INDENT)도 무손상이었다. 도구 파일만 선별 커밋했다(HEAD 921e0cf·게임 코드 .cs 37개 미접촉). 이제 detector가 실재 함수를 가리키므로 추적기-탐지기-회귀가 처음으로 한 줄로 이어졌고, 남은 건 NoteSpawner 코어 패치 1건뿐이며 그건 게임 로직이라 사용자 세션 P0다 — 다만 이제 픽스하면 회귀가 자동으로 통과를 증명한다. 한편 NumLink는 또 악화됐다 — 실측 19일째 미커밋(6/2 이후), .gitignore는 여전히 미정비라 QA가 Layer Lab 7,662 untracked 안에 .omc 봇 산출물(agent-replay·mission-state 등) 4건이 침투해 커밋 시 봇 캐시·복구 씬까지 통째로 들어갈 회귀 위험을 새로 짚었고, AutoGenTests 4파일은 6/19 발견 후 미복구 이월 중이다. 나머지는 새 지평을 더했다: Developer는 Google Play targetSdk 36(Android 16) 의무화가 8/31 마감(D-71)이고 Unity 6.3 LTS 출시·IL2CPP 빌드크기 절감 옵션을, Game Designer는 하이브리드캐주얼 D30이 8~12%로 하이퍼캐주얼 2~4%의 2~3배고 메타진행이 D30을 최대 2배 견인하며 온보딩 단계당 이탈 20% 미만이 합격선임을, Content는 60초+ 영상 인게이지먼트 6.70%(15초 미만 2.95%)·트레일러 전환 +30%·성취 직후 인앱 평점 팝업이 별점 3.68→4.23을, DevOps는 agent-office CI 5건 success·Artifact Attestations(Sigstore/SLSA)가 2026 public repo 기본 전환을, Art는 2026 엄지존 하단 1/3 radical reachability·빈 상태 디자인이 활성화율 +30~40%·리듬 판정 3단계 차등 비주얼을 보고했다.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — 🚨 NumLink 19일째 미커밋(6/2 이후·18→19일 또 악화)·.gitignore 여전히 미정비(.omc·Layer Lab·Screenshots 패턴 전무)·AutoGenTests 4파일 6/19 발견 후 미복구 이월·Layer Lab 7,662 untracked 안에 .omc 봇 산출물 4건 침투·MeowBeat은 도구영역 3번째 자율실행(921e0cf)으로 추적기-탐지기 연결 완성·NoteSpawner 코어는 여전히 미접촉',
+        description:
+          '**🎯 이전 액션 실측(6/21)**: 6/20 결정 중 ① NumLink 단일 스냅샷 봉인+.gitignore 4종 추가 = **미실행 이월**(.gitignore 여전히 ` M`만·Layer Lab/.omc/Screenshots 패턴 전무). ② AutoGenTests 4파일 복구 = **미실행 5일째**(여전히 ` D`). ③ MeowBeat dspTime 코어 패치 = **미착수**(NoteSpawner.cs:126 그대로). **측정값**: NumLink 최신 5fcac3a(6/2)·**19일째 미커밋**(6/20 18일→하루 악화)·미커밋 36파일+Layer Lab 7,662 untracked. MeowBeat 최신 **921e0cf(오늘 dspTime 탐지기 구현 커밋)**·직전 a7588c7·게임 코드 .cs 37개 미커밋·NoteSpawner 미접촉. agent-office HEAD 7386df4·dependabot 큐 0건·CI 안정. **오늘의 자율 실행**: known_bugs의 댕글링 디텍터를 회의 중 메움(QA 발견→메인 구현→DevOps 커밋 확인). **오늘 결정 제안**: NumLink는 19일 공백을 더 끌수록 봇 캐시 침투가 누적되므로, .gitignore 4종(.omc/·Layer Lab은 트래킹·Screenshots/·_Recovery/) 선정비 후 단일 스냅샷 커밋으로 봉인하되 AutoGenTests 삭제 확정은 사용자 확인 선행. (git log/status 실측)',
+      },
+      {
+        title:
+          '🔍 QA Tester — 🔑 핵심 발견(댕글링 디텍터): 6/20 등록한 P0(TIMING_DSPTIME_UNUSED)의 detector "qa_static.check_dsptime_usage"가 실재하지 않아 회귀에서 영원히 못 잡던 빈 탐지기를 발견 → 회의 중 구현·3케이스 검증 통과·회귀 2/2 무손상 / NumLink .gitignore에 .omc 봇 산출물 4건 침투(커밋 오염 위험) / 미해결 P0급 1건(NoteSpawner 코어 미접촉)·known_bugs 총 7건',
+        description:
+          '**🔍 핵심 발견(신규·탐지기의 공백)**: MeowBeat known_bugs.json의 TIMING_DSPTIME_UNUSED는 `detector: "qa_static.check_dsptime_usage"`로 명시돼 있으나, 실제 qa_static.py의 함수는 check_manifest_audio·check_note_lanes·check_scene_buttons 3개뿐으로 **그 detector 함수가 존재하지 않았다**. 6/20 "추적기에 P0를 등록"한 직후의 한 겹 더 깊은 갭 — 등록은 됐지만 탐지 코드가 비어 회귀를 돌려도 가장 치명적인 P0가 영원히 안 잡히는 댕글링 디텍터다. 회의 중 메인이 check_dsptime_usage를 구현(NoteSpawner 정적 스캔)했고, 현재 NoteSpawner.cs:126을 정확히 error 탐지·dspTime 픽스 시 자동 통과·단순 deltaTime 오탐 제외를 3케이스로 검증, 기존 회귀 2/2도 무손상 확인했다. **🔍 NumLink 신규 리스크**: Layer Lab 7,662 untracked 안에 .omc 봇 산출물(agent-replay·mission-state 등) 4건이 섞여 있고 .gitignore에 .omc/Layer Lab/Screenshots/_Recovery 패턴이 전무해, 지금 단일 커밋하면 봇 캐시·복구 씬까지 통째로 들어갈 회귀 위험(실제 Layer Lab 에셋 .meta 자체는 정상). AutoGenTests 4파일은 여전히 미복구 이월. **🚨 미해결**: known_bugs 7건 중 NoteSpawner 코어 패치 1건이 P0급 잔존(탐지기는 갖춰짐). **최우선 리스크 1줄**: 코어 패치 전까지 P0는 살아 있으나, 이제 픽스하면 회귀가 자동으로 통과를 증명한다. **오늘 결정 제안(실행)**: ① 탐지기 구현 완료(자율)·② NumLink .gitignore 선정비 후 봉인. Sources: known_bugs.json·qa_static.py·NoteSpawner.cs·git status 실측.',
+      },
+      {
+        title:
+          '💻 Developer — 🚨 Google Play targetSdk 36(Android 16) 의무화 8/31 마감(D-71)·미대응 시 신규 노출 차단·Unity 6.3 LTS(6000.3) 출시(2027.12 지원·URP Kawase/Dual Bloom 모바일 최적화)·Unity 6.2 IL2CPP "Optimize for code size and build time"로 빌드크기 절감(2D 멀티스레딩 개선)',
+        description:
+          '**💻 신규 1순위(targetSdk 36 마감)**: Google Play는 2026년 신규·업데이트 앱에 targetSdk 36(Android 16)을 8/31까지 의무화하며 미대응 시 신규 설치 노출이 차단된다(D-71). NumLink/MeowBeat 둘 다 Player Settings의 Target API Level을 36으로 선상향하고 빌드 검증이 필요하나, NumLink는 19일째 미커밋이라 targetSdk 변경분이 커밋 누락 위험에 노출 — .gitignore 정리+단일 봉인이 선행 조건이다. **💻 신규 2순위(엔진 버전)**: Unity 6.3 LTS(6000.3)가 출시돼 2027.12까지 지원되고 URP에 Kawase/Dual 블룸 등 모바일 렌더 최적화가 추가됐다. Unity 6.2의 IL2CPP "Optimize for code size and build time" 설정은 빌드 크기를 줄이고 2D 멀티스레딩이 개선됐다. (6/20 dspTime 픽스·6.2 Burst/Job과 미중복). **💻 코드 상태**: MeowBeat 미커밋 .cs는 옵션/곡관리·세이브 계열뿐, NoteSpawner는 5일째 미접촉(코어 패치=사용자 세션 P0). **오늘 결정 제안(P1)**: 두 프로젝트 targetSdk 36 선상향+빌드 검증(8/31 마감 D-71). Sources: developer.android.com/target-sdk·Stora API36 해설·unity.com 6.3 LTS·docs.unity3d.com WhatsNew62.',
+      },
+      {
+        title:
+          '🎮 Game Designer — 하이브리드캐주얼 D30 8~12% vs 하이퍼캐주얼 2~4%(2~3배·2026 스튜디오 36% 전환 중)·메타진행이 D30 최대 2배 견인·온보딩 단계당 이탈 20% 미만이 합격선(강한 온보딩 없으면 90% 이탈·D1 평균 28%)·UGC/모딩 커뮤니티 보유 시 리텐션 +38%·매출 +15~20%',
+        description:
+          '**🎮 시장 데이터(리텐션·메타진행)**: 하이브리드캐주얼의 D30 리텐션은 8~12%로 하이퍼캐주얼 2~4%의 2~3배이고, 2026년 스튜디오 36%가 하이브리드로 전환 중이다(Antier·Game Growth Advisor). 메타진행(컬렉션·언락·영구성장) 레이어가 D30을 최대 2배 견인한다. **🎮 온보딩**: 온보딩 단계당 이탈은 20% 미만이 합격선이고 강한 온보딩이 없으면 누적 90%가 이탈하며 D1 평균은 28%다(userguiding·Business of Apps). **🎮 UGC**: UGC/모딩 커뮤니티 보유 게임은 리텐션 +38%·매출 +15~20%지만 모바일 구현 비용이 커 MVP 이후 검증 대상(Naavik). (6/18 시즌길이, 6/19 D30 4%/Continue, 6/20 최초결제/마일스톤 LTO와 미중복). **오늘 결정 제안(P2)**: NumLink에 메타진행 레이어(레벨 클리어 누적→보드 테마 스킨/숫자 타일 컬렉션 언락) 최소 구현+온보딩 첫 3레벨 단계별 이탈 계측(단계당 20% 미만 목표) 분석 훅. MeowBeat은 UGC 대신 곡 즐겨찾기/플레이리스트 경량 의사-UGC부터 검증. Sources: Antier·gamegrowthadvisor·userguiding·businessofapps·Naavik.',
+      },
+      {
+        title:
+          '📦 Content Writer — 60초+ 영상 게임 인게이지먼트 6.70% vs 15초 미만 2.95%·스토어 트레일러 첨부 시 전환 +30%(플레이어 70%가 다운 전 시청)·14일 출시 플라이트에 마이크로 크리에이터 30~50명+매크로 3~6 스파이크가 인디 표준(월 €500~1,000)·마일스톤 직후 인앱 평점 팝업으로 평점 3.68→4.23·전환 +59% 사례',
+        description:
+          '**📦 신규 1순위(트레일러·영상)**: 60초+ 게임 영상의 인게이지먼트가 6.70%로 15초 미만 2.95%의 2배 이상이고, 스토어에 트레일러를 첨부하면 전환이 +30%(플레이어 70%가 다운로드 전 영상 시청)다. **📦 신규 2순위(인디 시딩)**: 출시 첫 14일 플라이트에 마이크로 크리에이터 30~50명+매크로 3~6명 스파이크가 인디 표준이고 테스트 예산은 월 €500~1,000(게임당 약 50만원 이하)부터 시작한다. **📦 신규 3순위(평점 자동화)**: 클리어·하이스코어 등 성취 직후 인앱 평점 팝업(SKStoreReview·Play In-App Review)으로 평점 3.68→4.23·전환 +59% 사례가 있다. (6/18 ASO 키워드, 6/19 In-App Events, 6/20 CPP/CSL·로컬라이제이션과 미중복). **오늘 결정 제안(P1)**: NumLink/MeowBeat 각 60~90초 가로 런치 트레일러 스토어 등재(+30%)+출시 첫 주 마이크로 크리에이터 20~30명 무료 시딩(게임당 50만원 이하)+성취 직후 인앱 평점 팝업 코드 삽입으로 초기 별점 4.0+ 확보. Sources: AutoFaceless 숏폼 통계·game-developers.org·Tomoson·Metricus·Quadral·ASO Maniac.',
+      },
+      {
+        title:
+          '🛡 DevOps — ✅ agent-office CI 최근 5건 전부 success·열린 PR/dependabot 0건·모든 액션 SHA 핀 고정·deploy-pages.yml cache:npm 적용(npm ci 히트율 70~90%·빌드 34s~1m16s 양호)·신규: GitHub Artifact Attestations(Sigstore/SLSA provenance)가 2026 public repo 기본값 전환 중·Immutable Releases 2025-10-28 GA',
+        description:
+          '**🛡 ✅ CI/배포 실측(6/21)**: `gh run list --repo mmporong/agent-office --limit 5` → 최근 5건 모두 success, `gh pr list` → 출력 없음(열린 PR 0건·#104 이후 dependabot 정주기 대기 안정). deploy-pages.yml은 cache:npm 적용으로 npm ci 캐시 히트율 70~90%·실행 34s~1m16s로 양호하며 추가 최적화 여지 적음. **🛡 신규(공급망 보안)**: GitHub Artifact Attestations(Sigstore 기반 SLSA provenance·10분 수명 임시 인증서+변조불가 투명성 로그)가 2026년 public repo 기본값으로 전환 중이고, Immutable Releases가 2025-10-28 GA됐다(발행 후 에셋/태그 변조 불가). agent-office는 정적 Pages 배포라 릴리스 에셋이 없어 직접 해당은 없으나, NumLink/MeowBeat의 Unity 빌드 산출물(APK/WebGL)에는 `actions/attest-build-provenance`가 변조 검증 효익을 준다. (6/20 GameCI v4·artifact v3 폐기와 미중복). **오늘 결정 제안**: agent-office 이상 없음(P2). Unity 빌드 워크플로우 신설 시 Artifact Attestations 함께 반영 권고. Sources: gh run/pr 실측·GitHub Changelog immutable releases·Tenki/SLSA·buildmvpfast 하드닝.',
+      },
+      {
+        title:
+          '🎨 Art Director — 2026 엄지존 하단 1/3 "radical reachability"(주요액션 바텀바 통합·터치타겟 44×44pt·FAB 퇴조)·온보딩 빈 상태(empty state)가 활성화율 +30~40%(일러스트+단일 CTA)·리듬 주스: 20콤보당 파티클+점수보너스·판정(Perfect/Great/Good) 입력 즉시 스냅사운드+파티클 버스트 차등',
+        description:
+          '**🎨 신규 1순위(엄지존)**: 2026 모바일 UI는 하단 1/3 "radical reachability"로 주요 액션을 바텀바에 통합하고 터치 타겟 44×44pt를 필수화하며 FAB는 퇴조 중이다(Muzli·Parachute). **🎨 신규 2순위(빈 상태·온보딩)**: 빈 상태(empty state)를 일러스트+단일 CTA로 설계하면 첫 화면 활성화율이 +30~40% 오른다(UXPin). **🎨 신규 3순위(리듬 주스)**: 리듬게임 도파민 루프는 "입력 즉시 차등 시각보상"으로, 20콤보 단위 파티클+점수보너스 누적 증폭과 판정(Perfect=골드 폭발+미세쉐이크·Great=시안 버스트·Good=화이트 소형)의 즉각 스냅사운드+파티클 차등이 핵심이다(Native Audio·juice). (6/18 글래스모피즘, 6/19 햅틱/OKLCH, 6/20 스프링물리/가변폰트와 미중복). **오늘 결정 제안(P1/P2)**: MeowBeat 판정 피드백 3단계 차등 비주얼(Perfect/Great/Good 컬러+파티클 밀도·20콤보 증폭·판정선 하단 1/3 유지)을 우선 적용(장르 핵심 도파민 직결). 대안 NumLink 첫 진입 빈 보드에 "숫자를 길게 눌러 연결" 단일 CTA+손가락 일러스트 오버레이. Sources: Muzli·Parachute·UXPin·Sanjay Dey·Native Audio.',
+      },
+    ],
+    meetingTitle:
+      '🔍 6/21 종합 회의 — "어제 메운 칸 뒤에 탐지기가 비어 있었다": QA가 6/20 등록한 P0의 detector(qa_static.check_dsptime_usage)가 실재하지 않는 댕글링 디텍터라 회귀에서 영원히 못 잡는 한 겹 더 깊은 갭을 발견하자, 메인이 회의 중 그 탐지기를 직접 구현·3케이스 검증(B=1/A=0/C=0)·회귀 2/2 무손상 확인 후 도구 파일만 선별 커밋(921e0cf)해 추적기-탐지기-회귀를 처음으로 한 줄로 이었다',
+    meetingSummary:
+      '제70회 종합 회의(일요일·D+28). **오늘의 회의는 "검증 시스템이 자기 자신을 두 겹째 들여다본 날"이다.** 어제(6/20) 우리는 가장 치명적인 P0(NoteSpawner의 dspTime 미전환)가 추적기(known_bugs.json)에서 통째로 빠져 있던 메타-갭을 발견하고 TIMING_DSPTIME_UNUSED를 등록했다 — 그 칸을 메웠다고 믿었다. 그런데 오늘 QA가 그 등록 엔트리를 다시 열자, detector로 명시된 qa_static.check_dsptime_usage 함수가 정작 qa_static.py에 존재하지 않았다. 등록은 됐지만 탐지 코드가 비어, 회귀를 아무리 돌려도 가장 치명적인 P0가 영원히 안 잡히는 댕글링 디텍터였다. "추적기에 버그가 없던 것(6/20)"을 메우자 "추적기엔 있는데 탐지기가 빈 것(6/21)"이 드러난 것이다 — 어제 메운 칸의 바닥이 비어 있었다. 6/15에 다짐한 "회의는 결정만 하는 기계가 아니다"를 오늘 세 번째로 실천했다: 메인이 회의 중 qa_static.py에 NOTESPAWNER_PATH 상수와 check_dsptime_usage 함수를 추가해, NoteSpawner.cs를 정적 스캔하고 `+= Time.deltaTime` 누적이 있으면서 `AudioSettings.dspTime`가 없으면 error를 내되 dspTime 도입 시 자동 통과(회귀 가드)하고 단순 deltaTime 사용은 오탐 제외하도록 설계했다. 실프로젝트에서 NoteSpawner.cs:126을 정확히 error 탐지(exit 2)했고, 임시 3케이스(dspTime 픽스본=0·deltaTime 누적본=1·비누적=0)가 모두 기대대로 동작했으며, 기존 회귀 2/2(RT_SIZE_ZERO·YAML_INDENT)도 무손상이었다. 도구 파일만 선별 커밋했다(HEAD 921e0cf·6/17 절대경로화·6/20 추적기 등록에 이은 게임 레포 세 번째 도구/데이터 자율 실행·게임 코드 .cs 37개 미접촉). 이제 detector가 실재 함수를 가리켜 추적기-탐지기-회귀가 처음으로 한 줄로 이어졌고, 남은 건 NoteSpawner 코어 패치 1건뿐인데 그건 게임 로직이라 사용자 세션 P0다 — 다만 이제 픽스하면 회귀가 자동으로 통과를 증명한다. 두 P0(MeowBeat 코어 패치·NumLink 봉인)의 공통점이 오늘도 선명했다 — 둘 다 게임 코드/대량 워킹트리라 새벽 무인 세션에서 손대지 못하고, 우리는 그 둘레의 도구·추적기·탐지기부터 메운다. 한편 NumLink는 또 악화돼 19일째 미커밋이고, QA가 Layer Lab 7,662 untracked 안에 .omc 봇 산출물 4건이 침투해 지금 커밋하면 봇 캐시까지 통째로 들어갈 위험을 새로 짚었다 — .gitignore 선정비가 봉인의 전제가 됐다. 나머지는 새 지평을 더했다: Developer는 targetSdk 36 8/31 의무화(D-71)와 Unity 6.3 LTS를, Game Designer는 하이브리드캐주얼 D30 2~3배·메타진행 2배·온보딩 단계당 이탈 20%를, Content는 60초+ 트레일러(+30%)와 성취 직후 평점 팝업(3.68→4.23)을, DevOps는 CI 안정과 Artifact Attestations를, Art는 엄지존 하단 1/3·빈 상태 +30~40%·리듬 판정 3단계 피드백을 제안했다. 메타: 6/19 "안전망이 없었음" → 6/20 "안전망 목록(추적기)에 가장 큰 구멍" → 6/21 "그 구멍을 메우자 탐지기가 비어 있었음" — 검증 시스템이 사흘 연속 한 겹씩 더 깊이 자기 자신을 들여다보며 도구→추적기→탐지기의 순서로 실체를 채워가고 있다.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '실측부터요. NumLink는 6월 2일 마지막 실커밋, 오늘 21일이니 19일째 미커밋입니다. 어제 18일에서 또 하루 늘었어요. 어제 결정한 단일 봉인도, .gitignore 정비도, AutoGenTests 복구도 다 미실행 이월입니다. MeowBeat은 오늘 도구 쪽에서 큰 걸 했는데, QA가 발견한 걸 회의 중에 메웠어요. 게임 코드 NoteSpawner 코어는 여전히 안 건드렸고요. 그 발견은 QA가 직접 설명하겠습니다.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '어제 우리가 메운 칸을 다시 열어봤어요. 6/20에 TIMING_DSPTIME_UNUSED를 known_bugs.json에 등록했잖아요. 그 엔트리의 detector 필드가 qa_static.check_dsptime_usage를 가리키는데 — 정작 그 함수가 qa_static.py에 없어요. 함수는 manifest_audio, note_lanes, scene_buttons 세 개뿐이에요. 즉 등록은 됐는데 탐지하는 코드가 비어 있어서, 회귀를 아무리 돌려도 가장 치명적인 P0가 영원히 안 잡히는 상태였어요. 어제 메운 칸의 바닥이 비어 있던 거죠. 이건 데이터·도구 영역이니까 6/17, 6/20처럼 회의 중에 우리가 직접 채울 수 있어요. 그리고 NumLink 쪽 새 위험도 하나 — Layer Lab untracked 7천 6백 개 안에 .omc 봇 산출물이 4건 섞여 있어요. .gitignore에 .omc 패턴이 없어서 지금 단일 커밋하면 봇 캐시랑 복구 씬까지 통째로 딸려 들어갑니다. 봉인 전에 .gitignore부터 정비해야 해요.',
+      },
+      {
+        speaker: 'Orchestrator',
+        note: 'QA 말이 맞아요. qa_static.py는 도구 파일이라 6/17 절대경로화, 6/20 추적기 등록과 같은 자리예요. 게임 로직이 아니죠. 제가 지금 채우겠습니다 — NoteSpawner 경로 상수를 추가하고, check_dsptime_usage 함수를 구현할게요. NoteSpawner.cs를 정적 스캔해서 deltaTime 누적 패턴이 있는데 dspTime이 없으면 error를 내고, 나중에 dspTime으로 고치면 자동으로 통과하게요. 회전 보간 같은 단순 deltaTime은 오탐 안 나게 누적 패턴만 잡고요.',
+      },
+      {
+        speaker: 'DevOps',
+        note: '그 커밋 확인했습니다. HEAD가 921e0cf로 올라갔고 qa_static.py 한 파일만 49줄 추가, 게임 코드 .cs 37개는 안 건드렸어요. 6/17 절대경로화, 6/20 추적기 등록에 이은 게임 레포 세 번째 도구·데이터 자율 실행입니다. 검증도 깔끔해요 — 실프로젝트에서 NoteSpawner 126번 줄을 정확히 error로 잡고 exit 2, 임시 3케이스도 dspTime 고친 건 0, deltaTime 누적은 1, 단순 사용은 0으로 다 기대대로고, 기존 회귀 2/2도 그대로입니다. 제 본업도 이상 없어요 — agent-office CI 5건 전부 success, 열린 PR 0건. 신규로 Artifact Attestations가 올해 public repo 기본값으로 바뀌는 중인데, 나중에 Unity APK/WebGL 빌드 워크플로우 만들 때 변조 검증용으로 같이 넣으면 좋습니다.',
+      },
+      {
+        speaker: 'Developer',
+        note: '이제 추적기랑 탐지기가 한 줄로 이어졌으니, 남은 건 NoteSpawner 코어 패치 한 건뿐이에요. 126번 줄 deltaTime 누적을 dspTime 기반으로 바꾸면 되고, 고치는 순간 오늘 만든 탐지기가 자동으로 통과를 증명합니다. 그건 게임 로직이라 사용자 세션 P0고요. 별개로 더 급한 일정이 하나 있어요 — Google Play가 targetSdk 36, 안드로이드 16을 8월 31일까지 의무화했어요. 71일 남았는데 미대응이면 신규 설치 노출이 막힙니다. NumLink, MeowBeat 둘 다 Target API Level을 36으로 올리고 빌드 검증을 해야 하는데, NumLink가 19일째 미커밋이라 그 변경분이 커밋 누락 위험에 노출돼요. .gitignore 정리하고 봉인부터 하는 게 순서입니다. 엔진은 Unity 6.3 LTS가 나왔고 IL2CPP 빌드크기 옵션도 챙길 만해요.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '리텐션 데이터를 보면 방향이 명확해요. 하이브리드캐주얼 D30이 8에서 12퍼센트인데 하이퍼캐주얼은 2에서 4퍼센트예요. 두세 배 차이고, 2026년 스튜디오 36퍼센트가 하이브리드로 넘어가는 중이에요. 핵심은 메타진행이에요 — 컬렉션이나 영구 언락 같은 누적 성장 레이어가 D30을 최대 두 배까지 끌어올려요. NumLink는 지금 레벨 클리어밖에 없어서 신선함이 떨어지면 돌아올 이유가 약해요. 레벨 클리어가 쌓이면 보드 테마 스킨이나 숫자 타일을 언락하는 메타진행을 최소한이라도 넣자는 거예요. 그리고 온보딩 첫 3레벨 단계별 이탈을 계측하는 훅도 같이요 — 단계당 20퍼센트 넘게 빠지면 거기가 문제 지점이에요.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '출시 모멘텀 쪽에서 수치가 분명해요. 60초 넘는 게임 영상이 인게이지먼트 6.7퍼센트인데 15초 미만은 2.95퍼센트예요. 스토어에 트레일러를 붙이면 전환이 30퍼센트 오르고, 플레이어 70퍼센트가 다운로드 전에 영상을 봐요. 그래서 두 게임 다 60에서 90초 가로 런치 트레일러를 만들어 스토어에 올리는 게 1순위고요. 둘째로 출시 첫 14일에 마이크로 크리에이터 20에서 30명한테 무료 시딩, 게임당 50만원 이하로 가능해요. 셋째로 클리어나 하이스코어 같은 성취 직후에 인앱 평점 팝업을 코드로 넣으면 초기 별점을 4.0 이상으로 올릴 수 있어요 — 3.68에서 4.23으로 오른 사례가 있어요.',
+      },
+      {
+        speaker: 'Art Director',
+        note: 'UI 트렌드 새 각도로 세 개요. 2026년은 엄지존, 하단 3분의 1에 주요 액션을 모으는 radical reachability가 표준이고 터치 타겟은 44 곱하기 44포인트가 필수, FAB은 퇴조예요. 둘째로 빈 상태 디자인 — 첫 진입 빈 화면을 일러스트랑 단일 CTA로 채우면 활성화율이 30에서 40퍼센트 올라요. 셋째가 오늘 제 추천인데, MeowBeat 판정 피드백을 3단계로 차등화하는 거예요. Perfect는 골드 폭발에 화면 미세 쉐이크, Great는 시안 버스트, Good은 화이트 소형. 20콤보마다 파티클 강도를 누적 증폭하고요. 리듬게임 도파민 루프는 입력 즉시 차등 시각보상이 핵심이라, 지금 단일 피드백보다 체감 손맛이 직접 좋아져요. 판정선은 엄지존 원칙대로 하단 3분의 1에 두고요.',
+      },
+    ],
+    decisions: [
+      {
+        title: '[P0·자율 완료] dspTime 회귀 탐지기 실체화 — 댕글링 디텍터 해소',
+        description:
+          'QA가 6/20 등록한 TIMING_DSPTIME_UNUSED의 detector(qa_static.check_dsptime_usage)가 실재하지 않음을 발견 → 메인이 회의 중 qa_static.py에 함수 구현(NoteSpawner 정적 스캔: deltaTime 누적+dspTime 미사용=error·dspTime 도입 시 자동 통과·단순 deltaTime 오탐 제외)·실프로젝트 NoteSpawner.cs:126 error 탐지(exit 2)·임시 3케이스(B=1/A=0/C=0)·회귀 2/2 무손상 검증·도구 파일만 선별 커밋(921e0cf). 추적기-탐지기-회귀가 처음으로 한 줄로 연결됨.',
+      },
+      {
+        title: '[P0] MeowBeat NoteSpawner 코어 패치 — dspTime 전환 (사용자 세션)',
+        description:
+          'NoteSpawner.cs:126 `elapsedTime += Time.deltaTime`를 `songPosition = (float)(AudioSettings.dspTime - dspSongStartTime)`로 교체+BGM PlayScheduled 시작 고정+Android 캘리브레이션 오프셋. 게임 로직이라 사용자 세션 P0. 이제 픽스하면 오늘 만든 탐지기가 자동으로 통과를 증명한다(6일째 P0의 마지막 1건).',
+      },
+      {
+        title: '[P0/P1] NumLink 19일 미커밋 봉인 — .gitignore 선정비 후 단일 스냅샷',
+        description:
+          'Layer Lab 7,662 untracked 안에 .omc 봇 산출물 4건이 침투해 있어, .gitignore에 .omc/·Screenshots/·_Recovery/ 패턴을 먼저 추가(Layer Lab 에셋은 트래킹)한 뒤 단일 스냅샷 커밋으로 19일 공백을 봉인. AutoGenTests 4파일 삭제 확정 여부는 사용자 확인 선행(git restore vs 삭제 확정). 사용자 세션 필요.',
+      },
+      {
+        title: '[P1] targetSdk 36(Android 16) 선상향 — 8/31 의무화 D-71',
+        description:
+          'Google Play targetSdk 36 의무화(8/31·미대응 시 신규 노출 차단). NumLink/MeowBeat 둘 다 Player Settings Target API Level 36 상향+빌드 검증. NumLink는 미커밋 봉인이 선행 조건(변경분 누락 위험). Unity 6.3 LTS·IL2CPP 빌드크기 옵션 병행 검토.',
+      },
+      {
+        title: '[P2] 콘텐츠·디자인·성장 백로그 적재',
+        description:
+          'Game Designer: NumLink 메타진행 레이어(클리어 누적→테마/타일 언락)+온보딩 단계별 이탈 계측(단계당 20% 미만). Content: 60~90초 런치 트레일러(+30%)+마이크로 크리에이터 20~30명 시딩(게임당 50만원 이하)+성취 직후 인앱 평점 팝업(별점 4.0+). Art: MeowBeat 판정 3단계 차등 비주얼(Perfect 골드/Great 시안/Good 화이트·20콤보 증폭). DevOps: Unity 빌드 워크플로우 신설 시 Artifact Attestations 반영.',
+      },
+    ],
+  },
+  {
     id: '2026-06-20T04:00:00-daily-standup',
     date: '2026-06-20',
     researchTitle:
