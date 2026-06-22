@@ -1,6 +1,111 @@
 {
-  "lastUpdated": "2026-06-15T00:35:36.547Z",
+  "lastUpdated": "2026-06-22T00:34:14.861Z",
   "weeks": [
+    {
+      "weekOf": "2026-W25",
+      "articles": [
+        {
+          "id": "dc56451ceb1d4ee8",
+          "title": "AI 에이전트로 카카오톡 추천 지표 분석 자동화하기",
+          "url": "https://tech.kakao.com/posts/824",
+          "company": "카카오테크",
+          "category": "general",
+          "summary": "AI 에이전트로 카카오톡 추천 지표 분석 자동화하기",
+          "publishedAt": "2026-06-15T15:00:00.000Z",
+          "collectedAt": "2026-06-22T00:34:14.861Z"
+        },
+        {
+          "id": "39e2b1f32c094f4d",
+          "title": "Vibe Coding하는 비개발자는 개발자인가(3)",
+          "url": "https://tech.kakao.com/posts/823",
+          "company": "카카오테크",
+          "category": "general",
+          "summary": "Vibe Coding하는 비개발자는 개발자인가(3)",
+          "publishedAt": "2026-06-15T15:00:00.000Z",
+          "collectedAt": "2026-06-22T00:34:14.861Z"
+        },
+        {
+          "id": "624c94d5e504363e",
+          "title": "디자이너에게 AI로 뭐든 만들어보라고 한다면",
+          "url": "https://toss.tech/article/ai_contest",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "디자이너에게 AI로 뭐든 만들어보라고 한다면",
+          "publishedAt": "2026-06-19T12:40:00.000Z",
+          "collectedAt": "2026-06-22T00:34:14.861Z"
+        },
+        {
+          "id": "8f4eb0f9401ffdb2",
+          "title": "Spark Connect on Kubernetes #1: 견고한 Spark Connect 만들기",
+          "url": "https://toss.tech/article/spark-connect-on-kubernetes-1",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "Spark Connect on Kubernetes #1: 견고한 Spark Connect 만들기",
+          "publishedAt": "2026-06-19T07:35:00.000Z",
+          "collectedAt": "2026-06-22T00:34:14.861Z"
+        },
+        {
+          "id": "5542f2bf812f118e",
+          "title": "2. 전문성 밖으로 나아가기",
+          "url": "https://toss.tech/article/technical-writing-2",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "2. 전문성 밖으로 나아가기",
+          "publishedAt": "2026-06-19T02:01:00.000Z",
+          "collectedAt": "2026-06-22T00:34:14.861Z"
+        },
+        {
+          "id": "cbf717dafb222c8b",
+          "title": "1. 세상에 없던 직무를 만들어가기",
+          "url": "https://toss.tech/article/technical-writing-1",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "1. 세상에 없던 직무를 만들어가기",
+          "publishedAt": "2026-06-19T02:00:00.000Z",
+          "collectedAt": "2026-06-22T00:34:14.861Z"
+        },
+        {
+          "id": "e6202333310765bd",
+          "title": "매일 하던 업무를 디자인하기",
+          "url": "https://toss.tech/article/todolist",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "매일 하던 업무를 디자인하기",
+          "publishedAt": "2026-06-17T05:06:00.000Z",
+          "collectedAt": "2026-06-22T00:34:14.861Z"
+        },
+        {
+          "id": "734a32147931825e",
+          "title": "AI로 바꾼 제품 설계의 순서",
+          "url": "https://toss.tech/article/chatbot",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "AI로 바꾼 제품 설계의 순서",
+          "publishedAt": "2026-06-17T04:56:00.000Z",
+          "collectedAt": "2026-06-22T00:34:14.861Z"
+        },
+        {
+          "id": "06f14a3b72155acb",
+          "title": "디자이너가 시안 대신 앱을 만든 이유",
+          "url": "https://toss.tech/article/deadend",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "디자이너가 시안 대신 앱을 만든 이유",
+          "publishedAt": "2026-06-16T01:06:00.000Z",
+          "collectedAt": "2026-06-22T00:34:14.861Z"
+        },
+        {
+          "id": "8da8ac375cd0a8dd",
+          "title": "2,800만 MAU를 이해하는 유저 Segmentation, TUES",
+          "url": "https://toss.tech/article/tues",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "2,800만 MAU를 이해하는 유저 Segmentation, TUES",
+          "publishedAt": "2026-06-16T01:00:00.000Z",
+          "collectedAt": "2026-06-22T00:34:14.861Z"
+        }
+      ]
+    },
     {
       "weekOf": "2026-W24",
       "articles": [
@@ -572,71 +677,6 @@
           "category": "general",
           "summary": "pnpm 모노레포에서 React 19 마이그레이션하기: 숨겨진 호이스팅 레이어가 만든 타입 충돌 트러블슈팅",
           "publishedAt": "2026-03-24T08:15:52.000Z",
-          "collectedAt": "2026-04-07T03:23:00.667Z"
-        }
-      ]
-    },
-    {
-      "weekOf": "2026-W12",
-      "articles": [
-        {
-          "id": "e9e3f58a19a2f193",
-          "title": "수억 건의 보안 신호 속 진짜 위협 찾기 — AI로 보안 모니터링의 패러다임을 바꾸다",
-          "url": "https://tech.kakao.com/posts/817",
-          "company": "카카오테크",
-          "category": "general",
-          "summary": "수억 건의 보안 신호 속 진짜 위협 찾기 — AI로 보안 모니터링의 패러다임을 바꾸다",
-          "publishedAt": "2026-03-15T15:00:00.000Z",
-          "collectedAt": "2026-04-07T03:23:00.667Z"
-        },
-        {
-          "id": "c7ca36bcd2ee5086",
-          "title": "LLM을 이용한 서비스 취약점 분석 자동화 #2",
-          "url": "https://toss.tech/article/vulnerability-analysis-automation-2",
-          "company": "토스 테크",
-          "category": "general",
-          "summary": "LLM을 이용한 서비스 취약점 분석 자동화 #2",
-          "publishedAt": "2026-03-20T01:00:00.000Z",
-          "collectedAt": "2026-04-07T03:23:00.667Z"
-        },
-        {
-          "id": "e54d901c4c64d31a",
-          "title": "Stepping into the Software 3.0 Era",
-          "url": "https://toss.tech/article/harness-for-team-productivity-eng",
-          "company": "토스 테크",
-          "category": "general",
-          "summary": "Stepping into the Software 3.0 Era",
-          "publishedAt": "2026-03-17T03:38:00.000Z",
-          "collectedAt": "2026-04-07T03:23:00.667Z"
-        },
-        {
-          "id": "a40265b56b70f1d5",
-          "title": "별점 뒤에 숨겨진 리뷰의 온도, LLM으로 한 끗 차이가 다른 추천 만들기",
-          "url": "https://techblog.woowahan.com/25888/",
-          "company": "우아한형제들",
-          "category": "general",
-          "summary": "별점 뒤에 숨겨진 리뷰의 온도, LLM으로 한 끗 차이가 다른 추천 만들기",
-          "publishedAt": "2026-03-20T05:08:27.000Z",
-          "collectedAt": "2026-04-07T03:23:00.667Z"
-        },
-        {
-          "id": "0311b44350e3e2b0",
-          "title": "흩어져 있는 AI 자산, ‘MCP stdio’로 헤쳐모여!",
-          "url": "https://techblog.woowahan.com/25986/",
-          "company": "우아한형제들",
-          "category": "general",
-          "summary": "흩어져 있는 AI 자산, ‘MCP stdio’로 헤쳐모여!",
-          "publishedAt": "2026-03-17T09:32:56.000Z",
-          "collectedAt": "2026-04-07T03:23:00.667Z"
-        },
-        {
-          "id": "956df3eadae0b250",
-          "title": "Claude Code로 Figma 디자인 시스템을 C++ 코드로 변환하기",
-          "url": "https://meetup.nhncloud.com/posts/410",
-          "company": "NHN Cloud Meetup",
-          "category": "infra",
-          "summary": "Claude Code로 Figma 디자인 시스템을 C++ 코드로 변환하기",
-          "publishedAt": "2026-03-16T00:45:59.000Z",
           "collectedAt": "2026-04-07T03:23:00.667Z"
         }
       ]
