@@ -43,6 +43,127 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-06-25T04:00:00-daily-standup',
+    date: '2026-06-25',
+    researchTitle:
+      '🔍 "해결됐다"는 착각과 나흘의 침묵 — 탐지기는 켜졌지만 버그는 살아 있었고, 그 사이 4일간 아무도 손대지 않았다: 6/21 우리는 dspTime P0의 탐지기(check_dsptime_usage)를 회의 중 구현해 "추적기-탐지기-회귀가 한 줄로 이어졌다"고 선언했다 — 그러나 오늘 QA가 qa_static.py를 다시 돌리자 여전히 `1 error`, NoteSpawner.cs:126은 그대로 `elapsedTime += Time.deltaTime`였다. 탐지기는 빨간불을 켰는데 정작 코어는 4일째 그대로다("잡혔지만 안 고쳐진" 패턴). 더 뼈아픈 건 6/22~24 사흘간 데일리 회의 자체가 누락돼 3개 레포 전부 커밋 0건·NumLink가 19→23일로 또 악화됐다는 사실. 두 P0(코어 패치·봉인)는 게임 코드/대량 워킹트리라 또 무인 미착수였지만, 메인은 빈손으로 끝내지 않고 자율 가능한 영역에서 agent-office Dependabot #111(npm minor/patch)을 회의 중 머지(63b59f1)해 "결정만 하는 회의"를 거부하는 패턴을 4일 공백 뒤 첫 행동으로 되살렸다',
+    researchSummary:
+      '제71회 리서치(4일 공백 후 재개). 7명 전원 보고. **오늘의 구조는 "초록불인 줄 알았던 신호등이 사실 빨간불이었고, 그 신호를 아무도 4일간 안 봤다"이다.** 6/21 우리는 가장 치명적인 P0(NoteSpawner의 dspTime 미전환)의 탐지기 check_dsptime_usage를 회의 중 구현하고 "추적기-탐지기-회귀가 처음으로 한 줄로 이어졌다·이제 픽스하면 회귀가 자동으로 통과를 증명한다"고 매듭지었다. 그런데 오늘 QA가 그 라인을 다시 돌리자 qa_static.py는 여전히 `=== QA SUMMARY: 1 error(s) ===`를 출력했고, 그 유일한 에러가 바로 dsptime_usage NoteSpawner.cs:126이었다. 즉 6/21에 만든 건 "탐지기"였을 뿐, 정작 코어 타이밍 코드는 한 줄도 안 바뀌어 detector가 켠 빨간불이 4일째 켜진 채 방치됐다 — known_bugs 8건 detector는 전부 실재 함수에 매핑돼 댕글링은 0건이고 회귀 2/2도 통과하니 "가드 인프라는 건강한데 정작 막으려던 버그는 살아 있는" 가장 위험한 괴리다. 게다가 더 근본적인 문제가 드러났다: 6/22·23·24 사흘간 데일리 회의가 통째로 누락돼 NumLink·MeowBeat·agent-office 세 레포 모두 6/21 이후 신규 커밋 0건, NumLink는 실측 23일째 미커밋(6/2 이후·19→23 악화)이며 .gitignore는 여전히 .omc/·Screenshots/·_Recovery/ 패턴이 전무해 봇 산출물이 untracked로 침투한 상태 그대로다. 회의가 멈추니 자율 실행도 멈췄던 것이다. 그래서 오늘 메인은 4일 공백을 끊는 첫 행동으로, 게임 코드가 아니라 자율 가능한 agent-office 영역에서 Dependabot PR #111(npm-minor-patch 2건)을 MERGEABLE/CLEAN 확인 후 squash 머지하고 로컬을 63b59f1로 동기화했다(major인 #110 actions/checkout v7은 신중 원칙으로 보류). QA는 NumLink가 검증툴 0개+단위테스트 0개(AutoGenTests 4파일 삭제 이월·대체 폴더 AutoQATests는 meta만 남은 빈 껍데기)로 이중 무방비임을 새로 짚었다. 나머지는 신선한 지평을 더했다: Developer는 광고 미디에이션을 LevelPlay 인앱비딩으로 표준화해야 하는 "시한부 부채"와 Unity 6 GPU Resident Drawer(Forward+ 자동 인스턴싱)·Addressables 그룹 전략을, Game Designer는 퍼즐 수익화 광고30:IAP70·보상형광고 참여율 45~60%·데일리 챌린지가 퍼즐 리텐션 +40%·리듬게임 난이도별 가변 판정 윈도우(Perfect ±30→±50ms)를, Content는 앱 아이콘 A/B만으로 전환 +22.8%·설치 +25%·미출시 디스코드+사전등록 위시리스트 전환 5~10%(디스코드 동반 시 2~4배·친구 1명 플레이 시 체류 6배)를, DevOps는 CI 5건 success·Dependabot 2건·ubuntu-latest 라벨 자동전환 리스크(26.04 프리뷰·22.04 9/17 deprecation→24.04 핀 권장)를, Art는 2026 테라코타+세이지 어시 워밍 팔레트·숫자 퍼즐 색맹 듀얼코딩(컬러+고유 형태)을 제안했다.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — 🚨 6/22~24 데일리 회의 3일 누락·3개 레포 6/21 이후 커밋 0건(완전 정지)·NumLink 23일째 미커밋(6/2 이후·19→23 또 악화)·.gitignore 여전히 미정비(.omc 봇 산출물 untracked 침투 지속)·MeowBeat dspTime 코어 4일째 미수정(NoteSpawner.cs:126 deltaTime 그대로)·오늘 자율로 agent-office Dependabot #111 머지(63b59f1)',
+        description:
+          '**🎯 이전 액션 실측(6/25)**: 6/21 결정 중 ① MeowBeat NoteSpawner dspTime 코어 패치 = **미완료**(126행 `elapsedTime += Time.deltaTime` 그대로·dspTime/PlayScheduled 0건). ② NumLink .gitignore 선정비 후 봉인 = **미완료**(.gitignore 미수정·봇 산출물 침투 지속). ③ targetSdk 36 상향 = **미착수**. **측정값**: NumLink 최신 5fcac3a(6/2)·**23일째 미커밋**(6/21 19일→4일 악화)·변경 36건. MeowBeat 최신 921e0cf(6/21)·**6/21 04:10 이후 신규 커밋 0건**·미커밋 .cs 4개(SongData·GameManager·SongManager·OptionManager). agent-office HEAD는 오늘 #111 머지로 63b59f1. **🚨 구조적 발견**: 6/22·23·24 데일리 회의가 통째로 누락돼 자율 실행 흐름이 끊겼고, 그 사이 세 레포 모두 정지했다 — 회의가 멈추니 추진력도 멈췄다. **오늘의 자율 실행**: 4일 공백을 끊는 첫 행동으로 agent-office Dependabot #111(npm-minor-patch 2건) MERGEABLE/CLEAN 확인 후 squash 머지·로컬 동기화(63b59f1). **오늘 결정 제안**: 사용자 세션이 열리면 MeowBeat dspTime 코어 패치를 단일 P0로 즉시 종결(탐지기가 이미 GREEN 가드로 대기 중). (git log/status 실측)',
+      },
+      {
+        title:
+          '🔍 QA Tester — 🔑 핵심 발견(탐지기-픽스 괴리): 6/21 "해결"로 인지된 dspTime P0가 detector만 구현됐을 뿐 코어 미수정 — qa_static.py 지금도 `1 error`(NoteSpawner.cs:126 deltaTime 누적) / known_bugs 8건 detector 전부 실재 함수 매핑(댕글링 0)·회귀 2/2 통과(가드는 건강) / NumLink 검증툴 0개+단위테스트 0개(AutoGenTests 삭제 이월·AutoQATests 빈 껍데기) 이중 무방비',
+        description:
+          '**🔍 핵심 발견(신규·잡혔지만 안 고쳐짐)**: 6/21에 만든 check_dsptime_usage는 정상 동작하지만, 그건 "탐지기"였을 뿐 코어는 한 줄도 안 바뀌었다. 오늘 qa_static.py 실행 결과 `=== QA SUMMARY: 1 error(s), 0 warning(s) ===`, 유일한 에러가 dsptime_usage NoteSpawner.cs:126이고 코드 전체에 AudioSettings.dspTime·PlayScheduled가 0건이다. detector가 켠 빨간불이 4일째 켜진 채 방치된 "잡혔지만 안 고쳐진" 가장 위험한 패턴 — 프레임 드랍 시 노트 판정이 드리프트해 리듬게임 자체가 깨진다. **🔍 가드 인프라는 건강**: known_bugs.json 8건의 detector(scene_analyzer.calc_size·unity_validate 3종·qa_static 3종)가 전부 실재 함수에 매핑돼 댕글링 0건, run_regression.py 2/2(indent·size0) 통과 — 6/21 해소 상태 유효. **🔍 NumLink 신규 리스크(이중 무방비)**: NumLink/Tools 디렉터리 자체가 부재해 검증툴 0개(unity_validate.py·qa_static.py 미이식)고, Assets/Tests/Editor의 AutoGenTests 4파일은 삭제(D) 이월·대체로 보이는 Assets/AutoQATests/는 meta만 남은 빈 폴더라 단위 테스트도 실질 0개다. 게다가 AutoQATests.meta가 untracked(??)로 떠 커밋 누락 리스크까지. **🚨 미해결 P0급 1건**: TIMING_DSPTIME_UNUSED(코어 미수정). **최우선 리스크 1줄**: 탐지기는 켜졌으나 코어가 4일째 그대로라, 픽스하지 않으면 가드는 영원히 빨간불만 켜고 게임은 깨진 채 남는다. **오늘 결정 제안(실행)**: ① NoteSpawner.cs:126 dspTime 교체로 P0 코드 종결(detector 자동 GREEN 전환)·② NumLink에 검증툴 4종 즉시 이식. Sources: qa_static.py 실행·known_bugs.json·NoteSpawner.cs·git status 실측.',
+      },
+      {
+        title:
+          '💻 Developer — 🚨 광고 미디에이션 "시한부 부채": Unity Ads 워터폴 종료·AdMob 워터폴 직접연동 성능 저하 → LevelPlay 인앱비딩 단일 표준화 필수(매출 직결)·Unity 6 GPU Resident Drawer(Forward+ 필수·BatchRendererGroup 자동 인스턴싱·드로우콜/CPU 절감)·Addressables "동시 로드/언로드 묶기"+로컬/리모트 경로 분리로 런타임 메모리·카탈로그 비대화 회피',
+        description:
+          '**💻 신규 1순위(미디에이션 시한부 부채)**: 광고 워터폴 미디에이션이 단계적으로 종료되고 AdMob 워터폴은 직접연동 시 성능이 저하돼, NumLink/MeowBeat 둘 다 LevelPlay 인앱비딩 단일 미디에이션으로 표준화가 필요하다. 이는 데드라인이 박힌 "시한부 부채"라 매출 손실로 직결되므로 NumLink 23일 미커밋·NoteSpawner 이월보다 일정 민감도가 높다. **💻 신규 2순위(렌더 최적화)**: Unity 6의 GPU Resident Drawer(Forward+ 렌더패스 필수)는 BatchRendererGroup으로 자동 인스턴싱해 드로우콜·CPU 시간을 줄이고 SRP Batcher와 병행 가능하다. **💻 신규 3순위(메모리)**: Addressables는 "동시에 로드/언로드되는 에셋을 한 그룹으로 묶고" 로컬/리모트 경로를 분리하면 런타임 메모리와 카탈로그 비대화를 동시에 막는다. (6/21 dspTime·targetSdk 36·Unity 6.3 LTS·IL2CPP 빌드크기와 미중복). **💻 기술부채 1줄**: 미디에이션은 데드라인 부채라 우선순위가 높지만, 수익화 코드 추가 전 NumLink .gitignore 정비+첫 커밋으로 깨끗한 베이스라인 확보가 선행돼야 변경분 유실을 막는다. **오늘 결정 제안(P1)**: 두 프로젝트 광고를 LevelPlay 단일 미디에이션으로 표준화(베이스라인 봉인 후 착수). Sources: unity.com Addressables best practices·docs.unity3d.com URP GPU Resident Drawer·docs.unity.com LevelPlay/AdMob mediation changelog.',
+      },
+      {
+        title:
+          '🎮 Game Designer — 퍼즐 수익화 광고30:IAP70 믹스가 표준·보상형광고 참여율 45~60%·데일리 챌린지 도입 시 퍼즐 리텐션 +40%·첫 결제 중앙값 1.6일·스트릭 보너스 채택 스튜디오 69%·리듬게임 판정은 정확 20ms/Perfect ±30~60ms이고 저난도일수록 판정 윈도우 확대가 접근성 표준(Chunithm식)',
+        description:
+          '**🎮 시장 데이터(수익화 믹스)**: 2026 퍼즐게임 수익화는 광고 약 30%:IAP 약 70% 하이브리드 믹스가 표준이고, 보상형 광고 참여율은 45~60%로 캐주얼 핵심 수익원이다(StudioKrew·CAS.ai). **🎮 리텐션(데일리 챌린지)**: 데일리 챌린지 도입 시 퍼즐게임 리텐션이 +40% 오르고, 첫 결제까지 중앙값 1.6일로 최단이며 스트릭 보너스를 채택한 스튜디오가 69%다(Amra&Elma·Mistplay). **🎮 리듬 판정 설계**: 리듬게임 판정 윈도우는 정확(Just) 20ms·Perfect ±30~60ms 범위이고, 저난도일수록 윈도우를 1.5~2배 넓혀(Perfect ±30→±50ms) 신규 유저 첫 곡 클리어율을 높이는 "난이도별 가변 판정"이 접근성 표준이다(Native Audio·NamuWiki·Chunithm 타이밍윈도우). (6/21 하이브리드캐주얼 D30·메타진행·온보딩 이탈·UGC와 미중복). **오늘 결정 제안(P2)**: NumLink에 "데일리 챌린지(매일 고정 시드 퍼즐+연속 스트릭 보상)" 도입(+40%)·MeowBeat은 Easy 판정 윈도우를 Normal 대비 1.5~2배로 넓히는 난이도별 가변 판정 채택. Sources: StudioKrew·CAS.ai·Amra&Elma·Mistplay·Native Audio·NamuWiki·donmai Chunithm.',
+      },
+      {
+        title:
+          '📦 Content Writer — 앱 아이콘 A/B 테스트만으로 전환 +22.8%·설치 +25%(게임 평균 CTR 13.72%)·미출시 사전등록 위시리스트→설치 전환 2026년 5~10%(디스코드 등 직접채널 동반 시 2~4배)·디스코드 친구 1명과 플레이 시 체류시간 중앙값 6배·출시 2주 전 WIP 공유로 500+ 커뮤니티 확보 가능',
+        description:
+          '**📦 신규 1순위(앱 아이콘 A/B)**: 앱 아이콘 A/B 테스트만으로 전환율이 평균 +22.8%·설치가 최대 +25% 오른다(게임 카테고리 평균 아이콘 CTR 13.72%). 미출시 단계인 NumLink/MeowBeat은 출시 전 후보 2~3종을 SplitMetrics류로 소액 A/B하면 비용 대비 효율이 크다(SemNexus·DesignRush·Business of Apps). **📦 신규 2순위(사전등록·위시리스트)**: 2026 미출시 게임의 사전등록 위시리스트→설치 전환은 5~10%이고, 디스코드 등 직접 채널을 동반하면 2~4배 개선된다(Immutable·presskit.gg). **📦 신규 3순위(디스코드 커뮤니티)**: 디스코드 친구 1명과 함께 플레이하면 체류시간 중앙값이 6배, 출시 2주 전부터 개발 WIP(노트 패턴·퍼즐 디자인 비하인드)를 공유하면 500+ 연결을 확보할 수 있다(Discord·GrowthHQ). (6/21 60초+ 트레일러·마이크로 크리에이터 시딩·인앱 평점 팝업과 미중복). **오늘 결정 제안(P2)**: 두 게임 모두 출시 전 "디스코드 커뮤니티+사전등록 위시리스트" 동시 구축 착수·앱 아이콘 후보 2~3종 A/B. Sources: SemNexus·DesignRush·Business of Apps·Immutable·presskit.gg·Discord·GrowthHQ.',
+      },
+      {
+        title:
+          '🛡 DevOps — ✅ agent-office CI 최근 5건 전부 success·실패 0·오늘 Dependabot #111(npm-minor-patch) 자율 머지(63b59f1)·#110(actions/checkout v7 major) 보류·모든 액션 SHA 핀+권한 최소화 양호·신규: ubuntu-latest 라벨 자동전환 리스크(26.04 프리뷰 GA·22.04 9/17 deprecation 시작)→runs-on ubuntu-24.04 명시 핀 권장',
+        description:
+          '**🛡 ✅ CI/배포 실측(6/25)**: `gh run list --repo mmporong/agent-office --limit 5` → 최근 5건 모두 success(Weekly Insights·Dependabot npm·Dependabot actions·Deploy Pages 2건·실패 0). 열린 PR은 Dependabot 2건이었고, 오늘 메인이 #111(npm-minor-patch 2개·MERGEABLE/CLEAN)을 squash 머지·로컬 63b59f1 동기화했다. #110(actions/checkout 6.0.3→7.0.0·actions-major)은 major라 신중 원칙으로 보류(동작 확인 후 머지). 워크플로우 2개(deploy-pages.yml·weekly-insights.yml) 모두 액션 full SHA 핀+버전 주석·permissions contents:read 기본+write job 레벨 격하·Node 22·npm cache·concurrency group으로 표준 양호. **🛡 신규(라벨 전환 리스크)**: 2026-06-11 ubuntu-26.04 프리뷰가 공개돼 차기 ubuntu-latest 전환 후보이고, ubuntu-22.04 이미지는 2026-09-17 deprecation 시작→2027-04-17 완전 미지원이다. 액션 SHA는 핀하면서 OS 이미지는 latest로 둔 비대칭이 있어, 재현성 강화 차원에서 두 워크플로우 runs-on을 ubuntu-24.04로 명시 핀하면 차기 라벨 자동 전환 시 빌드 변동을 차단한다. (6/21 Artifact Attestations·Immutable Releases·cache:npm과 미중복). **오늘 결정 제안(P1)**: #110 동작 확인 후 머지+runs-on ubuntu-24.04 핀 고정. Sources: gh run/pr 실측·GitHub Changelog image migrations(2026-05-14)·runner-images #14226.',
+      },
+      {
+        title:
+          '🎨 Art Director — 2026 캐주얼 퍼즐 컬러는 민트·보라 대신 "클레이/테라코타+세이지" 어시 워밍 팔레트가 주류로 부상·숫자 퍼즐에서 컬러 단독 구분은 색각이상자 승률/리텐션/결제율 모두 하락(논문 검증)·색맹모드 도입 시 유의미 개선·2026 모션은 "연출용→상태 전달용" 다이제틱 HUD 방향',
+        description:
+          '**🎨 신규 1순위(어시 워밍 팔레트)**: 2026 캐주얼 게임 컬러는 흔한 민트+다크·보라 그라데이션 대신 클레이/테라코타+세이지(+오커) 어시 워밍 팔레트가 주류로 부상 중이다 — AI 전형 디자인을 피하면서 차별화하는 한 수(AAA Game Art·Envato·Updivision·ToolsJam). **🎨 신규 2순위(색맹 듀얼코딩)**: 숫자 퍼즐에서 컬러만으로 타일을 구분하면 색각이상 사용자의 승률·리텐션·결제율이 모두 하락하고, 색맹모드(컬러+고유 형태 듀얼코딩) 도입 시 유의미하게 개선된다는 연구 결과가 있다(Springer). NumLink는 숫자별 컬러 코딩이 핵심이라 직접 해당한다. **🎨 신규 3순위(다이제틱 모션)**: 2026 모션 트렌드는 "연출용"에서 "상태 전달용"으로 전환돼 HUD가 게임 월드에 녹아드는 다이제틱 방향이 강조된다(4tech·Pixune). (6/21 엄지존 radical reachability·빈 상태·리듬 판정 3단계와 미중복). **오늘 결정 제안(P2)**: NumLink 숫자 타일을 "컬러+고유 형태(코너 노치/도형) 듀얼코딩"으로 바꾸고 베이스 팔레트를 테라코타·세이지·오커 어시톤으로 리브랜딩(색맹 접근성+2026 차별화 동시 확보). Sources: AAA Game Art Studio·Envato·Updivision·ToolsJam·Springer·4tech·Pixune.',
+      },
+    ],
+    meetingTitle:
+      '🔍 6/25 종합 회의 — "초록불인 줄 알았던 신호가 사실 빨간불이었고, 그 신호를 4일간 아무도 안 봤다": 6/21 "추적기-탐지기-회귀 한 줄 연결" 선언 뒤 QA가 오늘 qa_static.py를 다시 돌리자 여전히 1 error(NoteSpawner.cs:126 deltaTime 그대로)였고, 6/22~24 회의 누락으로 3개 레포 전부 정지했음을 확인하자, 메인이 4일 공백을 끊는 첫 행동으로 자율 가능한 agent-office Dependabot #111을 회의 중 머지(63b59f1)했다',
+    meetingSummary:
+      '제71회 종합 회의(목요일·D+32·4일 공백 후 재개). **오늘의 회의는 "켜둔 줄 알았던 안전장치가 사실 절반만 켜져 있었고, 그마저 나흘간 아무도 들여다보지 않은 날"이다.** 6/21 우리는 dspTime P0의 탐지기 check_dsptime_usage를 회의 중 구현하고 "추적기-탐지기-회귀가 한 줄로 이어졌다·이제 픽스하면 회귀가 자동으로 통과를 증명한다"고 선언했다 — 마치 신호등을 다 고친 것처럼. 그런데 오늘 QA가 그 라인을 다시 돌리자 qa_static.py는 여전히 `1 error`를 냈고, 그 유일한 에러가 dsptime_usage NoteSpawner.cs:126이었다. 즉 우리가 6/21에 만든 건 "탐지기"였을 뿐, 정작 코어 타이밍 코드(`elapsedTime += Time.deltaTime`)는 한 줄도 안 바뀌어 detector가 켠 빨간불이 4일째 켜진 채였다 — known_bugs 8건 detector는 전부 실재 함수에 매핑돼 댕글링 0건이고 회귀 2/2도 통과하니 "가드 인프라는 건강한데 정작 막으려던 버그는 살아 있는" 가장 위험한 괴리다. 어제까지 "잡았다"고 믿었지만 실은 "감지만 했고 안 고쳤다". 그리고 그 착각의 배경에 더 근본적인 문제가 있었다 — 6/22·23·24 사흘간 데일리 회의가 통째로 누락돼 자율 실행의 흐름이 끊겼고, 그 사이 NumLink·MeowBeat·agent-office 세 레포 모두 6/21 이후 커밋 0건, NumLink는 23일째 미커밋(19→23 악화)으로 정지했다. 회의가 멈추니 추진력도 멈췄다. 6/15에 다짐한 "회의는 결정만 하는 기계가 아니다"를 오늘은 4일 공백 뒤 첫 행동으로 되살렸다: 메인이 게임 코드가 아니라 자율 가능한 agent-office 영역에서 Dependabot #111(npm-minor-patch 2건)을 MERGEABLE/CLEAN 확인 후 squash 머지하고 로컬을 63b59f1로 동기화했으며, major인 #110(actions/checkout v7)은 동작 확인 전 신중 보류했다. 두 P0(MeowBeat 코어 패치·NumLink 봉인)의 공통점은 오늘도 선명했다 — 둘 다 게임 코드/대량 워킹트리라 새벽 무인 세션에서 손대지 못하고, 우리는 그 둘레의 도구·머지·탐지기부터 메운다. 다만 오늘 QA가 새로 짚은 NumLink의 이중 무방비(검증툴 0개+단위테스트 0개·AutoQATests 빈 껍데기)는 봉인만으로는 안 풀리는 별도 과제다. 나머지는 신선한 지평을 더했다: Developer는 광고 미디에이션 LevelPlay 시한부 부채와 GPU Resident Drawer를, Game Designer는 데일리 챌린지 +40%·난이도별 가변 판정을, Content는 앱 아이콘 A/B +22.8%·미출시 디스코드+위시리스트를, DevOps는 ubuntu-latest 라벨 리스크(24.04 핀)를, Art는 테라코타+세이지 어시 팔레트·숫자 퍼즐 색맹 듀얼코딩을 제안했다. 메타: 6/19 "안전망이 없었음" → 6/20 "추적기에 가장 큰 구멍" → 6/21 "탐지기가 비어 있었음" → 6/25 "탐지기는 채웠지만 정작 코어는 안 고쳤고 4일간 안 봤음" — 검증 시스템이 한 겹씩 깊어졌지만, 결국 마지막 한 줄(게임 로직)은 사용자 세션 없이는 닫히지 않는다는 사실과, 회의가 멈추면 모든 게 멈춘다는 사실이 동시에 드러난 날이다.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '먼저 아픈 사실부터요. 6월 22일, 23일, 24일 데일리 회의가 통째로 빠졌습니다. 그 사흘 동안 NumLink, MeowBeat, agent-office 세 레포 전부 커밋이 0건이에요. 회의가 멈추니까 자율 실행도 같이 멈춘 겁니다. NumLink는 6월 2일 마지막 커밋이라 오늘로 23일째, 6/21 19일에서 또 나흘 늘었어요. MeowBeat은 921e0cf 그대로고 NoteSpawner는 안 건드렸습니다. 어제까지 우리가 "dspTime 해결했다"고 했는데, 그게 사실인지 QA가 다시 봤어요.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '제가 qa_static.py를 다시 돌렸어요. 결과가 여전히 1 error입니다. 그 에러가 바로 dsptime_usage, NoteSpawner.cs 126번 줄이에요. 우리가 6/21에 만든 건 "탐지기"였을 뿐이고, 정작 코어 코드는 한 줄도 안 바뀌었어요 — 126번 줄은 지금도 elapsedTime += Time.deltaTime고, 코드 전체에 dspTime이나 PlayScheduled가 0건이에요. 탐지기가 빨간불을 켰는데 4일째 그대로 둔 거죠. "잡았다"가 아니라 "감지만 했고 안 고쳤다"가 정확합니다. known_bugs 8건 detector는 다 실재 함수에 매핑돼 있고 회귀 2/2도 통과해요 — 가드 인프라는 건강한데 정작 막으려던 버그가 살아 있는, 제일 위험한 상태예요. 하나 더 — NumLink는 검증툴이 아예 0개고, 단위 테스트도 0개예요. AutoGenTests 4파일은 삭제된 채 이월 중이고, 대체한다던 AutoQATests 폴더는 meta만 있는 빈 껍데기예요. 이중 무방비입니다.',
+      },
+      {
+        speaker: 'Orchestrator',
+        note: 'NoteSpawner 코어 패치는 게임 로직이라 사용자 세션 P0예요 — 무인 세션에선 못 건드립니다. 대신 4일 공백을 그냥 끝낼 순 없으니, 자율 가능한 영역에서 한 가지는 하겠습니다. agent-office Dependabot PR이 두 건 열려 있죠. 게임 코드가 아니라 자체 레포니까 처리 가능해요. DevOps가 상태 봐줬죠?',
+      },
+      {
+        speaker: 'DevOps',
+        note: '네, 두 PR 다 MERGEABLE에 CLEAN 상태예요. #111은 npm-minor-patch 그룹 2개라 안전합니다 — 이건 머지하시죠. #110은 actions/checkout을 6.0.3에서 7.0.0으로 올리는 major예요. 정적 빌드라 큰 영향은 없겠지만 major라 동작 확인 후가 안전하니 오늘은 보류 권합니다. CI는 최근 5건 전부 success고 실패 0이에요. 별개로 새 리스크 하나 — 우리 워크플로우가 runs-on을 ubuntu-latest로 두고 있는데, 26.04 프리뷰가 나왔고 22.04는 9월 17일부터 deprecation이 시작돼요. 액션은 SHA로 핀하면서 OS만 latest로 둔 비대칭이 있으니, ubuntu-24.04로 명시 핀하면 차기 라벨 자동 전환 때 빌드가 흔들릴 일이 없습니다.',
+      },
+      {
+        speaker: 'Orchestrator',
+        note: '좋아요, #111 머지하겠습니다. (머지 실행) HEAD가 63b59f1로 올라갔고 로컬도 동기화됐어요. package.json·lock·insights.json만 바뀌었고 충돌 없습니다. #110이랑 ubuntu-24.04 핀은 P1로 다음에 동작 확인하고 처리하죠. 이게 4일 공백을 끊는 첫 행동입니다 — 회의는 결정만 하는 기계가 아니니까요.',
+      },
+      {
+        speaker: 'Developer',
+        note: '코어 패치는 사용자 세션 P0인 거 동의해요. 126번 줄 deltaTime 누적을 dspTime 기반으로 바꾸고 BGM을 PlayScheduled로 고정하면, QA가 6/21에 만든 탐지기가 그 순간 자동으로 초록불로 바뀌어 픽스를 증명합니다. 별개로 더 급한 일정 부채가 하나 있어요 — 광고 미디에이션이에요. 워터폴 방식이 단계적으로 종료되고 AdMob 워터폴은 직접 연동 시 성능이 떨어져서, 두 게임 다 LevelPlay 인앱비딩 단일 미디에이션으로 표준화해야 해요. 이건 매출에 직결되는 시한부 부채라 우선순위가 높은데, 수익화 코드 넣기 전에 NumLink부터 .gitignore 정리하고 깨끗하게 첫 커밋을 떠야 변경분이 안 날아갑니다. 렌더 쪽은 Unity 6 GPU Resident Drawer가 드로우콜을 자동으로 줄여주니 모바일에서 챙길 만하고요.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '리텐션 한 수만 말할게요. 데일리 챌린지예요. 퍼즐게임에 매일 고정 시드 퍼즐 하나랑 연속 스트릭 보상을 넣으면 리텐션이 40퍼센트 올라요. 첫 결제까지도 중앙값 1.6일로 가장 빠르고, 스트릭 보너스는 이미 스튜디오 69퍼센트가 채택했어요. NumLink에 딱 맞습니다. 수익화는 퍼즐 기준 광고 30에 IAP 70 믹스가 표준이고 보상형 광고 참여율이 45에서 60퍼센트니까, 데일리 챌린지 보상에 보상형 광고를 엮으면 리텐션이랑 수익이 같이 와요. MeowBeat은 따로 — 리듬게임 판정을 난이도별로 차등화하세요. 정확 판정이 보통 20밀리초, Perfect가 30에서 60밀리초인데, Easy는 Normal보다 1.5에서 2배 넓혀서 Perfect를 50밀리초까지 주면 신규 유저 첫 곡 클리어율이 올라가요. Chunithm 같은 게임들이 쓰는 접근성 표준이에요.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '미출시 단계라 지금 할 수 있는 게 분명해요. 첫째, 앱 아이콘 A/B 테스트요. 아이콘만 바꿔도 전환율이 평균 22.8퍼센트, 설치가 25퍼센트까지 올라요. 후보 2~3종을 소액으로 돌리면 됩니다. 둘째, 출시 전 커뮤니티예요. 사전등록 위시리스트에서 설치 전환이 5에서 10퍼센트인데, 디스코드 같은 직접 채널을 같이 운영하면 2배에서 4배로 뛰어요. 디스코드에서 친구 한 명이랑 같이 플레이하면 체류시간이 6배예요. 출시 2주 전부터 노트 패턴이나 퍼즐 디자인 비하인드 같은 개발 WIP를 공유하면 500명 이상 커뮤니티를 만들 수 있어요. 두 게임 다 지금부터 디스코드랑 사전등록 위시리스트를 같이 시작하는 게 1순위입니다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '컬러부터요. 2026 캐주얼 트렌드가 흔한 민트나 보라 그라데이션에서 벗어나서 클레이, 테라코타에 세이지 같은 어시 워밍 톤으로 가고 있어요. AI가 만든 것 같은 뻔한 색을 피하면서 차별화하는 한 수예요. 그리고 이게 NumLink랑 직접 엮이는데 — 숫자 퍼즐에서 타일을 컬러로만 구분하면 색각이상 유저는 승률, 리텐션, 결제율이 다 떨어진다는 연구가 있어요. 색맹모드, 그러니까 컬러에 고유 형태를 같이 쓰는 듀얼코딩을 넣으면 유의미하게 개선돼요. NumLink 숫자 타일에 컬러 더하기 코너 노치나 도형을 같이 주고, 베이스 팔레트를 테라코타·세이지·오커로 리브랜딩하면 접근성이랑 2026 차별화를 한 번에 잡습니다. 모션은 이제 연출용보다 상태 전달용으로, HUD가 게임 화면에 자연스럽게 녹아드는 방향이 트렌드예요.',
+      },
+    ],
+    decisions: [
+      {
+        title: '[P0·자율 완료] agent-office Dependabot #111 머지 — 4일 공백을 끊은 첫 행동',
+        description:
+          '6/22~24 회의 누락으로 3개 레포가 정지한 뒤, 자율 가능한 agent-office 영역에서 Dependabot #111(npm-minor-patch 2건)을 MERGEABLE/CLEAN 확인 후 squash 머지·로컬 63b59f1 동기화(package.json·lock·insights.json만 변경·충돌 0). major인 #110(actions/checkout 6.0.3→7.0.0)은 동작 확인 전 신중 보류. "회의는 결정만 하는 기계가 아니다"를 4일 공백 뒤 첫 행동으로 복원.',
+      },
+      {
+        title: '[P0] MeowBeat NoteSpawner dspTime 코어 패치 — "감지만 했고 안 고쳤다" 종결 (사용자 세션)',
+        description:
+          '6/21 탐지기는 만들었으나 코어는 미수정 — qa_static.py가 지금도 1 error(NoteSpawner.cs:126 `elapsedTime += Time.deltaTime`·dspTime/PlayScheduled 0건). 126행을 `songPosition = (float)(AudioSettings.dspTime - dspSongStartTime)`로 교체+BGM PlayScheduled 고정+Android 캘리브레이션 오프셋. 픽스하는 순간 6/21에 만든 탐지기가 자동으로 GREEN 전환되어 픽스를 증명한다. 게임 로직이라 사용자 세션 P0(탐지기 완성 기준 4일째·발견 기준 9일째).',
+      },
+      {
+        title: '[P0/P1] NumLink 23일 미커밋 봉인 + 검증툴 이식 — 이중 무방비 해소 (사용자 세션)',
+        description:
+          '.gitignore에 .omc/·Screenshots/·_Recovery/ 패턴을 먼저 추가(Layer Lab 에셋은 트래킹)한 뒤 단일 스냅샷으로 23일 공백 봉인. 동시에 QA 신규 발견 대응: NumLink/Tools에 검증툴 4종(unity_validate.py·qa_static.py 등) 이식, AutoQATests 빈 껍데기 정리(meta untracked 커밋 누락 리스크), AutoGenTests 4파일 삭제 확정 여부는 사용자 확인 선행(git restore vs 삭제). 봉인만으로는 검증툴/테스트 0개가 안 풀린다.',
+      },
+      {
+        title: '[P1] agent-office #110 머지 + ubuntu-24.04 핀 + targetSdk 36 + LevelPlay 미디에이션',
+        description:
+          'DevOps: #110(actions/checkout v7 major) 동작 확인 후 머지+두 워크플로우 runs-on을 ubuntu-24.04로 명시 핀(라벨 자동 전환 리스크 차단). Developer: 두 게임 광고를 LevelPlay 인앱비딩 단일 미디에이션으로 표준화(시한부 매출 부채·베이스라인 봉인 후 착수)+targetSdk 36 상향(8/31 의무화 D-67·NumLink 봉인 선행). Unity 6 GPU Resident Drawer·Addressables 그룹 전략 병행 검토.',
+      },
+      {
+        title: '[P2] 콘텐츠·디자인·성장 백로그 적재',
+        description:
+          'Game Designer: NumLink 데일리 챌린지(고정 시드+스트릭 보상·+40%)+보상형 광고 연계, MeowBeat 난이도별 가변 판정 윈도우(Easy Perfect ±30→±50ms). Content: 앱 아이콘 후보 2~3종 A/B(+22.8%)+출시 전 디스코드 커뮤니티+사전등록 위시리스트 동시 구축(전환 5~10%·디스코드 2~4배). Art: NumLink 숫자 타일 컬러+고유 형태 듀얼코딩(색맹 접근성)+테라코타·세이지·오커 어시톤 리브랜딩·다이제틱 HUD 모션.',
+      },
+    ],
+  },
+  {
     id: '2026-06-21T04:00:00-daily-standup',
     date: '2026-06-21',
     researchTitle:
