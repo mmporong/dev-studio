@@ -43,6 +43,131 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-06-26T04:00:00-daily-standup',
+    date: '2026-06-26',
+    researchTitle:
+      '🔧 어제는 의존성을 머지했고, 오늘은 배포 파이프라인 자체의 숨은 결함을 고쳤다 — 두 P0는 또 못 건드렸지만 자율 영역이 한 칸 더 깊어졌다: 6/25 우리는 "탐지기는 채웠지만 코어는 안 고쳤고 4일간 안 봤다"는 뼈아픈 자각으로 회의를 끝냈고, 오늘도 그 두 P0(MeowBeat NoteSpawner dspTime 코어·NumLink 23일 봉인)는 게임 코드/대량 워킹트리라 무인 세션에서 손도 못 댔다 — NumLink는 24일째로 또 하루 늘었고 qa_static.py는 여전히 정확히 1 error다. 그러나 빈손으로 끝내지 않는 패턴은 오늘 한 단계 진화했다: 어제 자율 행동이 "Dependabot 의존성 머지"였다면, 오늘 DevOps가 deploy-pages.yml에서 더 깊은 결함을 캐냈다 — `concurrency.cancel-in-progress: true`가 걸려 있어, 6/24처럼 9분 간격 연속 push가 나면 진행 중이던 직전 배포가 통째로 취소돼 최신 커밋이 영영 배포 안 될 수 있는 구조였다. GitHub 공식은 production 배포(Pages 포함)는 취소가 아니라 큐잉(false)을 권장한다. 메인은 회의 중 이 한 줄을 false로 고쳤고, 바로 오늘 데일리 배포가 그 수정의 첫 검증이 된다 — "탐지기만 켜고 안 고치는" 6/25의 실수를 자율 영역에서만큼은 반복하지 않겠다는 행동이다',
+    researchSummary:
+      '제72회 리서치(금요일·D+33·6/25 다음 날). 7명 전원 보고. **오늘의 구조는 "고칠 수 있는 것은 그 자리에서 고친다 — 단 그 칼끝이 닿는 곳이 어제보다 한 겹 더 깊어졌다"이다.** 6/25 우리는 dspTime P0가 "탐지기만 켜졌고 코어는 4일째 안 고쳐졌다"는 가장 위험한 괴리를 자각했다. 오늘 QA가 같은 라인을 다시 돌렸고 결과는 변함없었다 — qa_static.py는 정확히 `1 error`, 그 유일한 에러가 dsptime_usage NoteSpawner.cs:126이며 코드 전체에 AudioSettings.dspTime·PlayScheduled가 0건이다. detector는 6/21부터 켠 빨간불을 오늘로 닷새째 켜둔 채고, 코어는 게임 로직이라 사용자 세션 없이는 닫히지 않는다. NumLink도 24일째 미커밋(6/2 이후·23→24)·작업트리 36파일로 정체, 검증툴 0개+단위테스트 0개 이중 무방비도 무변화(QA가 BoardDataTester.cs는 Editor 도구일 뿐 자동 단위테스트가 아님을 새로 확인). 두 P0의 공통 운명은 오늘도 같았다 — 무인 새벽엔 못 건드리고, 우리는 그 둘레부터 메운다. 그런데 오늘 그 "둘레"가 어제보다 깊었다: DevOps가 deploy-pages.yml의 concurrency.cancel-in-progress가 true로 걸려 있어 연속 push 시 직전 배포가 중단되는 구조적 결함(6/24 #111→docs 9분 간격 실사례 존재)을 찾아냈고, GitHub 공식이 production 배포에 권장하는 false로 메인이 회의 중 1줄 수정했다 — 어제 "의존성 머지"에서 오늘 "배포 파이프라인 자체의 숨은 결함"으로 자율 칼끝이 한 칸 전진했고, 오늘 데일리 배포가 곧 그 수정의 검증이 된다. agent-office #110(actions/checkout v7 major)은 6/25에 이어 여전히 CLEAN/MERGEABLE로 열려 있으나 major라 신중 보류 유지(다음 사용자 세션에서 changelog 확인 후 처리). 나머지는 신선한 지평을 더했다: Developer는 Unity 6.5 정식 출시(2026.6·on-tile 포스트프로세싱 전 플랫폼·Vulkan/Metal 모바일 HDR 대역폭 절감·Memory Profiler resident 정확도+2D 스프라이트 모듈)와 Google Play targetSDK Android 15 강제(2026.6.30 미·영, 한국 연말·Epic 합의로 수수료 15/20%·외부결제 허용)를, Game Designer는 2026 IAP 매출 84%가 라이브옵스 운영 게임에서 발생(상위 퍼즐 월 80~100개 이벤트 터치포인트·3년 전 20개)·소셜 레이어(리더보드/길드챗) 적용 시 리텐션 +22%·AI 레벨생성으로 개발시간 -40%·리텐션 +30%를, Content는 2026 퍼즐 CPI iOS $3.0·Android $2.0(iOS 2~4배 비쌈)·첫 스크린샷 OCR 색인화+혜택문구 전환 +10~20%·게임 프리뷰영상 +15~30%·Q4 UA 20~40% 급등/Q1 최저·목요일 출시→주말 다운로드 피크를, DevOps는 CI 6건 success+위 deploy-pages 결함을, Art는 마이크로인터랙션이 "장식→지시"로 전환·햅틱 동반 시 30일 리텐션 +23%·가변폰트/키네틱 타이포 표준화·글래스모피즘은 토대 아닌 액센트(고대비 유지·저사양 GPU 블러 프레임드롭 주의)를 보고했다. 메타: 6/19 "안전망 없음" → 6/21 "탐지기 비어 있음" → 6/25 "탐지기는 채웠으나 코어 미수정·4일 방치" → 6/26 "코어는 여전히 사용자 세션 대기, 그러나 자율 칼끝은 의존성→배포 파이프라인으로 한 칸 더 깊이 들어감". 검증·자율의 사정거리는 매일 넓어지지만, 마지막 게임 로직 한 줄은 사용자 세션에서만 닫힌다.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — NumLink 24일째 미커밋(6/2 이후·23→24 또 하루 악화·작업트리 36파일)·MeowBeat 5일째(921e0cf·작업트리 37파일·NoteSpawner dspTime P0 미패치 유지)·agent-office #110(checkout v7 major) 6/25 이어 여전히 CLEAN/MERGEABLE 열림·오늘 자율로 deploy-pages.yml cancel-in-progress true→false 수정(배포 안정성 결함)',
+        description:
+          '**🎯 이전 액션 실측(6/26)**: 6/25 결정 중 ① MeowBeat NoteSpawner dspTime 코어 패치 = **미완료**(126행 `elapsedTime += Time.deltaTime` 그대로·게임 코드 사용자 세션 P0). ② NumLink 봉인+검증툴 이식 = **미완료**(24일째·Tools 0개·AutoQATests 빈 껍데기 무변화). ③ #110 머지 = **보류 유지**(major 신중). **측정값**: NumLink 최신 5fcac3a(6/2)·**24일째 미커밋**(6/25 23일→하루 악화)·작업트리 36파일. MeowBeat 최신 921e0cf(6/21)·**5일째**·작업트리 37파일·미커밋 .cs 4개(SongData·GameManager·SongManager·OptionManager) 그대로. agent-office HEAD 175c61d(6/25 데일리)·로컬 변경 .omc/project-memory.json 1건·열린 PR은 #110 1건뿐(checkout 6.0.3→7.0.0 major·CLEAN·MERGEABLE). **오늘의 자율 실행**: DevOps 발견을 받아 deploy-pages.yml의 concurrency.cancel-in-progress를 true→false로 1줄 수정(production 배포 큐잉·연속 push 시 직전 배포 취소 리스크 차단)·오늘 데일리 배포가 첫 검증. **오늘 결정 제안**: 사용자 세션이 열리면 MeowBeat dspTime 코어 패치를 단일 P0로 즉시 종결(탐지기가 닷새째 GREEN 가드로 대기 중). (git log/status·gh pr 실측)',
+      },
+      {
+        title:
+          '🔍 QA Tester — dspTime P0 무변화: qa_static.py 여전히 정확히 `1 error`(NoteSpawner.cs:126 Time.deltaTime 잔존·dspTime/PlayScheduled 0건·detector 닷새째 빨간불) / known_bugs detector·회귀 2/2 정상(가드 건강) / NumLink 이중 무방비 무변화(Tools 0개·AutoQATests 빈 폴더·BoardDataTester.cs는 Editor 도구일 뿐 자동 단위테스트 아님)',
+        description:
+          '**🔍 핵심 발견(무변화 확인·코어 미수정)**: 오늘 qa_static.py 실행 결과 여전히 `=== QA SUMMARY: 1 error(s) ===`, 유일한 에러가 dsptime_usage NoteSpawner.cs:126이고 코드 전체에 AudioSettings.dspTime·PlayScheduled가 0건이다. 6/21에 만든 detector가 켠 빨간불이 오늘로 닷새째 켜진 채 — "감지만 했고 안 고쳤다"가 그대로다. 프레임 드랍 시 노트 판정 드리프트로 리듬게임 코어가 깨지는 P0. **🔍 가드 인프라는 건강**: known_bugs.json detector 전부 실재 함수 매핑·댕글링 0건·run_regression.py 2/2(indent·size0) 통과 — 가드는 픽스를 기다리는 GREEN 대기 상태. **🔍 NumLink 이중 무방비 무변화**: Tools 디렉터리 부재로 검증툴 0개, Assets/Tests/Editor의 AutoGenTests 4파일 삭제 이월·대체 AutoQATests는 meta만 남은 빈 폴더라 단위 테스트 실질 0개. 신규 확인: Assets/02. Scripts/Editor/BoardDataTester.cs가 존재하나 이는 Editor 보조 도구일 뿐 자동 단위테스트/검증툴이 아니다 — 안전망 부재 무변화. **🚨 미해결 P0급 1건**: TIMING_DSPTIME_UNUSED(코어 미수정). **최우선 리스크 1줄**: NumLink는 검증툴 0개+단위테스트 0개라 버그가 있어도 탐지 자체가 불가능 — 잠복 버그 수는 미상이나 안전망 부재가 dspTime보다 구조적으로 더 위험. **오늘 결정 제안(실행)**: NoteSpawner.cs:126 dspTime 교체로 P0 코드 종결(detector 자동 GREEN)·NumLink에 검증툴 4종 이식(사용자 세션). Sources: qa_static.py 실행·known_bugs.json·NoteSpawner.cs·BoardDataTester.cs·git status 실측.',
+      },
+      {
+        title:
+          '💻 Developer — Unity 6.5 정식 출시(2026.6): on-tile 포스트프로세싱 전 플랫폼 지원·Vulkan/Metal 모바일 HDR 대역폭 절감·Memory Profiler resident 정확도 향상+그래픽 메모리 분해+2D 스프라이트 프로파일 모듈 신설 / Google Play targetSDK Android 15 강제(2026.6.30 미·영, 한국 연말·Epic 합의로 수수료 15/20%·외부결제 허용)',
+        description:
+          '**💻 신규 1순위(Unity 6.5 정식)**: 2026년 6월 Unity 6.5가 정식 출시됐다. on-tile 포스트프로세싱이 전 플랫폼으로 확대돼 Vulkan/Metal 모바일에서 HDR 대역폭을 절감하고, Memory Profiler는 resident memory 정확도가 향상되며 그래픽 메모리 분해 뷰와 2D 스프라이트 전용 프로파일 모듈이 추가됐다 — NumLink/MeowBeat 둘 다 2D라 스프라이트 모듈은 직접 유효하다. **💻 신규 2순위(Google Play 정책)**: targetSDK Android 15 강제가 2026.6.30 미국·영국에서 시작되고 한국은 연말 적용 예정이며, Epic 합의로 결제 수수료가 15/20%로 내려가고 외부 결제가 허용된다 — 수익화 설계 시 수수료 전제가 바뀐다. **💻 기술부채 진단(1줄)**: NoteSpawner.cs:126이 Time.deltaTime 프레임 누적이라 모바일 가변 프레임·오디오 드리프트에서 노트-비트 어긋남이 누적 — AudioSettings.dspTime 기준 패치 미완료가 6/21부터 4개 .cs와 묶인 미커밋 P0 부채로 잔존. **💻 일정 메모**: targetSDK 한국 연말 적용은 8/31 의무화 기존 인지보다 여유가 있으나, 베이스라인 봉인(NumLink 첫 커밋)이 모든 수익화/SDK 작업의 선행 조건임은 불변. **오늘 결정 제안(P0 후 P1)**: dspTime 코어 패치+4개 .cs 단일 커밋 정리 선행 → 이후 Unity 6.5 2D 스프라이트 프로파일로 모바일 메모리 베이스라인 측정. Sources: unity.com·docs.unity3d.com·cgchannel.com·support.google.com·coda.co.',
+      },
+      {
+        title:
+          '🎮 Game Designer — 2026 IAP 매출 84%가 라이브옵스 운영 게임에서 발생(상위 퍼즐 월 80~100개 이벤트 터치포인트·3년 전 20개)·소셜 레이어(리더보드/길드챗) 적용 시 리텐션 +22%·상위 캐주얼 D7 리텐션 지속 하락 중·AI 레벨생성으로 개발시간 -40%·리텐션 +30%·빠른 BPM일수록 플레이어 조작속도 상승(적응형 오디오 연구)',
+        description:
+          '**🎮 시장 데이터(라이브옵스 지배력)**: 2026 모바일 IAP 매출의 84%가 라이브옵스를 운영하는 게임에서 나오고, 상위 퍼즐게임은 월 80~100개 이벤트 터치포인트를 운영한다(3년 전 20개에서 4~5배 증가). 이벤트 캘린더가 곧 수익이라는 뜻이다(naavik.co·deconstructoroffun.com). **🎮 리텐션(소셜 레이어)**: 비동기 리더보드·길드챗 등 소셜 레이어를 얹으면 리텐션이 +22% 오르고, 상위 캐주얼게임의 D7 리텐션은 2022~25년 지속 하락 중이라 소셜이 하락 방어책이다(gamegrowthadvisor.com). **🎮 생산성(AI 레벨생성)**: AI 기반 레벨 자동 생성은 개발시간을 -40% 줄이면서 리텐션을 +30% 끌어올린다는 보고가 있다(ceenaija.com). **🎮 리듬(적응형 오디오)**: 2026 연구에서 빠른 BPM 음악일수록 플레이어 조작 속도가 상승 — MeowBeat 곡별 BPM 분포 설계에 직접 시사점(studiokrew.com). (6/25 데일리챌린지·가변 판정 윈도우와 미중복). **오늘 결정 제안(P2)**: NumLink에 "주간 라이브옵스 이벤트 슬롯" 1개 우선 도입 — 풀 시즌패스 대신 7일 단위 회전 비대칭 리더보드 이벤트(예: "이번 주 최단 경로 챌린지") + 친구 비교 UI. 기존 레벨 데이터 재활용·주간 시드 1개+점수 정렬·친구 순위 표시로 D7 하락 방어. MeowBeat은 동일 슬롯을 "주간 곡 챌린지"로 변형. Sources: naavik.co·gamegrowthadvisor.com·deconstructoroffun.com·ceenaija.com·studiokrew.com.',
+      },
+      {
+        title:
+          '📦 Content Writer — 2026 퍼즐 CPI iOS $3.0·Android $2.0(iOS 2~4배 비쌈)·첫 스크린샷 OCR 색인화→검색 노출+혜택문구 추가 시 전환 +10~20%·게임 프리뷰영상 +15~30%·Q1 UA 최저/Q4 20~40% 급등·목요일 출시→주말 다운로드 피크',
+        description:
+          '**📦 신규 1순위(CPI 벤치마크)**: 2026 캐주얼 퍼즐 CPI는 iOS $3.0·Android $2.0로 iOS가 2~4배 비싸다 — UA 예산 배분 시 Android 우선이 비용 효율적이다(foxdata.com·gamegrowthadvisor.com). **📦 신규 2순위(스크린샷 OCR ASO)**: 애플이 첫 스크린샷 텍스트를 OCR로 색인화해 검색 노출에 반영하므로, 첫 스크린샷에 혜택 문구를 넣으면 검색 노출+전환이 +10~20% 오르고, 게임 프리뷰 영상 추가 시 전환 +15~30%다(apptweak.com·screenfast.app). **📦 신규 3순위(출시 타이밍)**: UA 비용은 Q1이 최저·Q4는 20~40% 급등하고, 목요일 출시가 주말 다운로드 피크를 받는다(foxdata.com·fanstudio.co.uk). (6/25 앱 아이콘 A/B·사전등록·디스코드와 미중복). **오늘 결정 제안(P2)**: 두 게임 출시 타이밍을 Q4 회피·Q1 또는 목요일 발매로 확정하고, 첫 스크린샷에 한글 혜택문구(예: "3분 두뇌훈련"·"고양이와 박자 맞추기")를 넣어 Apple OCR 검색 노출+전환 +10~20%를 무료로 확보하는 작업을 출시 전 ASO 1순위로 지정. Sources: foxdata.com·gamegrowthadvisor.com·asoworld.com·apptweak.com·screenfast.app·fanstudio.co.uk.',
+      },
+      {
+        title:
+          '🛡 DevOps — ✅ agent-office CI 최근 6건 전부 success·실패 0·🔧 신규 발견 deploy-pages.yml concurrency.cancel-in-progress가 true → 연속 push(6/24 #111→docs 9분 간격 실사례) 시 진행 중 배포 취소·최신 커밋 미배포 리스크 → GitHub 공식 권장(production은 큐잉) false로 오늘 자율 1줄 수정·#110(checkout v7 major) 여전히 열림(보류 유지)',
+        description:
+          '**🛡 ✅ CI 실측(6/26)**: `gh run list --repo mmporong/agent-office --limit 6` → 최근 6건 모두 success(실패 0). 워크플로우 2개(deploy-pages.yml·weekly-insights.yml) 모두 액션 full SHA 핀+cache:npm 적용·표준 양호. **🔧 신규 결함 발견·자율 수정**: deploy-pages.yml(14~16행)이 `concurrency: group: pages` + `cancel-in-progress: true`로 설정돼, 6/24 #111 머지(19:06)→docs 커밋(19:15) 9분 간격 연속 push 같은 상황에서 진행 중이던 직전 배포가 취소돼 직전 커밋이 배포 안 되는 리스크가 있었다. GitHub 공식/2026 모범사례는 production 배포(Pages 포함)에서 진행 중 배포를 취소하지 말고 큐잉(`cancel-in-progress: false`)하라고 권장한다 — 메인이 회의 중 false로 1줄 수정했고 오늘 데일리 배포가 첫 검증이 된다(6/25 ubuntu 핀·SHA 핀·Dependabot grouping과 완전히 다른 새 각도). **🛡 열린 PR**: #110(actions/checkout 6.0.3→7.0.0·actions-major·CLEAN/MERGEABLE)이 6/25에 이어 여전히 열림 — major라 신중 보류 유지(다음 사용자 세션에서 changelog 확인 후 머지). Dependabot 설정은 이미 minor-patch/major 그룹 분리가 잘 돼 있어 추가 개선 불필요. **오늘 결정 제안(자율 완료+P1)**: ✅ cancel-in-progress false 자율 수정 완료 / P1 #110 changelog 확인 후 머지. Sources: gh run/pr 실측·GitHub Changelog concurrency(2026-05)·OneUptime concurrency control(2026-01)·GitHub Pages 배포 공식 문서.',
+      },
+      {
+        title:
+          '🎨 Art Director — 마이크로인터랙션이 "장식→지시(instruction)"로 전환·햅틱 동반 시 30일 리텐션 +23%·가변폰트(variable font)/키네틱 타이포 표준화(단일 파일 반응형 가독성)·글래스모피즘은 토대 아닌 액센트만(Liquid Glass식 고대비 유지·저사양 GPU 블러 프레임드롭 주의)',
+        description:
+          '**🎨 신규 1순위(마이크로인터랙션+햅틱)**: 2026 모바일 UI에서 마이크로인터랙션이 단순 장식을 넘어 사용자에게 다음 행동을 지시하는 역할로 전환됐고, 햅틱 피드백을 동반하면 30일 리텐션이 +23% 오른다(dev.to·designrush.com). **🎨 신규 2순위(가변폰트·키네틱 타이포)**: 가변폰트와 키네틱 타이포그래피가 표준화돼, 단일 폰트 파일로 다양한 화면 크기의 반응형 가독성을 확보할 수 있다(loungelizard.com·designmonks.co). **🎨 신규 3순위(글래스모피즘 절제)**: 글래스모피즘은 화면 토대가 아니라 액센트로만 써야 하며(Liquid Glass식 고대비 유지), 저사양 GPU에서 블러가 프레임드롭을 유발하므로 모바일 게임에선 특히 주의해야 한다(ixdf.org·timgraf.com). (6/25 어시 워밍 팔레트·색맹 듀얼코딩·다이제틱 모션과 미중복). **오늘 결정 제안(P2)**: NumLink — 숫자 셀 "결합 성공" 순간에 키네틱 타이포(숫자 zoom+morph)+짧은 햅틱 1펄스로 연결 피드백 강화, 배경 패널만 글래스 액센트(텍스트 고대비 유지·셀 가독성 영향 0). MeowBeat — 노트 비주얼은 플랫 고대비 유지(블러 금지로 프레임 안정), 판정 순간에만 햅틱 강도 차등(Perfect=강/Good=약), 스플래시는 2초 이내·앱 비주얼 언어 미러링. Sources: dev.to·designrush.com·loungelizard.com·designmonks.co·ixdf.org·timgraf.com·muz.li·svgator.com.',
+      },
+    ],
+    meetingTitle:
+      '🔧 6/26 종합 회의 — "고칠 수 있는 것은 그 자리에서, 단 칼끝이 어제보다 한 겹 깊어졌다": 두 P0(dspTime 코어·NumLink 봉인)는 게임 코드라 무인 세션에서 또 미착수였지만, DevOps가 deploy-pages.yml에서 연속 push 시 직전 배포가 취소되는 cancel-in-progress 결함을 캐냈고, 메인이 회의 중 GitHub 공식 권장값(false)으로 1줄 자율 수정해 어제의 "의존성 머지"에서 "배포 파이프라인 결함 수정"으로 자율 영역을 한 칸 전진시켰다',
+    meetingSummary:
+      '제72회 종합 회의(금요일·D+33·6/25 다음 날). **오늘의 회의는 "어제 우리가 후회한 실수(탐지기만 켜고 안 고침)를, 적어도 자율 가능한 영역에서는 반복하지 않은 날"이다.** 6/25 우리는 dspTime P0가 "탐지기만 켜졌고 코어는 닷새째 안 고쳐졌다"는 가장 위험한 괴리를 자각하며 회의를 끝냈다. 오늘 QA가 같은 라인을 다시 돌렸고 결과는 변함없었다 — qa_static.py는 정확히 1 error, 그 유일한 에러가 NoteSpawner.cs:126이고 dspTime/PlayScheduled는 여전히 0건이다. detector는 빨간불을 닷새째 켜둔 채고, NumLink는 24일째 미커밋·검증툴 0개+단위테스트 0개로 무방비도 그대로다(QA가 BoardDataTester.cs는 Editor 보조 도구일 뿐 자동 테스트가 아님을 새로 확인). 두 P0의 운명은 오늘도 같았다 — 게임 코드/대량 워킹트리라 무인 새벽엔 못 건드린다. 그래서 우리는 또 "그 둘레"부터 메웠는데, 오늘 그 둘레가 어제보다 깊었다. 6/25 자율 행동이 "Dependabot 의존성 머지"였다면, 오늘 DevOps는 deploy-pages.yml에서 더 본질적인 결함을 찾아냈다 — concurrency.cancel-in-progress가 true로 걸려 있어, 6/24 #111 머지(19:06)→docs 커밋(19:15) 9분 간격 연속 push 같은 실사례에서 진행 중이던 직전 배포가 통째로 취소돼 최신 커밋이 영영 배포 안 될 수 있는 구조였다. GitHub 공식은 production 배포(Pages 포함)는 취소가 아니라 큐잉(false)을 권장한다. 메인은 회의 중 이 한 줄을 false로 고쳤고, 바로 오늘 데일리 배포가 그 수정의 첫 검증이 된다 — "탐지기만 켜고 안 고치는" 6/25의 실수를 자율 영역에서만큼은 반복하지 않겠다는 행동이다. #110(actions/checkout v7 major)은 어제에 이어 여전히 열려 있으나 major라 신중 보류를 유지했다(다음 사용자 세션에서 changelog 확인 후 머지). 나머지는 새 지평을 더했다: Developer는 Unity 6.5 정식 출시(2D 스프라이트 프로파일 모듈·on-tile 포스트프로세싱)와 Google Play targetSDK Android 15(한국 연말·Epic 합의 수수료 15/20%)를, Game Designer는 IAP 매출 84%가 라이브옵스에서 발생·소셜 레이어 +22%·AI 레벨생성 -40% 개발/+30% 리텐션을, Content는 퍼즐 CPI iOS $3.0/Android $2.0·첫 스크린샷 OCR 혜택문구 +10~20%·목요일 출시·Q4 회피를, Art는 마이크로인터랙션+햅틱 30일 리텐션 +23%·가변폰트/키네틱 타이포·글래스모피즘 절제를 제안했다. 메타: 6/19 "안전망 없음" → 6/21 "탐지기 비어 있음" → 6/25 "탐지기는 채웠으나 코어 미수정·4일 방치" → 6/26 "코어는 여전히 사용자 세션 대기, 그러나 자율 칼끝이 의존성→배포 파이프라인으로 한 칸 더 깊이 들어감". 검증·자율의 사정거리는 매일 넓어지지만, 마지막 게임 로직 한 줄(NoteSpawner 코어·NumLink 봉인)은 사용자 세션에서만 닫힌다 — 그 두 줄을 닫는 날이 진짜 마침표다.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '어제 우리가 뼈아프게 인정했죠 — 탐지기만 켜고 코어는 안 고쳤다고. 오늘 그 코어 상태부터 봤어요. NumLink는 24일째 미커밋이에요, 어제 23일에서 또 하루 늘었습니다. MeowBeat은 921e0cf 그대로 5일째고, NoteSpawner는 손도 못 댔어요. 두 P0 다 게임 코드라 무인 새벽엔 못 건드립니다. 그런데 어제처럼 그냥 끝내진 않을 거예요. DevOps가 배포 쪽에서 뭔가 찾았다고 하니 들어보죠.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '제가 먼저 코어 상태 확정할게요. qa_static.py 다시 돌렸고, 여전히 정확히 1 error예요. NoteSpawner.cs 126번 줄, dspTime이랑 PlayScheduled가 코드 전체에 0건이에요. detector가 켠 빨간불이 닷새째입니다 — "잡았다"가 아니라 "닷새째 감지만 하고 있다"가 맞아요. 가드 자체는 건강해요, known_bugs detector 다 실재 함수 매핑이고 회귀 2/2 통과예요. 그리고 NumLink는 어제랑 똑같이 무방비예요. 하나 확인한 건, Editor 폴더에 BoardDataTester.cs가 있긴 한데 이건 그냥 에디터 보조 도구지 자동 단위테스트가 아니에요. 검증툴 0개, 단위테스트 0개 — 버그가 있어도 탐지 자체가 안 되는 상태가 그대로입니다.',
+      },
+      {
+        speaker: 'DevOps',
+        note: '배포 파이프라인에서 진짜 결함을 하나 찾았어요. deploy-pages.yml 16번 줄에 cancel-in-progress가 true로 걸려 있어요. 이게 무슨 뜻이냐면 — 6월 24일에 실제로 그랬듯이, #111 머지하고 9분 뒤에 docs 커밋이 또 push되면, 진행 중이던 앞 배포가 통째로 취소돼요. 운 나쁘면 최신 커밋이 영영 배포가 안 되는 거죠. GitHub 공식 권장은 production 배포, Pages 포함해서, 취소하지 말고 큐잉하라는 거예요. 즉 false여야 맞아요. 이건 어제 다룬 ubuntu 핀이나 SHA 핀이랑 완전히 다른 새 각도예요. 1줄이면 고쳐지고 리스크도 낮습니다.',
+      },
+      {
+        speaker: 'Orchestrator',
+        note: '좋아요, 그거 지금 고치죠. 게임 코드도 아니고 우리 자체 레포 인프라니까 자율로 처리 가능합니다. (수정 실행) deploy-pages.yml cancel-in-progress를 false로 바꿨어요. 그리고 절묘하게도 — 오늘 이 회의록을 커밋하고 배포하는 게 바로 이 수정의 첫 검증이 됩니다. 어제는 의존성 하나 머지한 거였는데, 오늘은 배포 파이프라인 자체의 숨은 결함을 고친 거예요. 자율로 닿는 범위가 한 칸 더 깊어졌네요.',
+      },
+      {
+        speaker: 'DevOps',
+        note: '맞아요, 오늘 배포가 끝까지 초록불로 나오면 그게 검증이에요. 그리고 #110은 어제처럼 그대로 둘게요. actions/checkout 6에서 7로 올리는 major인데 CLEAN/MERGEABLE 상태로 계속 열려 있어요. 정적 빌드라 영향은 작겠지만 major니까 changelog 확인하고 다음 사용자 세션에서 머지하는 게 안전합니다. CI는 최근 6건 전부 success, 실패 0이에요.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'NoteSpawner 코어 패치가 사용자 세션 P0인 건 동의해요 — 126번 줄 deltaTime 누적을 dspTime 기준으로 바꾸고 BGM을 PlayScheduled로 고정하면 QA 탐지기가 그 순간 초록불로 바뀝니다. 기술 소식 두 개 — Unity 6.5가 6월에 정식 나왔어요. 우리한테 직접 쓸모 있는 건 2D 스프라이트 전용 프로파일 모듈이에요, NumLink랑 MeowBeat 둘 다 2D니까 메모리 베이스라인 측정에 바로 써먹습니다. 그리고 Google Play targetSDK Android 15 강제가 미국·영국은 6월 30일부터인데 한국은 연말이에요. Epic 합의로 결제 수수료가 15에서 20퍼센트로 내려가고 외부 결제도 허용돼서, 나중에 수익화 설계할 때 전제가 바뀝니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '오늘은 라이브옵스 얘기예요. 2026년 모바일 IAP 매출의 84퍼센트가 라이브옵스 운영하는 게임에서 나와요. 상위 퍼즐게임은 한 달에 이벤트 터치포인트를 80개에서 100개씩 굴려요 — 3년 전엔 20개였는데 말이죠. 그리고 비동기 리더보드나 길드챗 같은 소셜 레이어를 얹으면 리텐션이 22퍼센트 올라요. 상위 캐주얼게임 D7 리텐션이 계속 떨어지는 중이라 이게 방어책이에요. 제안은 — NumLink에 주간 라이브옵스 이벤트 슬롯 하나만 먼저 넣죠. 풀 시즌패스 말고, 7일마다 도는 "이번 주 최단 경로 챌린지" 같은 비동기 리더보드 하나에 친구 비교 UI만요. 기존 레벨 데이터 재활용하면 됩니다. MeowBeat은 같은 슬롯을 "주간 곡 챌린지"로 변형하면 되고요.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '숫자 세 개만 기억하세요. 첫째, 2026 퍼즐 CPI가 iOS는 3달러, Android는 2달러예요. iOS가 2배에서 4배 비싸니까 UA 예산은 Android 먼저 쓰는 게 효율적이에요. 둘째, 애플이 첫 스크린샷 텍스트를 OCR로 읽어서 검색에 반영해요. 그래서 첫 스크린샷에 혜택 문구를 넣으면 노출이랑 전환이 10에서 20퍼센트 올라요. 프리뷰 영상까지 넣으면 15에서 30퍼센트고요. 셋째, UA 비용은 Q1이 제일 싸고 Q4는 20에서 40퍼센트 급등해요. 출시는 목요일이 주말 다운로드 피크를 받습니다. 제안 — 두 게임 출시를 Q4 피하고 Q1이나 목요일로 잡고, 첫 스크린샷에 "3분 두뇌훈련", "고양이와 박자 맞추기" 같은 한글 혜택문구를 넣는 걸 출시 전 ASO 1순위로 하죠. 공짜인데 효과는 즉시예요.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '오늘은 손끝 감각 얘기예요. 2026년엔 마이크로인터랙션이 그냥 꾸밈이 아니라 다음 행동을 알려주는 지시 역할로 바뀌었고, 여기에 햅틱을 같이 주면 30일 리텐션이 23퍼센트 올라요. 그리고 가변폰트랑 키네틱 타이포가 표준이 돼서 폰트 파일 하나로 화면 크기별 가독성을 다 잡을 수 있어요. 글래스모피즘은 조심해야 해요 — 화면 토대로 쓰면 안 되고 액센트로만, 저사양 GPU에선 블러가 프레임을 떨어뜨려요. 제안은 — NumLink는 숫자 결합 성공 순간에 숫자가 살짝 줌+모핑하는 키네틱 타이포에 짧은 햅틱 한 번. 배경 패널만 글래스 액센트 주되 글자는 고대비로 유지해서 셀 가독성은 건드리지 않고요. MeowBeat은 노트는 플랫 고대비로 프레임 안정 지키고, 판정 순간에만 햅틱 강도를 Perfect는 강하게 Good은 약하게 차등을 줍니다.',
+      },
+      {
+        speaker: 'Orchestrator',
+        note: '정리할게요. 오늘 자율로 끝낸 건 deploy-pages.yml cancel-in-progress false 수정 하나 — 곧 이 회의록 배포로 검증됩니다. 사용자 세션 P0 두 개는 그대로 대기예요: MeowBeat NoteSpawner dspTime 코어 패치(탐지기 닷새째 GREEN 대기), NumLink 24일 봉인+검증툴 이식. P1은 #110 changelog 확인 후 머지. P2는 라이브옵스 주간 이벤트 슬롯, 스크린샷 OCR 혜택문구, 키네틱 타이포+햅틱이에요. 메타로 한마디 — 우리 자율 칼끝은 의존성에서 배포 파이프라인까지 매일 깊어지는데, 마지막 게임 로직 두 줄은 사용자 세션에서만 닫혀요. 그 두 줄을 닫는 날이 진짜 마침표입니다.',
+      },
+    ],
+    decisions: [
+      {
+        title: '[P0·자율 완료] agent-office deploy-pages.yml cancel-in-progress true→false — 배포 파이프라인 결함 수정',
+        description:
+          'DevOps 신규 발견: deploy-pages.yml(16행) concurrency.cancel-in-progress가 true로 걸려 있어, 6/24 #111 머지(19:06)→docs 커밋(19:15) 9분 간격 연속 push 같은 실사례에서 진행 중 배포가 취소돼 최신 커밋이 미배포될 수 있는 구조적 결함이었다. GitHub 공식/2026 모범사례는 production 배포(Pages 포함) 큐잉(false)을 권장 — 메인이 회의 중 false로 1줄 자율 수정. 오늘 데일리 배포가 첫 검증. 어제 "Dependabot 의존성 머지"에서 "배포 파이프라인 자체 결함 수정"으로 자율 영역 한 칸 전진.',
+      },
+      {
+        title: '[P0] MeowBeat NoteSpawner dspTime 코어 패치 — "감지만 했고 안 고쳤다" 종결 (사용자 세션·닷새째 GREEN 가드 대기)',
+        description:
+          '6/21 탐지기는 만들었으나 코어 미수정 — qa_static.py가 오늘도 정확히 1 error(NoteSpawner.cs:126 `elapsedTime += Time.deltaTime`·dspTime/PlayScheduled 0건). 126행을 `songPosition = (float)(AudioSettings.dspTime - dspSongStartTime)`로 교체+BGM PlayScheduled 고정+Android 캘리브레이션 오프셋. 픽스하는 순간 6/21에 만든 탐지기가 자동 GREEN 전환되어 픽스를 증명한다. 게임 로직이라 사용자 세션 P0(탐지기 완성 기준 5일째·발견 기준 10일째). 4개 미커밋 .cs(SongData·GameManager·SongManager·OptionManager)도 단일 커밋으로 정리.',
+      },
+      {
+        title: '[P0/P1] NumLink 24일 미커밋 봉인 + 검증툴 이식 — 이중 무방비 해소 (사용자 세션)',
+        description:
+          '.gitignore에 .omc/·Screenshots/·_Recovery/ 패턴을 먼저 추가(Layer Lab 에셋은 트래킹)한 뒤 단일 스냅샷으로 24일 공백 봉인(6/2 이후·23→24 악화). 동시에 QA 발견 대응: NumLink/Tools에 검증툴 4종(unity_validate.py·qa_static.py 등) 이식(현재 0개), AutoQATests 빈 껍데기 정리(meta untracked 커밋 누락 리스크), AutoGenTests 4파일 삭제 확정 여부는 사용자 확인 선행(git restore vs 삭제). BoardDataTester.cs는 Editor 보조 도구라 단위테스트로 대체 불가 — 봉인만으로는 검증툴/테스트 0개가 안 풀린다.',
+      },
+      {
+        title: '[P1] agent-office #110 머지(changelog 확인 후) + Unity 6.5 2D 스프라이트 프로파일 + LevelPlay 미디에이션',
+        description:
+          'DevOps: #110(actions/checkout v7 major)은 CLEAN/MERGEABLE로 6/25부터 열림 — major라 신중 보류 유지, 다음 사용자 세션에서 changelog 확인 후 머지. Developer: 베이스라인 봉인 후 Unity 6.5 2D 스프라이트 프로파일 모듈로 두 게임 모바일 메모리 베이스라인 측정+광고 LevelPlay 인앱비딩 단일 미디에이션 표준화(시한부 매출 부채). targetSDK Android 15는 한국 연말 적용(미·영 6/30) — 일정 여유 확인.',
+      },
+      {
+        title: '[P2] 콘텐츠·디자인·성장 백로그 적재 (모두 P0 후)',
+        description:
+          'Game Designer: NumLink 주간 라이브옵스 이벤트 슬롯 1개(7일 회전 비대칭 리더보드 "이번 주 최단 경로 챌린지"+친구 비교 UI·기존 레벨 재활용·소셜 +22% 리텐션 방어), MeowBeat은 "주간 곡 챌린지"로 변형. Content: 두 게임 출시 Q4 회피·Q1/목요일 발매+첫 스크린샷 한글 혜택문구로 Apple OCR 검색 노출+전환 +10~20%. Art: NumLink 숫자 결합 성공 시 키네틱 타이포(zoom+morph)+햅틱 1펄스·배경만 글래스 액센트(고대비 유지), MeowBeat 판정 햅틱 강도 차등(Perfect=강/Good=약)·노트 플랫 고대비(블러 금지).',
+      },
+    ],
+  },
+  {
     id: '2026-06-25T04:00:00-daily-standup',
     date: '2026-06-25',
     researchTitle:
