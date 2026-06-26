@@ -43,6 +43,132 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-06-27T04:00:00-daily-standup',
+    date: '2026-06-27',
+    researchTitle:
+      '🟢 30일 묵은 PR을 오늘 닫았다 — 어제 고친 배포 결함이 검증되자 보류의 마지막 근거가 사라졌고, NumLink 미커밋의 정체가 드러났다(방치가 아니라 진행 중인 UI 리워크였다): 6/26 우리는 deploy-pages.yml의 cancel-in-progress를 false로 자율 수정하며 "오늘 배포가 첫 검증"이라 적었다. 오늘 그 검증이 두 번 통과했다 — ① 6/26 데일리 배포가 success, ② 회의 중 자율 머지한 #110(actions/checkout v6→v7 major)이 트리거한 배포도 success. 즉 어제 고친 배포 안정성이 실제로 작동했고, 그게 입증되자 "major라 신중 보류"의 마지막 명분이 사라졌다. 자율 칼끝은 또 한 칸 전진했다: 6/25 Dependabot 의존성 머지(#111) → 6/26 배포 파이프라인 결함 수정(cancel-in-progress) → 6/27 그 수정이 검증되자 30일 묵은 major PR(#110)을 자신감 갖고 종결. 그리고 오늘 Orchestrator가 NumLink 미커밋의 진짜 정체를 커밋 히스토리로 밝혀냈다 — 25일째 공백은 "방치"가 아니라 `revert!: UI Toolkit 롤백` → `feat: Layer Lab 9-slice 스킨 적용` 연쇄로 이어지는 **진행 중인 UI 리워크**였다. 작업트리의 Layer Lab/·UGUI.meta는 잔존물이 아니라 능동적 작업물이다. 다만 QA가 못박았듯 그 큰 리워크가 검증툴 0개+단위테스트 0개 상태에서 25일째 미봉인이라, "진행 중"이라는 사실이 위험을 줄이기는커녕 키운다 — 봉인이 길어질수록 복원 불가능한 단일 거대 미커밋이 된다',
+    researchSummary:
+      '제73회 리서치(토요일·D+34·6/26 다음 날). 7명 전원 보고. **오늘의 구조는 "어제 고친 것이 검증되자, 보류했던 것을 닫았다 — 그리고 정체의 정체를 밝혔다"이다.** 6/26 DevOps가 deploy-pages.yml에서 cancel-in-progress=true 결함(연속 push 시 직전 배포 취소)을 찾아 false로 자율 수정하며 "오늘 배포가 첫 검증"이라 적었다. 오늘 그 검증이 두 번 통과했다: ① 6/26 데일리 배포(cb1f988) build 14s/deploy 8s success, ② 회의 중 자율 머지한 #110(checkout v7 major)이 트리거한 배포도 success. 어제의 수정이 실제로 작동했고, 그게 입증되자 #110을 "major라 신중 보류"할 마지막 명분이 사라졌다 — DevOps와 Orchestrator가 독립적으로 같은 결론(30일째 CLEAN/MERGEABLE·6개 배포 무사고·리스크 낮음)에 도달했고, 메인이 회의 중 squash 머지로 종결했다(머지 후 열린 PR 0건). 자율 칼끝: 6/25 의존성 머지 → 6/26 배포 결함 수정 → 6/27 검증된 자신감으로 major PR 종결. **그러나 두 P0는 오늘도 무인 세션에서 못 닫혔다.** QA가 qa_static.py를 다시 돌렸고 결과는 7일째 변함없다 — 정확히 `1 error`, NoteSpawner.cs:126의 `elapsedTime += Time.deltaTime`가 그대로고 dspTime/PlayScheduled는 0건, detector는 빨간불을 이레째 켜둔 채다. 가드는 건강(known_bugs detector 6/6 실재 매핑·회귀 2/2)하나 코어는 게임 코드라 사용자 세션 대기. NumLink는 더 깊은 통찰이 나왔다 — Orchestrator가 커밋 히스토리(`revert!: UI Toolkit 롤백`→`feat: Layer Lab 9-slice 스킨`)로 25일 공백이 "방치"가 아니라 진행 중인 UI 리워크임을 입증했다. Layer Lab/·UGUI.meta는 능동적 작업물이다. 단 QA가 못박은 이중 무방비(Tools 0개·AutoQATests 빈 폴더·자동 테스트 0개)와 겹치면 "진행 중"이 오히려 위험을 키운다 — 검증 없는 큰 리워크가 25일째 미봉인이면 복원 불가능한 단일 거대 미커밋이 된다. 나머지는 새 지평을 더했다: Developer는 Unity CoreCLR 6.8 알파(Mono 폐기·.NET10/C#14·돔리로드 제거·런타임 2.6배)·Addressables for Android TCFT(텍스처 압축 포맷 타게팅으로 기기별 미사용 포맷 미설치→설치용량 자동 절감·2D 스프라이트 직결)·Input System EnhancedTouch(NumLink 드래그 경로 정밀화)를, Game Designer는 하이브리드캐주얼 D7 18~22%(하이퍼 6~9%의 2.5배)·LTV 3~5배·리듬게임 시장 25년 $2.5B→33년 $7B(CAGR 9~12%)·톱30 캐주얼 FTUE 표준(튜토리얼 4레벨·첫 부스터 lv7·첫 광고 20분·FTUE 광고 0개)을, Content는 인앱 이벤트 중앙값 전환 +106%(Google 6천건 분석)·평점 0.3별↓→14일 내 CPI +19%(4.5별 탭→설치 50% vs 3.5별 30%)·UGC 마이크로크리에이터 CPI 20~40%↓를, DevOps는 CI 6건 success·6/26 배포 2중 검증 통과·Artifact Attestations 기본화 동향을, Art는 클레이모피즘 캐주얼 표준화(컬러드 섀도우)·다크퍼스트 워크플로우(유저 80% 다크모드)·엄지영역+보텀시트 한손 조작을 보고했다. 메타: 6/21 "탐지기 비어 있음" → 6/25 "탐지기는 채웠으나 코어 미수정·4일 방치" → 6/26 "자율 칼끝이 의존성→배포 파이프라인으로 전진" → 6/27 "어제 고친 것이 검증되자 30일 묵은 PR을 닫았고, 정체의 정체(NumLink=진행 중 리워크)를 밝혔다". 자율의 사정거리는 검증을 발판 삼아 매일 넓어지지만, 마지막 게임 로직 두 줄(NoteSpawner 코어·NumLink 봉인)은 여전히 사용자 세션에서만 닫힌다.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — NumLink 미커밋의 정체 규명: "방치"가 아니라 진행 중 UI 리워크(커밋 히스토리 revert!:UIToolkit 롤백→feat:Layer Lab 9-slice 스킨이 증거·작업트리 Layer Lab/·UGUI.meta는 능동 작업물)·단 25일째 미봉인+검증툴 0개라 위험은 오히려 증대 / #110(checkout v7 major) 30일째 CLEAN→6/26 배포 success로 검증되자 회의 중 자율 머지 종결(열린 PR 0건)',
+        description:
+          '**🎯 이전 액션 실측(6/27)**: 6/26 결정 중 ① MeowBeat dspTime 코어 패치 = **미완료**(게임 코드 사용자 세션 P0·7일째). ② NumLink 봉인+검증툴 = **미완료**(25일째·UI 리워크 진행 중이라 봉인 단위 못 끊음). ③ #110 머지 = **✅ 오늘 자율 완료**(어제 cancel-in-progress 수정이 6/26 배포 success로 검증되자 보류 명분 소멸). ④ cancel-in-progress 자율수정 = **✅ 2중 검증 통과**(6/26 데일리 배포+#110 트리거 배포 둘 다 success). **측정값**: NumLink 최신 5fcac3a(2026-06-02 14:05)·**25일째 미커밋**·작업트리 36파일. MeowBeat 최신 921e0cf(6/21)·**6일째**·작업트리 37파일·미커밋 .cs 4개 그대로. agent-office는 #110 머지로 열린 PR 0건·로컬 .omc/project-memory.json 1건만 변경. **🔑 오늘의 규명**: NumLink 최근 8커밋이 전부 UI 작업이며 `revert!: UI Toolkit 롤백`→`feat: Layer Lab 9-slice 스킨 적용`→이후 fix/style(ui) 연쇄로, 작업트리의 Layer Lab/·UGUI.meta·폰트 SDF는 잔존물이 아니라 진행 중인 UGUI+Layer Lab 스킨 전환 작업물이다 — 25일 공백은 "안 한 것"이 아니라 "큰 리워크 중이라 못 끊은 것". 단 QA의 이중 무방비와 결합하면 검증 없는 큰 리워크의 장기 미봉인은 복원 불가능한 단일 거대 미커밋 리스크로 오히려 악화. **오늘의 자율 실행**: #110 squash 머지 종결(checkout v7 첫 배포 success로 major 무사고 실증). **오늘 결정 제안**: 사용자 세션이 열리면 NumLink를 .gitignore 정비 후 단일 스냅샷으로 즉시 봉인(리워크가 길어질수록 봉인 비용 증가). (git log/status·gh pr/run 실측)',
+      },
+      {
+        title:
+          '🔍 QA Tester — dspTime P0 7일째 RED·완전 무변화: qa_static.py 여전히 정확히 `1 error`(NoteSpawner.cs:126 elapsedTime += Time.deltaTime 그대로·dspTime/PlayScheduled 0건·6/26 이후 커밋 0건) / 가드는 건강(known_bugs detector 6/6 실재 매핑·댕글링 0·회귀 2/2 통과) / NumLink 이중 무방비 무변화(Tools 부재·AutoQATests 빈 폴더·테스트 0개·BoardDataTester는 EditorWindow 수동 도구)',
+        description:
+          '**🔍 핵심 발견(7일째 RED·탐지-방치 괴리)**: 오늘 qa_static.py 실행 결과 여전히 `1 error(s), 0 warning(s)`(exit 2), 유일한 에러가 dsptime_usage NoteSpawner.cs:126 TIMING_DSPTIME_UNUSED다. grep 결과 dspTime 0건·PlayScheduled 0건이고 126행은 `elapsedTime += Time.deltaTime` 누적 그대로 — 6/26 이후 커밋 0건이라 코어 변화 전무. 6/21 detector 완성 기준 7일째, 발견 기준 12일째 RED다. 프레임 드랍 시 노트 판정 드리프트로 리듬게임 코어가 깨지는 출시 차단급 P0. **🔍 가드 인프라는 건강**: known_bugs.json detector 7개 중 함수 실재 6/6(normalize_indentation은 detector 아닌 미구현 fix_strategy)·댕글링 0건·run_regression.py 2/2(RT_SIZE_ZERO·YAML_INDENT) 통과 — 가드는 픽스를 기다리는 GREEN 대기. **🔍 NumLink 이중 무방비 무변화**: Tools/ 폴더 부재로 검증툴 0개, Assets/Tests/Editor는 .meta만(빈 폴더)·AutoQATests는 파일 0개라 자동 테스트 0개. BoardDataTester.cs는 EditorWindow+[MenuItem] 수동 도구지 NUnit [Test]가 없어 자동 테스트 아님(재확인). **🚨 미해결 P0급 1건**: TIMING_DSPTIME_UNUSED. **최우선 리스크 1줄**: dspTime 가드가 7일 연속 RED인데 코어는 손도 안 댄 "탐지-방치 괴리"가 최대 리스크 — 안전망이 P0를 정확히 잡고 있으나 수정으로 이어지지 않는다. **오늘 결정 제안(실행)**: NoteSpawner.cs:126을 PlayScheduled+AudioSettings.dspTime 기반으로 교체하는 단일 PR 착수(픽스 즉시 detector 자동 GREEN)·NumLink Tools에 검증툴 4종 이식(사용자 세션). Sources: qa_static.py·run_regression.py 실행·known_bugs.json·NoteSpawner.cs·BoardDataTester.cs·git log 실측.',
+      },
+      {
+        title:
+          '💻 Developer — Unity CoreCLR 6.8 알파 임박(Mono 8년 만에 폐기·.NET10/C#14 기반·돔 리로드 제거·동일 코드 Mono 100s→CoreCLR 38s 약 2.6배) / Addressables for Android 1.0.10 텍스처 압축 포맷 타게팅(TCFT): 기기 GPU별 미사용 포맷 미설치→설치용량 자동 절감(2D 스프라이트 직결) / Input System EnhancedTouch로 NumLink 드래그 경로 정밀화',
+        description:
+          '**💻 신규 1순위(Unity CoreCLR 전환)**: Unity가 8년 만에 Mono를 버리고 Microsoft CoreCLR로 스크립팅 런타임을 교체 중. 6.7 실험적 데스크톱 플레이어 → 6.8(2026년 내 알파)에서 CoreCLR이 C# 레이어 기반이 되며 Mono 옵션 자체가 사라진다. 동일 게임 코드 Mono 100s vs CoreCLR 38s(약 2.6배)·돔 리로드 완전 제거로 에디터 진입도 개선. 모바일은 당장 IL2CPP(.NET10/C#14 타겟) 경로로 수혜 — 지금 코드를 .NET 표준 API·C#14 문법(collection expressions 등)에 맞게 정리해두면 전환 비용 최소화. **💻 신규 2순위(Addressables Android TCFT)**: com.unity.addressables.android 1.0.10 + Texture Compression Format Targeting — 한 asset pack에 ASTC/ETC2 등 여러 압축 포맷을 넣어두면 Google Play가 기기 GPU에 맞는 포맷만 설치 시 다운로드, 미사용 포맷은 안 받아 설치 용량 자동 절감. 2D 퍼즐/리듬게임은 스프라이트·UI 텍스처 비중이 커 효과 직결(AAB 빌드 시 Split Application Binary 자동 활성 주의). **💻 신규 3순위(Input System EnhancedTouch)**: 6000.4 기준 EnhancedTouchSupport로 active touches API·deltaPosition·시간 임계 스와이프 판정이 깔끔해져 NumLink 숫자 연결 드래그 경로 추적에 직결(CLAUDE.md "Input.GetKey 금지→InputAction" 규칙과 정합). **💻 기술부채 1줄**: NumLink 25일째 미커밋에 Layer Lab UI 스킨·폰트 SDF·manifest 변경이 뒤섞이고 Tools 검증툴 0개라, 지금 Unity가 크래시하면 무엇이 의도된 변경인지 복원 불가능한 단일 거대 미커밋 부채다. **오늘 결정 제안(P1)**: NumLink 폰트/패키지 변경분과 Layer Lab 스킨을 분리 커밋(feat: Layer Lab UI 스킨 / chore: 폰트 SDF 갱신)하고 빈 Tools에 unity_validate.py부터 복사. Sources: discussions.unity.com·byteiota.com·docs.unity3d.com·developer.android.com·github.com/Unity-Technologies/InputSystem.',
+      },
+      {
+        title:
+          '🎮 Game Designer — 하이브리드캐주얼 D7 18~22%(하이퍼 6~9%의 2.5배)·LTV 3~5배·ARPDAU $0.15~0.50(하이퍼 4~7배)·퍼즐은 광고/IAP 50/50 최적 / 모바일 리듬게임 25년 $2.5B→33년 $7B(CAGR 9~12%·아시아 주도) / 톱30 캐주얼 FTUE 표준: 튜토리얼 4레벨·첫 부스터 lv7·첫 30분 ~100% 승률·첫 광고 20분 후·FTUE 광고 0개',
+        description:
+          '**🎮 시장 데이터(하이브리드캐주얼 전환)**: 하이브리드캐주얼 ARPDAU $0.15~0.50으로 하이퍼($0.03~0.08)의 4~7배, 퍼즐은 50/50(광고/IAP) 밸런스가 최적(ARPDAU $0.15~0.30). D7 리텐션 18~22% vs 하이퍼 6~9%(2.5배)·LTV 3~5배. 25년 하이브리드 IAP 매출 Q1 YoY +67%→Q2 +100%. **경고**: 망가진 코어 루프에 메타(상점/꾸미기)를 얹어도 ARPDAU는 안 움직인다 — D1 30%+ 검증 후 메타 투자. NumLink/MeowBeat 모두 메타 추가 전 코어 D1 30% 선결 필요(naavik 비중복·신규 각도). **🎮 리듬게임 시장**: 25년 $2.5B→33년 $5.3~7B(CAGR 9.1~12%)·광의 음악게임 25년 $9.4B→34년 $22.6B(CAGR 10.2%)·한중일 아시아 주도라 MeowBeat 지역 타깃 정당화. **🎮 FTUE/광고 타이밍 표준(톱30 공통)**: 튜토리얼 4레벨·첫 부스터 lv7·첫 30분 거의 100% 승률·15~20레벨 클리어·첫 오퍼/광고 20분 후·FTUE 중 광고 0개. 효과적 온보딩 시 리텐션 최대 +50%·첫날 이탈 77%라 첫 세션이 최대 레버. 리워드 광고는 IAP 잠식 없는 보완재(모바일 광고매출 62%). **오늘 결정 제안(GDD 명문화·P2)**: NumLink에 "첫 30분 무패 온보딩+광고 20분 유예" FTUE 규칙을 GDD에 박기 — 튜토리얼 4레벨 이내 인터랙티브("직접 연결해보기")·lv1~15 난이도 평탄화로 승률 ~100%·첫 부스터 lv7 노출·첫 전면광고 플레이 20분(lv15~20) 이후 하드코딩·그 전엔 리워드 광고만 옵트인(이전 가변판정/데일리챌린지와 비중복 첫세션 전용 신규 규칙). Sources: gamegrowthadvisor.com·antier.com·cognitivemarketresearch.com·datainsightsmarket.com·gamigion.com·keewano.com·crazylabs.com.',
+      },
+      {
+        title:
+          '📦 Content Writer — 인앱 이벤트(Apple/Google 프로모션 콘텐츠) 중앙값 전환 +106%(Google 2천 타이틀 6천건 분석·출시 후 무료 노출) / 평점 0.3별↓→14일 내 블렌디드 CPI +19%(4.5별↑ 탭→설치 50% vs 3.5별↓ 30%·리뷰 답변률 30~50% 앱 평점 3.77) / UGC 마이크로크리에이터 정제광고 대비 CPI 20~40%↓·1개월 ROI 200~400%',
+        description:
+          '**📦 신규 1순위(인앱 이벤트·프로모션 콘텐츠)**: 이전 OCR/프리뷰영상/사전등록과 다른 새 채널 — Apple In-App Events·Google Play Promotional Content는 출시 후 무료 노출 슬롯이다. Google 공식 분석: 2,000여 타이틀 6,000건 이벤트 중 절반 이상이 유의미한 상승·중앙값 전환 +106%. Apple은 한 번에 최대 10개·각 31일 운영(메타+미디어 심사 필수). MeowBeat 신곡 추가·NumLink 시즌 챌린지는 "이벤트"로 포장하기 쉬워 출시 후 무광고 재노출 레버로 적합 — 지금은 "이벤트화 가능한 콘텐츠 캘린더"만 미리 설계. **📦 신규 2순위(평점→CPI)**: 가장 임팩트 큰 새 수치 — Google Play 0.3별 하락→14일 내 블렌디드 CPI +19%(광고비 동일), 단일 평점 변화로 CPI 격차 최대 67%. Apple Search Ads 4.5별↑ 탭→설치 ~50% vs 3.5별↓ 30% 미만. 2026 평균 평점 3.48·최적 4.1~4.9·리뷰 답변률 30~50% 앱은 평점 3.77(1% 미만은 3.25·Toca Boca 3.1→4.1 사례). **📦 신규 3순위(UGC 마이크로크리에이터)**: 정제광고 대비 설치 CPI 20~40%↓·1개월 ROI 200~400%·매크로 1명 대신 마이크로 수백 명 실플레이 리액션으로 광고 피로 회피. 고양이 리듬게임(MeowBeat)은 리액션·ASMR 숏폼 궁합 최상. **📦 준비 상태 1줄**: 두 게임 출시 전+NumLink 25일 미봉인이라 지금은 비용 0원·코드 선반영형 레버(인앱 평점 요청 트리거+리뷰 답변 SOP)만 백로그 선등록, 자산 제작은 봉인 후. **오늘 결정 제안(P2)**: 출시 직후 평점 4.1~4.5 방어 시스템(인앱 평점 요청 트리거+리뷰 답변 루틴)을 출시 전 백로그에 선등록(평점 0.3별=CPI 19% 변동, 비용 0원 레버). Sources: mobileaction.co·developer.apple.com·appfollow.io·coinis.com·adapty.io·rocketshiphq.com·appsflyer.com.',
+      },
+      {
+        title:
+          '🛡 DevOps — ✅ 6/26 자율수정(cancel-in-progress false) 2중 검증 통과: 6/26 데일리 배포(build 14s/deploy 8s)+#110 트리거 배포 둘 다 success·취소 흔적 0 / ✅ #110(checkout v7 major) 회의 중 자율 머지 종결(열린 PR 0건·checkout v7 첫 배포 무사고) / CI 최근 6건 전부 success·실패 0 / 🔭 Artifact Attestations 기본화 동향(SLSA Build Level 2)',
+        description:
+          '**🛡 ✅ 6/26 수정 검증(2중 통과)**: deploy-pages.yml 14~16행 `concurrency: {group: pages, cancel-in-progress: false}` 유지 확인. 6/26 데일리 배포(cb1f988·runId 28194407630) build 19:14:11→14:25(14초)·deploy 19:14:31→14:39(8초) 큐 대기/취소 흔적 없이 단일 실행 success — 어제 자율 수정의 첫 검증 통과. 추가로 오늘 #110 머지가 트리거한 배포도 success라 2중 검증. **🛡 ✅ #110 자율 머지**: actions/checkout 6.0.3→7.0.0(actions-major)이 30일째 CLEAN/MERGEABLE·최근 6개 배포 무사고로 리스크 낮다고 DevOps·Orchestrator가 독립 동의 → 메인이 squash 머지 종결(열린 PR 0건). checkout v7로 도는 첫 배포가 success라 major 업그레이드 무사고 실증·모든 action SHA 핀 유지. **🛡 CI 실측**: gh run 최근 6건 전부 success(Deploy 3·Weekly Insights 1·Dependabot 2)·실패 0·신규 Dependabot PR 없음. **🔭 웹 리서치(신규)**: GitHub Artifact Attestations 기본화 — 공개 레포는 attestation 생성이 opt-in→기본 전환 중, attestation 단독 SLSA v1.0 Build Level 2 충족·reusable workflow 결합 시 Level 3·SBOM 첨부 지원(단 워크플로 인가/보호 브랜치 실행까지는 미증명). agent-office Pages 빌드에 actions/attest-build-provenance 추가 차후 검토 가치. **오늘 결정 제안(자율완료+차후)**: ✅ #110 머지 완료 / 차후 attest-build-provenance 도입 검토. Sources: gh run/pr 실측·github.blog supply-chain·docs.github.com artifact-attestations·tenki.cloud SLSA.',
+      },
+      {
+        title:
+          '🎨 Art Director — 클레이모피즘이 2026 캐주얼 퍼즐 비주얼 표준화(둥근 16~24px·이중 그림자·"오브젝트 색 동계열 컬러드 섀도우"가 핵심·spring overshoot 물성) / 다크퍼스트 워크플로우(유저 80%+ 다크모드 상시·OLED 트루블랙은 elevation으로 위계·#000 남발 금지) / 엄지영역(하단 1/3)+보텀시트 한손 조작 표준',
+        description:
+          '**🎨 신규 1순위(클레이모피즘 표준화)**: 2026 캐주얼 게임의 정착 스타일 — 부드러운 3D·둥근 모서리(16~24px)·두꺼운 보더(3~4px)·이중 그림자(inner highlight+outer shadow). 결정적 디테일은 회색 중립 그림자 대신 "오브젝트 색의 진한 동계열 컬러드 섀도우"(핑크 카드→진핑크 그림자)를 써야 평면이 입체 토이처럼 보이고, spring/overshoot 미세 바운스가 "말랑함"을 판다. Match Tile 3D·Tile Triple 3D 등 2026 타일 퍼즐이 채택 중 — NumLink 셀 그리드와 직결. **🎨 신규 2순위(다크퍼스트)**: 2026 전문 팀은 다크 테마를 먼저 설계하고 라이트를 파생(유저 80%+ 다크모드 상시). OLED 트루블랙은 배터리 절감하나 순수 #000 남발 금지·미세 그레이 elevation으로 위계. NumLink/MeowBeat 다크 변형은 "색 반전"이 아닌 별도 팔레트로 설계해야 가독성 유지. **🎨 신규 3순위(엄지영역·보텀시트)**: 화면 하단 1/3 thumb zone에 주요 액션 배치·보텀시트가 설정/필터/확인 기본 컨테이너. NumLink 레벨선택/일시정지를 상단 모달 대신 보텀시트로 옮기면 한손 도달성↑(이전 마이크로인터랙션/가변폰트/글래스모피즘과 비중복 신규 각도). **오늘 결정 제안(P2)**: NumLink 그리드 셀을 "컬러드 섀도우 클레이모피즘"으로 리워크 — Layer Lab MinimalGame 스킨에 라운드/플랫 셀 베이스가 있으므로 셀 18px 라운드+이중 그림자(셀 색 동계열 진한 외부 드롭섀도우+좌상단 inner highlight)+연결 시 spring overshoot(1.08배 바운스). 추가 에셋 없이 머티리얼 그림자 설정만으로 구현·색맹 듀얼코딩과 충돌 0. Sources: hype4.academy·hashbuilds.com·midrocket.com·natively.dev·muz.li·designstudiouiux.com·pixune.com·pantone.com.',
+      },
+    ],
+    meetingTitle:
+      '🟢 6/27 종합 회의 — "어제 고친 것이 검증되자 보류를 닫았다, 그리고 정체의 정체를 밝혔다": 6/26 자율수정한 cancel-in-progress가 6/26 배포+#110 트리거 배포 2중 success로 검증되자, 30일 묵은 #110(checkout v7 major)을 회의 중 자율 머지로 종결했다(자율 칼끝: 의존성→배포결함→검증된 major PR). 동시에 Orchestrator가 NumLink 25일 미커밋이 "방치"가 아니라 진행 중 UI 리워크(revert!→feat Layer Lab)임을 커밋 히스토리로 규명했으나, QA가 검증툴 0개 상태의 장기 미봉인은 오히려 위험을 키운다고 못박았다',
+    meetingSummary:
+      '제73회 종합 회의(토요일·D+34·6/26 다음 날). **오늘의 회의는 "검증이 보류를 닫는 열쇠가 된 날"이다.** 6/26 DevOps는 deploy-pages.yml의 cancel-in-progress=true 결함을 false로 자율 수정하며 "오늘 배포가 첫 검증"이라 적었다. 오늘 그 검증이 두 번 통과했다 — 6/26 데일리 배포(build 14s/deploy 8s)와, 회의 중 자율 머지한 #110이 트리거한 배포가 모두 success였다. 어제 고친 것이 실제로 작동했고, 그게 입증되자 #110을 "major라 신중 보류"할 마지막 명분이 사라졌다. DevOps와 Orchestrator가 독립적으로 같은 결론(30일째 CLEAN·6개 배포 무사고·리스크 낮음)에 도달했고, 메인이 squash 머지로 종결했다(열린 PR 0건·checkout v7 첫 배포 무사고로 major 실증). 자율 칼끝은 또 전진했다: 6/25 의존성 머지 → 6/26 배포 결함 수정 → 6/27 검증된 자신감으로 30일 묵은 major PR 종결. 그러나 두 P0는 오늘도 무인 세션에서 못 닫혔다. QA가 qa_static.py를 다시 돌렸고 결과는 7일째 글자 그대로 같다 — 정확히 1 error, NoteSpawner.cs:126의 elapsedTime += Time.deltaTime가 그대로고 dspTime/PlayScheduled는 0건, detector는 빨간불을 이레째 켜둔 채다. 가드는 건강(detector 6/6 실재·회귀 2/2)하나 코어는 게임 코드라 사용자 세션 대기. NumLink는 오늘 더 깊은 통찰이 나왔다 — Orchestrator가 커밋 히스토리(revert!: UI Toolkit 롤백→feat: Layer Lab 9-slice 스킨)로 25일 공백이 "방치"가 아니라 진행 중인 UI 리워크임을 입증했고, Layer Lab/·UGUI.meta는 잔존물이 아니라 능동적 작업물임을 밝혔다. 하지만 QA가 곧장 못박았다 — 그 큰 리워크가 검증툴 0개+단위테스트 0개 상태로 25일째 미봉인이라, "진행 중"이라는 사실이 위험을 줄이는 게 아니라 키운다(복원 불가능한 단일 거대 미커밋). 나머지는 새 지평을 더했다: Developer는 Unity CoreCLR 6.8 알파(Mono 폐기·2.6배)·Addressables Android TCFT(텍스처 압축 타게팅 설치용량 절감)·EnhancedTouch(드래그 정밀화)를, Game Designer는 하이브리드캐주얼 D7 18~22%·리듬게임 $2.5B→$7B·FTUE 표준(튜토리얼 4레벨·첫 광고 20분·FTUE 광고 0개)을, Content는 인앱 이벤트 전환 +106%·평점 0.3별→CPI 19%·UGC 마이크로크리에이터 CPI 20~40%↓를, Art는 클레이모피즘 표준화(컬러드 섀도우)·다크퍼스트·엄지영역 보텀시트를 제안했다. 메타: 6/21 "탐지기 비어 있음" → 6/25 "탐지기는 채웠으나 코어 미수정·4일 방치" → 6/26 "자율 칼끝이 배포 파이프라인으로 전진" → 6/27 "어제 고친 것이 검증되자 30일 묵은 PR을 닫았고, 정체의 정체(NumLink=진행 중 리워크)를 밝혔다". 자율의 사정거리는 검증을 발판 삼아 매일 넓어지지만, 마지막 게임 로직 두 줄(NoteSpawner 코어·NumLink 봉인)은 사용자 세션에서만 닫힌다 — 그 두 줄을 닫는 날이 진짜 마침표다.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '어제 DevOps가 고친 cancel-in-progress, 오늘 검증됐는지부터 봤어요. 두 번 통과했습니다 — 6/26 데일리 배포가 success였고, 잠시 후 얘기할 #110 머지가 일으킨 배포도 success예요. 어제 고친 게 진짜로 작동한 거죠. 그리고 NumLink 미커밋, 제가 오늘 진짜 정체를 알아냈어요. 25일째 공백이 "방치"가 아니에요. 커밋 히스토리를 보니까 revert로 UI Toolkit을 롤백하고, 바로 feat으로 Layer Lab 9-slice 스킨을 적용하는 연쇄예요. 작업트리의 Layer Lab 폴더랑 UGUI.meta는 버려진 잔존물이 아니라, 지금 진행 중인 UI 리워크 작업물입니다. 안 한 게 아니라, 큰 작업 중이라 커밋 단위를 못 끊고 있는 거예요.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '잠깐, "진행 중"이라는 게 안심할 일이 아니에요. 제가 NumLink 다시 봤는데 Tools 폴더 없고, AutoQATests는 빈 폴더고, 자동 테스트 0개 그대로예요. BoardDataTester는 그냥 에디터 수동 도구지 테스트가 아니고요. 큰 리워크를 검증툴도 테스트도 없이 25일째 안 묶고 있다는 건, 진행 중이라서 더 위험한 거예요. 지금 Unity가 한 번 크래시하면 뭐가 의도된 변경인지 복원이 안 됩니다. 그리고 MeowBeat dspTime — qa_static.py 또 돌렸고 7일째 똑같이 1 error예요. NoteSpawner 126번 줄 deltaTime 그대로, dspTime 0건. detector가 빨간불을 일주일째 켜두고 있는데 코어는 손도 안 댔어요. "탐지만 하고 안 고친다"가 제일 큰 리스크입니다.',
+      },
+      {
+        speaker: 'DevOps',
+        note: '그럼 #110 정리하죠. actions/checkout 6에서 7로 올리는 major인데, 30일째 CLEAN/MERGEABLE이고 최근 배포 6개가 전부 무사고예요. 어제 cancel-in-progress 고친 게 오늘 배포로 검증까지 됐고요. "major라 보류"의 명분이 이제 없어요 — 더 묵힐 이유가 사라진 겁니다. 머지하면 그게 바로 checkout v7로 도는 첫 배포가 되니까 그 자체가 검증이에요.',
+      },
+      {
+        speaker: 'Orchestrator',
+        note: '동의해요, 지금 머지하죠. 우리 자체 레포 인프라고 검증 근거도 충분하니까 자율로 처리합니다. (squash 머지 실행) #110 종결됐어요. 열린 PR 0건이고, 머지가 트리거한 배포도 success로 떴습니다 — checkout v7 첫 배포가 무사고로 끝났으니 major 업그레이드 리스크도 실증으로 닫혔어요. 보세요, 흐름이 보이죠. 6/25엔 의존성 하나 머지, 6/26엔 배포 파이프라인 결함 수정, 오늘은 그 수정이 검증되니까 30일 묵은 major PR을 자신 있게 닫았어요. 검증이 다음 자율 행동의 발판이 되는 패턴이에요.',
+      },
+      {
+        speaker: 'Developer',
+        note: 'NumLink 봉인 얘기 나온 김에 — 지금 작업트리에 Layer Lab 스킨, 폰트 SDF, manifest 변경이 다 뒤섞여 있어요. 봉인할 때 통째로 한 커밋 말고, feat: Layer Lab UI 스킨이랑 chore: 폰트 SDF 갱신으로 분리하는 게 나중에 복원에 유리합니다. 그리고 큰 그림으로는 Unity가 CoreCLR로 갈아타고 있어요. 6.8 알파에서 Mono를 8년 만에 버리고, 같은 코드가 2.6배 빨라집니다. 모바일은 당장은 IL2CPP 경로지만, 지금 코드를 .NET 표준이랑 C# 14 문법에 맞게 정리해두면 전환 비용이 줄어요. 그리고 Addressables Android에 텍스처 압축 타게팅이 들어와서, 기기에 맞는 압축 포맷만 설치되니 2D 스프라이트 많은 우리 게임 설치 용량이 자동으로 줄어듭니다.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: '코어 루프 얘기를 하나 보태고 싶어요. 하이브리드캐주얼이 D7 리텐션 18~22%로 하이퍼캐주얼의 2.5배, LTV는 3~5배예요. 근데 중요한 경고가 있어요 — 망가진 코어 루프에 상점이나 꾸미기 메타를 얹어도 ARPDAU는 안 움직여요. D1 30% 검증부터예요. 그래서 지금 NumLink가 코어 완성 단계인 게 적기예요. 톱30 캐주얼 FTUE 표준이 명확해요 — 튜토리얼 4레벨 이내, 첫 부스터 lv7, 첫 30분은 승률 거의 100%, 첫 전면광고는 플레이 20분 후, FTUE 중엔 광고 0개. 이걸 NumLink GDD에 "첫 30분 무패 온보딩" 규칙으로 박아두자는 거예요. 첫날 이탈이 77%라 첫 세션 설계가 제일 큰 레버입니다.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '출시 후 무료 노출 채널 하나 짚을게요 — 인앱 이벤트요. Apple In-App Events랑 Google Play 프로모션 콘텐츠인데, 구글 공식 분석에서 6천 건 이벤트 중앙값 전환이 +106%였어요. MeowBeat 신곡 추가나 NumLink 시즌 챌린지를 이벤트로 포장하기 딱 좋아요. 그리고 비용 0원 레버가 하나 더 있어요 — 평점이에요. Google Play에서 0.3별만 떨어져도 14일 안에 CPI가 19% 오릅니다. 4.5별 앱은 탭에서 설치 전환이 50%인데 3.5별은 30% 미만이에요. 두 게임 다 출시 전이니까, 지금은 자산 제작보다 인앱 평점 요청 트리거랑 리뷰 답변 SOP를 코드에 미리 심어두는 걸 백로그에 넣자는 거예요. 베이스라인 봉인 전이라 자산 제작은 그 다음입니다.',
+      },
+      {
+        speaker: 'Art Director',
+        note: 'NumLink가 Layer Lab 스킨으로 리워크 중이라니까 딱 맞는 제안이 있어요. 2026 캐주얼 퍼즐 비주얼 표준이 클레이모피즘으로 굳었어요. 핵심은 회색 그림자가 아니라 "셀 색이랑 같은 계열의 진한 컬러드 섀도우"를 쓰는 거예요. 핑크 셀이면 진핑크 그림자, 그래야 평면이 말랑한 토이처럼 보여요. NumLink 셀을 18px 라운드에 이중 그림자 주고, 숫자 연결될 때 1.08배 살짝 바운스하는 spring 이징을 넣으면 추가 에셋 없이 머티리얼 설정만으로 촉각감이 생겨요. 색맹 듀얼코딩이랑도 안 부딪혀요. 그리고 레벨선택이나 일시정지는 상단 모달 말고 하단 보텀시트로 옮기면 한손 도달성이 올라갑니다 — 유저 80%가 한손, 다크모드로 쓰니까요.',
+      },
+      {
+        speaker: 'Orchestrator',
+        note: '정리할게요. 오늘 자율로 #110 머지를 닫았고, 그게 어제 배포 수정의 2차 검증까지 겸했어요. 하지만 진짜 마침표인 두 줄은 여전히 사용자 세션 몫이에요 — MeowBeat NoteSpawner의 dspTime 코어 패치(7일째 빨간불), 그리고 NumLink 봉인(25일째, 이젠 리워크 진행 중이라 더 시급). QA 말이 맞아요, "진행 중"이라서 안심이 아니라 검증 없이 길어져서 더 위험한 겁니다. 사용자 세션이 열리면 NumLink부터 .gitignore 정비하고 분리 커밋으로 봉인, 그 다음 dspTime 단일 PR. 이 두 줄을 닫는 날이 진짜 마침표예요.',
+      },
+    ],
+    decisions: [
+      {
+        title:
+          '✅ [자율완료·자율 칼끝 한 칸 전진] agent-office #110(actions/checkout 6.0.3→7.0.0 major) 회의 중 자율 머지 종결',
+        description:
+          '6/26 자율 수정한 cancel-in-progress=false가 6/26 데일리 배포(build 14s/deploy 8s)와 #110 트리거 배포 둘 다 success로 2중 검증되자, "major라 신중 보류"의 마지막 명분이 소멸 — DevOps·Orchestrator가 독립적으로 30일째 CLEAN/MERGEABLE·6개 배포 무사고·리스크 낮음에 동의해 메인이 squash 머지로 종결(열린 PR 0건). checkout v7로 도는 첫 배포가 success라 major 업그레이드 무사고를 실증. 자율 칼끝: 6/25 의존성 머지(#111) → 6/26 배포 결함 수정 → 6/27 검증된 자신감으로 30일 묵은 major PR 종결.',
+      },
+      {
+        title:
+          '🔴 P0 [이월·게임 코드·사용자 세션] MeowBeat NoteSpawner.cs:126 dspTime 전환 — 7일째 RED 종결',
+        description:
+          'qa_static.py가 7일째 정확히 1 error(126행 elapsedTime += Time.deltaTime·dspTime/PlayScheduled 0건·6/26 이후 커밋 0건). detector 완성 7일째·발견 12일째 RED. songPosition = (float)(AudioSettings.dspTime - dspSongStartTime)로 교체+BGM은 AudioSource.PlayScheduled 시작 고정+Android 오디오 지연 캘리브레이션 오프셋. 픽스 즉시 detector 자동 GREEN으로 픽스 증명. 미커밋 .cs 4개(SongData·GameManager·SongManager·OptionManager)도 단일 커밋 정리. "탐지만 하고 안 고친다" 괴리가 최대 리스크.',
+      },
+      {
+        title:
+          '🚨 P0 [이월·게임 코드·사용자 세션] NumLink 25일 미커밋 봉인 + 검증툴 이식 — "진행 중 리워크"라 오히려 더 시급',
+        description:
+          'Orchestrator 규명: 25일 공백은 방치가 아니라 진행 중 UI 리워크(revert!: UI Toolkit 롤백→feat: Layer Lab 9-slice 스킨). 단 QA 확인 이중 무방비(Tools 0개·AutoQATests 빈 폴더·자동 테스트 0개)와 겹쳐 복원 불가능한 단일 거대 미커밋 리스크로 악화. ① .gitignore에 .omc/·Screenshots/·_Recovery/ 추가(Layer Lab은 트래킹) → ② Developer 제안대로 feat: Layer Lab UI 스킨 / chore: 폰트 SDF 갱신으로 분리 커밋해 봉인 → ③ NumLink/Tools에 검증툴 4종 이식(현재 0개)+AutoQATests 빈 껍데기 정리. AutoGenTests 4파일 삭제 확정 여부는 사용자 확인 선행.',
+      },
+      {
+        title:
+          '🟡 P1 [신규/이월] Unity 6.x 전환 대비 + 베이스라인 측정 (봉인 후)',
+        description:
+          'Developer — 베이스라인 봉인 후 Unity 6.5 2D 스프라이트 프로파일+Addressables Android TCFT(텍스처 압축 타게팅)로 두 게임 모바일 설치용량/메모리 베이스라인 측정. CoreCLR 6.8 알파 대비 코드를 .NET 표준 API·C#14 문법에 맞춰 정리. NumLink 드래그는 Input System EnhancedTouch로 전환(CLAUDE.md Input.GetKey 금지 규칙 정합). DevOps — 차후 actions/attest-build-provenance(SLSA Build Level 2) 도입 검토.',
+      },
+      {
+        title:
+          '🟢 P2 [신규 적재 — 모두 P0 후] FTUE 규칙 명문화·평점 방어·클레이모피즘 리워크·인앱 이벤트 캘린더',
+        description:
+          'Game Designer — NumLink GDD에 "첫 30분 무패 온보딩+광고 20분 유예" FTUE 규칙 명문화(튜토리얼 4레벨·lv1~15 승률 ~100%·첫 부스터 lv7·첫 전면광고 20분 후·FTUE 광고 0개). Content — 출시 직후 평점 4.1~4.5 방어 시스템(인앱 평점 요청 트리거+리뷰 답변 SOP) 출시 전 백로그 선등록(평점 0.3별=CPI 19%)+인앱 이벤트화 콘텐츠 캘린더 설계. Art — NumLink 셀을 컬러드 섀도우 클레이모피즘으로 리워크(18px 라운드+동계열 진한 드롭섀도우+연결 시 1.08배 spring overshoot·머티리얼 설정만·색맹 듀얼코딩 충돌 0)+레벨선택/일시정지를 보텀시트로(한손 도달성).',
+      },
+    ],
+  },
+  {
     id: '2026-06-26T04:00:00-daily-standup',
     date: '2026-06-26',
     researchTitle:
