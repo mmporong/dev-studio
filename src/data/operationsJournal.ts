@@ -43,6 +43,109 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-06-28T04:00:00-daily-standup',
+    date: '2026-06-28',
+    researchTitle:
+      '🟡 26일 미커밋의 정체가 한 겹 더 벗겨졌다 — 어제는 "진행 중 리워크"였는데 오늘은 "청산 가능한 노이즈"였다. 그런데 dspTime은 8일째 한 글자도 안 변했다: 6/27 Orchestrator는 NumLink 25일 공백이 "방치가 아니라 진행 중 UI 리워크라 커밋 단위를 못 끊는 것"이라 규명했다. 오늘 Developer가 그 작업트리 36파일을 실제로 까보니, 소스 코드 변경은 거의 없고 **폰트 SDF .asset 재import + _Recovery 깨진 씬 + .omc 캐시가 36파일의 실체**였다 — 즉 "큰 리워크라 못 끊는 것"이 아니라 ".gitignore 한 줄과 폰트 asset 분리 커밋이면 오늘 안에 0파일로 청산되는 것"일 수 있다. 봉인의 난이도가 26일간 과대평가됐을 가능성이 드러났다. 두 해석은 충돌하지 않는다 — 진행 중인 UI 작업물(Layer Lab 스킨)도 있고, 그 위에 정리 안 한 노이즈가 덮여 "거대 미커밋처럼 보였을" 뿐이다. 핵심은 봉인이 생각보다 가벼운 작업일 수 있다는 것. 반대편 P0는 정반대다 — QA가 qa_static.py를 다시 돌렸고 dspTime은 정확히 8일째 1 error, NoteSpawner.cs:126의 elapsedTime += Time.deltaTime이 글자 그대로 그대로다. 한쪽 P0는 "쉬울지 모른다"가 드러났고, 한쪽 P0는 "8일째 손도 안 댔다"가 확정됐다.',
+    researchSummary:
+      '제74회 리서치(일요일·D+35·6/27 다음 날). 7명 전원 보고. **오늘의 구조는 "한 P0는 가벼워 보이기 시작했고, 한 P0는 8일째 무변화로 확정됐다"이다.** Orchestrator는 실측으로 두 P0의 정지를 못박았다 — NumLink 최신 5fcac3a(6/2 14:05)·**26일째 미커밋**·작업트리 36파일·Tools 폴더 부재(검증툴 0개), MeowBeat 최신 921e0cf(6/21 04:06)·**7일째 미커밋**·37파일·NoteSpawner.cs:126 deltaTime 잔존. agent-office는 #110 머지 후 열린 PR 0건·CI 최근 success 유지. 이월 액션 둘 다 미완(P0-1 dspTime 패치 미착수·P0-2 NumLink 봉인 미실행), #110은 완료 확인. **오늘의 전환점은 Developer의 작업트리 해부다** — NumLink 36파일을 열어보니 진짜 소스 변경이 아니라 폰트 SDF .asset 재import·_Recovery 깨진 씬·.omc 캐시가 뒤섞인 "노이즈"가 대부분이라, "26일 미커밋=위험한 거대 미완성"이라는 26일간의 전제가 흔들렸다. .gitignore에 .omc/·Screenshots/를 넣고 폰트 asset만 분리 커밋하면 작업트리가 오늘 0파일로 떨어질 수 있다는 구체적 청산 경로를 제시했다. QA는 정반대 사실을 확정했다 — qa_static.py가 8일째 정확히 1 error(NoteSpawner.cs:126 TIMING_DSPTIME_UNUSED)·dspTime/PlayScheduled 0건, NumLink는 Tools 0개에 더해 Assets/Tests 폴더가 비어 있어(.cs 0개·[Test] 0개) 이중 무방비가 무변화, 단 Feedme 가드 인프라는 건강(known_bugs 7개·회귀 2/2)·agent-office CI 5건 success. 나머지는 신규 지평을 더했다(전부 이전 회의 주제와 비중복): Game Designer는 윈스트릭(연속 클리어 보상↑·패배 시 0 리셋="한 판 더" 후킹)·7일 무활동 컴백 리워드+푸시로 D7 16%→20%+·친구 비동기 리더보드로 D30 26~31%·리듬게임 25년 $4.5B(음악게임 48.3%)·시즌패스 라이브옵스를, Developer는 Unity 6.3 LTS(6.2 지원종료·Android SDK36·ANR 대시보드)·16KB page size 2025-11 의무화·GC.Alloc 1KB/frame 목표+Memory Profiler Compare 모드를, Content는 스토어 스크린샷 A/B 전환 20~35%↑·게임은 A/B 2배 빈번(57% vs 34%)·틱톡 게임광고 참여율 5.53%(릴스 2.35%·쇼츠 1.98%의 2~3배)·고양이게임 바이럴=공유가능 결과물(Cats&Soup)을, DevOps는 CI 6건 success·열린 PR 0건·GameCI+Fastlane 분업·Dependabot 선택적 자동머지(patch만·Actions는 patch만·grouping)를, Art는 물리기반 화면전환(공간 연속성)·엘리베이티드 뉴트럴 3~5색 한정·에코형 주스 절제(히트스톱 핵심)를 보고했다. 메타: 6/25 "탐지기는 채웠으나 코어 미수정" → 6/26 "자율 칼끝 배포 파이프라인 전진" → 6/27 "검증이 보류를 닫음·NumLink=진행 중 리워크 규명" → 6/28 "그 리워크의 실체가 청산 가능한 노이즈일 수 있다·반대편 dspTime은 8일째 확정 무변화". 한 P0는 가벼워졌고 한 P0는 무거운 채 굳었다 — 둘 다 사용자 세션에서만 닫힌다.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — 두 P0 정지 실측: NumLink 5fcac3a(6/2)·26일째 미커밋·36파일·검증툴 0개 / MeowBeat 921e0cf(6/21)·7일째·37파일·NoteSpawner.cs:126 deltaTime 잔존 / agent-office #110 머지 후 열린 PR 0건·CI success / 이월 P0-1·P0-2 둘 다 미완, #110 완료 확인',
+        description:
+          '**🎯 이전 액션 실측(6/28)**: ① MeowBeat dspTime 코어 패치 = **미완**(오늘 커밋 0건·Time.deltaTime 126행 그대로·7일째 미착수). ② NumLink 봉인+검증툴 = **미완**(Tools 미생성·36파일 그대로·26일째 동결). ③ #110 checkout v7 머지 = **✅ 완료 확인**(열린 PR 0건·6/27 머지 커밋 존재). **측정값**: NumLink 최신 5fcac3a(2026-06-02 14:05)·26일째 미커밋·작업트리 36파일(폰트 .asset 다수+Tests 삭제분 포함). MeowBeat 최신 921e0cf(6/21 04:06)·7일째·37파일. agent-office 최신 e1b0790(6/27 04:17)·열린 PR 0건·미커밋은 .omc/project-memory.json 자동생성물 1개·CI 최근 4회 Deploy 전부 success. **오늘 결정 제안**: MeowBeat NoteSpawner.cs:126 dspTime 코어 패치 착수 — 탐지기·기준선이 6/21에 이미 갖춰진 P0라 오늘 1건으로 닫기 가장 명확(patch 후 qa_static.py 0 error 회귀 확인). NumLink P0-2는 26일째로 더 시급하나 36파일 정리·봉인이 선행돼야 해 분량이 큼 — 차선. (git log/status·gh pr/run 실측)',
+      },
+      {
+        title:
+          '🔍 QA Tester — dspTime P0 8일째 RED 확정(qa_static.py 정확히 1 error·NoteSpawner.cs:126 elapsedTime += Time.deltaTime 잔존·dspTime/PlayScheduled 0건) / NumLink 이중 무방비 무변화(Tools 0개·Assets/Tests 폴더 비어 있음 .cs 0개·[Test]/[UnityTest] 0개) / Feedme 가드 건강(known_bugs 7개·회귀 2/2)·agent-office CI 5건 success',
+        description:
+          '**🔍 핵심 발견(8일째 RED·탐지-방치 괴리 지속)**: qa_static.py 실행 결과 정확히 1 error, 0 warning. 유일 에러가 dsptime_usage NoteSpawner.cs:126 TIMING_DSPTIME_UNUSED다. grep 결과 dspTime 0건·PlayScheduled 0건·126행 elapsedTime += Time.deltaTime 누적 그대로 — 6/27 이후 커밋 0건이라 코어 무변. detector 완성(6/21) 기준 8일째, 발견 기준 13일째 RED. 프레임 드롭/오디오 드리프트 시 노트 박자가 어긋나는 출시 차단급 P0. **🔍 NumLink 완전 무방비(이중)**: Tools/ 폴더 부재로 검증툴 0개, Assets/Tests 폴더는 존재하나 .cs 0개(완전 비어 있음), 프로젝트 전체에서 [Test]/[UnityTest] 0개. asmdef는 Core/Domain/Events 3개 있으나 대응 테스트 어셈블리 없음 — Domain 순수 C# TDD 규칙 대상인데 RED 테스트 0개. **🔍 가드 인프라는 건강(대조)**: known_bugs.json 버그 패턴 7개·run_regression.py 2/2 시나리오 탐지 성공(YAML_INDENT_M_FATHER 등). agent-office CI 최근 5건 Deploy 전부 success. **🚨 미해결 P0급 1건**: TIMING_DSPTIME_UNUSED(8일째). **최우선 리스크 1줄**: 리듬게임 코어 타이밍이 Time.deltaTime 프레임 누적이라 드리프트 시 박자 붕괴 — 게임 핵심 재미가 깨지는 결함이 일주일 넘게 방치. **오늘 결정 제안**: NoteSpawner.cs:126을 AudioSettings.dspTime 절대시각 동기화로 교체하는 단일 수술적 픽스를 오늘 1순위로 착수(patch 후 qa_static.py 0 error VERIFY)·NumLink는 P2로 NumLink.Domain.Tests.asmdef+RED 테스트 1개라도 추가해 무방비 탈출. Sources: qa_static.py·run_regression.py·known_bugs.json·NoteSpawner.cs·gh run 실측.',
+      },
+      {
+        title:
+          '💻 Developer — 🔑 NumLink 작업트리 해부: 36파일은 "위험한 미완성"이 아니라 폰트 SDF .asset 재import+_Recovery 깨진 씬+.omc 캐시 "노이즈"가 실체 — .gitignore 정비+폰트 asset 분리 커밋이면 오늘 0파일 청산 가능 / Unity 6.3 LTS(6.2 지원종료·Android SDK36·ANR 진단 대시보드) / 16KB page size 2025-11-01 의무화(API35+ 필수) / GC.Alloc 1KB/frame 목표·Memory Profiler Compare 모드',
+        description:
+          '**💻 🔑 오늘의 해부(NumLink 미커밋 재해석)**: 작업트리 36파일을 실제로 열어보니 진짜 소스 변경은 거의 없고 폰트 SDF .asset 재import + _Recovery 깨진 씬 + .omc 캐시가 혼재한 "노이즈"가 다수다. 즉 6/27 Orchestrator의 "진행 중 리워크"와 모순이 아니라 보완 — 진행 중 UI 작업물(Layer Lab 스킨) 위에 정리 안 된 노이즈가 덮여 "거대 미커밋처럼" 보였다. .gitignore에 .omc/·Screenshots/ 추가 후 폰트 asset만 분리 커밋하면 작업트리를 오늘 0파일로 떨굴 수 있다 — "26일 미커밋=위험"이라는 26일간 전제를 재검토할 근거. **💻 신규 1순위(Unity 6.3 LTS)**: 6000.3.0f1이 현재 최신 LTS·6.2 지원 종료. Android SDK 36(Android 16) 타겟 가능·ANR 진단 대시보드 신규. **💻 신규 2순위(16KB page size)**: 2025-11-01부터 API 35+ 타겟 신규/업데이트 앱 전부 16KB 페이지 정렬 의무(이미 시행)·Unity 6.x가 API35/36 타겟 지원 — 두 게임 출시 전 빌드 검증 필수. **💻 신규 3순위(GC.Alloc)**: 모바일 목표 1KB/frame 이하·Memory Profiler Compare 모드(스냅샷 차분)로 누수 추적·Incremental GC로 스파이크 분산. **💻 기술부채 1줄**: MeowBeat dspTime은 deltaTime 누적이 오디오 클럭과 드리프트되어 노트 동기 깨짐 — AudioSettings.dspTime 절대시각 스폰이 근본 해결. **오늘 결정 제안(P1)**: NumLink .gitignore 정비+노이즈 분리 커밋 1건으로 작업트리 0파일 청산(26일 미커밋 종료)·두 게임 빌드 타겟 Unity 6.3 LTS+API35(16KB 정렬 검증) 고정. Sources: unity.com·docs.unity3d.com·developer.android.com·support.google.com·discussions.unity.com.',
+      },
+      {
+        title:
+          '🎮 Game Designer — 윈스트릭 메커닉(연속 클리어 보상↑·패배 시 0 리셋="한 판 더" 후킹·Emoji Pop 코어 채택) / 7일 무활동 컴백 리워드+다음날 푸시→D7 16%→20%+ / 친구 비동기 리더보드+순위변동 푸시→D30 26~31%(Monopoly GO·Township) / 리듬게임 25년 $4.5B(음악게임 48.3%)·시즌패스=월 균등매출+데일리로그인 라이브옵스',
+        description:
+          '**🎮 신규 1순위(윈스트릭·막힘 안전판)**: 연속 클리어 N판마다 보상 배율 상승·패배 시 0 리셋이 "한 판 더" 세션 연장의 핵심 후킹(Emoji Pop이 코어로 채택). 동시에 무료 힌트는 막혀서 과금 직전 churn을 막는 안전판 — 레벨은 부스터 없이도 항상 "클리어 가능하게 느껴져야" 이탈 방지(Mobile Game Doctor 2025). 두 메커니즘이 상호보완(스트릭 유지 욕구↔막힘 구제). **🎮 신규 2순위(복귀 트리거)**: 7일 무활동 시 컴백 리워드 트리거+다음날 푸시 조합으로 D7 16%→20%+ 상향 가능(Pushwoosh/maf.ad 2025). **🎮 신규 3순위(비동기 경쟁)**: 친구 리더보드+순위변동 푸시 조합이 Monopoly GO 레이드·Township 길드에서 D30 26~31% 달성(Liftoff 2025 Casual Report). **🎮 시장**: 리듬게임 2025 $4.5B(음악게임의 48.3%)·시즌패스는 월 단위 균등 매출+데일리 로그인 라이브옵스 핵심(Block Blast 12월 한정이벤트 11월 대비 2배 확대·Sensor Tower). **오늘 결정 제안(P2·GDD)**: NumLink에 "윈스트릭+무료 힌트 안전판" 이중 시스템 도입 — 연속 클리어 3·5·10판 마일스톤 보상 배율↑·패배 시 0 리셋으로 "한 판 더" 유도, 한 레벨 90초+ 막히면 무료 힌트 1회 자동 제공(과금 직전 churn 차단). 이전 FTUE/가변판정/데일리챌린지와 비중복 신규 각도. Sources: mobilegamedoctor.com·deconstructoroffun.com·pushwoosh.com·maf.ad·liftoff.ai·sensortower.com·dataintelo.com.',
+      },
+      {
+        title:
+          '📦 Content Writer — 스토어 스크린샷 A/B 테스트 전환 20~35%↑(검증 평균 10~25%) / 게임은 일반 앱보다 A/B 2배 빈번(57% vs 34%)·연 2~8회 갱신 상위게임 랭킹 우위 / 틱톡 게임광고 참여율 5.53%(릴스 2.35%·쇼츠 1.98%의 2~3배·단 CPI 15~20%↑) / 틱톡 60초+ 유통 가산점 / 고양이게임 바이럴=공유가능 결과물(Cats&Soup)',
+        description:
+          '**📦 신규 1순위(스크린샷 A/B)**: 게임 스토어 첫 3장 스크린샷 A/B 테스트로 전환율 20~35% 상승(검증된 평균 10~25%·Rovio 2.5M 추가 설치 사례·SplitMetrics). 게임은 일반 앱보다 스크린샷 A/B 2배 빈번(57% vs 34%)·연 2~8회 갱신하는 상위 게임이 랭킹 우위. 출시 후에도 비용 0원 레버. **📦 신규 2순위(숏폼 포맷별 효과)**: 틱톡 게임광고 참여율 5.53%로 릴스(2.35%)·쇼츠(1.98%)의 2~3배·단 틱톡 CPI는 전년比 15~20%↑. 틱톡이 2025년 말 60초+ 영상에 유통 가산점 부여(워치타임 우수 시)·게임 플레이 롱폼 여지. **📦 신규 3순위(고양이 바이럴)**: 고양이 게임 바이럴 핵심은 "꾸미기/공유 가능한 결과물"(Cats&Soup 사례) — 유저가 자기 화면을 인증하게 만드는 구조. MeowBeat 콤보/별점 클리어 화면을 캡처·공유 친화적으로 설계하면 무광고 바이럴 레버. **오늘 결정 제안(P2·비용 0원·출시 전 선반영)**: NumLink·MeowBeat 스토어 등록 직전 "첫 3장 스크린샷=후킹 우선" 원칙을 디자인 단계에 선반영하고, 출시 후 A/B할 변형안 2종(게임플레이 강조 vs 결과화면 강조)을 미리 제작. MeowBeat는 고양이 강점을 살려 "인증하고 싶은 결과화면"을 공유 친화로 설계. 이전 인앱이벤트/평점CPI/UGC와 비중복 신규 채널. Sources: asomobile.net·apptweak.com·splitmetrics.com·sensortower.com·verlynk.com·admiral.media·theviralapp.com.',
+      },
+      {
+        title:
+          '🛡 DevOps — agent-office CI 6건 전부 success(Deploy 5+Weekly Insights 1)·열린 PR 0건 유지(Dependabot 신규 없음)·6/26 cancel-in-progress=false 그대로(재발 0) / GameCI(Dockerized Unity·무료)+Fastlane 분업이 모바일 빌드 CI 정착·Codemagic 부상 / Dependabot 자동머지 2026 권고: patch만 자동·GitHub Actions는 patch만·grouping으로 PR 폭주 방지',
+        description:
+          '**🛡 CI/CD 실측**: gh run 최근 6건 전부 success(Deploy GitHub Pages 5·Weekly Insights 1)·실패 0. 열린 PR 0건 유지(#110 머지 후 클린·Dependabot 신규 없음). deploy-pages.yml 16행 cancel-in-progress: false·14행 concurrency 블록 정상 — 6/26 자율수정 그대로 유지·배포 중 취소 결함 재발 없음. 워크플로우 deploy-pages.yml·weekly-insights.yml 2개. **🛡 웹 리서치(신규)**: Unity Cloud Build 후속 Unity Build Automation이 클라우드 빌드 표준화·Codemagic은 Unity LTS 사전설치+LambdaTest 실기기 통합으로 부상·오픈소스 GameCI(Dockerized Unity Editor, GitHub Actions 무료)는 빌드/테스트 담당+배포는 Fastlane 연동 분업 정착. MeowBeat/NumLink 모바일 빌드 자동화 시 GameCI+Fastlane이 비용효율 후보. **🛡 Dependabot 자동머지 2026 권고**: ① 자동머지 안전성은 CI 품질 종속(required check 빌드+테스트 필수) ② GitHub Actions 버전업은 CI 통과가 안전 보증 안 하므로 patch만 자동·minor/major 수동 리뷰 ③ dependabot.yml grouping으로 월요일 PR 폭주 방지 ④ Renovate minimumReleaseAge로 typosquatting 완충. **오늘 결정 제안(P2·개선)**: agent-office에 Dependabot grouping+선택적 자동머지(patch/minor만·Actions는 patch만) 도입 검토 — 현재 열린 PR 0건이라 설정 적기. CI 자체는 이상 없어 즉시 조치 불필요. Sources: blog.codemagic.io·unity.com·systemshardening.com·lethain.com.',
+      },
+      {
+        title:
+          '🎨 Art Director — 물리 기반 화면 전환(공간 연속성 모션·요소 모핑 이동으로 변화맹 감소) / 엘리베이티드 뉴트럴+3~5색 한정(순백→샌드·스톤·오트밀 베이지·액션 색 1~2개 한정) / 에코형 주스 절제 미학(히트 이펙트·파티클은 코어 게임플레이 반영할 때만·과장 피드백은 역효과·히트스톱이 핵심)',
+        description:
+          '**🎨 신규 1순위(공간 연속성 모션)**: 2026 게임 UI 핵심은 페이지 전환을 끊지 않고 요소가 모핑·이동하며 이어지는 "공간 연속성" 모션 — 변화맹(change blindness)을 줄이고 메뉴를 살아있게 만든다. NumLink 레벨선택→플레이 전환에 직결. **🎨 신규 2순위(엘리베이티드 뉴트럴)**: 순백 배경이 따뜻한 샌드·스톤·오트밀 베이지로 교체·캐주얼은 둥근 형태+따뜻한 팔레트 유지하되 액션 색은 1~2개로 한정(적=흥분·주황=열정·청=신뢰)하는 절제된 적응형 컬러 시스템. **🎨 신규 3순위(에코형 주스 절제)**: 히트 이펙트·파티클·스크린셰이크는 "코어 게임플레이를 반영"할 때만 가치 있고, 과장된 피드백은 오히려 게임을 해친다는 반작용 트렌드 — 즉시 시각 반응+히트스톱(hitstop)이 핵심. **오늘 결정 제안(P2·추가 에셋 0)**: MeowBeat 노트 히트 시 "히트스톱+펀치 스케일" 피드백 추가 — Perfect 판정 순간 노트 스프라이트를 0.06초간 1.0→1.25배 펀치 스케일(DOTween Punch 이미 보유)+콤보 카운터 텍스트만 같은 타이밍 흔들기. 신규 텍스처·파티클 없이 기존 스프라이트의 스케일·트랜스폼만 코드 제어. NumLink는 같은 원리로 숫자 연결 성공 시 라인 끝점 짧은 펀치 스케일. 이전 클레이모피즘/다크퍼스트/보텀시트와 비중복 신규 각도. Sources: mindinventory.com·tubikstudio.com·uxdesign.cc·gameanalytics.com·gamedeveloper.com·wayline.io.',
+      },
+    ],
+    meetingTitle:
+      '🟡 6/28 종합 회의 — "한 P0는 가벼워 보이기 시작했고, 한 P0는 8일째 무변화로 굳었다": Developer가 NumLink 26일 미커밋 36파일을 해부해 "위험한 거대 미완성"이 아니라 폰트 .asset 재import+깨진 씬+.omc 캐시 노이즈가 실체임을 짚자 봉인 난이도의 26일 전제가 흔들렸다(.gitignore 정비+분리 커밋이면 오늘 0파일 청산). 동시에 QA가 dspTime을 8일째 정확히 1 error로 재확인하며 "한쪽은 쉬워졌고 한쪽은 손도 안 댔다"는 비대칭을 드러냈다',
+    meetingSummary:
+      '제74회 종합 회의(일요일·D+35·6/27 다음 날). **오늘의 회의는 "두 P0의 무게가 갈라진 날"이다.** 6/27 Orchestrator는 NumLink 25일 공백을 "방치가 아니라 진행 중 UI 리워크라 커밋 단위를 못 끊는 것"이라 규명했다. 오늘 Developer가 그 작업트리 36파일을 실제로 열어보니, 진짜 소스 변경은 거의 없고 폰트 SDF .asset 재import·_Recovery 깨진 씬·.omc 캐시가 뒤섞인 노이즈가 다수였다. 두 해석은 충돌하지 않는다 — 진행 중 UI 작업물(Layer Lab 스킨) 위에 정리 안 된 노이즈가 덮여 "거대 미커밋처럼" 보였을 뿐이다. 핵심은 봉인이 ".gitignore에 .omc/·Screenshots/ 추가+폰트 asset 분리 커밋"이면 오늘 0파일로 청산될 만큼 가벼운 작업일 수 있다는 것 — "26일 미커밋=위험한 거대 미완성"이라는 26일간의 전제가 처음으로 흔들렸다. 반대편 P0는 정반대다. QA가 qa_static.py를 다시 돌렸고 결과는 글자 그대로 8일째 같다 — 정확히 1 error, NoteSpawner.cs:126의 elapsedTime += Time.deltaTime이 그대로고 dspTime/PlayScheduled는 0건이다. 한쪽 P0는 "생각보다 쉬울지 모른다"가 드러났고, 한쪽 P0는 "8일째 한 글자도 안 변했다"가 확정됐다. NumLink는 추가로 더 깊은 무방비가 확인됐다 — QA가 Assets/Tests 폴더를 열어보니 .cs가 0개(완전히 비어 있음)라, Tools 검증툴 0개에 더해 자동 테스트도 0개인 이중 무방비다. Domain 순수 C# TDD 규칙 대상인데 RED 테스트가 단 하나도 없다. 단 Feedme 가드 인프라는 건강(known_bugs 7개·회귀 2/2)하고 agent-office CI도 5건 success로 배포 파이프라인은 정상이다. 나머지는 신규 지평을 더했다(전부 비중복): Game Designer는 윈스트릭+무료힌트 안전판·컴백 리워드 D7 16%→20%·비동기 리더보드 D30 26~31%·리듬게임 $4.5B를, Developer는 Unity 6.3 LTS·16KB page size 2025-11 의무화·GC.Alloc 1KB/frame을, Content는 스크린샷 A/B 전환 20~35%·틱톡 참여율 5.53%·고양이 공유 결과물을, DevOps는 GameCI+Fastlane·Dependabot 선택적 자동머지를, Art는 공간 연속성 모션·엘리베이티드 뉴트럴·에코형 주스 절제(히트스톱)를 제안했다. 메타: 6/26 "자율 칼끝 배포 파이프라인" → 6/27 "검증이 보류를 닫음·NumLink=진행 중 리워크" → 6/28 "그 리워크 실체가 청산 가능한 노이즈일 수 있고 반대편 dspTime은 8일째 확정 무변화". 한 P0는 가벼워졌고 한 P0는 무거운 채 굳었지만, 둘 다 여전히 사용자 세션에서만 닫힌다 — 그 두 줄을 닫는 날이 진짜 마침표다.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '두 P0 상태부터 못박을게요. MeowBeat dspTime은 7일째 커밋이 없고 NoteSpawner 126번 줄 deltaTime 그대로, NumLink는 6월 2일 이후 26일째 미커밋에 36파일이 묶여 있어요. 둘 다 어제 결정에서 못 닫혔습니다. #110 머지는 확인했어요 — 열린 PR 0건이고 CI도 정상이에요. 자율로 닫을 건 다 닫았고, 남은 둘은 게임 코드라 사용자 세션이 필요해요. 오늘 하나만 닫는다면 dspTime을 추천합니다. 탐지기랑 기준선이 6월 21일에 이미 갖춰져 있어서, 126번 줄 한 군데만 고치면 qa_static.py가 0 error로 떨어지는지로 바로 검증돼요. 가장 명확하게 닫히는 P0예요.',
+      },
+      {
+        speaker: 'Developer',
+        note: '잠깐, NumLink 36파일을 제가 오늘 실제로 까봤는데 — 우리가 26일 동안 생각해온 거랑 달라요. 진짜 소스 코드 변경은 거의 없어요. 폰트 SDF .asset이 재import되면서 바뀐 거, _Recovery로 깨진 씬, 그리고 .omc 캐시가 36파일의 실체예요. 어제 Orchestrator가 "진행 중 리워크라 못 끊는다"고 한 거랑 모순이 아니에요 — Layer Lab 스킨 작업물은 진짜 있고, 그 위에 정리 안 한 노이즈가 덮여서 거대 미커밋처럼 보인 거죠. 그래서 봉인이 생각보다 무겁지 않을 수 있어요. .gitignore에 .omc/랑 Screenshots/ 넣고, 폰트 asset만 분리 커밋하면 작업트리가 오늘 0파일로 떨어집니다. "26일 미커밋이라 위험하다"는 전제를 다시 봐야 해요.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '그건 좋은 소식인데, NumLink 무방비는 더 깊었어요. 제가 Assets/Tests 폴더를 열어봤더니 .cs가 0개예요. 완전히 비어 있어요. Tools 검증툴 0개에 더해서 자동 테스트도 0개, 이중 무방비예요. Domain 레이어가 순수 C#이라 TDD 대상인데 RED 테스트가 하나도 없어요. 그리고 dspTime — qa_static.py 또 돌렸고 8일째 정확히 1 error예요. 126번 줄 deltaTime 그대로, dspTime은 코드에 아예 없어요. 리듬게임인데 노트 타이밍이 프레임 누적 기반이라, 프레임 드롭이나 오디오 드리프트 한 번이면 박자가 어긋나요. 게임의 핵심 재미가 깨지는 결함이 일주일 넘게 방치 중입니다. 다행히 Feedme 가드 자체는 건강하고 agent-office CI도 5건 다 통과예요 — 봉인만 안 됐을 뿐 안전망은 빨간불을 정확히 켜두고 있어요.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'agent-office 쪽은 깨끗해요. CI 6건 전부 success, 열린 PR 0건 그대로고, 6월 26일에 고친 cancel-in-progress false도 그대로 유지되고 있어요. 재발 없어요. 웹에서 본 건데, 모바일 빌드 자동화는 GameCI를 GitHub Actions에 얹어서 빌드/테스트 돌리고 배포는 Fastlane으로 분업하는 게 정착됐어요. 무료고요 — MeowBeat, NumLink 빌드 자동화 갈 때 비용 효율 후보예요. 그리고 Dependabot 자동머지 2026 권고가 명확해졌는데, GitHub Actions 버전업은 CI 통과가 안전을 보증 안 하니까 patch만 자동 머지하고 minor/major는 수동 리뷰하래요. 지금 열린 PR 0건이라 grouping이랑 선택적 자동머지 설정하기 딱 좋은 타이밍이에요.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: 'P0 닫히면 NumLink 리텐션 레버 하나 제안할게요. "윈스트릭 + 무료 힌트 안전판" 이중 시스템이에요. 연속 클리어 3판, 5판, 10판마다 보상 배율을 올리고, 패배하면 0으로 리셋해요 — 이게 "한 판 더" 후킹의 핵심이에요. Emoji Pop이 이걸 코어로 써요. 동시에 한 레벨에서 90초 넘게 막히면 무료 힌트를 자동으로 1회 줘요. 막혀서 과금하기 직전에 이탈하는 걸 막는 안전판이죠. 두 개가 상호보완이에요 — 스트릭 유지하고 싶은 욕구랑 막혔을 때 구제. 그리고 7일 무활동 컴백 리워드에 다음날 푸시 붙이면 D7이 16%에서 20% 넘게 올라간다는 데이터도 있어요. 리듬게임 시장은 2025년 4.5조 규모로 음악게임의 절반이고요.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '저도 추가 에셋 0으로 되는 거 하나요. MeowBeat 노트 히트 피드백에 "히트스톱 + 펀치 스케일"을 넣죠. Perfect 판정 순간 노트 스프라이트를 0.06초 동안 1.0배에서 1.25배로 펀치 스케일 주고, 콤보 카운터 텍스트만 같은 타이밍에 흔들어요. DOTween Punch 이미 갖고 있으니까 새 텍스처나 파티클 없이 기존 스프라이트 스케일만 코드로 제어하면 돼요. 2026 트렌드가 "에코형 주스"인데, 파티클 남발 말고 히트스톱처럼 코어 게임플레이를 반영하는 즉각 반응만 가치 있다는 거예요. NumLink도 같은 원리로 숫자 연결 성공할 때 라인 끝점에 짧은 펀치 스케일만 주면 돼요.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '마지막으로 출시 전에 비용 0원으로 깔아둘 거요. 스토어 첫 3장 스크린샷이 전환율을 20~35%까지 올려요. 게임은 일반 앱보다 스크린샷 A/B를 2배 자주 하고, 자주 갱신하는 상위 게임이 랭킹에서 이겨요. 그래서 NumLink, MeowBeat 스토어 등록 직전에 "첫 3장은 후킹 우선" 원칙을 디자인 단계에 미리 박고, 출시 후 A/B할 변형안 2종을 미리 만들어두자는 거예요. 특히 MeowBeat는 고양이 강점이 있으니까, 콤보나 별점 클리어 화면을 "인증하고 싶은 결과화면"으로 공유 친화적으로 설계하면 무광고 바이럴이 돼요. 고양이 게임 바이럴 핵심이 공유 가능한 결과물이거든요. 틱톡 게임광고 참여율이 릴스, 쇼츠의 2~3배라 숏폼이면 틱톡 우선이고요.',
+      },
+    ],
+    decisions: [
+      {
+        title: '🔴 P0 [이월·사용자 세션] MeowBeat NoteSpawner.cs:126 dspTime 코어 패치 — 8일째 RED 강제 종료',
+        description:
+          'elapsedTime += Time.deltaTime을 AudioSettings.dspTime 기준 절대시각 동기화로 교체. 탐지기·기준선이 6/21에 이미 완성돼 있어 patch 후 qa_static.py가 0 error 반환하는지로 즉시 VERIFY. 리듬게임 코어 타이밍이 프레임 누적이라 드리프트 시 박자 붕괴 — 출시 차단급 P0가 8일째 방치. Unity 에디터가 필요해 사용자 세션 1순위.',
+      },
+      {
+        title: '🟡 P1 [신규·재평가] NumLink .gitignore 정비 + 노이즈 분리 커밋으로 작업트리 청산 — 26일 미커밋 종료',
+        description:
+          'Developer 해부 결과 36파일의 실체는 폰트 SDF .asset 재import+_Recovery 깨진 씬+.omc 캐시 노이즈. .gitignore에 .omc/·Screenshots/ 추가하고 폰트 asset만 분리 커밋하면 작업트리 0파일 청산 가능 — 봉인이 26일간 과대평가됐을 수 있음. 청산 후 Assets/Tests에 NumLink.Domain.Tests.asmdef+RED 테스트 1개 추가해 이중 무방비 탈출. 사용자 세션.',
+      },
+      {
+        title: '🟢 P2 [백로그] 신규 디자인·마케팅·인프라 선반영 4종 — 비용 0원/추가 에셋 0 우선',
+        description:
+          '① MeowBeat 노트 히트 "히트스톱+펀치 스케일"(DOTween Punch 보유·에셋 0). ② NumLink "윈스트릭+무료 힌트 안전판" GDD 명문화(연속 클리어 마일스톤·90초 막힘 시 힌트). ③ 두 게임 스토어 "첫 3장 후킹" 원칙+A/B 변형 2종 선제작(전환 20~35%). ④ agent-office Dependabot grouping+선택적 자동머지(patch만·Actions는 patch만) 설정. 모두 P0/P1 이후.',
+      },
+    ],
+  },
+  {
     id: '2026-06-27T04:00:00-daily-standup',
     date: '2026-06-27',
     researchTitle:
