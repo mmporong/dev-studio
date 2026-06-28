@@ -43,6 +43,109 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-06-29T04:00:00-daily-standup',
+    date: '2026-06-29',
+    researchTitle:
+      '🟠 9일째 RED, 그러나 오늘은 "처방전이 완성된 날"이다 — 어제까지 dspTime P0는 "8일째 손도 안 댔다"였는데, 오늘 Developer가 NoteSpawner.cs:126을 실제로 열어 수정 코드를 완성해 가져왔다: 6/28까지 두 P0의 좌표는 "한쪽은 가벼워 보이기 시작했고(NumLink 봉인), 한쪽은 무변화로 굳었다(dspTime)"였다. 오늘 QA가 qa_static.py를 다시 돌렸고 dspTime은 정확히 9일째 `1 error`, 126행 elapsedTime += Time.deltaTime이 글자 그대로다 — 일수만 +1 됐다. 그런데 Developer가 그 126행을 직접 열어 처방을 완성했다: `musicSource.Play()`를 `PlayScheduled(AudioSettings.dspTime + 0.1)`로 바꿔 오디오 시작을 DSP 타임라인에 고정하고, `elapsedTime += Time.deltaTime`을 `(float)(AudioSettings.dspTime - dspSongStartTime)` 절대 차분으로 교체하면 프레임레이트와 무관하게 오디오 샘플 처리량과 영구 동기화된다 — 필드 2개 추가+2줄 교체의 최소 수술이다. 즉 P0의 성격이 오늘 바뀌었다: 9일간 "어떻게 고칠지 합의가 안 된 것"이 아니라 이제 "코드는 다 나왔고 Unity 에디터만 열리면 닫히는 것"이다. 동시에 자율 칼끝은 또 한 칸 전진했다 — 어제 #110(checkout v7)에 이어 오늘 Dependabot PR #116(npm-minor-patch 6건)을 회의 중 자율 머지(9f047ff)했고, DevOps가 "배포 후 사이트가 실제로 200으로 떠 있는지 검증하는 헬스체크가 파이프라인에 없다"는 새 갭을 짚었다',
+    researchSummary:
+      '제75회 리서치(월요일·D+36·6/28 다음 날). 7명 전원 보고. **오늘의 구조는 "P0가 무변화에서 처방전 완성으로 바뀐 날"이다.** Orchestrator는 두 P0 정지를 실측으로 못박았다 — NumLink 최신 5fcac3a(6/2 14:05)·**27일째 미커밋**·작업트리 36파일·Tools 폴더 부재(검증툴 0개), MeowBeat 최신 921e0cf(6/21 04:06)·**8일째 미커밋**·37파일·NoteSpawner.cs:126 deltaTime 잔존. 이월 액션 둘 다 미완(P0 dspTime 미착수 9일째·P1 NumLink 봉인 미실행 27일째). agent-office는 Dependabot PR #116(npm-minor-patch 6건)이 열려 있었고 회의 중 자율 머지(9f047ff)·머지 후 열린 PR 0건·CI 전부 success. **오늘의 전환점은 Developer의 처방 완성이다** — NoteSpawner.cs:126(C:/Unity/Feedme/Assets/Scripts/Note/NoteSpawner.cs)을 직접 열어 elapsedTime += Time.deltaTime이 P0 드리프트의 근본원인임을 확정하고, `PlayScheduled(dspTime+0.1 리드타임)`+`elapsedTime=(float)(AudioSettings.dspTime - dspSongStartTime)` 절대차분의 최소 변경 코드를 완성해 가져왔다. 9일간 "무변화로 굳은 P0"가 오늘 "코드는 다 나왔고 에디터만 열리면 닫히는 P0"로 성격이 바뀌었다. QA는 RED의 정확한 좌표를 재확인했다 — qa_static.py 정확히 1 error(NoteSpawner.cs:126 TIMING_DSPTIME_UNUSED)·dspTime/PlayScheduled 0건·deltaTime 노트 관련 사용처는 NoteSpawner126·HitEffect135/162·RhythmCat183/194/215, NumLink는 Tools 0개+[Test]/[UnityTest] 0건(BoardDataTester.cs는 Editor 유틸일 뿐)으로 이중 무방비 무변화, 단 Feedme 가드는 건강(known_bugs 7개·회귀 2/2)·agent-office CI 5건 success. 나머지는 신규 지평을 더했다(전부 이전 회의와 비중복): Game Designer는 톱니형 난이도 곡선(신규 기믹 도입 레벨은 밀도 30~40%↓ 휴식밸리·5~6레벨마다 의도적 밸리)·리듬 2단계 캘리브레이션(영상/오디오→화면 안 보고 탭테스트)·인터스티셜 매 레벨 노출 시 첫세션 15~25% 이탈→세션당 1~2회 캡·퍼즐 ARPDAU $0.08·색맹 이중인코딩(컬러+심볼) CVD 승률+1.4%를, Developer는 dspTime 처방 코드 완성+Adaptive Performance ADPF(Android12+)로 발열/배터리 자동제어+EditMode 테스트 회귀방어를, Content는 ASO game/gaming 자동색인이라 100자 키워드는 무드·기믹("no wifi"·"offline puzzle")에만·CPP 키워드 2025-07부터 오가닉 검색 노출 앱당 70개 확대·소프트런치 필리핀/호주 D1 22%(26년 중앙값) 컷라인을, DevOps는 CI 8건 success·모든 액션 SHA pin 완료·cancel-in-progress=false 유지(회귀 0)·**배포 후 헬스체크 부재**(curl -fsSI page_url 200 체크 1줄로 무성 실패 방어)를, Art는 tabular-nums 고정폭 숫자(NumLink 자릿수 흔들림 제거)·무텍스트 핑거 온보딩(핑거 아이콘+하이라이트 글로우+화살표·다국어 무번역)·멀티센서리 동기 피드백(시각·햅틱·사운드 200~400ms 동시)을 보고했다. 메타: 6/26 "자율 칼끝 배포 파이프라인 전진" → 6/27 "검증이 보류를 닫음" → 6/28 "한 P0는 가벼워졌고 한 P0는 8일째 무변화 확정" → 6/29 "그 무변화 P0의 처방전이 완성됐고 자율 칼끝은 PR #116으로 또 전진·배포 헬스체크라는 새 갭 발견". P0는 더 이상 미지가 아니다 — 코드는 책상 위에 있고, 마지막 한 번의 사용자 세션만 남았다.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — 두 P0 정지 실측: NumLink 5fcac3a(6/2)·27일째 미커밋·36파일·Tools 0개 / MeowBeat 921e0cf(6/21)·8일째·NoteSpawner.cs:126 deltaTime 잔존 / agent-office Dependabot PR #116(npm-minor-patch 6건) 회의 중 자율 머지(9f047ff)·열린 PR 0건·CI success / 이월 P0(dspTime)·P1(NumLink 봉인) 둘 다 미완',
+        description:
+          '**🎯 이전 액션 실측(6/29)**: ① MeowBeat dspTime 코어 패치 = **미완**(오늘도 커밋 0건·126행 Time.deltaTime 그대로·9일째 미착수). ② NumLink .gitignore 정비+노이즈 분리 커밋 = **미완**(.gitignore도 M 상태로 미커밋·36파일 그대로·27일째 동결). ③ P2 디자인/마케팅/인프라 선반영 = **미착수**(git 흔적 0건). **측정값**: NumLink 최신 5fcac3a(2026-06-02 14:05)·27일째 미커밋·작업트리 36파일. MeowBeat 최신 921e0cf(6/21 04:06)·8일째·37파일. agent-office는 Dependabot PR #116(chore(deps-dev): bump the npm-minor-patch group with 6 updates)이 열려 있어 MERGEABLE/CLEAN 확인 후 회의 중 squash 자율 머지(9f047ff)·머지 후 열린 PR 0건·CI 최근 5건 전부 success. **오늘 결정 제안**: MeowBeat NoteSpawner.cs:126 dspTime 코어 패치를 오늘 단일 집중 과제로 고정 — 9일 누적 RED는 코드 미수정이 유일 원인이고 Developer가 수정 코드를 완성해 가져왔으므로, NumLink/디자인 착수 전에 이 한 줄을 먼저 닫고 회귀탐지기로 GREEN 확인. (git log/status·gh pr/run 실측)',
+      },
+      {
+        title:
+          '🔍 QA Tester — dspTime P0 9일째 RED 확정(qa_static.py 정확히 1 error·NoteSpawner.cs:126 elapsedTime += Time.deltaTime 그대로·dspTime/PlayScheduled 0건·deltaTime 노트 사용처 NoteSpawner126/HitEffect135,162/RhythmCat183,194,215) / NumLink 이중 무방비 무변화(Tools 0개·[Test]/[UnityTest] 0건·BoardDataTester.cs는 Editor 유틸) / Feedme 가드 건강(known_bugs 7개·회귀 2/2)·agent-office CI 5건 success',
+        description:
+          '**🔍 핵심 발견(9일째 RED·일수만 +1)**: qa_static.py 실행 결과 정확히 1 error, 0 warning. 유일 에러가 [dsptime_usage] NoteSpawner.cs:126 TIMING_DSPTIME_UNUSED — "노트 타이밍을 Time.deltaTime 누적으로 처리, AudioSettings.dspTime 미사용". grep 결과 dspTime/PlayScheduled 0건·deltaTime 노트 관련 사용처는 NoteSpawner.cs:126·HitEffectController.cs:135/162·RhythmCatController.cs:183/194/215. detector 완성(6/21) 기준 9일째 RED. 프레임 드롭/오디오 드리프트 시 노트 박자가 어긋나는 출시 차단급 P0. **🔍 NumLink 이중 무방비 무변화**: Tools/ 디렉토리 부재(검증툴 0개), [Test]/[UnityTest] 어트리뷰트 보유 파일 0건(BoardDataTester.cs 1개는 Editor 폴더의 유틸일 뿐 정식 EditMode/PlayMode 테스트 아님)·자동화 검증 0%. Domain 순수 C# TDD 대상인데 RED 테스트 0개. **🔍 가드 인프라는 건강(대조)**: known_bugs.json 버그 패턴 7개·run_regression.py 2/2 시나리오 탐지 성공(RT_SIZE_ZERO·YAML_INDENT_M_FATHER). agent-office CI 최근 5건 전부 success. **🚨 미해결 P0급 1건**: TIMING_DSPTIME_UNUSED(9일째). **최우선 리스크 1줄**: 리듬게임 노트 타이밍이 프레임 누적(deltaTime) 기반이라 프레임 드랍 시 오디오-노트 드리프트 발생 → 리듬게임 코어 플레이 붕괴. **오늘 결정 제안**: dspTime P0 수정을 오늘 단일 스프린트 최우선으로 고정 — 126행 Time.deltaTime 누적을 AudioSettings.dspTime 절대시간으로 교체(예상 1~2시간·run_regression로 즉시 검증). 변화 요약(6/28→6/29): dspTime RED 일수만 +1(8→9), 그 외 모든 지표 동일·코드측 진척 0. Sources: qa_static.py·run_regression.py·known_bugs.json·NoteSpawner.cs·gh run 실측.',
+      },
+      {
+        title:
+          '💻 Developer — 🔑 dspTime P0 처방 완성: NoteSpawner.cs:126 elapsedTime += Time.deltaTime이 드리프트 근본원인임을 실코드로 확정하고 최소 수술 코드 제시(musicSource.Play()→PlayScheduled(dspTime+0.1 리드타임)+elapsedTime=(float)(AudioSettings.dspTime - dspSongStartTime) 절대차분, 필드 2개+2줄 교체) / Adaptive Performance ADPF(Android12+)+targetFrameRate로 발열·배터리 자동제어 / EditMode 테스트(순수 C# Domain·[Test]+.asmdef 분리)로 회귀방어',
+        description:
+          '**💻 🔑 오늘의 처방(dspTime P0 코드 완성)**: C:/Unity/Feedme/Assets/Scripts/Note/NoteSpawner.cs:126에서 `elapsedTime += Time.deltaTime`을 직접 확인 — dspTime 미사용이 P0 드리프트의 근본원인임을 실코드로 확정. **수정 패턴**: ① 필드 추가 `private double dspSongStartTime;`+`private AudioSource musicSource;`, ② 곡 시작 시 `dspSongStartTime = AudioSettings.dspTime + 0.1;`(0.1s 리드타임)+`musicSource.PlayScheduled(dspSongStartTime)`로 오디오 시작을 DSP 타임라인에 고정(Play() 대신), ③ Update() 126행을 `elapsedTime = (float)(AudioSettings.dspTime - dspSongStartTime);`로 교체(+= deltaTime 제거)→프레임레이트와 무관하게 오디오 샘플 처리량과 영구 동기화. 핵심 원리: deltaTime 누적은 부동소수 드리프트가 쌓이지만 dspTime 절대 차분은 프레임 독립. **💻 신규(발열/배터리)**: Adaptive Performance ADPF(Android12+)+Application.targetFrameRate 자동제어로 발열·배터리 동시 절감 — 모바일 장시간 세션 안정성. **💻 신규(회귀방어)**: NumLink 테스트 0개 문제는 EditMode 테스트(순수 C# Domain 레이어·[Test] 속성+.asmdef 분리)로 닫을 수 있음·dspTime 픽스도 같은 방식으로 회귀 방어 권장. **오늘 결정 제안(P0)**: NoteSpawner.cs:126 P0를 오늘 즉시 수정 — 코드는 완성됐으니 Unity 에디터에서 적용+qa_static.py 0 error VERIFY만 남음. Sources: gamedeveloper.com·docs.unity3d.com(PlayScheduled)·christianfloisand.wordpress.com·developer.android.com(unity-adpf)·unity.com(test-framework).',
+      },
+      {
+        title:
+          '🎮 Game Designer — 톱니형 난이도 곡선(신규 기믹 도입 레벨은 직전 대비 밀도 30~40%↓ 휴식밸리·5~6레벨마다 의도적 밸리) / 리듬 2단계 캘리브레이션(영상·오디오 분리→화면 안 보고 강박만 듣고 탭) / 퍼즐 인터스티셜 매 레벨 노출 시 첫세션 15~25% 이탈→세션당 1~2회 캡 / 퍼즐 ARPDAU $0.08·색맹 이중인코딩 CVD 승률+1.4%',
+        description:
+          '**🎮 신규 1순위(톱니형 난이도)**: 퍼즐 난이도는 단조 상승이 아니라 "톱니(saw)곡선" — 신규 기믹 도입 레벨은 밀도를 직전 대비 30~40% 낮춘 "휴식밸리"로 배치하고 5~6레벨마다 의도적 밸리를 둔다. 권장 진행구조 L1~20 쉬움(자신감)→L20~30 난이도 스파이크→L50+ 점진 상승(Mobile Game Doctor·arXiv 2401.17436). **🎮 신규 2순위(리듬 캘리브)**: 리듬게임 캘리브레이션은 2단계 분리가 정석 — 영상/오디오 오프셋 먼저, 그다음 화면을 안 보고 강박(metronome)만 듣고 탭하는 탭테스트로 정확도↑(Rhythm Quest 개발자 사례). **🎮 신규 3순위(광고 빈도)**: 퍼즐 인터스티셜을 매 레벨 노출하면 첫 세션 15~25% 이탈 — 권장은 진짜 휴식지점(스테이지 클리어)에서 세션당 최대 1~2회 캡·리워드+배너 우선. 퍼즐 ARPDAU 벤치마크 $0.08(하이퍼캐주얼 $0.05·미드코어 $0.12)·로직퍼즐 권장 광고30%/IAP70%. **🎮 보조(접근성)**: 색맹 이중인코딩(컬러+심볼) 적용 시 CVD 유저 승률 +1.4%·리텐션/과금↑(2025 TWD: Tales 연구)·NumLink는 숫자가 이미 심볼이라 유리. **오늘 결정 제안(P2·GDD)**: NumLink 신규 기믹 도입 레벨을 밀도 30~40%↓ 휴식 레벨로 설계+5~6레벨마다 밸리 배치하는 톱니형 곡선을 GDD에 명문화, 동시에 인터스티셜을 "매 레벨 금지→스테이지 클리어에서 세션당 1~2회 캡"으로 설정. 이전 윈스트릭/FTUE/가변판정과 비중복 신규 각도. Sources: mobilegamedoctor.com·gamedeveloper.com·gamigion.com·arxiv.org/2401.17436·ddrkirbyisq(medium)·maf.ad·cas.ai·appdevelopermagazine.com·accessible.games.',
+      },
+      {
+        title:
+          '📦 Content Writer — ASO game/gaming 자동색인이라 100자 키워드는 장르·기믹·무드("no wifi"·"offline puzzle")에만 / CPP(커스텀 제품페이지) 키워드 2025-07부터 오가닉 검색 노출·앱당 70개 확대(장르별 페이지 분리 가능) / 소프트런치는 출시 목표국 회피·경제유사국(필리핀/덴마크/호주) 권장·D1 22%(26년 중앙값) 컷라인',
+        description:
+          '**📦 신규 1순위(ASO 키워드 전략)**: 게임은 "game/gaming"이 자동 색인되므로 100자 키워드 필드는 그 단어를 빼고 장르·기믹·무드 롱테일("no wifi"·"offline puzzle"·"brain"·"cat rhythm tap music")에만 써야 노출 효율↑. **📦 신규 2순위(CPP 확대)**: 커스텀 제품페이지 키워드가 2025-07부터 오가닉 검색에도 노출되고 앱당 70개로 확대 — 장르/오디언스별 페이지를 분리해 서로 다른 키워드 셋으로 공략 가능. **📦 신규 3순위(소프트런치)**: 소프트런치는 정식 출시 목표국을 피하고 경제 유사국(필리핀/덴마크/호주)에서 검증·전통적 합격선 D1 40%·D7 20%·D30 10%이나 2026년 중앙값 D1은 22%로 현실 컷라인을 봐야 함. **오늘 결정 제안(P2·출시 전)**: NumLink 부제목(30자)에 "no wifi puzzle·offline brain"류 롱테일을, MeowBeat에 "cat rhythm tap music"류 무드+기믹 키워드를 배치하고, 7월 정식 출시 전 필리핀/호주 소프트런치로 D1 22%+(26년 중앙값)를 컷라인으로 검증. 이전 스크린샷 A/B·틱톡 참여율·고양이 바이럴과 비중복 신규 채널. Sources: blog.udonis.co·asomobile.net·gamebizconsulting.com·splitmetrics.com·gameanalytics.com·gamegrowthadvisor.com·addict-mobile.com·apptweak.com.',
+      },
+      {
+        title:
+          '🛡 DevOps — agent-office CI 8건 전부 success·열린 PR 1건(#116 npm-minor-patch 6건)→회의 중 자율 머지·모든 액션 SHA pin 완료(checkout@9c091bb 등)·concurrency=pages·cancel-in-progress=false 유지(6/26 수정분 회귀 0) / 실측 갭: 배포 후 사이트 200 확인 헬스체크 부재(page_url 출력만 있고 검증 미사용)',
+        description:
+          '**🛡 CI/CD 실측**: gh run 최근 8건 전부 success(Deploy GitHub Pages 매일 정상·실패 0). 워크플로 2개(deploy-pages.yml·weekly-insights.yml)·모든 액션이 이미 SHA pin 완료(actions/checkout@9c091bb 등). deploy.yml concurrency group=pages·cancel-in-progress=false 정상(6/26 자율수정분 그대로·회귀 없음). 열린 PR 1건이었던 #116(npm-minor-patch 6개 묶음)은 minor/patch+CI green이라 안전 판정 후 회의 중 자율 머지(9f047ff)·머지 후 열린 PR 0건. **🛡 실측 갭(신규)**: deploy job이 deploy-pages 액션 직후 끝나고 배포 후 실제 사이트 접근성 검증(헬스체크/스모크) 단계가 없음 — page_url 출력만 있고 검증에 미사용. GitHub Pages 전파 지연으로 인한 무성(silent) 실패를 못 잡음. **🛡 웹 리서치**: 2025 모범사례상 배포 직후 `curl -fsSI ${page_url}` HTTP 200 확인이 첫 방어선·비용 거의 0(단일 curl)·실패 시 워크플로 red로 즉시 인지·추후 핵심 경로(탭 스위처 로드) 스모크로 확장 가능. **오늘 결정 제안(P2)**: deploy-pages 직후 page_url 200 확인 헬스체크 스텝 1줄 추가(전파 지연 대비 retry 포함) — 무성 실패 방어. 단 배포 본체를 깨지 않도록 retry/타임아웃 설계 후 적용. CI 자체는 이상 없어 즉시 조치 불필요. Sources: devopstraininginstitute.com·smartscope.blog·oneuptime.com·github.com/actions/deploy-pages·loadfocus.com.',
+      },
+      {
+        title:
+          '🎨 Art Director — tabular-nums 고정폭 숫자로 자릿수 흔들림 제거(NumLink 가독성 직결) / 무텍스트 핑거 온보딩(핑거 아이콘+하이라이트 글로우+경로 화살표·다국어 무번역) / 멀티센서리 동기 피드백(시각 애니 피크=햅틱=사운드 동시 트리거 200~400ms·지연 금지)',
+        description:
+          '**🎨 신규 1순위(고정폭 숫자)**: 숫자 UI는 tabular-nums(고정폭 숫자·font-variant-numeric)로 자릿수마다 폭이 흔들리는 현상을 제거해야 정렬 가독성이 산다 — NumLink는 숫자가 코어라 직결(타이머·점수·레벨 번호). **🎨 신규 2순위(무텍스트 온보딩)**: 게임 온보딩 표준은 "핑거/핸드 아이콘+하이라이트 글로우+경로 화살표"의 무텍스트 인터랙티브 가이드 — 다국어 출시 시 번역 비용 0이며 첫 레벨 이탈 방지. **🎨 신규 3순위(멀티센서리 동기)**: 시각 애니 피크·햅틱·사운드를 200~400ms 안에 동시 트리거해야 피드백이 "한 사건"으로 느껴짐·셋 중 하나라도 지연되면 역효과. **오늘 결정 제안(P2·번역비 0/즉시)**: NumLink 본문 숫자 폰트에 tabular-nums 적용+첫 레벨 온보딩을 "핑거 아이콘+하이라이트 글로우+경로 화살표" 무텍스트 가이드로 전환(다국어 무번역). MeowBeat는 비트 임박 레티클(reticule) 예고 글로우+베이스 히트 시 주파수대역별 파티클 버스트로 비트 시각화 강화. 이전 공간연속성/엘리베이티드뉴트럴/히트스톱과 비중복 신규 각도. Sources: medium(amol346bhalerao·saropa-contacts)·supersonic.com·numberanalytics.com·dev.to(alanwest)·interactiveimmersive.io.',
+      },
+    ],
+    meetingTitle:
+      '🟠 6/29 종합 회의 — "P0가 무변화에서 처방전 완성으로 바뀐 날": QA가 dspTime을 9일째 정확히 1 error로 재확인하자 Developer가 NoteSpawner.cs:126을 직접 열어 PlayScheduled+dspTime 절대차분의 최소 수술 코드를 완성해 가져왔다. 9일간 "손도 안 댄 P0"가 오늘 "코드는 책상 위에 있고 에디터만 열리면 닫히는 P0"로 성격이 바뀌었다. 동시에 자율 칼끝은 PR #116 자율 머지로 또 전진했고 DevOps가 배포 후 헬스체크 부재라는 새 갭을 짚었다',
+    meetingSummary:
+      '제75회 종합 회의(월요일·D+36·6/28 다음 날). **오늘의 회의는 "P0의 성격이 바뀐 날"이다.** 6/28까지 두 P0의 좌표는 "한쪽은 가벼워 보이기 시작했고(NumLink 봉인이 노이즈 청산으로 가벼울 수 있음), 한쪽은 무변화로 굳었다(dspTime 8일째)"였다. 오늘 QA가 qa_static.py를 다시 돌렸고 dspTime은 글자 그대로 9일째 1 error다 — 일수만 +1 됐고 126행 elapsedTime += Time.deltaTime은 그대로다. 그런데 Developer가 그 126행을 실제로 열어 처방을 완성해 가져왔다: musicSource.Play()를 PlayScheduled(dspTime+0.1 리드타임)로 바꿔 오디오 시작을 DSP 타임라인에 고정하고, elapsedTime을 (float)(AudioSettings.dspTime - dspSongStartTime) 절대 차분으로 교체하면 프레임레이트와 무관하게 영구 동기화된다 — 필드 2개 추가+2줄 교체의 최소 수술이다. 9일간 "어떻게 고칠지가 아니라 닫을 손이 없던 P0"가, 이제 "코드는 다 나왔고 Unity 에디터만 열리면 닫히는 P0"로 성격이 바뀌었다. 이게 오늘의 핵심이다. 자율 칼끝도 또 한 칸 전진했다 — Orchestrator가 Dependabot PR #116(npm-minor-patch 6건)의 MERGEABLE/CLEAN을 확인하고 회의 중 squash 자율 머지(9f047ff)했다(어제 #110 checkout v7에 이어). DevOps는 새 갭을 짚었다 — 배포 파이프라인에 사이트가 실제로 200으로 떠 있는지 확인하는 헬스체크가 없어, GitHub Pages 전파 지연으로 인한 무성 실패를 못 잡는다(curl -fsSI page_url 200 체크 1줄로 방어 가능, 단 전파 지연 대비 retry 설계 선행). NumLink는 이중 무방비가 그대로다 — QA가 재확인했고 Tools 0개+[Test] 0건(BoardDataTester.cs는 Editor 유틸)으로 변화 없음. 단 Feedme 가드는 건강(known_bugs 7개·회귀 2/2)하고 agent-office CI도 정상이라 안전망은 정확히 빨간불을 켜둔 채다. 나머지는 신규 지평을 더했다(전부 비중복): Game Designer는 톱니형 난이도 곡선(신규 기믹 레벨 밀도 30~40%↓)·리듬 2단계 캘리브·인터스티셜 세션당 1~2회 캡(매레벨 시 15~25% 이탈)·색맹 이중인코딩을, Content는 ASO 무드/기믹 키워드·CPP 70개 확대·소프트런치 D1 22% 컷을, Art는 tabular-nums 고정폭 숫자·무텍스트 핑거 온보딩·멀티센서리 동기 피드백을 제안했다. 메타: 6/27 "검증이 보류를 닫음" → 6/28 "한 P0는 가벼워졌고 한 P0는 무변화 확정" → 6/29 "그 무변화 P0의 처방전이 완성됐고 자율 칼끝은 PR #116으로 전진·배포 헬스체크 새 갭 발견". P0는 더 이상 미지가 아니다 — 코드는 책상 위에 있고, 마지막 한 번의 사용자 세션만 남았다.',
+    meetingItems: [
+      {
+        speaker: 'Orchestrator',
+        note: '두 P0 상태부터 못박을게요. MeowBeat dspTime은 9일째 커밋이 없고 126번 줄 deltaTime 그대로, NumLink는 6월 2일 이후 27일째 미커밋에 36파일이 묶여 있어요. 둘 다 어제 결정에서 못 닫혔습니다. 대신 agent-office에 Dependabot PR #116이 열려 있길래 — npm-minor-patch 6개 묶음에 mergeable이고 clean, CI도 green이라 — 회의 중에 자율로 squash 머지했어요. 9f047ff로 들어갔고 열린 PR 0건이에요. 어제 #110 checkout v7에 이어 자율로 닫을 수 있는 건 또 닫았습니다. 오늘 하나만 닫는다면 dspTime이에요. 9일 누적 RED는 코드 미수정이 유일한 원인인데, 마침 Developer가 수정 코드를 완성해 가져왔거든요.',
+      },
+      {
+        speaker: 'Developer',
+        note: '맞아요, 그거 오늘 제가 끝냈어요. NoteSpawner.cs 126번 줄을 실제로 열어봤고, elapsedTime += Time.deltaTime이 드리프트의 근본원인인 게 확정이에요. 처방은 두 군데예요. 첫째, 곡 시작할 때 musicSource.Play() 대신 PlayScheduled에 AudioSettings.dspTime + 0.1초 리드타임을 줘서 오디오 시작 시점을 DSP 타임라인에 못박아요. 둘째, 126번 줄을 elapsedTime = (float)(AudioSettings.dspTime - dspSongStartTime) 절대 차분으로 바꿔요. deltaTime 누적은 부동소수 오차가 쌓이는데, dspTime 차분은 프레임레이트랑 완전히 무관해요. 필드 두 개 추가하고 두 줄 바꾸는 최소 수술이에요. 이제 "어떻게 고치지"가 아니라 Unity 에디터에서 적용하고 qa_static.py가 0 error 뱉는지 확인만 남았어요. 회귀 방어는 EditMode 테스트로 같이 걸면 되고요.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '코드가 나왔다니 다행이에요. 제 쪽 숫자는 9일째 정확히 똑같아요 — qa_static.py 1 error, 126번 줄 deltaTime 그대로, dspTime이랑 PlayScheduled는 코드에 아예 0건이에요. deltaTime 노트 사용처가 NoteSpawner 126, HitEffect 135랑 162, RhythmCat 183, 194, 215인데, 코어는 126번이에요. 거기만 고치면 1 error가 0으로 떨어지는지로 바로 검증돼요. NumLink는 무방비 그대로예요 — Tools 0개, Test 어트리뷰트 0건, Assets에 BoardDataTester.cs 하나 있는데 그건 Editor 유틸이지 정식 테스트가 아니에요. 다만 Feedme 가드 자체는 건강해요. known_bugs 7개에 회귀 2/2 다 통과하고 agent-office CI도 5건 다 success예요. 봉인만 안 됐을 뿐 빨간불은 정확히 켜져 있어요.',
+      },
+      {
+        speaker: 'DevOps',
+        note: 'agent-office 쪽은 깨끗해요. CI 8건 전부 success, #116 머지하고 열린 PR 0건, 액션들도 전부 SHA로 핀 돼 있고 6월 26일에 고친 cancel-in-progress false도 그대로예요. 회귀 없어요. 그런데 한 가지 갭을 찾았어요 — 배포 잡이 deploy-pages 액션 끝나면 그냥 끝나요. 사이트가 실제로 200으로 떠 있는지 확인하는 헬스체크가 없어요. page_url 출력만 있고 안 쓰고 있어요. GitHub Pages 전파가 지연되면 배포는 success인데 사이트는 안 뜨는 무성 실패를 못 잡아요. deploy-pages 직후에 curl -fsSI로 page_url 200 확인하는 한 줄이면 첫 방어선이 생겨요. 다만 전파 지연 때문에 retry랑 타임아웃을 같이 설계해야 false red가 안 떠요. 배포 본체 안 깨지게 신중히 넣는 게 조건이에요.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: 'P0 닫히면 NumLink 레벨 디자인에 깔 원칙 하나요. 난이도를 단조 상승으로 짜면 안 되고 "톱니 곡선"으로 가야 해요. 새 기믹 들어가는 레벨은 직전 레벨보다 노트 밀도를 30~40% 낮춰서 휴식 레벨로 만들고, 5~6레벨마다 의도적으로 밸리를 둬요. 큰 구조는 1~20 쉽게 자신감 주고, 20~30에서 스파이크, 50 넘어가면 점진 상승이에요. 그리고 수익화에서 실수하기 쉬운 게 있는데 — 퍼즐에서 인터스티셜을 매 레벨 띄우면 첫 세션에서 15~25%가 이탈해요. 진짜 휴식 지점, 스테이지 클리어에서만 세션당 한두 번으로 캡 걸어야 해요. 퍼즐 ARPDAU 벤치마크가 0.08달러인데 리워드랑 배너 우선이에요. 색맹 모드는 NumLink가 숫자라 이미 유리하고요.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '저도 번역비 0원으로 되는 거 두 개요. 첫째, NumLink 숫자 폰트에 tabular-nums, 고정폭 숫자를 적용해요. 지금은 자릿수마다 폭이 흔들려서 타이머나 점수가 떨릴 텐데, 고정폭으로 바꾸면 정렬이 딱 잡혀요. 숫자가 코어인 게임이니까 직결이에요. 둘째, 첫 레벨 온보딩을 무텍스트로 바꿔요. 핑거 아이콘에 하이라이트 글로우, 경로 화살표만으로 가르치면 다국어 출시할 때 번역이 0이에요. 그리고 피드백 줄 때 시각 애니 피크랑 햅틱이랑 사운드를 200에서 400밀리초 안에 동시에 터뜨려야 "한 사건"으로 느껴져요. 하나라도 늦으면 오히려 역효과예요. MeowBeat는 비트 임박을 레티클 글로우로 예고하고 베이스 히트 때 주파수대역별 파티클 터뜨리면 비트 시각화가 살아요.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '마지막으로 출시 전에 깔아둘 거요. ASO에서 게임은 "game"이랑 "gaming"이 자동 색인돼요. 그러니까 100자 키워드 필드에 그 단어 쓰면 낭비고, 장르랑 기믹이랑 무드 롱테일에 써야 해요 — NumLink는 "no wifi puzzle, offline brain", MeowBeat는 "cat rhythm tap music" 이런 식으로요. 그리고 커스텀 제품페이지 키워드가 올 7월부터 오가닉 검색에도 노출되고 앱당 70개로 늘어요. 장르별로 페이지 나눠서 다른 키워드로 공략할 수 있어요. 소프트런치는 정식 출시할 나라 말고 경제 비슷한 나라, 필리핀이나 호주에서 먼저 돌려요. 전통 합격선은 D1 40%인데 2026년 중앙값이 D1 22%라 현실 컷라인은 22% 이상으로 보면 돼요.',
+      },
+    ],
+    decisions: [
+      {
+        title: '🔴 P0 [이월·9일째 RED·처방전 완성·사용자 세션] MeowBeat NoteSpawner.cs:126 dspTime 전환 — 코드는 책상 위에 있다',
+        description:
+          'Developer가 수정 코드를 완성: ① 필드 추가 dspSongStartTime(double)+musicSource(AudioSource), ② 곡 시작 시 musicSource.PlayScheduled(AudioSettings.dspTime + 0.1)로 오디오 시작을 DSP 타임라인 고정(Play() 대신), ③ 126행을 elapsedTime = (float)(AudioSettings.dspTime - dspSongStartTime) 절대차분으로 교체(+= deltaTime 제거). 9일째 RED는 코드 미수정이 유일 원인이었고 이제 코드는 완성됨 — Unity 에디터에서 적용+qa_static.py 0 error VERIFY+run_regression 통과만 남음. EditMode 테스트로 회귀 방어 동반 권장. Unity 에디터 필요해 사용자 세션 최우선.',
+      },
+      {
+        title: '🟡 P1 [이월·27일 미커밋·사용자 세션] NumLink .gitignore 정비 + 노이즈 분리 커밋 + EditMode 테스트 1개로 이중 무방비 탈출',
+        description:
+          '36파일의 실체는 폰트 SDF .asset 재import+_Recovery 깨진 씬+.omc 캐시 노이즈. ① .gitignore에 .omc/·Screenshots/·_Recovery/ 추가(Layer Lab 스킨은 트래킹) → ② 폰트 asset 분리 커밋+Layer Lab 작업물 분리 커밋으로 작업트리 0파일 청산(27일 미커밋 종료) → ③ Assets/Tests에 NumLink.Domain.Tests.asmdef+[Test] RED 테스트 1개 추가해 Tools 0개·테스트 0개 이중 무방비 탈출. AutoGenTests 4파일 삭제 확정 여부는 사용자 확인 선행. 사용자 세션.',
+      },
+      {
+        title: '🟢 P2 [자율 완료 + 신규 백로그] PR #116 자율 머지 완료 + 비용 0 선반영 5종',
+        description:
+          '✅ 완료: Dependabot PR #116(npm-minor-patch 6건) 회의 중 자율 머지(9f047ff)·열린 PR 0건. 신규 적재(P0/P1 후·번역비 0/추가 에셋 0 우선): ① NumLink 톱니형 난이도 곡선 GDD 명문화(신규 기믹 레벨 밀도 30~40%↓·5~6레벨마다 밸리)+인터스티셜 세션당 1~2회 캡. ② NumLink 숫자 폰트 tabular-nums(고정폭) 적용+첫 레벨 무텍스트 핑거 온보딩. ③ ASO 부제목 무드/기믹 롱테일 키워드(NumLink "no wifi puzzle"·MeowBeat "cat rhythm tap music")+필리핀/호주 소프트런치 D1 22% 컷라인. ④ agent-office 배포 후 page_url 200 헬스체크 스텝(retry/타임아웃 설계 선행). ⑤ 멀티센서리 동기 피드백(시각·햅틱·사운드 200~400ms).',
+      },
+    ],
+  },
+  {
     id: '2026-06-28T04:00:00-daily-standup',
     date: '2026-06-28',
     researchTitle:
