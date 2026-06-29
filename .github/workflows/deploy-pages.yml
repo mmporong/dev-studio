@@ -54,3 +54,19 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
+
+      - name: Health check deployed site
+        run: |
+          url="${{ steps.deployment.outputs.page_url }}"
+          echo "Health-checking deployed site: $url"
+          for i in 1 2 3 4 5; do
+            code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 15 "$url" || echo "000")
+            if [ "$code" = "200" ]; then
+              echo "Site is live (HTTP 200) on attempt $i"
+              exit 0
+            fi
+            echo "Attempt $i: HTTP $code - retrying in 15s (Pages propagation delay)"
+            sleep 15
+          done
+          echo "Site did not return HTTP 200 after 5 attempts"
+          exit 1

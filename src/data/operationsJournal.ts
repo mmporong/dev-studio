@@ -43,6 +43,114 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-06-30T04:00:00-daily-standup',
+    date: '2026-06-30',
+    researchTitle:
+      '🟢 어제 "발견"한 갭을 오늘 "닫았다" — 자율 칼끝이 또 한 칸 전진하고, 게임측 두 P0/P1은 또 하루 멈췄다: 6/29 DevOps가 "배포 후 사이트가 실제로 200으로 떠 있는지 확인하는 헬스체크가 파이프라인에 없다"는 새 갭을 짚었다. 오늘 그 갭을 회의 중 실제로 닫았다 — deploy-pages.yml의 deploy job, deploy-pages 액션(56행) 직후에 page_url을 5회 retry로 HTTP 200 확인하는 헬스체크 스텝을 추가했다(전파 지연 대비 회당 15초 대기·총 75초 견딤·실패 시 워크플로 red). 이로써 GitHub Pages 전파 지연으로 인한 무성(silent) 실패를 처음으로 잡을 수 있게 됐다. 어제는 "갭 발견", 오늘은 "갭 클로즈" — 6/26 cancel-in-progress 수정 → 6/27~29 Dependabot #110·#116 자율 머지 → 6/30 헬스체크 추가로, agent-office 배포 파이프라인의 자율 보강이 5일 연속 한 칸씩 전진했다. 그러나 게임측은 또 하루 멈췄다 — Developer와 QA가 각각 NoteSpawner.cs를 직접 열어 확인했는데, 6/29에 완성한 dspTime 처방(PlayScheduled+절대차분)이 코드에 들어가지 않았다(126행 elapsedTime += Time.deltaTime 그대로·dspTime/PlayScheduled 실코드 0건·탐지기 파일에만 존재). dspTime은 detector 완성 기준 9일째 RED, NumLink는 28일째 미커밋·검증 0%다. 비대칭이 오늘 가장 선명하다: 자율로 닫을 수 있는 인프라 갭은 계속 닫히는데, Unity 에디터/사용자 세션이 필요한 게임측 P0/P1은 코드가 책상 위에 완성돼 있는데도 손이 닿지 않는다',
+    researchSummary:
+      '제76회 리서치(화요일·D+37·6/29 다음 날). 7명 전원 보고. **오늘의 구조는 "어제 발견한 갭을 오늘 닫은 날 — 자율 칼끝은 전진, 게임측은 정지"다.** Orchestrator는 세 레포를 실측했다 — NumLink 5fcac3a(6/2 14:05)·**28일째 미커밋**·작업트리 36파일(.omc/·state/·Screenshots/·_Recovery/ 무추적 노이즈 다수), MeowBeat 921e0cf(6/21 04:06)·**9일째 미커밋**·37파일·status에 **NoteSpawner.cs 없음**(코어 패치 미적용 확정), agent-office 279ba87(6/29)·미커밋 1파일·**열린 PR 0건**·CI 6연속 success. 이월 P0(dspTime)·P1(NumLink 봉인) 둘 다 미완. **오늘의 전진은 DevOps 갭의 자율 클로즈다** — 6/29 DevOps가 짚은 "배포 후 헬스체크 부재"를 회의 중 실제로 닫았다: deploy-pages.yml deploy job에 page_url 200 확인 헬스체크 스텝 추가(5회 retry·회당 15초·총 75초 전파 지연 견딤·실패 시 red). DevOps는 이를 직접 검증하며 "이틀 연속 미해결 갭이 오늘 닫혔다"고 보고했고, Dependabot 보안 업데이트 그룹화(applies-to: security-updates)만 아직 미적용이라는 다음 갭을 짚었다. Developer와 QA는 게임측 P0의 미해결을 각자 독립적으로 재확정했다 — NoteSpawner.cs:126 elapsedTime += Time.deltaTime 그대로·dspTime/PlayScheduled 실행코드 0건(known_bugs.json·qa_static.py 탐지기 파일에만 존재)·qa_static.py 정확히 1 error·detector(6/21) 기준 9일째 RED·run_regression 2/2 PASS·NumLink Tools 0개+[Test] 0건(.cs 177개 중 0건)으로 이중 무방비. 나머지는 신규 지평을 더했다(전부 이전 회의와 비중복): Game Designer는 클래시오브클랜 2026-03 도입 "스탬프 카드형 데일리 진행"(만료형 챌린지 폐지→누적·이월 가능 카드, 하루 빠져도 따라잡기)·데일리 로그인 보상 D30 +19%·게이미피케이션 DAU +12.7% YoY·리더보드 A/B ARPU +9%·소셜 연결 유저 이탈 ~50%↓·배틀패스 D3~D7 도입 시 D30 +5~10%p(출시 즉시 도입은 전환율 악화)·리듬 채보 룩어헤드 원칙을, Developer는 dspTime 미반영 재확정+Unity 6.2 IL2CPP 옵션명 변경("Optimize for code size and build time")+ASTC 블록레이트(4×4=8bpp·12×12=0.89bpp)+Addressables로 모바일 VRAM 60~80% 절감을, Content는 푸시 옵트인 유저 리텐션 2배·5단어 메시지 참여 94%↑·게이밍 옵트인 63.5%(전산업 최저)·UGC 광고 CTR 4배/CPC 50%↓/전환 10배·앱 아이콘 A/B +30% 전환·별점 3.6→4.2시 전환 60%↑·피처링 6~8주전 제출을, DevOps는 CI 8/8 success·헬스체크 갭 오늘 클로즈·Dependabot 보안 그룹화만 미적용을, Art는 2026 "부분 적용 모피즘"(전면 아닌 토글·카드 등 특정 요소만)·스프링 물리 모션(OutBack 오버슈트 1.05~1.10배→정착)·마이크로 피드백 타이밍 표준(버튼 프레스 120~220ms·컬러 300ms·전환 600~800ms)·WCAG 2.2 대비 4.5:1/3:1을 보고했다. 메타: 6/27 "검증이 보류를 닫음" → 6/28 "한 P0는 가벼워졌고 한 P0는 무변화 확정" → 6/29 "그 무변화 P0의 처방전 완성·배포 헬스체크 새 갭 발견" → 6/30 "발견한 헬스체크 갭을 회의 중 자율 클로즈·게임측 P0/P1은 또 하루 정지". 자율 칼끝과 사용자 세션의 비대칭이 5일째 벌어지고 있다.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — 세 레포 실측: NumLink 5fcac3a(6/2)·28일째 미커밋·36파일·Tools 0개 / MeowBeat 921e0cf(6/21)·9일째·status에 NoteSpawner.cs 없음(코어 패치 미적용 확정) / agent-office 279ba87(6/29)·미커밋 1파일·열린 PR 0건·CI 6연속 success / 이월 P0(dspTime)·P1(NumLink 봉인) 둘 다 미완',
+        description:
+          '**🎯 이전 액션 실측(6/30)**: ① MeowBeat dspTime 코어 패치 = **미완**(status에 NoteSpawner.cs 자체가 없음 → 6/29 완성한 처방이 코드에 안 들어감·수정된 스크립트는 GameManager/SongManager/OptionManager/SongData뿐). ② NumLink .gitignore 정비+노이즈 분리 커밋 = **미완**(36파일 그대로·28일째 동결). ③ DevOps 헬스체크 갭 = **오늘 자율 클로즈**(deploy-pages.yml에 page_url 200 헬스체크 스텝 추가). **측정값**: NumLink 최신 5fcac3a(2026-06-02 14:05)·28일째 미커밋·작업트리 36파일(.omc/·state/·Screenshots/·_Recovery/ 무추적 노이즈 다수, .gitignore 추가로 청산 가능). MeowBeat 최신 921e0cf(6/21 04:06)·9일째·37파일. agent-office 최신 279ba87(6/29 04:13)·미커밋 1파일(.omc/project-memory.json 자동생성물)·gh pr list 빈 배열(열린 PR 0건·#116까지 정리 완료)·CI 최근 6건 전부 success. **오늘 결정 제안**: NumLink .gitignore 노이즈 청산을 검토 — 36파일 대부분이 무추적 노이즈라 .gitignore 정비로 청산 가능하나, 폰트 asset 재import·AutoGenTests 삭제 등 추적 변경은 사용자 의도 확인 선행. dspTime은 Unity 에디터 적용이 병목이라 회의 중 자율 처리 불가. (git log/status·gh pr/run 실측)',
+      },
+      {
+        title:
+          '🔍 QA Tester — dspTime P0 detector(6/21) 기준 9일째 RED 확정(qa_static.py 정확히 1 error·NoteSpawner.cs:126 elapsedTime += Time.deltaTime 그대로·dspTime/PlayScheduled 0건) / NumLink 이중 무방비 무변화(Tools 0개·[Test]/[UnityTest] .cs 177개 중 0건·검증 커버리지 0%) / Feedme 가드 건강(known_bugs 7개·run_regression 2/2 PASS)·agent-office CI 5건 success / 미해결 P0 1건·어제 대비 RED +1일',
+        description:
+          '**🔍 핵심 발견(9일째 RED·코드측 진척 0)**: qa_static.py 실행 결과 정확히 1 error, 0 warning(exit 2). 유일 에러가 [dsptime_usage] NoteSpawner.cs:126 TIMING_DSPTIME_UNUSED. 실측: 126행 elapsedTime += Time.deltaTime 그대로·dspTime/PlayScheduled/AudioSettings.dspTime grep 0건(전혀 미사용). Scripts 전체 Time.deltaTime 19건이나 타이밍 P0 대상은 NoteSpawner.cs:126 단 1건(나머지는 이펙트/UI/연출용 정상). detector 완성(6/21)→오늘(6/30) = 9일째 RED, 어제(8일째) 대비 +1, 다른 지표 변화 없음. **🔍 NumLink 이중 무방비 무변화**: C:/Unity/NumLink/Tools/ 부재(검증툴 0개)·[Test]/[UnityTest] 보유 .cs 0개(Assets 하위 .cs 총 177개 중 0건·루트 .py 6개는 보드생성 스크립트로 QA 도구 아님)·자동화 검증 커버리지 0%. **✅ 가드는 건강(대조)**: known_bugs.json 버그 패턴 7개(RT_SIZE_ZERO·YAML_DUPLICATE_FILE_ID·YAML_HEADER_REF_MISMATCH·YAML_INDENT_M_FATHER·MANIFEST_MISSING_AUDIO·NOTE_OUT_OF_LANE·TIMING_DSPTIME_UNUSED)·run_regression.py 2/2 PASS·agent-office CI 5건 success. **🚨 미해결 P0급 1건**: TIMING_DSPTIME_UNUSED(9일째). **최우선 리스크 1줄**: 출시 차단급 P0가 9일째 미수정 — 프레임 드랍/탭 전환 시 노트 판정 드리프트로 리듬게임 코어 신뢰성 붕괴. **오늘 결정 제안**: NoteSpawner.cs:126을 songPosition=(float)(AudioSettings.dspTime - dspSongStartTime)+PlayScheduled로 교체하는 작업 1순위 착수(escalation 지침 known_bugs.json에 명시됨). Sources: qa_static.py·run_regression.py·known_bugs.json·NoteSpawner.cs·gh run 실측.',
+      },
+      {
+        title:
+          '💻 Developer — dspTime 처방 NoteSpawner.cs 미반영 재확정(126행 여전히 Time.deltaTime 누적·dspTime/PlayScheduled/dspSongStartTime 파일 내 0건·매치는 known_bugs.json·qa_static.py 검증 파일뿐) / Unity 6.2 IL2CPP 옵션명 변경(Optimize for runtime speed / Optimize for code size and build time)+임포트 시 LOD 자동생성 / ASTC 블록레이트(4×4=8bpp·12×12=0.89bpp)+Addressables로 모바일 VRAM 60~80% 절감·Read/Write Enabled 끄면 중복사본 방지',
+        description:
+          '**💻 dspTime 적용 여부 판정: RED(미적용)**: C:/Unity/Feedme/Assets/Scripts/Note/NoteSpawner.cs 126번 줄 = elapsedTime += Time.deltaTime 그대로. AudioSettings.dspTime·PlayScheduled·dspSongStartTime 전부 파일 내 0건. git 로그상 dspTime 관련 커밋 2건(921e0cf·a7588c7)은 모두 chore(qa)로 탐지기 구현·버그 등록일 뿐 NoteSpawner.cs를 고친 fix 커밋 아님(NoteSpawner.cs 마지막 수정은 d9ee73d feat 먹이 노트 타입·타이밍 무관). 레포 전체 grep에서 dspTime|PlayScheduled 매치는 Tools/known_bugs.json·Tools/qa_static.py 두 검증 파일뿐 — **실행 코드에는 없음**. 6/29 완성한 처방이 코드에 들어가지 않았고 탐지기만 먼저 들어가 RED를 정확히 가리키는 상태. **💻 신규(빌드 크기)**: Unity 6.2 IL2CPP Code Generation 옵션명 변경 — "Faster runtime"→"Optimize for runtime speed", "Faster (smaller) builds"→"Optimize for code size and build time"(후자는 머신코드 축소로 빌드시간·바이너리 대폭 감소)·임포트 시 LOD 메시 자동생성·Meta Quest용 thin LTO. **💻 신규(메모리)**: Addressables 온디맨드 텍스처 로딩으로 VRAM 60~80% 절감·ASTC 4×4=8bpp/12×12=0.89bpp(블록레이트↑ 메모리↓)·텍스처 예산 저사양 100~150MB/중급 200~300MB/고사양 400~512MB·Read/Write Enabled 끄면 CPU+GPU 중복사본 방지. **오늘 결정 제안(P0)**: NoteSpawner.cs:126 dspTime fix를 실제 코드에 적용하는 fix 커밋 오늘 최우선(탐지기는 이미 RED를 잡으므로 처방 미적용=회귀 미해결). Sources: docs.unity3d.com(WhatsNewUnity62·IL2CPP build size)·angry-shark-studio.com·thegamedev.guru·unity.com.',
+      },
+      {
+        title:
+          '🎮 Game Designer — 스탬프 카드형 데일리 진행(클래시오브클랜 2026-03: 만료형 챌린지 폐지→매일 8개 상시 미션+누적·이월 스탬프 카드, 하루 빠져도 따라잡기) / 데일리 로그인 보상 D30 +19%·게이미피케이션 DAU +12.7% YoY / 리더보드 A/B ARPU +9%·소셜 연결 유저 이탈 ~50%↓ / 배틀패스 D3~D7 도입 시 D30 +5~10%p(출시 즉시 도입은 전환율 악화)',
+        description:
+          '**🎮 신규 1순위(스탬프 카드 메타)**: 클래시오브클랜이 2026-03 Gold Pass 개편에서 만료형 챌린지를 폐지하고 매일 8개 상시 미션(만료 없음)+스탬프 카드로 전환 — 카드는 누적·이월되어 하루 빠져도 따라잡기 가능. 우리가 이미 다룬 "윈스트릭(손실회피)"과 보완 관계로, 스트릭 끊김 공포를 완화하면서 데일리 재방문 동기는 유지하는 차세대 패턴. 매치-3는 메타 레이어(컬렉션·소셜·내러티브)가 코어 루프로 못 채우는 리텐션 잉여분을 만들 때 승리. **🎮 신규 2순위(리텐션 정량)**: 데일리 로그인 보상 D30 +19%·게이미피케이션(스트릭/배지) DAU +12.7% YoY·점진 보상(D7>D1~D6 합) D30 +3~6%p·배틀패스 D3~D7 도입 시 D30 +5~10%p(출시 즉시 도입은 전환율 악화·커밋할 이유 생긴 뒤 도입). **🎮 신규 3순위(소셜)**: 리더보드 A/B ARPU +9%·소셜 연결 보유 유저 솔로 대비 이탈 ~50%↓. 벤치마크: 퍼즐 D1 31.85%·D30 5.35%이나 2026년 캐주얼 D30 4% 미만 붕괴 중·D30 3%→10% 시 유지유저당 비용 $100→$30. **🎮 보조(리듬 채보)**: 룩어헤드 원칙(악구 빈 공간이 다음 요소 준비 시간·빈 공간↑=쉬움), 인트로→빌드업→드롭 페이싱, 손 부서지는 패턴 회피. **오늘 결정 제안(P2·GDD)**: NumLink·MeowBeat 공통 메타레이어로 "스탬프 카드형 데일리 진행"(누적·이월) GDD 추가·배틀패스/시즌패스는 출시 즉시 아닌 D3~D7 해금. 이전 톱니난이도/리듬캘리브/인터스티셜과 비중복 신규 각도. Sources: gamegrowthadvisor.com·sqmagazine.co.uk·adjust.com·supersonic.com·supercell.com·gamingonphone.com·mistplay.com·businessofapps.com·rhythm-games.com·ddrkirbyisq·arxiv.org/2107.12506.',
+      },
+      {
+        title:
+          '📦 Content Writer — 푸시 옵트인 유저 리텐션 2배·5단어 메시지 참여 94%↑·게이밍 옵트인 63.5%(전산업 최저) / UGC 광고 CTR 4배·CPC 50%↓·전환 10배·제작비 60%↓ / 앱 아이콘 A/B 최대 +30% 전환·별점 3.6→4.2시 전환 60%↑·피처링앱 90%가 4.0+ / 피처링 노미네이션 출시 6~8주전 제출·트레일러 15초 60% 리텐션 유지',
+        description:
+          '**📦 신규 1순위(푸시 타이밍·결정 근거)**: 푸시 옵트인 유저는 미옵트인 대비 약 2배 리텐션(최소 9세션·46%는 11세션 초과·미옵트인 절반이 2세션 후 이탈)·첫 90일 내 1회 이상 수신 시 리텐션 약 3배·게이밍 옵트인율 63.5%(전산업 최저·Android 95% vs iOS 60%)·7단어 이하 메시지가 15단어 초과 대비 참여 94%↑(최적 5단어)·이모지 1~2개 오픈율 91%↑(3개↑는 17%로 급감). **📦 신규 2순위(UGC ROI)**: UGC 광고 CTR 4배·CPC 50%↓·전환 10배·ROI 20%↑·제작비 60%↓·UGC 포함 제품페이지 전환 74%↑·고평점 앱 다운로드 최대 3배·UGC 시장 2026년 84.8억 달러. **📦 신규 3순위(아이콘·평점)**: 아이콘 A/B 최대 +30% 전환(가장 큰 영향)·스크린샷 +22%·별점 3.6→4.2 시 전환 약 60%↑·피처링 앱 90%가 4.0+·전환 10%p↑가 트래픽 2배보다 가치. **📦 보조(피처링·트레일러)**: 피처링 노미네이션 App Store Connect 직접 제출·출시 6~8주 전 제출 유리·2026 Featuring Nominations/Creative Assets 신설·트레일러 15초 지점 60%+ 리텐션 유지해야 알고리즘 추가 노출. **오늘 결정 제안(P2)**: NumLink·MeowBeat 출시 빌드에 "온보딩 직후 즉시 푸시 요청" 대신 "첫 클리어/첫 곡 완주 직후 컨텍스트 푸시 옵트인"+5단어 이내 카피(이모지 1~2개) 적용. 이전 ASO 무드키워드/CPP/소프트런치와 비중복 신규 각도. Sources: apple.com/newsroom·developer.apple.com·businessofapps.com·contextsdk.com·blog.udonis.co·naavik.co·kirro.io·apptweak.com·mobileaction.co.',
+      },
+      {
+        title:
+          '🛡 DevOps — agent-office CI 8건 전부 success·fail 0·열린 PR 0건 / 🔑 6/29 헬스체크 갭 오늘 자율 클로즈(deploy-pages.yml deploy job에 page_url 200 헬스체크 스텝 추가·5회 retry·회당 15초·총 75초 전파 지연 견딤·실패 시 red) / SHA pin+cache:npm+Dependabot 그룹화 완비 / 다음 갭: Dependabot 보안 업데이트 그룹화(applies-to: security-updates)만 미적용',
+        description:
+          '**🛡 CI/CD 실측**: gh run 최근 8건 전부 success(fail 0)·Deploy GitHub Pages 매일 정상·열린 PR 0건(gh pr list 빈 배열·6/28 Dependabot PR들 머지 완료). 워크플로 2개(deploy-pages.yml·weekly-insights.yml)·모든 액션 SHA pin+버전 주석 완료(checkout@9c091bb 등)·concurrency=pages·cancel-in-progress=false(6/26 수정분 회귀 0)·cache:npm 적용. **🛡 🔑 오늘의 자율 클로즈(헬스체크 갭)**: 6/29 짚은 "deploy job이 deploy-pages 직후 끝나고 배포 후 사이트 200 확인이 없어 GitHub Pages 전파 지연 무성 실패를 못 잡음"을 회의 중 실제로 닫음 — deploy-pages 액션 직후 page_url을 5회 retry로 HTTP 200 확인하는 헬스체크 스텝 추가(회당 15초 대기·총 75초 전파 지연 견딤·200이면 통과·5회 실패 시 워크플로 red). 이로써 무성 실패를 처음으로 인지 가능. 이틀 연속 미해결 갭이 오늘 닫혔다. **🛡 웹 리서치(신규)**: deploy-pages.yml은 이미 setup-node cache:npm 사용 중(node_modules 직접 캐싱은 GitHub 비권장·npm ci와 충돌)이라 추가 조치 불필요·현재 구성이 모범사례 부합. Dependabot은 dependabot.yml에서 npm/actions 각각 minor-patch/major 그룹 분리 완료(모범 구성)·**미적용 단 1가지는 보안 업데이트 그룹화(applies-to: security-updates)** — 없으면 CVE마다 개별 PR 생성, 향후 보안 PR 늘면 검토 가치. **오늘 결정 제안(P2·완료✅)**: 헬스체크 스텝 추가 자율 완료·다음 후보는 Dependabot 보안 그룹화. Sources: oneuptime.com·docs.github.com(caching·dependabot PR 최적화)·iuriio.com.',
+      },
+      {
+        title:
+          '🎨 Art Director — 2026 "부분 적용 모피즘"(글래스/뉴모피즘 전면 아닌 토글·슬라이더·카드 등 특정 요소만·시니어 절제의 표식) / 스프링 물리 모션(Overshoot→Bounce→Settle·버튼이 목표 스케일 1.05~1.10배 넘었다 되돌아오며 무게감·선형 트윈보다 압도적) / 마이크로 피드백 타이밍 표준(버튼 프레스 120~220ms ease-out·컬러 300ms·화면 전환 600~800ms) / WCAG 2.2 대비 4.5:1(일반)·3:1(큰글씨/UI)·터치타깃 24px·44~48dp',
+        description:
+          '**🎨 신규 1순위(부분 적용 모피즘)**: 2026 핵심은 글래스/뉴모피즘을 전면 적용하지 않고 토글·슬라이더·카드 등 특정 요소에만 부분 적용하는 절제 — 시니어 디자이너의 표식. **🎨 신규 2순위(스프링 물리)**: 버튼이 목표 스케일을 살짝 넘었다(오버슈트 1.05~1.10배) 되돌아와 정착하는 Overshoot→Bounce→Settle 스프링 물리가 "무게감"을 줌·선형 트윈보다 압도적으로 만족스러움(DOTween OutBack 이징). **🎨 신규 3순위(타이밍 표준)**: 버튼 프레스 120~220ms ease-out·컬러 변화 300ms cubic-bezier·화면 전환 600~800ms. **🎨 보조(WCAG 2.2)**: 텍스트 대비 4.5:1(일반)·3:1(큰 글씨)·UI 요소 3:1·터치타깃 24px(2.2)~44~48dp. NumLink 3테마 팔레트마다 대비 검증 필요. **오늘 결정 제안(P2)**: NumLink 셀 연결/완성·레벨 클리어 버튼에 DOTween OutBack 스프링 "탄성 프레스"(프레스 150ms·정착 220ms) 도입+3테마 팔레트 대비 4.5:1/3:1 검증. MeowBeat는 노트 판정 버튼이 아닌 메뉴/곡선택 버튼에만 적용(리듬 입력 지연 방지). AI 전형적 디자인(민트+다크·뻔한 그라데이션) 회피·"세련된 정적 비주얼+살아있는 촉각 반응" 동시 확보. 이전 tabular-nums/핑거온보딩/멀티센서리와 비중복 신규 각도. Sources: timgraf.com·zignuts.com·tecnoghana.com·alightmotionworld.com·gamedeveloper.com·tigerabrodi.blog·corpowid.ai·makethingsaccessible.com.',
+      },
+    ],
+    meetingTitle:
+      '🟢 6/30 종합 회의 — "어제 발견한 갭을 오늘 닫았다": 6/29 DevOps가 짚은 배포 후 헬스체크 부재를 회의 중 실제로 클로즈(deploy-pages.yml에 page_url 200 헬스체크 5회 retry 스텝 추가)했다. 자율 칼끝은 5일 연속 한 칸씩 전진(cancel-in-progress→#110→#116→헬스체크). 그러나 Developer·QA가 각각 NoteSpawner.cs를 열어보니 6/29 완성한 dspTime 처방이 코드에 안 들어갔고(9일째 RED), NumLink는 28일째 미커밋이다. 자율 인프라는 닫히는데 사용자 세션 필요한 게임측 P0/P1은 코드가 완성돼 있어도 손이 닿지 않는 비대칭이 가장 선명한 날',
+    meetingSummary:
+      '제76회 종합 회의(화요일·D+37·6/29 다음 날). **오늘의 회의는 "어제 발견한 갭을 오늘 닫은 날"이다.** 6/29 DevOps가 마지막에 "배포 잡이 deploy-pages 액션 끝나면 그냥 끝나고, 사이트가 실제로 200으로 떠 있는지 확인하는 헬스체크가 없다"는 새 갭을 짚었다. 오늘 그 갭을 회의 중 실제로 닫았다 — deploy-pages.yml의 deploy job, deploy-pages 액션 직후에 page_url을 5회 retry로 HTTP 200 확인하는 헬스체크 스텝을 추가했다(전파 지연 대비 회당 15초·총 75초 견딤·200이면 통과·5회 실패 시 워크플로 red). DevOps가 직접 검증하며 "이틀 연속 미해결이던 갭이 오늘 닫혔고, 이제 GitHub Pages 전파 지연 무성 실패를 처음으로 잡는다"고 보고했다. 이게 오늘의 핵심이다 — 6/26 cancel-in-progress 수정 → 6/27 #110(checkout v7) → 6/29 #116(npm-minor-patch) → 6/30 헬스체크 추가로, agent-office 배포 파이프라인의 자율 보강이 5일 연속 한 칸씩 전진했다. 그러나 게임측은 또 하루 멈췄다. Developer와 QA가 각자 독립적으로 NoteSpawner.cs를 열어 확인했는데, 6/29에 완성한 dspTime 처방(PlayScheduled+절대차분)이 코드에 들어가지 않았다 — 126행 elapsedTime += Time.deltaTime이 글자 그대로고, dspTime/PlayScheduled는 실행코드에 0건이며 known_bugs.json·qa_static.py 탐지기 파일에만 존재한다. qa_static.py는 정확히 1 error, detector(6/21) 기준 9일째 RED다. NumLink는 28일째 미커밋·Tools 0개·[Test] 0건(.cs 177개 중)으로 이중 무방비가 그대로다. 둘 다 Unity 에디터/사용자 세션이 필요해 회의 중 자율 처리가 불가하다. 비대칭이 오늘 가장 선명하다 — 자율로 닫을 수 있는 인프라 갭은 5일째 닫히는데, 코드가 책상 위에 완성돼 있는 게임측 P0/P1은 손이 닿지 않는다. 나머지는 신규 지평을 더했다(전부 비중복): Game Designer는 클래시오브클랜 2026-03 스탬프 카드형 데일리(누적·이월, 윈스트릭 보완)·데일리 로그인 D30 +19%·리더보드 A/B ARPU +9%·배틀패스 D3~D7 도입을, Content는 컨텍스트 푸시 옵트인(리텐션 2배·게이밍 63.5% 최저·5단어 94%)·UGC CTR 4배·아이콘 A/B +30%를, Art는 부분 적용 모피즘·스프링 물리 OutBack(프레스 150ms·정착 220ms)·WCAG 2.2 대비를, Developer는 Unity 6.2 IL2CPP 옵션·ASTC/Addressables VRAM 60~80% 절감을 제안했다. 메타: 6/28 "두 P0 비대칭 확정" → 6/29 "처방전 완성·헬스체크 갭 발견" → 6/30 "그 갭을 자율 클로즈·게임측은 또 정지". 자율 칼끝과 사용자 세션의 거리가 5일째 벌어지고 있다.',
+    meetingItems: [
+      {
+        speaker: 'DevOps',
+        note: '오늘은 제가 먼저 보고할게요. 어제 마지막에 제가 짚은 갭 있잖아요 — 배포 잡이 deploy-pages 액션 끝나면 그냥 끝나고, 사이트가 진짜 200으로 떠 있는지 확인하는 헬스체크가 없다고요. 그거 오늘 닫았어요. deploy-pages.yml의 deploy 잡, deploy-pages 액션 바로 뒤에 page_url을 curl로 찍어서 HTTP 200인지 확인하는 스텝을 넣었어요. GitHub Pages는 배포 success 떠도 실제 전파까지 시간이 걸려서, 5번까지 재시도하고 회당 15초씩 기다리게 했어요. 총 75초까지 전파 지연을 견디고, 그래도 200이 안 나오면 워크플로를 red로 떨어뜨려요. 이제 사이트가 조용히 죽는 무성 실패를 처음으로 잡을 수 있어요. CI는 8건 다 success, 열린 PR 0건이고요. 다음 갭은 하나 남았어요 — Dependabot 보안 업데이트 그룹화가 아직 안 돼 있어서, CVE 뜰 때마다 개별 PR이 생겨요. 보안 PR 늘면 그때 묶죠.',
+      },
+      {
+        speaker: 'Orchestrator',
+        note: '헬스체크 닫은 거 확인했어요. 그게 5일 연속이에요 — 6/26 cancel-in-progress, 6/27 #110, 6/29 #116, 오늘 헬스체크. agent-office 파이프라인은 한 칸씩 계속 단단해지고 있어요. 근데 게임측은 정반대예요. NumLink는 6월 2일 이후 28일째 미커밋에 36파일 그대로고, MeowBeat는 status에 NoteSpawner.cs가 아예 없어요. 이게 무슨 뜻이냐면, 어제 Developer가 완성한 dspTime 처방이 코드에 안 들어갔다는 거예요. 수정된 스크립트는 GameManager, SongManager, OptionManager, SongData뿐이고 정작 P0인 NoteSpawner는 손도 안 댔어요. 둘 다 Unity 에디터를 열어야 닫히는 거라 우리가 회의 중에 자율로 못 해요. 비대칭이 오늘 제일 선명해요 — 자율로 되는 건 5일째 닫히는데, 사람 손이 필요한 건 코드가 다 나와 있어도 멈춰 있어요.',
+      },
+      {
+        speaker: 'Developer',
+        note: '맞아요, 제가 직접 파일 열어서 확인했어요. NoteSpawner.cs 126번 줄, 여전히 elapsedTime += Time.deltaTime이에요. dspTime, PlayScheduled, dspSongStartTime 전부 파일에 0건이고요. 레포 전체를 grep 해보면 dspTime이랑 PlayScheduled가 매치되는 건 known_bugs.json이랑 qa_static.py 두 개, 검증 파일뿐이에요. 실행 코드에는 한 글자도 없어요. 어제 제가 처방을 완성했는데, 탐지기만 먼저 들어가서 RED를 정확히 가리키고 있고 정작 처방은 적용이 안 된 거죠. 오늘 다른 것보다 이 fix 커밋이 최우선이에요. 따로 웹 리서치도 했는데, Unity 6.2에서 IL2CPP 옵션 이름이 바뀌었어요 — "Optimize for code size and build time" 고르면 바이너리랑 빌드시간이 확 줄어요. 그리고 ASTC 블록레이트랑 Addressables 조합으로 모바일 VRAM을 60에서 80%까지 줄일 수 있어요. 출시 빌드 때 챙길 거예요.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '제 숫자도 Developer랑 똑같아요. qa_static.py 돌리면 정확히 1 error, NoteSpawner.cs 126번 줄 TIMING_DSPTIME_UNUSED 하나예요. detector 완성한 6월 21일부터 세면 오늘 9일째 RED, 어제보다 하루 늘었고 코드 쪽 진척은 0이에요. Scripts 전체에 Time.deltaTime이 19군데 있는데 타이밍 P0 대상은 126번 딱 하나예요. 나머지는 이펙트랑 UI라 정상이고요. NumLink는 무방비 그대로예요 — Tools 폴더 없고, 테스트 어트리뷰트 단 .cs가 177개 중에 0개예요. 자동화 검증 0%죠. 다만 Feedme 가드 자체는 건강해요. known_bugs 7개에 회귀 2/2 다 통과하고, agent-office CI도 다 success예요. 가장 위험한 건 한 줄로 — 출시 차단급 P0가 9일째 안 고쳐지고 있어서, 프레임 드랍이나 탭 전환할 때 노트 판정이 어긋나면 리듬게임 코어 신뢰성이 무너져요.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: 'P0 닫히면 메타 레이어 하나 깔자는 제안이에요. 클래시 오브 클랜이 올해 3월에 골드패스를 갈아엎었는데, 만료되는 챌린지를 없애고 스탬프 카드로 바꿨어요. 매일 카드가 쌓이고, 하루 빠져도 따라잡을 수 있게 누적·이월돼요. 우리가 전에 다룬 윈스트릭이 손실회피로 압박을 주는 방식이면, 이건 그 압박감을 풀어주면서 재방문 동기는 유지하는 보완재예요. 숫자로도 근거가 있어요 — 데일리 로그인 보상이 D30을 19% 올리고, 리더보드 A/B는 ARPU를 9% 올려요. 소셜 연결된 유저는 이탈률이 절반이에요. 그리고 배틀패스는 출시 즉시 넣으면 전환율이 망가져요. D3에서 D7 사이, 유저가 커밋할 이유가 생긴 다음에 해금하면 D30이 5에서 10%p 올라요. NumLink랑 MeowBeat 공통 메타레이어로 스탬프 카드를 GDD에 넣자는 거예요.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '저는 푸시 알림 타이밍 하나만 강하게 밀게요. 푸시 옵트인한 유저는 안 한 유저보다 리텐션이 2배예요. 최소 9세션을 가는데, 옵트인 안 하면 절반이 2세션 만에 나가요. 근데 게이밍 업계 옵트인율이 63.5%로 전 산업 최저예요 — 개선 여지가 제일 크다는 뜻이죠. 문제는 타이밍이에요. 온보딩 직후에 바로 권한 요청하면 거부당해요. NumLink는 첫 레벨 클리어 직후, MeowBeat는 첫 곡 완주 직후에 컨텍스트로 물어봐야 해요. 카피도 중요해요 — 7단어 이하가 15단어 초과보다 참여가 94% 높고, 최적은 5단어, 이모지는 1~2개일 때 오픈율이 91% 오르는데 3개 넘으면 17%로 급감해요. 추가로 UGC 광고는 일반 광고보다 CTR 4배에 전환 10배고, 앱 아이콘 A/B만 잘해도 전환이 30% 올라요. 별점 3.6을 4.2로 올리면 전환 60% 상승이고요.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '저는 버튼 촉감 얘기예요. 2026 트렌드는 글래스나 뉴모피즘을 화면 전체에 바르는 게 아니라 토글이나 카드 같은 특정 요소에만 부분 적용하는 절제예요. 전면에 깔면 오히려 촌스러워요. 그리고 버튼 모션은 스프링 물리로 가야 해요 — 누르면 목표 크기를 살짝 넘었다가, 1.05에서 1.10배쯤, 통 튕겨서 제자리로 돌아오는 거예요. DOTween OutBack 이징이면 돼요. 선형 트윈이랑 비교하면 만족감이 차원이 달라요. 타이밍 표준도 정리했어요 — 버튼 프레스는 120에서 220ms, 컬러 변화는 300ms, 화면 전환은 600에서 800ms예요. NumLink 셀 연결이랑 레벨 클리어 버튼에 프레스 150ms, 정착 220ms로 탄성 프레스를 넣자는 거예요. MeowBeat는 노트 판정 버튼 말고 메뉴랑 곡 선택에만 — 리듬 입력에 지연 주면 안 되니까요. 3테마 팔레트도 대비 4.5대1 검증 한 번 돌릴게요.',
+      },
+    ],
+    decisions: [
+      {
+        title: '🟢 P2 [자율 완료 ✅] agent-office 배포 후 헬스체크 스텝 추가 — 6/29 발견 갭을 오늘 회의 중 클로즈',
+        description:
+          'DevOps가 6/29 짚은 "배포 후 사이트 200 확인 헬스체크 부재"를 오늘 자율로 닫음. deploy-pages.yml의 deploy job, deploy-pages 액션 직후에 page_url을 5회 retry로 HTTP 200 확인하는 헬스체크 스텝 추가(회당 15초 대기·총 75초 전파 지연 견딤·200이면 통과·5회 실패 시 워크플로 red). GitHub Pages 전파 지연으로 인한 무성 실패를 처음으로 인지 가능. 6/26 cancel-in-progress→6/27 #110→6/29 #116→6/30 헬스체크로 자율 칼끝 5일 연속 전진. 다음 자율 후보: Dependabot 보안 업데이트 그룹화(applies-to: security-updates).',
+      },
+      {
+        title: '🔴 P0 [이월·9일째 RED·처방 완성·게임 코드·사용자 세션] MeowBeat NoteSpawner.cs:126 dspTime 전환 — 코드는 책상 위에 있는데 또 하루 정지',
+        description:
+          'Developer·QA가 각각 NoteSpawner.cs를 열어 6/29 완성한 처방이 코드에 미반영임을 재확정(126행 elapsedTime += Time.deltaTime 그대로·dspTime/PlayScheduled 실행코드 0건·탐지기 파일에만 존재·qa_static.py 정확히 1 error·detector 기준 9일째 RED). 적용 코드: ① 필드 dspSongStartTime(double)+musicSource(AudioSource) 추가 → ② 곡 시작 시 musicSource.PlayScheduled(AudioSettings.dspTime + 0.1)로 오디오 시작을 DSP 타임라인 고정 → ③ 126행을 elapsedTime = (float)(AudioSettings.dspTime - dspSongStartTime) 절대차분으로 교체. Unity 에디터 적용+qa_static.py 0 error+run_regression 통과 VERIFY만 남음. 회의 중 자율 처리 불가(사용자 세션 필요). EditMode 테스트 회귀방어 동반 권장.',
+      },
+      {
+        title: '🟡 P1 [이월·28일 미커밋·사용자 세션] NumLink .gitignore 정비 + 노이즈 분리 커밋 + EditMode 테스트 1개로 이중 무방비 탈출',
+        description:
+          '28일째 미커밋 종료. 36파일 다수가 .omc/·state/·Screenshots/·_Recovery/ 무추적 노이즈. ① .gitignore에 노이즈 경로 추가(Layer Lab 스킨은 트래킹) → ② 폰트 SDF asset 분리 커밋+Layer Lab 작업물 분리 커밋으로 작업트리 0파일 청산 → ③ Assets/Tests에 NumLink.Domain.Tests.asmdef+[Test] RED 테스트 1개 추가해 Tools 0개·테스트 0개 이중 무방비 탈출. 단 AutoGenTests 4파일 삭제 확정 여부 및 폰트/Layer Lab 커밋은 사용자 확인 선행(사용자 작업물이라 자율 커밋 보류).',
+      },
+      {
+        title: '🟢 P2 [신규 적재 — 모두 P0/P1 후·번역비 0/추가 에셋 0 우선]: 스탬프 카드 데일리·컨텍스트 푸시 옵트인·스프링 물리 버튼',
+        description:
+          'Game Designer — NumLink·MeowBeat 공통 메타레이어로 "스탬프 카드형 데일리 진행"(누적·이월, 하루 빠져도 따라잡기·클래시오브클랜 2026-03 방식) GDD 추가+배틀패스/시즌패스는 출시 즉시 아닌 D3~D7 해금(즉시 도입은 전환율 악화). Content Writer — 출시 빌드에 "온보딩 직후 즉시 푸시" 대신 "첫 클리어/첫 곡 완주 직후 컨텍스트 푸시 옵트인"+5단어 이내 카피(이모지 1~2개) 적용(옵트인 유저 리텐션 2배·게이밍 옵트인 63.5% 최저). Art Director — NumLink 셀 연결/완성·레벨 클리어 버튼에 DOTween OutBack 스프링 탄성 프레스(프레스 150ms·정착 220ms)+3테마 팔레트 대비 4.5:1/3:1 검증(MeowBeat는 메뉴/곡선택 버튼만). Developer — 출시 빌드에 Unity 6.2 IL2CPP "Optimize for code size and build time"+ASTC 블록레이트+Addressables로 VRAM 60~80% 절감 적용.',
+      },
+    ],
+  },
+  {
     id: '2026-06-29T04:00:00-daily-standup',
     date: '2026-06-29',
     researchTitle:
