@@ -1,6 +1,91 @@
 {
-  "lastUpdated": "2026-06-22T00:34:14.861Z",
+  "lastUpdated": "2026-06-29T00:31:57.713Z",
   "weeks": [
+    {
+      "weekOf": "2026-W26",
+      "articles": [
+        {
+          "id": "26976fec799a757d",
+          "title": "개발을 넘어 AI로 사회문제를 해결하다",
+          "url": "https://tech.kakao.com/posts/825",
+          "company": "카카오테크",
+          "category": "general",
+          "summary": "개발을 넘어 AI로 사회문제를 해결하다",
+          "publishedAt": "2026-06-23T15:00:00.000Z",
+          "collectedAt": "2026-06-29T00:31:57.713Z"
+        },
+        {
+          "id": "6d540eefd46cd1ba",
+          "title": "누군가는 토스를 테스트하는 동안, 우리는 테스트하는 법을 만듭니다.",
+          "url": "https://toss.tech/article/50893",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "누군가는 토스를 테스트하는 동안, 우리는 테스트하는 법을 만듭니다.",
+          "publishedAt": "2026-06-26T00:56:00.000Z",
+          "collectedAt": "2026-06-29T00:31:57.713Z"
+        },
+        {
+          "id": "cce16e5ecc4b8ef6",
+          "title": "es-toolkit: How a Small Internal Library Became a Global Project",
+          "url": "https://toss.tech/article/50693",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "es-toolkit: How a Small Internal Library Became a Global Project",
+          "publishedAt": "2026-06-24T03:36:00.000Z",
+          "collectedAt": "2026-06-29T00:31:57.713Z"
+        },
+        {
+          "id": "c909a4ff66ba1056",
+          "title": "6. 도구를 넘어, 기준과 책임으로",
+          "url": "https://toss.tech/article/technical-writing-6",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "6. 도구를 넘어, 기준과 책임으로",
+          "publishedAt": "2026-06-23T02:01:00.000Z",
+          "collectedAt": "2026-06-29T00:31:57.713Z"
+        },
+        {
+          "id": "3a46226489071b22",
+          "title": "5. Technical Writer, 사라질 결심",
+          "url": "https://toss.tech/article/technical-writing-5",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "5. Technical Writer, 사라질 결심",
+          "publishedAt": "2026-06-23T02:00:00.000Z",
+          "collectedAt": "2026-06-29T00:31:57.713Z"
+        },
+        {
+          "id": "ff3b6ed46c7cb80d",
+          "title": "es-toolkit, 사내 작은 라이브러리가 전세계적인 라이브러리가 되기까지",
+          "url": "https://toss.tech/article/50761",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "es-toolkit, 사내 작은 라이브러리가 전세계적인 라이브러리가 되기까지",
+          "publishedAt": "2026-06-22T12:52:00.000Z",
+          "collectedAt": "2026-06-29T00:31:57.713Z"
+        },
+        {
+          "id": "7a9d10eeba676c31",
+          "title": "4. 우리 팀의 문서화는 왜 실패할까? (2)",
+          "url": "https://toss.tech/article/technical-writing-4",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "4. 우리 팀의 문서화는 왜 실패할까? (2)",
+          "publishedAt": "2026-06-22T02:01:00.000Z",
+          "collectedAt": "2026-06-29T00:31:57.713Z"
+        },
+        {
+          "id": "5d9b0726fdfa7e01",
+          "title": "3. 우리 팀의 문서화는 왜 실패할까? (1)",
+          "url": "https://toss.tech/article/technical-writing-3",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "3. 우리 팀의 문서화는 왜 실패할까? (1)",
+          "publishedAt": "2026-06-22T02:00:00.000Z",
+          "collectedAt": "2026-06-29T00:31:57.713Z"
+        }
+      ]
+    },
     {
       "weekOf": "2026-W25",
       "articles": [
@@ -653,31 +738,6 @@
           "summary": "5년 동안 못 푼 배민 다국어 숙제, AI와 함께 한 달 만에 끝내기",
           "publishedAt": "2026-04-03T02:30:41.000Z",
           "collectedAt": "2026-04-06T23:41:39.293Z"
-        }
-      ]
-    },
-    {
-      "weekOf": "2026-W13",
-      "articles": [
-        {
-          "id": "daaff09cd2334345",
-          "title": "Metric Review, 실행을 이끌다",
-          "url": "https://toss.tech/article/place-metric-review",
-          "company": "토스 테크",
-          "category": "general",
-          "summary": "Metric Review, 실행을 이끌다",
-          "publishedAt": "2026-03-25T01:00:00.000Z",
-          "collectedAt": "2026-03-31T15:57:30.687Z"
-        },
-        {
-          "id": "09722dc22947b45a",
-          "title": "pnpm 모노레포에서 React 19 마이그레이션하기: 숨겨진 호이스팅 레이어가 만든 타입 충돌 트러블슈팅",
-          "url": "https://techblog.woowahan.com/26128/",
-          "company": "우아한형제들",
-          "category": "general",
-          "summary": "pnpm 모노레포에서 React 19 마이그레이션하기: 숨겨진 호이스팅 레이어가 만든 타입 충돌 트러블슈팅",
-          "publishedAt": "2026-03-24T08:15:52.000Z",
-          "collectedAt": "2026-04-07T03:23:00.667Z"
         }
       ]
     }
