@@ -43,6 +43,119 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-07-01T04:00:00-daily-standup',
+    date: '2026-07-01',
+    researchTitle:
+      '🟢 어제 "추가"한 것이 오늘 "실배포에서 작동"으로 실증됐다 — 그러나 게임측 P0는 detector가 살아있음을 확인한 날, 정작 우선순위가 역전돼 있었다: 6/30 DevOps가 추가한 배포 후 헬스체크가 오늘 실제 배포(run 28396561545)에서 "Site is live (HTTP 200) on attempt 1"으로 첫 시도 통과했다 — 어제는 "스텝 추가", 오늘은 "실배포 검증 완료"로 자율 칼끝이 추가→검증 한 단계 더 단단해졌다. 반대편 MeowBeat dspTime P0는 오늘 처음으로 detector가 살아있음이 실행으로 확인됐다 — QA가 qa_static.py를 돌리자 exit code 2로 NoteSpawner.cs:126을 정확히 핀포인트했다(detector는 죽은 룰이 아니다). 그런데 같은 점검에서 더 무거운 사실이 드러났다: 코어픽스는 여전히 미커밋(126행 elapsedTime += Time.deltaTime 그대로·SyncWithAudio 95행조차 elapsedTime = 0f 리셋만 하고 dspTime 앵커링 없음)인데, 최근 NoteSpawner 커밋 8건은 전부 노트 속도·낙하속도 땜질이라 "근본(클럭 드리프트)은 방치하고 증상만 만진" 우선순위 역전 상태였다. 여기에 Developer가 신규 회귀버그를 발견했다 — bgmPlayer.volume이 4곳(SongManager 89·144, OptionManager 191, GameManager 363·540)에서 제각각 계산되고 GameManager 2곳이 1.0f 하드코딩이라, 음량 슬라이더를 0.3으로 내려도 그 경로를 타면 1.0으로 되돌아간다. NumLink는 29일째 미커밋이지만 작업트리 36파일 중 실작업물은 사실상 0건(노이즈 22개)이고 검증툴은 폴더 자체가 없다',
+    researchSummary:
+      '제77회 리서치(수요일·D+38·6/30 다음 날). 7명 전원 보고. **오늘의 구조는 "어제 추가한 것이 오늘 실배포에서 작동으로 실증된 날 — 단 게임측은 detector가 살아있음을 확인하자 우선순위 역전이 드러났다"다.** Orchestrator는 세 레포를 실측했다 — NumLink 5fcac3a(6/2)·**29일째 미커밋**이나 작업트리 36파일 중 **순수 노이즈 22개**(폰트/SDF 재import 7+.omc/.claude/state 캐시 15)가 압도적이고 .cs/.unity 실작업물은 사실상 0건, MeowBeat 작업트리는 SongData.cs(titleKo 한글곡명 1줄)·GameManager.cs(+59)·SongManager.cs가 변경됐으나 **dspTime 키워드 0건**으로 P0 픽스가 아닌 한글곡명/매니페스트 연동 별개 기능, agent-office는 c3000ce(6/30) 헬스체크 완료·**열린 PR 0건**. DevOps는 어제 추가분의 실증을 가져왔다 — run 28396561545 로그에서 "Site is live (HTTP 200) on attempt 1" 확인(첫 시도 200 통과)·최근 배포 5건 전원 success·빌드 34~44초·Dependabot 대기 0건. QA는 detector 생존을 실행으로 처음 확인했다 — qa_static.py exit code 2로 NoteSpawner.cs:126 핀포인트·코어픽스 미커밋·SyncWithAudio(95행)도 elapsedTime = 0f 리셋만 하고 dspTime 앵커링·PlayScheduled 0건·최근 NoteSpawner 커밋 8건(aebb192 노트속도·6611f96 낙하속도 2배 등)이 전부 속도 땜질이라 근본 클럭은 9일째 방치=우선순위 역전·NumLink Tools 폴더 자체 부재. Developer는 신규 회귀버그를 발견했다 — bgmPlayer.volume 4중 경로 불일치(SongManager:89 baseVolume×userVolume / SongManager:144 PlayerPrefs SongVolume / OptionManager:191 CurrentVolume / GameManager:363,540 1.0f 하드코딩)로 슬라이더를 내려도 GameManager 경로를 타면 1.0 회귀+SongVolume 매직스트링 중복(CLAUDE.md 위반). 나머지는 신규 지평을 더했다(전부 이전 회의와 비중복): Game Designer는 다운로드 0.8% 성장으로 "리텐션 시대" 진입(Sensor Tower)·퍼즐 D1 31.85%/D30 5.35%·Wordle 하루1개 캡+4~6% 난이도만으로 1,200만 DAU 유지·하이브리드캐주얼 IAP:광고 45:55 최적 ARPU 28%↑를, Developer(웹)는 Unity 6.3 LTS 정식(6000.3·2025-12·2027-12 지원·Burst+IL2CPP 빌드 22%↓·Box2D v3 2D 물리)·Unity 6.5(2026-06)·AdMob Next-Gen SDK 1.2.1(Unity 플러그인 10.6.0+·minSdk24)을, Content는 퍼즐 CPI iOS $3.00/Android $2.00·게이밍 CPI 전년比 30%↑·스크린샷 소셜프루프 삽입 시 다운로드 90%↑·Apple CPP 70개 확대+오가닉 노출 가능 전환 156%↑(비용 0원)·숏폼 역할분리(Reels 전환 최강 1.3배)를, Art는 2026 "촉각(Tactile/Squishy) UI"의 해(squash&stretch+햅틱)·순수 검정(#000) 퇴출 워밍 다크(charcoal-brown #1C1917·zinc #09090B·Mocha) 표준·"Juice 과잉" 비판론(파티클 남발 대신 선택적 피드백)을 보고했다. 메타: 6/28 "두 P0 비대칭 확정" → 6/29 "처방전 완성·헬스체크 갭 발견" → 6/30 "그 갭을 자율 클로즈" → 7/01 "추가한 헬스체크가 실배포 HTTP 200으로 실증·게임측은 detector 생존 확인하자 우선순위 역전 드러남·volume 신규 회귀버그 발견". 자율 칼끝은 추가→검증으로 단단해지는데, 게임측은 detector가 살아있음을 확인할수록 코어픽스 부재가 더 선명해진다.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — 세 레포 실측: NumLink 5fcac3a(6/2)·29일째 미커밋이나 36파일 중 순수 노이즈 22개(폰트 재import 7+.omc/state 캐시 15)·실작업물 0건 / MeowBeat 작업트리는 dspTime 아닌 한글곡명(titleKo)+GameManager(+59) 별개 기능·NoteSpawner.cs 변경 0건 / agent-office c3000ce(6/30) 헬스체크 완료·열린 PR 0건·작업트리 1파일(노이즈) / 어제 액션 100% 완료',
+        description:
+          '**🎯 이전 액션 실측(7/01)**: ① agent-office 배포 헬스체크 추가 = **완료✅**(c3000ce·6/30 액션아이템 100% 완료). ② MeowBeat dspTime 코어픽스 = **미완**(NoteSpawner.cs 작업트리 변경 0건·손도 안 댐). ③ NumLink 봉인 = **미완**(29일째). **측정값**: NumLink 5fcac3a(6/2 14:05)·29일째 미커밋·작업트리 36파일이나 **순수 노이즈 22개**(폰트/SDF 재import 7+.omc/.claude/state 캐시 15)가 압도적이고 .cs/.unity 실작업물은 사실상 0건. 신규 항목: Assets/Layer Lab/(미트래킹)·AutoGenTests 4파일 삭제·_Recovery/0 (4).unity 복구씬 잔존 → 최근 커밋(Layer Lab 9-slice 스킨·UGUI/UIToolkit 롤백)의 부산물이 커밋되지 못한 채 적체("작업은 했는데 커밋 라인을 못 그은" 상태). MeowBeat 작업트리: SongData.cs는 titleKo(한글 곡명) 1줄 추가·GameManager.cs(+59)·SongManager.cs도 dspTime 키워드 0건 → P0 타이밍 픽스가 아니라 한글곡명/매니페스트 연동 별개 기능. detector는 작동 대기 중인데 정작 잡아야 할 P0 픽스는 손도 안 댄 채 무관한 기능만 작업트리에 쌓임. agent-office는 c3000ce(6/30) 헬스체크 완료·열린 PR 0건·작업트리 .omc/project-memory.json 1건(노이즈). **오늘 결정 제안**: MeowBeat NoteSpawner.cs dspTime 코어픽스를 오늘 단일 태스크로 착수 — detector가 자기 코드를 red 처리하기 전에 봉인 해제. (git log/status·gh pr 실측)',
+      },
+      {
+        title:
+          '🔍 QA Tester — 🔑 detector 생존 실행 확인: qa_static.py exit code 2로 NoteSpawner.cs:126 정확히 핀포인트(죽은 룰 아님) / 코어픽스 여전히 미커밋(126행 deltaTime 그대로·SyncWithAudio 95행도 elapsedTime = 0f 리셋만·dspTime 앵커링/PlayScheduled 0건) / 최근 NoteSpawner 커밋 8건 전부 속도·패턴 땜질=우선순위 역전 / NumLink Tools 폴더 자체 부재·검증 0% / 미해결 2건',
+        description:
+          '**🔍 핵심 발견(detector 생존 확인·코어픽스 미커밋)**: 오늘은 단순 RED 재확인이 아니다 — qa_static.py 실행 시 exit code 2로 check_dsptime_usage가 NoteSpawner.cs:126을 정확히 핀포인트했다. detector는 6/20 등록(a7588c7)+6/21 구현(921e0cf) 후 살아있는 룰임이 실행으로 확인됨. **그러나 코어픽스는 여전히 RED**: 126행 elapsedTime += Time.deltaTime 그대로·SyncWithAudio()(95행)조차 elapsedTime = 0f 리셋만 할 뿐 AudioSettings.dspTime 앵커링·PlayScheduled 전무·escalation이 요구한 songPosition = dspTime - dspSongStartTime 패턴 미적용. **🚨 우선순위 역전**: 최근 NoteSpawner 커밋 8건(aebb192 노트속도·6611f96 낙하속도 2배 등)이 전부 노트 속도·패턴 땜질일 뿐 타이밍 클럭 자체는 손대지 않음 — 9일간 증상만 만지고 근본(클럭 드리프트)은 방치. detector가 매일 빨간불을 켜는데 코어픽스가 속도 땜질 커밋들에 가려져 "처리 중"처럼 보이는 게 진짜 위험. **🔍 NumLink 무방비 무변화**: C:/Unity/NumLink/Tools/ 폴더 자체 부재(unity_validate.py·qa_static.py·known_bugs.json 전무)·CLAUDE.md "세션 시작 시 Tools 없으면 _ProjectTemplate에서 복사" 규칙 미실행 누적·검증 커버리지 0%. **🚨 미해결 2건**: TIMING_DSPTIME_UNUSED(detector 작동·코어 미커밋)+NumLink 검증툴 0개. **오늘 결정 제안**: 노트 신규작업 동결하고 NoteSpawner.cs:126+SyncWithAudio를 dspTime 앵커링으로 교체하는 단일 픽스 PR을 오늘 최우선 착수. Sources: qa_static.py·NoteSpawner.cs·known_bugs.json 실측.',
+      },
+      {
+        title:
+          '💻 Developer — 🔑 신규 회귀버그 발견: bgmPlayer.volume 4중 경로 불일치(SongManager:89 baseVolume×userVolume / SongManager:144 PlayerPrefs SongVolume / OptionManager:191 CurrentVolume / GameManager:363,540 1.0f 하드코딩) → 슬라이더 0.3 내려도 GameManager 경로 타면 1.0 회귀+SongVolume 매직스트링 중복(CLAUDE.md 위반) / Unity 6.3 LTS 정식(Burst+IL2CPP 빌드 22%↓·Box2D v3) / AdMob Next-Gen SDK 1.2.1(minSdk24)',
+        description:
+          '**💻 🔑 오늘의 발견(volume 4중 경로 회귀버그)**: bgmPlayer.volume이 4곳에서 제각각 계산됨 — ① SongManager.cs:89 baseVolume(0.5/1.0)×userVolume(곡별 밸런스 반영) ② SongManager.cs:144 PlayerPrefs.GetFloat(SongVolume) baseVolume 무시 ③ OptionManager.cs:191 bgmPlayer.volume = CurrentVolume baseVolume 무시 ④ GameManager.cs:363,540 bgmPlayer.volume = 1.0f(사용자 설정·baseVolume 둘 다 무시·하드코딩). 즉 슬라이더를 0.3으로 내려도 GameManager의 두 경로(363/540)를 타면 음량이 1.0으로 되돌아가는 회귀버그 잠재. SongVolume 문자열 키도 OptionManager의 VOLUME_KEY 상수를 두고 SongManager에서 매직스트링 중복(CLAUDE.md 매직넘버 금지 위반). 작업트리의 AndroidManifest.xml·AndroidResolverDependencies.xml 변경은 AdMob SDK 갱신 작업 흐름과 일치. **💻 웹 리서치(신규)**: Unity 6.3 LTS 정식 출시(6000.3·2025-12·2027-12까지 2년 지원·IL2CPP 제네릭 지연생성으로 시작시간/메타데이터 메모리 감소·**Burst+IL2CPP 동시 사용 시 플레이어 빌드시간 최대 22% 단축**·Box2D v3 기반 신규 2D 물리 멀티스레드/결정론·2D IK/그림자 Jobs+Burst 리팩터 → 2D 게임 직접 이득)·Unity 6.5(2026-06)·Google Mobile Ads Next-Gen SDK for Android 정식(ads-mobile-sdk:1.2.1·Unity 플러그인 10.6.0+·minSdk24·NativeOverlay·Preloading destroyAll·단 v8 마이그레이션 파괴적). **오늘 결정 제안(P1)**: bgmPlayer.volume 4중 경로를 SongManager.ApplyVolume() 단일 경로(곡별 baseVolume×사용자 SongVolume)로 통합해 음량 슬라이더 회귀버그 차단+SongVolume 매직스트링 공용 상수화. Sources: docs.unity3d.com·developers.google.com/admob·SongManager.cs·GameManager.cs·OptionManager.cs 실측.',
+      },
+      {
+        title:
+          '🎮 Game Designer — 다운로드 0.8% 성장으로 "리텐션 시대" 진입(Sensor Tower) / 퍼즐 D1 31.85%·D30 5.35%(매치게임 D30 7.15% 최상위) / Wordle 하루1개 캡+4~6% 난이도만으로 1,200만 DAU 유지(리더보드·소셜 없이) / 하이브리드캐주얼 IAP:광고 45:55 최적·평균 ARPU 28%↑·플로우 황금비 현재 실력+4~6% 난이도',
+        description:
+          '**🎮 신규 1순위(리텐션 시대 진입)**: 글로벌 앱 다운로드 2025년 0.8% 성장 — 볼륨 성장 시대 종료, "리텐션 시대" 진입(Sensor Tower). 2026 산업 평균 D1 26%·D7 10%·D30 4% 미만으로 리텐션 전반 하락. 퍼즐 D1 31.85%·D30 5.35%·매치게임 D1 32.65%/D30 7.15%(최상위). 우리 두 게임 모두 D30이 약한 구조라 신규 콘텐츠 제작 없이 리텐션 루프를 만드는 메타가 비용 대비 효과 최대. **🎮 신규 2순위(Wordle 데일리 캡 메타)**: Wordle DAU 약 1,200만·단어퍼즐 상위 5종 합산 DAU 3,500만+·리더보드/파워업/소셜 없이 "하루 1퍼즐 캡 + 난이도 변동성"만으로 1,200만 리텐션 유지·플로우 황금비는 현재 실력보다 4~6% 높은 난이도·"하루 1개 = 완결 가능한 의식(ritual)"이 24시간 재방문 루프의 본질. **🎮 신규 3순위(하이브리드 수익화)**: 2026 스튜디오 36%가 하이퍼→하이브리드 전환 중(9~18개월)·퍼즐/머지 하이브리드는 IAP:광고 45:55 최적·하이브리드 평균 ARPU가 광고전용 대비 약 28%↑·비과금자도 보상형 광고로 ARPDAU $0.08~0.15. **오늘 결정 제안(P2·GDD)**: NumLink에 "데일리 퍼즐(시드 고정)+스트릭+Wordle식 이모지 그리드 공유" 모드 추가 — 데일리는 유저 평균 클리어 +4~6% 난이도로 고정(플로우 황금비)·기존 퍼즐 생성기로 시드만 고정하면 구현(신규 콘텐츠 0)·MeowBeat보다 NumLink가 구현비 낮아 우선. Sources: sensortower·gamegrowthadvisor.com·adjust.com·businessofapps.com.',
+      },
+      {
+        title:
+          '📦 Content Writer — 퍼즐 CPI iOS $3.00/Android $2.00·게이밍 CPI 전년比 30%↑(블렌디드 $0.56) / 스크린샷 1번에 소셜프루프(평점/다운로드) 삽입 시 다운로드 90%↑ / Apple CPP 70개 확대+오가닉 검색 노출 가능 전환 156%↑(비용 0원) / 숏폼 역할분리(Reels 전환 최강 경쟁사 1.3배·TikTok 참여·Shorts 발견)',
+        description:
+          '**📦 신규 1순위(Apple CPP 무료 오가닉 무기)**: Apple이 2025년 Custom Product Pages 한도 70개로 2배 확대+오가닉 검색 노출 가능하게 변경 → 더 이상 광고 전용 아님, ASO 정식 무기. CPP 유입 시 평균 전환율 156%↑(기본 1.6%→약 4.1%)·iOS 18+부터 CPP별 딥링크 지정 가능(특정 곡/레벨 직접 이동)·**비용 0원**(Apple Search Ads 집행 없이 오가닉 활용). **📦 신규 2순위(스크린샷·소셜프루프)**: 최적화된 스크린샷은 기본 캡처 대비 전환 20~40%↑·스크린샷 1번에 소셜프루프(평점/다운로드 수) 삽입 시 다운로드 90%+↑·분기별 A/B 앱이 연1회 갱신 대비 전환 20~30%↑·동영상 프리뷰 동반 시 전환 최대 25%↑. **📦 신규 3순위(UA 비용·숏폼)**: 퍼즐 CPI iOS $3.00/Android $2.00·게이밍 CPI 전년比 30%↑(블렌디드 $0.56·서구권 iOS 캐주얼 38% 급등)·iOS가 동일 장르 Android보다 2~4배 비쌈(ATT)·Q1 최저/Q4 20~40% 급등(지금 Q3 중간)·숏폼 역할분리(Reels 전환 최강 경쟁사 1.3배·TikTok 참여 2.6~5.7%·Shorts 발견 4.4%). **오늘 결정 제안(P2)**: NumLink iOS Custom Product Page 2종 무료 개설 — A안 "출퇴근 5분 두뇌 휴식" 무드 페이지·B안 "숫자 잇기 챌린지" 도전 페이지·각 첫 스크린샷에 평점/다운로드 소셜프루프 삽입(다운로드 90%↑)·CPP 신규 100+ 지표로 유료 UA(퍼즐 iOS CPI $3.00) 집행 전 크리에이티브 무료 A/B 검증. Sources: blog.udonis.co·appalize.com·foxdata.com·adapty.io·respectaso.com.',
+      },
+      {
+        title:
+          '🛡 DevOps — 🔑 어제 추가한 헬스체크 실배포 검증 완료(run 28396561545: "Site is live (HTTP 200) on attempt 1" 첫 시도 통과) / 최근 배포 5건 전원 success·빌드 34~44초·Dependabot 대기 0건 / 원격 레포 dev-studio로 리네임됨(gh agent-office는 리다이렉트로 정상) / 이상 없음',
+        description:
+          '**🛡 🔑 오늘의 검증(헬스체크 실증)**: 6/30 추가한 헬스체크 스텝(Health check deployed site·page_url 200·5회 retry·15초 간격)이 오늘 실배포에서 작동함을 증거로 확인 — run 28396561545 로그에서 "Site is live (HTTP 200) on attempt 1"(첫 시도에 200 응답). 어제는 "스텝 추가", 오늘은 "실배포 검증 완료"가 새 상태. 자율 칼끝이 추가→검증으로 한 단계 더 단단해짐. **🛡 CI/CD 정상**: 최근 5개 run 전부 success(배포 4건+Weekly Insights 1건)·실패/취소 0건·빌드 34~44초 안정·열린 PR 0건(Dependabot 포함·#116/#111/#110 등 모두 MERGED)·자율로 닫을 PR 없음. **🛡 참고(레포 명칭)**: 원격 레포가 mmporong/dev-studio로 리네임됨(빌드 로그상 origin이 dev-studio)·gh ... mmporong/agent-office는 리다이렉트로 정상 동작 중이나 정식 명칭 통일 시 리다이렉트 의존 제거 가능. **오늘 결정 제안(P2·자율 가능)**: gh 호출 경로를 정식 명칭 mmporong/dev-studio로 통일(스크립트/스킬의 agent-office 하드코딩 점진 교체). CI 자체는 이상 없음. Sources: gh run list·gh pr list·deploy-pages.yml 실측.',
+      },
+      {
+        title:
+          '🎨 Art Director — 2026 "촉각(Tactile/Squishy) UI"의 해(탭하면 눌리고 짓눌렸다 튕기는 squash&stretch 변형 버튼+햅틱) / 순수 검정(#000) 퇴출·워밍 다크(charcoal-brown #1C1917·zinc near-black #09090B·Mocha Mousse) 다크 베이스 표준 / "Juice 과잉" 비판론(파티클 남발 대신 사운드+애니+선택적 강조로 핵심 순간만) / 키네틱 타이포(상태 신호 수단으로 격상)',
+        description:
+          '**🎨 신규 1순위(촉각 UI)**: 2026은 "촉각 UI의 해"로 명명 — 탭하면 실제로 눌리고 짓눌렸다 튕겨 돌아오는(deform-and-bounce) 물리적 버튼·단순 알파/스케일 트윈이 아닌 squash & stretch 기반 변형·글래스모피즘과 혼합형으로 진화·햅틱(가벼운 탭 진동)과 짝지어 "플라스틱처럼 느껴지는" 확인 피드백. **🎨 신규 2순위(워밍 다크)**: 순수 검정(#000) 퇴출 — zinc 틴트 near-black(#09090B)·charcoal-brown(#1C1917)·Mocha Mousse 계열 따뜻한 중성 톤이 다크 베이스 표준·컬러 액센트와 더 잘 어울리고 눈부심 적음·그라데이션은 네온 대신 스모키/앰비언트 라이팅형(blurred glow field). **🎨 신규 3순위(Juice 과잉 비판론)**: 과도한 파티클/이펙트가 약한 설계를 가린다는 반작용 트렌드·이펙트 남발 대신 사운드+애니메이션+선택적 강조로 핵심 순간에만 피드백 집중(리듬게임 판정별 시각 피드백 위계화와 직결). **🎨 보조(키네틱 타이포)**: 텍스트가 탭/스크롤/사운드에 반응(weight·stretch 변화)·장식이 아닌 위계/상태 신호 수단으로 격상. AI 슬롭 회피: 민트+다크·뻔한 네온 그라데이션은 "과거 사이클 harsh neon blends"로 분류 → 워밍 다크+스모키 앰비언트 글로우가 차별화 정답. **오늘 결정 제안(P2)**: NumLink 리워크에 "타일 연결 시 squash&stretch+가벼운 햅틱"(과잉 파티클 배제=선택적 juice) 적용+3테마 베이스를 #000 대신 워밍 다크(charcoal-brown/zinc)+Mocha 중성톤으로 재정의(민트+네온 AI 슬롭 정면 회피). Sources: pixune.com·zumeirah.com·recursion.software·wayline.io·snaptron.com.',
+      },
+    ],
+    meetingTitle:
+      '🟢 7/1 종합 회의 — "추가한 것이 실배포에서 작동으로 실증됐다, 그러나 게임측은 detector 생존을 확인하자 우선순위 역전이 드러났다": 6/30 추가한 배포 헬스체크가 오늘 실배포(run 28396561545)에서 "HTTP 200 on attempt 1"으로 첫 시도 통과해 추가→검증으로 자율 칼끝이 한 단계 더 단단해졌다. 반면 MeowBeat dspTime은 QA가 qa_static.py exit 2로 detector 생존을 처음 확인했지만, 같은 점검에서 최근 NoteSpawner 커밋 8건이 전부 속도 땜질이고 코어 클럭은 9일째 방치인 우선순위 역전이 드러났고, Developer는 bgmPlayer.volume 4중 경로(GameManager 1.0f 하드코딩 2곳)가 슬라이더를 무력화하는 신규 회귀버그를 발견했다',
+    meetingSummary:
+      '제77회 종합 회의(수요일·D+38·6/30 다음 날). **오늘의 회의는 "어제 추가한 것이 오늘 실배포에서 작동으로 실증된 날 — 게임측은 detector 생존을 확인하자 우선순위 역전이 드러난 날"이다.** DevOps가 먼저 어제 추가분의 실증을 가져왔다 — 6/30 넣은 배포 후 헬스체크가 오늘 실제 배포 run 28396561545에서 "Site is live (HTTP 200) on attempt 1"으로 첫 시도에 통과했다. 어제는 스텝을 추가했고, 오늘은 그 스텝이 실배포에서 작동함을 로그로 확인했다 — 자율 칼끝이 추가→검증으로 한 단계 더 단단해졌다. 배포 5건 전원 success·열린 PR 0건이라 오늘 자율로 닫을 항목은 없고, 다음 후보는 gh 경로를 리네임된 정식 명칭 dev-studio로 통일하는 것이다. 반대편 게임측은 더 무거운 그림이 드러났다. QA가 qa_static.py를 돌리자 exit code 2로 NoteSpawner.cs:126을 정확히 핀포인트했다 — detector가 죽은 룰이 아니라 살아있음이 처음으로 실행으로 확인됐다. 그런데 같은 점검에서 코어픽스는 여전히 미커밋이고(126행 deltaTime 그대로·SyncWithAudio 95행도 elapsedTime = 0f 리셋만), 더 무거운 건 최근 NoteSpawner 커밋 8건이 전부 노트 속도·낙하속도 땜질이라 근본 클럭 드리프트는 9일째 방치된 우선순위 역전 상태라는 점이다. detector가 매일 빨간불을 켜는데, 코어픽스가 속도 땜질 커밋들에 가려져 "처리 중"처럼 보이는 게 진짜 위험이다. Developer는 여기에 신규 회귀버그를 얹었다 — bgmPlayer.volume이 4곳(SongManager 89·144, OptionManager 191, GameManager 363·540)에서 제각각 계산되고 GameManager 두 곳이 1.0f로 하드코딩돼 있어, 음량 슬라이더를 0.3으로 내려도 그 경로를 타면 1.0으로 되돌아간다. Orchestrator는 NumLink가 29일째 미커밋이지만 작업트리 36파일 중 실작업물은 사실상 0건(노이즈 22개)이고, MeowBeat 작업트리 변경도 dspTime이 아닌 한글곡명(titleKo) 별개 기능이라 P0는 손도 안 댔음을 못박았다. 나머지는 신규 지평을 더했다(전부 비중복): Game Designer는 다운로드 0.8% 성장으로 "리텐션 시대" 진입·Wordle 하루1개 캡+4~6% 난이도만으로 1,200만 DAU·NumLink 데일리 퍼즐(시드 고정) 모드를, Content는 Apple CPP 70개 확대+오가닉 노출 전환 156%↑(비용 0원)·스크린샷 소셜프루프 다운로드 90%↑·NumLink iOS CPP 2종을, Art는 2026 촉각(Squishy) UI·워밍 다크(#000 퇴출)·Juice 과잉 비판론·NumLink 타일 squash&stretch+워밍다크 3테마를 제안했다. 메타: 6/29 "처방전 완성" → 6/30 "헬스체크 갭 자율 클로즈" → 7/01 "추가한 헬스체크 실배포 실증·게임측 detector 생존 확인하자 우선순위 역전+volume 신규 회귀버그 발견". 자율 칼끝은 추가→검증으로 단단해지는데, 게임측은 detector가 살아있을수록 코어픽스 부재가 더 선명해진다.',
+    meetingItems: [
+      {
+        speaker: 'DevOps',
+        note: '오늘은 좋은 소식부터요. 어제 넣은 헬스체크가 진짜로 작동했어요. 오늘 배포 run 로그를 까보니까 "Site is live, HTTP 200 on attempt 1"이라고 찍혀 있어요. 첫 시도에 바로 200이 떴다는 거예요. 어제는 "스텝을 추가했다"였고, 오늘은 "그 스텝이 실배포에서 작동하는 걸 확인했다"예요. 한 단계 더 단단해진 거죠. 배포는 최근 5건 다 success, 빌드 34초에서 44초로 안정적이고, 열린 PR은 0건이라 오늘 자율로 닫을 건 없어요. 한 가지 정리할 게 있는데, 원격 레포가 dev-studio로 이름이 바뀌었어요. 지금은 gh로 agent-office를 부르면 리다이렉트로 잘 돌아가는데, 스크립트랑 스킬에 박힌 경로를 정식 명칭 dev-studio로 점진적으로 바꾸면 리다이렉트 의존을 없앨 수 있어요. 이건 자율로 가능한 정리예요.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '저는 무거운 쪽이에요. 오늘 qa_static.py를 돌렸더니 exit code 2로 NoteSpawner.cs 126번 줄을 정확히 집어냈어요. 이건 좋은 거예요 — detector가 죽은 룰이 아니라 살아있다는 게 처음으로 실행으로 확인된 거죠. 근데 같은 점검에서 더 무거운 걸 봤어요. 코어픽스는 여전히 안 들어왔어요. 126번 줄 elapsedTime += Time.deltaTime 그대로고, SyncWithAudio 95번 줄조차 elapsedTime을 0으로 리셋만 하지 dspTime 앵커링이 없어요. 진짜 문제는 이거예요 — 최근 NoteSpawner 커밋 8건을 보니까 전부 노트 속도, 낙하속도 두 배 같은 땜질이에요. 증상만 9일 동안 만지고 근본인 클럭 드리프트는 손도 안 댄 거죠. detector가 매일 빨간불을 켜는데, 코어픽스가 속도 커밋들에 가려져서 "처리 중"처럼 보이는 게 제일 위험해요. 우선순위가 역전돼 있어요. 노트 신규작업을 동결하고 126번 줄이랑 SyncWithAudio를 dspTime 앵커링으로 바꾸는 단일 PR을 오늘 최우선으로 가야 해요. NumLink는 여전히 Tools 폴더 자체가 없어서 검증 0%고요.',
+      },
+      {
+        speaker: 'Developer',
+        note: '저는 새 버그를 하나 들고 왔어요. 음량이 4곳에서 따로 계산돼요. SongManager 89번은 곡별 baseVolume 곱하기 사용자 볼륨으로 제대로 하는데, 144번은 PlayerPrefs에서 SongVolume만 읽어서 baseVolume을 무시하고, OptionManager 191번도 CurrentVolume만 쓰고, 결정적으로 GameManager 363번이랑 540번은 그냥 1.0f로 하드코딩돼 있어요. 무슨 뜻이냐면, 사용자가 슬라이더를 0.3으로 내려도 GameManager 경로를 타면 음량이 1.0으로 되돌아가는 회귀버그예요. SongVolume이라는 문자열 키도 OptionManager에 VOLUME_KEY 상수가 있는데 SongManager에선 매직스트링으로 중복돼 있어요. CLAUDE.md 매직넘버 금지 위반이죠. SongManager에 ApplyVolume 단일 메서드를 만들어서 모든 경로가 그걸 거치게 통합하면 깔끔해져요. 웹 리서치도 했는데, Unity 6.3 LTS가 정식으로 나왔어요. Burst랑 IL2CPP를 같이 쓰면 빌드시간이 최대 22% 줄고, Box2D v3 기반 2D 물리가 들어와서 우리 2D 게임에 직접 이득이에요. AdMob도 Next-Gen SDK 1.2.1이 정식화됐는데 minSdk 24가 필요해요.',
+      },
+      {
+        speaker: 'Orchestrator',
+        note: 'DevOps 헬스체크 검증 확인했고, 어제 액션아이템은 100% 완료예요. 세 레포 실측 정리할게요. NumLink는 29일째 미커밋인데, 오늘 중요한 건 작업트리 36파일의 정체예요. 22개가 순수 노이즈예요 — 폰트 SDF 재import 7개에 .omc랑 state 캐시가 15개. 정작 .cs나 .unity 실작업물은 사실상 0건이에요. 최근 Layer Lab 스킨 작업의 부산물이 커밋 라인을 못 긋고 적체된 거죠. MeowBeat 작업트리도 헷갈리면 안 되는 게, SongData에 titleKo 한글 곡명 한 줄 추가하고 GameManager 59줄 바뀐 건 dspTime이 아니라 한글곡명 연동 별개 기능이에요. 정작 NoteSpawner는 변경 0건, P0는 손도 안 댄 거예요. detector는 작동 대기 중인데 무관한 기능만 쌓이고 있어요. 오늘은 NoteSpawner dspTime 코어픽스를 단일 태스크로 못박죠 — detector가 자기 코드를 red 처리하기 전에요.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: 'P0 닫히면 리텐션 루프 하나 깔자는 제안이에요. 올해 시장 구조가 바뀌었어요. 글로벌 다운로드 성장이 0.8%로 떨어져서, 센서타워가 "볼륨 성장 시대는 끝났고 리텐션 시대"라고 선언했어요. 퍼즐 D1이 31.85%인데 D30은 5.35%로 뚝 떨어져요. 우리 두 게임 다 D30이 약하죠. 그래서 신규 콘텐츠 안 만들고 리텐션을 만드는 메타가 제일 효율적이에요. Wordle 보세요 — 리더보드도 소셜도 파워업도 없이 "하루 한 퍼즐 캡"이랑 난이도 변동성만으로 DAU 1,200만을 유지해요. 핵심은 플로우 황금비예요. 유저 실력보다 4~6% 높은 난이도가 가장 깊은 몰입을 만들어요. NumLink에 데일리 퍼즐 모드를 넣자는 거예요. 매일 자정에 시드 고정된 한 판을 전 유저 똑같이 주고, 클리어하면 스트릭 올라가고, 결과를 Wordle식 이모지 그리드로 공유하게요. 기존 퍼즐 생성기에 시드만 고정하면 되니까 신규 콘텐츠 제작이 0이에요. MeowBeat보다 NumLink가 구현비가 낮아서 NumLink 먼저요.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '저는 비용 0원짜리 무기 하나 가져왔어요. Apple Custom Product Page가 작년에 한도 70개로 늘면서 오가닉 검색에도 노출되게 바뀌었어요. 이제 광고 전용이 아니라 ASO 정식 무기예요. CPP로 들어온 유저는 평균 전환율이 156% 올라가요 — 기본 1.6%에서 4.1%로요. 그것도 Apple Search Ads 돈 한 푼 안 쓰고 오가닉으로 쓸 수 있어요. 그리고 스크린샷 첫 장에 평점이나 다운로드 수 같은 소셜프루프를 박으면 다운로드가 90% 넘게 올라요. 비용 얘기를 하면, 퍼즐 CPI가 iOS는 3달러, 안드로이드는 2달러고 게이밍 CPI가 작년보다 30% 올랐어요. 그러니까 유료 UA 쓰기 전에 무료로 검증하는 게 중요해요. NumLink iOS CPP를 두 개 만들자는 거예요. A안은 "출퇴근 5분 두뇌 휴식" 무드, B안은 "숫자 잇기 챌린지" 도전. 각각 첫 스크린샷에 소셜프루프 넣고, CPP 분석 지표로 어느 메시지가 먹히는지 무료로 A/B 돌린 다음에 유료 UA 집행하면 돼요.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '저는 버튼 촉감이랑 컬러예요. 2026은 "촉각 UI의 해"로 불려요. 탭하면 진짜로 눌리고, 짓눌렸다가 통 튕겨 돌아오는 버튼이요. 단순 알파나 스케일 트윈이 아니라 스쿼시 앤 스트레치 변형이고, 가벼운 햅틱 진동이랑 짝지으면 "플라스틱처럼 만져지는" 확인 피드백이 돼요. 컬러는 순수 검정이 퇴출됐어요. #000 대신 zinc 틴트가 들어간 near-black이나 charcoal-brown, Mocha 계열 따뜻한 중성톤이 다크 베이스 표준이에요. 그라데이션도 네온 대신 스모키한 앰비언트 글로우로 가고요. 한 가지 경고는 "Juice 과잉" 비판론이 떴어요 — 파티클을 남발하면 약한 설계를 가린다는 거예요. 핵심 순간에만 피드백을 집중해야 해요. NumLink가 마침 리워크 중이니까 타이밍이 좋아요. 타일 연결할 때 squash&stretch랑 햅틱 넣고, 과잉 파티클은 빼고요. 3테마 베이스도 #000 대신 워밍 다크로 재정의하면 민트+네온 같은 AI 슬롭을 정면으로 피하면서 2026 표준에 맞아요.',
+      },
+    ],
+    decisions: [
+      {
+        title: '🟢 P2 [자율 검증 완료 ✅] agent-office 배포 헬스체크 실배포 실증 — 어제 추가가 오늘 "HTTP 200 on attempt 1"로 작동 확인',
+        description:
+          'DevOps가 6/30 추가한 헬스체크 스텝이 오늘 실배포 run 28396561545에서 "Site is live (HTTP 200) on attempt 1"으로 첫 시도 통과함을 로그로 확인. 어제는 "스텝 추가", 오늘은 "실배포 검증 완료"로 자율 칼끝이 추가→검증 한 단계 더 단단해짐. 배포 5건 전원 success·열린 PR 0건. 다음 자율 후보: gh 호출 경로를 리네임된 정식 명칭 mmporong/dev-studio로 통일(스크립트/스킬의 agent-office 하드코딩 점진 교체·리다이렉트 의존 제거).',
+      },
+      {
+        title: '🔴 P0 [이월·detector 생존 확인·우선순위 역전·게임 코드·사용자 세션] MeowBeat NoteSpawner.cs:126 + SyncWithAudio dspTime 앵커링 — 노트 신규작업 동결하고 코어 클럭 단일 PR',
+        description:
+          'QA가 qa_static.py exit code 2로 detector 생존을 처음 실행 확인(NoteSpawner.cs:126 정확히 핀포인트)했으나 코어픽스는 여전히 미커밋 — 126행 elapsedTime += Time.deltaTime 그대로·SyncWithAudio(95행)조차 elapsedTime = 0f 리셋만·dspTime 앵커링/PlayScheduled 0건. 최근 NoteSpawner 커밋 8건(노트속도·낙하속도)이 전부 속도 땜질이라 근본 클럭 드리프트 9일째 방치=우선순위 역전. 적용: ① 필드 dspSongStartTime(double)+musicSource(AudioSource) → ② 곡 시작 시 musicSource.PlayScheduled(AudioSettings.dspTime + 0.1)로 오디오 시작 DSP 타임라인 고정(Play() 대신) → ③ 126행을 elapsedTime = (float)(AudioSettings.dspTime - dspSongStartTime) 절대차분으로 교체+SyncWithAudio도 같은 앵커 사용. 노트 신규작업 동결·Unity 에디터 적용+qa_static.py 0 error VERIFY만 남음(사용자 세션 필요). EditMode 회귀방어 동반 권장.',
+      },
+      {
+        title: '🟡 P1 [신규·게임 코드·사용자 세션] MeowBeat bgmPlayer.volume 4중 경로 → SongManager.ApplyVolume() 단일 경로 통합 — 슬라이더 무력화 회귀버그 차단',
+        description:
+          'Developer 신규 발견: bgmPlayer.volume이 4곳에서 제각각 계산(SongManager:89 baseVolume×userVolume / SongManager:144 PlayerPrefs SongVolume baseVolume 무시 / OptionManager:191 CurrentVolume baseVolume 무시 / GameManager:363,540 1.0f 하드코딩). 슬라이더를 0.3으로 내려도 GameManager 두 경로를 타면 1.0으로 되돌아가는 회귀버그+SongVolume 매직스트링 중복(CLAUDE.md 위반). 조치: SongManager에 ApplyVolume() 단일 메서드(곡별 baseVolume×사용자 SongVolume) 신설→GameManager 1.0f 하드코딩 2곳 포함 모든 호출처가 이를 거치도록 통합+SongVolume 매직스트링을 공용 VOLUME_KEY 상수로 정리. 사용자 세션 필요.',
+      },
+      {
+        title: '🟢 P2 [이월·29일 미커밋·사용자 세션] NumLink 노이즈 청산 + Tools 복사 — 36파일 중 실작업물 0건·검증툴 폴더 자체 부재',
+        description:
+          '29일째 미커밋이나 작업트리 36파일 중 순수 노이즈 22개(폰트/SDF 재import 7+.omc/.claude/state 캐시 15)가 압도적이고 .cs/.unity 실작업물 사실상 0건. ① .gitignore에 .omc/·state/·Screenshots/·_Recovery/ 추가(Layer Lab 스킨은 트래킹) → ② 폰트 SDF asset 분리 커밋+Layer Lab 작업물 분리 커밋으로 작업트리 청산 → ③ C:/Unity/NumLink/Tools/ 폴더 자체가 없으므로 CLAUDE.md 규칙대로 _ProjectTemplate에서 unity_validate.py/qa_static.py/known_bugs.json 복사+씬 경로 상수 업데이트(검증 0% 탈출). 단 AutoGenTests 4파일 삭제 확정 및 폰트/Layer Lab 커밋은 사용자 확인 선행(사용자 작업물 자율 커밋 보류).',
+      },
+      {
+        title: '🟢 P2 [신규 적재 — 모두 P0/P1 후·신규 콘텐츠 0/비용 0 우선]: 데일리 퍼즐·iOS CPP·촉각 UI/워밍 다크·Unity 6.3 LTS',
+        description:
+          'Game Designer — NumLink에 "데일리 퍼즐(시드 고정)+스트릭+Wordle식 이모지 그리드 공유" 모드 추가(데일리는 유저 평균 클리어 +4~6% 난이도·기존 생성기로 시드만 고정해 신규 콘텐츠 0·다운로드 0.8% 성장 리텐션 시대 대응). Content Writer — NumLink iOS Custom Product Page 2종 무료 개설(A 무드형 "출퇴근 5분 두뇌 휴식"·B 도전형 "숫자 잇기 챌린지")+각 첫 스크린샷에 평점/다운로드 소셜프루프(다운로드 90%↑)·CPP 신규 지표로 유료 UA 집행 전 무료 A/B(CPP 전환 156%↑·비용 0원). Art Director — NumLink 리워크에 타일 연결 squash&stretch+가벼운 햅틱(과잉 파티클 배제)+3테마 베이스를 #000 대신 워밍 다크(charcoal-brown #1C1917/zinc #09090B)+Mocha 중성톤으로 재정의(민트+네온 AI 슬롭 회피). Developer — 출시 빌드에 Unity 6.3 LTS Burst+IL2CPP(빌드 22%↓)+AdMob Next-Gen SDK 1.2.1(minSdk24) 마이그레이션 검토.',
+      },
+    ],
+  },
+  {
     id: '2026-06-30T04:00:00-daily-standup',
     date: '2026-06-30',
     researchTitle:
