@@ -43,6 +43,119 @@ export const journalMemoryRules: JournalItem[] = [
 
 export const seedJournalEntries: JournalEntry[] = [
   {
+    id: '2026-07-02T04:00:00-daily-standup',
+    date: '2026-07-02',
+    researchTitle:
+      '🟢 "노이즈 22개"로 불리던 NumLink 작업트리를 오늘 해부하니 지뢰였다 — 그리고 게임 양측에서 똑같이 "겉보기 진행이 근본 미착수를 가린다"가 확정된 날: 어제까지 NumLink 미커밋 36파일은 "순수 노이즈"로 요약됐는데, 오늘 Developer가 파일 단위로 뜯어보니 폰트 SDF 5종(Maplestory Bold/Light·Cafe24 등)이 아틀라스를 잃고 1x1로 붕괴(m_Width 2048→1·image data 4194304→1)해 있었다 — 이건 노이즈가 아니라 지뢰다. 지금 상태로 커밋하면 게임 내 모든 텍스트 렌더가 깨진다(반드시 git checkout 복구 대상). 동시에 QA가 교차검증으로 어제 회의의 전제 하나를 정정했다 — "오늘 NumLink 5커밋" 서사는 사실이 아니고 그 UI 리워크 묶음은 전부 6/02자이며 07-01의 코인 이어하기 부활(e536009) 1건만 최근이고 오늘(07-02)은 신규 커밋 0건이다. Developer가 그 e536009의 실체도 규명했다 — 게임오버 "코인 100개 이어하기"와 "무료 다시하기"가 둘 다 RestartCurrentLevel()을 불러 결과가 같던 걸(코인만 손해) GameManager.Revive()(라이프만 회복·보드/연결 진행 유지) 신설로 분리한 진짜 버그픽스다(나머지 4건은 USS/UXML 스타일). 반대편 MeowBeat도 같은 병이 더 굳었다 — QA가 확인하니 코어 라인126 elapsedTime += Time.deltaTime은 9일째 그대로인데 SyncWithAudio 우회 동기화 커밋(39e3399)이 하나 더 얹혀, 근본은 안 고치고 우회 땜빵만 늘어 "처리 중" 착시가 두꺼워졌다. 여기에 QA는 AutoGenTests 4파일 삭제(D)가 미커밋 방치돼 테스트 커버리지 공백이 생겼음을 새 리스크로 짚었다. 자율 칼끝은 오늘도 한 칸 전진했다 — DevOps가 헬스체크가 로그로만 남고 Actions 요약 페이지엔 안 뜨는 사각지대를 짚자, 회의 중 deploy-pages 헬스체크에 $GITHUB_STEP_SUMMARY 배포 리포트(URL·HTTP상태·시도횟수)를 얹고 weekly-insights.yml의 concurrency 그룹 부재까지 자율로 메웠다',
+    researchSummary:
+      '제78회 리서치(목요일·D+39·7/01 다음 날). 7명 전원 보고. **오늘의 구조는 "어제 요약이 오늘 해부로 뒤집힌 날 — 노이즈로 뭉뚱그려졌던 NumLink 작업트리가 실은 폰트 붕괴 지뢰였고, 게임 양측(NumLink 폰트·MeowBeat dspTime)에서 똑같이 겉보기 진행이 근본 미착수를 가린다가 확정됐다"다.** Orchestrator는 세 레포를 실측했다 — NumLink는 오늘(07-02) 신규 커밋 0건, 29일 침묵을 깬 유일 최근 커밋은 07-01 e536009(코인 이어하기 실제 부활) 1건뿐이고 나머지 UI 리워크 묶음은 전부 6/02자, MeowBeat도 오늘 커밋 0건·최근은 921e0cf(dspTime detector 구현)이며 작업트리 변경은 dspTime이 아닌 별개 기능, agent-office는 9f0ffa4(7/1 저널)·열린 PR 0건. Developer는 어제 "노이즈 22개" 요약을 파일 단위로 뒤집었다 — 폰트 SDF 5종이 아틀라스를 잃고 1x1로 붕괴(m_Width 2048→1)해 커밋 시 전 텍스트가 깨지는 지뢰이고, e536009는 코인 이어하기/무료 다시하기가 둘 다 RestartCurrentLevel()이던 걸 GameManager.Revive() 신설로 분리한 진짜 픽스이며, manifest가 AdMob 11.2.0(Android SDK 25.3.0)으로 자동 승격+MCP 패키지가 CoplayDev/unity-mcp#beta로 교체됐다(개발도구·게임 무관). QA는 두 전제를 정정·보강했다 — "오늘 5커밋" 서사는 06-02자 오인이고 오늘 NumLink 커밋 0건, MeowBeat dspTime은 코어 라인126 그대로인데 SyncWithAudio 우회 커밋(39e3399)만 얹혀 우회 땜빵이 늘었으며, AutoGenTests 4파일 삭제(D) 미커밋으로 테스트 커버리지 공백이 새로 생겼다. DevOps는 인프라 다음 칸을 가져왔다 — 열린 PR 0건·배포 5건 전원 success(34~58s)이나 헬스체크가 로그로만 남고 Actions 요약 페이지엔 미기록이라 자율머지 성공/실패를 로그 스크롤 없인 못 보고, weekly-insights.yml엔 concurrency 그룹이 없어 main push 경합 사각지대가 있다. 나머지는 신규 지평을 더했다(전부 이전 회의와 비중복): Game Designer는 퍼즐 D7 리텐션 전 장르 1위이나 첫 5~15분에 가치 전달 실패 시 이탈·리듬게임 30일 리텐션 35%(모바일 평균 21% 압도)·데일리 스트릭+리마인더가 D30 15~30%↑를, Content는 TikTok Spark Ads(유기형 UGC 부스팅)가 표준 인피드 대비 CTR 2.4배·CVR 44%↑·캐주얼 광고 CVR 임계값 2%·첫 1.7초 가치제안 필수·앱스토어 첫 3장 스크린샷이 전환 변수의 80% 결정(90%가 3장 이상 안 넘김)을, Art는 2026 지배 트렌드가 Material 3 Expressive의 디자인 토큰 기반 다이내믹 테마잉이라 색을 컨트롤러에 하드코딩하면 테마 확장마다 재작업·오늘 막 만든 3테마 인프라를 ThemePalette 토큰으로 뽑으면 확장비 0에 수렴함을 보고했다. 메타: 6/28 "두 P0 비대칭 확정" → 6/29 "처방전 완성" → 6/30 "헬스체크 갭 자율 클로즈" → 7/01 "헬스체크 실배포 실증·게임측 우선순위 역전·volume 회귀버그" → 7/02 "노이즈 요약이 폰트 붕괴 지뢰로 뒤집힘·게임 양측에서 겉보기 진행이 근본을 가린다 확정·CI 헬스체크를 Actions 요약으로 가시화". 자율 칼끝은 로그→요약으로 한 칸 더 단단해지는데, 게임측은 진단이 정밀해질수록 근본(폰트 복구·dspTime 앵커링)이 사용자 세션을 기다리는 채로 더 선명해진다.',
+    researchItems: [
+      {
+        title:
+          '🎯 Orchestrator — 세 레포 실측: NumLink 오늘(07-02) 커밋 0건·29일 침묵 깬 유일 최근은 07-01 e536009(코인 부활) 1건·UI 리워크 묶음은 전부 6/02자 / MeowBeat 오늘 커밋 0건·최근 921e0cf(dspTime detector)·작업트리는 dspTime 아닌 별개 기능 / agent-office 9f0ffa4(7/1 저널)·열린 PR 0건 / 어제 액션: dspTime·NumLink 봉인 이월, 헬스체크 실증 완료',
+        description:
+          '**🎯 이전 액션 실측(7/02)**: ① agent-office 헬스체크 실배포 실증 = **완료✅**(7/01 run 28396561545 HTTP 200). ② MeowBeat dspTime 코어픽스 = **미완·이월**(NoteSpawner.cs 라인126 그대로). ③ NumLink 봉인/노이즈 청산 = **미완·이월**(오늘 커밋 0건). **측정값**: NumLink는 오늘(07-02) 신규 커밋 0건이고, 29일 침묵을 깬 유일한 최근 커밋은 07-01 e536009(게임오버 코인 이어하기 실제 부활) 1건뿐 — 어제 회의의 "오늘 5커밋" 전제는 오인이었고 그 UI 리워크 묶음(10bed53 테마 재설계·b5e921b Layer Lab 스킨 등)은 전부 6/02자다. MeowBeat도 오늘 커밋 0건, 최근은 921e0cf(dspTime detector 구현)이며 작업트리 변경(SongData titleKo 등)은 dspTime 코어와 무관한 별개 기능이라 P0는 여전히 미착수. agent-office는 9f0ffa4(7/1 저널)·열린 PR 0건·CI 정상. **오늘 결정 제안**: NumLink 붕괴 폰트 지뢰 제거(git checkout 복구)를 오늘 최우선 안전 조치로, MeowBeat dspTime 코어픽스를 단일 태스크로 이월 유지 — 둘 다 사용자 Unity 세션 대기. (git log/status·gh pr 실측)',
+      },
+      {
+        title:
+          '💻 Developer — 🔑 어제 "노이즈 22개" 요약을 뒤집음: NumLink 미커밋 폰트 SDF 5종이 아틀라스 잃고 1x1로 붕괴(m_Width 2048→1·image data 4194304→1) → 커밋 시 게임 내 전 텍스트 렌더 깨짐(지뢰·git checkout 복구 필수) / e536009는 코인 이어하기·무료 다시하기 둘 다 RestartCurrentLevel()이던 걸 GameManager.Revive() 신설로 분리한 진짜 픽스(나머지 4건 USS/UXML) / manifest AdMob 11.2.0(Android SDK 25.3.0) 자동 승격+MCP 패키지 CoplayDev/unity-mcp#beta 교체',
+        description:
+          '**💻 🔑 오늘의 발견(폰트 붕괴 지뢰)**: 어제까지 "순수 노이즈 22개"로 요약된 NumLink 작업트리를 파일 단위로 해부하니, 폰트 SDF 5종(Maplestory Bold/Light SDF·Cafe24Ssurround-v2 등)이 텍스처 아틀라스를 잃고 1x1로 붕괴(m_Width 2048→1·image data 바이트 4194304→1)해 있었다. 이건 무해한 재import가 아니라 지뢰다 — 지금 상태로 커밋하면 게임 내 모든 텍스트 렌더가 깨진다. 반드시 git checkout으로 복구(스테이징 금지)해야 한다. **💻 e536009 실체 규명**: 게임오버 화면에서 "코인 100개 이어하기"와 "무료 다시하기"가 둘 다 RestartCurrentLevel()을 호출해 결과가 동일(코인만 손해)이던 버그를, GameManager.Revive()(라이프만 회복·보드와 연결 진행은 유지) 신설로 분리한 진짜 버그픽스(GameManager.cs +12·GameOverController.cs -9·중복 LifeChanged 이벤트 제거). 나머지 4건은 순수 USS/UXML 스타일·문구. **💻 웹 리서치(신규)**: Google Mobile Ads Unity Plugin v11.2.0(2026-05-28·GMA iOS 13.4.0/Android SDK 25.3.0·Next-Gen 1.1.1)로 manifest가 이미 11.0.0→11.2.0 자동 승격돼 실질 관련·MCP 패키지도 CoderGamester/mcp-unity→CoplayDev/unity-mcp#beta로 교체됨(개발도구·게임 무관·Layer Lab 7,663 untracked 파일 별개). **오늘 결정 제안(P1·긴급)**: 붕괴 폰트 .asset 5종을 즉시 git checkout으로 복구(절대 스테이징 금지)+Layer Lab 7,663파일은 별도 커밋으로 분리 정리. Sources: git show/diff·docs.unity3d.com·googleads-mobile-unity releases 실측.',
+      },
+      {
+        title:
+          '🔍 QA Tester — 🔑 두 전제 정정·보강: NumLink "오늘 5커밋"은 06-02자 오인·오늘(07-02) 커밋 0건(07-01 코인부활 1건뿐) / MeowBeat dspTime 코어 라인126 elapsedTime += Time.deltaTime 9일째 그대로인데 SyncWithAudio 우회 동기화 커밋(39e3399)만 얹혀 우회 땜빵 증가 / AutoGenTests 4파일 삭제(D) 미커밋 → 테스트 커버리지 공백 신규 리스크 / NumLink Tools 폴더 여전히 부재·검증 0%',
+        description:
+          '**🔍 핵심 발견(우회 땜빵이 근본을 더 가림)**: MeowBeat qa_static은 여전히 1 error·NoteSpawner.cs 라인126은 elapsedTime += Time.deltaTime 그대로로 dspTime 미반영 확정. 그런데 오늘 변화가 있다 — SyncWithAudio 관련 우회 동기화 커밋(39e3399)이 하나 더 추가됐다. 즉 근본 클럭(dspTime 앵커링)은 손대지 않고 우회 동기화만 늘려 "처리 중" 착시가 더 두꺼워진 상태. 어제 확인한 "속도 땜질 8건"에 이어 이제 "우회 동기화 땜빵"까지 쌓여, 정작 잡아야 할 코어는 9일째 그대로다. **🔍 전제 정정**: 어제 회의의 "오늘 NumLink 5커밋" 서사는 사실이 아니다 — 그 UI 5커밋은 전부 06-02자이고 07-01의 코인 이어하기 부활(e536009) 1건만 최근, 오늘(07-02)은 NumLink 커밋 0건. **🚨 신규 리스크(테스트 공백)**: NumLink AutoGenTests 4파일(.asmdef/.cs+.meta)이 삭제(D) 상태로 미커밋 방치돼 회귀 테스트 기준선이 흔들림 — 코어픽스 착수 전에 이 삭제부터 커밋 정리(복원 or 명시적 제거)해 회귀 기준선을 먼저 확보해야 한다. NumLink Tools 폴더는 여전히 부재로 정적 검증 0%. **오늘 결정 제안**: MeowBeat는 SyncWithAudio 우회 땜빵을 롤백하고 라인126을 AudioSettings.dspTime 절대차분으로 교체하는 코어픽스에 착수하되, NumLink는 착수 전 AutoGenTests 삭제 커밋 정리로 회귀 기준선을 먼저 확보. Sources: qa_static.py·NoteSpawner.cs·git log/status 실측.',
+      },
+      {
+        title:
+          '🛡 DevOps — 🔑 인프라 다음 칸: 열린 PR 0건·배포 5건 전원 success(34~58s)이나 헬스체크가 로그로만 남고 Actions 요약 페이지 미기록 → 로그 스크롤 없인 자율머지 성공/실패 확인 불가 / weekly-insights.yml concurrency 그룹 부재 → main push 경합 사각지대 / 오늘 회의 중 둘 다 자율 조치',
+        description:
+          '**🛡 🔑 오늘의 다음 칸(가시화 증분)**: cancel-in-progress·checkout v7 SHA 핀·헬스체크 5회 retry는 이미 완료돼 반복 대상 아님. 새 사각지대는 두 가지 — ① deploy-pages 헬스체크가 HTTP 코드를 로그로만 남겨 매일 자율머지가 도는 파이프라인에서 성공/실패를 로그 스크롤 없이 못 본다(Actions 요약 페이지 $GITHUB_STEP_SUMMARY 미사용). ② weekly-insights.yml이 git push로 main을 직접 갱신하는데 concurrency 그룹이 없어 deploy-pages와 동시 실행 시 push 경합·중복 배포 트리거 가능. **🛡 CI 정상**: 최근 배포 5건 전원 success·빌드 34~58초·열린 PR 0건(Dependabot 포함 모두 MERGED). **🛡 오늘 자율 조치(실행 완료)**: deploy-pages 헬스체크 스텝에 $GITHUB_STEP_SUMMARY 배포 리포트(배포 URL·최종 HTTP 상태·소요 시도 횟수) 추가+weekly-insights.yml에 concurrency: weekly-insights(cancel-in-progress: false) 그룹 신설. 기존 헬스체크 재추가가 아닌 순수 증분(결과의 가시화+push 경합 사각지대 봉합). **오늘 결정 제안(P2·자율 완료✅)**: 위 두 워크플로우 증분 커밋+다음 배포 run 요약 페이지에 표가 뜨는지 검증. Sources: gh run/pr list·deploy-pages.yml·weekly-insights.yml 실측.',
+      },
+      {
+        title:
+          '🎮 Game Designer — 퍼즐 D7 리텐션 전 장르 1위이나 첫 5~15분에 가치 전달 실패 시 이탈(2026 GameAnalytics) / 리듬게임 30일 리텐션 35%로 모바일 평균 21% 압도(월 3억 MAU·세션 25분) / 데일리 스트릭+리마인더 메타가 D30 리텐션 15~30%↑ 최고 효율 습관 메커닉',
+        description:
+          '**🎮 신규 1순위(온보딩 5분 가치 컷)**: 퍼즐은 D7 리텐션 전 장르 1위이나 첫 5~15분에 "클리어 성취+다음 목표"를 못 주면 조기 이탈(2026 GameAnalytics 벤치마크). NumLink는 첫 세션 5분 내 성취+다음 목표 노출을 온보딩 설계로 못박아야 조기 이탈 방어. **🎮 신규 2순위(리듬게임 리텐션 우위)**: 모바일 리듬게임 30일 리텐션 35%로 모바일 평균 21%를 크게 압도(월 3억 MAU·평균 세션 25분) — MeowBeat 장르 자체가 리텐션 유리하므로 데일리 곡 로테이션으로 재방문 루프만 얹으면 효율 높음. **🎮 신규 3순위(데일리 스트릭)**: 연속 접속 스트릭+리마인더는 D30 리텐션을 15~30% 끌어올리는 최고 효율 습관 메커닉(신규 콘텐츠 제작 0). **오늘 결정 제안(P2·GDD)**: NumLink·MeowBeat 공통 "데일리 스트릭+온보딩 5분 가치 컷" GDD 항목 신설 — ① 연속 접속 스트릭 카운터+깨짐의 가시적 비용(불꽃/보너스 리셋)을 두 게임 메인에 배치(D30 15~30%↑) ② NumLink 첫 세션 5분 성취+다음 목표 노출 ③ MeowBeat 매일 갱신 데일리 곡 1개를 스트릭 보상과 연결. 스트릭 UI는 동적 Instantiate 금지 규칙대로 씬 배치 후 SetActive 토글. Sources: GameAnalytics·AppAgent·Supersonic·MarketReportsWorld.',
+      },
+      {
+        title:
+          '📦 Content Writer — TikTok Spark Ads(유기형 UGC 부스팅)가 표준 인피드 대비 CTR 2.4배·CVR 44%↑(2026) / 캐주얼게임 광고 CVR 임계값 2%·첫 1.7초 안에 가치제안 전달 필수 / 앱스토어 첫 3장 스크린샷이 전환 변수의 80% 결정(유저 90%가 3장 이상 안 넘김)',
+        description:
+          '**📦 신규 1순위(Spark Ads 유기형 부스팅)**: TikTok Spark Ads(기존 유기 게시물을 광고로 부스팅하는 형식)가 표준 인피드 대비 CTR 2.4배·CVR 44%↑ — 폴리시된 스튜디오 광고보다 "손가락 실플레이 화면녹화+자막" UGC 톤이 캐주얼 게임에서 강함. **📦 신규 2순위(첫 1.7초 룰)**: 캐주얼게임 광고 CVR 임계값은 2%이고, 첫 1.7초 안에 가치제안(킥)을 못 보여주면 이탈 — NumLink는 숫자 잇는 손맛, MeowBeat는 고양이가 박자에 반응하는 킥을 첫 컷에 노출해야 한다. **📦 신규 3순위(첫 3장 스크린샷)**: 앱스토어 첫 3장 스크린샷이 전환율 변수의 80%를 결정하고 유저 90%가 3장 이상은 안 넘긴다 — 스크린샷 예산은 첫 3장에 집중하고 A/B 우선순위화. **오늘 결정 제안(P2)**: 두 게임 숏폼 마케팅을 "폴리시 스튜디오 광고" 대신 "유기형 UGC를 Spark Ads로 부스팅" 방향으로 잡기 — 9~15초 세로 클립을 UGC 톤으로 제작·첫 1.7초에 킥 노출·유기 게시물로 CTR/CVR 먼저 검증 후 성과 좋은 클립만 Spark Ads 부스팅(광고비 리스크 최소)+앱스토어 첫 3장 스크린샷 A/B 우선. 7/1 Apple CPP·소셜프루프 결정과 상호보완(스토어 페이지×숏폼 유입). Sources: appfollow·businessofapps·digitalapplied·semnexus.',
+      },
+      {
+        title:
+          '🎨 Art Director — Layer Lab 9-slice 스킨+3테마 재설계는 방향 정확(UI를 브랜드로 격상)이나 색이 컨트롤러에 하드코딩되면 테마 확장마다 재작업 / 2026 지배 트렌드 Material 3 Expressive의 디자인 토큰 기반 다이내믹 테마잉 / 잠긴 레벨 번호 노출은 "다음 목표 각인" 리텐션 효과',
+        description:
+          '**🎨 신규 1순위(디자인 토큰 테마 시스템)**: 2026 상업 최상위 트렌드는 Material 3 Expressive의 디자인 토큰(design token) 기반 다이내믹 테마잉 — 색을 하드코딩하지 않고 시맨틱 토큰(primary·surface·accent·locked 등) 변수 하나로 전체 스킨/색 계열을 전환한다. NumLink가 마침 "3개 테마+Layer Lab 9-slice 스킨"을 갓 도입했으므로 이 구조와 직결 — 지금 색을 컨트롤러/YAML에 흩어 박으면 테마 확장마다 재작업이 발생한다. **🎨 신규 2순위(리텐션 부합)**: 2a78c94 "잠긴 레벨도 번호 표시(아이콘 제거)"는 "다음 목표 각인" 효과로 리텐션에 유리 — Game Designer의 "다음 목표 노출"과 정합. **🎨 AI 슬롭 회피**: 팔레트를 데이터로 분리하면 민트+다크 탈피한 독창 팔레트를 코드 수정 없이 실험 가능. **오늘 결정 제안(P2)**: NumLink에 디자인 토큰 방식 테마 시스템 도입 — 3개 테마 색을 ThemePalette ScriptableObject 1장(시맨틱 토큰)으로 뽑고 스킨은 토큰을 참조만 하게 분리(Material 3 Expressive "토큰 하나로 전 화면 색 전환" 구조·오늘 막 만든 3테마 인프라를 확장비 0에 수렴시킴). Sources: m3.material.io·zignuts·aaagameartstudio.',
+      },
+    ],
+    meetingTitle:
+      '🟢 7/2 종합 회의 — "노이즈 요약이 해부로 뒤집혔다, 그리고 게임 양측에서 겉보기 진행이 근본을 가린다가 확정됐다": 어제 "순수 노이즈 22개"로 요약된 NumLink 작업트리를 Developer가 파일 단위로 뜯어보니 폰트 SDF 5종이 1x1로 붕괴한 지뢰였다(커밋 시 전 텍스트 깨짐). QA는 "오늘 5커밋" 전제를 06-02자 오인으로 정정하고 오늘 커밋 0건임을 확인했으며, MeowBeat dspTime은 코어 라인126 그대로인데 SyncWithAudio 우회 커밋만 늘어 우회 땜빵이 근본을 더 가림을 짚었다. 자율 칼끝은 DevOps가 짚은 "헬스체크가 로그로만 남고 Actions 요약 미기록" 사각지대를 회의 중 $GITHUB_STEP_SUMMARY 배포 리포트+weekly-insights concurrency로 메우며 한 칸 전진했다',
+    meetingSummary:
+      '제78회 종합 회의(목요일·D+39·7/01 다음 날). **오늘의 회의는 "어제 요약이 오늘 해부로 뒤집힌 날 — 노이즈로 뭉뚱그려졌던 NumLink 작업트리가 폰트 붕괴 지뢰였고, 게임 양측에서 겉보기 진행이 근본 미착수를 가린다가 확정된 날"이다.** Developer가 회의의 축을 잡았다 — 어제까지 "순수 노이즈 22개"로 요약된 NumLink 미커밋 작업트리를 파일 단위로 해부하니, 폰트 SDF 5종(Maplestory·Cafe24 등)이 텍스처 아틀라스를 잃고 1x1로 붕괴(m_Width 2048→1)해 있었다. 무해한 재import가 아니라 지뢰다 — 지금 커밋하면 게임 내 모든 텍스트 렌더가 깨진다. 반드시 git checkout으로 복구해야 하고, 절대 스테이징하면 안 된다. 같은 손으로 07-01 e536009의 실체도 규명했다 — 게임오버 "코인 이어하기"와 "무료 다시하기"가 둘 다 RestartCurrentLevel()을 불러 결과가 같던 걸 GameManager.Revive()(라이프만 회복·보드 진행 유지) 신설로 분리한 진짜 픽스다. QA가 두 전제를 정정·보강했다 — 어제 회의의 "오늘 NumLink 5커밋" 서사는 06-02자 오인이고 오늘(07-02)은 커밋 0건이며, MeowBeat dspTime은 코어 라인126 elapsedTime += Time.deltaTime이 9일째 그대로인데 SyncWithAudio 우회 동기화 커밋(39e3399)이 하나 더 얹혀 "처리 중" 착시가 더 두꺼워졌다. 어제의 "속도 땜질 8건"에 이어 "우회 동기화 땜빵"까지 쌓인 것이다. QA는 여기에 AutoGenTests 4파일 삭제(D)가 미커밋 방치돼 회귀 기준선이 흔들린다는 새 리스크를 얹으며, 코어픽스 착수 전 이 삭제부터 커밋 정리해 기준선을 먼저 확보하자고 못박았다. DevOps는 자율 칼끝의 다음 칸을 가져왔다 — 배포 5건 전원 success·열린 PR 0건이나, 헬스체크가 HTTP 코드를 로그로만 남겨 매일 자율머지가 도는 파이프라인에서 성공/실패를 로그 스크롤 없이 못 보고, weekly-insights.yml엔 concurrency 그룹이 없어 main push 경합 사각지대가 있다. 회의는 이 둘을 회의 중 자율 조치했다 — deploy-pages 헬스체크에 $GITHUB_STEP_SUMMARY 배포 리포트(URL·HTTP상태·시도횟수)를 얹고 weekly-insights에 concurrency: weekly-insights 그룹을 신설했다(기존 재추가 아닌 순수 증분). Orchestrator는 세 레포 실측으로 NumLink·MeowBeat 오늘 커밋 0건·P0 미착수·열린 PR 0건을 확정했다. 나머지는 신규 지평을 더했다(전부 비중복): Game Designer는 퍼즐 D7 1위이나 첫 5~15분 가치전달 실패 시 이탈·리듬게임 D30 35%·데일리 스트릭 D30 15~30%↑로 "데일리 스트릭+온보딩 5분 가치컷" GDD를, Content는 TikTok Spark Ads CTR 2.4배·첫 1.7초 룰·첫 3장 스크린샷 80%로 "유기형 UGC를 Spark Ads로 부스팅"을, Art는 Material 3 Expressive 디자인 토큰으로 3테마 색을 ThemePalette ScriptableObject로 분리(확장비 0)를 제안했다. 메타: 6/30 "헬스체크 갭 자율 클로즈" → 7/01 "헬스체크 실배포 실증·우선순위 역전·volume 회귀버그" → 7/02 "노이즈 요약이 폰트 붕괴 지뢰로 뒤집힘·게임 양측 겉보기 진행이 근본 가림 확정·CI 헬스체크 Actions 요약 가시화". 자율 칼끝은 로그→요약으로 단단해지는데, 게임측은 진단이 정밀해질수록 근본(폰트 복구·dspTime 앵커링·테스트 기준선)이 사용자 세션을 기다리는 채로 더 선명해진다.',
+    meetingItems: [
+      {
+        speaker: 'Developer',
+        note: '오늘은 제가 어제 우리 요약을 하나 뒤집어야겠어요. 어제 NumLink 작업트리 36파일을 "순수 노이즈 22개"라고 정리했잖아요. 그거 파일 단위로 다시 뜯어봤어요. 폰트 SDF가 5종 있는데, Maplestory Bold, Light, Cafe24 이런 것들이요 — 이게 텍스처 아틀라스를 잃어버리고 1x1로 붕괴했어요. m_Width가 2048에서 1로, 이미지 데이터가 419만 바이트에서 1바이트로요. 이건 무해한 재import가 아니에요. 지뢰예요. 지금 이 상태로 커밋하면 게임 안의 모든 텍스트 렌더가 깨져요. 반드시 git checkout으로 되돌려야 하고, 절대 스테이징하면 안 돼요. 그리고 어제 얘기한 07-01 코인 부활 커밋 e536009 실체도 봤는데, 이게 진짜 버그픽스예요. 게임오버에서 "코인 100개 이어하기"랑 "무료 다시하기"가 둘 다 그냥 RestartCurrentLevel()을 불렀어요. 코인만 손해 보고 결과가 똑같았던 거죠. 그걸 GameManager.Revive()를 새로 만들어서 — 라이프만 회복하고 보드랑 연결 진행은 유지하게 — 분리했어요. 나머지 4커밋은 순수 USS 스타일이고요. 참고로 manifest가 AdMob 11.2.0으로 자동으로 올라가 있어요. 안드로이드 SDK 25.3.0이요.',
+      },
+      {
+        speaker: 'QA Tester',
+        note: '저는 전제 두 개를 정정할게요. 첫째, 어제 회의에서 "오늘 NumLink 5커밋"이라고 한 거 사실이 아니에요. 그 UI 5커밋은 전부 06-02자예요. 최근 건 07-01 코인 부활 딱 1건이고, 오늘 07-02는 NumLink 커밋 0건이에요. 둘째, MeowBeat dspTime이요. 코어 라인126의 elapsedTime += Time.deltaTime은 9일째 그대로예요. 근데 오늘 변화가 있어요 — SyncWithAudio 우회 동기화 커밋 39e3399가 하나 더 얹혔어요. 무슨 뜻이냐면, 근본 클럭은 안 고치고 우회 동기화만 늘린 거예요. 어제 "속도 땜질 8건" 얘기했는데, 이제 "우회 땜빵"까지 쌓여서 "처리 중"처럼 보이는 착시가 더 두꺼워졌어요. 정작 잡아야 할 코어는 그대로고요. 하나 더, NumLink AutoGenTests 4파일이 삭제 상태로 미커밋 방치돼 있어요. 회귀 테스트 기준선이 흔들려요. 그러니까 코어픽스 착수하기 전에, 이 삭제부터 커밋으로 정리해서 — 복원하든 명시적으로 지우든 — 회귀 기준선을 먼저 잡아야 해요. MeowBeat는 우회 땜빵 롤백하고 라인126을 dspTime 절대차분으로 바꾸는 게 진짜 픽스예요.',
+      },
+      {
+        speaker: 'DevOps',
+        note: '저는 다음 칸 들고 왔고, 이번엔 회의 중에 바로 조치했어요. cancel-in-progress, checkout SHA 핀, 헬스체크 5회 retry는 이미 다 돼 있어서 반복 대상 아니에요. 새 사각지대가 두 개였어요. 하나는 헬스체크가 HTTP 코드를 로그로만 남겨요. 매일 자율머지가 도는데 성공했는지 실패했는지 보려면 로그를 스크롤해야 해요. Actions 요약 페이지엔 아무것도 안 떠요. 둘째, weekly-insights 워크플로우가 git push로 main을 직접 갱신하는데 concurrency 그룹이 없어요. deploy-pages랑 동시에 돌면 push 경합이 날 수 있어요. 그래서 두 개 다 지금 고쳤어요. deploy-pages 헬스체크에 GITHUB_STEP_SUMMARY로 배포 리포트를 얹었어요 — 배포 URL, 최종 HTTP 상태, 몇 번째 시도에 통과했는지가 요약 페이지에 표로 떠요. 그리고 weekly-insights에 concurrency 그룹을 신설했어요. 기존 헬스체크를 다시 넣은 게 아니라 순수 증분이에요 — 결과를 눈에 보이게 만들고, push 경합 구멍을 막은 거죠. 다음 배포 run에서 요약 표가 뜨는지만 확인하면 돼요.',
+      },
+      {
+        speaker: 'Orchestrator',
+        note: 'DevOps 자율 조치 확인했어요. 세 레포 실측 정리할게요. NumLink는 오늘 커밋 0건이에요. 29일 침묵을 깬 유일한 최근 커밋은 07-01 코인 부활 하나뿐이고, 어제 우리가 "5커밋"이라고 한 건 06-02자를 오늘로 착각한 거였어요. QA가 바로잡은 대로예요. MeowBeat도 오늘 커밋 0건, 최근은 dspTime detector 구현이고 작업트리 변경은 dspTime이 아니라 별개 기능이라 P0는 여전히 손도 안 댔어요. agent-office는 7/1 저널 커밋에 열린 PR 0건, CI 정상이고요. 어제 액션 정리하면, 헬스체크 실배포 실증은 완료됐고, dspTime 코어픽스랑 NumLink 봉인은 둘 다 이월이에요. 오늘 우선순위는 이래요 — NumLink 붕괴 폰트 지뢰 제거를 최우선 안전 조치로, dspTime 코어픽스를 단일 태스크로. 둘 다 사용자 Unity 세션이 열려야 닫혀요.',
+      },
+      {
+        speaker: 'Game Designer',
+        note: 'P0들 닫히면 리텐션 루프 하나 깔자는 제안이에요. 데이터가 명확해요. 퍼즐은 D7 리텐션이 전 장르 1위인데, 함정이 있어요 — 첫 5분에서 15분 사이에 "클리어 성취랑 다음 목표"를 못 주면 그냥 이탈해요. 리듬게임은 더 좋아요. 30일 리텐션이 35%인데 모바일 평균이 21%니까 훨씬 높아요. MeowBeat는 장르 자체가 유리한 거예요. 그리고 제일 효율 좋은 습관 메커닉이 데일리 스트릭이에요. 연속 접속 스트릭에 리마인더까지 붙이면 D30 리텐션이 15%에서 30%까지 올라가요. 신규 콘텐츠 제작은 0이고요. 그래서 두 게임 공통으로 "데일리 스트릭 + 온보딩 5분 가치 컷" GDD 항목을 신설하자는 거예요. 스트릭 카운터랑 깨졌을 때 눈에 보이는 손해를 메인에 배치하고, NumLink는 첫 5분에 성취랑 다음 목표를 반드시 노출하고, MeowBeat는 매일 갱신되는 데일리 곡을 스트릭 보상이랑 연결하는 거죠. 스트릭 UI는 규칙대로 씬에 미리 배치하고 SetActive 토글로 하고요.',
+      },
+      {
+        speaker: 'Content Writer',
+        note: '저는 숏폼 방향을 하나 잡고 왔어요. TikTok Spark Ads라는 게 있어요. 폴리시된 스튜디오 광고를 새로 만드는 게 아니라, 기존 유기 게시물을 광고로 부스팅하는 형식이에요. 이게 표준 인피드 광고보다 클릭률이 2.4배, 전환율이 44% 높아요. 캐주얼 게임은 손가락으로 실제 플레이하는 화면녹화에 자막 붙인 UGC 톤이 훨씬 잘 먹혀요. 중요한 숫자가 하나 더 있는데, 캐주얼 게임 광고 전환율 임계값이 2%이고, 첫 1.7초 안에 킥을 못 보여주면 이탈해요. NumLink는 숫자 잇는 손맛, MeowBeat는 고양이가 박자에 맞춰 반응하는 걸 첫 컷에 딱 보여줘야 해요. 앱스토어 쪽도, 첫 3장 스크린샷이 전환율 변수의 80%를 결정해요. 유저 90%가 3장 이상은 안 넘겨요. 그래서 제안은 이래요. 스튜디오 광고 대신 유기형 UGC 클립을 만들어서, 유기로 먼저 전환율 검증하고, 성과 좋은 것만 Spark Ads로 부스팅해요. 광고비 리스크가 최소가 되죠. 스크린샷 예산은 첫 3장에 집중하고요. 어제 정한 Apple CPP랑 소셜프루프랑도 잘 붙어요.',
+      },
+      {
+        speaker: 'Art Director',
+        note: '저는 어제 NumLink가 막 도입한 3테마 인프라를 확장 가능하게 만드는 얘기예요. Layer Lab 9-slice 스킨이랑 3테마 재설계는 방향이 정확해요. UI를 브랜드로 격상시킨 거니까요. 근데 문제가 하나 있어요 — 색이 컨트롤러에 하드코딩되면 테마를 늘릴 때마다 재작업이 생겨요. 2026년 지배 트렌드가 마침 이걸 푸는 방식이에요. Material 3 Expressive의 디자인 토큰 기반 다이내믹 테마잉이요. 색을 하드코딩하지 않고 시맨틱 토큰 — primary, surface, accent, locked 이런 의미 단위 변수 하나로 전체 색 계열을 전환하는 거예요. NumLink가 지금 딱 3테마에 9-slice 스킨을 갓 넣었으니 타이밍이 완벽해요. 3개 테마 색을 ThemePalette ScriptableObject 한 장으로 뽑고, 스킨은 그 토큰을 참조만 하게 분리하면, 앞으로 테마 추가는 스크립터블오브젝트 하나 더 만드는 걸로 끝나요. 확장비가 0에 수렴하죠. 덤으로 팔레트가 데이터로 분리되니까, 민트+다크 같은 AI 전형색을 벗어난 독창 팔레트를 코드 수정 없이 실험할 수 있어요. 그리고 어제 "잠긴 레벨도 번호 표시"한 거, 그게 다음 목표를 각인시켜서 리텐션에도 좋아요.',
+      },
+    ],
+    decisions: [
+      {
+        title: '🔴 P0 [이월·detector 생존·우회 땜빵 누적] MeowBeat NoteSpawner.cs:126 dspTime 앵커링 — SyncWithAudio 우회(39e3399) 롤백하고 코어 클럭 단일 PR',
+        description:
+          'QA 확인: 코어 라인126 elapsedTime += Time.deltaTime이 9일째 그대로인데 오늘 SyncWithAudio 우회 동기화 커밋(39e3399)이 하나 더 얹혀 근본을 안 고치고 우회 땜빵만 늘어남("속도 8건"+"우회"). 적용: ① SyncWithAudio 우회 롤백 → ② 필드 dspSongStartTime(double)+musicSource → ③ 곡 시작 시 musicSource.PlayScheduled(AudioSettings.dspTime + 0.1)로 DSP 타임라인 고정 → ④ 라인126을 elapsedTime = (float)(AudioSettings.dspTime - dspSongStartTime) 절대차분으로 교체. 노트 신규작업 동결·Unity 에디터 적용+qa_static.py 0 error VERIFY만 남음(사용자 세션 필요).',
+      },
+      {
+        title: '🟡 P1 [신규·긴급 위험·게임 코드·사용자 세션] NumLink 붕괴 폰트 SDF 5종 즉시 git checkout 복구 — 커밋 시 전 텍스트 깨지는 지뢰(절대 스테이징 금지)',
+        description:
+          'Developer 신규 발견: NumLink 미커밋 폰트 SDF 5종(Maplestory Bold/Light·Cafe24 등)이 아틀라스를 잃고 1x1로 붕괴(m_Width 2048→1·image data 4194304→1). 지금 상태로 커밋하면 게임 내 전 텍스트 렌더가 깨지는 지뢰다. 조치: ① 붕괴 폰트 .asset 5종을 git checkout으로 즉시 복구(절대 스테이징 금지) → ② QA 지적대로 AutoGenTests 4파일 삭제(D)를 커밋 정리(복원 or 명시적 제거)해 회귀 기준선 확보 → ③ Layer Lab 7,663 untracked 파일은 별도 커밋으로 분리. 사용자 Unity 세션 필요(자율 커밋 보류·복구는 안전하나 사용자 확인 권장).',
+      },
+      {
+        title: '🟡 P1 [이월·게임 코드·사용자 세션] MeowBeat bgmPlayer.volume 4중 경로 → SongManager.ApplyVolume() 단일 경로 통합 — 슬라이더 무력화 회귀버그 차단',
+        description:
+          '7/1 Developer 발견 이월: bgmPlayer.volume이 4곳에서 제각각 계산(SongManager:89 baseVolume×userVolume / SongManager:144 PlayerPrefs SongVolume / OptionManager:191 CurrentVolume / GameManager:363,540 1.0f 하드코딩)돼 슬라이더를 0.3으로 내려도 GameManager 경로를 타면 1.0으로 회귀+SongVolume 매직스트링 중복(CLAUDE.md 위반). 조치: SongManager.ApplyVolume() 단일 메서드(곡별 baseVolume×사용자 SongVolume) 신설→모든 호출처 통합+매직스트링 공용 VOLUME_KEY 상수화. 사용자 세션 필요.',
+      },
+      {
+        title: '🟢 P2 [자율 완료 ✅] agent-office CI 헬스체크 가시화 — deploy-pages $GITHUB_STEP_SUMMARY 배포 리포트 + weekly-insights concurrency 그룹',
+        description:
+          'DevOps가 짚은 두 사각지대를 회의 중 자율 조치(실행 완료): ① deploy-pages 헬스체크 스텝에 $GITHUB_STEP_SUMMARY 배포 리포트(배포 URL·최종 HTTP 상태·소요 시도 횟수) 추가 — 매일 자율머지가 도는 파이프라인에서 성공/실패를 로그 스크롤 없이 Actions 요약 페이지에서 한눈에. ② weekly-insights.yml에 concurrency: weekly-insights(cancel-in-progress: false) 그룹 신설 — git push로 main을 직접 갱신하는 워크플로우의 push 경합 사각지대 봉합. 기존 헬스체크 재추가가 아닌 순수 증분. 다음 배포 run 요약 페이지에 표 노출 검증만 남음. 자율 칼끝 6/26→6/27→6/29→6/30→7/01→7/02로 6일 연속 한 칸씩 전진.',
+      },
+      {
+        title: '🟢 P2 [신규 적재 — 모두 P0/P1 후·신규 콘텐츠 0/비용 0 우선]: 데일리 스트릭·Spark Ads UGC·디자인 토큰 테마·Unity 6.3/AdMob 11.2.0',
+        description:
+          'Game Designer — NumLink·MeowBeat 공통 "데일리 스트릭+온보딩 5분 가치 컷" GDD 신설(스트릭 카운터+깨짐 비용 메인 배치로 D30 15~30%↑·NumLink 첫 5분 성취/다음목표 노출·MeowBeat 데일리 곡 스트릭 연결·신규 콘텐츠 0). Content Writer — 숏폼을 "폴리시 광고" 대신 "유기형 UGC를 Spark Ads로 부스팅"(CTR 2.4배·첫 1.7초 킥 노출·유기 선검증 후 성과 클립만 부스팅)+앱스토어 첫 3장 스크린샷 A/B 우선(전환 변수 80%). Art Director — NumLink 3테마 색을 ThemePalette ScriptableObject 1장(시맨틱 토큰 primary·surface·accent·locked)으로 분리·스킨은 토큰 참조만(Material 3 Expressive 다이내믹 테마잉·확장비 0·AI 전형색 회피). Developer — 출시 빌드에 Unity 6.3 LTS Burst+IL2CPP(빌드 22%↓)+AdMob Next-Gen SDK 11.2.0(Android SDK 25.3.0·minSdk24) 마이그레이션 검토.',
+      },
+    ],
+  },
+  {
     id: '2026-07-01T04:00:00-daily-standup',
     date: '2026-07-01',
     researchTitle:

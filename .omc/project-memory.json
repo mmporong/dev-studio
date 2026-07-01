@@ -42,7 +42,7 @@
     "runtime": null
   },
   "build": {
-    "buildCommand": "cd C:/Users/LIMMM/agent-office && npm run build 2>&1 | tail -25",
+    "buildCommand": "cd /c/Users/LIMMM/agent-office && npm run build 2>&1 | tail -20",
     "testCommand": null,
     "lintCommand": "npm run lint",
     "devCommand": "npm run dev",
@@ -170,8 +170,14 @@
   "hotPaths": [
     {
       "path": "src\\data\\operationsJournal.ts",
+      "accessCount": 52,
+      "lastAccessed": 1782673760565,
+      "type": "file"
+    },
+    {
+      "path": "src\\data\\agents.ts",
       "accessCount": 48,
-      "lastAccessed": 1780686861706,
+      "lastAccessed": 1782673949027,
       "type": "file"
     },
     {
@@ -184,12 +190,6 @@
       "path": "src\\pages\\HomePage.tsx",
       "accessCount": 33,
       "lastAccessed": 1774949893156,
-      "type": "file"
-    },
-    {
-      "path": "src\\data\\agents.ts",
-      "accessCount": 21,
-      "lastAccessed": 1780254666347,
       "type": "file"
     },
     {

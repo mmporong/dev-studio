@@ -63,10 +63,28 @@ jobs:
             code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 15 "$url" || echo "000")
             if [ "$code" = "200" ]; then
               echo "Site is live (HTTP 200) on attempt $i"
+              {
+                echo "### ✅ 배포 헬스체크 통과"
+                echo ""
+                echo "| 항목 | 값 |"
+                echo "| --- | --- |"
+                echo "| 배포 URL | $url |"
+                echo "| 최종 HTTP 상태 | $code |"
+                echo "| 소요 시도 | $i / 5 |"
+              } >> "$GITHUB_STEP_SUMMARY"
               exit 0
             fi
             echo "Attempt $i: HTTP $code - retrying in 15s (Pages propagation delay)"
             sleep 15
           done
           echo "Site did not return HTTP 200 after 5 attempts"
+          {
+            echo "### ❌ 배포 헬스체크 실패"
+            echo ""
+            echo "| 항목 | 값 |"
+            echo "| --- | --- |"
+            echo "| 배포 URL | $url |"
+            echo "| 최종 HTTP 상태 | $code |"
+            echo "| 소요 시도 | 5 / 5 (초과) |"
+          } >> "$GITHUB_STEP_SUMMARY"
           exit 1
