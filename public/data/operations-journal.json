@@ -1,5 +1,135 @@
 [
   {
+    "id": "2026-09-08T04:00:00-daily-standup",
+    "date": "2026-09-08",
+    "researchTitle": "🔴 진행이 저장되지 않는다 — NumLink는 클리어를 안 남기고, MeowBeat는 산 곡과 광고 제거를 씬 로드마다 잃는다(신규 26건, 그중 CRITICAL 3)",
+    "researchSummary": "제85회 리서치(화요일·나흘 연속 정시 개최). 7명 전원 보고. 어제 결정 11건 중 오늘 새로 이행된 건 PKM 동기화 복구 1건뿐이고(`origin/master...HEAD` = `0 0`, 04:09:35 fetch), 게임 코드는 69일/79일째 0줄이다. 대신 오늘은 「저장되지 않는 것」이 한꺼번에 나왔다. QA는 신규 26건(N16~N41)을 열었고 CRITICAL 3건이 전부 영속성이다 — NumLink `SaveSystem.cs:87` `clearedLevels[200]`에 쓰는 코드가 리포 전체에 0곳이라 재시작하면 별은 남고 레벨은 다시 잠기며(N16), MeowBeat는 매니페스트 로드 1회 실패로 구매 곡 소유권이 영구 삭제되고(N17), 광고 제거 IAP는 `AdFreeManager.Awake()`가 켠 값을 `AdmobManager.Start()`가 매 씬 덮어써 결제 유저에게 배너가 뜬다(N18). 같은 벽을 Game Designer와 QA가 양쪽에서 팠다 — 「마스터 티어(160-199)의 셀 수가 어려움과 같은 48이라 난이도 축이 소멸했다」는 증상과, 「8x8·8x9 보드 120개가 `levelIndexMap`에 sizeKey 자체가 없어 전량 사장됐다」는 원인(N22)이 같은 결함이다. Art Director는 그 위에 스프라이트 아틀라스가 양쪽 0개인데 패킹 모드만 켜져 있고(효과 0), 미참조 PNG가 NumLink 609개(83.5%)라는 걸 얹었다. Developer는 NumLink 에디터 테스트 414줄이 이동 실패로 워킹트리에서 사라진 것을, DevOps는 MeowBeat 커밋 3건이 79일째 이 PC 디스크에만 있다는 것을, Content Writer는 `productName`이 아직 `hefeedmee`라 지금 빌드하면 홈 화면에 구 브랜드가 뜬다는 것을 확인했다.",
+    "researchItems": [
+      {
+        "title": "어제 결정 11건 중 오늘 새로 이행된 건 PKM 동기화 1건 — 감시자 자신이 exit 1로 매일 빨간불",
+        "description": "이행 1: PKM `rev-list --left-right --count origin/master...HEAD` = `0 0`, `.git/FETCH_HEAD` 2026-09-08 04:09:35, `~/.claude/pkm-sync.log` 마지막 줄 「동기화 OK · 14초 · 스킬 63」. 다만 워킹트리는 여전히 55건(M 22 / ?? 33)이고 22건 전부 `05_AI_Config/skills/*`가 9/07 06:12:25 동일 타임스탬프 = 일괄 덮어쓰기 흔적. 미이행 10: `wevtutil gl` enabled:false · `StatusManager.cs:26` `< 0` 그대로 · targetSdk `:179`=34 / `:181`=35 · MeowBeat 4/23 .cs 4건 138일째 미커밋 · `IsPointerOverGameObject` 양 리포 0건 · `TimerUI.cs` 잔존 · FONT_LICENSES.md·STORE_LISTING.md 두 리포 0건. 신규: `AutomationHealthCheck` 자신의 LastTaskResult가 0x1 — `automation_healthcheck.py:338` `sys.exit(1 if errors else 0)`에 주간 작업 `PKM_StudyGenerate`(9/6 실패, 다음 발화 9/13)가 들어가 9/13까지 매일 exit 1. 감시자 고장과 구분 불가."
+      },
+      {
+        "title": "[QA·CRITICAL N16] NumLink 클리어 진행도가 세이브에 전혀 기록되지 않는다 — 별은 남고 레벨은 잠긴다",
+        "description": "`SaveSystem.cs:87` `public bool[] clearedLevels = new bool[200];`에 쓰는 코드가 리포 전체 0곳. 유일한 클리어 기록은 `LevelDataProvider.cs:104` 메모리 `List<bool>`이고 `:90`이 부팅마다 전부 false로 재생성, 복원 코드 없음. 결과: 재시작 시 `LevelSelectController.cs:261` `!cachedCleared[li-1]`로 0·40번 외 전 레벨 잠김, `:159`/`:168` 하드·마스터 탭 영구 잠금, `AchievementManager.cs:108-115` TotalClears 업적 영구 달성 불가. 대조군으로 `levelStars`는 `PuzzleManager.cs:364`에서 정상 저장 → 별은 그려져 있는데 잠겨 있는 화면이 재현 서명."
+      },
+      {
+        "title": "[QA·CRITICAL N17·N18] MeowBeat 구매 곡은 영구 삭제되고, 광고 제거는 씬 로드마다 무효화된다",
+        "description": "N17: `DatabaseManager.cs:64` 이관 루프는 `i < songs.Count`인데 `:85-87` 삭제 루프는 `LEGACY_SONG_MAP.Length`(4) 고정. `SongDataLoader.cs:40-43`이 실패 시 빈 리스트를 반환하고 `GameManager.cs:172`가 가드 없이 넘김 → 이관 0건인 채 `:81` 완료 플래그가 서고 `SongNumber0~3` 삭제, 플래그 때문에 재시도 불가. N18: `AdFreeManager.Awake():32` `admob.RemoveAds = true` → Unity는 모든 Awake 뒤 Start를 돌리므로 `AdmobManager.cs:27` `RemoveAds = false;`가 항상 덮어씀. 이후 비동기 `MobileAds.Initialize` 콜백의 `LoadBannerAd()`가 `:75 if (RemoveAds == false)`를 통과 → 결제 유저에게 배너. 복구용 `DatabaseManager.LoadRemoveAds():250`은 호출처 0건. 두 클래스 모두 2개 씬에 실제 배치 = live."
+      },
+      {
+        "title": "[QA·HIGH] 저장 계층 전반 — dataPath 세이브·PlayerPrefs 미플러시·코인만 차감",
+        "description": "N19 `DatabaseManager.cs:395,409,421,658,676` 세이브 경로가 `Application.dataPath`(안드로이드 읽기 전용) + try/catch 없음, 호출부는 `:757 OnApplicationPause`·`:766 OnApplicationQuit`. 같은 리포 `PhotoManager.cs:20`은 `persistentDataPath`를 써서 비대칭. N26 재화·구매 저장 11곳(`:292,312,341,462,498-499,532,564,568,710,738`) 전부 `PlayerPrefs.Save()` 미호출 → `:178` `HasKey(\"Coin\")==false`면 초기 코인 3,000 재지급이라 플러시 전 강제 종료 시 반복 획득. N27 `SongManager.cs:175-177` 차감·저장 먼저 → `:182` 조건 거짓이면 `:183 SaveOwnership` 스킵. N25 NumLink `ResourceManager.cs:27-34`가 먼저 `Save()`로 파일을 만들어 `SettingManager.cs:24` `!Exists()` 게이트가 닫힘 → 볼륨 마이그레이션 통째 스킵. N28 `saveVersion`(`SaveSystem.cs:113`)은 선언만, 마이그레이션 코드 0."
+      },
+      {
+        "title": "[Game Designer × QA 교차] 마스터 티어가 존재하지 않는다 — 증상은 셀 수 48 고정, 원인은 보드 120개 사장",
+        "description": "Game Designer(증상): `PreGeneratedBoardManager.cs:178-191` 레벨→보드 매핑이 100-129 6x8(48) → 130-159 7x7(49) → 160-199 6x8(48)로 후반 100레벨 난이도 축이 정지. 보상은 `GameConstants.cs:121-124`에서 10/20/30/50코인으로 5배 오름. 두 번째 축인 숨김 패턴 9종은 `PuzzleManager.cs:1298,1320` `Random.Range`라 레벨 인덱스를 전혀 참조 안 함 → 난이도가 곡선이 아니라 분산. QA(원인·N22): `Assets/StreamingAssets/BoardData.json` boards 720개 중 8x8·8x9 각 60개가 `levelIndexMap`에 sizeKey 자체가 없음(맵은 6종), `generate_master_boards.py:87-90`이 append만 하고 맵 미갱신·levelIndex 전부 0 → `BoardData.cs:163` 빈 리스트 → `PreGeneratedBoardManager.cs:354` null → 폴백 생성. N30: 루트 `BoardData.json`은 sizeKey 불일치 41·내용 중복 18·seed 중복 4종인 구세대 산출물(런타임은 StreamingAssets 720을 읽음) — Game Designer가 본 「고유 42개」는 이 구파일 수치."
+      },
+      {
+        "title": "[Game Designer] MeowBeat 무료 4곡은 난이도 버튼이 무효, 코인 획득은 곡 선택만으로 6.7배",
+        "description": "`StreamingAssets/Songs/manifest.json` 실측: soft_cat·paw_paw·escort·bumblebee 4곡 전부 normal과 hard의 노트 수가 1개도 다르지 않고(134/134, 195/195, 103/103, 282/282) BPM도 전부 95.7. 무료 구간 내부는 0.53~3.72nps로 7배 벌어지는데 유료 6곡은 1.93~2.21nps로 평탄 — 진행 곡선의 정반대. 코인: `ScoreManager.cs:38`이 노트별 점수를 필드값 1로 덮어쓰고 `:49` 콤보 배수가 상한 없는 `1+0.1n`, `DatabaseManager.cs:322-327`이 원점수=코인 → 풀콤보 escort 639 vs bumblebee 4,272(6.7배). `SongPrice=3000` 단일 상수라 bumblebee 1판=1곡, escort는 5판. `InitialCoin==SongPrice`라 첫 실행에 한 판도 안 치고 1곡 구매 가능. 게다가 `AddCoin()` 호출부는 `StatusManager.cs:50` 게임오버 분기 한 곳뿐 — 잘 클리어할수록 보상이 미뤄진다. 온보딩: 양 리포 `tutorial|onboard|ftue` grep 0건. 참조 Lily's Garden 실측 평균 시도 3.2회·상단 7회+(arXiv 2401.17436, DAU 100만·500레벨)."
+      },
+      {
+        "title": "[Developer] NumLink 에디터 테스트 414줄이 이동 실패로 워킹트리에서 소실, 보안 수정은 미커밋",
+        "description": "`Assets/Tests/Editor/AutoGenTests.cs`(414줄)+`.asmdef` 삭제됨, 목적지 `Assets/AutoQATests/`는 `.meta`만 있는 빈 디렉터리(gitignore 무관). 같은 이동이 MeowBeat에서는 성공(`Assets/AutoQATests/Editor/AutoGenTests.cs` 존재) → NumLink만 실패. HEAD에 남아 있어 `git checkout HEAD -- \"Assets/Tests/Editor/\"`로 복구 가능. 미커밋 `IAPManager.cs:82-87`은 `#else` → `#elif UNITY_EDITOR` 보안 수정(결제 미검증 유료 지급을 빌드에서 차단)인데 아직 커밋 안 됨. 신규 부채: D-1 `DragSnapper.cs:28` `StopCoroutine`이 매번 새 IEnumerator를 넘겨 no-op(빠른 드래그 시 SnapRect 중첩), D-2 `RewardAdPoints.cs:297-298` static 이벤트 구독이 코루틴 중단 시 `try/finally` 없이 영구 잔류, D-3 음량 3경로 불일치(`OptionManager.cs:188` / `SongManager.cs:89,144`)로 슬라이더를 만지면 bgm 0.5 밸런스 소멸(최대 2배 차). 계수: MeowBeat `GameObject.Find` 16→20, Debug.Log 129/166(에디터 가드 18/31), ServiceLocator 0%/8.0%, 최대 파일 `PuzzleManager.cs` 1,840줄."
+      },
+      {
+        "title": "[Developer] agent-office 설치본이 lockfile보다 낡아 취약 버전이 실제로 돌고 있다 — audit high 6→7",
+        "description": "`package.json` `react-router-dom ^7.18.0` / lock `7.18.0` / `node_modules` 7.17.0 — 선언 범위조차 불만족. `npm ci` 미실행 상태라 빌드·린트가 배포 대상과 다른 트리에서 돈다. lock의 7.18.0도 GHSA-qwww-vcr4-c8h2 취약 범위(7.12.0–7.18.1) 안. `npm audit`: moderate 1 / high 7(brace-expansion·browserslist·nanoid·postcss·undici·react-router·react-router-dom) / critical 0, 전부 `fixAvailable: true`. `npm outdated` 15건, 메이저 뒤처짐은 typescript 6.0.3→7.0.2. 빌드는 PASS(8,182ms, JS 341.79kB / gzip 113.55kB). 웹: Unity 신규 패치 없음(최신 6000.6.0f1 8/31·6000.3.23f1 8/26, 로컬 6000.3.5f2는 18패치 뒤처짐), Unity 신규 CVE 없음(최신은 2025-09 CVE-2025-59489), 16KB 요건은 Burst 1.8.27로 충족(≥1.8.21)이나 gradleTemplate에 `max-page-size` 흔적 0."
+      },
+      {
+        "title": "[DevOps] 배포는 바이트 일치로 깨끗한데, MeowBeat 커밋 3건이 79일째 이 PC 디스크에만 있다",
+        "description": "런 8건 전원 success(배포 39~45초). 라이브 `https://mmporong.github.io/dev-studio/data/operations-journal.json` 200 · 3,244,647B = `git cat-file -s HEAD:public/data/operations-journal.json` 동일, 첫 엔트리 id `2026-09-07T04:00:00-daily-standup` 확인. 워크플로 4개 active, rate limit 5000/5000, 리포 7,740KB, Actions 캐시 74.1MiB(10GB의 0.72%, public이라 과금 무관). 로컬이 origin/main보다 1커밋 뒤처짐(`88f546d` weekly insights) → 오늘 커밋 전 pull 완료. 위험: MeowBeat `feature/song-ownership-migration`이 `ahead 3`(`921e0cf` dspTime 회귀 탐지기 / `a7588c7` P0 노트 타이밍 버그 등록 / `a0d1a81` 검증툴 CWD 의존 제거), 원격 Feedme 마지막 push는 6/08 — 여유 81.9GB 단일 디스크가 유일 사본. StudyGenerate 3연속 실패는 전부 03시대(OAuth 만료 8/23 → 조직 구독 차단 8/30 → 세션 한도 9/6), 세션 리셋이 04:10이고 04시대 standup은 3일 연속 exit 0. 웹: GitHub 신규 changelog 없음, Actions 2026-01-01 요금 인하 시행(Linux -25%·Windows -38%)·self-hosted 과금은 연기·무료 티어 불변, GameCI는 무료 유지이나 `.ulf` 수동 발급 + iOS는 macOS 10배 가중으로 2,000분→실질 200분."
+      },
+      {
+        "title": "[Art Director × Content Writer] 아틀라스 0개·미참조 PNG 609개 위에, 앱 이름은 아직 hefeedmee다",
+        "description": "Art: `.spriteatlas` 양쪽 0개인데 `EditorSettings.asset:12` `m_SpritePackerMode`는 5(NumLink)·4(Feedme)로 켜져 있어 설정만 있고 패킹량 0. 씬 부하 `LobbyScene` Image 287·`Feedme/MainScene` Image 229 + `m_OverrideSorting:1` 캔버스 12개가 배치를 추가로 쪼갬. 미참조 PNG(GUID 전수 대조) NumLink 609/729(83.5%·12.25MB)·Feedme 123/189(65.1%·1.90MB) — 단 `Resources.Load` 문자열 로드(39회/2회)는 미검출이라 상한값. 내용 해시 중복 NumLink 171파일(`Hat.png`==`모자.png`)·Feedme 42. 폰트: Feedme 17.15MB 중 13.08MB(ACCsky 7.09·ACCfall 5.99)가 참조 0, NumLink 메이플스토리 SDF 2종도 참조 0, 실사용은 카페24 써라운드 1종(32.13MB). 색 정의가 `UIColorPalette.cs`(28상수)·`ThemeData.cs:24-40`·`ColorVariables.cs:37-51` 3중 공존(뒤 둘은 값 완전 동일), 11개 파일이 팔레트 우회. TMP 오토사이징 831개(63%). `Screen.safeArea`는 서드파티 1건, Feedme 0건. Content: MeowBeat `productName: hefeedmee` — 빌드하면 홈 화면 라벨이 구 브랜드. 아이콘은 NumLink가 `Ref/TuxedoIcon.psd`(레퍼런스 PSD), Feedme가 구 밥그릇 512px, 플랫폼 슬롯 37칸 전부 미지정, 피처그래픽 1024×500 양쪽 0건. Apple이 2025 중반부터 스크린샷 캡션을 OCR 색인 — NumLink 19장은 캡션 0·3월 구 UI, MeowBeat 0장. 인디크래프트 2026 출품은 4/30 마감(전시 9/11~12만 참관 가능)."
+      }
+    ],
+    "meetingTitle": "남지 않는 것들 — 클리어도, 산 곡도, 광고 제거도 재시작이면 사라진다",
+    "meetingSummary": "어제까지 회의가 판정한 건 「호출처가 0건이다」, 「있는데 죽어 있다」였다. 오늘 나온 건 한 겹 아래다 — 동작은 하는데 남지 않는다. NumLink는 레벨을 깨도 세이브에 안 적고(N16), MeowBeat는 산 곡을 매니페스트 한 번 실패로 지우고(N17) 결제한 광고 제거를 씬 로드마다 되돌린다(N18). Game Designer가 「마스터 티어의 셀 수가 어려움과 같다」고 짚은 자리를 QA가 「보드 120개가 인덱스 누락으로 통째 사장됐다」로 뒤집어 같은 결함의 증상과 원인이 맞물렸고, Game Designer가 근거로 삼은 루트 `BoardData.json`은 QA가 구세대 잔재(N30)로 확인해 수치 하나가 회의 자리에서 정정됐다. 결론은 우선순위 재배열이다 — 어제까지 P0였던 targetSdk·광고 봉인보다, 저장되지 않는 세 건이 앞선다. 저장이 안 되면 밸런스도 콘텐츠도 측정 자체가 불가능하기 때문이다. 자율 항목으로는 감시자의 거짓 빨간불(주간 작업 실패가 일간 판정을 오염)을 끊고, 사흘째 이월된 STORE_LISTING을 초안이 나온 김에 닫는다.",
+    "meetingItems": [
+      {
+        "speaker": "Orchestrator",
+        "note": "어제 11건 중 오늘 새로 움직인 건 PKM 하나다. `origin/master...HEAD` = `0 0`, 04:09:35 fetch, 로그 마지막 줄이 「동기화 OK · 14초」 — 어제 블로커 하나는 닫혔다. 다만 워킹트리 55건은 그대로고 22건이 9/07 06:12:25 동일 타임스탬프라 일괄 덮어쓰기 흔적이 남아 있다. 게임은 69일·79일째 0줄, 24h Assets 변경 0. 오늘 내가 새로 잡은 건 감시자 자신이다 — `AutomationHealthCheck`의 LastTaskResult가 0x1인데, 원인은 `automation_healthcheck.py:338`이 주간 작업 `PKM_StudyGenerate`의 9/6 실패를 errors에 넣고 있어서다. 다음 발화가 9/13이니 9/13까지 매일 빨간불이고, 그동안 감시자가 정말 고장 난 날과 구분이 안 된다. 우리는 이미 `job_research.bat` `exit /b %RC%` 누락으로 「9일 연속 실패가 0x0으로 보고」된 반대 방향 사고를 겪었다. 지금은 그 거울상이다."
+      },
+      {
+        "speaker": "QA Tester",
+        "note": "장부 25건 재판정에서 해결 2건이 나왔다 — N8 IAP 무가드 폴백은 `IAPManager.cs:85-88`이 `#elif UNITY_EDITOR`로 바뀌었고, N10 곡 종료 조건은 `NoteSpawner.cs:156-166 CheckStageClear`가 생기면서 미스 노트로 무한 대기하던 구멍까지 막혔다. 나머지 14건은 유효. 그리고 신규 26건을 열었는데 CRITICAL 3건이 전부 영속성이다. N16이 제일 무겁다 — `SaveSystem.cs:87` `clearedLevels[200]`에 쓰는 코드가 0곳이라, 유저가 40레벨을 깨고 앱을 껐다 켜면 별은 그려져 있는데 레벨은 다시 잠긴다. 하드·마스터 탭은 영구 잠금이고 TotalClears 업적은 달성 자체가 불가능하다. N17은 매니페스트 로드가 한 번 실패하면 완료 플래그가 서면서 구매 곡이 지워지고 재시도도 막히는 구조, N18은 Awake가 켠 광고 제거를 Start가 매 씬 덮어쓰는 순서 문제다. 셋 다 「테스트가 있었으면 첫날 잡혔을 것」인데, 양 리포 실행 가능 테스트는 0개다. MeowBeat의 `[Test]` 12개는 컴파일은 되지만 테스트 `.asmdef`도 `testables`도 없어서 Test Runner가 수집하지 않는다."
+      },
+      {
+        "speaker": "Game Designer",
+        "note": "먼저 정정한다. 내가 「고유 보드 42개」로 계산한 건 루트 `BoardData.json`인데, QA가 N30에서 그게 런타임이 읽지 않는 구세대 잔재라고 확인했다. 실 런타임은 StreamingAssets 720개를 읽는다. 다만 코드 기반 결론은 그대로 선다 — `PreGeneratedBoardManager.cs:178-191`의 후반 100레벨이 48→49→48이고, 보상만 `GameConstants.cs:121-124`에서 10/20/30/50으로 5배 오른다. 왜 그런지를 QA가 채워줬다: 8x8·8x9 보드 120개가 `levelIndexMap`에 sizeKey가 없어 전량 폴백으로 빠진다. 즉 마스터 티어는 설계가 없는 게 아니라 만들어놓고 배선이 끊긴 것이다. 두 번째 축인 숨김 패턴 9종도 `PuzzleManager.cs:1320` `Random.Range`라 레벨과 무관하다 — 난이도가 곡선이 아니라 분산이다. MeowBeat는 더 단순하다. 무료 4곡의 normal과 hard 노트 수가 하나도 다르지 않고, BPM도 전부 95.7이다. 신규 유저가 만지는 유일한 콘텐츠에서 난이도 버튼이 no-op다. 코인은 곡 선택만으로 639 대 4,272, 6.7배 차이가 나고 그마저 `StatusManager.cs:50` 게임오버 분기에서만 지급된다 — 잘할수록 늦게 받는다."
+      },
+      {
+        "speaker": "Developer",
+        "note": "NumLink 에디터 테스트 414줄이 워킹트리에서 사라졌다. `Assets/Tests/Editor/`가 삭제됐는데 목적지 `Assets/AutoQATests/`는 `.meta`만 있는 빈 폴더다 — 같은 이동이 MeowBeat에선 성공했으니 NumLink만 중간에 끊긴 것이다. HEAD에 남아 있어 복구는 한 줄이지만, 사용자 워킹트리라 내가 되돌리지 않는다. 같은 워킹트리에 `IAPManager.cs`의 `#else` → `#elif UNITY_EDITOR` 보안 수정이 커밋 안 된 채 있다는 것도 함께 봐야 한다. 새 부채로는 `DragSnapper.cs:28`이 있다 — `StopCoroutine`에 매번 새 IEnumerator를 넘겨서 아무것도 멈추지 않는다. 반대로 예전에 의심했던 것 중 음성으로 확인된 것도 많다: `async void` 0건, 빈 catch 0건, `Update()` 안 GetComponent 0건, 이벤트 `+=`/`-=` 균형 정상. agent-office 쪽은 문제가 하나 있다 — `node_modules`가 lockfile보다 낡아서 취약한 `react-router 7.17.0`이 실제로 돌고 있고, 선언 범위(`^7.18.0`)조차 만족하지 않는다. audit high가 6에서 7로 늘었고 전부 비파괴 수정 가능이다. Unity는 신규 패치도 CVE도 없다."
+      },
+      {
+        "speaker": "DevOps",
+        "note": "파이프라인은 오늘도 깨끗하다. 런 8건 전원 success, 어제 커밋의 라이브 저널이 3,244,647바이트로 로컬 blob과 정확히 일치하고 첫 엔트리 id도 9/7이다. 로컬이 weekly insights 커밋만큼 뒤처져 있어서 pull은 먼저 끝냈다. 오늘 내가 가장 걱정하는 건 CI가 아니라 백업이다 — MeowBeat의 `feature/song-ownership-migration`이 79일째 `ahead 3`이고, 그 안에 dspTime 회귀 탐지기와 P0 버그 등록, 검증툴 경로 수정이 들어 있다. 원격 Feedme 마지막 push는 6/08이라, 지금 이 세 커밋은 여유 81.9GB짜리 디스크 한 장에만 존재한다. 미커밋 변경은 손대지 않고 이미 커밋된 3건만 올리면 되돌릴 위험이 없다. StudyGenerate 3연속 실패는 이유가 매번 다르지만(OAuth 만료 → 조직 구독 차단 → 세션 한도) 실행 시각이 전부 03시대라는 공통점이 있다 — 세션 리셋이 04:10이고 04시대 standup은 3일 연속 성공이다. 인과 확정은 9/13 재현으로 미룬다. Unity CI(GameCI)는 무료지만 `.ulf` 수동 발급이 남고 iOS가 macOS 10배 가중이라 오늘 결정 대상에서 뺀다."
+      },
+      {
+        "speaker": "Art Director",
+        "note": "스프라이트 아틀라스가 양쪽 다 0개다. 그런데 `EditorSettings.asset:12` 패킹 모드는 NumLink 5, Feedme 4로 켜져 있다 — 설정은 켜져 있는데 패킹할 대상이 없으니 효과가 정확히 0이다. 그 상태로 `LobbyScene`에 Image가 287개, Feedme `MainScene`에 229개가 있고, Feedme는 `m_OverrideSorting:1` 캔버스 12개가 배치를 한 번 더 쪼갠다. 먼저 정리부터 해야 한다 — GUID 전수 대조로 미참조 PNG가 NumLink 609개(83.5%, 12.25MB), Feedme 123개다. 단 `Resources.Load` 문자열 경로는 GUID로 안 잡히니 이건 상한값이고, 삭제 전에 그 경로를 제외해야 한다. 폰트는 라이선스보다 앞에 볼 게 생겼다 — Feedme 17.15MB 중 13.08MB(ACCsky·ACCfall)가 어디에서도 참조되지 않는 채 빌드에 들어간다. NumLink 메이플스토리 SDF도 참조 0이다. 색은 팔레트를 만들어놓고 `ThemeData`와 `ColorVariables`가 같은 값을 두 번 더 정의하고, 11개 파일이 팔레트를 우회한다. 다크모드는 조사 결과 OS 강제가 아니다 — Force Dark는 View 대상이고 Unity SurfaceView는 비해당이라, 하려면 우리가 만드는 기능이다."
+      },
+      {
+        "speaker": "Content Writer",
+        "note": "빌드 전에 잡아야 할 게 하나 있다. MeowBeat `ProjectSettings.asset`의 `productName`이 아직 `hefeedmee`다. 패키지명은 `com.mmporong.meowbeat`으로 바뀌었는데 표시명이 안 따라와서, 지금 빌드해 올리면 스토어에는 MeowBeat인데 설치 후 아이콘 밑에는 hefeedmee가 뜬다. 아이콘도 준비가 안 됐다 — NumLink 기본 아이콘이 배경 레퍼런스 폴더의 PSD 원본이고, Feedme는 구 밥그릇 512px이며, 플랫폼별 슬롯 37칸이 양쪽 다 비어 있다. 피처그래픽 1024×500은 둘 다 없다. 리서치에서 하나 새로 확인한 건 Apple이 2025년 중반부터 스크린샷 위 캡션을 OCR로 색인한다는 점이다. 우리 NumLink 19장은 캡션이 0장이고 그마저 3월 캡처라 현재 `feature/ugui-layerlab` UI와 다를 가능성이 높다. MeowBeat는 스크린샷 자체가 0장이다. 문구는 오늘 만들어 왔다 — 두 게임의 앱 이름 3안, 간단설명 2안, 본문 첫 3문장까지. MeowBeat 곡 수는 목표 20 대비 현재 5라 숫자를 뺐고, BGM이 AI 생성이라 음악 관련 주장도 뺐다. 인디크래프트는 올해 출품이 4/30에 끝나서 참가 불가고, 9/11~12 전시 참관만 가능하다."
+      },
+      {
+        "speaker": "종합",
+        "note": "오늘 우선순위를 바꾼다. 어제까지 P0였던 targetSdk 전환과 광고 봉인은 「제출 가능하게 만드는 일」인데, 오늘 나온 세 건은 「제출해도 되는 물건인가」를 가른다. 클리어가 저장되지 않으면(N16) 레벨 디자인·난이도 밴드·리텐션 측정이 전부 무의미하고, 산 곡이 지워지고(N17) 결제한 광고 제거가 풀리면(N18) 환불·평점 사고다. 그래서 오늘 P0는 저장 3건이고, 그 다음이 어제 순서 ⑤→③→N11→④다. 회의에서 수치 하나가 정정됐다 — 「NumLink 고유 보드 42개」는 런타임이 읽지 않는 구파일 기준이라 폐기하고, 대신 「마스터 보드 120개가 인덱스 누락으로 사장」(N22)을 정본으로 삼는다. 자율로는 두 가지를 오늘 안에 닫는다: 감시자 종료코드 분리(주간 작업 실패를 일간 판정에서 분리)와 사흘째 이월된 STORE_LISTING 신설. 백업(MeowBeat 3커밋 push)과 테스트 복구는 사용자 판단 항목으로 남긴다 — 둘 다 사용자 워킹트리·원격에 손대는 일이다."
+      }
+    ],
+    "decisions": [
+      {
+        "title": "[P0·재배열·사용자 세션] 「저장되지 않는 3건」을 targetSdk·광고보다 앞에 둔다 — N16 → N17 → N18",
+        "description": "① N16 NumLink: `PuzzleManager.cs:364`가 `levelStars`를 저장하는 자리에서 `SaveSystem.clearedLevels[idx] = true`도 함께 쓰고, `LevelDataProvider.cs:90` 초기화 뒤 세이브에서 복원하는 3줄. ② N17 MeowBeat: `GameManager.cs:172` 앞에 `songs.Count == 0`이면 이관·삭제·완료플래그 전부 스킵하는 가드 1줄 + `DatabaseManager.cs:85-87` 삭제 루프를 실제 이관 건수 기준으로 변경. ③ N18: `AdmobManager.cs:27`의 `RemoveAds = false;`를 제거하고 `Start()`에서 `DatabaseManager.LoadRemoveAds()`(현재 호출처 0건)를 호출해 저장값을 진실의 소스로. 근거: 저장이 안 되면 밸런스·리텐션·콘텐츠 측정이 전부 불가능하고, ②③은 환불·평점 사고 경로다."
+      },
+      {
+        "title": "[P0·자율·오늘 실행] 감시자 종료코드 분리 — 주간 작업 실패가 일간 판정을 오염시키는 구조 차단",
+        "description": "`C:/Users/LIMMM/automation_healthcheck.py:338` `sys.exit(1 if errors else 0)`을 고쳐, NextRunTime이 아직 지나지 않은 비(非)일간 작업(PKM_StudyGenerate 등)의 과거 실패는 errors가 아니라 WARN으로 강등하고, 감시자 exit code는 「일간 작업 실패 + 감시자 자체 오류」에만 1을 반환하게 분리한다. 현재 `AutomationHealthCheck` LastTaskResult=0x1이 9/13까지 유지되어 진짜 고장과 구분 불가. 되돌리기는 해당 커밋 revert."
+      },
+      {
+        "title": "[P0·블로커 유지·사용자 1줄] 스케줄러 Operational 로그 — 관리자 권한 필요, 이틀째 미해결",
+        "description": "어제 메인이 직접 시도했으나 `Access is denied`(exit 5). 오늘도 `wevtutil gl` 결과 `enabled: false`. 사용자가 관리자 PowerShell에서 `wevtutil sl Microsoft-Windows-TaskScheduler/Operational /e:true` 1줄 실행 필요. 이게 켜지기 전까지 JobResearch·StudyGenerate의 결과코드 1의 원인 이벤트를 추적할 수 없다. 되돌리기는 `/e:false`."
+      },
+      {
+        "title": "[P0·사용자 판단·백업] MeowBeat 미push 커밋 3건을 원격에 올린다",
+        "description": "`C:/Unity/Feedme`가 `feature/song-ownership-migration`에서 79일째 `ahead 3`(`921e0cf` dspTime 회귀 탐지기 / `a7588c7` P0 노트 타이밍 버그 등록 / `a0d1a81` 검증툴 CWD 의존 제거). 원격 Feedme 마지막 push는 2026-06-08 — 이 PC 디스크 한 장이 유일 사본이다. 미커밋 워킹트리 38건은 손대지 않고 이미 커밋된 3건만 `git push origin feature/song-ownership-migration`. 원격 push라 자율 실행하지 않고 사용자 승인 항목으로 둔다."
+      },
+      {
+        "title": "[P0·사용자 판단·복구] NumLink 에디터 테스트 414줄 복구 + 테스트 어셈블리 1개 신설",
+        "description": "`Assets/Tests/Editor/AutoGenTests.cs`+`.asmdef`가 삭제됐고 목적지 `Assets/AutoQATests/`는 빈 폴더다. HEAD에 남아 있어 `git -C C:/Unity/NumLink checkout HEAD -- \"Assets/Tests/Editor/\"`로 복구되지만 사용자 워킹트리라 자율 실행하지 않는다. 복구와 함께 테스트 `.asmdef` 1개를 만들고 `Packages/manifest.json`에 `testables`를 추가해야 Test Runner가 수집한다 — 현재 양 리포 실행 가능 테스트 0개이고, MeowBeat의 `[Test]` 12개도 수집되지 않는다. 첫 테스트는 N16 회귀 방지용 세이브 왕복(클리어 기록 → 저장 → 로드 → 유지 확인)."
+      },
+      {
+        "title": "[P0·묶음 유지·재결정 금지] ⑤ MeowBeat 미커밋 승계 → ③ targetSdk 36 → N11 → ④ 광고 봉인",
+        "description": "순서는 유지하되 ⑤의 내용물을 갱신한다: 4/23 .cs 4건(138일째 미커밋) + `purchasing` 5.4.0→5.4.3 + MeowBeat `AutoQATests` 12개. 여기에 NumLink `IAPManager.cs`의 `#else` → `#elif UNITY_EDITOR` 보안 수정을 추가한다 — 결제 미검증 유료 지급을 빌드에서 차단하는 변경인데 미커밋 상태로 방치돼 있다. targetSdk는 `:179`=34 / `:181`=35 그대로."
+      },
+      {
+        "title": "[P1·설계·GDD] 마스터 티어를 살린다 — 「고유 42개」 수치 폐기, N22 인덱스 누락을 정본으로",
+        "description": "회의 정정: Game Designer가 쓴 루트 `BoardData.json` 기준 「고유 보드 42개」는 런타임이 읽지 않는 구세대 잔재(N30: sizeKey 불일치 41·중복 18·seed 중복 4종)라 폐기한다. 정본은 N22 — `StreamingAssets/BoardData.json`의 8x8·8x9 보드 120개가 `levelIndexMap`에 sizeKey가 없어 전량 폴백으로 빠지고, 그 결과 마스터(160-199)가 어려움과 같은 6x8이 된다. 조치: `generate_master_boards.py:87-90`이 맵을 갱신하도록 고치고 levelIndex를 채운 뒤 재생성. 함께 `PuzzleManager.cs:1320` `GetRandomPatternType()`을 레벨 인덱스 기반 결정적 선택으로 바꿔 숨김 패턴을 난이도 축에 편입하고, 난이도 목표를 「평균 시도 횟수」로 정의해 초반 1.0~1.5회 / Hard 3회 / Master 5~7회 밴드를 DESIGN.md에 명시한다(Lily's Garden 실측 평균 3.2회·상단 7회+ 참조)."
+      },
+      {
+        "title": "[P1·설계·GDD] MeowBeat 무료 4곡 hard 차트 재생성 + 코인 지급 시점 이전",
+        "description": "무료 4곡(soft_cat·paw_paw·escort·bumblebee)의 normal/hard 차트가 바이트 단위로 동일해 난이도 버튼이 no-op다(N41). hard 차트를 별도 생성하거나, 그때까지 무료곡에서 난이도 UI를 숨긴다. 동시에 `StatusManager.cs:50` 게임오버 분기에만 있는 `AddCoin()`을 `GameManager.StageClear()`(`:509`)에도 연결해 「잘할수록 늦게 받는」 구조를 끊는다. 코인 편차 6.7배(639~4,272)와 `InitialCoin == SongPrice`(첫 실행 즉시 1곡 구매 가능)는 힌트 경제 문서와 같은 문서에서 함께 정한다."
+      },
+      {
+        "title": "[P1·자율 가능·배포 후] agent-office npm ci + react-router 계열 취약점 해소",
+        "description": "`node_modules`의 react-router-dom이 7.17.0으로 lockfile(7.18.0)보다 낡아 선언 범위 `^7.18.0`조차 불만족 — 빌드·린트가 배포 대상과 다른 트리에서 돈다. `npm ci`로 설치본을 lock에 맞추고, react-router-dom을 7.18.3(GHSA-qwww-vcr4-c8h2 범위 밖)으로 올린 뒤 `npm run build` 재측정으로 회귀 확인(기준선 8,182ms / JS 341.79kB · gzip 113.55kB). audit high 7건 전부 `fixAvailable: true`. 오늘 회의 배포가 끝난 뒤 별도 커밋으로 진행한다."
+      },
+      {
+        "title": "[P2·자율·오늘 실행] docs/STORE_LISTING.md 두 리포 신설 — 사흘째 이월 종료",
+        "description": "Content Writer가 오늘 초안을 완성했다(앱 이름 3안·간단설명 2안·본문 첫 3문장, 두 게임분). 파일만 생성하고 커밋은 사용자 세션에 맡긴다(양 리포 미커밋 45/38건과 섞이지 않게). 함께 적을 것: MeowBeat `productName: hefeedmee` → `MeowBeat` 교체 필요, 아이콘 플랫폼 슬롯 37칸 미지정, 피처그래픽 1024×500 양쪽 0건, 스크린샷 캡션 OCR 색인 대응(NumLink 19장 캡션 0·3월 구 UI / MeowBeat 0장)."
+      },
+      {
+        "title": "[P2·이월·재결정 없음] 에셋·부채 장부",
+        "description": "스프라이트 아틀라스 씬당 1개 신설(선행: 미참조 PNG 정리 — NumLink 609개 12.25MB·Feedme 123개, `Resources.Load` 경로 39/2회는 삭제 후보에서 제외) · Feedme 미참조 폰트 13.08MB(ACCsky·ACCfall) 제거 · 폰트 라이선스 문서 0건(카페24·메이플스토리·ACC 3종) · 색 3중 정의 통합(`UIColorPalette` ↔ `ThemeData` ↔ `ColorVariables`) · 48dp 미달 버튼 12건 · D-1 `DragSnapper.cs:28` StopCoroutine no-op · D-2 static 광고 이벤트 잔류 · D-3 음량 3경로 · N19 dataPath 세이브 · N26 PlayerPrefs.Save 미호출 11곳 · N23 노트 59개 오디오 종료 후 배치 · N24/N33 배속 시 차트-오디오 이탈 · N32 foodType 3,605노트 누락 · 브랜치 보호 404 · #124/#129 · 아이콘(10회째). 장부 총계: 미해결 39건(기존 25 − 해결 2 + 신규 26 − N22/N30 통합 2)."
+      }
+    ]
+  },
+  {
     "id": "2026-09-07T04:00:00-daily-standup",
     "date": "2026-09-07",
     "researchTitle": "🔴 어제 결정 11건 중 파일이 움직인 건 자율 1건(헬스체크 SUMMARY 라인)뿐이고, 자율로 잡았던 스케줄러 이력 로그조차 enabled:false 그대로다 — 그 사이 PKM 동기화가 미추적 job-search 8파일과 origin 커밋 충돌로 04:32에 멈췄고(behind 3), 오늘 일곱 명은 「있는데 죽어 있는 것」을 팠다: NumLink 타이머 UI는 감소 코드가 없는 죽은 표시(N12), 일시정지 버튼은 설정창만 열고 timeScale·입력을 안 막으며(N13), MeowBeat 팜 씬은 한 탭에 스크립트 3개가 동시에 반응하고(N14), 버튼 12/83이 48dp 미달, 폰트 14개 24MB에 라이선스 파일 0건, AutoGenTests 12개는 미추적(??)으로 디스크에만 있다. 코드 정지 68일/78일.",
