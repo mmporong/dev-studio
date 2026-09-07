@@ -1,6 +1,31 @@
 {
-  "lastUpdated": "2026-08-31T02:22:15.284Z",
+  "lastUpdated": "2026-09-07T01:54:36.440Z",
   "weeks": [
+    {
+      "weekOf": "2026-W36",
+      "articles": [
+        {
+          "id": "f845757f249b60b5",
+          "title": "Kafka Streams를 k8s로 옮기며 얻은 스케일링 설계: 비용 80% 절감까지",
+          "url": "https://tech.devsisters.com/posts/kafka-streams-keda-scaling",
+          "company": "데브시스터즈 DEVTECH",
+          "category": "game",
+          "summary": "Kafka Streams를 k8s로 옮기며 얻은 스케일링 설계: 비용 80% 절감까지",
+          "publishedAt": "2026-09-03T00:00:00.000Z",
+          "collectedAt": "2026-09-07T01:54:36.440Z"
+        },
+        {
+          "id": "00b4548e8f723aa7",
+          "title": "AI가 만든 코드가 어드민이 되기까지",
+          "url": "https://toss.tech/article/52885",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "AI가 만든 코드가 어드민이 되기까지",
+          "publishedAt": "2026-09-04T08:47:00.000Z",
+          "collectedAt": "2026-09-07T01:54:36.440Z"
+        }
+      ]
+    },
     {
       "weekOf": "2026-W35",
       "articles": [
@@ -43,6 +68,26 @@
           "summary": "양자 시대를 대비하는 개발자의 암호학 가이드(PQC-ML-KEM)",
           "publishedAt": "2026-08-24T03:54:26.000Z",
           "collectedAt": "2026-08-31T02:22:15.284Z"
+        },
+        {
+          "id": "329005cb143d52b8",
+          "title": "곧, if(kakao)26의 이야기가 시작됩니다.",
+          "url": "https://tech.kakao.com/posts/832",
+          "company": "카카오테크",
+          "category": "general",
+          "summary": "곧, if(kakao)26의 이야기가 시작됩니다.",
+          "publishedAt": "2026-08-30T15:00:00.000Z",
+          "collectedAt": "2026-09-07T01:54:36.440Z"
+        },
+        {
+          "id": "a55bd21a46034827",
+          "title": "같은 장애를 두 번 겪지 않기 위해, 배포 전에 리뷰합니다 — KRIS 개발기",
+          "url": "https://tech.kakao.com/posts/831",
+          "company": "카카오테크",
+          "category": "general",
+          "summary": "같은 장애를 두 번 겪지 않기 위해, 배포 전에 리뷰합니다 — KRIS 개발기",
+          "publishedAt": "2026-08-30T15:00:00.000Z",
+          "collectedAt": "2026-09-07T01:54:36.440Z"
         }
       ]
     },
@@ -623,71 +668,6 @@
           "summary": "2,800만 MAU를 이해하는 유저 Segmentation, TUES",
           "publishedAt": "2026-06-16T01:00:00.000Z",
           "collectedAt": "2026-06-22T00:34:14.861Z"
-        }
-      ]
-    },
-    {
-      "weekOf": "2026-W24",
-      "articles": [
-        {
-          "id": "d5b2fa86bb33f81f",
-          "title": "Skill 품질 관리를 위한 Rubric 설계와 시스템 구현",
-          "url": "https://toss.tech/article/skill-quality-rubric",
-          "company": "토스 테크",
-          "category": "general",
-          "summary": "Skill 품질 관리를 위한 Rubric 설계와 시스템 구현",
-          "publishedAt": "2026-06-08T01:00:00.000Z",
-          "collectedAt": "2026-06-08T02:41:48.819Z"
-        },
-        {
-          "id": "653b11f219ad7340",
-          "title": "에이전틱 AI 생태계의 주인공들, MCP Player 10 성료와 Next!",
-          "url": "https://tech.kakao.com/posts/818",
-          "company": "카카오테크",
-          "category": "general",
-          "summary": "에이전틱 AI 생태계의 주인공들, MCP Player 10 성료와 Next!",
-          "publishedAt": "2026-06-08T15:00:00.000Z",
-          "collectedAt": "2026-06-15T00:35:36.547Z"
-        },
-        {
-          "id": "51ac121a657518fb",
-          "title": "빠르게 움직이는 조직에서, TAM은 어떻게 문제를 해결할까?",
-          "url": "https://toss.tech/article/tam-connect-2025",
-          "company": "토스 테크",
-          "category": "general",
-          "summary": "빠르게 움직이는 조직에서, TAM은 어떻게 문제를 해결할까?",
-          "publishedAt": "2026-06-09T07:24:00.000Z",
-          "collectedAt": "2026-06-15T00:35:36.547Z"
-        },
-        {
-          "id": "61df834c4c3deaa8",
-          "title": "얼굴 인식의 역사와 페이스페이의 미래",
-          "url": "https://toss.tech/article/history-of-face-recognition-facepay",
-          "company": "토스 테크",
-          "category": "general",
-          "summary": "얼굴 인식의 역사와 페이스페이의 미래",
-          "publishedAt": "2026-06-09T05:22:00.000Z",
-          "collectedAt": "2026-06-15T00:35:36.547Z"
-        },
-        {
-          "id": "a99eb085cb0f4065",
-          "title": "디자인시스템 팀은 디자인시스템만 잘 만들면 될까",
-          "url": "https://medium.com/daangn/%EB%94%94%EC%9E%90%EC%9D%B8%EC%8B%9C%EC%8A%A4%ED%85%9C-%ED%8C%80%EC%9D%80-%EB%94%94%EC%9E%90%EC%9D%B8%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%A7%8C-%EC%9E%98-%EB%A7%8C%EB%93%A4%EB%A9%B4-%EB%90%A0%EA%B9%8C-4f6f2478a8db?source=rss----4505f82a2dbd---4",
-          "company": "당근 테크",
-          "category": "general",
-          "summary": "디자인시스템 팀은 디자인시스템만 잘 만들면 될까",
-          "publishedAt": "2026-06-11T09:32:10.000Z",
-          "collectedAt": "2026-06-15T00:35:36.547Z"
-        },
-        {
-          "id": "2888e9134eb20320",
-          "title": "운영하지 않는 Kafka, EasyQueue를 소개합니다",
-          "url": "https://meetup.nhncloud.com/posts/415",
-          "company": "NHN Cloud Meetup",
-          "category": "infra",
-          "summary": "운영하지 않는 Kafka, EasyQueue를 소개합니다",
-          "publishedAt": "2026-06-11T01:46:39.000Z",
-          "collectedAt": "2026-06-15T00:35:36.547Z"
         }
       ]
     }
