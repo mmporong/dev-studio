@@ -404,8 +404,18 @@
       align-items: start;
     }
 
+    /* DESIGN.md 8절: 오피스 맵은 최소 800px 고정 캔버스, 모바일은 스크롤 허용.
+       800px 미만에서는 %앵커로 배치된 존이 잘려 사라지므로(360px에서 3/7 소실)
+       캔버스 폭을 고정하고 부모가 가로 스크롤을 담당한다. */
+    .office-map {
+      padding: var(--space-md);
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+    }
+
     .office-room {
       min-height: 400px;
+      min-width: 800px;
     }
   }
 }

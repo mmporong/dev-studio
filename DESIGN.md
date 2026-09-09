@@ -152,7 +152,7 @@ hover      shadow: none     (그림자 대신 border-color 변경)
 ## 8. Responsive Behavior
 
 - 오피스 맵: 최소 800px 고정 캔버스, 모바일은 스크롤 허용
-- 사이드바 패널: 320px 고정, 모바일 오버레이
+- 사이드바 패널: `minmax(340px, 0.95fr)`, 모바일 오버레이
 - 상태 카드 그리드: 2열 → 1열 (≤ 640px)
 
 ---
