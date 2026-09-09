@@ -1,5 +1,231 @@
 [
   {
+    "id": "2026-09-10T04:00:00-daily-standup",
+    "date": "2026-09-10",
+    "researchTitle": "🔴 결제한 사람만 손해 보는 구조 — 광고를 안 봐도 보상이 나가고(N46), 판정 없는 리듬게임이 난수로 「Perfect」를 띄우고, 키스토어는 이 PC 밖에 사본이 0개다",
+    "researchSummary": "제87회 리서치(목요일·엿새 연속 정시 개최). 7명 전원 보고. 어제 결정 12건 중 오늘 움직인 것은 ⑤ PKM 충돌 해소 하나뿐(부분)이고 나머지 11건은 파일 기준 미이행, 게임 코드는 71일/81일째 0줄이며 24시간 내 `.cs` 변경이 양 리포 0건이다. 미커밋 85건도 어제와 정확히 같은 숫자다. 그런데 오늘 나온 것들은 하나의 문장으로 묶인다 — 돈이 흐르는 경로가 전부 반대 방향으로 뚫려 있다. QA가 찾은 N46은 NumLink `AdManager.cs:150-158`에서 `#if UNITY_EDITOR`가 `Debug.LogWarning` 한 줄만 감싸고 `onRewardGranted?.Invoke()`는 그 밖에 있어, 실기기 릴리스 빌드에서 비행기 모드로도 광고 없이 보상이 무한 지급된다. 반대로 N49는 광고를 끝까지 본 유저에게 힌트를 주지 않는다(`HintManager.cs:97-110`에 `hintCount` 증가가 없음). N18은 광고 제거를 결제한 유저의 상태를 재시작마다 날리고, 신규 N48은 세이브가 임시파일 교체 없는 직접 쓰기라 손상 한 번에 `isRemoveAds`까지 조용히 초기화한다. 결제한 쪽만 손해를 보고 결제 안 한 쪽만 이득을 본다. Game Designer는 그 위에 경제 자체가 무너져 있음을 실측했다 — MeowBeat는 `DatabaseManager.cs:323-328`이 점수를 그대로 코인으로 주고 콤보 배수에 상한이 없어 20분 연속 플레이로 전 콘텐츠 66,000코인이 확보되며, 보상형 광고 1,000코인은 1판 4,272의 23%라 볼 이유가 없다. 그리고 더 근본적인 것 — `Note.cs:28-48`에 타이밍 판정이 한 줄도 없고 `:34`가 판정 스프라이트를 `Random.Range`로 뽑는다. 리듬게임인데 리듬을 채점하지 않는다. Developer는 어제 P1이던 targetSdk 36의 전제를 깼다: 두 프로젝트 Unity가 `6000.3.5f2`인데 API 36 빌드에는 AGP 9.0.0이 실린 `6000.3.17f1+`가 필요하다. DevOps는 되돌릴 수 없는 항목 하나를 짚었다 — 키스토어 6개가 C:/D: 두 볼륨에 있으나 같은 PC이고 오프사이트 사본이 0건이다. 분실하면 두 게임 모두 Play 업데이트가 영구 불가다. Orchestrator는 어제 남긴 최대 미해결 항목을 끝냈다: 회의를 여는 실체는 `DailyStandup_ClaudeCode`(04:00·VBS 래퍼)이고, Disabled인 `DailyStandup`은 같은 `daily_standup.bat`을 가리키는 중복 등록이었다.",
+    "researchItems": [
+      {
+        "title": "Orchestrator · 어제의 미해결 항목 종결 — 이 회의를 여는 것은 `DailyStandup_ClaudeCode`다",
+        "description": "호출 체인을 파일까지 추적 완료. ① `DailyStandup_ClaudeCode`(04:00 daily, State=Running, LastTaskResult `0x41301`=실행 중, NextRun 2026-09-11 04:16:35) → ② `C:/Users/LIMMM/.taskrunner/daily_standup.vbs`(3줄, `sh.Run(\"cmd /c ...daily_standup.bat\", 0, True)` 창 숨김·동기 대기) → ③ `C:/Users/LIMMM/daily_standup.bat` → ④ 실패 시 `notify_automation_failure.py`. **어제 혼선의 원인이 구조로 확인됐다**: Disabled 상태인 `DailyStandup`의 Action도 같은 `daily_standup.bat`이다. 같은 스크립트에 태스크가 2개 등록돼 09시 직접 실행판은 죽고 04시 VBS 래퍼판만 살아 발화한다. 발화 시각이 04:00~04:33으로 매일 흔들리고 NextRun도 04:16:35인 것은 RandomDelay 설정으로 보이나(추론) 등록 XML을 직접 읽어 확인하지는 않았다. 나머지 09시대 태스크 3건(`AgentOfficeMorningMeeting`·`DailyStandup`·`LIM Studio Daily Meeting`)은 전부 Disabled이고 missed run이 156회씩 쌓여 있다."
+      },
+      {
+        "title": "Orchestrator · 어제 결정 12건 — 완료 0 / 부분 1 / 미완료 11",
+        "description": "부분 1건은 ⑤ PKM: `05_AI_Config/skills/robotics/SKILL.md` 충돌 마커 0건·mtime 9/09 06:20으로 **해소됐고**, `git stash list`의 autostash 2건은 그대로 남았다(총 5개). 미완료 11건 근거 — ① `AdmobManager.cs:15/:27` `RemoveAds = false;` 잔존, `LoadRemoveAds` 실호출 여전히 0건 ② `grep purchasing manifest.json` exit 1 ③ `wevtutil gl` enabled:false **닷새째** ④ MeowBeat ahead 3 유지·NumLink WIP 커밋 없음 ⑥ `GameOverPanel.uxml` 버튼 3개(`btn-retry`/`btn-use-coins`/`btn-home`)뿐, `btn-watch-ad` grep 0건 ⑦ `GameManager.cs:363`·`:540` 볼륨 원문 ⑧ targetSdk 34/35 불변 ⑨ `DASHBOARD_REDESIGN_PROMPT.md` 잔존·`archive/` 디렉터리 자체 부재·`LogPage.css:170/:178` 그라데이션 원문 ⑩ `CameraInit.cs` mtime 3/16·git clean ⑪ 두 리포 `docs/` 12파일 중 privacy 명칭 0건 ⑫ `e0.txt` 23일째 방치·NumLink IAP 폴백은 가드는 있으나 패키지 부재로 여전히 빈 경로. **경로 정정**: `AdmobManager.cs`는 `Assets/Scripts/Manager/`가 아니라 `Assets/Scripts/Admob/` 아래에 있다(어제 기록 오기)."
+      },
+      {
+        "title": "Orchestrator · 세 리포 실측 — 미커밋 85건이 어제와 정확히 같은 숫자",
+        "description": "NumLink `e536009`(7/01 10:55:46) **71일** 정지·미커밋 46(M/D 20 + ?? 26)·브랜치 `feature/ugui-layerlab`·`origin/main...HEAD`=`1 51`. MeowBeat `921e0cf`(6/21 04:06:52) **81일** 정지·미커밋 39·**ahead 3 미push**. 합계 85건은 어제 기록과 동일 — 24시간 동안 커밋·push·백업 어느 것도 없었다. 24h 내 `Assets/**/*.cs` 변경 양쪽 **0개**. 두 리포 `.git/FETCH_HEAD` mtime이 모두 **9/8 04:16**이라 9/9 회의 이후 원격 통신 흔적도 없다. `daily_standup.log` 누적 127회, 어제 04:00:13→04:40:04 exit 0(39분 51초), 오늘 04:33:17 기동."
+      },
+      {
+        "title": "Orchestrator · SPRINT 진행률 산출 방식 정정 — 체크박스는 애초에 0개였다",
+        "description": "그동안 「32/44(72.7%)」·「35/52(67.3%)」로 보고해온 수치의 근거를 확인한 결과, 두 `SPRINT.md` 모두 `- [ ]`/`- [x]` 체크박스가 **0개**다. 마크다운 표 + 이모지 상태 형식이라 체크박스 진행률은 산출 자체가 불가능하고, 실제로는 `✅` 토큰을 센 값이었다. 오늘 실측: NumLink 표 54행 중 `✅` 32·🔴 1(mtime 5/30, **103일 미갱신**), Feedme 표 68행 중 `✅` 35·🔴 6(mtime 4/07, **156일 미갱신**). Feedme 블로커 표의 `feature/song-ownership-migration 미병합`은 위 ahead 3과 같은 사안이다. agent-office에는 SPRINT.md·PROGRESS.md가 없다."
+      },
+      {
+        "title": "QA · N46 CRITICAL — 광고를 한 번도 안 보고 보상이 지급된다(릴리스 빌드 포함)",
+        "description": "`NumLink/Assets/02. Scripts/Managers/AdManager.cs:150-158`. `#if GOOGLE_MOBILE_ADS` 안에서 `if (!IsRewardedAdReady)` 블록의 `#if UNITY_EDITOR`가 `Debug.LogWarning` **한 줄만** 감싸고, 실제 지급인 `onRewardGranted?.Invoke();`는 그 밖에 있다. 주석은 「에디터 보상 지급」인데 실기기 릴리스 빌드에서도 실행된다. 재현: 기기를 비행기 모드로 → 앱 실행(광고 로드 전부 실패) → 게임오버 → 「광고 보고 부활」 탭 → 광고 화면 없이 즉시 부활 + `GameManager.cs:342-346`이 코인·루비 지급 → 무한 반복. 호출처 2곳(`GameManager.cs:334`, `HintManager.cs:101`) 모두 노출. 광고 수익 0인 채로 재화가 무제한 풀리고 코인 IAP 구매 동기가 사라진다."
+      },
+      {
+        "title": "QA · N47 CRITICAL — 노트 타이밍이 오디오와 무관하게 흐른다(dspTime 사용 0건)",
+        "description": "`Feedme/Assets/Scripts/Note/NoteSpawner.cs:126` `elapsedTime += Time.deltaTime;`로 프레임을 누적하는데, 오디오는 `GameManager.cs:359` `bgmPlayer.pitch = songManager.audioSpeed;`로 배속된다. `grep \"dspTime|PlayScheduled|AudioSettings\"` **0건**. `audioSpeed`는 `StageClear()`에서 스테이지마다 +0.1씩 오른다. 2차 원인 중첩 — `NoteSpawner.cs:11 noteLeadTime = 2f`는 「6/3=2s」 전제 고정인데 `:69-71 SetSpeed()`가 낙하 속도를 `audioSpeed*3`으로 올려, 속도 4.5에서는 낙하 1.333s인데 2초 전에 스폰돼 0.667초 일찍 도착한다. 이름이 `SyncWithAudio()`인 `:95-109`도 `elapsedTime = 0` 리셋만 하고 `bgmPlayer.time`을 읽지 않는다. 재현: 유료곡 1스테이지 클리어 → 2스테이지 `audioSpeed=1.1` → 60초 곡의 음악은 54.4초에 끝나는데 노트는 59.8초까지 떨어진다."
+      },
+      {
+        "title": "QA · N48 CRITICAL — 세이브 손상 시 백업 없이 전 진행도가 조용히 초기화된다(결제 상태 포함)",
+        "description": "`NumLink/Assets/02. Scripts/SaveLoad/SaveSystem.cs:21-22`가 임시파일→교체가 아니라 `File.WriteAllText` 직접 쓰기이고, `:48-53`은 예외를 잡아 `_cachedData = new T();`로 **조용히 전체 초기화**한다. `.bak`·backup·`Replace(` grep 0건, `Save()` 호출 23곳으로 잦은데 `OnApplicationPause`/`OnApplicationQuit` 저장 훅은 0건이라 종료 타이밍이 통제되지 않는다. 재현: 클리어 순간 `SaveLevelStars()`가 쓰는 중 앱 강제 종료 → JSON 중간 절단 → 재실행 시 예외 → 기본값 반환 → 다음 저장이 손상 파일을 덮어 복구 불가. 코인·루비·별점·업적·힌트 재고에 더해 `SaveSystem.cs:94` `saveData.isRemoveAds`까지 날아가 **광고 제거를 결제한 유저에게 광고가 다시 나온다**. 유저에게 뜨는 안내는 없고 `Debug.LogError`뿐이다."
+      },
+      {
+        "title": "QA · N49 HIGH — 「광고 보고 힌트 충전」이 힌트를 주지 않는다",
+        "description": "`NumLink/Assets/02. Scripts/Managers/HintManager.cs:97-110` `WatchAdForHints()`의 보상 콜백이 `ResetHintState()`와 `UpdateLastClickTime()`만 부르고 `saveData.hintCount` 증가가 없다. 전체 grep에서 `hintCount` 증가는 `IAPManager.cs:113`·`:118`(현금 구매) 두 곳뿐, 감소는 `HintManager.cs:82`. 메서드 이름과 `:94-95` 주석(「광고를 시청하고 힌트를 충전한다」)이 구현과 어긋난다. 재현: 힌트 0 → 버튼 탭 → `UseHint()` false → 광고 시청 유도 → 끝까지 시청 → `HintCountUI.cs:46`이 읽는 값 여전히 0. N46과 겹치면 「광고는 안 뜨는데 보상도 없다」가 된다."
+      },
+      {
+        "title": "QA · N50 HIGH — 매니페스트가 깨지면 타이틀에서 무한 정지한다",
+        "description": "`Feedme/Assets/Scripts/Data/SongDataLoader.cs:59-70`이 `JsonUtility.FromJson<SongManifest>(json)`을 try/catch 없이 호출하고, 바로 다음 줄에서 `manifest.songs.Count`를 로그로 찍는다. 예외나 null이면 코루틴이 그 자리에서 죽고, 이를 `yield return`으로 기다리던 `GameManager.cs:167-176 InitSongData()`가 영원히 재개되지 않아 `UpdateSongButtons()`·`CreateDifficultyButton()`이 실행되지 않는다. 재현: APK 빌드/OBB 분리 과정에서 StreamingAssets의 `manifest.json`이 잘림 → 타이틀은 뜨지만 곡·난이도 버튼이 생성되지 않음 → 재설치 외 탈출 불가. 네트워크 실패 경로(`:66-70`)도 로그만 남기고 `isLoaded=false`로 진행해 곡 목록이 빈 채 넘어간다. N17의 마이그레이션 스킵도 이 실패에서 촉발된다."
+      },
+      {
+        "title": "QA · N51 MEDIUM — 마지막 레벨 클리어 후 「다음」이 아무 일도 하지 않는다",
+        "description": "`NumLink/Assets/02. Scripts/UI/LevelCompletePanel.cs:167-172`가 `HidePanel()` 먼저 부른 뒤 `if (nextLevel < GameConstants.TotalLevels)`로 막는데, 레벨 index 199에서는 200 < 200이 false라 패널만 닫히고 클리어된 보드가 그대로 남는다. UI Toolkit 경로(`StageClearController.cs:217-222`)도 같은 구조. 엔딩 처리도 엔드리스 유도도 없어 앱 재시작 외에 나갈 방법이 없다. 완주 유저 수가 적어 MEDIUM이지만 최장 플레이 유저가 마지막에 만나는 화면이다."
+      },
+      {
+        "title": "QA · CRITICAL 3건 전부 생존, 단 N17은 CRITICAL → MEDIUM 하향 권고",
+        "description": "N16 생존 — `clearedLevels` 쓰기 0곳 유지. **추가 확인**: 로드 경로도 없다. `LevelDataProvider.cs:32-33, 90 InitializeLevels()`가 `_clearedLevels`를 매번 전부 false로 재생성하므로 저장만 고치면 안 고쳐진다. 파생으로 업적 `TotalClears`(`AchievementManager.cs:99-116`) 영구 잠금. N18 생존 — Awake→Start 순서 문제 그대로. N17 생존하되 영향 재측정 결과 「구매곡 영구삭제」는 과장이다: `GameConstants.cs:12 LEGACY_SONG_MAP` 4곡(soft_cat/paw_paw/escort/bumblebee)은 manifest에서 전부 `isDefault=true` 무료이고, 유료 6곡은 `OwnedSong_{songId}` 별도 키를 쓴다. 실손실은 구버전에서 레거시 4곡을 코인 구매한 유저의 기록뿐이며 현재 무료 취급이라 체감 손실 0. 유효 CRITICAL은 N16·N18 + 신규 N46·N47·N48 = **5건**. 장부 총계 43 → **49건**."
+      },
+      {
+        "title": "Developer · D-13 HIGH — 아이템이 화면과 다른 고양이에게 지급된다",
+        "description": "지급은 `catIndex`, 표시는 `btnShopNum`을 쓰는데 두 값의 갱신 지점이 다르다. `ItemManager.cs:81-83`이 `shopManager.catIndex`로 저장하고, `ButtonController.cs:437`은 `shopManager.btnShopNum`으로 그린다. `DragSnapper.cs:78`은 캐러셀 스크롤 시 `btnShopNum`만 갱신하고, `ShopManager.cs:41`의 `catIndex = btnShopNum;`은 **확인 버튼(`ShopSave`)에서만** 실행된다. 증상: 상점에서 고양이 B로 스크롤만 하고 확인을 누르지 않은 채 아이템 상자를 열면 아이템은 고양이 A에게 저장되고 화면은 B의 목록을 그린다 — 유저에게는 「아이템이 사라졌다」로 보인다."
+      },
+      {
+        "title": "Developer · D-14 HIGH — SaveItem이 값 대신 변수명 문자열을 저장, 소유 해제가 구조적으로 불가",
+        "description": "`Feedme/Assets/Scripts/Manager/DatabaseManager.cs:532` `PlayerPrefs.SetString($\"ItemIndex[{i}][{j}]\", $\"dicItemBool[{i}][{j}]\");` — 두 번째 인자에 `{}`가 빠져 리터럴 `\"dicItemBool[0][1]\"`이 저장된다. 실제 값은 어디에도 안 들어간다. 지금 터지지 않는 이유는 `:547 LoadItem`이 값을 읽지 않고 `HasKey`만 보기 때문이며, 그 결과 소유가 **키가 생기면 되돌릴 수 없는 단방향 래치**가 된다. `SaveItem`은 `!= 0`일 때만 쓰고 `DeleteKey` 경로가 없어 아이템 회수·초기화·환불이 불가능하다. 죽은 코드가 아니라 `ItemManager.cs:85`에서 실제 호출된다."
+      },
+      {
+        "title": "Developer · D-19 Blocker — targetSdk 36을 올리려면 Unity 엔진부터 올려야 한다(어제 P1의 전제 붕괴)",
+        "description": "두 프로젝트 `ProjectVersion.txt`가 모두 **6000.3.5f2**다. 리서치 결과 API 36 빌드에는 AGP 9.0.0이 포함된 **6000.3.17f1+**(또는 LTS 6000.0.79f1+)가 필요하다. 현재 버전으로는 targetSdk 36 빌드 자체가 불가능하므로, 어제 P1 ⑧ 「targetSdk 36으로 올린다」는 그대로는 실행할 수 없는 항목이었다. 16KB 페이지 요구는 6000.3.5f2 ≥ 6000.0.38f1이라 이미 충족. 부수 확인 — Android 16의 대화면 방향 강제는 `android:appCategory=\"game\"`로 면제되는데 두 리포 매니페스트에 이 속성이 없다. Play의 API 36 마감(2026-08-31)은 이미 10일 경과. 참고로 Billing 쪽은 Feedme가 이미 안전권이다(`manifest.json:17` `com.unity.purchasing 5.4.0` = BL8 대응 5.0.0+ 충족, 남은 건 D-10 obsolete 시그니처뿐)."
+      },
+      {
+        "title": "Developer · D-15~D-18 — 리듬게임에 프레임 페이싱이 꺼져 있고, 페이드는 매 프레임 Find를 돈다",
+        "description": "**D-18 HIGH**: `Feedme/ProjectSettings/ProjectSettings.asset:72 androidUseSwappy: 0` — Android Frame Pacing 비활성(NumLink는 1). 프레임 전달 간격이 흔들리면 N47의 싱크 오차 위에 판정 지터가 덧씌워진다(단 dspTime을 먼저 고치지 않으면 Swappy만 켜도 체감이 안 바뀔 수 있다 — 추정). **D-16 MED**: `ButtonController.cs:388-395` 페이드 코루틴이 `GameObject.Find(\"ItemUI\")`를 **매 프레임** 호출하고, 같은 오브젝트를 `:361`·`:384`·`:385`·`:392` 네 곳에서 따로 찾으며 널 가드가 없다(비활성 시 즉시 NRE). `:400`에는 `SaveItem()` 호출이 주석 처리돼 이 경로의 지급은 저장되지 않는다. **D-15 MED**: `DatabaseManager.cs:578`과 `:585`가 같은 함수 안에서 상한을 `itemList.Count`와 `transform.childCount`로 다르게 써 카탈로그가 슬롯보다 많아지면 `GetChild(i)`가 예외를 던진다. **D-17 MED**: `NumLink/Assets/HardBoiled/Tools/HBGUITools/NotchDesign.cs:14-25`가 `Awake()`에서만 `Refresh()`를 부르고 `LastSafeArea` 필드는 쓰기만 하고 아무도 읽지 않는다."
+      },
+      {
+        "title": "Developer · agent-office 린트 게이트가 무력화돼 있었다",
+        "description": "`npm run build`는 **exit 0**(62 모듈, JS 347.53kB→gzip 115.94kB, CSS 36.75kB, 289ms~3초), TS strict 위반 0건, 미사용 의존성 0건으로 건강하다. 그런데 `npx eslint .`는 **exit 2** — `A config object has a \"plugins\" key defined as an array of strings. Flat config requires \"plugins\" to be an object`. 원인은 `eslint.config.js:15`의 `reactHooks.configs['recommended-latest']`로, `eslint-plugin-react-hooks@7.1.1`이 ESLint 10.6.0 flat config 형식과 맞지 않는다. 빌드가 통과해서 가려져 있었을 뿐 린트는 한 번도 돌지 않고 있었다. 이벤트 구독 누수는 양 게임 리포 모두 깨끗했다(헛다리 결과도 보고): UI Toolkit `RegisterCallback` 20 = `UnregisterCallback` 20, `sceneLoaded +=/-=` 짝 일치, `async void` 0건."
+      },
+      {
+        "title": "Game Designer · 리듬게임인데 타이밍 판정이 없고, 판정 문구는 난수로 뽑는다",
+        "description": "`Feedme/Assets/Scripts/Note/Note.cs:28-48 OnTriggerEnter2D` — Player 콜라이더에 닿으면 무조건 성공이다. ms 윈도우·오프셋·편차 계산이 한 줄도 없고 난이도 조절 수단은 노트 밀도와 낙하 속도뿐이다. `:34`는 `Random.Range(0, judgementSprite.Length)`로 화면에 뜰 판정 스프라이트를 **랜덤으로 고른다**(코드 주석도 「랜덤 성공 문구 지정」). `HitEffectController.cs:49 ShowHitEffect(\"Perfect\"/\"Good\"/\"Miss\")`는 프로덕션 호출처 0건이고 테스트에서만 불린다. HP는 `StatusManager.cs:13,17` 3으로 시작하고 회복 경로가 없다. 참고 판정창 실측 — DDR 15ms / Arcaea 25ms / Deemo 50ms / Cytus 70ms(60FPS=16.67ms의 배수 근처), 음악가는 20ms 지연도 감지한다. 채보 쪽도 무너져 있다: 노멀/하드 노트 배열이 **4곡에서 완전 동일**(soft_cat 134/134, paw_paw 195/195, escort 103/103, bumblebee 282/282)이고 나머지 6곡도 +2~+17개(1.6~14%) 차이뿐인데, 하필 그 4곡이 신규 유저가 처음 만나는 무료 레거시 곡이다."
+      },
+      {
+        "title": "Game Designer · MeowBeat 코인 = 점수 1:1 + 콤보 무제한 + 엔들리스 → 20분에 전 콘텐츠",
+        "description": "`ScoreManager.cs:38`이 호출자 인자를 즉시 덮어써 노트당 기본 점수는 항상 1, `:49` 콤보 배수는 `1f + combo*0.1f`로 **상한 없음**(500콤보 51배), `DatabaseManager.cs:323-328 AddCoin()`이 `coin += currentScore`로 점수를 그대로 코인으로 준다. 종료 조건은 오직 실패다 — `AddCoin()`·`SaveScore()` 호출처는 `StatusManager.cs:49-50` HP 0 경로 하나뿐이고, 곡을 완주하면 `StageClear()`가 배속을 올려 다음 곡을 이어 붙인다. 실측: bumblebee 1회 4,272 → 2회 16,496 → 3회 36,674 → **4회 64,804**. 전 콘텐츠 구매가는 (곡 10 + 고양이 12) × 3,000 = **66,000**. 곡별 편차도 bumblebee 4,272 vs escort 638로 **6.7배**라 최적 전략이 「bumblebee만 반복」이 된다. 보상형 광고 1,000코인은 1판의 23%라 **광고를 볼 이유가 없다** — 어제 다룬 보상형 광고 수익 모델이 경제 설계 단에서 이미 무력화돼 있었다. 설계된 환류 경로 `CafeManager.cs:108-130 OnRhythmGameEnd(score, maxCombo)`(score/10 + 콤보 보너스)는 **호출처 0건**이고, `:49`·`:100`은 오프라인 수익에 카페 레벨을 두 번 곱해(rate 안에 이미 레벨이 반영돼 있는데 다시 `_cafeLevel`을 곱함) 레벨 10에서 하루 79,200코인이 들어온다."
+      },
+      {
+        "title": "Game Designer · NumLink 별점 기준이 3중으로 갈라져 있고 제한시간은 꺼져 있다",
+        "description": "`GameConstants.cs:31-32`의 `Star3TimeRatio`/`Star2TimeRatio`는 전체 참조 **0건**(정의 자신만 매치). 실제로는 UI Toolkit 경로가 `GameManager.cs:501-510 CalculateStars()`의 **생명 소모 기준**(0개=3성)을, uGUI 경로가 `LevelCompletePanel.cs:107-114 ComputeStarRating()`의 **시간 기준**(30초 이내 3성) 하드코딩을 쓴다 — 어느 패널이 뜨느냐에 따라 같은 플레이의 별점이 달라진다. 게다가 후자는 `if (score <= 0 && elapsedSeconds <= 0f) return 3;`이라 초기값 상태로도 3성이 뜬다. `GameConstants.cs:28 TimeLimitPerCell` 참조 0건이고 `isTimerActive`는 네 곳에서 **false 대입만** 있어 타이머 기능 자체가 비활성 — 실질 3성 조건은 「목숨 안 잃기」뿐이라 별점이 재도전 유인 역할을 못 한다. 경제도 한쪽으로 쏠려 있다: 200레벨 3성 완주 시 코인 8,400 + 데일리 최대 250/일이 들어오는데 소비처는 `CoinCostPerLife = 100` 부활 하나뿐(8,400 = 부활 84회분), 루비는 최대 100개 적립에 **소비처 0건**, 정작 막혔을 때 필요한 힌트는 초기값 1개에 증가 경로가 IAP 2종뿐이다(`AdRewardHintCount`는 주석에 「현재 미사용」)."
+      },
+      {
+        "title": "Game Designer · 레벨 80~199 난이도 정체 — 그리고 어제 N22의 원인 정정",
+        "description": "`LevelDataProvider.cs:36-91`과 `PreGeneratedBoardManager.cs:171-194`(같은 매핑을 중복 정의)로 실측한 곡선: 0-19 5x5(25) → 20-39 5x6(30) → 40-59 6x6(36) → 60-79 6x7(42) → 80-99 7x7(49) → **100-129 6x8(48)** → 130-159 7x7(49) → **160-199 마스터 6x8(48)**. 레벨 99→100과 159→160(마스터 진입)에서 칸수가 **내려가고**, 레벨 80 이후 120레벨(전체의 60%) 동안 48~49 사이 진동만 한다. **정정**: `LevelDataProvider.cs:79` 주석은 「8x8/8x9는 BoardData.json 미존재」라고 자인하지만 사실이 아니다 — `StreamingAssets/BoardData.json`의 boards 720개 중 인덱스 600~719가 실제 8x8 60개 + 8x9 60개다. `levelIndexMap`이 6종(인덱스 0~599)만 등록해 로더가 못 찾을 뿐이며(어제 N22와 동일 원인), 그 120개는 `levelIndex` 필드가 전부 0으로 박혀 생성 시점부터 고아였다. 온보딩·튜토리얼 스크립트는 **양 프로젝트 모두 0건**이라, 리서치가 제시한 「FTUE 완주율 70% 게이트」(완주율 높은 게임은 D1 리텐션 2배 이상)를 잴 지점 자체가 없다."
+      },
+      {
+        "title": "Game Designer · AdMob ID가 전부 Google 공용 테스트 ID — 이대로 출시하면 광고 수익 0",
+        "description": "`NumLink/Assets/02. Scripts/Data/GameConstants.cs:210-217`의 AdMob 앱·유닛 ID가 전부 `ca-app-pub-3940256099942544~...` 계열, 즉 Google이 공개한 **테스트 전용 ID**다. `GameManager.cs:182`가 3레벨마다 인터스티셜을 띄우도록 배선돼 있어도 실제 노출은 테스트 광고이고 수익은 0원이다. N46(광고 없이 보상 지급)·N49(광고 보고도 보상 없음)와 겹치면, 현재 NumLink의 광고 시스템은 **수익도 없고 보상도 어긋나 있는** 상태다. 곡 판매 쪽 참고 실측 — Beat Saber 개별 $1.99 vs 10곡 팩 $12.99(곡당 $1.29, **33~35% 할인**), Taiko는 본편 $40 + 700곡 구독인데 「곡 전부를 구독으로 막았다」는 반발 스레드가 있다. MeowBeat는 전곡 3,000 균일가에 번들이 없고 AI 생성곡이라 라이선스 원가가 0이므로 할인 여력이 오히려 크다. 라이브옵스 참고치: 상위 퍼즐·캐주얼은 월 80~100회 이벤트 터치포인트를 돌리지만 현실적 권고는 월 4~6개이고, 2026년 모바일 IAP 매출의 84%가 라이브옵스 운영 게임에서 나온다."
+      },
+      {
+        "title": "Content Writer · 개인정보처리방침 0건 — Play는 데이터 수집 여부와 무관하게 전 앱 필수",
+        "description": "두 리포 `docs/`(각 6파일) 전수 확인 결과 privacy·개인정보·data_safety 명칭 문서 **0건**, URL 기록도 0건이다(검색에 걸린 `PrivacyInfo.xcprivacy` 5건은 전부 `Feedme/Library/PackageCache/` 내부 산출물이라 해당 없음). Play Console 정책상 활성 HTTPS URL을 App content에 등록하고 앱 내부에도 링크해야 하며 Data safety 신고와 내용이 일치해야 한다. Feedme는 GoogleMobileAds SDK가 들어 있어 광고 ID를 수집하므로 더 시급하다. 즉 지금은 **다른 걸 다 고쳐도 제출 자체가 반려되는 상태**다."
+      },
+      {
+        "title": "Content Writer · 스토어 자산 결손표 — 9/8 이후 변화 0, MeowBeat는 전 항목 결손",
+        "description": "`docs/STORE_LISTING.md`는 두 리포 모두 mtime 9/08 04:47 그대로이고 여전히 **untracked**(4,377B·5,119B). 자산: 피처 그래픽 1024×500 **양쪽 0건**, 태블릿 스크린샷 0장, 프로모 영상 0건. 폰 스크린샷은 NumLink만 19장(1080×1920)으로 조건부 충족이나 **최신 캡처가 2026-03-27~04-01**이라 이후 uGUI 이관이 반영돼 있지 않고, MeowBeat는 **0장**이다. 512×512 아이콘은 둘 다 스토어 전용본이 없다(MeowBeat에 미추적 후보 `Assets/Prefabs/Icon/feedIcon_0327.png` 512×512·140KB가 있으나 브랜드 확인 필요). 메타데이터: MeowBeat `productName`이 여전히 **`hefeedmee`**, NumLink Standalone 식별자에 `com.DefaultCompany.2DProject` 잔재, 양쪽 iPhone 키 없음. 문서 자체에도 「자세한 설명 전문」·「스크린샷 캡션」·「개인정보처리방침 URL」 항목이 아예 없어 신설이 필요하다."
+      },
+      {
+        "title": "Content Writer · ASO 2026 — 지금 투자할 곳은 A/B가 아니라 첫 3장 스크린샷이다",
+        "description": "Custom Store Listings는 광고 캠페인에서 중앙값 **10% 전환 상승**(3자 재인용), 아이콘 A/B는 통상 **5~15% 전환 변동**, 지속 실험 시 연 **20~40%** 개선(PressPlay 2026). 다만 유효 조건이 **변형당 ≥1,000 설치·최소 7일(표준 14일)·신뢰도 ≥90%**라 출시 전인 두 게임은 실험을 돌릴 트래픽 자체가 없다. 2026 Play는 필드별 텍스트가 아니라 카피·비주얼·카테고리·설치 후 행동의 **일관성**을 ML로 평가하고 전환율이 랭킹 입력값이 됐다(ASOMobile). 페이지뷰→설치 18%가 리스팅 문제 판단 기준선. 한국 인디 초기 유입은 숏폼(일회성 폭발력)과 커뮤니티(신뢰) 두 축으로 갈리고, 2026 게임 마케팅은 일회성 집행에서 크리에이터 장기 파트너십으로 이동 중이다(게임메카·모비인사이드). **Apple 쪽 주의**: 연령등급 갱신 문항 응답 기한이 2026-01-31로 이미 지났고 미제출 시 업데이트 제출이 중단되며, 2026-04-28부터 iOS 26 SDK 빌드가 필수다. 퍼즐/리듬 한국어 키워드 경쟁 강도는 유료 툴 없이 실측 불가라 **수치 미확보로 남긴다**. 오늘 준비된 산출물: NumLink 짧은 설명 3안(채택안 「1부터 순서대로 이어서 빈칸을 모두 채우면 클리어. 대각선까지 쓰는 8방향 숫자 연결 퍼즐.」 51자) + 긴 설명 첫 문단 195자 — 레벨 수·오프라인 여부는 미검증이라 전부 배제하고 확인된 사실만 사용."
+      },
+      {
+        "title": "DevOps · 되돌릴 수 없는 유일한 항목 — 키스토어 6개의 오프사이트 사본이 0개다",
+        "description": "`C:/Unity/Keystore`와 `D:/Unity/Keystore`에 각 6개(CatRush·Feedme·Meow·MeowPang·NumberChain·NyangNyang). 물리 디스크는 다르지만(C: 953GB Disk1, D: 233GB 별도 볼륨) **같은 PC**이고, OneDrive·BackupFromF·Documents를 훑어도 사본 **0건**이다. ProjectSettings의 `AndroidKeystoreName`은 `D:/Unity/Keystore/NumberChain.keystore`·`MeowPang.keystore`를 가리켜 경로는 유효하다. 분실하면 두 게임 모두 Play 업데이트가 **영구 불가**이고 패키지명 재발급 = 기존 설치 유저 전량 이탈이다. 오늘 나온 항목 중 유일하게 되돌릴 수 없는 실패다. 미커밋 85건도 같은 디스크에 있으나 실제 대체 불가분은 NumLink 1.1MB + Feedme 소량뿐이다 — NumLink 미추적 254.7MB 중 **240MB는 Layer Lab, 7.3MB는 Addin's Weapon Icons로 에셋스토어 재다운로드가 가능**하다. **디스크 실측 추가**: `C:/Unity/Meowpang`이 **15GB**(그중 `Library/` 12GB)를 점유한 채 145일 휴면(최종 수정 4/18, 최근 7일 변경 0건, 더티 5건)이고 C: 여유는 77GB(93% 사용)다. Library는 Unity가 재생성하므로 회수 가능하나(추론), 삭제 전 `Assets/`·`ProjectSettings/`·`Packages/` 백업 확인이 선행이다."
+      },
+      {
+        "title": "DevOps · 정정 — MeowBeat 원격은 `Meowpang`이 아니라 `mmporong/Feedme`다",
+        "description": "어제 기록한 「MeowBeat 원격 리포명은 `mmporong/Meowpang`」은 **오류**다. 실측: `C:/Unity/Feedme`의 origin은 `mmporong/Feedme`(PRIVATE 202,643KB, 마지막 push 2026-06-08)이고 보조 remote `meowbeat`→`mmporong/meowbeat`(209,742KB, 4/12)가 따로 있다. `C:/Unity/Meowpang`은 별개 로컬 프로젝트로 productName이 `meowpang`이고 커밋 1개(3/27)뿐이며, 그 HEAD `a05cc22`는 Feedme 리포에 오브젝트 자체가 존재하지 않는다(`Not a valid object name`) — **공통 조상이 없는 다른 프로젝트**다. 오인의 구조적 원인은 `src/data/projects/meowbeat.ts`에 로컬 경로·원격 정보가 하나도 없다는 점이다. 미푸시 3건도 원격 SHA `657032cf`와 직접 대조해 검증했다(`921e0cf` dspTime 회귀 탐지기 / `a7588c7` known_bugs 등록 / `a0d1a81` 검증툴 절대경로화) — 공교롭게도 셋 다 오늘 QA가 N47로 다시 찾아낸 그 버그를 잡으려던 코드다. 또한 로컬 브랜치 `meowbeat/main`의 `[ahead 37]`은 다른 리포 기준 비교라 실손실이 아님을 확인했다."
+      },
+      {
+        "title": "DevOps · 더 엄격한 검증이 하필 프로덕션 경로에만 빠져 있다",
+        "description": "`pr-validate.yml`에는 `Verify journal artifact`(파일 존재 + `entries >= 1`)가 있는데 **`deploy-pages.yml`에는 없다**. deploy 쪽 헬스체크는 저널 URL의 HTTP 200만 보므로 엔트리 0건이나 깨진 JSON도 초록불로 통과한다. 그런데 데일리 스탠드업 기록은 main 직접 push라 pr-validate를 절대 타지 않는다. 여기에 `main`은 브랜치 보호 미설정이고 리포 설정도 `allowed_actions: all`·`sha_pinning_required: false`다. 액션 버전은 전부 SHA 핀이고 deprecated 0건이나 checkout v7.0.0(최신 v7.0.1)·deploy-pages v5.0.0(v5.0.1)·setup-node v6.4.0(**메이저 1개 뒤**)이며, Dependabot이 매주 성공하는데도 setup-node PR **#124만 53일째 열려 있고** 나머지 둘은 올라오지 않았다(원인 미검증). 재현성 쪽은 `package-lock.json` 커밋·`npm ci --dry-run` 정상이나 `.nvmrc`·`engines` 부재로 **로컬 Node v24.12.0 vs CI Node 22**가 고정 장치 없이 갈린다. 배포 검증 PASS — 라이브 저널 HTTP 200·3,322,147B·0.357초, entries **125개·첫/마지막 id 로컬과 완전 일치**, `cmp dist/ public/` 동일, 최근 워크플로 10건 전원 success. 저널이 사이트 페이로드의 40%(3.2MB)이고 **하루 약 13.6KB씩 증가**(8/26→9/9 +190,001B) 중이다. 시크릿 위생은 agent-office·Feedme·Meowpang 0건이나, NumLink 추적 파일 2곳(`Assets/google-services.json`, `Assets/StreamingAssets/google-services-desktop.json`)에 **CatRush 프로젝트 식별자**(`project_id=catrush-ad649`, `package_name=com.hardboiledexpress.catrush`)가 남아 APK에 동봉되고 있다(Firebase 참조 코드는 0건인 죽은 설정)."
+      },
+      {
+        "title": "DevOps · GameCI로 게임 CI를 붙이는 건 기술·비용 모두 막힘이 없다",
+        "description": "세 리포 전부 `.github/workflows` 0개라 서명 AAB를 만들 수 있는 경로가 이 PC 1대뿐이고, 두 프로젝트가 IL2CPP·ARMv7+ARM64라 실패 시 재현 환경이 없다. 조사 결과: `game-ci/unity-builder` 최신 안정판 **v5.0.1(2026-09-01)**로 유지보수 활발(v6.0.0-beta.1은 「실러너 미검증」 명시라 `@v5` 사용), `unityci/editor ubuntu-6000.3.23f1-android` 이미지 존재. 라이선스는 Unity Hub의 `Unity_lic.ulf`를 `UNITY_LICENSE` 시크릿에 넣는 방식으로 Personal 충분(공개 리포 사례가 2026-09-09에 `UNITY_SERIAL` 없이 서명 AAB 빌드 성공) — 단 Unity 공식 매뉴얼은 CLI 라이선스 관리를 Pro 전용으로 명시하므로 **정책 변경 시 깨질 수 있는 비공식 경로**다. 소요는 Library 캐시 히트 8~12분·콜드 20~35분, 비용은 private 리포 Linux 2코어 $0.006/분 → **12분 빌드 = $0.072/회, 무료 2,000분으로 월 166회**. Unity Build Automation(Linux Micro 월 100분 무료)보다 20배 넉넉하다. **미확인**: private 2코어 러너의 실제 디스크 크기(145GB 실측치는 전부 public 4코어) — 도입 시 첫 스텝을 `df -h /`로 두는 것이 순서다."
+      },
+      {
+        "title": "Art Director · MeowBeat 캔버스 6개가 20:9 폰에서 가로 216px을 자른다",
+        "description": "`Feedme/Assets/Scenes/MainScene.unity`의 캔버스 6개(Pause `:2840`·QuitUI `:11826`·UI `:22078`·ResultUI `:22396`·InGamePause `:23448`·Title `:27868`)가 전부 `ReferenceResolution 1080×1920` + `MatchWidthOrHeight: 1`(높이 기준)이다. 1080×2400 기기에서 scaleFactor = 2400/1920 = **1.25** → 캔버스 논리 폭 864 → 설계 1080 대비 **216 논리px 부족(좌우 108씩 잘림)**. 게다가 `UI`(`:22078`)만 ScreenMatchMode가 Expand라 scaleFactor 1.0 — **같은 씬 안에서 UI 레이어끼리 스케일이 1.25 대 1.0으로 어긋난다**. `FarmScene.unity:875`·`IdleScene.unity:1111`은 아예 `800×600` 4:3 가로 레퍼런스다. NumLink는 반대로 안전(Expand + match 0)하나 `LoadingScreen.unity:455`만 800×600으로 어긋난다. Safe Area는 더 나쁘다 — NumLink `ProjectSettings.asset:71 androidRenderOutsideSafeArea: 1`로 노치 밑까지 그리면서 보정 스크립트 `NotchDesign.cs`는 씬·프리팹 참조 **0건**(에셋팩에 딸려온 사문화 코드)이다. 참고로 ResultUI 하위 지표는 `Score`/`BestScore` **2개뿐**으로 별점·콤보·정확도·랭크가 전무한데, 2026 기준 결과화면은 다음 행동과 진행 재화를 동시에 제시하는 자리다."
+      },
+      {
+        "title": "Art Director · 앱 아이콘 11회 이월 항목 확정 — 슬롯 0/37, 그리고 아이콘이 타사 참고 이미지 폴더에 있다",
+        "description": "「Unity 기본 아이콘 그대로」는 **아니다**. 레거시 default는 지정돼 있고 문제는 플랫폼 슬롯이다: `m_BuildTargetPlatformIcons` **양쪽 0/37**. Android 어댑티브(432/324/216/162/108/81) 전부 빈 배열이라 **Android 8.0+에서 시스템이 레거시 아이콘을 강제 마스킹/크롭**한다. 더 큰 문제는 NumLink의 default 지정 경로다 — `ProjectSettings.asset:302` → **`Assets/03. Sprites/Background/Ref/TuxedoIcon.psd`**. 그 `Ref/` 폴더 실물은 `pokemon_grass.png/.psd`, `suika.png`, `unnamed.jpg`, `MeowScreenshot.psd`, `레이어 02.png` — **타 게임 참고 이미지를 모아둔 스크래치 폴더**다. 폴더를 정리하다 아이콘이 날아가거나, 제출 패키지에 타사 IP 이미지가 함께 들어갈 위험이 있다. 대체안: ① `Assets/03. Sprites/Icon/AppIcon/` 신설 후 1024 PNG로 이동 ② 어댑티브 foreground(투명 배경 캐릭터) + background는 **기존 토큰 `numlink-variables.uss:44`의 코랄 단색** 재사용(신설 아님) ③ iOS는 1024 하나로 자동 파생 ④ `Ref/`를 Resources 밖으로 격리. 덤: NumLink는 `m_ShowUnitySplashLogo: 1`(켜짐), MeowBeat는 0."
+      },
+      {
+        "title": "Art Director · 말줄임 처리가 프로젝트 전체에 0건, 텍스처 임포트는 전량 기본값",
+        "description": "TMP `overflowMode: 0`(Overflow)가 NumLink **138/138**, MeowBeat **6/6** — Ellipsis·Truncate **0건**이라 긴 문자열이 RectTransform 밖으로 그대로 삐져나온다. USS도 `text-overflow: ellipsis` 0건이고 `overflow: hidden`만 4곳이라 **잘리되 「…」가 없어 잘렸다는 신호가 안 보인다**. 최소 폰트는 uGUI 쪽 14(`MainScene.unity:1784`)로 400dpi 폰에서 ≈5.6dp — 12sp 권고의 절반 이하이며, AutoSize OFF + Overflow인 27곳이 실제 위험군이다(신규 UI Toolkit 쪽은 최소 26px로 건강 — UI 두 트랙이 갈려 있다). 텍스처는 `maxTextureSize`가 NumLink 4,826개·MeowBeat 796개 플랫폼 블록 **전부 2048**로 조정 이력 0건이고, **UI 스프라이트인데 Mipmap ON이 7건**인데 그중 `BlueIcon.png`·`Ruby.png`는 두 프로젝트에 같은 파일이 복사돼 **같은 실수까지 복제**됐다. 로컬라이제이션은 시스템이 둘인데 하나가 죽어 있다 — 살아있는 건 `LocalizationManager.cs`의 static Dictionary 25엔트리이고, Unity Localization 패키지 에셋 11개가 Assets 루트에 흩어진 채 참조 0건이다. 다행히 씬·프리팹 텍스트 249개 중 한글 하드코딩은 0건이다."
+      },
+      {
+        "title": "Art Director · agent-office가 360px에서 오피스 존 3/7을 잘라 없앤다 + 다크 테마는 애초에 없었다",
+        "description": "폭 계산 체인(360 − playground 패딩 32 − 보더 2 − scene 패딩 48 − office-map 패딩 48 − room 보더 2 = **228px 캔버스**) 기준으로 `OfficeMap.tsx:118-125`의 %앵커 × `min-width` 120~220px을 계산하면 lounge(48%) 우측 끝 329.4 → **101px 잘림**, debug-corner(78%) **70px 잘림**, briefing-board(72%) **56px 잘림**이다. `office-components.css:72 overflow: hidden`이라 스크롤도 안 되고 그냥 사라진다. **문서-구현 불일치**: `DESIGN.md:154`는 「오피스 맵: 최소 800px 고정 캔버스, 모바일은 스크롤 허용」이라 적혀 있는데 구현에 `min-width`도 가로 스크롤도 없다(`:155`의 「사이드바 320px 고정」도 실제는 `minmax(340px, 0.95fr)`). **어제 수치 정정**: 「다크 테마 대비 1.18:1」은 `prefers-color-scheme`·`data-theme`·`.dark` 전부 0 hit — **다크 테마가 아예 없어서** 나온 값이었다. 라이트 실측은 muted `#8b95a1`/surface = **2.88:1**(본문 4.5:1 미달), accent 3.71:1이다. 폰트 용량도 오늘 실측 NumLink 16.41MB·MeowBeat 18.86MB로 어제 13.08MB와 스코프가 달랐고, box-shadow는 10곳 → **12곳**이다."
+      },
+      {
+        "title": "Art Director · 햅틱이 Android 공식 문서의 「쓰지 말 것」 목록을 정면으로 쓰고 있다",
+        "description": "`NumLink/Assets/02. Scripts/Tools/Vibration.cs:27`의 `createOneShot`과 `:33` 폴백 `vibrator.Call(\"vibrate\", milliseconds)`는 Android 공식 문서가 「buzzy하고 늘어진 진동이 나오며 저성능 액추에이터에서는 고장난 느낌」이라며 명시적으로 금지한 API다(권장은 `HapticFeedbackConstants` → 사전정의 `VibrationEffect` → `Composition` 프리미티브 순). 호출부 `NumberButton.cs:127 Vibration.Vibrate(20, 80)`의 20ms 지속 자체는 권고(10~20ms) 안이다. **리듬게임용 함정도 확인**: Android는 오디오와 진동을 동시 시작할 방법이 없고 진동 웨이브폼이 시스템 클럭 기반이라 오디오와 서서히 드리프트하므로, 곡 전체를 미리 스케줄하면 후반부가 어긋난다 — 노트 이벤트 단발 트리거가 안전하다. 색맹 리스크는 낮다(MeowBeat 노트는 색이 아니라 스프라이트 4종으로 구분). **단 폴백 충돌이 있다**: `NoteSpawner.cs:209`·`:211`이 TunaCan과 Fish를 **같은 `BrownNote`**로, `:210`·`:212`가 Treat와 Kibble을 같은 `WhiteNote`로 떨어뜨려, 전용 스프라이트가 null이면 4종이 2종으로 뭉개진다. 참고로 EAA(2025-06-28 시행)는 게임 메커닉은 범위 밖이나 **인게임 텍스트와 게임 내 스토어는 범위 안**이며 「형태·색·크기 같은 감각 특성만으로 정보 전달 금지」를 요구한다(기존 서비스 유예 2028-06-28, 직원 10인 미만 면제). 터치 타깃 기준은 Apple 44×44pt / Material 48×48dp / WCAG 2.2 SC 2.5.8 24×24 CSS px이며, 파괴적·비가역 버튼을 하단 중앙 그린존에 두지 않는 것이 권고다."
+      }
+    ],
+    "meetingTitle": "돈이 흐르는 경로를 전부 뒤집어 놓은 채 71일이 지났다 — 오늘은 그 방향부터 바로잡는다",
+    "meetingSummary": "어제까지 세 회의의 판정은 「호출처가 0건」 → 「있는데 죽어 있다」 → 「부품은 있는데 배선이 없다」였다. 오늘은 배선이 있는데 **방향이 반대**라는 것이 드러났다. 광고를 안 본 사람에게 보상이 나가고(N46), 광고를 끝까지 본 사람에게는 안 나가고(N49), 결제한 사람의 상태는 재시작마다(N18)·세이브 손상 한 번에(N48) 사라진다. 그 위에서 MeowBeat는 20분이면 전 콘텐츠를 살 코인을 주고, NumLink의 광고는 애초에 테스트 ID라 수익이 0이다. 회의는 이 방향 뒤집힘을 오늘의 단일 주제로 잡고, 「기능을 더 만들자」가 아니라 「이미 있는 경로의 부호를 바로잡자」로 우선순위를 재배열했다. 동시에 어제 세운 계획 하나가 실행 불가였음을 확인했다 — targetSdk 36은 Unity 엔진 업그레이드가 선행이라 어제 P1 그대로는 착수할 수 없다. 그리고 오늘 나온 것 중 유일하게 되돌릴 수 없는 항목, 키스토어 오프사이트 사본 0건을 최상단에 올렸다. 수치 정정은 5건(SPRINT 산출 방식·MeowBeat 원격 리포명·N17 심각도·다크 테마 대비·마스터 보드 데이터 존재 여부)이다.",
+    "meetingItems": [
+      {
+        "speaker": "Orchestrator",
+        "note": "어제 남긴 숙제부터 닫는다. 이 회의를 여는 것은 `DailyStandup_ClaudeCode`(04:00, VBS 래퍼 → `daily_standup.bat`)이고, Disabled였던 `DailyStandup`은 같은 bat을 가리키는 중복 등록이었다. 「꺼져 있는데 돌아간다」는 미스터리가 아니라 등록이 둘이었던 것이다. 나머지는 무겁다 — 결정 12건 중 완료 0, 부분 1(PKM 충돌 해소, stash 2건은 잔존). 미커밋 85건이 어제와 **숫자까지 동일**하고 FETCH_HEAD도 9/8에 멈춰 있어, 24시간 동안 두 게임 리포에서는 아무 일도 일어나지 않았다. 하나 자수한다. 그동안 보고해온 SPRINT 진행률은 체크박스 기반이 아니었다 — 두 파일 다 체크박스가 0개이고 나는 `✅` 토큰을 세고 있었다. 앞으로는 「표 54행 중 ✅ 32」로 표기를 바꾸겠다."
+      },
+      {
+        "speaker": "QA Tester",
+        "note": "오늘 장부는 43 → **49건**, 유효 CRITICAL 5건이다. 순서를 하나만 바꿔달라. 어제 1순위였던 N18보다 **N46이 먼저**다. N18은 결제자가 손해 보는 문제인데, N46은 비행기 모드만 켜면 누구나 무한히 보상을 받는다 — 게다가 `#if UNITY_EDITOR`가 로그 한 줄만 감싸고 있어서 코드를 읽으면 「에디터 전용」으로 보인다. 이게 이 버그가 71일을 살아남은 이유다. N48도 같은 성질이다. 세이브가 임시파일 교체 없이 직접 쓰기라 손상 한 번에 `isRemoveAds`까지 날아가는데, 유저에게는 `Debug.LogError`밖에 안 남는다. N16도 한 가지 덧붙인다 — 저장만 고치면 안 고쳐진다. `LevelDataProvider`가 매 실행 `_clearedLevels`를 전부 false로 재생성하므로 로드 복원을 같이 넣어야 한다. 하나는 정정한다. N17을 CRITICAL에서 MEDIUM으로 내린다. 레거시 4곡이 지금은 전부 무료라 실제 손실은 구버전 코인 구매 기록뿐이다. 내가 과대평가했다."
+      },
+      {
+        "speaker": "Developer",
+        "note": "어제 우리가 P1로 잡은 targetSdk 36은 그대로는 못 한다. 두 프로젝트 Unity가 6000.3.5f2인데 API 36에는 AGP 9.0.0이 실린 6000.3.17f1+가 필요하다. 계획을 「targetSdk 올리기」에서 「엔진 업그레이드 → targetSdk」로 두 단계로 쪼개야 한다. 16KB 페이지는 이미 충족이니 그건 걱정 안 해도 된다. 신규는 D-13~D-19인데, D-14를 강조하고 싶다 — `SetString`의 두 번째 인자에 `{}`가 빠져서 값 대신 `\"dicItemBool[0][1]\"`이라는 문자열이 저장된다. 로드가 `HasKey`만 보기 때문에 지금은 안 터지는데, 그 대가로 아이템 소유가 되돌릴 수 없는 래치가 됐다. 환불도 초기화도 구조적으로 불가능하다. 그리고 우리 웹 쪽 고백 하나 — ESLint가 flat config 오류로 exit 2를 내고 있었다. 빌드가 통과해서 안 보였을 뿐, 린트 게이트는 처음부터 안 돌고 있었다."
+      },
+      {
+        "speaker": "Game Designer",
+        "note": "리듬게임 이야기부터 하겠다. MeowBeat에는 타이밍 판정이 없다. `Note.cs`는 콜라이더에 닿으면 무조건 성공이고, 화면에 뜨는 판정 문구는 `Random.Range`로 뽑는다. 유저가 정확히 쳤는지 여부와 화면에 뜨는 「Perfect」는 아무 관계가 없다. QA의 N47(dspTime 미사용)과 합치면 이렇게 된다 — **박자를 재지도 않고, 채점하지도 않는다.** 리듬게임에서 이건 버그가 아니라 장르 요건 미충족이다. 경제도 마찬가지다. 점수가 그대로 코인이고 콤보 배수에 상한이 없어서 bumblebee 4회 연속이면 64,804코인, 전 콘텐츠가 66,000이다. 20분이다. 광고 1,000코인은 1판의 23%라 아무도 안 본다 — 어제 우리가 인용한 보상형 광고 지표들이 이 게임에서는 처음부터 성립하지 않았다. 그리고 NumLink에서 하나 정정한다. 「마스터 보드 120개가 없다」는 코드 주석의 자백이 틀렸다. BoardData.json 인덱스 600~719에 8x8·8x9가 실제로 있다. 없는 건 데이터가 아니라 `levelIndexMap` 등록이다."
+      },
+      {
+        "speaker": "DevOps",
+        "note": "오늘 나온 것 중 되돌릴 수 없는 건 하나뿐이다. 키스토어 6개가 C:와 D: 두 볼륨에 있는데 같은 PC이고, 이 PC 밖에는 사본이 0개다. 코드는 71일 정지해도 71일 뒤에 이어서 쓸 수 있지만 키스토어를 잃으면 두 게임의 Play 업데이트가 영구 불가고 패키지명 재발급은 기존 유저 전량 이탈이다. 미커밋 85건은 실은 덜 급하다 — 254.7MB 중 240MB가 Layer Lab 에셋이라 재다운로드가 되고, 진짜 대체 불가는 1MB 남짓이다. 정정 하나 — 어제 내가 기여한 「MeowBeat 원격은 Meowpang」은 틀렸다. 실제 origin은 `mmporong/Feedme`이고 Meowpang은 커밋 1개짜리 별개 프로젝트다. 두 리포는 공통 조상 자체가 없다. 원인은 `projects/meowbeat.ts`에 로컬 경로도 원격 정보도 없다는 것이니 거기부터 채우자. 마지막으로 아이러니 하나 — 미푸시 3건이 전부 dspTime 회귀 탐지기와 known_bugs 등록 코드다. QA가 오늘 N47로 다시 찾은 그 버그를 잡으려던 코드가 81일째 로컬에만 있다."
+      },
+      {
+        "speaker": "Content Writer",
+        "note": "지금 상태로는 무엇을 고치든 제출이 안 된다. 개인정보처리방침이 두 리포 모두 0건인데, Play는 데이터 수집 여부와 무관하게 전 앱 필수다. MeowBeat는 AdMob SDK가 들어 있어 광고 ID를 수집하니 더 급하다. 자산 쪽은 9/8 이후 변화가 하나도 없다 — 피처 그래픽 0, 태블릿 0, MeowBeat는 스크린샷도 0장이고 `productName`은 여전히 `hefeedmee`다. NumLink 스크린샷 19장은 있지만 3~4월 캡처라 uGUI 이관 전 화면이다. ASO 리서치 결론은 오히려 절약 쪽이다 — 아이콘 A/B가 5~15% 준다고 해도 변형당 1,000설치가 필요한데 우리는 출시 전이라 트래픽이 0이다. 지금 A/B에 쓸 시간을 첫 3장 스크린샷의 가치 제안에 쓰는 게 맞다. iOS를 볼 거면 연령등급 문항 기한(1/31)이 이미 지났으니 계정 상태부터 확인해야 한다."
+      },
+      {
+        "speaker": "Art Director",
+        "note": "아이콘 11회째 이월을 오늘 끝내자. 실측 결과 기본 아이콘은 아니었고 플랫폼 슬롯이 0/37이라 Android 8.0+가 강제 크롭한다. 더 급한 건 따로 있다 — NumLink 아이콘 원본이 `Background/Ref/` 폴더에 있는데, 그 폴더에 `pokemon_grass.psd`와 `suika.png`가 같이 들어 있다. 참고 이미지 폴더다. 정리하다 아이콘이 날아가거나, 더 나쁘게는 제출 패키지에 타사 이미지가 섞인다. MeowBeat는 캔버스 6개가 match=1이라 20:9 폰에서 가로 216px이 잘리는데, 하필 `UI` 캔버스만 Expand라 같은 씬에서 스케일이 어긋난다. 그리고 내 어제 수치를 정정한다 — 「다크 테마 대비 1.18:1」은 다크 테마가 **아예 없어서** 나온 값이었다. 오늘 자율 개선은 새 색 0개로 하겠다: `DESIGN.md:154`가 이미 「모바일은 스크롤 허용」이라 적혀 있는데 구현에 없다. 문서대로 `min-width: 800px` + 가로 스크롤만 넣으면 360px에서 사라지던 존 3개가 전부 돌아온다."
+      }
+    ],
+    "decisions": [
+      {
+        "title": "[P0·사용자 판단·유일하게 비가역] 키스토어 6개를 오늘 안에 이 PC 밖으로 복제한다",
+        "description": "`C:/Unity/Keystore`·`D:/Unity/Keystore`의 6개(CatRush·Feedme·Meow·MeowPang·NumberChain·NyangNyang)가 같은 PC 안에만 있고 오프사이트 사본 0건. 암호화 압축 후 클라우드 드라이브 1곳에 올린다. 오늘 나온 49건 중 **유일하게 되돌릴 수 없는** 실패이며, 분실 시 NumLink·MeowBeat 둘 다 Play 업데이트 영구 불가 + 패키지명 재발급으로 기존 설치 유저 전량 이탈이다. 외부 전송이라 사용자 확인이 필요해 자율 실행하지 않는다."
+      },
+      {
+        "title": "[P0·사용자 세션·순서 변경] N46을 N18보다 앞에 놓는다 — `AdManager.cs:150-158` 무조건 보상 지급 차단",
+        "description": "`NumLink/Assets/02. Scripts/Managers/AdManager.cs`의 `onRewardGranted?.Invoke();`를 `#if UNITY_EDITOR` **안으로** 옮기고, 릴리스 경로는 「광고 준비 안 됨」 안내 후 return하도록 바꾼다. 어제 1순위였던 N18(결제자 손해)보다 앞세우는 이유는 N46이 **누구나** 비행기 모드만으로 무한 재화를 얻을 수 있고 광고 수익도 0이 되기 때문이다. 이 상태로는 출시 자체를 보류해야 한다. 수정 범위는 1파일·전처리기 블록 1개."
+      },
+      {
+        "title": "[P0·사용자 세션·이틀 연속 미완료] N18 — `AdmobManager.cs:27` 1줄 삭제 + `LoadRemoveAds()` 1줄 호출",
+        "description": "경로 정정: `Assets/Scripts/Manager/`가 아니라 **`Assets/Scripts/Admob/AdmobManager.cs`**다. `:27`의 `RemoveAds = false;`를 지우고 같은 `Start()`에서 `DatabaseManager.LoadRemoveAds()`(`:250-261`, 이미 완성)를 호출한다. 12건 중 사용자 권한·외부 의존·엔진 업그레이드 어느 것도 필요 없는 유일한 P0이며 수정 범위가 단일 파일 2줄인데 이틀 연속 미완료다. 이어서 N16(`PuzzleManager.cs:355-366`에 `clearedLevels[idx] = true` 병기 + **`LevelDataProvider.cs:32-33, 90`의 로드 복원까지 같이** — 저장만 고치면 안 고쳐진다), N48(`SaveSystem.cs:21-22`를 임시파일 쓰기 → `File.Replace`로, `:48-53` 손상 시 `.bak` 폴백)."
+      },
+      {
+        "title": "[P0·전제 정정] targetSdk 36은 2단계로 쪼갠다 — Unity 6000.3.17f1+ 업그레이드가 선행",
+        "description": "어제 P1 ⑧ 「targetSdk 36으로 올린다」는 현재 엔진(6000.3.5f2)에서 **실행 불가**다. API 36 빌드에는 AGP 9.0.0이 포함된 6000.3.17f1+(또는 LTS 6000.0.79f1+)가 필요하다. 따라서 ① 엔진 업그레이드(양 프로젝트, IL2CPP 재빌드 검증 포함) → ② targetSdk 36 + `android:appCategory=\"game\"` 추가(대화면 방향 강제 면제) → ③ edge-to-edge 대응(D-17 세이프에어리어) 순서로 재배열한다. Play 마감 8/31은 이미 10일 경과했으므로 11/1 임시 연장 신청 여부를 함께 판단한다."
+      },
+      {
+        "title": "[P0·사용자 1줄·닷새째] `wevtutil sl Microsoft-Windows-TaskScheduler/Operational /e:true`",
+        "description": "관리자 PowerShell에서 1줄. 닷새 연속 이월 중이며, 오늘 회의 발화 주체(`DailyStandup_ClaudeCode`)를 특정한 만큼 이제 남은 미확인은 **발화 시각이 04:00~04:33으로 흔들리는 원인**(RandomDelay 추정, 미검증)이다. Operational 로그가 켜져야 트리거 실제 발화 기록으로 확정할 수 있다."
+      },
+      {
+        "title": "[P1·장르 요건] MeowBeat에 타이밍 판정을 만든다 — N47 dspTime + `Note.cs` 판정 윈도우",
+        "description": "① `NoteSpawner.cs:126`의 `Time.deltaTime` 누적을 `AudioSettings.dspTime` 기준으로 교체하고 `SyncWithAudio()`가 실제로 `bgmPlayer.time`을 읽게 한다 ② `noteLeadTime = 2f` 고정값을 낙하 속도(`audioSpeed*3`) 기준으로 산출하도록 바꾼다 ③ `Note.cs:28-48`에 ms 판정 윈도우를 넣고 `:34`의 `Random.Range` 문구 선택을 실제 판정 결과로 교체, 이미 있는 `HitEffectController.ShowHitEffect(\"Perfect\"/\"Good\"/\"Miss\")`(호출처 0건)를 연결한다. 참고 판정창: DDR 15ms / Arcaea 25ms / Deemo 50ms / Cytus 70ms. ④ 그 다음에 `androidUseSwappy: 1`(D-18). 순서를 지킨다 — dspTime 전에 Swappy만 켜면 체감이 안 바뀐다. **81일째 로컬에만 있는 미푸시 3건이 바로 이 버그의 탐지기이므로 `git push origin feature/song-ownership-migration`부터 한다.**"
+      },
+      {
+        "title": "[P1·경제] MeowBeat 코인 공급을 끊고 설계된 환류 경로를 배선한다",
+        "description": "`DatabaseManager.cs:323-328`의 `coin += currentScore`(점수 1:1)를 끊고, 이미 구현돼 있으나 호출처 0건인 `CafeManager.cs:108-130 OnRhythmGameEnd(score, maxCombo)`(score/10 + 콤보 보너스 + 카페 레벨 배수)를 실제 종료 경로에 연결한다. `ScoreManager.cs:49` 콤보 배수에 상한 50 도입. 이러면 bumblebee 1판이 4,272 → 약 927코인이 되어 보상형 광고 1,000코인이 다시 우위에 서고 곡 하나에 3~4판이 필요해진다. 함께 고칠 것: `CafeManager.cs:49`·`:100`의 카페 레벨 이중 곱(레벨 10에서 하루 79,200코인), 그리고 3곡 번들 7,000원 신설 검토(업계 번들 할인 33~35%, AI 생성곡이라 라이선스 원가 0)."
+      },
+      {
+        "title": "[P1·수익 경로] NumLink AdMob 테스트 ID를 실제 ID로 교체 + N49 힌트 지급 배선",
+        "description": "`GameConstants.cs:210-217`이 전부 Google 공용 테스트 ID(`ca-app-pub-3940256099942544~...`)라 이대로 출시하면 광고 수익이 0원이다. 실제 AdMob 계정 ID로 교체하되 **N46 수정 이후**에 한다(순서를 바꾸면 실광고 계정에 무효 트래픽이 쌓인다). 함께 `HintManager.cs:97-110`의 보상 콜백에 `saveData.hintCount++`를 넣어 N49를 닫는다 — 지금은 광고를 끝까지 봐도 힌트가 늘지 않는다."
+      },
+      {
+        "title": "[P1·제출 요건] 개인정보처리방침 2건 신설 + 호스팅 URL 확보",
+        "description": "Play는 데이터 수집 여부와 무관하게 전 앱 필수이며 활성 HTTPS URL을 App content에 등록하고 앱 내부에도 링크해야 한다. **두 문서를 복사하지 않는다** — MeowBeat는 GoogleMobileAds SDK로 광고 ID를 수집·「공유」 신고가 필요하고 NumLink는 현재 광고 SDK 상태가 다르다. 호스팅은 이미 돌고 있는 GitHub Pages(`mmporong.github.io`) 재사용이 가장 싸다. 동시에 `docs/STORE_LISTING.md` 2건을 **오늘 파일 단위로 커밋**한다(현재 untracked라 워크트리 정리 시 소실 위험). 문서에 없는 항목 3종(자세한 설명 전문·스크린샷 캡션·개인정보처리방침 URL) 신설."
+      },
+      {
+        "title": "[P1·자율·오늘 실행] agent-office 모바일 오피스 맵 스크롤 — `DESIGN.md:154` 문서대로 이행",
+        "description": "`src/styles/office-components.css`의 `@media (max-width: 768px)` 블록에 `.office-map { padding: var(--space-md); overflow-x: auto; }` + `.office-room { min-width: 800px; }`를 추가한다. 360px에서 잘려 사라지던 lounge(101px)·debug-corner(70px)·briefing-board(56px) 3개가 800px 캔버스 안에 전부 들어오고, `aspect-ratio: 16/9`가 높이 450px을 만들어 `min-height: 400px`와의 충돌도 해소된다. **신설 색·그라데이션·그림자 0개**, 재사용 토큰 `--space-md` 하나. 함께 `DESIGN.md:155`의 「사이드바 320px 고정」을 실제 값 `minmax(340px, 0.95fr)`로 문서 정정."
+      },
+      {
+        "title": "[P1·아이콘 11회째 이월 종결] `Ref/` 폴더에서 아이콘을 꺼내고 어댑티브 슬롯을 채운다",
+        "description": "① `Assets/03. Sprites/Icon/AppIcon/` 신설 후 `TuxedoIcon.psd`를 1024×1024 PNG로 플랫해 이동 ② Android 어댑티브 foreground(432, 투명 배경 캐릭터) + background(432, **기존 토큰 `numlink-variables.uss:44` 코랄 단색** — 새 색 신설 아님) 등록 ③ iOS는 1024 하나로 자동 파생 ④ `Background/Ref/`(pokemon_grass·suika 등 타사 참고 이미지)를 `Resources` 밖으로 격리하고 `.gitignore` 추가. 지금은 플랫폼 슬롯 0/37이라 Android 8.0+가 레거시 아이콘을 강제 크롭하고, 제출 패키지에 타사 IP가 섞일 위험도 있다. MeowBeat도 동일 작업 + `productName`을 `hefeedmee` → `MeowBeat`로."
+      },
+      {
+        "title": "[P2·파이프라인] 저널 검증을 배포 경로로 옮기고, 게임 리포 CI 도입은 `df -h` 실측부터",
+        "description": "① `pr-validate.yml`에만 있는 `Verify journal artifact`(entries ≥ 1)를 `deploy-pages.yml`에도 넣는다 — 데일리 기록은 main 직접 push라 더 엄격한 검증을 항상 우회한다 ② `.nvmrc` 추가(로컬 v24 vs CI 22 드리프트) ③ 53일째 열린 Dependabot PR #124 처리 + checkout v7.0.1·deploy-pages v5.0.1 수동 갱신 ④ `.env.pages.example`의 `/agent-office/` → `/dev-studio/` 정정 ⑤ `projects/meowbeat.ts`에 로컬 경로·원격(`mmporong/Feedme`) 명기 — 어제 Meowpang 오인의 구조적 원인 ⑥ GameCI 도입은 `game-ci/unity-builder@v5`(v6는 미검증) + `UNITY_LICENSE` ULF 방식이 월 166회까지 무료이나, private 2코어 러너 디스크 크기가 미확인이므로 **첫 스텝을 `df -h /`로 두고 실측 후 판단** ⑦ NumLink 추적 중인 `google-services.json` 2개(CatRush 식별자, APK 동봉 중) 제거."
+      },
+      {
+        "title": "[P2·이월] 나머지 장부와 위생 항목",
+        "description": "**신규 이월**: D-13 아이템 지급 대상 불일치(`ShopManager.SetShopIndex(int)` 신설로 `DragSnapper.cs:78`·`ButtonController.cs:193`·`ShopManager.cs:41` 3곳 통일) · D-14 `SetString` 값 미저장 + 소유 단방향 래치 · D-15 루프 상한 불일치 · D-16 매 프레임 `GameObject.Find` · N50 매니페스트 try/catch + 재시도 · N51 마지막 레벨 「다음」 · 별점 기준 3중 분기 통일 + 타이머 활성화 여부 결정 · `levelIndexMap`에 8x8/8x9 등록(마스터 보드 120개 회수) · 루비 소비처 신설 · 노멀/하드 채보 4곡 동일 · MeowBeat 캔버스 6개 match 값 통일 · 말줄임 처리(TMP 144곳 overflow=0) · Mipmap ON UI 스프라이트 7건 · 햅틱 금지 API 교체 · `NoteSpawner.cs:209-212` 폴백 스프라이트 4→2종 뭉개짐 · ESLint flat config 복구 · 온보딩·튜토리얼 부재(양 프로젝트 0건) · `C:/Unity/Meowpang` 휴면 15GB(Library 12GB 회수 가능, C: 여유 77GB). **기존 이월**: `GameOverPanel.uxml` `btn-watch-ad` · MeowBeat 볼륨 하드코딩 2줄 + 슬라이더 동기 Save · N42~N45 · D-10 IAP v5 obsolete · MeowBeat 곡 순서 역전(인덱스 5 BPM 89.1) · PKM autostash 2건 · `DASHBOARD_REDESIGN_PROMPT.md` + `LogPage.css:170/:178` 그라데이션 · `e0.txt`(23일째) · `.omc/sessions` 34개 추적 해제 · `git gc`(loose 1,953개 57MiB) · 브랜치 보호 · undici 5 high · 폰트 라이선스 0건 · 미참조 PNG 609개 · 아틀라스 0개 · Unity Localization 죽은 에셋 11개."
+      }
+    ]
+  },
+  {
     "id": "2026-09-09T04:00:00-daily-standup",
     "date": "2026-09-09",
     "researchTitle": "🔴 고칠 부품은 이미 코드 안에 있는데 어디에도 안 꽂혀 있다 — `LoadRemoveAds()` 호출 0건, 광고 부활 버튼 없는 UXML, manifest에서 사라진 결제 패키지",
