@@ -1,5 +1,259 @@
 [
   {
+    "id": "2026-09-11T04:00:00-daily-standup",
+    "date": "2026-09-11",
+    "researchTitle": "🔴 어디에도 적히지 않는다 — 유저가 번 코인은 디스크에 닿지 않고(N52·N53), 5개월치 37커밋은 원격에 없고, 49건짜리 버그 장부는 파일로 존재한 적이 없다",
+    "researchSummary": "어제가 「돈이 흐르는 방향이 반대」였다면 오늘은 **기록이 어디에도 남지 않는다**다. ① 유저 쪽: NumLink는 클리어 보상을 「홈/다음」을 눌러야만 정산하고(N52) 뒤로가기·포커스 훅이 grep 0건이라 그 외 모든 이탈에서 코인이 사라진다. MeowBeat는 `PlayerPrefs.SetInt`만 하고 `Save()`를 부르지 않아(N53) OS가 프로세스를 회수하면 번 코인이 롤백된다. N46이 「안 번 사람에게 주는」 문제라면 이 둘은 「번 사람에게서 뺏는」 문제다. ② 우리 쪽: MeowBeat `meowbeat/main`의 **37커밋(4/1~4/7, 6레인·신곡 5곡·소유권 마이그레이션)이 5개월째 origin에 없다** — 키스토어 다음가는 비가역인데 어제까지 장부에 없었다. 반대로 「미커밋 85건」의 실체는 247MB 재다운로드분이고 진짜 비가역은 512KB 씬 1개, 「테스트 414줄 소실」도 HEAD에 온전해 `git checkout` 한 줄이면 복구된다. ③ 장부 자체: **N번호 49건을 담은 파일은 어디에도 없다.** 회의록 산문에만 있고 37개 ID 중 기계 판독 가능한 건 11개뿐이다. ④ 계측기: 저널 라이브·로컬 12,930B 차이는 전부 CRLF였다 — 바이트 비교 감시는 매일 오탐한다. ⑤ 게이트: main 브랜치 보호·룰셋 **0건**이라 PR Validate가 필수 체크가 아니고, 색 정본은 USS·C#·SO 3갈래로 26개 중 1개만 일치한다. 그리고 Play targetSdk 요건 마감 **8/31/2026은 이미 지났다**.",
+    "researchItems": [
+      {
+        "title": "Orchestrator · 어제 결정 13건 — 완료 1 / 미완료 12, 유일한 완료는 자율 실행 가능했던 웹 항목",
+        "description": "13건 전부 파일 증거로 판정했다. **완료 1건**: ⑩ 모바일 오피스 맵 가로 스크롤(`src/styles/office-components.css:412 overflow-x:auto`·`:418 min-width:800px`, 커밋 `4e2c10e`) — 13건 중 유일하게 사용자 세션 없이 자율 실행할 수 있던 항목이다. **미완료 12건**: ① 키스토어는 `D:/Unity/Keystore`에 md5 동일 사본 6개가 있으나 같은 PC 내부 드라이브이고 디렉터리 mtime이 2026-03-26이라 어제 조치 흔적 0 ② `AdManager.cs`의 `#if UNITY_EDITOR`가 여전히 `Debug.LogWarning` 한 줄만 감싸고 `#else` 분기도 무조건 지급 ③ `Assets/Scripts/Admob/AdmobManager.cs:27 RemoveAds = false;` 잔존, `LoadRemoveAds()` 호출처 0건(정의 `DatabaseManager.cs:250` + 주석 `AdFreeManager.cs:66`뿐) — 2줄짜리가 사흘 연속 ④ targetSdk 34/35 그대로(min 28/25, bundleVersion 1.005/1.113) ⑤ `wevtutil gl` enabled:false 엿새째 ⑥ `dspTime` grep 0건·`noteLeadTime=2f`·`Note.cs:34 Random.Range` 그대로 ⑦ `AddCoin()`의 점수 1:1과 `ScoreManager.cs:49 1f+(_currentCombo*0.1f)` 무상한 유지, `OnRhythmGameEnd` 호출 0건 ⑧ `GameConstants.cs:210-217` 8개 전부 Google 공용 테스트 ID, `WatchAdForHints()`에 `hintCount++` 없음 ⑨ PRIVACY 문서 0건(히트는 전부 PackageCache의 SDK xcprivacy) ⑪ `AppIcon` 디렉터리 부재·TuxedoIcon.psd는 `Background/Ref/` 잔류(12회째) ⑫ `.nvmrc` 부재·checkout v7.0.0·deploy-pages v5.0.0 그대로, Dependabot #124 **54일째 OPEN**(#136도 OPEN) ⑬ `SetShopIndex` grep 0건·`SongDataLoader` 무방비 파싱·N51 미변경."
+      },
+      {
+        "title": "Orchestrator · [신규 비가역] MeowBeat `meowbeat/main` 37커밋이 5개월째 원격에 없다",
+        "description": "미push 총 **40커밋** = `feature/song-ownership-migration` 3 + **`meowbeat/main` 37**(`447ebcc` 4/1 ~ `bd5849a` 4/7). 내용은 data-driven 노트 시스템·6레인·신곡 5곡·소유권 마이그레이션으로, 이 PC 디스크에만 존재한다. 어제까지 장부에 **키스토어만 비가역으로 올라 있었는데 이쪽이 훨씬 크다.** 구조적 모순도 함께 발견됐다 — Feedme `SPRINT.md` 블로커에 「song-ownership-migration을 meowbeat/main에 병합 필요」라 적혀 있으나 **정작 meowbeat/main 자체가 origin에 존재하지 않는다.** 병합 대상이 원격에 없는 상태로 5개월을 보냈다. (fetch 기준 2026-09-08 04:16)"
+      },
+      {
+        "title": "Orchestrator · [수치 정정] 「미커밋 85건」의 실체 — 비가역은 512KB 씬 1개뿐",
+        "description": "여덟 회의 동안 「미커밋 85건 동결」로 보고해 온 숫자를 처음 실체별로 분해했다. **재생성 가능**: `Assets/Layer Lab` 240MB/7,663파일 + `Addin's Weapon Icons` 7.3MB/1,980파일 + `Screenshots` 7.3MB/103파일 = **247MB / 9,643파일**(전부 에셋스토어 재다운로드분). **진짜 비가역**: `Assets/_Recovery/0 (4).unity`(512,991B, 5/7 생성, git 이력 없음) **1개**. NumLink 미커밋 46줄의 배후에 실제 미추적 파일이 9,804개이며, 경보의 99.9%가 재다운로드 가능한 파일이었다. 브랜치도 정정 — `feature/ugui-layerlab`은 origin과 ahead 0·behind 0으로 동기 상태이고, behind 62인 것은 방치된 로컬 `main` 스테일 브랜치라 작업 손실이 아니다."
+      },
+      {
+        "title": "Orchestrator · [수치 정정] 「테스트 414줄 소실」은 소실이 아니었다 — 복구 1줄",
+        "description": "9/8 저널의 「에디터 테스트 414줄은 이동 실패로 워킹트리 소실」은 과대평가였다. NumLink `Assets/Tests/Editor/`의 4파일은 `git status`상 unstaged `D`일 뿐이고 `git show HEAD:` 로 원본 414줄이 온전히 확인된다(`e536009`). **`git checkout -- \"Assets/Tests/Editor\"` 한 줄이면 복구**된다. 반면 Feedme의 D 3건(`Input.meta`·`Item.meta`·`SaveLoad.meta`)은 폴더 자체가 디스크에서 사라진 것이라 성격이 다르다. `.gitignore` 수정 내용도 확인 — 양쪽 리포 모두 `.gstack/` 한 줄 추가뿐으로 위험 없음."
+      },
+      {
+        "title": "Orchestrator · PKM 자동 동기화가 3회 연속 같은 자리에서 깨진다 — index에 20건이 staged인 위험 상태",
+        "description": "오늘 04:27:44 SessionStart 훅의 `pull --rebase --autostash --quiet origin master`는 Fast-forward(`dce5964`)까지 성공했고, 실패 지점은 **autostash 복원**이다. 충돌 파일은 `05_AI_Config/skills/publish/SKILL.md` 한 개, 충돌 3덩어리(마커 9줄 — 19·60·78행). ahead/behind 0/0이라 커밋 이력은 정상이고 `stash@{0}`(2026-09-11 04:27:44, 21파일 271+/239−)이 남아 **데이터 손실은 없다**. 다만 autostash가 9/3·9/9·9/11 **3개 누적** = 같은 실패의 3회 연속이며, 현재 index에 M 20건이 staged 상태라 **이 상태에서 `git add .`·커밋하면 사고**다. 훅이 다시 돌기 전에 `publish/SKILL.md`를 먼저 정리해야 재발이 멈춘다."
+      },
+      {
+        "title": "Orchestrator · 정지 72일·82일, SPRINT 진행률의 출처와 나이",
+        "description": "NumLink `e536009`(2026-07-01) → **정지 72일**. Feedme `921e0cf`(2026-06-21) → **정지 82일**. agent-office `4e2c10e`(9/10 05:12) → 1일. SPRINT 진행률은 체크박스가 아니라 표의 상태 이모지로 센 값임을 재확인했다(`- [ ]`/`- [x]`는 두 파일 모두 0개) — NumLink 43행 중 ✅32·⬚11 = **74.4%**(mtime 2026-05-30, **104일 정지**), Feedme 57행 중 ✅35·🟢1·⬚17·🔴4 = **61.4%**(mtime 2026-04-07, **157일 정지**). 두 수치 모두 현재가 아니라 그 시점의 스냅샷이며, PROGRESS.md·TODO.md는 세 리포 어디에도 없다. 회의 기동은 `C:/Users/LIMMM/daily_standup.log` 기준 9/10 04:33:17→05:16:14 exit 0(42분 57초), 오늘은 04:27:36 시작."
+      },
+      {
+        "title": "QA Tester · [N52 HIGH] NumLink 클리어 보상이 「홈/다음」 클릭 외 모든 이탈에서 소실된다",
+        "description": "`StageClearController.cs:226-235 ApplyRewards()`의 호출처는 `OnHomeClicked(:212)`·`OnNextClicked(:220)` **2곳뿐**이다. `GameManager.cs:321`(RestartGame)·`:354`(OnRewardGranted)는 `StageClear?.HideImmediate()`로 패널만 닫고 정산하지 않는다. 재현: 레벨 클리어 → 보상 패널에서 Android 뒤로가기 또는 홈버튼 → 앱 종료 → 코인·루비 0. 증폭 조건 2개를 실측했다 — ① NumLink 전체에 `OnApplicationPause/Focus/Quit` **grep 0건** ② `KeyCode.Escape` 처리 **0건**(Feedme는 `ButtonController.cs:36`에 있다). 뒤로가기를 소비하는 코드가 없어 Unity Android 기본 동작대로 앱이 그대로 종료된다."
+      },
+      {
+        "title": "QA Tester · [N53 HIGH] MeowBeat가 번 코인을 디스크에 쓰지 않는다 — OS 회수 시 롤백",
+        "description": "`DatabaseManager.cs:310-313 SaveCoin()`은 `PlayerPrefs.SetInt(\"Coin\", coin)`만 하고 **`PlayerPrefs.Save()`를 부르지 않는다**. `:457-463 SaveDic()`(고양이 소유)도 동일. 저장소 전체 `PlayerPrefs.Save()` 11건 중 게임 진행 경로는 `SaveOwnership(:107)`(곡 구매) **단 1곳**이다. 결정타는 `:757-763 OnApplicationPause` — `SaveCat/SaveFarmData/SaveInteractionData/SaveCatTiers` **팜 데이터 4종만** 저장하고 코인·점수·곡을 빠뜨렸으며 flush도 없다(인자 `pause`조차 미사용). 재현: 한 판 플레이로 코인 획득 → 홈버튼 → 무거운 앱 실행해 OS가 프로세스 회수 → 재실행 시 코인 롤백. `OnApplicationQuit` 자동 flush에만 의존하므로 크래시·OS kill에서 전부 날아간다."
+      },
+      {
+        "title": "QA Tester · [N54·N55·N56] 팜 BGM 단방향 래치 / 볼륨 이중 저장소 / 멀티터치 고아 렌더러",
+        "description": "**N54 MED** — `BackgroundMusic.cs:42-49 PauseMusic()`이 `isPaused=true`로 놓지만 `PlayMusic()(:30-40)`이 이를 false로 되돌리지 않는다. 호출처는 `LoadSceneManager.cs:28`(팜 입장)·`:52`(팜 퇴장)라 1회차만 `Play()` 분기를 타고 2회차부터 영구히 `UnPause()` 분기 — 소스가 Stop 상태면 아무 일도 일어나지 않아 무음이 된다. **N55 MED** — `SetTrackVolume` 게임 코드 호출처가 전부 슬라이더 콜백 안이고(`SettingManager.cs:100,102`·`SettingsController.cs:154,166,167`), `SettingsController.cs:118-119`는 `SetValueWithoutNotify`로 콜백을 명시적으로 건너뛴다. 즉 **부팅 시 `musicVolume`을 믹서에 반영하는 경로가 0건**이고 실제 소리는 `SoundManagerSettingsSO.asset`의 별도 `sound.settings`가 지배한다. N48로 세이브가 초기화되면 슬라이더는 0.5로 돌아가는데 소리는 이전 값을 유지한다. **N56 LOW-MED** — `NumberManager.cs:241-249`가 `EndDrag()`를 우회해 `currentLineRenderer`를 정리하지 않고 `:548`에서 가드 없이 덮어쓴다. 고아 렌더러는 `createdLineRenderers`에 없어 `ClearAllLines(:579-610)`도 못 지운다. 양 프로젝트 모두 `Input.multiTouchEnabled = false` 설정 0건."
+      },
+      {
+        "title": "QA Tester · [구조 발견] N번호 49건을 담은 장부 파일은 어디에도 존재하지 않는다",
+        "description": "장부 실측 결과, 구조화된 N번호 대장은 **양 프로젝트·agent-office 어디에도 없다**. 유일하게 존재하는 `C:/Unity/Feedme/Tools/known_bugs.json`(2026-06-20)은 **탐지 규칙 7종**(error 5·warning 2, auto_fix는 `YAML_INDENT_M_FATHER` 1건)으로 `unity_validate.py`·`qa_static.py`가 읽는 패턴 레지스트리이지 결함 대장이 아니다. NumLink `Assets/AutoQATests/`는 2026-04-20 생성 후 빈 디렉터리. **N번호는 `agent-office/src/data/agents.ts:97-100`과 저널 JSON의 산문에만 존재하며, 37개 ID 중 기계 판독으로 심각도를 회수할 수 있는 것은 11개뿐이다.** 매일 「장부 49건」이라고 세어 온 숫자에 기계적 근거가 없었다."
+      },
+      {
+        "title": "QA Tester · 테스트 커버리지 판정 종결 + 「81일째 0줄」 정정",
+        "description": "Feedme `Assets/AutoQATests/Editor/AutoGenTests.cs`(4,065B·12 테스트)는 **스모크 확정**이다. 단정문을 세면 `Assert.DoesNotThrow` **9건**, 기본값 확인(`IsNull`·`IsFalse`) 3건, `IsTrue(IsSpawning)` 1건, `IsNotNull` 1건 — 전부 「예외만 안 나면 통과」이고 타이밍·판정·점수·코인·소유권·세이브를 검증하는 단정은 **0건**이다. **정정 2건**: ① 「MeowBeat 게임 코드 81일째 0줄」은 부정확하다 — `.cs`를 건드린 마지막 커밋은 `657032c`(2026-04-12)로 **152일 전**이다. ② 대신 미커밋 `.cs` 4개(+100/−18줄)가 2026-04-23 수정 이후 **141일째 작업트리에만** 있다(`SongData`·`GameManager`·`SongManager`·`OptionManager`). 오늘 감사는 작업트리 기준이라 이 4개 파일의 행 번호는 HEAD와 다르다. 미해결은 CRITICAL 5(N16·N18·N46·N47·N48)·HIGH 5(N42·N49·N50·N52·N53), 해결 0."
+      },
+      {
+        "title": "Developer · [D-20 HIGH] agent-office 5개 라우트 전부가 3.4MB 저널을 강제로 받는다 — 4개는 쓰지도 않는다",
+        "description": "`src/App.tsx:15-16`에서 OfficeProvider가 `<Routes>` 전체를 감싸고, `src/contexts/OfficeContext.tsx:146`이 `usePersistentJournal()`을 호출하며, `src/hooks/usePersistentJournal.ts:60`의 deps `[]` useEffect가 `fetch('data/operations-journal.json')`을 **무조건** 실행한다. 실측 raw 3,397,328B / **gzip 914,618B** / 126 entries / Node `JSON.parse` 6.4ms(데스크톱, 모바일은 수 배). 소비처는 `LogPage.tsx:10`(전량)과 `HomePage.tsx:15`의 `journalEntries.slice(0, 3)` 둘뿐이고 **`/work`·`/playground`·`/insights`는 0건 사용인데 894KB를 받는다**. 대비: JS 번들 355KB·CSS 36.8KB — 저널이 나머지 전부의 **2.3배**다. 수정은 `usePersistentJournal`을 Provider에서 떼고 LogPage 전용 lazy + HomePage용 요약 JSON 분리, 3파일 이내."
+      },
+      {
+        "title": "Developer · [D-21 MED] NumLink 스프라이트 static 캐시 — 해제 경로 없음 + 상한 20/29 불일치",
+        "description": "`PuzzleManager.cs:71 private static Sprite[] cachedSprites;`에 로드 경로가 3개다 — `:530 LoadSpritesOptimized`(상한 적용), `:764 LoadSpritesIfNeeded`(상한 없음), `:773 LoadSpritesAsync`(상한 없음). 먼저 실행된 쪽이 이겨 풀 크기가 **20 또는 29로 갈린다**. `:533-536 Array.Resize(ref cachedSprites, 20)`은 배열만 자르고 로드된 29장 텍스처는 그대로 상주하는데 `Assets/02. Scripts/` 전역에 `Resources.UnloadUnusedAssets`/`UnloadAsset` 호출 **0건**이다. `:1830 OnDestroy()` 주석은 「씬 전환 시 static 필드 정리」라고 쓰여 있으나 PuzzleManager는 `AutoSetup.cs:23 DontDestroyOnLoad(managers)` 아래 `EnsureManager<PuzzleManager>`로 붙으므로 **OnDestroy는 앱 종료 시에만 발화**한다 — 주석과 실제 수명이 어긋난다. `Assets/Resources` 총 8.8MB(Images 29장 4.1MB + Sounds 4.5MB)는 참조 여부와 무관하게 빌드에 전량 포함되는 APK 고정 비용이다."
+      },
+      {
+        "title": "Developer · [D-22 MED] 코루틴 핸들 추적 공백 — DDOL 매니저가 파괴된 씬 오브젝트를 참조할 수 있다",
+        "description": "`StartCoroutine` 18곳 중 핸들을 보관·중단하는 곳은 `HintManager.cs:119,128` **2곳뿐**이다. `PuzzleManager`·`PreGeneratedBoardManager`·`EffectManager`에 OnDisable은 있으나 전부 이벤트 해제·`CancelInvoke`만 하고 **`StopAllCoroutines()`는 어느 파일에도 없다**. 매니저가 DDOL이고 `GameManager.cs:356`이 `SceneManager.LoadScene(\"LobbyScene\")`(Single)이므로 씬 오브젝트를 참조하는 진행 중 코루틴이 파괴된 대상에 계속 접근할 수 있다 — **다만 실제 예외 발생은 확인하지 못했다(추론)**. 다음 진단은 보드 생성 중에 로비 복귀를 눌러 로그를 보는 것. 부수적으로 `HUDManager.cs:37`이 `DontDestroyOnLoad(canvasGo)`로 HUDCanvas를 만들면서 OnDestroy가 없다."
+      },
+      {
+        "title": "Developer · [D-23 LOW] npm audit 7건은 전부 devDependencies + 프레임워크 최신 동향",
+        "description": "`npm audit` moderate 2 / high 5 / critical 0이며 high 5건(brace-expansion·browserslist·nanoid·postcss·undici)은 **전부 devDeps**다. 런타임 의존성은 `npm ls --omit=dev --depth=0` 기준 react 19.2.7 / react-dom 19.2.7 / react-router-dom 7.18.3 **3개뿐**이라 배포된 정적 사이트에 노출이 없다(영향면은 `scripts/` 빌드 체인뿐). 웹 리서치 — **TypeScript 7.0(Go 네이티브 포트)이 2026-07-08 정식 출시**, 바이너리는 그대로 `tsc`, 빌드 8~12배. 6.0(2026-03-23)이 JS 기반 코드베이스의 마지막 판이고 `typescript-go` 스테이징 리포는 2026년 9월 영구 아카이브. 로컬은 `typescript: ~6.0.3`이고 `npm run build`가 `tsc -b`이므로 직접 영향이 있다. **React 19.3.0(2026-09-09)** — ViewTransition·Fragment refs·`browser()`·Trusted Types(로컬 19.2.7). Vite는 레지스트리가 latest 8.3.0을 표시하나 **공개 릴리스 노트로 8.3 발표를 확인하지 못해 근거 미확보로 둔다**."
+      },
+      {
+        "title": "Game Designer · [MeowBeat] 곡을 완주해도 보상이 0이고, HP 0으로 죽어야 코인이 나온다",
+        "description": "`NoteSpawner.cs:156 CheckStageClear()` → `GameManager.cs:509 StageClear()`가 `audioSpeed += 0.1`을 하고 **같은 곡을 다시 재생**한다. 세션 종료 분기는 `StatusManager.cs:44~52`의 HP<=0 **하나뿐**이고, `SaveScore()` + `DatabaseManager.AddCoin()`도 그 실패 분기에만 있다. 즉 **잘할수록 보상이 늦어지고 완주 자체는 무보상**이다. 배속에는 상한이 없고 `SongManager.cs:76 bgmPlayer.pitch = audioSpeed`라 피치 보정도 없어 3바퀴면 음정이 x1.3, 5바퀴면 x1.5로 올라간다. 곡 1회는 52~92초(manifest 실측: 최단 hardwood_dash 52.3초 / 최장 escort 86.3초)인데 무한 반복이라 **세션 길이 상한이 없다**. 덧붙여 `daily|attendance|출석|streak|mission|quest` grep **0건** — 일일 보상·출석·미션이 전혀 없다."
+      },
+      {
+        "title": "Game Designer · [MeowBeat] 난이도 라벨이 역전됐다 — 무료 기본곡이 유료 최난곡보다 1.7배 조밀",
+        "description": "채보 밀도를 NPS(초당 노트)로 실측했다. 무료 기본곡 bumblebee의 normal/hard가 **NPS 4.03**인데, 유료 최고 BPM곡 hardwood_dash(136.0 BPM) hard가 **NPS 2.39**다. BPM은 89.1→136.0으로 오르는데 NPS는 2.15~2.39로 평탄하다. 유료 6곡의 hard는 normal 대비 노트가 **+11~14%뿐**(120→137, 127→142, 120→133, 127→129, 129→132, 123→129)이라 3단계 난이도가 실질 2단계다. 게다가 곡 가격이 manifest `price` 기준 **전 곡 3000 균일**이라 난이도·길이·BPM과 무관하고 해금 순서를 유도하는 장치가 없다."
+      },
+      {
+        "title": "Game Designer · [MeowBeat] 하루 한 번 접속이 리듬 풀콤보 1회보다 이득이다",
+        "description": "세 경로의 코인 수급을 같은 단위로 비교했다. ① **리듬 134노트 풀콤보** ≈ 134 + 0.1×(134×135/2) ≈ **1,038코인**(콤보 배수 1+0.1n, 코인 1:1) ② **보상형 광고 1회 = 1,000코인**(`GameConstants.AdRewardCoin`) ③ **오프라인 카페 Lv1 = 1coin/min × 24h = 1,440코인/일**. **접속만 해도 리듬 풀콤보 1회분을 넘는다.** 리듬을 반복할 경제적 동기가 구조적으로 없고, 어제 지적한 「광고 1,000코인이 1판의 23%」와 합치면 광고·리듬 두 경로가 동시에 무의미해진다. 메타(농장) 레이어가 코어(리듬) 루프를 잡아먹는 형태다."
+      },
+      {
+        "title": "Game Designer · [NumLink] 튜토리얼이 코드에 없고, 40~59레벨에서 보드가 오히려 줄어든다",
+        "description": "`tutorial|onboard|firstplay|FirstTime` grep **0건** — FTUE 코드가 존재하지 않는다. 1~10레벨은 전부 5x5(25칸) 동일 크기라(`BoardData.json` 실측) 온보딩 10판이 같은 자극의 반복이다. 난이도 곡선에는 역행 구간이 있다 — 33~39레벨이 7x7=**49칸**인데 40~59레벨이 6x8=**48칸**으로 1칸 줄고, 그 상태로 20레벨을 정체한다. 하필 `GameConstants.cs:13 DifficultyNormalMinIndex=40`이 이 지점부터 「노멀」 라벨을 붙인다 — **라벨만 오르고 보드는 줄어든다**."
+      },
+      {
+        "title": "Game Designer · [NumLink] 데일리·스트릭 계층 전체가 호출처 0건 데드코드",
+        "description": "`DailyPuzzleManager.OnDailyPuzzleCleared()` 호출처 **0건**, `DailyPuzzleProvider`·`EndlessModeProvider` 사용처 **0건**, `DailyChallengeHubPanel`은 스크립트 자기 자신 외 참조 **0건**(씬·프리팹 포함). 스트릭 배수 상수(3일 2x / 7일 3x / 30일 5x)는 정의만 되고 streak는 영원히 0이다. 리텐션을 만들 계층이 통째로 구현돼 있는데 배선만 없다 — 어제 지적한 「부품은 있는데 배선이 없다」의 가장 큰 사례이며, 아래 벤치마크의 D7 방어선을 지탱할 유일한 장치이기도 하다."
+      },
+      {
+        "title": "Game Designer · [NumLink] 실패 비용이 0이고, 자동 힌트가 힌트 IAP를 잡아먹는다",
+        "description": "**라이프가 에너지 게이트가 아니다** — `GainLife()` 호출처 **0건**이고 `Revive()`(`GameManager.cs:265`)와 `OnRetryClicked`(`GameOverController.cs:162`) 둘 다 `ResetLife()`로 3개를 즉시 전부 회복한다. 회복 대기 시간·타이머가 없다. 부활 비용은 코인 100(`GameOverController.cs:12 CoinCostPerLife`)인데 **재시작은 무료 풀회복**이라 살 이유가 없다. 시간 압박 상수는 `TimeLimitPerCell=2.5f`·`Star3TimeRatio=0.6`·`Star2TimeRatio=0.3`·`SpeedClearSeconds=30` **네 개 모두 정의 외 사용처 0건**이고 `Timer.cs`는 경과 시간을 표시만 해 세션 길이가 무제한이다. 결정타는 **N-6**: `HintManager.cs:174`가 무입력 **3초마다** `ShowHintForNextNumber()`를 호출하면서 `saveData.hintCount`를 **차감하지 않는다**. 반면 `UseHint()(:74)`와 IAP `hint_pack_5`/`hint_pack_10`은 유료다 — 공짜로 3초마다 정답이 나오는데 힌트팩을 살 이유가 없고, 퍼즐이 「따라 그리기」가 된다."
+      },
+      {
+        "title": "Game Designer · [웹 리서치] 퍼즐 D7 12.18%, 세션 P50 3.1~3.5분 — 두 게임 다 장르 패턴과 반대로 설계됐다",
+        "description": "**퍼즐 리텐션**: D1 **31.85%** / D7 **12.18%** / D30 **5.35%**가 실측 평균이고, 2026년 「좋음」 기준선은 35/15/5, 상위 25%가 40/20/10, top-grossing 매치3는 47/24/13까지 간다 [Segwise·Playio·Gamigion 2026]. 데일리 계층이 죽어 있는 NumLink는 D7 12% 방어선을 지탱할 장치가 없다. **하이브리드캐주얼**: 캐주얼 코어+메타 레이어+IAP·광고 병행 타이틀이 매출 **+37%** 성장, 라이프스타일·퍼즐 매출 구성은 **IAP 59.0% / 인앱광고 41.0%** [Game Growth Advisor·Sensor Tower State of Gaming 2026] — 두 게임 다 메타 레이어는 있는데 IAP 수요 곡선을 스스로 무너뜨리고 있다(N-6·곡 가격 균일). **리듬 시장**: 모바일 리듬 2024년 $2.5B → 2033년 $5.3B, CAGR 9.1%, APAC이 2025년 $887.8M(42.3%)로 최대 [Verified Market Reports·Cognitive Market Research 2026] — 다만 국내 캐주얼 리듬 신작 매출 순위는 **미확보**. **세션 길이**: 캐주얼 평균 5~15분, 전체 중앙값 **P50 3.1~3.5분**, 퍼즐·캐주얼은 하루 **4.1세션**으로 빈도가 최상위 [MWM·AppFollow 2026]. 두 게임 모두 세션 상한이 없어 「짧게 자주」와 정반대다."
+      },
+      {
+        "title": "DevOps · 배포 검증 PASS — 그리고 「바이트 비교」 감시는 매일 오탐한다는 사실 발견",
+        "description": "`npm run build` **exit 0**, 1.51초, 62 modules — `index.html` 1.24kB(gzip 0.59) / CSS 36.84kB(7.37) / **JS 355.51kB(gzip 119.80)**, dist 총 8.3MB, 저널 3,397,328B 정상 동봉. 라이브 대조 `https://mmporong.github.io/dev-studio/data/operations-journal.json` → **HTTP 200**, 3,384,398B, 1.569초, **126 entries = 로컬 126**, 최신 id 양쪽 일치, `json content equal: True`. **여기서 새 사실** — 로컬 3,397,328 − 라이브 3,384,398 = **12,930B이고 이는 로컬 CR 개수와 정확히 일치**한다(`core.autocrlf=true` + `.gitattributes` 없음 → 로컬 CRLF, 커밋·배포본 LF). **바이트 크기만 비교하는 드리프트 감시는 정상 상태에서도 매일 차이를 보고한다.** 비교는 entries 수나 정규화 해시로 해야 한다. 워크플로 최근 10건 **10/10 success**, Deploy 34~45초."
+      },
+      {
+        "title": "DevOps · main 브랜치 보호 0건 — PR Validate가 필수 체크로 걸려 있지 않다",
+        "description": "`gh api repos/mmporong/dev-studio/branches/main/protection` → **404 Branch not protected**, `gh api .../rulesets` → **`[]`**. 리포는 **public**이고 서버 size 7,835KB. `pr-validate.yml`이 typecheck·빌드·저널 엔트리 검증까지 수행하지만 **required status check가 아니다** → Dependabot PR을 검증 실패 상태로도 머지할 수 있고 main 강제 push도 차단되지 않는다. 어제 「저널 검증이 배포 경로에 없다」와 합치면, **검증은 존재하는데 어느 경로에서도 통과가 강제되지 않는 상태**다."
+      },
+      {
+        "title": "DevOps · deploy-pages.yml 권한 최소화 위반 — 빌드 잡이 Pages 쓰기·OIDC 권한을 쥐고 있다",
+        "description": "`permissions: {contents: read, pages: write, id-token: write}`가 **워크플로 레벨**에 있어 `build` 잡에도 그대로 상속된다. `build`는 `npm ci`로 devDeps 25종의 postinstall을 실행하는 잡인데, 그 잡의 GITHUB_TOKEN이 **Pages 쓰기 + OIDC id-token 발급 권한**을 함께 쥔다. `pages: write`·`id-token: write`를 `deploy` 잡으로 내리고 `build`에는 `contents: read`만 남기면 공급망 사고 시 배포 경로가 끊긴다. 같은 리포의 `weekly-insights.yml`은 이미 잡 레벨로 분리돼 있어 좋은 대조군이다."
+      },
+      {
+        "title": "DevOps · 로컬 `.git`이 서버의 8.4배로 부풀었고 저널은 하루 +37.7KB씩 자란다",
+        "description": "`git count-objects -vH`: loose **1,970개 58.17MiB**, in-pack 587개 378.16KiB, `.git` 총 **64MB**. GitHub 서버 packed는 **7.65MB**로 **로컬이 8.4배**다. 1MB 초과 blob 69개가 디스크 45.92MiB로 오브젝트 용량의 **78.5%**를 점유한다. 저널 blob 추세는 9/4 3,158,206 → 9/10 3,384,398 = **6일간 +226,192B, 하루 +37.7KB**(델타 미적용 시 연 +13.4MB). `gc.auto` 기본값이 6,700이라 자동 gc가 돌지 않으므로 수동 `git gc` 1회로 약 54MB 회수가 예상된다. Pages 캐시는 `Cache-Control: max-age=600`·`x-github-edge-region: koreacentral`이라 **배포 직후 최대 10분 구버전 노출 구간**이 있고, Pages는 max-age 설정이 불가해 수용하거나 파일명 해싱이 필요하다(현재 저널은 고정 경로)."
+      },
+      {
+        "title": "DevOps · C: 여유 8.1% — 500일 넘게 잠든 Unity Library 캐시 27.53GB",
+        "description": "C: 953GB 중 **77.0GB(8.1%)** 여유, D: 178.6GB(76.7%), E: 171.8GB(73.8%). `C:\\Unity` Library 합계 **67.77GB**다. 유휴일 기준 — Shinobi 10.01GB(800일)·CatRush 7.62GB(534일)·Micro 3.80GB(627일)·Minesweeper 2.91GB(505일)·BubblePop 1.77GB(674일)·Gomyammi 1.42GB(660일) = **500일+ 6개로 27.53GB**. Library는 재생성 가능한 캐시라 리포 무손실이며 삭제 시 C: 여유가 8.1%→**11.0%**가 된다. 활성 2종 NumLink(34일)·Feedme(71일) 12.68GB는 보존, 120일+ 전체를 정리하면 55.09GB(13.9%)까지 확보된다. 시크릿 스캔은 4개 리포 추적 파일에서 `ghp_`/`github_pat_`/`sk-ant-`/`AKIA`/`xox`/PEM/텔레그램 토큰 **0건**, 추적된 `.env`·`.keystore`·`.jks`·`.p12`·`.pem` **0건**으로 깨끗하다(NumLink google-services 2종은 기존 건). 웹 리서치 — 2026-09-03 Actions 업데이트로 **`vulnerability-alerts` 권한 신설**(PAT 없이 Dependabot 알림 읽기), 러너 폐기 조회 REST API 추가, **Ubuntu 22 러너 폐기 2026-09-17 시작**이나 세 워크플로 모두 `ubuntu-latest`(24.04)라 **영향 없음으로 확정**."
+      },
+      {
+        "title": "Content Writer · 스토어 문안은 「자세한 설명」 하나만 4.7% — 나머지 필드는 이미 통과",
+        "description": "`docs/STORE_LISTING.md`(양쪽 09-08 생성, 이후 미수정) 실측. **앱 이름 3안**(한도 30자): NumLink 22/17/20자, MeowBeat 22/22/18자 — 전부 통과, 문서 표기치와 실측 100% 일치. **짧은 설명**(80자): NumLink 53/53자, MeowBeat 52/48자 — 통과, 여유 27~32자. **자세한 설명**(4,000자): NumLink **187자(4.7%)**, MeowBeat **186자(4.7%)** — 각 3,813자·3,814자가 미작성이다. 앱 이름과 짧은 설명은 끝났는데 **가장 긴 필드만 통째로 비어 있고 현재 문서엔 「첫 3문장」만 있다**. 피처 그래픽 1,024×500이 게시 필수임도 재확인 [Play Console Help·PlayAudit 2026]. `CHANGELOG`는 **양쪽 0건**(검출은 전부 서드파티)이라 등록정보 「최근 변경사항」(500자)의 원본도 없다."
+      },
+      {
+        "title": "Content Writer · Play targetSdk 요건 마감 8/31/2026이 이미 지났다 — 신규 등록 자체가 막힌다",
+        "description": "2026-07-15 Play 정책 공지 기준 **전 앱 targetSdk 요건 충족 마감은 8/31/2026**이고 시행 유예는 30일 이상이다. 두 앱은 NumLink 34·MeowBeat 35로 **요건 미달이며 마감일이 이미 경과**했다(문서엔 요건 36으로 기재). 어제 확인한 「Unity 6000.3.5f2로는 API 36 빌드 불가, 6000.3.17f1+ 필요」와 합치면 **등재 일정의 최상위 블로커는 targetSdk가 아니라 엔진 업그레이드**다. 같은 공지의 나머지 변경(데이터 안전 섹션 위치 공시 강화, 아동 보호 익명 채팅 신설, `READ_CALL_LOG` 전화 인증 용도 삭제)은 두 앱의 권한 구성과 무관하다."
+      },
+      {
+        "title": "Content Writer · 영어 스토어 문안 0건 — 다만 인게임 번역 비용은 36개 키뿐",
+        "description": "영문 전용 스토어 문안 라인은 **두 문서 다 0건**(한국어만). 인게임은 하드코딩 딕셔너리다 — NumLink `Assets/02. Scripts/Managers/LocalizationManager.cs` **키 25개(ko/en 쌍)**, MeowBeat `Assets/Scripts/Manager/LocalizationManager.cs` **키 11개**. 즉 글로벌 출시 가능 언어는 **2개(ko/en)**뿐이지만, 뒤집으면 **언어 추가 단가가 25줄·11줄**이라는 뜻이다. 한글 문자열 전수(NumLink 129건·MeowBeat 41건) 중 나머지는 전부 디버그 로그이고 플레이어 노출 텍스트는 이 36개가 전부다. **구조 결함 1건**: NumLink는 `Assets/Localization/` 아래 en-US·ko-KR `.asset`과 Addressables 그룹 4개가 있는데 `Packages/manifest.json`에 `com.unity.localization`이 **없고**(grep 0건) 파일도 678·672바이트 껍데기(엔트리 0건)다 — 고아 자산이다. MeowBeat만 `com.unity.localization: 1.5.8`이 설치돼 있다."
+      },
+      {
+        "title": "Content Writer · 톤은 일관되나 난이도 라벨의 이모지가 Play 메타데이터 정책에 걸린다",
+        "description": "NumLink 인게임은 **해요체로 일관**(「완벽해요」·「코인이 부족해요」·「코인 {0}개 쓸게요」)이고 짧은 설명 A안 「즐기세요」와도 정합이다. MeowBeat 인게임은 **합니다체**(「코인이 부족합니다」)이고 자세한 설명 3문장도 합니다체인데, **짧은 설명 A안 「먹이가 쏟아진다!」만 해라체**로 튄다 — 유일한 혼용 지점이다. 별도로 NumLink 난이도 라벨이 `쉬움 😴 / 보통 🐾 / 어려움 😼 / 마스터 🌙`인데, **Play 메타데이터 정책은 제목·메타데이터 요소에 이모지·이모티콘·반복 특수문자를 금지**한다 [Play Console Help, Metadata]. 인게임은 무방하나 자세한 설명에 티어명을 그대로 옮기면 위반이라 텍스트로 풀어 써야 한다(06-02 커밋 「게임오버/클리어 타이틀 중복 이모지 제거」가 이미 같은 방향)."
+      },
+      {
+        "title": "Content Writer · 오늘 쓸 수 있는 산출물 — NumLink 자세한 설명 841자 전문 완성(주장 2건은 코드로 기각)",
+        "description": "841자/4,000자(21.0%) 전문을 작성했고 기계 검사 통과 — 이모지 0, ALL CAPS 0, 가격·프로모 표현 0, 순위·수상 주장 0, 미검증 수치 0(레벨 수·곡 수 미언급), 인게임 해요체와 정합. **작성 중 주장 2건을 실측으로 기각**했다 — ①「광고 없이」계열: `AdManager.cs`에 Banner 2/Interstitial 18/Rewarded 18 참조가 있고 `GameManager.cs:184`에서 인터스티셜을 실호출하므로 **삭제** ②「세 가지 테마」: `enum Theme {Kawaii, Premium, Retro}`는 이관 중인 UI Toolkit 경로(`UIThemeSwitcher.cs`)에만 있고 `Assets/Resources/Themes/`엔 `DefaultTheme.asset` 1개뿐이라 **삭제**. ③「인터넷 연결 없이」는 `BoardDataLoader.cs`가 `Application.streamingAssetsPath` 전용임을 확인해 **유지**했다. **웹 리서치** — iOS 미국 전 카테고리 페이지뷰→설치 기준선 **25%**(30% 초과 양호, 15% 미만이면 스크린샷·아이콘 문제), 스크린샷 최적화 리프트 15~40%, 프리뷰 영상 평균 15~35% 상승이되 **게임 카테고리에서 효과 최대**(Finance는 오히려 3~7% 하락) → 두 앱 다 게임이라 프로모 영상 우선순위가 일반 앱보다 높다. **BIC Festival 2026에 Google Play가 공식 스폰서**로 참여해 'BIC x Google Play Indie Fest Awards' 운영, 10개 팀 본무대·**상금 총 5,000만 원** — 출시 전 빌드로도 응모 가능한 트랙이라 MeowBeat가 후보다. 한국 게임 이용률은 70%대에서 **50.2%**로 하락했고 UA 특화 상품 집행 90% 초과·게임 광고주 수 전년 대비 300%+ 증가·CPI 상승 지속이라 **유료 UA는 인디 예산으로 승산이 낮다**는 근거가 수치로 확인된다."
+      },
+      {
+        "title": "Art Director · NumLink 색 정본이 3갈래 — 26개 중 일치는 1개, 같은 화면에서 충돌 확인",
+        "description": "정본 후보가 셋이다 — `Resources/UIToolkit/Styles/numlink-variables.uss`(38색 토큰, 7개 USS에서 150회 사용) / `02. Scripts/Data/UIColorPalette.cs`(26상수, 5파일 35호출) / `02. Scripts/Data/ThemeData.cs`(SO). USS는 2026-04에 「웜 크림+코랄」로 이관됐는데 C#은 옛 「크림/브라운」에 멈춰 있다: text-primary `#2C2C2C` vs `#6B4226`, timer-normal `#4ECDC4` vs `#6BAF6B`, timer-danger `#FF6B6B` vs `#E84040`, easy-bg `#B8E8E2` vs `#E8F5E8`, gold `#FFD93D` vs `#F0C040` — **26개 중 일치는 hard-border `#E8A838` 1개뿐**이다. **같은 화면 충돌도 확인**: 난이도 카드를 `LevelSelectUI.cs:439-455`(구 팔레트)와 `level-select.uss:272-276`(신 팔레트)가 각각 칠하는데 둘 다 살아 있다. `ThemeData.cs:36-43` buttonDarkColors는 `#8CFF88`·`#9223FF`·`#3DA6FF` 등 채도 100% 네온이라 뮤트 웜 팔레트와 계열 자체가 다르다. 전체 hex 실측은 NumLink 164종/275회, MeowBeat는 11종/13회(프리팹·씬은 22종/2175회로 오히려 정돈 — 백색 1671·`#323232` 237·크림 `#F4EAD2` 142)."
+      },
+      {
+        "title": "Art Director · 대비 실측 — 4테마 중 3개가 헤더에서 WCAG AA 미달",
+        "description": "계산 코드를 실행해 WCAG 2.1 기준으로 측정했다. `--text-on-primary #FFFFFF` on `--bg-primary #FF6B6B`(헤더) = **2.78:1 FAIL**. 테마별로 kawaii `#FFF` on `#E0A39B` **2.13**, retro `#FBF4E4` on `#C17A57` **3.10**, premium `#EFE6D6` on `#161420` 14.68 PASS — **4테마 중 3개가 헤더에서 AA 미달**이다. `--text-muted #999999` on cream `#FFF8F0` = **2.70:1 FAIL**(카드 위 2.85)이며 개선안은 `#7A7A7A`=4.08, `#6E6E6E`=4.84. 헤더 즉효 수정은 `numlink-variables.uss:35`의 `--text-on-primary`를 `#FFFFFF`→`#2C2C2C`로 바꾸는 것으로 **5.03:1 PASS**가 되면서 코랄 브랜드 색은 유지된다(코랄을 `#C8382F`로 어둡게 하면 흰 글자로 5.17이지만 색조가 바뀌므로 전자 권장)."
+      },
+      {
+        "title": "Art Director · MeowBeat TMP 6개가 한글 글리프 0자인 폰트에 묶여 있고, 12.47MB 폰트가 사장 중",
+        "description": "씬·프리팹 폰트 참조 집계: `1ACCsweet.ttf` **224건**, Unity 내장 Arial(fileID 10102) **28건**, `LiberationSans SDF` TMP **4건 + Fallback 2건** — 화면에 동시 3~4서체다. `TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset`을 실측하면 **문자 테이블 250자, 최대 U+25A1, 한글 글리프 0**이라 TMP 6개에 한글이 들어가면 렌더가 불가능하다. 한편 `Fonts/ACCfall.ttf`(5.71MB)·`ACCsky.ttf`(6.76MB)는 참조 **0건**으로 **12.47MB가 사장**돼 있다. 크기 단계는 MeowBeat 10종(20~80, 50이 142회), NumLink uGUI는 25종 이상에 `30.75`·`38.45`·`53.8`·`36.1` 같은 비정수 잔재가 다수다."
+      },
+      {
+        "title": "Art Director · 첫 화면에 브랜드가 0개 — Unity 기본 스플래시에 자사 로고 미등록",
+        "description": "두 프로젝트 모두 Unity `6000.3.5f2`, `m_ShowUnitySplashScreen: 1`, **`m_SplashScreenLogos: []`**, 배경 `#231F20`이다. Personal 플랜은 2026년에도 「Made with Unity」 제거가 불가하지만 **자사 로고 추가는 가능**한데 지금은 플레이어가 보는 첫 화면에 게임 브랜드가 하나도 없다 [Unity Discussions 2026]. 모션 쪽 비대칭도 함께 확인 — NumLink는 DOTween 37호출(DOScale 13·DOFade 5·DOColor 4)·SetEase 8종·USS `transition-*` 65선언인데 **MeowBeat는 DOTween 0호출**이고 씬 전환이 `Scripts/Scene/LoadSceneManager.cs:32-41`에서 `LoadSceneAsync` 뒤 `WaitForSeconds(0.5f)` 하드코딩 후 활성 씬 교체 — 페이드·로딩 UI가 없고 `UnloadSceneAsync(1)`은 빌드 인덱스 매직넘버다."
+      },
+      {
+        "title": "Art Director · NumLink 디자인 토큰이 색 말고는 채택률 0% — 타이포 스케일이 문서상으로만 존재",
+        "description": "`numlink-variables.uss`가 `--font-size-*` 8개, `--spacing-*` 7개, `--radius-*` 5개, `--anim-*` 3개를 정의하지만 `var(--font-size|spacing|radius|anim)` 실사용이 **0건**이다. 실제로 쓰이는 38종은 전부 색상 토큰이고, 대신 USS가 font-size를 **23종 하드코딩**(26px~140px)한다. 토큰 최댓값이 40px이라 하드코딩 범위와 거의 겹치지도 않는다 — 타이포 스케일이 문서상으로만 존재한다는 뜻이다."
+      },
+      {
+        "title": "Art Director · agent-office가 자기 DESIGN.md를 어기고 있다 — 하드코딩 37색 272회, 그중 29색은 토큰에 없음",
+        "description": "`DESIGN.md:148`의 「`color: #색상코드` 직접 사용 금지 — 반드시 CSS 변수 사용」 위반: tokens.css는 14색인데 나머지 9개 CSS가 **37색·272회** 하드코딩하고 **그중 29색은 토큰에 아예 없다**. 미등록 29색에는 Material 계열 칩 세트가 통째로 섞여 있다 — `#e3f2fd/#1565c0`, `#e8f5e9/#2e7d32`, `#fce4ec/#c62828`, `#e0f7fa/#00695c`, `#f3e5f5/#7b1fa2`, `#fff3e0/#e65100` — 토스 톤 토큰과 **다른 디자인 언어**다. `DESIGN.md:144` 그라데이션 금지도 4건 위반(`LogPage.css:170,178`, `office-components.css:78,375`). 죽은 CSS도 있다 — `animations.css:64 card-stagger-in`·`:81 filter-pop` 소비처 0, `.scroll-reveal`/`.is-visible`이 둘 다 `opacity:1; transform:none`으로 중화됐는데 `HomePage.tsx:14`는 여전히 `useScrollReveal()`을 실행하고 3개 섹션에 클래스를 붙인다. **반면 모션 접근성은 통과** — `base.css:60`의 `prefers-reduced-motion: reduce` 블록이 `*`에 duration 0.01ms·iteration 1을 적용하고, 9개 keyframes 전부 100%가 원위치이며 `page-enter`는 `both`라 최종 상태로 스냅한다(잔류 오프셋 버그 없음). `backdrop-filter` 0건으로 글래스 금지도 준수."
+      },
+      {
+        "title": "Art Director · [웹 리서치] 다이제틱 UI·10초 진입, Material 3 Expressive의 스프링 전환",
+        "description": "① **다이제틱 UI·HUD 감량이 2026 캐주얼 표준**이다 — 인터페이스를 월드에 심고(우편함=퀘스트, 표지판=내비) 튜토리얼을 선행 설명 대신 필요 시점 노출로 바꾸며, 성공 캐주얼·하이브리드캐주얼은 **실행 후 10초 내 게임플레이 진입**을 목표로 한다 [AAA Game Art Studio·AppFollow 2026]. MeowBeat의 무연출 씬 전환(0.5초 하드코딩)과 로고 없는 Unity 스플래시가 이 10초를 그냥 소모 중이다. ② **Material 3 Expressive가 duration/easing을 스프링 물리로 교체**했다 — 지속시간 기반은 중간에 끊기면 어색한데 스프링은 임의 시점 재타깃이 가능해 새 궤적을 자연스럽게 재계산한다. Gmail·Chrome·Docs·Keep·Files가 이미 적용 [supercharge.design·Android Authority 2026]. NumLink의 `SetEase(Ease.OutBack/OutQuad)` 8종·USS `transition-duration` 65선언은 duration 패러다임이라 연타 입력에서 튄다. ③ **iOS 26 Liquid Glass는 지금 대응 불필요** — iOS 26 SDK로 빌드하면 네이티브 UI에 자동 적용(옵트아웃 가능)이나 게임 자체 UI는 무관하고, **4/28부터 App Store Connect 업로드에 iOS 26 SDK/Xcode 26이 필수**이되 Liquid Glass 채택 자체는 심사 요건이 아니다 [Stora 2026] — agent-office `DESIGN.md:143` 글래스모피즘 금지 유지 근거로 충분하다. **미확보**: 경쟁 캐주얼 게임이 UI 색을 몇 종 쓰는지에 대한 2026년 벤치마크 수치."
+      }
+    ],
+    "meetingTitle": "번 사람에게서 뺏고, 만든 것을 기록하지 않는다 — 오늘 고칠 것은 코드가 아니라 「남기는 자리」다",
+    "meetingSummary": "일곱 명의 보고가 한 문장으로 모였다. **무언가가 생겼는데 그것을 적어 두는 자리가 없다.** 유저가 번 코인은 디스크에 닿지 않고(N52·N53), 5개월치 37커밋은 원격에 없고, 우리가 3주간 세어 온 버그 49건은 파일로 존재한 적이 없고, 색의 정본은 세 군데로 갈라져 있고, main에는 그 어떤 것도 통과를 강제하는 게이트가 없다. 동시에 반가운 정정도 나왔다 — 여덟 회의 동안 「비가역 85건」이라 불러 온 것의 99.9%는 재다운로드 가능한 에셋이었고, 「소실된 테스트 414줄」은 명령 한 줄이면 돌아온다. **위험의 총량이 줄어든 게 아니라, 위험이 있던 자리가 틀렸다.** 진짜 비가역은 512KB 씬 하나와 원격에 없는 37커밋이다.",
+    "meetingItems": [
+      {
+        "speaker": "Orchestrator",
+        "note": "어제 13건 중 이행은 ⑩ 웹 항목 하나입니다. 그리고 그 하나가 **13건 중 유일하게 사용자 세션 없이 자율 실행할 수 있던 항목**이었다는 점을 그대로 보고합니다 — 여덟 회의 연속 같은 패턴입니다. 대신 오늘은 장부를 다시 그렸습니다. 「미커밋 85건 동결」의 실체는 에셋스토어 재다운로드분 **247MB·9,643파일**이고 진짜 비가역은 `Assets/_Recovery/0 (4).unity` **512KB 하나**입니다. 「테스트 414줄 소실」도 소실이 아니라 미커밋 삭제라 `git checkout` 한 줄입니다. 반대로 **아무도 세지 않던 곳에 훨씬 큰 게 있었습니다** — MeowBeat `meowbeat/main`의 **37커밋(4/1~4/7)이 5개월째 origin에 없습니다.** 6레인·신곡 5곡·소유권 마이그레이션이 이 PC 디스크에만 있고, 심지어 SPRINT.md 블로커에 「song-ownership-migration을 meowbeat/main에 병합 필요」라 적어 놓고 그 meowbeat/main이 원격에 없습니다. 키스토어 다음가는 비가역입니다. PKM은 오늘도 04:27:44에 같은 자리에서 깨졌고(`publish/SKILL.md` 충돌 3덩어리), autostash가 3개 누적에 index에 20건이 staged라 **이 상태로 `git add .`를 하면 사고**입니다."
+      },
+      {
+        "speaker": "QA Tester",
+        "note": "어제 N46이 「안 본 사람에게 주는」 문제였다면 오늘 둘은 **번 사람에게서 뺏는** 문제입니다. **N52** — NumLink `ApplyRewards()`의 호출처가 「홈」·「다음」 두 버튼뿐이라 그 외 모든 이탈에서 클리어 보상이 증발합니다. `OnApplicationPause/Focus/Quit` grep 0건, `KeyCode.Escape` 0건이라 뒤로가기를 소비하는 코드조차 없어 앱이 그냥 종료됩니다. **N53** — MeowBeat는 `PlayerPrefs.SetInt`만 하고 `Save()`를 안 부릅니다. `OnApplicationPause`는 팜 데이터 4종만 저장하고 **코인·점수·곡을 빠뜨렸고** 인자 `pause`조차 안 씁니다. OS가 프로세스를 회수하면 한 판 번 게 통째로 롤백됩니다. 그리고 제 쪽에서 정정할 게 있습니다 — **N번호 49건을 담은 장부 파일은 존재하지 않습니다.** `known_bugs.json`은 탐지 규칙 7종짜리 패턴 레지스트리이고, N번호는 회의록 산문에만 있으며 37개 중 심각도를 기계로 읽을 수 있는 건 11개뿐입니다. 우리가 매일 「49건」이라 세어 온 숫자에 근거가 없었습니다. 「MeowBeat 81일째 0줄」도 정정합니다 — `.cs` 마지막 커밋은 **152일 전**이고, 미커밋 `.cs` 4개가 **141일째** 작업트리에만 있습니다."
+      },
+      {
+        "speaker": "Developer",
+        "note": "웹 쪽에서 제일 큰 낭비를 찾았습니다. **D-20** — OfficeProvider가 라우트 전체를 감싸고 있어서 `/work`·`/playground`·`/insights` 세 페이지가 **한 건도 쓰지 않는 저널 3.4MB(gzip 894KB)를 무조건 받습니다.** JS 번들 355KB의 2.3배를 안 쓰는 데이터로 쓰고 있고, 수정은 3파일 이내입니다. Unity 쪽은 **D-21** — `PuzzleManager`의 static 스프라이트 캐시에 로드 경로가 3개인데 상한을 적용하는 건 하나뿐이라 먼저 실행된 쪽에 따라 풀이 20 또는 29로 갈립니다. `Array.Resize`는 배열만 자르고 텍스처는 남기는데 `UnloadUnusedAssets` 호출이 프로젝트 전역 0건입니다. OnDestroy 주석은 「씬 전환 시 정리」라고 쓰여 있지만 DDOL이라 앱 종료 때만 돕니다 — 주석과 수명이 어긋난 겁니다. **D-22**는 아직 추론입니다: `StartCoroutine` 18곳 중 핸들 관리가 2곳뿐이고 `StopAllCoroutines()`가 어디에도 없어서 로비 복귀 시 파괴된 씬 오브젝트 참조가 가능한데, **실제 예외는 확인하지 못했습니다.** 다음 진단은 보드 생성 중에 로비 복귀를 눌러 로그를 보는 겁니다. 외부 소식은 **TypeScript 7.0이 7/8 정식**(Go 네이티브, 빌드 8~12배)인데 우리는 6.0.3이고 빌드가 `tsc -b`라 직접 영향입니다."
+      },
+      {
+        "speaker": "Game Designer",
+        "note": "두 게임 다 **잘하면 손해**입니다. MeowBeat는 곡을 완주하면 배속만 +0.1 올리고 같은 곡을 다시 틀며, **보상은 HP 0으로 죽어야만** 나옵니다. 세션 종료 분기가 실패 하나뿐이라 완주는 무보상이고, 배속에 상한도 피치 보정도 없어 5바퀴면 음정이 1.5배가 됩니다. 경제는 더 분명합니다 — 리듬 풀콤보 1판 **1,038코인**, 광고 1회 **1,000코인**, 그런데 **오프라인 카페 하루 방치가 1,440코인**입니다. 접속만 해도 풀콤보를 이깁니다. 난이도 라벨도 뒤집혀 있습니다: 무료 기본곡 NPS **4.03** vs 유료 최난곡 **2.39**로 공짜가 1.7배 조밀하고, 유료 6곡의 hard는 normal 대비 노트가 +11~14%뿐인데 가격은 **전 곡 3000 균일**입니다. NumLink는 튜토리얼 코드가 grep 0건이고, 1~10레벨이 전부 5x5 동일, 40~59레벨은 49칸에서 **48칸으로 줄어든 채** 20레벨을 정체하는데 하필 거기서 「노멀」 라벨이 붙습니다. 결정적인 건 **자동 힌트가 3초마다 무료로 정답을 열어 준다**는 겁니다 — `hintCount`를 차감하지 않는데 힌트팩은 IAP입니다. 스스로 수요를 없앤 거죠. 데일리·스트릭은 코드가 다 있는데 호출 0건이고, 벤치마크상 퍼즐 D7 방어선이 **12.18%**라 그걸 지탱할 유일한 장치가 죽어 있는 셈입니다."
+      },
+      {
+        "speaker": "DevOps",
+        "note": "배포는 **PASS**입니다 — 빌드 exit 0, 라이브 저널 HTTP 200에 **entries 126개가 로컬과 완전 일치**하고 내용 해시도 같습니다. 다만 **감시 방법에 결함**을 찾았습니다: 로컬과 라이브의 12,930B 차이는 **전부 CRLF**입니다(`core.autocrlf=true` + `.gitattributes` 없음). 바이트 크기로 드리프트를 보면 정상 상태에서도 매일 차이가 뜹니다 — entries 수나 정규화 해시로 봐야 합니다. 게이트 쪽은 더 심각합니다: **main에 브랜치 보호도 룰셋도 0건**이라 어제 지적한 `pr-validate.yml`이 **required check가 아닙니다**. 검증은 만들어 뒀는데 어느 경로에서도 통과가 강제되지 않습니다. `deploy-pages.yml`은 `pages: write`·`id-token: write`가 워크플로 레벨에 있어 **`npm ci`로 postinstall을 돌리는 build 잡까지 배포 권한을 쥡니다** — 같은 리포 `weekly-insights.yml`은 이미 잡 레벨로 분리돼 있으니 그대로 따르면 됩니다. 마지막으로 디스크가 실제 위험입니다 — **C: 여유 8.1%(77GB)** 인데 `C:\\Unity` Library가 **67.77GB**입니다. 500일 넘게 잠든 6개만 지워도 **27.53GB**가 즉시 돌아오고 Library는 재생성 캐시라 리포 손실이 0입니다."
+      },
+      {
+        "speaker": "Content Writer",
+        "note": "스토어 문안은 생각보다 많이 끝나 있었습니다 — 앱 이름 3안·짧은 설명 모두 한도 통과이고 문서 표기치와 실측이 100% 일치합니다. **비어 있는 건 「자세한 설명」 하나**인데 그게 187자/4,000자, **4.7%**입니다. 그래서 오늘 NumLink 전문 **841자**를 완성해 왔습니다. 쓰면서 주장 두 개를 코드로 기각했습니다 — 「광고 없이」는 `AdManager`에 인터스티셜 실호출이 있어서 삭제, 「세 가지 테마」는 `Resources/Themes/`에 `DefaultTheme.asset` 하나뿐이라 삭제했습니다. 「인터넷 연결 없이」만 `streamingAssetsPath` 전용임을 확인해 남겼습니다. 다만 **일정에 관한 나쁜 소식**이 있습니다: Play targetSdk 요건 마감이 **8/31/2026이었고 이미 지났습니다.** 우리는 34·35입니다. 어제 확인한 「6000.3.17f1+ 없이는 API 36 빌드 불가」와 합치면 등재를 막고 있는 최상위 블로커는 targetSdk가 아니라 **엔진 업그레이드**입니다. 그리고 난이도 라벨의 이모지(😴🐾😼🌙)는 인게임은 괜찮지만 **Play 메타데이터에는 이모지 금지**라 설명문에 그대로 옮기면 위반입니다. 영어 문안은 0건인데, 인게임 번역 키가 **25개·11개뿐**이라 언어 추가 비용은 사실상 없습니다."
+      },
+      {
+        "speaker": "Art Director",
+        "note": "색의 **정본이 세 개**입니다 — USS 38토큰, `UIColorPalette.cs` 26상수, `ThemeData` SO. 26개 중 값이 일치하는 건 **하나**뿐이고, 난이도 카드는 실제로 `LevelSelectUI.cs:439-455`(구)와 `level-select.uss:272-276`(신)이 **같은 화면을 각자 칠하고 있습니다.** 대비도 실측했습니다: 헤더 흰 글자가 **2.78:1 FAIL**이고 4테마 중 3개가 AA 미달입니다 — `--text-on-primary`를 `#2C2C2C`로 한 줄 바꾸면 **5.03:1 PASS**에 코랄 브랜드색도 유지됩니다. MeowBeat는 TMP 6개가 **한글 글리프 0자인 LiberationSans**에 묶여 있고, 참조 0건 폰트 **12.47MB**가 사장 중입니다. 그리고 두 게임 다 Unity 기본 스플래시에 **로고 슬롯이 비어 있어 첫 화면에 브랜드가 0개**입니다 — Personal이라 「Made with Unity」는 못 지워도 자사 로고는 넣을 수 있습니다. 우리 웹도 자유롭지 않습니다: `DESIGN.md`가 금지한 하드코딩 색이 **37색 272회**이고 그중 **29색은 토큰에 없는** Material 계열 칩 세트라 토스 톤과 다른 언어가 섞였습니다. 그라데이션 금지도 4건 위반입니다. **다만 모션 접근성은 통과**입니다 — `prefers-reduced-motion` 블록이 제대로 있고 keyframes 9개 전부 최종 상태가 원위치라 잔류 오프셋이 없습니다."
+      }
+    ],
+    "decisions": [
+      {
+        "title": "[P0·사용자 판단·비가역 ①] 키스토어 6개를 이 PC 밖으로 — 여드레째 이월",
+        "description": "`C:/Unity/Keystore`와 `D:/Unity/Keystore`에 md5 동일 사본 6개가 있으나 **둘 다 같은 PC 내부 드라이브**이고 디렉터리 mtime이 2026-03-26이라 어제 조치 흔적이 없다. 분실 시 두 게임 Play 업데이트가 영구 불가하고 패키지명 재발급 = 기존 유저 전량 이탈이다. **외부 전송이라 자율 실행하지 않는다** — 사용자가 직접 클라우드·외장 매체로 복제해야 한다."
+      },
+      {
+        "title": "[P0·사용자 판단·비가역 ② 신규] MeowBeat `meowbeat/main` 37커밋을 원격에 올린다",
+        "description": "`git -C C:/Unity/Feedme push origin meowbeat/main` — `447ebcc`(4/1)~`bd5849a`(4/7)의 **37커밋이 5개월째 이 PC에만** 있다. data-driven 노트 시스템·6레인·신곡 5곡·소유권 마이그레이션이 전부 여기 들어 있고, SPRINT.md가 병합 대상으로 지목한 브랜치가 정작 원격에 없는 상태다. 키스토어 다음가는 비가역인데 **어제까지 장부에 없었다.** 원격 push라 사용자 확인 후 실행한다(이어서 `feature/song-ownership-migration` 3커밋도 함께)."
+      },
+      {
+        "title": "[P0·사용자 세션·사흘째] N46 — `AdManager.cs:150-158` 무조건 보상 지급 차단",
+        "description": "`if (!IsRewardedAdReady)` 블록의 `#if UNITY_EDITOR`가 여전히 `Debug.LogWarning` 한 줄만 감싸고 `onRewardGranted?.Invoke();`는 밖에 있으며 `#else` 분기도 무조건 지급한다. 릴리스 빌드에서 비행기 모드로 무한 재화가 나가는 상태라 **어떤 수익 모델도 성립하지 않는다.** QA 판정상 두 게임 통틀어 **유일한 출시 차단 요건**이다. 호출처 2곳(`GameManager.cs:334`·`HintManager.cs:101`) 모두 노출돼 있다."
+      },
+      {
+        "title": "[P0·사용자 세션·나흘째·2줄] N18 — `AdmobManager.cs:27` 삭제 + `LoadRemoveAds()` 호출",
+        "description": "`Assets/Scripts/Admob/AdmobManager.cs:27`의 `RemoveAds = false;` 1줄을 지우고 `DatabaseManager.LoadRemoveAds()`(정의는 `:250`에 이미 있다)를 1줄 호출한다. **2줄짜리가 나흘 연속 미완료**다. 이어서 N16(클리어 저장 + `LevelDataProvider` 로드 복원 동반)과 N48(`File.Replace` + `.bak` 폴백)."
+      },
+      {
+        "title": "[P0·신규·저장 신뢰성] N52·N53 — 번 것을 디스크에 남기는 경로부터",
+        "description": "**N53**: `DatabaseManager.SaveCoin()(:310-313)`·`SaveDic()(:457-463)`에 `PlayerPrefs.Save()` 추가 + `OnApplicationPause(:757-763)`에 **누락된 코인·점수·곡 저장을 병기**하고 인자 `pause`로 분기시킨다. **N52**: `StageClearController.ApplyRewards()(:226-235)`를 `GameManager.cs:321`·`:354` 경로에서도 호출하고, NumLink에 `OnApplicationPause/Quit` 훅과 `KeyCode.Escape` 처리를 신설한다(현재 grep 0건). N46이 안 번 사람에게 주는 문제라면 이 둘은 **번 사람에게서 뺏는 문제**로, 방향만 반대일 뿐 유저가 경제를 신뢰할 수 없다는 결론은 같다."
+      },
+      {
+        "title": "[P0·전제 정정] 등재 블로커는 targetSdk가 아니라 Unity 엔진 업그레이드다 — 마감은 이미 지났다",
+        "description": "Play targetSdk 요건 마감 **8/31/2026이 경과**했고 두 앱은 34·35다. 그런데 Unity 6000.3.5f2로는 API 36 빌드 자체가 불가(AGP 9.0.0이 실린 **6000.3.17f1+** 필요)라 순서가 고정돼 있다 — ① 엔진 업그레이드 → ② targetSdk 36 + `android:appCategory=\"game\"` → ③ edge-to-edge. 유예가 30일 이상이라고는 하나 **신규 등록 자체가 막히는 항목**이므로 임시 연장 신청 여부를 오늘 함께 판단한다."
+      },
+      {
+        "title": "[P0·사용자 1줄·엿새째] TaskScheduler Operational 로그 활성화",
+        "description": "`wevtutil sl Microsoft-Windows-TaskScheduler/Operational /e:true`를 관리자 권한으로 실행한다. `wevtutil gl` 결과가 엿새째 `enabled: false`라 회의 기동 이력을 이벤트 로그로 검증할 수 없다. 관리자 권한이 필요해 자율 실행이 거부된 항목이다."
+      },
+      {
+        "title": "[P1·오늘 1줄로 끝남] NumLink 테스트 414줄 복구 + `.gitignore` 2줄로 경보 정상화",
+        "description": "① `git -C \"C:/Unity/NumLink\" checkout -- \"Assets/Tests/Editor\"` — HEAD에 `[Test]` 15 + `[UnityTest]` 15 = **30개 테스트가 온전**하다. 지금은 1줄이지만 **누가 `git add -A`로 한 번 커밋하면 복구 비용이 급증**한다. ② `.gitignore`에 `/Assets/Layer Lab/`·`/Assets/Addin's Weapon Icons- RPG Icon Pack/` 2줄을 추가해 재다운로드 가능한 **9,643파일을 경보에서 제거**하고, 남는 진짜 비가역 `Assets/_Recovery/0 (4).unity`(512,991B) 1개만 커밋한다."
+      },
+      {
+        "title": "[P1·경제·수요 곡선 복원] 자동 힌트 유료화 + MeowBeat 완주 종료·보상 신설",
+        "description": "**NumLink**: `HintManager.cs:174`의 3초 자동 힌트를 판당 1회 무료 + 이후 `hintCount` 차감으로 바꾼다 — 공짜 정답이 힌트 IAP 수요를 통째로 없애고 있다. 이어 N49(`WatchAdForHints()`에 `hintCount++` 배선). **MeowBeat**: `StageClear()`를 **완주 종료 + 결과·코인 지급**으로 바꾸고 배속 +0.1 무한 반복은 별도 「무한 모드」로 분리한다(D-1·D-2·D-4 동시 해소). 이어 점수=코인 1:1 차단 + `OnRhythmGameEnd()` 배선 + 콤보 상한 50 + 카페 레벨 이중 곱 수정. **순서 주의**: AdMob 테스트 ID → 실제 ID 교체는 **N46 수정 이후**여야 한다(먼저 하면 무효 트래픽)."
+      },
+      {
+        "title": "[P1·자율 가능] agent-office D-20 — 안 쓰는 라우트에서 3.4MB 저널 분리",
+        "description": "`usePersistentJournal`을 `OfficeContext`에서 떼어 LogPage 전용 lazy 로딩으로 옮기고, HomePage용으로는 상위 3건만 담은 요약 JSON을 분리 생성한다. `/work`·`/playground`·`/insights` 세 라우트에서 **gzip 894KB**가 사라진다(현재 JS 번들 355KB의 2.3배를 안 쓰는 데이터가 차지). 3파일 이내 수정이고 agent-office 내부라 자율 실행 범위다."
+      },
+      {
+        "title": "[P1·디자인 정본 통합] NumLink 색 3갈래 → USS 하나 + 헤더 대비 1줄 수정",
+        "description": "`Assets/02. Scripts/Data/UIColorPalette.cs`의 26개 상수를 `numlink-variables.uss` 값으로 교체해 색 정본을 USS로 통합한다(1파일 수정, 소비 5파일·호출 35곳 무수정). 26개 중 일치가 1개뿐이고 난이도 카드는 구·신 팔레트가 같은 화면에서 충돌 중이다. 동시에 `numlink-variables.uss:35`의 `--text-on-primary`를 `#FFFFFF`→`#2C2C2C`로 바꿔 헤더 대비를 **2.78:1 → 5.03:1 PASS**로 올린다(코랄 브랜드색 유지). `--text-muted`는 `#999999`→`#6E6E6E`(4.84)."
+      },
+      {
+        "title": "[P1·제출 요건] 자세한 설명 841자 확정 + 개인정보처리방침 2건 + 이모지 제거",
+        "description": "Content Writer가 완성한 NumLink 자세한 설명 **841자 전문**을 `C:\\Unity\\NumLink\\docs\\STORE_LISTING.md` 3절에 넣어 확정하고, MeowBeat 전문도 같은 기준(이모지 0·미검증 수치 0·인게임 합니다체 정합)으로 작성한다. 난이도 라벨 이모지(😴🐾😼🌙)는 설명문에서 텍스트로 풀어 쓴다. 개인정보처리방침은 **복사 금지**(MeowBeat만 광고 ID 「공유」) 2건 신설 + GitHub Pages 호스팅 URL. `docs/STORE_LISTING.md` 2건은 아직 `??` 미추적이므로 오늘 파일 단위로 커밋한다."
+      },
+      {
+        "title": "[P2·인프라·게이트] 브랜치 보호 · 권한 분리 · git gc · 디스크 27.53GB",
+        "description": "① main에 브랜치 보호 신설하고 `pr-validate.yml`을 **required status check로 지정**(현재 protection·rulesets 모두 0건) ② `deploy-pages.yml`의 `pages: write`·`id-token: write`를 `deploy` 잡으로 내리고 build는 `contents: read`만(`weekly-insights.yml` 방식을 따른다) ③ `Verify journal artifact`를 `deploy-pages.yml`로 이관하되 **바이트 비교가 아니라 entries 수·정규화 해시로** 판정(CRLF 12,930B 차이가 정상임이 확인됐다) ④ `git gc` 1회로 loose 1,970개 정리(약 54MB) ⑤ 500일+ 휴면 Library 6개 삭제로 **27.53GB 회수**(C: 8.1%→11.0%) ⑥ `.nvmrc` 추가 · Dependabot #124(54일)·#136 처리."
+      },
+      {
+        "title": "[P2·이월 묶음] 기존 항목 + 오늘 신규 관찰",
+        "description": "**PKM 재발 차단**: `05_AI_Config/skills/publish/SKILL.md` 충돌 3덩어리를 먼저 해소하고 autostash 3건을 정리한다(index에 20건 staged 상태라 그 전에 `git add .` 금지). **신규**: D-21 스프라이트 캐시 상한 통일 + `UnloadUnusedAssets` · D-22 `StopAllCoroutines()`(먼저 로비 복귀 재현으로 검증) · N54 BGM `isPaused` 리셋 · N55 부팅 시 볼륨 믹서 반영 · N56 `multiTouchEnabled=false` · MeowBeat 스플래시 로고 등록 + 씬 전환 연출 · LiberationSans 한글 폰트 교체 + 사장 폰트 12.47MB 정리 · 디자인 토큰 비색상 채택(font-size 23종 하드코딩) · agent-office 하드코딩 37색 토큰화 + 그라데이션 4건 + 죽은 CSS(`card-stagger-in`·`filter-pop`·`useScrollReveal`) · **N번호 장부를 파일로 신설**(산문 → JSON) · 난이도 곡선 49→48 역행 · 데일리 계층 배선 · 곡 가격 차등 · 채보 hard 재생성. **기존 이월**: N42~N45, N50, N51, D-13~D-16, D-19, 아이콘 `Ref/` 분리(13회째), `productName` hefeedmee, ESLint flat config, `google-services.json` 제거, `e0.txt`·`.omc` tmp 2개(24일 묵음)."
+      }
+    ]
+  },
+  {
     "id": "2026-09-10T04:00:00-daily-standup",
     "date": "2026-09-10",
     "researchTitle": "🔴 결제한 사람만 손해 보는 구조 — 광고를 안 봐도 보상이 나가고(N46), 판정 없는 리듬게임이 난수로 「Perfect」를 띄우고, 키스토어는 이 PC 밖에 사본이 0개다",
