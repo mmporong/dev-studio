@@ -73,6 +73,12 @@ npm run build    # 프로덕션 빌드
 npm run lint     # 린트 검사
 ```
 
+## 자동화 상태
+
+새벽 자동 실행(데일리 스탠드업·취업 리서치·주간 인사이트)은 2026-09-11에 모두 폐기했습니다. Claude 5시간 사용 한도의 99%를 사용자가 쓰지 않는 자동 실행이 소진하고 있었습니다. 소모량 실측과 복원 방법은 [docs/RETIRED-AUTOMATION.md](docs/RETIRED-AUTOMATION.md)에 있습니다.
+
+현재 남은 워크플로는 `deploy-pages.yml`(main push)과 `pr-validate.yml`(PR)뿐이며, cron 자동 실행은 없습니다.
+
 ## GitHub Pages 배포
 
 `main` 브랜치에 push하면 GitHub Actions가 자동 배포합니다.
