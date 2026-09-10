@@ -8,7 +8,6 @@ import {
 } from '../data/meowbeat'
 import { useAgentSync, type SyncMode } from '../hooks/useAgentSync'
 import { useUnityBridge } from '../hooks/useUnityBridge'
-import { usePersistentJournal } from '../hooks/usePersistentJournal'
 import type { AgentStatus, OfficeAgent, OfficeZoneId } from '../types/office'
 
 const zoneByStatus: Record<AgentStatus, OfficeZoneId> = {
@@ -122,9 +121,6 @@ interface OfficeContextValue {
   rewardGrantedCount: number
   runtimeReady: boolean
   sendWrapperCommand: ReturnType<typeof useUnityBridge>['sendWrapperCommand']
-  // Journal
-  journalEntries: ReturnType<typeof usePersistentJournal>['entries']
-  latestEntry: ReturnType<typeof usePersistentJournal>['latestEntry']
   // Derived
   liveReadinessChecks: typeof readinessChecks
   phaseLabel: string
@@ -143,7 +139,6 @@ export function OfficeProvider({ children }: { children: ReactNode }) {
   const [activeScenarioIndex, setActiveScenarioIndex] = useState<number | null>(null)
 
   const bridge = useUnityBridge()
-  const journal = usePersistentJournal()
   const sync = useAgentSync()
 
   // auto 모드: status.json 데이터로 에이전트 상태 덮어쓰기
@@ -240,7 +235,6 @@ export function OfficeProvider({ children }: { children: ReactNode }) {
     emitUnityEvent: bridge.emitUnityEvent, logEntries: bridge.logEntries,
     reloadConfig: bridge.reloadConfig, rewardGrantedCount: bridge.rewardGrantedCount,
     runtimeReady: bridge.runtimeReady, sendWrapperCommand: bridge.sendWrapperCommand,
-    journalEntries: journal.entries, latestEntry: journal.latestEntry,
     liveReadinessChecks, phaseLabel, riskLabel,
   }
 

@@ -6,6 +6,32 @@ import { withBasePath } from '../utils/publicPath'
 // (2026-08-08 이전에는 operationsJournal.ts 에 인라인돼 실빌드 단일 청크의 91%를 차지했다)
 const journalUrl = 'data/operations-journal.json'
 
+// 이 훅은 저널을 실제로 그리는 페이지(HomePage·LogPage)에서만 호출한다.
+// OfficeProvider가 감싸고 있던 동안에는 저널을 한 건도 쓰지 않는 /work·/playground·/insights
+// 세 라우트까지 3.4MB(gzip 894KB)를 받아 갔다 (2026-09-11 D-20).
+// 두 페이지를 오가며 매번 재요청하지 않도록 응답 Promise를 모듈 수준에서 한 번만 만든다.
+let journalRequest: Promise<JournalEntryLike[]> | null = null
+
+function fetchJournalOnce(): Promise<JournalEntryLike[]> {
+  if (!journalRequest) {
+    journalRequest = fetch(withBasePath(journalUrl))
+      .then((response) => {
+        if (!response.ok) {
+          // 404/500을 빈 저널로 무음 폴백하지 않도록 명시적으로 실패 처리한다 (8/24)
+          throw new Error(`journal fetch failed: HTTP ${response.status}`)
+        }
+        return response.json() as Promise<JournalEntryLike[]>
+      })
+      .catch((error) => {
+        // 실패한 Promise를 캐시에 남기면 다음 방문에서도 영구히 실패한다
+        journalRequest = null
+        throw error
+      })
+  }
+
+  return journalRequest
+}
+
 type JournalEntryLike = JournalEntry | (Omit<JournalEntry, 'id'> & { id?: string })
 
 function normalizeEntry(entry: JournalEntryLike): JournalEntry {
@@ -57,14 +83,7 @@ export function usePersistentJournal() {
   useEffect(() => {
     let cancelled = false
 
-    fetch(withBasePath(journalUrl))
-      .then((response) => {
-        if (!response.ok) {
-          // 404/500을 빈 저널로 무음 폴백하지 않도록 명시적으로 실패 처리한다 (8/24)
-          throw new Error(`journal fetch failed: HTTP ${response.status}`)
-        }
-        return response.json() as Promise<JournalEntryLike[]>
-      })
+    fetchJournalOnce()
       .then((seedEntries) => {
         if (cancelled) return
         setSeedIds(new Set(seedEntries.map((entry) => normalizeEntry(entry).id)))

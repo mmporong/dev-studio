@@ -1,13 +1,13 @@
 import { useState, useMemo, useEffect, useRef } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { chroniclePhases } from '../data/chronicle'
-import { useOffice } from '../contexts/OfficeContext'
+import { usePersistentJournal } from '../hooks/usePersistentJournal'
 import './LogPage.css'
 
 type CategoryFilter = 'all' | 'research' | 'meeting' | 'decision'
 
 export function LogPage() {
-  const { journalEntries } = useOffice()
+  const { entries: journalEntries } = usePersistentJournal()
   const [searchParams] = useSearchParams()
   const entryParam = searchParams.get('entry')
   const [categoryFilter, setCategoryFilter] = useState<CategoryFilter>('all')

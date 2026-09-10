@@ -1,7 +1,7 @@
 import { useNavigate, Link } from 'react-router-dom'
 import { projects } from '../data/projects'
 import { publishedGames } from '../data/publishedGames'
-import { useOffice } from '../contexts/OfficeContext'
+import { usePersistentJournal } from '../hooks/usePersistentJournal'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { useLanguage } from '../contexts/LanguageContext'
 import { withBasePath } from '../utils/publicPath'
@@ -9,7 +9,7 @@ import './HomePage.css'
 
 export function HomePage() {
   const navigate = useNavigate()
-  const { journalEntries } = useOffice()
+  const { entries: journalEntries } = usePersistentJournal()
   const { t } = useLanguage()
   const containerRef = useScrollReveal()
   const recentEntries = journalEntries.slice(0, 3)
