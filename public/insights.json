@@ -1,6 +1,96 @@
 {
-  "lastUpdated": "2026-09-07T01:54:36.440Z",
+  "lastUpdated": "2026-09-14T02:24:12.773Z",
   "weeks": [
+    {
+      "weekOf": "2026-W38",
+      "articles": [
+        {
+          "id": "de298bc4e6d63c43",
+          "title": "AI 번역의 시대1: 세태(世態)",
+          "url": "https://meetup.nhncloud.com/posts/422",
+          "company": "NHN Cloud Meetup",
+          "category": "infra",
+          "summary": "AI 번역의 시대1: 세태(世態)",
+          "publishedAt": "2026-09-14T01:40:45.000Z",
+          "collectedAt": "2026-09-14T02:24:12.773Z"
+        }
+      ]
+    },
+    {
+      "weekOf": "2026-W37",
+      "articles": [
+        {
+          "id": "4a9fe781b917f150",
+          "title": "if(kakao)2026 둘째 날, 기술 세션 소개",
+          "url": "https://tech.kakao.com/posts/835",
+          "company": "카카오테크",
+          "category": "general",
+          "summary": "if(kakao)2026 둘째 날, 기술 세션 소개",
+          "publishedAt": "2026-09-07T15:00:00.000Z",
+          "collectedAt": "2026-09-14T02:24:12.773Z"
+        },
+        {
+          "id": "251815f8d13a9033",
+          "title": "if(kakao)2026 첫째 날, 기술 세션 소개",
+          "url": "https://tech.kakao.com/posts/833",
+          "company": "카카오테크",
+          "category": "general",
+          "summary": "if(kakao)2026 첫째 날, 기술 세션 소개",
+          "publishedAt": "2026-09-07T15:00:00.000Z",
+          "collectedAt": "2026-09-14T02:24:12.773Z"
+        },
+        {
+          "id": "1d92735c96b930d1",
+          "title": "App Router의 장점은 우리에게도 장점일까요?",
+          "url": "https://toss.tech/article/52999",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "App Router의 장점은 우리에게도 장점일까요?",
+          "publishedAt": "2026-09-09T06:45:00.000Z",
+          "collectedAt": "2026-09-14T02:24:12.773Z"
+        },
+        {
+          "id": "d71eb87f0bc15b86",
+          "title": "AI가 팀 규칙을 지키도록 하는 방법",
+          "url": "https://toss.tech/article/52631",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "AI가 팀 규칙을 지키도록 하는 방법",
+          "publishedAt": "2026-09-08T02:43:00.000Z",
+          "collectedAt": "2026-09-14T02:24:12.773Z"
+        },
+        {
+          "id": "9db17695449b06eb",
+          "title": "2. Beyond Our Expertise",
+          "url": "https://toss.tech/article/technical-writing-2-eng",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "2. Beyond Our Expertise",
+          "publishedAt": "2026-09-07T06:47:00.000Z",
+          "collectedAt": "2026-09-14T02:24:12.773Z"
+        },
+        {
+          "id": "6b73729046316c22",
+          "title": "1. Creating a Role That Didn’t Exist Before",
+          "url": "https://toss.tech/article/technical-writing-1-eng",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "1. Creating a Role That Didn’t Exist Before",
+          "publishedAt": "2026-09-07T06:44:00.000Z",
+          "collectedAt": "2026-09-14T02:24:12.773Z"
+        },
+        {
+          "id": "2f98cb2f83f8092f",
+          "title": "How Documents Find Developers at Toss",
+          "url": "https://toss.tech/article/toss-frontend-ai-docs-eng",
+          "company": "토스 테크",
+          "category": "general",
+          "summary": "How Documents Find Developers at Toss",
+          "publishedAt": "2026-09-07T06:27:00.000Z",
+          "collectedAt": "2026-09-14T02:24:12.773Z"
+        }
+      ]
+    },
     {
       "weekOf": "2026-W36",
       "articles": [
@@ -23,6 +113,16 @@
           "summary": "AI가 만든 코드가 어드민이 되기까지",
           "publishedAt": "2026-09-04T08:47:00.000Z",
           "collectedAt": "2026-09-07T01:54:36.440Z"
+        },
+        {
+          "id": "b87b3d46a51ad94f",
+          "title": "카카오, if(kakao)26 컨퍼런스 개최... 모든 연결에 지능을",
+          "url": "https://tech.kakao.com/posts/834",
+          "company": "카카오테크",
+          "category": "general",
+          "summary": "카카오, if(kakao)26 컨퍼런스 개최... 모든 연결에 지능을",
+          "publishedAt": "2026-09-06T15:00:00.000Z",
+          "collectedAt": "2026-09-14T02:24:12.773Z"
         }
       ]
     },
@@ -478,196 +578,6 @@
           "summary": "혼자 시작해 전국 오픈까지, 당근 레슨/과외 빌딩 로그",
           "publishedAt": "2026-06-29T02:36:06.000Z",
           "collectedAt": "2026-07-06T00:27:03.153Z"
-        }
-      ]
-    },
-    {
-      "weekOf": "2026-W26",
-      "articles": [
-        {
-          "id": "26976fec799a757d",
-          "title": "개발을 넘어 AI로 사회문제를 해결하다",
-          "url": "https://tech.kakao.com/posts/825",
-          "company": "카카오테크",
-          "category": "general",
-          "summary": "개발을 넘어 AI로 사회문제를 해결하다",
-          "publishedAt": "2026-06-23T15:00:00.000Z",
-          "collectedAt": "2026-06-29T00:31:57.713Z"
-        },
-        {
-          "id": "6d540eefd46cd1ba",
-          "title": "누군가는 토스를 테스트하는 동안, 우리는 테스트하는 법을 만듭니다.",
-          "url": "https://toss.tech/article/50893",
-          "company": "토스 테크",
-          "category": "general",
-          "summary": "누군가는 토스를 테스트하는 동안, 우리는 테스트하는 법을 만듭니다.",
-          "publishedAt": "2026-06-26T00:56:00.000Z",
-          "collectedAt": "2026-06-29T00:31:57.713Z"
-        },
-        {
-          "id": "cce16e5ecc4b8ef6",
-          "title": "es-toolkit: How a Small Internal Library Became a Global Project",
-          "url": "https://toss.tech/article/50693",
-          "company": "토스 테크",
-          "category": "general",
-          "summary": "es-toolkit: How a Small Internal Library Became a Global Project",
-          "publishedAt": "2026-06-24T03:36:00.000Z",
-          "collectedAt": "2026-06-29T00:31:57.713Z"
-        },
-        {
-          "id": "c909a4ff66ba1056",
-          "title": "6. 도구를 넘어, 기준과 책임으로",
-          "url": "https://toss.tech/article/technical-writing-6",
-          "company": "토스 테크",
-          "category": "general",
-          "summary": "6. 도구를 넘어, 기준과 책임으로",
-          "publishedAt": "2026-06-23T02:01:00.000Z",
-          "collectedAt": "2026-06-29T00:31:57.713Z"
-        },
-        {
-          "id": "3a46226489071b22",
-          "title": "5. Technical Writer, 사라질 결심",
-          "url": "https://toss.tech/article/technical-writing-5",
-          "company": "토스 테크",
-          "category": "general",
-          "summary": "5. Technical Writer, 사라질 결심",
-          "publishedAt": "2026-06-23T02:00:00.000Z",
-          "collectedAt": "2026-06-29T00:31:57.713Z"
-        },
-        {
-          "id": "ff3b6ed46c7cb80d",
-          "title": "es-toolkit, 사내 작은 라이브러리가 전세계적인 라이브러리가 되기까지",
-          "url": "https://toss.tech/article/50761",
-          "company": "토스 테크",
-          "category": "general",
-          "summary": "es-toolkit, 사내 작은 라이브러리가 전세계적인 라이브러리가 되기까지",
-          "publishedAt": "2026-06-22T12:52:00.000Z",
-          "collectedAt": "2026-06-29T00:31:57.713Z"
-        },
-        {
-          "id": "7a9d10eeba676c31",
-          "title": "4. 우리 팀의 문서화는 왜 실패할까? (2)",
-          "url": "https://toss.tech/article/technical-writing-4",
-          "company": "토스 테크",
-          "category": "general",
-          "summary": "4. 우리 팀의 문서화는 왜 실패할까? (2)",
-          "publishedAt": "2026-06-22T02:01:00.000Z",
-          "collectedAt": "2026-06-29T00:31:57.713Z"
-        },
-        {
-          "id": "5d9b0726fdfa7e01",
-          "title": "3. 우리 팀의 문서화는 왜 실패할까? (1)",
-          "url": "https://toss.tech/article/technical-writing-3",
-          "company": "토스 테크",
-          "category": "general",
-          "summary": "3. 우리 팀의 문서화는 왜 실패할까? (1)",
-          "publishedAt": "2026-06-22T02:00:00.000Z",
-          "collectedAt": "2026-06-29T00:31:57.713Z"
-        }
-      ]
-    },
-    {
-      "weekOf": "2026-W25",
-      "articles": [
-        {
-          "id": "dc56451ceb1d4ee8",
-          "title": "AI 에이전트로 카카오톡 추천 지표 분석 자동화하기",
-          "url": "https://tech.kakao.com/posts/824",
-          "company": "카카오테크",
-          "category": "general",
-          "summary": "AI 에이전트로 카카오톡 추천 지표 분석 자동화하기",
-          "publishedAt": "2026-06-15T15:00:00.000Z",
-          "collectedAt": "2026-06-22T00:34:14.861Z"
-        },
-        {
-          "id": "39e2b1f32c094f4d",
-          "title": "Vibe Coding하는 비개발자는 개발자인가(3)",
-          "url": "https://tech.kakao.com/posts/823",
-          "company": "카카오테크",
-          "category": "general",
-          "summary": "Vibe Coding하는 비개발자는 개발자인가(3)",
-          "publishedAt": "2026-06-15T15:00:00.000Z",
-          "collectedAt": "2026-06-22T00:34:14.861Z"
-        },
-        {
-          "id": "624c94d5e504363e",
-          "title": "디자이너에게 AI로 뭐든 만들어보라고 한다면",
-          "url": "https://toss.tech/article/ai_contest",
-          "company": "토스 테크",
-          "category": "general",
-          "summary": "디자이너에게 AI로 뭐든 만들어보라고 한다면",
-          "publishedAt": "2026-06-19T12:40:00.000Z",
-          "collectedAt": "2026-06-22T00:34:14.861Z"
-        },
-        {
-          "id": "8f4eb0f9401ffdb2",
-          "title": "Spark Connect on Kubernetes #1: 견고한 Spark Connect 만들기",
-          "url": "https://toss.tech/article/spark-connect-on-kubernetes-1",
-          "company": "토스 테크",
-          "category": "general",
-          "summary": "Spark Connect on Kubernetes #1: 견고한 Spark Connect 만들기",
-          "publishedAt": "2026-06-19T07:35:00.000Z",
-          "collectedAt": "2026-06-22T00:34:14.861Z"
-        },
-        {
-          "id": "5542f2bf812f118e",
-          "title": "2. 전문성 밖으로 나아가기",
-          "url": "https://toss.tech/article/technical-writing-2",
-          "company": "토스 테크",
-          "category": "general",
-          "summary": "2. 전문성 밖으로 나아가기",
-          "publishedAt": "2026-06-19T02:01:00.000Z",
-          "collectedAt": "2026-06-22T00:34:14.861Z"
-        },
-        {
-          "id": "cbf717dafb222c8b",
-          "title": "1. 세상에 없던 직무를 만들어가기",
-          "url": "https://toss.tech/article/technical-writing-1",
-          "company": "토스 테크",
-          "category": "general",
-          "summary": "1. 세상에 없던 직무를 만들어가기",
-          "publishedAt": "2026-06-19T02:00:00.000Z",
-          "collectedAt": "2026-06-22T00:34:14.861Z"
-        },
-        {
-          "id": "e6202333310765bd",
-          "title": "매일 하던 업무를 디자인하기",
-          "url": "https://toss.tech/article/todolist",
-          "company": "토스 테크",
-          "category": "general",
-          "summary": "매일 하던 업무를 디자인하기",
-          "publishedAt": "2026-06-17T05:06:00.000Z",
-          "collectedAt": "2026-06-22T00:34:14.861Z"
-        },
-        {
-          "id": "734a32147931825e",
-          "title": "AI로 바꾼 제품 설계의 순서",
-          "url": "https://toss.tech/article/chatbot",
-          "company": "토스 테크",
-          "category": "general",
-          "summary": "AI로 바꾼 제품 설계의 순서",
-          "publishedAt": "2026-06-17T04:56:00.000Z",
-          "collectedAt": "2026-06-22T00:34:14.861Z"
-        },
-        {
-          "id": "06f14a3b72155acb",
-          "title": "디자이너가 시안 대신 앱을 만든 이유",
-          "url": "https://toss.tech/article/deadend",
-          "company": "토스 테크",
-          "category": "general",
-          "summary": "디자이너가 시안 대신 앱을 만든 이유",
-          "publishedAt": "2026-06-16T01:06:00.000Z",
-          "collectedAt": "2026-06-22T00:34:14.861Z"
-        },
-        {
-          "id": "8da8ac375cd0a8dd",
-          "title": "2,800만 MAU를 이해하는 유저 Segmentation, TUES",
-          "url": "https://toss.tech/article/tues",
-          "company": "토스 테크",
-          "category": "general",
-          "summary": "2,800만 MAU를 이해하는 유저 Segmentation, TUES",
-          "publishedAt": "2026-06-16T01:00:00.000Z",
-          "collectedAt": "2026-06-22T00:34:14.861Z"
         }
       ]
     }
